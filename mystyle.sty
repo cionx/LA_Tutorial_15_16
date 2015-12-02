@@ -1,0 +1,31 @@
+\usepackage{xltxtra}
+\usepackage[ngerman]{babel} % German
+\usepackage{amsmath,amssymb,amsthm} % math stuff
+\usepackage{mathtools} % math stuff
+\usepackage{enumitem} % more flexible enumerations
+\usepackage[colorlinks=true]{hyperref} % for links in pdf
+
+\setromanfont[Mapping=tex-text]{Linux Libertine O}
+% \setsansfont[Mapping=tex-text]{DejaVu Sans}
+% \setmonofont[Mapping=tex-text]{DejaVu Sans Mono}
+
+\newcounter{everything}
+\newtheorem{defi}[everything]{Definition}
+\newtheorem*{beh}{Behauptung}
+
+\theoremstyle{definition}
+\newtheorem{bem}[everything]{Bemerkung}
+\newtheorem*{bsp}{Beispiel}
+
+\newcommand{\Nbb}{\ensuremath{\mathbb{N}}}
+\newcommand{\Zbb}{\ensuremath{\mathbb{Z}}}
+\newcommand{\Qbb}{\ensuremath{\mathbb{Q}}}
+\newcommand{\Rbb}{\ensuremath{\mathbb{R}}}
+\newcommand{\Cbb}{\ensuremath{\mathbb{C}}}
+
+\newcommand{\GL}{\ensuremath{\mathrm{GL}}}
+\newcommand{\Mat}{\ensuremath{\mathrm{Mat}}}
+\newcommand{\Ort}{\ensuremath{\mathrm{O}}}
+\newcommand{\SOrt}{\ensuremath{\mathrm{SO}}}
+
+\newcommand{\id}{\ensuremath{\mathrm{id}}}
