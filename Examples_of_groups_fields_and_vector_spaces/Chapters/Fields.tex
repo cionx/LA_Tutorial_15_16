@@ -1,0 +1,275 @@
+\section{Beispiele für Körper}
+
+
+
+
+
+\subsection{Definition und Notationen}
+
+
+\begin{defi}
+ Ein Körper ist ein Tupel $(K, +, \cdot)$ bestehend aus einer Menge $K$ und zwei assoziativen, kommutativen binären Verknüpfungen $+ \colon K \times K \to K$, $(x,y) \mapsto x + y$ und $\cdot \colon K \to K$, $(x,y) \mapsto xy$, so dass die folgenden Bedingungen erfüllt sind:
+ \begin{enumerate}[label=\roman*)]
+  \item
+   $(K,+)$ ist eine abelsche Gruppe.
+  \item
+   $(K \setminus \{0\},\cdot)$ ist eine abelsche Gruppe, wobei $0$ das neutrale Element der Addition bezeichnet.
+  \item
+   Für alle $x,y,z \in K$ ist
+   \[
+    x \cdot (y+z) = (x \cdot y) + (x \cdot z).
+   \]
+ \end{enumerate}
+\end{defi}
+
+
+\begin{bem}
+ \begin{enumerate}[leftmargin=*]
+  \item
+   Man bezeichnet einen Körper meistens nur mit $K$ statt mit $(K,+,\cdot)$, nennt also die Addition und Multiplikation nicht explizit. Das neutrale Element bezüglich der Addition wird mit $0$ bezeichnet, das neutrale Element der Multiplikation auf $K\setminus\{0\}$ also $1$.
+  \item
+   Man bezeichnet die Gruppe $(K,+)$ als die additive Gruppe von $K$. Man schreibt $K^\times \coloneqq K\setminus\{0\}$ und bezeichnet die Gruppe $(K^\times,\cdot)$ als die multiplikative Gruppe von $K$.
+  \item
+   In der Definition eines Körpers lässt sich der Begriff einer Gruppe aus umgehen, indem man die entsprechenden Aussagen alle explizit angibt: Ein Körper ist dann definiert als ein Tupel $(K,+,\cdot)$ bestehend aus einer Menge $K$ und zwei binären Verknüpfungen $+$ und $\cdot$ auf $K$, so dass die folgenden Bedingungen erfüllt sind:
+   \begin{enumerate}[label=\roman*)]
+    \item
+     $+$ ist assoziativ, d.h.\ $x+(y+z) = (x+y)+z$ für alle $x,y,z \in K$.
+    \item
+     $+$ ist kommutativ, d.h.\ $x+y = y+x$ für alle $x,y in K$.
+    \item
+     Es gibt ein additiv neutrales Element $0 \in K$ mit $x + 0 = x$ für alle $x \in K$.
+    \item
+     Es gibt für jedes $x \in K$ ein additiv inverses Element $-x \in K$ mit $x+(-x) = 0$.
+    \item
+     $\cdot$ ist assoziativ, d.h.\ $x \cdot (y \cdot z) = (x \cdot y) \cdot z$ für alle $x,y,z \in K$.
+    \item
+     $\cdot$ ist kommutativ, d.h.\ für alle $x,y \in K$ ist $x \cdot y = y \cdot x$.
+    \item
+     Es gibt ein multiplikatives neutrales Element $1 \in K\setminus\{0\}$ mit $x \cdot 1 = x$ für alle $x \in K$
+    \item
+     Für jedes $x \in K\setminus\{0\}$ gibt es ein inverses Element $x^{-1} \in K\setminus\{0\}$ mit $x x^{-1} = 1$.
+    \item
+     $+$ ist distributiv bezüglich $\cdot$, d.h.\ $x \cdot (y+z) = (x \cdot y) + (x \cdot z)$ für alle $x,y,z \in K$.
+   \end{enumerate}
+  \item
+   Man rechnet „Punkt vor Strich“, d.h.\ für alle $x,y,z \in K$ ist
+   \[
+    x + y \cdot z \coloneqq x + (y \cdot z).
+   \]
+  \item
+   In einem Körper $K$ gelten die gewöhnlichen Rechenregeln. So ist beispiesweise für alle $x,y,z \in K$ mit $z \neq 0$
+   \begin{enumerate}[label=\alph*)]
+    \item $0 \cdot x = 0$,
+    \item $1 \cdot x = x$,
+    \item $-x = (-1) \cdot x$,
+    \item $(-z)^{-1} = -z^{-1}$
+    \item $(x+y)^2 = x^2 + 2xy + y^2$ und $(x+y)(x-y) = x^2 - y^2$.
+   \end{enumerate}
+  \item
+   Da $1 \in K^\times = K \setminus \{0\}$ ist $1 \neq 0$.
+ \end{enumerate}
+\end{bem}
+
+
+\begin{defi}
+ Es sei $L$ ein Körper. Eine Teilmenge $K \subseteq L$ heißt \emph{Unterkörper}, falls die folgenden Bedingungen erfüllt sind:
+ \begin{enumerate}[label=\roman*)]
+  \item
+   Für alle $x,y \in K$ ist auch $x + y \in K$.
+  \item
+   Für alle $x,y \in K$ ist auch $x \cdot y \in K$.
+  \item
+   Es sind $0, 1 \in K$.
+ \end{enumerate}
+\end{defi}
+
+
+\begin{bem}
+ Es sei $L$ ein Körper.
+ \begin{enumerate}[leftmargin=*]
+  \item
+   Ist $K \subseteq L$ ein Unterkörper, so ist $K$ zusammen mit der Addition und Multiplikation aus $L$ selber ebenfalls ein Körper.
+  \item
+   Eine Teilmenge $K \subseteq L$ ist genau dann ein Unterkörper, falls $K \subseteq L$ Untergruppe der additiven Gruppe von $K$ ist und $K\setminus\{0\} \subseteq L^\times$ eine Untergruppe der multiplikativen Gruppe von $L$ ist.
+ \end{enumerate}
+\end{bem}
+
+
+
+
+
+\subsection{Einige kleine Beispiele}
+\begin{enumerate}[leftmargin=*]
+ \item
+  Die rationalen Zahlen $\Qbb$ und die reellen Zahlen $\Rbb$ bilden zusammen mit der üblichen Addition und Multiplikation jeweils einen Körper. $\Qbb$ ist ein Unterkörper von $\Rbb$.
+ \item
+  Die ganzen Zahlen $\Zbb$ bilden zusammen mit der üblichen Addition und Multiplikation \emph{keinen} Körper: Ansonsten wäre $1$ das neutrale Element der Multiplikation und es gebe ein Element $x \in \Zbb$ mit $2x = 1$. Ein solches Element gibt es aber nicht.
+ \item
+  Für einen Körper $K$ und $n \in \Nbb$, $n \geq 2$ bilden die quadratischen Matrizen $\Mat(n \times n, K)$ zusammen mit der gewöhnlichen Addition und Multiplikation von Matrizen keinen Körper: Zum einen ist die Multiplikation in diesem Fall nicht kommutativ, da
+  \[
+   \begin{pmatrix}
+    1 & 0 \\
+    0 & 0
+   \end{pmatrix}
+   \begin{pmatrix}
+    0 & 1 \\
+    0 & 0
+   \end{pmatrix}
+   =
+   \begin{pmatrix}
+    0 & 1 \\
+    0 & 0
+   \end{pmatrix}
+   \quad\text{aber}\quad
+   \begin{pmatrix}
+    0 & 1 \\
+    0 & 0
+   \end{pmatrix}
+   \begin{pmatrix}
+    1 & 0 \\
+    0 & 0
+   \end{pmatrix}
+   =
+   \begin{pmatrix}
+    0 & 0 \\
+    0 & 0
+   \end{pmatrix}.
+  \]
+  Zum anderen ist nicht jede Matrix $A \in \Mat(n \times n, K) \setminus \{0\}$ bezüglich der Matrixmultiplikation invertierbar, da etwa
+  \[
+   \begin{pmatrix}
+    1 & 0 \\
+    0 & 0
+   \end{pmatrix}
+   \begin{pmatrix}
+    a & b \\
+    c & d
+   \end{pmatrix}
+   =
+   \begin{pmatrix}
+    a & b \\
+    0 & 0
+   \end{pmatrix}
+   \neq
+   \begin{pmatrix}
+    1 & 0 \\
+    0 & 1
+   \end{pmatrix}
+  \]
+  für alle $a,b,c,d \in K$.
+\end{enumerate}
+
+
+
+
+
+\subsection{Die komplexen Zahlen \texorpdfstring{$\Cbb$}{C}}
+Die komplexen Zahlen $\Cbb$ sind ein Körper, der die reellen Zahlen $\Rbb$ enthält, und in dem es ein Element $i \in \Cbb$ gibt, für das $i^2 = -1$. Wir geben an dieser Stelle zwei mögliche Konstruktionen der komplexen Zahlen an:
+
+
+\subsubsection{Die komplexen Zahlen als besserer \texorpdfstring{$\Rbb^2$}{R2}}
+Wir beginnen mit der abelschen Gruppe $\Cbb \coloneqq \Rbb^2 = \{(a,b) \mid a,b \in \Rbb\}$. Die Addition ist gegeben durch
+\[
+ (a_1, b_1) + (a_2, b_2) = (a_1 + a_2, b_1 + b_2)
+ \quad\text{für alle $(a_1, b_1), (a_2, b_2) \in \Cbb$}.
+\]
+Wir definieren zusätzlich eine Multiplikation $\cdot$ auf $\Cbb$ durch
+\[
+ (a_1, b_1) \cdot (a_2, b_2)
+ = (a_1 a_2 - b_1 b_2, a_1 b_2 + a_2 b_1)
+ \quad\text{für alle $(a_1, b_1), (a_2, b_2) \in \Cbb$}.
+\]
+
+\begin{beh}
+ $\Cbb$ ist zusammen mit der obigen Addition und Multiplikation ein Körper.
+\end{beh}
+\begin{proof}
+ Dass $\Cbb$ zusammen mit der Addition eine abelsche Gruppe ist, ist bekannt. Das additiv neutrale Element ist $(0,0)$ und das additiv Inverse zu $(a,b) \in \Cbb$ ist $(-a,-b)$ Für alle $(a_1, b_1), (a_2, b_2), (a_3, b_3) \in \Cbb$ ist
+ \begin{align*}
+   &\, (a_1, b_1) \cdot ((a_2, b_2) \cdot (a_3, b_3))
+  = (a_1, b_1) \cdot (a_2 a_3 - b_2 b_3, a_2 b_3 + a_3 b_2) \\
+  =&\, (a_1 a_2 a_3 - a_1 b_2 b_3 - a_2 b_1 b_3 - a_3 b_1 b_2, a_2 a_3 b_1 - b_1 b_2 b_3 + a_1 a_2 b_3 + a_1 a_3 b_2) \\
+  =&\, (a_1 a_2 - b_1 b_2, a_1 b_2 + a_2 b_1) \cdot (a_3, b_3)
+  = ((a_1, b_1) \cdot (a_2, b_2)) \cdot (a_3, b_3),
+ \end{align*}
+ also ist die Multiplikation assoziativ. Für alle $(a_1, b_1), (a_2, b_2) \in \Cbb$ ist
+ \begin{align*}
+  (a_1, b_1) \cdot (a_2, b_2)
+  &= (a_1 a_2 - b_1 b_2, a_1 b_2 + a_2 b_1) \\
+  &= (a_2 a_1 - b_2 b_1, a_2 b_1 + a_1 b_2)
+  = (a_2, b_2) \cdot (a_1, b_1),
+ \end{align*}
+ also ist die Multiplikation kommutativ. Für alle $(a,b) \in \Cbb$ ist
+ \[
+  (1,0) \cdot (a,b) = (1 \cdot a - 0 \cdot b, 0 \cdot a + 1 \cdot b) = (a,b),
+ \]
+ also ist $(1,0)$ neutral bezüglich der Multiplikation. Ist $(a,b) \in \Cbb$ mit $(a,b) \neq (0,0)$, so ist $a \neq 0$ oder $b \neq 0$, also $a^2+b^2 \neq 0$. Daher ist
+ \[
+  (a,b) \cdot \left(\frac{a}{a^2+b^2}, -\frac{b}{a^2+b^2}\right)
+  = \left( a \frac{a}{a^2+b^2} + b \frac{b}{a^2+b^2}, b \frac{a}{a^2+b^2} - a \frac{b}{a^2+b^2} \right)
+  = (1,0).
+ \]
+ Also ist $(a/(a^2+b^2), -b/(a^2+b^2))$ multiplikativ invers zu $(a,b)$.
+ 
+ Ingesamt zeigt dies, dass $+$ und $\cdot$ assoziativ und kommutativ ist, und dass $(\Cbb,+)$ und $(\Cbb\setminus\{(0,0)\}, \cdot)$ abelsche Gruppen sind. Es muss nur noch die Distributivität gezeigt werden: Dies gilt, da für alle $(a_1, b_1), (a_2, b_2), (a_3, b_3) \in \Cbb$
+ \begin{align*}
+   &\, (a_1, b_1) \cdot ((a_2, b_2) + (a_3, b_3)) \\
+  =&\,    (a_1, b_1) \cdot (a_2 + a_3, b_2 + b_3) \\
+  =&\, (a_1 (a_2 + a_3) - b_1 (b_2 + b_3), a_1 (b_2 + b_3) + (a_2 + a_3) b_1) \\
+  =&\, (a_1 a_2 + a_1 a_3 - b_1 b_2 - b_1 b_3, a_1 b_2 + a_1 b_3 + a_2 b_1 + a_3 b_1) \\
+  =&\, (a_1 a_2 - b_1 b_2, a_1 b_2 + a_2 b_1) + (a_1 a_3 - b_1 b_3, a_1 b_3 + a_3 b_1) \\
+  =&\, (a_1, b_1) \cdot (a_2, b_2) + (a_1, b_1) \cdot (a_3, b_3).
+ \end{align*}
+ Ingesamt zeigt dies, dass $\Cbb$ zusammen mit der angegebenen Addition und Multiplikation ein Körper ist.
+\end{proof}
+
+Wir wollen noch etwas Notation einführen, um das Rechnen mit $\Cbb$ einfacher zu machen: Wir schreiben $0 = (0,0)$ und $1 = (1,0)$. Wir bemerken zunächst, dass für alle $a, a' \in \Rbb$
+\[
+ (a,0) + (a',0) = (a + a', 0)
+ \quad\text{und}\quad
+ (a,0) \cdot (a',0) = (a a' - 0 \cdot 0, a \cdot 0 + 0 \cdot a') = (a a', 0)
+\]
+und dass $0, 1 \in \{(a,0) \mid a \in \Rbb\}$. Also ist $\{(a,0) \mid a \in \Rbb\} \subseteq \Cbb$ ein Unterkörper und für die Abbildung $\phi \colon \Rbb \to \{(a,0) \mid a \in \Rbb\}$, $x \mapsto (x,0)$ gilt:
+\begin{enumerate}[label=\roman*)]
+ \item
+  $\phi$ ist bijektiv.
+ \item
+  Für alle $a,a' \in \Rbb$ ist $\phi(a+a') = \phi(a)+\phi(a')$ und $\phi(aa') = \phi(a)\phi(a')$.
+ \item
+  Es ist $\phi(1) = 1$.
+\end{enumerate}
+Dies erlaubt es uns, $\Rbb$ mit dem Unterkörper $\{(a,0) \mid a \in \Rbb\} \subseteq \Cbb$ zu identifizieren. Wir unterscheiden also im Folgenden nicht mehr zwischen $a \in \Rbb$ und $(a,0) \in \Cbb$.
+
+Wir schreiben $i \coloneqq (0,1) \in \Cbb$. Für jedes $b \in \Rbb$ gilt
+\[
+ b \cdot i = (b,0) \cdot (0,1) = (b \cdot 0 - 0 \cdot 1, b \cdot 1 + 0 \cdot 0) = (0,b).
+\]
+Ein beliebiges Element $z = (a,b) \in \Cbb$ lässt sich daher als
+\[
+ z = (a,b) = (a,0) + (0,b) = a + bi
+\]
+schreiben. Die beiden reellen Zahlen $a,b \in \Rbb$ mit $z = a + bi$ sind eindeutig, da $z = (a,b)$.
+
+Bemerke, dass $i^2 = (0,1) \cdot (0,1) = (0 \cdot 0 - 1 \cdot 1, 0 \cdot 1 + 1 \cdot 0) = (-1, 0) = -1$. Die Addition lässt sich nun auch so darstellen, dass für alle $a_1, a_2, b_1, b_2 \in \Rbb$
+\[
+ (a_1 + b_1 i) + (a_2 + b_2 i)
+ = a_1 + a_2 + b_1 i + b_2 i
+ = (a_1 + a_2) + (b_1 + b_2) i,
+\]
+und die Multiplikation so, dass
+\begin{align*}
+ (a_1 + b_1 i)(a_2 + b_2 i)
+ &= a_1 a_2 + a_1 b_2 i + a_2 b_1 i + b_1 b_2 i^2 \\
+ &= a_1 a_2 - b_1 b_2 + a_1 b_2 i + a_2 b_1 i \\
+ &= (a_1 a_2 - b_1 b_2) + (a_1 b_2 + a_2 b_1) i.
+\end{align*}
+
+
+\subsubsection{Die komplexen Zahlen als reelle (\texorpdfstring{$2 \times 2$}{2x2})-Matrizen}
+
+
+
+
+
+
+
