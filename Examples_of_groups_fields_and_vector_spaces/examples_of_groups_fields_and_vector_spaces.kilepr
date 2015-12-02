@@ -39,10 +39,10 @@ Mode=LaTeX
 
 [item:Chapters/Fields.tex]
 archive=true
-column=48
+column=124
 encoding=UTF-8
 highlight=LaTeX
-line=267
+line=51
 mode=LaTeX
 open=true
 order=2
@@ -78,10 +78,10 @@ open=false
 order=-1
 
 [view-settings,view=0,item:Chapters/Fields.tex]
-CursorColumn=48
-CursorLine=267
+CursorColumn=124
+CursorLine=51
 JumpList=
-ViMarks=.,267,47,[,267,47,],267,47
+ViMarks=.,51,123,[,51,121,],51,123
 
 [view-settings,view=0,item:Chapters/Groups.tex]
 CursorColumn=0

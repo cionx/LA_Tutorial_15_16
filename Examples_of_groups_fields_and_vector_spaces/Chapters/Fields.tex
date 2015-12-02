@@ -8,16 +8,18 @@
 
 
 \begin{defi}
- Ein Körper ist ein Tupel $(K, +, \cdot)$ bestehend aus einer Menge $K$ und zwei assoziativen, kommutativen binären Verknüpfungen $+ \colon K \times K \to K$, $(x,y) \mapsto x + y$ und $\cdot \colon K \to K$, $(x,y) \mapsto xy$, so dass die folgenden Bedingungen erfüllt sind:
+ Ein Körper ist ein Tupel $(K, +, \cdot)$ bestehend aus einer Menge $K$ und zwei binären Verknüpfungen $+ \colon K \times K \to K$, $(x,y) \mapsto x + y$ und $\cdot \colon K \to K$, $(x,y) \mapsto xy$, so dass die folgenden Bedingungen erfüllt sind:
  \begin{enumerate}[label=\roman*)]
   \item
    $(K,+)$ ist eine abelsche Gruppe.
   \item
-   $(K \setminus \{0\},\cdot)$ ist eine abelsche Gruppe, wobei $0$ das neutrale Element der Addition bezeichnet.
+   $(K \setminus \{0\},\cdot)$ ist eine abelsche Gruppe, wobei $0$ das neutrale Element der Addition bezeichnet. (Insbesondere ist für alle $x,y \in K\setminus\{0\}$ auch $x \cdot y \in K\setminus\{0\}$).
   \item
    Für alle $x,y,z \in K$ ist
    \[
-    x \cdot (y+z) = (x \cdot y) + (x \cdot z).
+    x \cdot (y+z) = (x \cdot y) + (x \cdot z)
+    \quad\text{und}\quad
+    (x+y) \cdot z = (x \cdot z) + (y \cdot z).
    \]
  \end{enumerate}
 \end{defi}
@@ -30,12 +32,12 @@
   \item
    Man bezeichnet die Gruppe $(K,+)$ als die additive Gruppe von $K$. Man schreibt $K^\times \coloneqq K\setminus\{0\}$ und bezeichnet die Gruppe $(K^\times,\cdot)$ als die multiplikative Gruppe von $K$.
   \item
-   In der Definition eines Körpers lässt sich der Begriff einer Gruppe aus umgehen, indem man die entsprechenden Aussagen alle explizit angibt: Ein Körper ist dann definiert als ein Tupel $(K,+,\cdot)$ bestehend aus einer Menge $K$ und zwei binären Verknüpfungen $+$ und $\cdot$ auf $K$, so dass die folgenden Bedingungen erfüllt sind:
+   In der Definition eines Körpers lässt sich der Begriff einer Gruppe umgehen, indem man die entsprechenden Aussagen alle explizit angibt: Ein Körper ist dann definiert als ein Tupel $(K,+,\cdot)$ bestehend aus einer Menge $K$ und zwei binären Verknüpfungen $+$ und $\cdot$ auf $K$, so dass die folgenden Bedingungen erfüllt sind:
    \begin{enumerate}[label=\roman*)]
     \item
      $+$ ist assoziativ, d.h.\ $x+(y+z) = (x+y)+z$ für alle $x,y,z \in K$.
     \item
-     $+$ ist kommutativ, d.h.\ $x+y = y+x$ für alle $x,y in K$.
+     $+$ ist kommutativ, d.h.\ $x+y = y+x$ für alle $x,y \in K$.
     \item
      Es gibt ein additiv neutrales Element $0 \in K$ mit $x + 0 = x$ für alle $x \in K$.
     \item
@@ -47,7 +49,7 @@
     \item
      Es gibt ein multiplikatives neutrales Element $1 \in K\setminus\{0\}$ mit $x \cdot 1 = x$ für alle $x \in K$
     \item
-     Für jedes $x \in K\setminus\{0\}$ gibt es ein inverses Element $x^{-1} \in K\setminus\{0\}$ mit $x x^{-1} = 1$.
+     Für jedes $x \in K\setminus\{0\}$ gibt es ein multiplikativ inverses Element $x^{-1} \in K\setminus\{0\}$ mit $x \cdot x^{-1} = 1$.
     \item
      $+$ ist distributiv bezüglich $\cdot$, d.h.\ $x \cdot (y+z) = (x \cdot y) + (x \cdot z)$ für alle $x,y,z \in K$.
    \end{enumerate}
@@ -75,23 +77,15 @@
  Es sei $L$ ein Körper. Eine Teilmenge $K \subseteq L$ heißt \emph{Unterkörper}, falls die folgenden Bedingungen erfüllt sind:
  \begin{enumerate}[label=\roman*)]
   \item
-   Für alle $x,y \in K$ ist auch $x + y \in K$.
+   $K$ ist eine Untergruppe der additiven Gruppe von $L$.
   \item
-   Für alle $x,y \in K$ ist auch $x \cdot y \in K$.
-  \item
-   Es sind $0, 1 \in K$.
+   $K\setminus\{0\}$ ist eine Untergruppe der multiplikativen Gruppe von $L$, d.h.\ von $L^\times$.
  \end{enumerate}
 \end{defi}
 
 
 \begin{bem}
- Es sei $L$ ein Körper.
- \begin{enumerate}[leftmargin=*]
-  \item
-   Ist $K \subseteq L$ ein Unterkörper, so ist $K$ zusammen mit der Addition und Multiplikation aus $L$ selber ebenfalls ein Körper.
-  \item
-   Eine Teilmenge $K \subseteq L$ ist genau dann ein Unterkörper, falls $K \subseteq L$ Untergruppe der additiven Gruppe von $K$ ist und $K\setminus\{0\} \subseteq L^\times$ eine Untergruppe der multiplikativen Gruppe von $L$ ist.
- \end{enumerate}
+ Ist $L$ ein Körper und $K \subseteq L$ ein Unterkörper, so ist $K$ zusammen mit der Addition und Multiplikation aus $L$ selber ebenfalls ein Körper.
 \end{bem}
 
 
@@ -167,6 +161,7 @@
 Die komplexen Zahlen $\Cbb$ sind ein Körper, der die reellen Zahlen $\Rbb$ enthält, und in dem es ein Element $i \in \Cbb$ gibt, für das $i^2 = -1$. Wir geben an dieser Stelle zwei mögliche Konstruktionen der komplexen Zahlen an:
 
 
+
 \subsubsection{Die komplexen Zahlen als besserer \texorpdfstring{$\Rbb^2$}{R2}}
 Wir beginnen mit der abelschen Gruppe $\Cbb \coloneqq \Rbb^2 = \{(a,b) \mid a,b \in \Rbb\}$. Die Addition ist gegeben durch
 \[
@@ -209,7 +204,7 @@ Wir definieren zusätzlich eine Multiplikation $\cdot$ auf $\Cbb$ durch
   = \left( a \frac{a}{a^2+b^2} + b \frac{b}{a^2+b^2}, b \frac{a}{a^2+b^2} - a \frac{b}{a^2+b^2} \right)
   = (1,0).
  \]
- Also ist $(a/(a^2+b^2), -b/(a^2+b^2))$ multiplikativ invers zu $(a,b)$.
+ Also ist $(a/(a^2+b^2), -b/(a^2+b^2))$ multiplikativ invers zu $(a,b)$. Sind $z_1, z_2 \in \Cbb$ mit $z_1, z_2 \neq 0$, so sind $z_1$ und $z_2$ invertierbar. Daher ist auch $z_1 \cdot z_2$ invertierbar und somit $z_1 \cdot z_2 \neq 0$. Also ist $\Cbb\setminus\{0\}$ unter der Multiplikation abgeschlossen.
  
  Ingesamt zeigt dies, dass $+$ und $\cdot$ assoziativ und kommutativ ist, und dass $(\Cbb,+)$ und $(\Cbb\setminus\{(0,0)\}, \cdot)$ abelsche Gruppen sind. Es muss nur noch die Distributivität gezeigt werden: Dies gilt, da für alle $(a_1, b_1), (a_2, b_2), (a_3, b_3) \in \Cbb$
  \begin{align*}
@@ -265,7 +260,114 @@ und die Multiplikation so, dass
 \end{align*}
 
 
+
 \subsubsection{Die komplexen Zahlen als reelle (\texorpdfstring{$2 \times 2$}{2x2})-Matrizen}
+Unabhängig von der ersten Methode geben wir noch eine weitere Konstruktion der komplexen Zahlen an: Es sei
+\[
+ C \coloneqq
+ \left\{
+  \begin{pmatrix}
+   a &           -b \\
+   b & \phantom{-}a
+  \end{pmatrix}
+  \,\middle|\,
+  a,b \in \Rbb
+ \right\}
+ \subseteq \Mat(2 \times 2, \Rbb).
+\]
+Wir zeigen, dass $C$ zusammen mit der gewöhnlichen Matrixaddition und -multiplikation einen Körper bildet:
+
+Für alle $a, b \in \Rbb$ schreiben wir abkürzend
+\[
+ Z(a,b)
+ \coloneqq
+ \begin{pmatrix}
+  a &           -b \\
+  b & \phantom{-}a
+ \end{pmatrix}.
+\]
+Für alle $a_1, a_2, b_1, b_2 \in \Rbb$ ist
+\begin{gather*}
+ \begin{aligned}
+  Z(a_1, b_1) + Z(a_2, b_2)
+  &=
+  \begin{pmatrix}
+   a_1 &           -b_1 \\
+   b_1 & \phantom{-}a_1
+  \end{pmatrix}
+  +
+  \begin{pmatrix}
+   a_2 &           -b_2 \\
+   b_2 & \phantom{-}a_2
+  \end{pmatrix} \\
+  &=
+  \begin{pmatrix}
+   a_1+a_2 &           -b_1+b_2 \\
+   b_1+b_2 & \phantom{-}a_1+a_2
+  \end{pmatrix}
+  =
+  Z(a_1+a_2, b_1+b_2)
+ \end{aligned}
+\shortintertext{und außerdem}
+ \begin{aligned}
+  Z(a_1,b_1) \cdot Z(a_2,b_2)
+  &=
+  \begin{pmatrix}
+   a_1 &           -b_1 \\
+   b_1 & \phantom{-}a_1
+  \end{pmatrix}
+  \begin{pmatrix}
+   a_2 &           -b_2 \\
+   b_2 & \phantom{-}a_2
+  \end{pmatrix} \\
+  &=
+  \begin{pmatrix}
+   a_1 a_2 - b_1 b_2 &           -a_1 b_2 - a_2 b_1 \\
+   a_1 b_2 + a_2 b_1 & \phantom{-}a_1 a_2 - b_1 b_2
+  \end{pmatrix}
+  = Z(a_1 a_2 - b_1 b_2, a_1 b_2 + a_2 b_1).
+ \end{aligned}
+\end{gather*}
+Um zu zeigen, dass $C$ bezüglich der Addition eine abelsche Gruppe bildet genügt es zu zeigen, dass $C$ eine Untergruppe der additiven Gruppe von $\Mat(2 \times 2, \Rbb)$ bildet. Es ist $0 = Z(0,0) \in C$ und für alle $a_1, a_2, b_1, b_2 \in \Rbb$ ist
+\[
+ Z(a_1, b_1) + Z(a_2, b_2) = Z(a_1 + a_2, b_1 + b_2) \in C.
+\]
+Für alle $a,b \in \Rbb$ ist außerdem
+\[
+ -Z(a,b)
+ =
+ -\begin{pmatrix}
+  a &           -b \\
+  b & \phantom{-}a
+ \end{pmatrix}
+ =
+ \begin{pmatrix}
+  -a & \phantom{-}b \\
+  -b &           -a
+ \end{pmatrix}
+ = Z(-a,-b) \in C.
+\]
+Also ist $C$ eine abelsche Untergruppe der additiven Gruppe von $\Mat(2 \times 2, \Rbb)$.
+
+Die Assoziativität der Multiplikation ist bekannt. Die Matrixmultiplikation ist auf $C$ kommutativ, da für alle $a_1, a_2, b_1, b_2 \in \Rbb$
+\begin{align*}
+ Z(a_1, b_1) \cdot Z(a_2, b_2)
+ &= Z(a_1 a_2 - b_1 b_2, a_1 b_2 + a_2 b_1) \\
+ &= Z(a_2 a_1 - b_2 b_1, a_2 b_1 + a_1 b_2)
+ = Z(a_2, b_2) \cdot Z(a_1, b_1).
+\end{align*}
+Es muss also nur noch gezeigt werden, dass $C\setminus\{0\}$ zusammen mit der Matrixmultiplikation eine Gruppe bildet. Es ist $I_2 = Z(1,0) \in C$ das neutrale Element. Für $a,b \in \Rbb$ mit $Z(a,b) \neq 0$ ist $a \neq 0$ oder $b \neq 0$ und somit $a^2+b^2 \neq 0$. Da
+\begin{align*}
+  &\, Z(a,b) Z\left(\frac{a}{a^2+b^2}, -\frac{b}{a^2+b^2}\right) \\
+ =&\, Z\left( a \frac{a}{a^2+b^2} + b\frac{b}{a^2+b^2}, b\frac{a}{a^2+b^2} - a\frac{b}{a^2+b^2} \right) \\
+ =&\, Z(1, 0)
+ = I_2
+\end{align*}
+ist $Z(a/(a^2+b^2), -b/(a^2+b^2))$ das multiplikativ Inverse zu $Z(a,b)$ (da die Matrixmultiplikation auf $C$ kommutativ ist, zeigt die obige Rechnung, dass $Z(a/(a^2+b^2), -b/(a^2+b^2))$ bereits beidseitig Invers zu $Z(a,b)$ ist).
+
+
+
+
 
 
 
