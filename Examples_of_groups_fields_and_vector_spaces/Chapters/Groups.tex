@@ -3,86 +3,8 @@
 
 
 
-\subsection{Definitionen und Notationen}
-
-
-\begin{defi}
- Eine \emph{Gruppe} ist ein Paar $(G,\cdot)$ bestehend aus einer Menge $G$ und einer binären Verknüpfung $G \times G \to G$, $(g, h) \mapsto g \cdot h$, die die folgenden Bedingungen erfüllt:
- \begin{enumerate}[label=\roman*)]
-  \item
-   Die Verknüpfung $\cdot$ ist assoziativ, d.h.\ für alle $g_1, g_2, g_3 \in G$ ist $(g_1 \cdot g_2) \cdot g_3 = g_1 \cdot (g_2 \cdot g_3)$.
-  \item
-   Es gibt ein neutrales Element $e \in G$ mit $e \cdot g = g \cdot e = g$ für alle $g \in G$.
-  \item
-   Für jedes Element $g \in G$ gibt es ein inverses Element $h \in G$ mit $g \cdot h = h \cdot g = e$.
- \end{enumerate}
- Die Gruppe $(G, \cdot)$ heißt \emph{abelsch}\footnote{Nach dem norwegischen Mathematiker Niels Henrik Abel.}, bzw. \emph{kommutativ}, falls $g \cdot h = h \cdot g$ für alle $g,h \in G$.
-\end{defi}
-
-
-\begin{bem} Es sei $(G, \cdot)$ eine Gruppe.
- \begin{enumerate}[leftmargin=*]
-  \item
-   Wegen der Assoziativität von $\cdot$ ist der Ausdruck $g_1 \dotsm g_n$ für alle $n \geq 1$ und $g_1, \dotsc, g_n \in G$ wohldefiniert.
-  \item
-   Je zwei neutrale Element $e, e' \in G$ sind gleich, da $e = e \cdot e' = e'$. Man spricht daher von \emph{dem} neutralen Element von $G$.
-  \item
-   Für jedes $g \in G$ sind je zwei inverse Elemente $h, h'$ von $g$ gleich, da
-   \[
-    h = h \cdot e = h \cdot g \cdot h' = e \cdot h' = h'.
-   \]
-   Man spricht daher von \emph{dem} inversen Element von $g$ und schreibt $g^{-1}$ für dieses.
-  \item
-   Für jedes $g \in G$ ist $g^{-1} \cdot g = g^{-1} \cdot g = e$ also $g$ das Inverse zu $g^{-1}$, und somit $g = (g^{-1})^{-1}$.
-  \item
-   Für alle $g, h \in G$ ist $(h^{-1} \cdot g^{-1}) \cdot (g \cdot h) = h^{-1} \cdot g^{-1} \cdot g \cdot h = h^{-1} \cdot e \cdot h = h^{-1} \cdot h = e$, also $h^{-1} \cdot g^{-1}$ das Inverse zu $g \cdot h$ und somit $h^{-1} \cdot g^{-1} = (g \cdot h)^{-1}$.
-  \item
-   Ist $(G, \cdot)$ abelsch, so schreibt man die Verknüpfung häufig nicht \emph{multiplikativ} (d.h.\ als $\cdot$), sondern \emph{additiv} (d.h.\ als $+$).
-  \item
-   Schreibt man eine Gruppe multiplikativ, so bezeichnet man das neutrale Element häufig mit $1$ statt $e$. Man schreibt auch $gh$ statt $g \cdot h$.
-  \item
-   Schreibt man eine abelsche Gruppe additiv, so bezeichnet man das neutrale Element mit $0$ und das neutrale Element von $g$ als $-g$.
-  \item
-   Obwohl eine Gruppe, per Definition, ein Paar $(G, \cdot)$ ist, nennt man die Verknüpfung $\cdot$ häufig nicht explizit. Statt von einer Gruppe $(G, \cdot)$, bzw.\ $(G, +)$ spricht man also nur von einer Gruppe $G$.
- \end{enumerate}
-\end{bem}
-
-
-\begin{defi}
- Es sei $G$ eine Gruppe. Eine Teilmenge $H \subseteq G$ heißt \emph{Untergruppe} falls die folgenden Bedingungen erfüllt sind:
- \begin{enumerate}[label=\roman*)]
-  \item
-   $H$ ist nicht leer, d.h.\ $H \neq \emptyset$.
-  \item
-   Für alle $h_1, h_2 \in H$ ist auch $h_1 h_2 \in H$.
-  \item
-   Für alle $h \in H$ ist auch $h^{-1} \in H$.
- \end{enumerate}
-\end{defi}
-
-
-\begin{bem}
- Es sei $G$ eine Gruppe.
- \begin{enumerate}[leftmargin=*]
-  \item
-   Ist $H \subseteq G$ eine Untergruppe, so ist auch $(H, \cdot)$ eine Gruppe. Das neutrale Element in $H$ stimmt mit dem neutralen Element in $G$ überein und für jedes $h \in H$ entspricht das inverse Element in $H$ dem inversen Element in $G$.
-  \item
-   Ist $G$ abelsch, so ist auch $H$ abelsch.
-  \item
-   Ist $H \subseteq G$ eine Untergruppe und $K \subseteq H$ eine Untergruppe, so ist auch $K \subseteq G$ eine Untergruppe.
-  \item
-   Sind $H_1, H_2 \subseteq G$ zwei Untergruppen, so ist auch $H_1 \cap H_2 \subseteq G$ eine Untergruppe.
-  \item
-   Eine Teilmenge $H \subseteq G$ ist genau dann eine Untergruppe, wenn $H \neq \emptyset$ und $h_1 h_2^{-1} \in H$ für alle $h_1, h_2 \in H$.
- \end{enumerate}
-\end{bem}
-
-
-
-
 
 \subsection{Verschiedene kleine Beispiele}
-
 \begin{enumerate}[leftmargin=*]
  \item
   Die reellen Zahlen $\Rbb$ bilden zusammen mit der üblichen Addition $+$ eine abelsche Gruppe: Die Assoziativität und Kommutativität der Addition sind bekannt. $0 \in \Rbb$ ist das neutrale Element bezüglich der Addition und für $x \in \Rbb$ ist $-x \in \Rbb$ das inverse Element, da $x + (-x) = (-x) + x = 0$.

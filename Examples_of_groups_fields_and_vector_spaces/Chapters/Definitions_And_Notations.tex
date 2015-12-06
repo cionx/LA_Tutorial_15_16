@@ -1,0 +1,458 @@
+\section{Definitionen und Notationen}
+
+
+
+
+
+\subsection{Gruppen}
+
+
+\begin{defi}
+ Eine \emph{Gruppe} ist ein Paar $(G,\cdot)$ bestehend aus einer Menge $G$ und einer binären Verknüpfung $\cdot \colon G \times G \to G$, $(g, h) \mapsto g \cdot h$, die die folgenden Bedingungen erfüllt:
+ \begin{enumerate}[label=\roman*)]
+  \item
+   Die Verknüpfung $\cdot$ ist assoziativ, d.h.\ für alle $g_1, g_2, g_3 \in G$ ist $(g_1 \cdot g_2) \cdot g_3 = g_1 \cdot (g_2 \cdot g_3)$.
+  \item
+   Es gibt ein \emph{neutrales Element} $e \in G$, d.h.\ $e \cdot g = g \cdot e = g$ für alle $g \in G$.
+  \item
+   Für jedes Element $g \in G$ gibt es ein \emph{inverses Element} $h \in G$, d.h.\ $g \cdot h = h \cdot g = e$.
+ \end{enumerate}
+ Die Gruppe $(G, \cdot)$ heißt \emph{abelsch}\footnote{Benannt nach dem norwegischen Mathematiker Niels Henrik Abel.}, bzw. \emph{kommutativ}, falls $g \cdot h = h \cdot g$ für alle $g,h \in G$.
+\end{defi}
+
+
+\begin{bem} Es sei $(G, \cdot)$ eine Gruppe.
+ \begin{enumerate}[leftmargin=*]
+  \item
+   Wegen der Assoziativität von $\cdot$ ist das Produkt $g_1 \dotsm g_n$ für alle $n \geq 1$ und $g_1, \dotsc, g_n \in G$ wohldefiniert.
+  \item
+   Je zwei neutrale Element $e, e' \in G$ sind gleich, da $e = e \cdot e' = e'$. Man spricht daher von \emph{dem} neutralen Element von $G$.
+  \item
+   Für jedes $g \in G$ sind je zwei inverse Elemente $h, h'$ von $g$ gleich, da
+   \[
+    h = h \cdot e = h \cdot g \cdot h' = e \cdot h' = h'.
+   \]
+   Man spricht daher von \emph{dem} inversen Element von $g$ und schreibt $g^{-1}$ für dieses.
+  \item
+   Es genügt zu fordern, dass es ein linksneutrales Element $e \in G$ gibt, d.h.\ dass $e \cdot g = g$ für alle $g \in G$, und dass jedes $g \in G$ ein linksinverses Element $h \in G$ gibt, d.h.\ dass $h \cdot g = e$. Es folgt dann, dann $e$ auch rechtsneutral ist (d.h.\ $g \cdot e = g$ für alle $g \in G$) und ein linksinverses Element $h \in G$ von $g$ auch schon rechtsinvers ist (d.h.\ $g \cdot h = e$).
+  \item
+   Für jedes $g \in G$ ist $g^{-1} \cdot g = g \cdot g^{-1} = e$ also $g$ das Inverse zu $g^{-1}$, und somit $g = (g^{-1})^{-1}$.
+  \item
+   Für alle $g, h \in G$ ist $(h^{-1} \cdot g^{-1}) \cdot (g \cdot h) = h^{-1} \cdot g^{-1} \cdot g \cdot h = h^{-1} \cdot e \cdot h = h^{-1} \cdot h = e$, also $h^{-1} \cdot g^{-1}$ das (Links)inverse zu $g \cdot h$ und somit $h^{-1} \cdot g^{-1} = (g \cdot h)^{-1}$.
+  \item
+   Ist $(G, \cdot)$ abelsch, so schreibt man die Verknüpfung häufig nicht \emph{multiplikativ} (d.h.\ als $\cdot$), sondern \emph{additiv} (d.h.\ als $+$).
+  \item
+   Schreibt man eine Gruppe $(G,\cdot)$ multiplikativ, so bezeichnet man das neutrale Element häufig mit $1$ statt $e$. Man schreibt auch $gh$ statt $g \cdot h$. Für alle $g \in G$ und $n \in \Zbb$ schreibt man abkürzend
+   \[
+    g^n \coloneqq
+    \begin{cases}
+     \underbrace{g \dotsm g}_{\text{$n$ viele}} & \text{falls $n \geq 1$} \\
+     1                                          & \text{falls $n = 0$} \\
+     (g^-1)^{-n}                                & \text{falls $n \leq -1$}.
+    \end{cases}
+   \]
+   Es gilt dann $g^n \cdot g^m = g^{n+m}$ für alle $g \in G$ und $n,m \in \Zbb$, sowie $g^0 = 1$ und auch  $(g^n)^{-1} = (g^{-1})^n = g^{-n}$ für alle $g \in G$ und $n \in \Zbb$.
+  \item
+   Schreibt man eine abelsche Gruppe $(A,+)$ additiv, so bezeichnet man das neutrale Element mit $0$ und das neutrale Element von $a \in A$ als $-a$. Für alle $a \in A$ und $n \in \Zbb$ schreibt man dann abkürzend
+   \[
+    n a \coloneqq
+    n \cdot a \coloneqq
+    \begin{cases}
+     \underbrace{a + \dotsb + a}_{\text{$n$ viele}} & \text{falls $n \geq 1$} \\
+     0                                              & \text{falls $n = 0$} \\
+     (-n) \cdot (-a)                                & \text{falls $n \leq -1$}.
+    \end{cases}
+   \]
+   Es gilt dann $na + ma = (n+m)a$ für alle $a \in A$ und $n,m \in \Zbb$, sowie $0 \cdot a = 0$ und $-(n \cdot a) = n \cdot (-a) = (-n) \cdot a$ für alle $a \in A$ und $n \in \Zbb$.
+  \item
+   Obwohl eine Gruppe, per Definition, ein Paar $(G, \cdot)$ ist, nennt man die Verknüpfung $\cdot$ häufig nicht explizit. Statt von einer Gruppe $(G, \cdot)$, bzw.\ $(G, +)$ spricht man also nur von einer Gruppe $G$.
+ \end{enumerate}
+\end{bem}
+
+
+\begin{defi}
+ Es sei $G$ eine Gruppe. Eine Teilmenge $H \subseteq G$ heißt \emph{Untergruppe} falls die folgenden Bedingungen erfüllt sind:
+ \begin{enumerate}[label=\roman*)]
+  \item
+   $e \in H$ für das neutrale Element $e \in G$.
+  \item
+   Für alle $h_1, h_2 \in H$ ist auch $h_1 h_2 \in H$.
+  \item
+   Für alle $h \in H$ ist auch $h^{-1} \in H$.
+ \end{enumerate}
+\end{defi}
+
+
+\begin{bem}
+ Es sei $G$ eine Gruppe.
+ \begin{enumerate}[leftmargin=*]
+  \item
+   Statt zu fordern, dass $e \in H$, genügt es zu fordern, dass $H \neq 0$, dass es also irgendein $h \in G$ gibt mit $h \in H$. Dann ist nämlich auch $h^{-1} \in H$ und deshalb auch $e = h \cdot h^{-1} \in H$.
+  \item
+   Ist $H \subseteq G$ eine Untergruppe, so ist auch $(H, \cdot)$ eine Gruppe. Das neutrale Element in $H$ stimmt mit dem neutralen Element in $G$ überein und für jedes $h \in H$ entspricht das inverse Element in $H$ dem inversen Element in $G$.
+  \item
+   Ist $G$ abelsch, so ist auch $H$ abelsch.
+  \item
+   Ist $H \subseteq G$ eine Untergruppe und $K \subseteq H$ eine Untergruppe (der Gruppe $(H,\cdot)$), so ist auch $K \subseteq G$ eine Untergruppe.
+  \item
+   Eine Teilmenge $H \subseteq G$ ist genau dann eine Untergruppe, wenn $H \neq \emptyset$ (bzw.\ äquivalent $e \in H$) und $h_1 h_2^{-1} \in H$ für alle $h_1, h_2 \in H$.
+ \end{enumerate}
+\end{bem}
+
+
+\begin{defi}
+ Es seien $G$ und $H$ zwei Gruppen. Eine Abbildung $\varphi \colon G \to H$ heißt \emph{Gruppenhomomorphismus}, falls 
+ \[
+  \varphi(xy) = \varphi(x)\varphi(y) \quad \text{für alle $x,y \in G$}.
+ \]
+ Ist $\varphi$ injektiv, so heißt $\varphi$ \emph{Gruppenmonomorphismus}; ist $\varphi$ surjektiv, so heißt $\varphi$ \emph{Gruppenepimorphismus}; und ist $\varphi$ bijektiv, so heißt $\varphi$ \emph{Gruppenisomorphismus}. Ist $G = H$, so heißt $\varphi$ \emph{Gruppenendomorphismus}; ist $\varphi$ zusätzlich bijektiv, so heißt $\varphi$ Gruppenautomorphismus.
+\end{defi}
+
+
+\begin{center}
+ \begin{tabular}{l|l|l}
+             & allgemein & $G = H$ \\
+   \hline
+   allgemein & homo      & endo    \\
+   injektiv  & mono      &         \\
+   surjektiv & epi       &         \\
+   bijektiv  & iso       & auto
+ \end{tabular}
+\end{center}
+
+
+\begin{bem}
+ \begin{enumerate}[leftmargin=*]
+  \item
+   Für jede Gruppe $G$ ist $\id_G \colon G \to G$ ein ein Gruppenautomorphismus.
+  \item
+   Sind $G_1$, $G_2$ und $G_3$ Gruppen und $\varphi \colon G_1 \to G_2$ und $\psi \colon G_2 \to G_3$ Gruppenhomomorphismen, so ist auch die Verknüpfung $\psi \circ \varphi$ ein Gruppenhomomorphismus, denn für alle $x,y \in G_1$ ist
+   \begin{align*}
+    (\psi \circ \varphi)(x \dot y)
+    = \psi(\varphi(x \cdot y))
+    &= \psi(\varphi(x) \cdot \varphi(y)) \\
+    &= \psi(\varphi(x)) \cdot \psi(\varphi(y))
+    = (\psi \circ \varphi)(x) \cdot (\psi \circ \varphi)(y).
+   \end{align*}
+  \item
+   Sind $G$ und $H$ Gruppen und $\varphi \colon G \to H$ ein Gruppenhomomorphismus, so ist $\varphi(1) = 1$, denn
+   \[
+    \varphi(1)
+    = \varphi(1 \cdot 1)
+    = \varphi(1) \cdot \varphi(1)
+   \]
+   und durch Multiplikation mit $\varphi(1)$ ergibt sich, dass $1 = \varphi(1)$.
+  \item
+   Sind $G$ und $H$ Gruppen und $\varphi \colon G \to H$ ein Gruppenhomomorphismus, so ist $\varphi(g^{-1}) = \varphi(g)^{-1}$ für alle $g \in G$, da
+   \[
+    \varphi(g^{-1}) \cdot \varphi(g)
+    = \varphi(g^{-1} \cdot g)
+    = \varphi(1)
+    = 1
+   \]
+   und $\varphi(g^{-1})$ somit das inverse Element zu $\varphi(g)$ ist.
+  \item
+   Sind $G$ und $H$ Gruppen und ist $\varphi \colon G \to H$ ein Gruppenisomorphismus (also ein Gruppenhomomorphismus und bijektiv), so ist auch $\varphi^{-1} \colon H \to G$ ein Gruppenisomorphismus, da für alle $x,y \in H$
+   \begin{align*}
+    \varphi^{-1}(x \cdot y)
+    &= \varphi^{-1}( \varphi(\varphi^{-1}(x)) \cdot \varphi(\varphi^{-1}(y)) ) \\
+    &= \varphi^{-1}( \varphi( \varphi^{-1}(x) \cdot \varphi^{-1}(y) ) )
+    = \varphi^{-1}(x) \cdot \varphi^{-1}(y).
+   \end{align*}
+ \end{enumerate}
+\end{bem}
+
+
+
+
+
+\subsection{Körper}
+
+
+\begin{defi}
+ Ein Körper ist ein Tupel $(K, +, \cdot)$ bestehend aus einer Menge $K$ und zwei binären Verknüpfungen, einer \emph{Addition} $+ \colon K \times K \to K$, $(x,y) \mapsto x + y$ und einer \emph{Multiplikation} $\cdot \colon K \to K$, $(x,y) \mapsto xy$, so dass die folgenden Bedingungen erfüllt sind:
+ \begin{enumerate}[label=\roman*)]
+  \item
+   $(K,+)$ ist eine abelsche Gruppe.
+  \item
+   Die Multiplikation $\cdot$ erfüllt die folgenden Bedingungen:
+   \begin{enumerate}[label=\alph*)]
+    \item
+     $\cdot$ ist assoziativ.
+    \item
+     $\cdot$ ist kommutativ.
+    \item
+     Es gibt ein Einselement $1 \in K$, d.h.\ $1 \cdot x = x$ für alle $x \in K$, und es gilt $1 \neq 0$.
+    \item
+     Für jedes Element $x \in K$ mit $x \neq 0$ gibt es ein multiplikativ Inverses Element $y \in K$, d.h.\ $x \cdot y = 1$.
+   \end{enumerate}
+  \item
+   Es gilt die Distributivität von $+$ und $\cdot$, d.h.\ für alle $x,y,z \in K$ ist
+   \[
+    x \cdot (y + z)
+    = (x \cdot y) + (x \cdot z)
+   \]
+ \end{enumerate}
+\end{defi}
+
+
+\begin{bem}
+ \begin{enumerate}[leftmargin=*]
+  \item
+   Die zweite Bedingung in der Definition lässt sich dadurch ersetzen, dass $(K\setminus\{0\},\cdot)$ eine abelsche Gruppe ist. Dann muss bei der Distributivität allerdings zusätzlich gefordert werden, dass auch $(x+y) \cdot z = (x \cdot z) + (y \cdot z)$ für alle $x,y,z \in K$.
+  \item
+   Die hier angegebene Definition hat den Vorteil, dass sie kürzer zu überprüfen ist.
+  \item
+   In der hier angegebenen Definition fordert man, dass $1 \neq 0$, da die Menge $\{0\}$ zusammen mit der Addition $0 + 0 = 0$ und $0 \cdot 0 = 0$ sonst einen Körper bilden würde (was man nicht möchte).
+ \end{enumerate}
+\end{bem}
+
+
+\begin{bem}
+ \begin{enumerate}[leftmargin=*]
+  \item
+   Man bezeichnet einen Körper meistens nur mit $K$ statt mit $(K,+,\cdot)$, d.h.\ man nennt die Addition und Multiplikation nicht explizit. Das neutrale Element bezüglich der Addition wird mit $0$ bezeichnet, das neutrale Element der Multiplikation mit $1$.
+  \item
+   Man bezeichnet die Gruppe $(K,+)$ als die \emph{additive Gruppe} von $K$. Man schreibt abkürzend $K^\times \coloneqq K\setminus\{0\}$ und bezeichnet die Gruppe $(K^\times,\cdot)$ als die \emph{multiplikative Gruppe} von $K$.
+  \item
+   In der Definition eines Körpers lässt sich der Begriff einer Gruppe umgehen, indem man die darin versteckten Bedingungen alle explizit angibt: Ein Körper ist dann definiert als ein Tupel $(K,+,\cdot)$ bestehend aus einer Menge $K$ und zwei binären Verknüpfungen $+$ und $\cdot$ auf $K$, so dass die folgenden Bedingungen erfüllt sind:
+   \begin{enumerate}[label=\roman*)]
+    \item
+     $+$ ist assoziativ, d.h.\ $x+(y+z) = (x+y)+z$ für alle $x,y,z \in K$.
+    \item
+     $+$ ist kommutativ, d.h.\ $x+y = y+x$ für alle $x,y \in K$.
+    \item
+     Es gibt ein additiv neutrales Element $0 \in K$, d.h.\ $x + 0 = x$ für alle $x \in K$.
+    \item
+     Es gibt für jedes $x \in K$ ein additiv inverses Element $y \in K$, d.h.\ $x+y = 0$.
+    \item
+     $\cdot$ ist assoziativ, d.h.\ $x \cdot (y \cdot z) = (x \cdot y) \cdot z$ für alle $x,y,z \in K$.
+    \item
+     $\cdot$ ist kommutativ, d.h.\ für alle $x,y \in K$ ist $x \cdot y = y \cdot x$.
+    \item
+     Es gibt ein multiplikatives neutrales Element $1 \in K\setminus\{0\}$, d.h.\ $x \cdot 1 = x$ für alle $x \in K$, und $1 \neq 0$.
+    \item
+     Für jedes $x \in K\setminus\{0\}$ gibt es ein multiplikativ inverses Element $y \in K$, d.h.\ $x \cdot y = 1$.
+    \item
+     $+$ ist distributiv bezüglich $\cdot$, d.h.\ $x \cdot (y+z) = (x \cdot y) + (x \cdot z)$ für alle $x,y,z \in K$.
+   \end{enumerate}
+  \item
+   Man rechnet „Punkt vor Strich“, d.h.\ für alle $x,y,z \in K$ ist
+   \[
+    x + y \cdot z \coloneqq x + (y \cdot z).
+   \]
+  \item
+   In einem Körper $K$ gelten die gewöhnlichen Rechenregeln, beispielsweise die folgenden:
+   \begin{enumerate}[label=\alph*)]
+    \item $0 \cdot x = 0$ für alle $x \in K$.
+    \item $-x = (-1) \cdot x$ für alle $x \in K$.
+    \item $(-x)^{-1} = -x^{-1}$ für alle $x \in K^\times$.
+   \end{enumerate}
+ \end{enumerate}
+\end{bem}
+
+
+\begin{defi}
+ Es sei $L$ ein Körper. Eine Teilmenge $K \subseteq L$ heißt \emph{Unterkörper}, falls die folgenden Bedingungen erfüllt sind:
+ \begin{enumerate}[label=\roman*)]
+  \item
+   $K$ ist eine Untergruppe der additiven Gruppe von $L$.
+  \item
+   Es ist $1 \in K$, für alle $x,y \in K$ ist $x \cdot y \in K$, und für jedes $x \in K$ mit $x \neq 0$ ist auch $x^{-1} \in K$.
+ \end{enumerate}
+\end{defi}
+
+
+\begin{bem}
+ \begin{enumerate}[leftmargin=*]
+  \item
+   Ist $L$ ein Körper und $K \subseteq L$ ein Unterkörper, so ist $(K,+,\cdot)$ ebenfalls ein Körper. Es gilt $0_K = 0_L$ und $1_K = 1_L$ und für jedes $x \in K^\times$ stimmen die inversen Element in $K$ und $L$ überein.
+  \item
+   Ist $L$ ein Körper und $K \subseteq L$ ein Unterkörper, so ist $K \subseteq L$ eine additive Untergruppe und $K^\times \subseteq L^\times$ eine multiplikative Untergruppe.
+  \item
+   Ist $L$ ein Körper, $K \subseteq L$ ein Unterkörper und $K' \subseteq K$ ein Unterkörper (von $K$), so ist $K' \subseteq L$ ein Unterkörper.
+ \end{enumerate}
+\end{bem}
+
+
+\begin{defi}
+ Es seien $K$ und $L$ zwei Körper. Eine Abbildung $\phi \colon K \to L$ heißt \emph{Körperhomomorphismus}, falls
+ \begin{enumerate}[label=\roman*)]
+  \item
+   $\phi(x+y) = \phi(x)+\phi(y)$ für alle $x,y \in K$
+  \item
+   $\phi(xy) = \phi(x)\phi(y)$ für alle $x,y \in K$, und
+  \item
+   $\phi(1) = 1$.
+ \end{enumerate}
+ Ist $\phi$ bijektiv, so ist $\phi$ ein \emph{Körperisomorphismus}. Ist $K = L$ und $\phi$ bijektiv, so ist $\phi$ ein \emph{Körperautomorphismus}.
+\end{defi}
+
+
+\begin{bem}
+ \begin{enumerate}[leftmargin=*]
+  \item
+   Für jeden Körper $K$ ist die Identität $\id_K \colon K \to K$ ein Körperautomorphismus.
+  \item
+   Sind $K_1$, $K_2$ und $K_3$ Körper und $\phi \colon K_1 \to K_2$ und $\psi \colon K_2 \to K_3$ Körperhomomorphismen, so ist auch $\psi \circ \phi \colon K_1 \to K_3$ ein Körperhomomorphismus: Für alle $x,y \in K_1$ ist
+   \begin{gather*}
+    \begin{aligned}
+     (\psi \circ \phi)(x+y)
+     = \psi(\phi(x+y))
+     &= \psi(\phi(x)+\phi(y)) \\
+     &= \psi(\phi(x)) + \psi(\phi(y))
+     = (\psi \circ \phi)(x) + (\psi \circ \phi)(y)
+    \end{aligned}
+   \shortintertext{und}
+    \begin{aligned}
+     (\psi \circ \phi)(x \cdot y)
+     = \psi(\phi(x \cdot y))
+     &= \psi(\phi(x) \cdot \phi(y)) \\
+     &= \psi(\phi(x)) \cdot \psi(\phi(y))
+     = (\psi \circ \phi)(x) \cdot (\psi \circ \phi)(y),
+    \end{aligned}
+   \shortintertext{und es gilt}
+    (\psi \circ \phi)(1)
+    = \psi(\phi(1))
+    = \psi(1)
+    = 1.
+   \end{gather*}
+  \item
+   Sind $K$ und $L$ Körper und ist $\phi \colon K \to L$ ein Körperisomorphismus, so ist auch die Umkehrabbildung $\phi^{-1} \colon L \to K$ ein Körperisomorphismus: $\phi$ ist bijektiv und für alle $x,y \in L$ ist
+   \begin{gather*}
+    \begin{aligned}
+     \phi^{-1}(x+y)
+     &= \phi^{-1}(\phi(\phi^{-1}(x)) + \phi(\phi^{-1}(y))) \\
+     &= \phi^{-1}(\phi( \phi^{-1}(x) + \phi^{-1}(y) )
+     = \phi^{-1}(x) + \phi^{-1}(y)
+    \end{aligned}
+   \shortintertext{und}
+    \begin{aligned}
+     \phi^{-1}(x \cdot y)
+     &= \phi^{-1}(\phi(\phi^{-1}(x)) \cdot \phi(\phi^{-1}(y))) \\
+     &= \phi^{-1}(\phi( \phi^{-1}(x) \cdot \phi^{-1}(y) ))
+     = \phi^{-1}(x) \cdot \phi^{-1}(y),
+    \end{aligned}
+   \shortintertext{sowie auch}
+    \phi^{-1}(1) = \phi^{-1}(\phi(1)) = 1.
+   \end{gather*}
+  \item
+   Sind $K$ und $L$ Körper und ist $\phi \colon K \to L$ ein Körperhomomorphismus, so ist $\phi$ ein Gruppenhomomorphismus von $(K,+)$ nach $(L,+)$, da $\phi(x+y) = \phi(x)+\phi(y)$ für alle $x,y \in K$.
+   
+   Insbesondere ist daher $\phi(0) = 0$ und $\phi(-x) = -\phi(x)$ für alle $x \in K$.
+  \item
+   Sind $K$ und $L$ Körper und ist $\phi \colon K \to L$ ein Körperhomomorphismus, so ist $\phi(x) \neq 0$ für alle $x \in K \setminus \{0\}$ sowie $\phi(x^{-1}) = \phi(x)^{-1}$ für alle $x \in K \setminus \{0\}$: Da
+   \[
+    1 = \phi(1) = \phi(x x^{-1}) = \phi(x) \phi(x^{-1})
+   \]
+   ist $\phi(x)$ invertierbar, also $\phi(x) \neq 0$, und $\phi(x^{-1})$ das Inverse von $\phi(x)$, also $\phi(x^{-1}) = \phi(x)^{-1}$.
+  \item
+   Körperhomomorphismen sind injektiv, d.h.\ sind $K$ und $L$ Körper und ist $\phi \colon K \to L$ ein Körperhomomorphismus, so ist $\phi$ injektiv: Sind $x, y \in K$ mit $x \neq y$, so ist $x-y \neq 0$ und somit $\phi(x-y) \neq 0$. Da $\phi(x)-\phi(y) = \phi(x-y) \neq 0$ ist $\phi(x) \neq \phi(y)$.
+   
+   Da Körperhomomorphismen stets injektiv sind, spricht man nicht von Körperepimorphismen oder Körpermonomorphismen: Jeder Körperhomomorphismus wäre ein Körpermonomorphismus und jeder Körperepimorphismus wäre bereits ein Körperisomorphismus.
+ \end{enumerate}
+\end{bem}
+
+
+
+
+
+\subsection{Vektorräume}
+
+
+\begin{defi}
+ Ein $K$-Vektorraum ist ein Tripel $(K,V,\cdot)$ bestehend aus einem Körper $K$, einer abelschen Gruppe $V$ und einer Verknüpfung $\cdot K \times V \to V$, $(\lambda, v) \mapsto \lambda \cdot v$, die die folgenden Bedingungen erfüllt:
+ \begin{enumerate}[label=\roman*)]
+  \item
+   $\lambda \cdot (v+w) = (\lambda \cdot v) + (\lambda \cdot w)$ für alle $\lambda \in K$ und $v,w \in V$.
+  \item
+   $(\lambda + \mu) \cdot v = (\lambda \cdot v) + (\mu \cdot v)$ für alle $\lambda, \mu \in K$ und $v \in V$.
+  \item
+   $\lambda \cdot (\mu \cdot v) = (\lambda \cdot \mu) \cdot v$ für alle $\lambda, \mu \in K$ und $v \in V$.
+  \item
+   $1 \cdot v = v$ für alle $v \in V$.
+ \end{enumerate}
+ Die Elemente $v \in V$ nennt man \emph{Vektoren} und die Elemente $\lambda \in K$ nennt man \emph{Skalare}. Die Verknüpfung $\cdot$ heißt \emph{Skalarmultiplikation}.
+\end{defi}
+
+
+\begin{bem}
+ \begin{enumerate}[leftmargin=*]
+  \item
+   Man schreibt die Skalarmultiplikation auch also $\lambda v$ statt $\lambda \cdot v$.
+  \item
+   Man rechnet „Punkt vor Strich“, d.h.\ es ist
+   \[
+    \lambda \cdot v + w \coloneqq (\lambda \cdot v) + w
+    \quad\text{für alle $\lambda \in K$ und $v,w \in V$}.
+   \]
+  \item
+   Es ist wichtig, zu verstehen, dass man zwar Elemente des Körpers miteinander multiplizieren kann und auch Elemente aus dem Körper mit Elementen aus dem Vektorraum, dass man aber nicht Elemente aus dem Vektorraum miteinander multiplizieren kann. Produkte der Form $v \cdot w$ mit $v,w \in V$ ergeben für einen $K$-Vektorraum $V$ im Allgemeinen also keinen Sinn.
+  \item
+   Aus den gegebenen Axiomen eines $K$-Vektorraums $V$ folgen noch weiter Rechenregeln, wie etwa die folgenden:
+   \begin{enumerate}[label=\alph*)]
+    \item
+     $0 \cdot x = 0$ für alle $x \in V$ (die $0$ auf der linken Seite ist die des Körpers, die $0$ auf der rechten Seite die des Vektorraums). Es ist nämlich
+     \[
+      0 \cdot x = (0+0) \cdot x = 0 \cdot x + 0 \cdot x,
+     \]
+     woraus sich die Aussage durch Subtraktion von $0 \cdot x$ von beiden Seiten ergibt.
+    \item
+     $(-1) \cdot v = -v$ für alle $v \in V$. Da nämlich
+     \[
+      v + (-1) \cdot v = 1 \cdot v + (-1) \cdot v = (1 + (-1)) \cdot v = 0 \cdot v = 0
+     \]
+     ist $(-1) \cdot v$ das additiv Inverse zu $v$.
+   \end{enumerate}
+ \end{enumerate}
+\end{bem}
+
+
+
+\begin{defi}
+ Eine Teilmenge $U \subseteq V$ eines $K$-Vektorraums $V$ heißt \emph{Untervektorraum} falls $U$ eine abelsche Untergruppe von $V$ ist, und $\lambda u \in U$ für alle $\lambda \in K$ und $u \in U$.
+\end{defi}
+
+
+\begin{defi}
+ Sind $V$ und $W$ zwei $K$-Vektorräume, so ist eine Abbildung $F \colon V \to W$ ein \emph{Vektorraumhomomorphismus}, bzw.\ \emph{linear}, falls
+ \begin{enumerate}[label=\roman*)]
+  \item
+   $F(v_1 + v_2) = F(v_1) + F(v_2)$ für alle $v_1, v_2 \in V$ und
+  \item
+   $F(\lambda v) = \lambda F(v)$ für alle $\lambda \in K$ und $v \in V$.
+ \end{enumerate}
+ Ist $F$ injektiv, so ist $F$ ein \emph{Vektorraummonomorphismus}. Ist $F$ surjektiv, so eist $F$ ein \emph{Vektorraumepimorphismus}. Ist $F$ bijektiv, so ist $F$ ein \emph{Vektorraumisomorphismus}. Ist $V = W$, so ist $F$ ein \emph{Vektorraumendomorphismus}. Ist $V = W$ und $F$ bijektiv, so ist $F$ ein \emph{Vektorraumautomorphismus}.
+\end{defi}
+
+
+\begin{bem}
+ \begin{enumerate}[leftmargin=*]
+  \item
+   Man spricht auch abkürzend nur von Homomorphismen, Monomorphismen, Epimorphismen, Isomorphismen, Endomorphismen und Automorphismen.
+  \item
+   Für jeden Vektorraum $V$ ist die Identität $\id_V \colon V \to V$ ein Automorphismus.
+  \item
+   Sind $V_1$, $V_2$ und $V_3$ $K$-Vektorräume und $f \colon V_1 \to _2$ und $g \colon V_2 \to V_3$ linear, so ist auch $g \circ f \colon V_1 \to V_3$ linear, da für alle $x,y \in V_1$
+   \begin{align*}
+    (g \circ f)(x+y)
+    = g(f(x+y))
+    &= g(f(x)+g(y)) \\
+    &= g(f(x)) + g(f(y))
+    = (g \circ f)(x) + (g \circ f)(y),
+   \end{align*}
+   und für alle $\lambda \in K$ und $v \in V$
+   \[
+    (g \circ f)(\lambda v)
+    = g(f(\lambda v))
+    = g(\lambda f(v))
+    = \lambda g(f(v))
+    = \lambda (g \circ f)(v).
+   \]
+ \end{enumerate}
+\end{bem}
+
+
+
+
+

@@ -7,89 +7,14 @@
 \subsection{Definition und Notationen}
 
 
-\begin{defi}
- Ein Körper ist ein Tupel $(K, +, \cdot)$ bestehend aus einer Menge $K$ und zwei binären Verknüpfungen $+ \colon K \times K \to K$, $(x,y) \mapsto x + y$ und $\cdot \colon K \to K$, $(x,y) \mapsto xy$, so dass die folgenden Bedingungen erfüllt sind:
- \begin{enumerate}[label=\roman*)]
-  \item
-   $(K,+)$ ist eine abelsche Gruppe.
-  \item
-   $(K \setminus \{0\},\cdot)$ ist eine abelsche Gruppe, wobei $0$ das neutrale Element der Addition bezeichnet. (Insbesondere ist für alle $x,y \in K\setminus\{0\}$ auch $x \cdot y \in K\setminus\{0\}$).
-  \item
-   Für alle $x,y,z \in K$ ist
-   \[
-    x \cdot (y+z) = (x \cdot y) + (x \cdot z)
-    \quad\text{und}\quad
-    (x+y) \cdot z = (x \cdot z) + (y \cdot z).
-   \]
- \end{enumerate}
-\end{defi}
 
 
-\begin{bem}
- \begin{enumerate}[leftmargin=*]
-  \item
-   Man bezeichnet einen Körper meistens nur mit $K$ statt mit $(K,+,\cdot)$, nennt also die Addition und Multiplikation nicht explizit. Das neutrale Element bezüglich der Addition wird mit $0$ bezeichnet, das neutrale Element der Multiplikation auf $K\setminus\{0\}$ also $1$.
-  \item
-   Man bezeichnet die Gruppe $(K,+)$ als die additive Gruppe von $K$. Man schreibt $K^\times \coloneqq K\setminus\{0\}$ und bezeichnet die Gruppe $(K^\times,\cdot)$ als die multiplikative Gruppe von $K$.
-  \item
-   In der Definition eines Körpers lässt sich der Begriff einer Gruppe umgehen, indem man die entsprechenden Aussagen alle explizit angibt: Ein Körper ist dann definiert als ein Tupel $(K,+,\cdot)$ bestehend aus einer Menge $K$ und zwei binären Verknüpfungen $+$ und $\cdot$ auf $K$, so dass die folgenden Bedingungen erfüllt sind:
-   \begin{enumerate}[label=\roman*)]
-    \item
-     $+$ ist assoziativ, d.h.\ $x+(y+z) = (x+y)+z$ für alle $x,y,z \in K$.
-    \item
-     $+$ ist kommutativ, d.h.\ $x+y = y+x$ für alle $x,y \in K$.
-    \item
-     Es gibt ein additiv neutrales Element $0 \in K$ mit $x + 0 = x$ für alle $x \in K$.
-    \item
-     Es gibt für jedes $x \in K$ ein additiv inverses Element $-x \in K$ mit $x+(-x) = 0$.
-    \item
-     $\cdot$ ist assoziativ, d.h.\ $x \cdot (y \cdot z) = (x \cdot y) \cdot z$ für alle $x,y,z \in K$.
-    \item
-     $\cdot$ ist kommutativ, d.h.\ für alle $x,y \in K$ ist $x \cdot y = y \cdot x$.
-    \item
-     Es gibt ein multiplikatives neutrales Element $1 \in K\setminus\{0\}$ mit $x \cdot 1 = x$ für alle $x \in K$
-    \item
-     Für jedes $x \in K\setminus\{0\}$ gibt es ein multiplikativ inverses Element $x^{-1} \in K\setminus\{0\}$ mit $x \cdot x^{-1} = 1$.
-    \item
-     $+$ ist distributiv bezüglich $\cdot$, d.h.\ $x \cdot (y+z) = (x \cdot y) + (x \cdot z)$ für alle $x,y,z \in K$.
-   \end{enumerate}
-  \item
-   Man rechnet „Punkt vor Strich“, d.h.\ für alle $x,y,z \in K$ ist
-   \[
-    x + y \cdot z \coloneqq x + (y \cdot z).
-   \]
-  \item
-   In einem Körper $K$ gelten die gewöhnlichen Rechenregeln. So ist beispiesweise für alle $x,y,z \in K$ mit $z \neq 0$
-   \begin{enumerate}[label=\alph*)]
-    \item $0 \cdot x = 0$,
-    \item $1 \cdot x = x$,
-    \item $-x = (-1) \cdot x$,
-    \item $(-z)^{-1} = -z^{-1}$
-    \item $(x+y)^2 = x^2 + 2xy + y^2$ und $(x+y)(x-y) = x^2 - y^2$.
-   \end{enumerate}
-  \item
-   Da $1 \in K^\times = K \setminus \{0\}$ ist $1 \neq 0$.
- \end{enumerate}
-\end{bem}
 
-
-\begin{defi}
- Es sei $L$ ein Körper. Eine Teilmenge $K \subseteq L$ heißt \emph{Unterkörper}, falls die folgenden Bedingungen erfüllt sind:
- \begin{enumerate}[label=\roman*)]
-  \item
-   $K$ ist eine Untergruppe der additiven Gruppe von $L$.
-  \item
-   $K\setminus\{0\}$ ist eine Untergruppe der multiplikativen Gruppe von $L$, d.h.\ von $L^\times$.
- \end{enumerate}
-\end{defi}
 
 
 \begin{bem}
  Ist $L$ ein Körper und $K \subseteq L$ ein Unterkörper, so ist $K$ zusammen mit der Addition und Multiplikation aus $L$ selber ebenfalls ein Körper.
 \end{bem}
-
-
-
 
 
 \subsection{Einige kleine Beispiele}
