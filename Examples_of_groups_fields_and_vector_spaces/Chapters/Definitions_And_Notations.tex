@@ -159,6 +159,12 @@
     &= \varphi^{-1}( \varphi( \varphi^{-1}(x) \cdot \varphi^{-1}(y) ) )
     = \varphi^{-1}(x) \cdot \varphi^{-1}(y).
    \end{align*}
+  \item
+   Sind $G_1$ und $G_2$ zwei Gruppen, $\varphi \colon G_1 \to G_2$ ein Gruppenhomomorphismus und $H \subseteq G_1$ eine Untergruppe, so ist auch die Einschränkung
+   \[
+    \varphi|_{H} \colon H \to G_2, h \mapsto \varphi(h)
+   \]
+   ein Gruppenhomomorphismus, denn ist $\varphi(xy) = \varphi(x)\varphi(y)$ für alle $x,y \in G_1$, so gilt dies insbesondere für alle $x,y \in H$.
  \end{enumerate}
 \end{bem}
 
@@ -392,9 +398,9 @@
    Aus den gegebenen Axiomen eines $K$-Vektorraums $V$ folgen noch weiter Rechenregeln, wie etwa die folgenden:
    \begin{enumerate}[label=\alph*)]
     \item
-     $0 \cdot x = 0$ für alle $x \in V$ (die $0$ auf der linken Seite ist die des Körpers, die $0$ auf der rechten Seite die des Vektorraums). Es ist nämlich
+     $0 \cdot v = 0$ für alle $v \in V$ (die $0$ auf der linken Seite ist die des Körpers, die $0$ auf der rechten Seite die des Vektorraums). Es ist nämlich
      \[
-      0 \cdot x = (0+0) \cdot x = 0 \cdot x + 0 \cdot x,
+      0 \cdot v = (0+0) \cdot v = 0 \cdot v + 0 \cdot v,
      \]
      woraus sich die Aussage durch Subtraktion von $0 \cdot x$ von beiden Seiten ergibt.
     \item
@@ -403,6 +409,15 @@
       v + (-1) \cdot v = 1 \cdot v + (-1) \cdot v = (1 + (-1)) \cdot v = 0 \cdot v = 0
      \]
      ist $(-1) \cdot v$ das additiv Inverse zu $v$.
+    \item
+     Allgemeiner gilt $(-\lambda) \cdot v = -(\lambda \cdot v)$ für alle $\lambda \in K$ und $v \in V$. Der Beweis verläuft analog zum Fall $\lambda = 1$: Es ist
+     \[
+      \lambda \cdot v + (-\lambda) \cdot v
+      = (\lambda + (-\lambda)) \cdot v
+      = 0 \cdot v
+      = 0,
+     \]
+     also ist $(-\lambda) \cdot v$ das additiv Inverse zu $\lambda \cdot v$.
    \end{enumerate}
  \end{enumerate}
 \end{bem}
@@ -414,15 +429,25 @@
 \end{defi}
 
 
+\begin{bem}
+ \begin{enumerate}[leftmargin=*]
+  \item
+   Für einen $K$-Vektorraum $V$ und Untervektorraum $U \subseteq V$ ist $(U,K,\cdot)$ ebenfalls ein $K$-Vektorraum. Da $U$ eine additive Untergruppe von $V$ ist, stimmt das Nullelement in $U$ mit dem in $V$ überein, und für jedes $u \in U$ stimmt das additiv Inverse Element in $U$ mit dem in $V$ überein.
+  \item
+   Ist $W$ ein $K$-Vektorraum, $V \subseteq W$ ein Untervektorraum und $U \subseteq V$ ein Untervektorraum (also $U$ ein Untervektorraum von $V$), so ist auch $U \subseteq W$ ein Untervektorraum.
+ \end{enumerate}
+\end{bem}
+
+
 \begin{defi}
- Sind $V$ und $W$ zwei $K$-Vektorräume, so ist eine Abbildung $F \colon V \to W$ ein \emph{Vektorraumhomomorphismus}, bzw.\ \emph{linear}, falls
+ Sind $V$ und $W$ zwei $K$-Vektorräume, so ist eine Abbildung $f \colon V \to W$ ein \emph{Vektorraumhomomorphismus}, bzw.\ \emph{linear}, falls
  \begin{enumerate}[label=\roman*)]
   \item
-   $F(v_1 + v_2) = F(v_1) + F(v_2)$ für alle $v_1, v_2 \in V$ und
+   $f(v_1 + v_2) = f(v_1) + f(v_2)$ für alle $v_1, v_2 \in V$ und
   \item
-   $F(\lambda v) = \lambda F(v)$ für alle $\lambda \in K$ und $v \in V$.
+   $f(\lambda v) = \lambda f(v)$ für alle $\lambda \in K$ und $v \in V$.
  \end{enumerate}
- Ist $F$ injektiv, so ist $F$ ein \emph{Vektorraummonomorphismus}. Ist $F$ surjektiv, so eist $F$ ein \emph{Vektorraumepimorphismus}. Ist $F$ bijektiv, so ist $F$ ein \emph{Vektorraumisomorphismus}. Ist $V = W$, so ist $F$ ein \emph{Vektorraumendomorphismus}. Ist $V = W$ und $F$ bijektiv, so ist $F$ ein \emph{Vektorraumautomorphismus}.
+ Ist $f$ injektiv, so ist $f$ ein \emph{Vektorraummonomorphismus}. Ist $f$ surjektiv, so eist $f$ ein \emph{Vektorraumepimorphismus}. Ist $f$ bijektiv, so ist $f$ ein \emph{Vektorraumisomorphismus}. Ist $V = W$, so ist $f$ ein \emph{Vektorraumendomorphismus}. Ist $V = W$ und $f$ bijektiv, so ist $f$ ein \emph{Vektorraumautomorphismus}.
 \end{defi}
 
 
@@ -433,7 +458,7 @@
   \item
    Für jeden Vektorraum $V$ ist die Identität $\id_V \colon V \to V$ ein Automorphismus.
   \item
-   Sind $V_1$, $V_2$ und $V_3$ $K$-Vektorräume und $f \colon V_1 \to _2$ und $g \colon V_2 \to V_3$ linear, so ist auch $g \circ f \colon V_1 \to V_3$ linear, da für alle $x,y \in V_1$
+   Sind $V_1$, $V_2$ und $V_3$ $K$-Vektorräume und $f \colon V_1 \to V_2$ und $g \colon V_2 \to V_3$ linear, so ist auch $g \circ f \colon V_1 \to V_3$ linear, da für alle $x,y \in V_1$
    \begin{align*}
     (g \circ f)(x+y)
     = g(f(x+y))
@@ -449,8 +474,107 @@
     = \lambda g(f(v))
     = \lambda (g \circ f)(v).
    \]
+  \item
+   Sind $V$ und $W$ $K$-Vektorräume und ist $f \colon V \to W$ ein Isomorphismus, so ist auch $f^{-1} \colon W \to V$ ein Isomorphismus: $f^{-1}$ ist bijektiv, für alle $x,y \in W$ ist
+   \begin{align*}
+    f^{-1}(x+y)
+    &= f^{-1}( f(f^{-1}(x)) + f(f^{-1}(y)) ) \\
+    &= f^{-1}(f( f^{-1}(x) + f^{-1}(y) )
+    = f^{-1}(x) + f^{-1}(y)
+   \end{align*}
+   und für alle $\lambda \in K$ und $x \in W$ ist
+   \[
+    f^{-1}(\lambda x)
+    = f^{-1}(\lambda f(f^{-1}(x)) )
+    = f^{-1}(f( \lambda f^{-1}(x)))
+    = \lambda f^{-1}(x).
+   \]
  \end{enumerate}
 \end{bem}
+
+
+
+
+
+\subsection{Mengentheoretische Notationen}
+
+
+\begin{defi}
+ Es sei $I$ eine Indexmenge und für jedes $i \in I$ sei $A_i$ eine Menge. Dann ist die \emph{Vereinigung} $\bigcup_{i \in I} A_i$ definiert als
+ \[
+  \bigcup_{i \in I} A_i
+  = \{x \mid \text{es gibt ein $i \in I$ mit $x \in A_i$}\}.
+ \]
+ Der \emph{Schnitt} $\bigcap_{i \in I} A_i$ ist definiert als
+ \[
+  \bigcap_{i \in I} A_i
+  = \{x \mid \text{für alle $i \in I$ ist $x \in A_i$}\}.
+ \]
+ 
+ Für Mengen $A_1, \dotsc, A_n$ ist
+ \[
+  A_1 \cup \dotsb \cup A_n \coloneqq \bigcup_{i \in \{1, \dotsb, n\}} A_i.
+  \quad\text{und}\quad
+  A_1 \cap \dotsb \cap A_n \coloneqq \bigcap_{i \in \{1, \dotsb, n\}} A_i.
+ \]
+\end{defi}
+
+
+Für Mengen $A_1, \dotsc, A_n$ wird das Produkt $A_1 \times \dotsb \times A_n$ für gewöhnlich als
+\[
+ A_1 \times \dotsb \times A_n
+ = \{(a_1, \dotsc a_n) \mid a_1 \in A_1, \dotsc a_n, \in A_n\}
+\]
+definiert, wobei $(a_1, \dotsb, a_n)$ ein geordnetes Tupel ist. Für eine Menge $A$ und $n \in \Nbb$, $n \geq 1$ wird die Potenz $A^n$ dann als
+\[
+ A^n
+ \coloneqq \underbrace{A \times \dotsb \times A}_{\text{$n$ viele}}
+ = \{(a_1, \dotsc, a_n) \mid a_1, \dotsc, a_n \in A\}
+\]
+definiert. Wir geben hier eine formale Konstruktion von beliebig großen (bzw. mengen-großen) Produkten und Potenzen an.
+
+
+\begin{defi}
+ Es sei $I$ ein Indexmenge und für jedes $i \in I$ sei $A_i$ eine Menge. Dann ist das \emph{Produkt} $\prod_{i \in I} A_i$ definiert als
+ \[
+  \prod_{i \in I} A_i
+  = \left\{ f \colon I \to \bigcup_{i \in I} A_i \,\middle|\, \text{$f(i) \in A_i$ für alle $i \in I$} \right\}
+ \]
+ und ein Element $f \in \prod_{i \in I} A_i$ wird als \emph{Tupel} $(f(i))_{i \in I}$ geschrieben. Für eine Menge $A$ und Indexmenge $I$ ist die \emph{Potenz} $A^I$ definiert als
+ \[
+  A^I
+  \coloneqq \prod_{i \in I} A
+  = \{f \colon I \to A\}.
+ \]
+
+\end{defi}
+
+
+\begin{bem}
+ \begin{enumerate}[leftmargin=*]
+  \item
+   Mithilfe der Tupelschreibweise ist
+   \begin{gather*}
+    \prod_{i \in I} A_i = \{(f(i))_{i \in I} \mid \text{$f(i) \in A_i$ für alle $i \in I$}\}
+   \shortintertext{sowie}
+    A^I = \{(f(i))_{i \in I} \mid \text{$f(i) \in A$ für alle $i \in I$}\}.
+   \end{gather*}
+   Schreibt man zusätzlich $f_i$ statt $f(i)$ (wie man es etwa von Folgen gewöhnt ist), so ist
+   \begin{gather*}
+    \prod_{i \in I} A_i = \{(f_i)_{i \in I} \mid \text{$f_i \in A_i$ für alle $i \in I$}\}
+   \shortintertext{und}
+    A^I = \{(f_i)_{i \in I} \mid \text{$f_i \in A$ für alle $i \in I$}\}.
+   \end{gather*}
+  \item
+   Schreiben wir im Folgenden $\prod_{i \in I} A_i$ oder $A^I$, so verstehen wir dies immer als Menge von Tupeln. Die obige Definition von Tupeln als Funktionen dient für uns nur als mengentheoretische Implementation des Ganzen.
+  \item
+   Möchten wir tatsälich die Menge der Funktionen zwischen zwei Mengen $X$ und $Y$ betrachten, so schreiben wir hierfür im Folgenden
+   \[
+    \Abb(X,Y) \coloneqq \{f \colon X \to Y\}.
+   \]
+ \end{enumerate}
+\end{bem}
+
 
 
 

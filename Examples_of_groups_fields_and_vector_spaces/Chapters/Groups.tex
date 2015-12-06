@@ -4,55 +4,279 @@
 
 
 
-\subsection{Verschiedene kleine Beispiele}
+\subsection{Verschiedene kleinere Beispiele}
+
+
+
+
+
 \begin{enumerate}[leftmargin=*]
  \item
-  Die reellen Zahlen $\Rbb$ bilden zusammen mit der üblichen Addition $+$ eine abelsche Gruppe: Die Assoziativität und Kommutativität der Addition sind bekannt. $0 \in \Rbb$ ist das neutrale Element bezüglich der Addition und für $x \in \Rbb$ ist $-x \in \Rbb$ das inverse Element, da $x + (-x) = (-x) + x = 0$.
+  Ist $G = \{x\}$ eine einelementige Menge, so gibt es auf $G$ eine eindeutige Gruppenstruktur, gegeben durch $x \cdot x = x$. Man bezeichnet diese als die \emph{triviale Gruppe}.
+ \item
+  Ist $G$ eine Gruppe, so ist $\{1\} \subseteq G$ eine Untergruppe. Man bezeichnet diese als die \emph{triviale Untergruppe}.
+ \item
+  Die reellen Zahlen $\Rbb$ bilden zusammen mit der üblichen Addition $+$ eine abelsche Gruppe: Die Assoziativität und Kommutativität der Addition sind bekannt. $0 \in \Rbb$ ist das neutrale Element bezüglich der Addition, da $x + 0 = 0 + x = x$ für alle $x \in \Rbb$. Für $x \in \Rbb$ ist $-x \in \Rbb$ das inverse Element, da $x + (-x) = (-x) + x = 0$.
  \item
   Nach analoger Argumentation bilden die ganzen Zahlen $\Zbb$, die rationalen Zahlen $\Qbb$ und die komplexen Zahlen $\Cbb$ zusammen mit der gewöhnlichen Addition $+$ jeweils eine abelsche Gruppe. Wir erhalten eine Kette von Untergruppen $\Zbb \subseteq \Qbb \subseteq \Rbb \subseteq \Cbb$.
  \item
   Die natürlichen Zahlen $\Nbb$ bilden zusammen mit der üblichen Addition keine Gruppe: Andernfalls wäre $0 \in \Nbb$ das neutrale Element, da $0+n = n+0 = n$ für alle $n \in \Nbb$. Da es aber kein $n \in \Nbb$ mit $n+1 = 0$ gibt, besäße $1 \in \Nbb$ dann kein inverses Element.
  \item
-  Die Menge $\Rbb^\times \coloneqq \Rbb \setminus \{0\}$ bildet zusammen mit der üblichen Multiplikation $\cdot$ eine abelsche Gruppe: Die Assoziativität und Kommutativität der Multiplikation sind bekannt. $1 \in \Rbb^\times$ ist das neutrale Element bezüglich der Multiplikation und für $x \in \Rbb^\times$ ist $1/x \in \Rbb^\times$ das multiplikativ Inverse, da $x \cdot (1/x) = (1/x) \cdot x = 1$.
+  Die Menge $\Rbb^\times = \Rbb \setminus \{0\}$ bildet zusammen mit der üblichen Multiplikation $\cdot$ eine abelsche Gruppe: Die Assoziativität und Kommutativität der Multiplikation sind bekannt. $1 \in \Rbb^\times$ ist das neutrale Element bezüglich der Multiplikation, da $1 \cdot x = x \cdot 1 = x$ für alle $x \in \Rbb^\times$. Für $x \in \Rbb^\times$ ist $1/x \in \Rbb^\times$ das multiplikativ Inverse, da $x \cdot (1/x) = (1/x) \cdot x = 1$.
  \item
-  Analog ergibt sich, dass $\Qbb^\times \coloneqq \Qbb \setminus \{0\}$ und $\Cbb^\times \coloneqq \Cbb \setminus \{0\}$ zusammen mit der üblichen Multiplikation abelsche Gruppen bilden. Wir erhalten somit eine Kette von Untergruppen $\Qbb^\times \subseteq \Rbb^\times \subseteq \Cbb^\times$.
+  Analog ergibt sich, dass $\Qbb^\times = \Qbb \setminus \{0\}$ und $\Cbb^\times = \Cbb \setminus \{0\}$ zusammen mit der üblichen Multiplikation abelsche Gruppen bilden. Wir erhalten somit eine Kette von Untergruppen $\Qbb^\times \subseteq \Rbb^\times \subseteq \Cbb^\times$.
  \item
-  Die ganzen Zahlen $\Zbb$ bilden zusammen mit der üblichen Multiplikation keine Gruppe: Da $1 \cdot n = n$ für alle $n \in \Zbb$ wäre $1$ das neutrale Element bezüglich der Multiplikation. Da es aber kein $n \in \Zbb$ mit $n \cdot 2 = 1$ gibt, besäße $2 \in \Zbb$ kein multiplikativ Inverses Element.
+  Die ganzen Zahlen $\Zbb$ bilden zusammen mit der üblichen Multiplikation keine Gruppe: Da $1 \cdot n = n \cdot 1 = n$ für alle $n \in \Zbb$ wäre $1$ das neutrale Element bezüglich der Multiplikation. Da es aber kein $n \in \Zbb$ mit $n \cdot 2 = 1$ gibt, besäße $2 \in \Zbb$ kein multiplikativ inverses Element.
  \item
-  Es sei $k$ ein Körper. Dann ist $k$ bezüglich der Addition eine abelsche Gruppe und $k^\times \coloneqq k \setminus \{0\}$ zusammen mit der Multiplikation eine Gruppe.
+  Ist $K$ ein Körper, so ist $K$ bezüglich der Addition eine abelsche Gruppe und $K^\times = K \setminus \{0\}$ zusammen mit der Multiplikation eine abelsche Gruppe.
  \item
-  Es sei $\Rbb_+ \coloneqq \{x \in \Rbb \mid x > 0\} \subseteq \Rbb^\times$ die Menge der positiven reellen Zahlen. $\Rbb_+$ ist nicht leer, für alle $x,y \in \Rbb_+$ ist auch $x \cdot y \in \Rbb_+$ und für jedes $x \in \Rbb_+$ ist auch $1/x \in \Rbb_+$. Also ist $\Rbb_+ \subseteq \Rbb^\times$ eine Untergruppe. Insbesondere ist also $\Rbb_+$ zusammen mit der üblichen Multiplikation eine abelsche Gruppe.
+  Es sei $\Rbb_+ \coloneqq \{x \in \Rbb \mid x > 0\} \subseteq \Rbb^\times$ die Menge der positiven reellen Zahlen. Es ist $1 \in \Rbb_+$, für alle $x,y \in \Rbb_+$ ist auch $x \cdot y \in \Rbb_+$, und für jedes $x \in \Rbb_+$ ist auch $1/x \in \Rbb_+$. Also ist $\Rbb_+ \subseteq \Rbb^\times$ eine Untergruppe. Insbesondere ist also $\Rbb_+$ zusammen mit der üblichen Multiplikation eine abelsche Gruppe.
  \item
-  Die Menge der negativen reellen Zahlen $\Rbb_- \coloneqq \{x \in \Rbb \mid x < 0\}$ ist zusammen mit der üblichen Multiplikation keine Gruppe, da $-1 \in \Rbb_-$ aber $(-1) \cdot (-1) = 1 \notin \Rbb_-$.
+  Die Menge der negativen reellen Zahlen $\Rbb_- \coloneqq \{x \in \Rbb \mid x < 0\}$ ist zusammen mit der üblichen Multiplikation keine Gruppe, da zwa, $-1 \in \Rbb_-$, aber $(-1) \cdot (-1) = 1 \notin \Rbb_-$.
  \item
   Für $x,y \in \Rbb_-$ sei $x * y \coloneqq -xy$. Wir zeigen, dass $\Rbb_-$ zusammen mit $*$ eine abelsche Gruppe bildet:
   
   Für $x,y \in \Rbb_-$ ist $x,y < 0$, also $xy > 0$ und somit $-xy < 0$. Also ist die Verknüpfung $\Rbb_- \times \Rbb_- \to \Rbb_-$, $(x,y) \mapsto x*y$ wohldefiniert.
   
   Für alle $x,y,z \in \Rbb_-$ ist
-  \[
-   (x * y) * z = (-xy) * z = -((-xy)z) = xyz = -(x(-yz)) = x * (-yz) = x * (y * z),
-  \]
+  \begin{align*}
+   (x * y) * z
+   &= (-xy) * z
+   = -((-xy)z) \\
+   &= xyz
+   = -(x(-yz))
+   = x * (-yz)
+   = x * (y * z),
+  \end{align*}
   also ist $*$ assoziativ. Für alle $x,y \in \Rbb_-$ ist
   \[
    x * y = -xy = -yx = y * x
   \]
   also ist $*$ kommutativ. Für alle $x \in \Rbb_-$ ist $(-1) * x = -((-1)x) = x$, also ist $-1$ ein neutrales Element bezüglich $*$. Für $x \in \Rbb_-$ ist $x * (1/x) = -(x \cdot (1/x)) = -1$, also ist $1/x$ bezüglich $*$ invers zu $x$.
+  
+  Ingesamt zeigt dies, dass $(\Rbb_-, *)$ eine abelsche Gruppe ist.
  \item
-  Für alle $n \in \Nbb$, $n \geq 1$ ist $\Rbb^n = \{(x_1, \dotsc, x_n) \mid x_1, \dotsc, x_n \in \Rbb\}$ zusammen mit der eintragsweisen Addition
+  Für alle $n \in \Nbb$, $n \geq 1$ ist $\Rbb^n = \{(x_1, \dotsc, x_n) \mid x_1, \dotsc, x_n \in \Rbb\}$ zusammen mit der \emph{eintragsweisen Addition}
   \[
    (x_1, \dotsc, x_n) + (y_1, \dotsc, y_n)
    = (x_1 + y_1, \dotsc, x_n + y_n)
   \]
-  eine abelsche Gruppe. Das neutrale Element ist $(0, \dotsc, 0)$ und das inverse Element zu $(x_1, \dotsc, x_n) \in \Rbb^n$ ist $(-x_1, \dotsc, -x_n)$.
- \item
-  Analog ergibt sich, dass $\Zbb^n$, $\Qbb^n$ und $\Cbb^n$ zusammen mit der eintragsweisen Addition Gruppen bilden. Es ergibt sich damit eine Kette von Untergruppen $\Zbb^n \subseteq \Qbb^n \subseteq \Rbb^n \subseteq \Cbb^n$.
+  eine abelsche Gruppe:
   
-  Ist $k$ ein Körper, so ist $k^n$ zusammen mit der eintragsweisen Addition eine Gruppe.
+  Für alle $(x_1, \dotsc, x_n), (y_1, \dotsc, y_n), (z_1, \dotsc, z_n) \in \Rbb^n$ ist
+  \begin{align*}
+    &\, (x_1, \dotsc, x_n) + ( (y_1, \dotsc, y_n) + (z_1, \dotsc, z_n) ) \\
+   =&\, (x_1, \dotsc, x_n) + (y_1 + z_1, \dotsc, y_n + z_n) \\
+   =&\, (x_1 + y_1 + z_1, \dotsc, x_n + y_n + z_n) \\
+   =&\, (x_1 + y_1, \dotsc, x_n + y_n) + (z_1, \dotsc, z_n) \\
+   =&\, ( (x_1, \dotsc, x_n) + (y_1, \dotsc, y_n) ) + (z_1, \dotsc, z_n),
+  \end{align*}
+  also ist die Addition assoziativ.
+  
+  Für alle $(x_1, \dotsc, x_n), (y_1, \dotsc, y_n) \in \Rbb^n$ ist
+  \begin{align*}
+   (x_1, \dotsc, y_n) + (y_1, \dotsc, y_n)
+   &= (x_1 + y_1, \dotsc, x_n + y_n) \\
+   &= (y_1 + x_1, \dotsc, y_n + x_n)
+   = (y_1, \dotsc, y_n) + (x_1, \dotsc, x_n),
+  \end{align*}
+  also ist die Addition tatsächlich kommutativ.
+  
+  Für jedes $(x_1, \dotsc, x_n) \in \Rbb^n$ ist
+  \[
+   (0, \dotsc, 0) + (x_1, \dotsc, x_n)
+   = (0 + x_1, \dotsc, 0 + x_n)
+   = (x_1, \dotsc, x_n),
+  \]
+  also ist $(0, \dotsc, 0) \in \Rbb^n$ neutral bezüglich der Addition.
+  
+  Für jedes $(x_1, \dotsc, x_n) \in \Rbb^n$ ist
+  \[
+   (-x_1, \dotsc, -x_n) + (x_1, \dotsc, x_n)
+   = (-x_1 + x_1, \dotsc, -x_n + x_n)
+   = (0, \dotsc, 0),
+  \]
+  also ist $(-x_1, \dotsc, -x_n)$ invers zu $(x_1, \dotsc, x_n)$ bezüglich der Addition.
+  
+  Ingesamt zeigt dies, dass $(\Rbb^n, +)$ eine abelsche Gruppe ist.
+ \item
+  Analog ergibt sich, dass $\Zbb^n$, $\Qbb^n$ und $\Cbb^n$ zusammen mit der eintragsweisen Addition jeweils Gruppen bilden. Es ergibt sich damit eine Kette von Untergruppen $\Zbb^n \subseteq \Qbb^n \subseteq \Rbb^n \subseteq \Cbb^n$.
+ \item
+  Ist allgemeiner $K$ ein Körper, so ist $K^n$ mit der eintragsweisen Addition ein Körper.
 \end{enumerate}
 
 
-\subsection{Der Einheitskreis \texorpdfstring{$S^1$}{S1}}
+
+\subsection{Untergruppen bezüglich Gruppenhomomorphismen}
+Es seien $G_1$ und $G_2$ Gruppen und es sei $\varphi \colon G_1 \to G_2$ ein Gruppenhomomorphismus.
+
+
+
+\subsubsection{Der Kern eines Gruppenhomomorphismus}
+Wir zeigen, dass der \emph{Kern} von $f$
+\[
+ \ker(\varphi) \coloneqq \{g \in G_1 \mid \varphi(g) = 1\}
+\]
+eine Untergruppe von $G_1$ ist: Da $\varphi(1) = 1$ ist $1 \in \ker(\varphi)$. Sind $x,y \in \ker(\varphi)$, so ist $\varphi(x) = \varphi(y) = 1$ und deshalb
+\[
+ \varphi(x \cdot y)
+ = \varphi(x) \cdot \varphi(y)
+ = 1 \cdot 1
+ = 1,
+\]
+also auch $x \cdot y \in \ker(\varphi)$. Ist $x \in \ker(\varphi)$, so ist $\varphi(x) = 1$ und deshalb
+\[
+ \varphi(x^{-1})
+ = \varphi(x)^{-1}
+ = 1^{-1}
+ = 1,
+\]
+also auch $x^{-1} \in \ker(\varphi)$. Ingesamt zeigt dies, dass $\ker(\varphi)$ eine Untergruppe von $G_1$ ist.
+
+
+\begin{bem}
+ Es gilt, dass $\varphi$ genau dann injektiv ist, falls $\ker(\varphi) = \{1\}$, falls also der Kern möglichst klein ist:
+ 
+ Ist $\varphi$ injektiv und $x \in \ker(\varphi)$ so ist $\varphi(x) = 1 = \varphi(1)$, wegen der Injektivität von $\varphi$ also $x = 1$. Somit ist dann $\ker(\varphi) = \{1\}$.
+ 
+ Ist $\ker(\varphi) = \{1\}$ und sind $x,y \in G_1$ mit $\varphi(x) = \varphi(y)$, so ist
+ \[
+  \varphi(x\cdot y^{-1})
+  = \varphi(x)\cdot \varphi(y^{-1})
+  = \varphi(x) \cdot \varphi(y)^{-1}
+  = \varphi(x) \cdot \varphi(x)^{-1}
+  = 1,
+ \]
+ und deshalb $x \cdot y^{-1} \in \ker(\varphi) = \{1\}$. Da $x \cdot y^{-1} = 1$ ergibt sich durch Multiplikation mit $y$ von rechts, dass $x = y$. Also ist $\varphi$ injektiv.
+\end{bem}
+
+
+
+\subsubsection{Das Bild eines Gruppenhomomorphismus}
+Wir zeigen, dass das Bild
+\[
+ \im(\varphi) = \varphi(G_1) = \{\varphi(g) \mid g \in G_1\}
+\]
+eine Untergruppe von $G_2$ ist: Da $1 = \varphi(1)$ ist $1 \in \im(\varphi)$. Sind $x,y \in \im(\varphi)$, so gibt es $x', y' \in G_1$ mit $\varphi(x') = x$ und $\varphi(y') = y$. Damit ist
+\[
+ x \cdot y
+ = \varphi(x') \cdot \varphi(y')
+ = \varphi(x' \cdot y'),
+\]
+also auch $x \cdot y \in \im(\varphi)$. Ist $x \in \im(\varphi)$, so gibt es $x' \in G_1$ mit $\varphi(x') = x$. Da damit
+\[
+ x^{-1}
+ = \varphi(x')^{-1}
+ = \varphi((x')^{-1})
+\]
+ist auch $x^{-1} \in \im(\varphi)$. Ingesamt zeigt dies, dass $\im(\varphi)$ ein Untergruppe von $G_2$ ist.
+
+
+
+\subsubsection{Bilder von Untergruppen}
+Es sei $H \subseteq G_1$ eine Untergruppe. Wir zeigen, dass das Bild von $H$ unter $\varphi$
+\[
+ \varphi(H) = \{\varphi(h) \mid h \in H\}
+\]
+eine Untergruppe von $G_2$ ist: Da $1 \in H$ ist $1 = \varphi(1) \in G_2$. Sind $x,y \in \varphi(H)$ so gibt es $x', y' \in G_1$ mit $\varphi(x') = x$ und $\varphi(y') = y$. Da $H$ ein Untergruppe ist, ist auch $x' \cdot y' \in H$. Da außerdem
+\[
+ x \cdot y
+ = \varphi(x') \cdot \varphi(y')
+ = \varphi(x' \cdot y')
+\]
+ist dann auch $x \cdot y \in \varphi(H)$. Ist $x \in \varphi(H)$, so gibt es $x' \in H$ mit $\varphi(x') = x$. Da $H$ eine Untergrupppe ist, ist auch $(x')^{-1} \in H$. Da außerdem
+\[
+ x^{-1}
+ = \varphi(x')^{-1}
+ = \varphi((x')^{-1})
+\]
+ist dann auch $x^{-1} \in \varphi(H)$. Ingesamt zeigt dies, dass $\varphi(H)$ eine Untergruppe von $G_2$ ist.
+
+
+\begin{bem}
+ Es fällt auf, dass der Beweis, dass $\varphi(H)$ ein Untergruppe ist, analog zu dem Beweis verläuft, dass $\im(\varphi)$ eine Untegruppe ist. Dies ist kein Zufall: Da $\varphi$ ein Gruppenhomomorphismus ist, ist auch die Einschränkung $\varphi|_H \colon H \to G_2$ ein Gruppenhomomorphismus. Daraus folgt direkt, dass $\varphi(H) = \im(\varphi|_H)$ eine Untergruppe von $G_2$ ist.
+\end{bem}
+
+
+
+\subsubsection{Urbilder von Untergruppen}
+Es sei $H \subseteq G_2$ eine Untergruppe. Wir zeigen, dass das Urbild
+\[
+ \varphi^{-1}(H) = \{x \in G_1 \mid \varphi(x) \in H\}
+\]
+eine Untergruppe von $G_1$ ist: Da $H$ eine Untergruppe ist, ist $\varphi(1) = 1 \in H$. Also ist $1 \in \varphi^{-1}(H)$. Sind $x,y \in \varphi^{-1}(H)$, so ist $\varphi(x), \varphi(y) \in H$. Da $H$ eine Untergruppe ist, ist damit auch $\varphi(xy) = \varphi(x)\varphi(y) \in H$, also $xy \in \varphi^{-1}(H)$. Ist $x \in \varphi^{-1}(H)$, so ist $\varphi(x) \in H$. Da $H$ eine Untergruppe ist, ist damit auch $\varphi(x^{-1}) = \varphi(x)^{-1} \in H$, also $x^{-1} \in \varphi^{-1}(H)$. Insgesamt zeigt dies, dass $\varphi^{-1}(H)$ eine Untergruppe von $G_1$ ist.
+
+
+\begin{bem}
+ Indem man $H = \{1\}$ wählt, erhält man auch so einen neuen Beweis, dass
+ \[
+  \varphi^{-1}(H)
+  = \varphi^{-1}(\{1\})
+  = \{x \in G_1 \mid \varphi(x) \in \{1\}\}
+  = \{x \in G_1 \mid \varphi(x) = 1\}
+  = \ker(\varphi)
+ \]
+ eine Untergruppe von $G_1$ ist.
+\end{bem}
+
+
+
+
+
+\subsection{Schnitte und Vereinigungen von Untergruppen}
+Es sei $G$ eine Gruppe.
+
+
+\subsubsection{Schnitte von Untergruppen}
+Es sei $I$ eine Indexmenge und für jedes $i \in I$ sei $H_i \subseteq G$ eine Untergruppe. Wir zeigen, dass dann auch $\bigcap_{i \in I} H_i \subseteq G$ eine Untergruppe ist:
+
+Da $H_i$ für jedes $i \in I$ eine UNtergruppe ist, ist $1 \in H_i$ für jedes $i \in I$, und somit $1 \in \bigcap_{i \in I} H_i$.
+
+Sind $x,y \in \bigcap_{i \in I} H_i$, so ist $x,y \in H_i$ für jedes $i \in I$. Damit ist auch $x \cdot y \in H_i$ für alle $i \in I$, da $H_i$ für jedes $i \in I$ eine Untergruppe ist. Also ist auch $x \cdot y \in \bigcap_{i \in I} H_i$.
+
+Ist $x \in \bigcap_{i \in I} H_i$, so ist $x \in H_i$ für alle $i \in I$. Da $H_i$ für alle $i \in I$ eine Untergruppe ist, ist damit auch $x^{-1} \in H_i$ für jedes $i \in I$. Also ist auch $x^{-1} \in \bigcap_{i \in I} H_i$.
+
+Insgesamt zeigt dies, dass auch $\bigcap_{i \in I} H_i$ eine Untergruppe von $G$ ist.
+
+
+\subsubsection{Vereinigung von Untergruppen}
+Vereinigungen von Untergruppen sind nicht notwendigerweise wieder Untergruppen: Wir zeigen, dass für zwei Untergruppen $H_1, H_2 \subseteq G$ die Vereinigung $H_1 \cup H_2$ genau dann eine Untergruppe ist, wenn $H_1 \subseteq H_2$ oder $H_2 \subseteq H_1$:
+
+Ist $H_1 \subseteq H_2$ oder $H_2 \subseteq H_1$, so ist $H_1 \cup H_2 = H_2$ oder $H_1 \cup H_2 = H_1$, also $H_1 \cup H_2$ ebenfalls eine Untergruppe.
+
+Es sei andererseits $H_1 \cup H_2$ wieder eine Untergruppe. Angenommen, es ist weder $H_1 \subseteq H_2$ noch $H_2 \subseteq H_1$. Dann gibt es $h_1 \in H_1$ mit $h_1 \notin H_2$ und $h_2 \in H_2$ mit $h_2 \notin H_1$. Da $h_1, h_2 \in H_1 \cup H_2$, und $H_1 \cup H_2$ nach Annahme eine Untergruppe ist, ist auch $h_1 h_2 \in H_1 \cup H_2$. Also ist $h_1 h_2 \in H_1$ oder $h_1 h_2 \in H_2$.
+
+Ist $h_1 h_2 \in H_1$, so ist auch $h_2 = h_1^{-1} h_1 h_2 \in H_1$, was der Annahme $h_2 \notin H_1$ wiederspricht. Ist andererseits $h_1 h_2 \in H_2$, so ist $h_1 = h_1 h_2 h_2^{-1} \in H_2$, was der Annahme $h_1 \notin H_1 \cup H_2$.
+
+Dieser Widerspruch zeigt, dass bereits $H_1 \subseteq H_2$ oder $H_2 \subseteq H_1$ gelten muss, wenn die Vereinigung $H_1 \cup H_2$ ebenfalls eine Untergruppe ist.
+
+\begin{bsp}
+ Durch direktes Nachrechnen ergibt sich, dass sowohl $H_1 \coloneqq \{(x, 0) \mid x \in \Rbb\}$ als auch $H_2 \coloneqq \{(0,y) \mid y \in \Rbb\}$ je eine additive Untergruppe von $\Rbb^2$ ist. Da aber weder $H_1 \subseteq H_2$ noch $H_2 \subseteq H_1$, ist $H_1 \cup H_2$ keine Untergruppe von $\Rbb^2$.
+\end{bsp}
+
+
+\subsubsection{Aufsteigende Vereinigungen von Untergruppen}
+Für jedes $n \in \Nbb$ sei $H_n \subseteq G$ eine Untergruppe, so dass $H_n \subseteq H_m$ falls $n \leq m$, d.h.\ wir haben eine aufsteigende Kette
+\[
+ H_0 \subseteq H_1 \subseteq H_2 \subseteq H_3 \subseteq \dotsb \subseteq G
+\]
+von Untergruppen. Wir zeigen, dass dann die Vereinigung $\bigcup_{n \in \Nbb} H_n$ ebenfalls eine Untergruppe von $G$ ist:
+
+Es ist $1 \in H_0 \bigcup_{n \in \Nbb} H_n$, da $H_0$ eine Untergruppe ist. Ist $x \in \bigcup_{n \in \Nbb} H_n$, so gibt es ein $m \in \Nbb$ mit $x \in H_m$. Da $H_m$ eine Untergruppe ist, ist auch $x^{-1} \in H_m \subseteq \bigcup_{n \in \Nbb} H_n$.
+
+Für $x,y \in \bigcup_{n \in \Nbb} H_n$ gibt es $m_1, m_2 \in \Nbb$ mit $x \in H_{m_1}$ und $y \in H_{m_2}$. Da $m_1 \leq m_2$ oder $m_2 \leq m_1$ ist $H_{m_1} \subseteq H_{m_2}$ oder $H_{m_2} \subseteq H_{m_1}$. Wir betrachten o.B.d.A. den Fall, dass $m_1 \leq m_2$, also $H_{m_1} \subseteq H_{m_2}$. Da $x \in H_{m_1} \subseteq H_{m_2}$ und $y \in H_{m_2}$, und $H_{m_2}$ eine Untergruppe ist, ist auch $x \cdot y \in H_{m_2} \subseteq \bigcup_{n \in \Nbb} H_n$.
+
+Insgesamt zeigt dies, dass $\bigcup_{n \in \Nbb} H_n$ eine Untergruppe von $G$ ist.
+
+
+
+
+
+\subsection{Untergruppen von \texorpdfstring{$\Cbb^\times$}{Cx}}
+
+
+
+\subsubsection{Der Einheitskreis \texorpdfstring{$S^1$}{S1}}
 Der Betrag einer komplexen Zahl $z = x+iy \in \Cbb$ ist definiert als
 \[
  |z| \coloneqq \sqrt{x^2+y^2} = \sqrt{z \overline{z}}.
@@ -81,9 +305,7 @@ Das zeigt, dass $S^1$ ein Untergruppe von $\Cbb^\times$ ist.
 
 
 
-
-
-\subsection{\texorpdfstring{$n$}{n}-te Einheitswurzeln}
+\subsubsection{\texorpdfstring{$n$}{n}-te Einheitswurzeln}
 Es sei $k$ ein Körper und $n \in \Nbb$, $n \geq 1$. Ein Element $x \in k$ heißt \emph{$n$-te Einheitswurzel} falls $x^n = 1$. Wir zeigen, dass
 \[
  R_n(k) \coloneqq \{x \in k \mid x^n = 1\}
@@ -108,96 +330,90 @@ Für $k = \Rbb$ ist beispielsweise
 Für $k = \Cbb$ und $z \in R_n(\Cbb)$ ist $|z| \in \Rbb$ mit $|z| \geq 0$ und $|z|^n = |z^n| = |1| = 1$. Es muss also $|z| = 1$ und somit $z \in S^1$. Also ist $R_n(\Cbb)$ bereits eine Untergruppe von $S^1$.
 
 
-
-
-
-\subsection{Die Gruppen \texorpdfstring{$\Qbb[i]$}{Q[i]} und \texorpdfstring{$\Qbb[i]^\times$}{Q[i]x}}
-Es sei
-\begin{gather*}
- \Qbb[i]
- \coloneqq
- \{ q_1 + q_2 i \mid q_1, q_2 \in \Qbb \}
- \subseteq \Cbb
-\shortintertext{und}
- \Qbb[i]^\times \coloneqq
- \Qbb[i] \cap \Cbb^\times
- = \Qbb[i] \setminus \{0\}
- = \{ q_1 + q_2 i
-     \mid
-     \text{
-      $q_1, q_2 \in \Qbb$ mit $q_1 \neq 0$ oder $q_2 \neq 0$
-      }
-   \}
-\end{gather*}
-Man bezeichnet $\Qbb[i]$ als „$\Qbb$ adjungiert $i$“.
-
-Wir zeigen zunächst, dass $\Qbb[i]$ eine Untergruppe der additiven Gruppe von $\Cbb$ ist: Es ist $0 = 0 + 0 \cdot i \in \Qbb[i]$. Für $z,w \in \Qbb[i]$ ist $z = q_1 + q_2 i$ und $w = p_1 + p_2 i$ mit $q_1, q_2, p_1, p_2 \in \Qbb$. Daher ist
-\[
- z + w
- = (q_1 + q_2 i) + (p_1 + p_2 i)
- = (q_1 + p_1) + (q_2 + p_2) i
-\]
-mit $q_1 + p_1 \in \Qbb$ und $q_2 + p_2 \in \Qbb$, also $z+w \in \Qbb[i]$. Ist $z \in \Qbb$ so ist $z = q_1 + q_2 i$ mit $q_1, q_2 \in \Qbb$. Da damit
-\[
- -z = -(q_1 + q_2 i) = (-q_1) + (-q_2) i
-\]
-mit $-q_1, -q_2 \in \Qbb$ ist auch $-z \in \Qbb[i]$.
-
-Ingesamt zeigt dies, dass $\Qbb[i]$ eine Untergruppe von $\Cbb$ ist.
-
-Wir zeigen, dass $\Qbb[i]^\times$ eine Untergruppe von $\Cbb^\times$ ist:
-
-Dass $\Qbb[i]^\times \subseteq \Cbb^\times$ folgt direkt aus der Definition von $\Qbb[i]^\times$. Es ist auch $1 = 1 + 0 \cdot i \in \Qbb[i]^\times$. Sind $z, w \in \Qbb[i]^\times$ so gibt es $q_1, q_2, p_1, p_2 \in \Qbb$ mit $z = q_1 + i q_2$ und $w = p_1 + i p_2$. Es ist daher auch
-\[
- zw
- = (q_1 + iq_2)(p_1 + ip_2)
- = (q_1 p_1 - q_2 p_2) + i(q_1 p_2 + q_2 p_1)
- \in \Qbb[i].
-\]
-Da $z,w \in \Cbb^\times$ ist auch $zw \in \Cbb^\times$. Zusammengefasst ist daher $zw \in \Qbb[i] \cap \Cbb^\times = \Qbb[i]^\times$. Ist $z \in \Cbb[i]^\times$ so ist $z = q_1 + i q_2$ mit $q_1, q_2 \in \Qbb$ und $q_1 \neq 0$ oder $q_2 \neq 0$. Deshalb ist
-\[
- \frac{1}{z}
- = \frac{q_1 + i q_2}
- = \frac{q_1 - i q_2}{q_1^2 + q_2^2}
- = \frac{q_1}{q_1^2 + q_2^2} + i \frac{-q_2}{q_1^2+q_2^2}
-\]
-mit $q_1/(q_1^2+q_2^2), -q_2/(q_1^2+q_2^2) \in \Qbb$, also $z^{-1} \in \Qbb[i]$. Da außerdem $z^{-1} \in \Cbb^\times$ ist schon $z^{-1} \in \Qbb[i]^\times.$
-
-Ingesamt zeigt dies, dass $\Qbb[i]^\times$ eine Untergruppe von $\Cbb^\times$ ist.
-
-
-\begin{bem}
- Daraus $\Qbb[i]$ zusammen mit der Addition eine Gruppe ist und $\Qbb[i] \setminus \{0\} = \Qbb[i]^\times$ zusammen mit der Multiplikation eine Gruppe ist, folgt, dass $\Qbb[i]$ zusammen mit der Addition und Multiplikation bereits ein Körper ist. Die Distributivität folgt daraus, dass sie in $\Cbb$ gilt.
-\end{bem}
-
-
-
-
-
-\subsection{Die Gaußschen Zahlen}
-Die \emph{Gaußschen Zahlen} sind definiert als
-\[
- \Zbb[i] \coloneqq \{a + b i \mid a,b \in \Zbb\}.
-\]
-
-Wie bereits für $\Qbb[i]$ ergibt sich auch für $\Zbb[i]$, dass es sich um eine additive Untergruppe von $\Cbb$ handelt: Es ist $0 \in \Zbb[i]$. Für $z, w \in \Zbb[i]$ ist $z = a + bi$ und $w = c + di$ mit $a,b,c,d \in \Zbb$, weshalb
-\[
- z + w
- = (a + bi) + (c + di)
- = (a+c) + (b+d)i
-\]
-mit $a+c, b+d \in \Zbb$ und somit $z+w \in \Zbb[i]$. Für $z \in \Zbb[i]$ ist $z = a + bi$ mit $a,b \in \Zbb$, weshalb $-z = -(a+bi) = (-a) + (-b)i$ mit $-a, -b \in \Zbb$ und somit auch $-z \in \Zbb[i]$.
-
-
-\begin{bem}
- Im Gegensatz zu $\Qbb[i]^\times = \Qbb[i] \cap \Cbb^\times$ ist $\Zbb[i] \cap \Cbb^{\times}$ \emph{keine} Untergruppe von $\Cbb^\times$, da $2 \in \Zbb[i] \cap \Cbb^\times$ aber $1/2 \notin \Zbb[i]$ und somit auch nicht $1/2 \in \Zbb[i] \cap \Cbb^\times$.
-\end{bem}
+% \subsubsection{Die Gruppen \texorpdfstring{$\Qbb[i]$}{Q[i]} und \texorpdfstring{$\Qbb[i]^\times$}{Q[i]x}}
+% Es sei
+% \begin{gather*}
+%  \Qbb[i]
+%  \coloneqq
+%  \{ q_1 + q_2 i \mid q_1, q_2 \in \Qbb \}
+%  \subseteq \Cbb
+% \shortintertext{und}
+%  \Qbb[i]^\times \coloneqq
+%  \Qbb[i] \cap \Cbb^\times
+%  = \Qbb[i] \setminus \{0\}
+%  = \{ q_1 + q_2 i
+%      \mid
+%      \text{
+%       $q_1, q_2 \in \Qbb$ mit $q_1 \neq 0$ oder $q_2 \neq 0$
+%       }
+%    \}
+% \end{gather*}
+% Man bezeichnet $\Qbb[i]$ als „$\Qbb$ adjungiert $i$“.
+% 
+% Wir zeigen zunächst, dass $\Qbb[i]$ eine Untergruppe der additiven Gruppe von $\Cbb$ ist: Es ist $0 = 0 + 0 \cdot i \in \Qbb[i]$. Für $z,w \in \Qbb[i]$ ist $z = q_1 + q_2 i$ und $w = p_1 + p_2 i$ mit $q_1, q_2, p_1, p_2 \in \Qbb$. Daher ist
+% \[
+%  z + w
+%  = (q_1 + q_2 i) + (p_1 + p_2 i)
+%  = (q_1 + p_1) + (q_2 + p_2) i
+% \]
+% mit $q_1 + p_1 \in \Qbb$ und $q_2 + p_2 \in \Qbb$, also $z+w \in \Qbb[i]$. Ist $z \in \Qbb$ so ist $z = q_1 + q_2 i$ mit $q_1, q_2 \in \Qbb$. Da damit
+% \[
+%  -z = -(q_1 + q_2 i) = (-q_1) + (-q_2) i
+% \]
+% mit $-q_1, -q_2 \in \Qbb$ ist auch $-z \in \Qbb[i]$.
+% 
+% Ingesamt zeigt dies, dass $\Qbb[i]$ eine Untergruppe von $\Cbb$ ist.
+% 
+% Wir zeigen, dass $\Qbb[i]^\times$ eine Untergruppe von $\Cbb^\times$ ist:
+% 
+% Dass $\Qbb[i]^\times \subseteq \Cbb^\times$ folgt direkt aus der Definition von $\Qbb[i]^\times$. Es ist auch $1 = 1 + 0 \cdot i \in \Qbb[i]^\times$. Sind $z, w \in \Qbb[i]^\times$ so gibt es $q_1, q_2, p_1, p_2 \in \Qbb$ mit $z = q_1 + i q_2$ und $w = p_1 + i p_2$. Es ist daher auch
+% \[
+%  zw
+%  = (q_1 + iq_2)(p_1 + ip_2)
+%  = (q_1 p_1 - q_2 p_2) + i(q_1 p_2 + q_2 p_1)
+%  \in \Qbb[i].
+% \]
+% Da $z,w \in \Cbb^\times$ ist auch $zw \in \Cbb^\times$. Zusammengefasst ist daher $zw \in \Qbb[i] \cap \Cbb^\times = \Qbb[i]^\times$. Ist $z \in \Cbb[i]^\times$ so ist $z = q_1 + i q_2$ mit $q_1, q_2 \in \Qbb$ und $q_1 \neq 0$ oder $q_2 \neq 0$. Deshalb ist
+% \[
+%  \frac{1}{z}
+%  = \frac{q_1 + i q_2}
+%  = \frac{q_1 - i q_2}{q_1^2 + q_2^2}
+%  = \frac{q_1}{q_1^2 + q_2^2} + i \frac{-q_2}{q_1^2+q_2^2}
+% \]
+% mit $q_1/(q_1^2+q_2^2), -q_2/(q_1^2+q_2^2) \in \Qbb$, also $z^{-1} \in \Qbb[i]$. Da außerdem $z^{-1} \in \Cbb^\times$ ist schon $z^{-1} \in \Qbb[i]^\times.$
+% 
+% Ingesamt zeigt dies, dass $\Qbb[i]^\times$ eine Untergruppe von $\Cbb^\times$ ist.
+% 
+% 
+% \begin{bem}
+%  Daraus $\Qbb[i]$ zusammen mit der Addition eine Gruppe ist und $\Qbb[i] \setminus \{0\} = \Qbb[i]^\times$ zusammen mit der Multiplikation eine Gruppe ist, folgt, dass $\Qbb[i]$ zusammen mit der Addition und Multiplikation bereits ein Körper ist. Die Distributivität folgt daraus, dass sie in $\Cbb$ gilt.
+% \end{bem}
+% 
+% 
+% \subsubsection{Die Gaußschen Zahlen}
+% Die \emph{Gaußschen Zahlen} sind definiert als
+% \[
+%  \Zbb[i] \coloneqq \{a + b i \mid a,b \in \Zbb\}.
+% \]
+% 
+% Wie bereits für $\Qbb[i]$ ergibt sich auch für $\Zbb[i]$, dass es sich um eine additive Untergruppe von $\Cbb$ handelt: Es ist $0 \in \Zbb[i]$. Für $z, w \in \Zbb[i]$ ist $z = a + bi$ und $w = c + di$ mit $a,b,c,d \in \Zbb$, weshalb
+% \[
+%  z + w
+%  = (a + bi) + (c + di)
+%  = (a+c) + (b+d)i
+% \]
+% mit $a+c, b+d \in \Zbb$ und somit $z+w \in \Zbb[i]$. Für $z \in \Zbb[i]$ ist $z = a + bi$ mit $a,b \in \Zbb$, weshalb $-z = -(a+bi) = (-a) + (-b)i$ mit $-a, -b \in \Zbb$ und somit auch $-z \in \Zbb[i]$.
+% 
+% 
+% \begin{bem}
+%  Im Gegensatz zu $\Qbb[i]^\times = \Qbb[i] \cap \Cbb^\times$ ist $\Zbb[i] \cap \Cbb^{\times}$ \emph{keine} Untergruppe von $\Cbb^\times$, da $2 \in \Zbb[i] \cap \Cbb^\times$ aber $1/2 \notin \Zbb[i]$ und somit auch nicht $1/2 \in \Zbb[i] \cap \Cbb^\times$.
+% \end{bem}
 
 
 
 
 
-\subsection{Die symmetrische Gruppen \texorpdfstring{$S(X)$}{S(X)} und \texorpdfstring{$S_n$}{Sn}}
+\subsection{Die symmetrische Gruppen \texorpdfstring{$S(X)$}{S(X)} und \texorpdfstring{$S_n$}{Sn} und Untergruppen}
 Es sei $X$ eine beliebige Menge und $S(X) \coloneqq \{\sigma \colon X \to X \mid \text{$\sigma$ ist bijektiv}\}$. Für beliebige $\sigma_1, \sigma_2 \in S(X)$ ist auch $\sigma_1 \circ \sigma_2 \colon X \to X$ bijektiv, also $\sigma_1 \circ \sigma_2 \in S(X)$.
 
 Wir zeigen, dass $(S(X), \circ)$ eine Gruppe ist: Die Assoziativität von $\circ$ folgt direkt aus der allgemeinen Assoziativität der Funktionskomposition.
@@ -217,9 +433,7 @@ Für $n \in \Nbb$ schreibt man auch $S_n \coloneqq S(\{1, \dotsc, n\})$.
 
 
 
-
-
-\subsection{Normalisatoren \texorpdfstring{$N(Y)$}{N(Y)} und Zentralisatoren \texorpdfstring{$Z(Y)$}{Z(Y)}}
+\subsubsection{Normalisatoren \texorpdfstring{$N(Y)$}{N(Y)} und Zentralisatoren \texorpdfstring{$Z(Y)$}{Z(Y)}}
 Es sei $X$ eine Menge und $Y \subseteq X$ eine Teilmenge. Dann heißt
 \[
  N(Y) \coloneqq \{\sigma \in S(X) \mid \sigma(Y) = Y\}
@@ -290,7 +504,7 @@ also $\sigma \in N(Y)$. Wir haben also eine Kette von Untergruppen $Z(Y) \subset
 
 
 
-\subsection{Die allgemeine lineare Gruppe \texorpdfstring{$\GL_n(k)$}{GLnk}}
+\subsection{Die allgemeine lineare Gruppe \texorpdfstring{$\GL_n(k)$}{GLnk} und Untergruppen}
 Es sei $k$ ein Körper (etwa $k \in \{\Qbb, \Rbb, \Cbb\}$) und $n \in \Nbb$, $n \geq 1$.
 
 \begin{defi}
@@ -321,9 +535,7 @@ Insgesamt zeigt dies, dass $\GL_n(k)$ zusammen mit der üblichen Matrixmultiplik
 
 
 
-
-
-\subsection{Die orthogonale Gruppe \texorpdfstring{$\Ort_n(k)$}{On(k)}}
+\subsubsection{Die orthogonale Gruppe \texorpdfstring{$\Ort_n(k)$}{On(k)}}
 Es sei $k$ ein Körper.
 
 \begin{defi}
@@ -415,9 +627,7 @@ Das zeigt, dass $\Ort_n(k) \subseteq \GL_n(k)$ eine Untergruppe ist; daher ist $
 
 
 
-
-
-\subsection{Die spezielle orthogonale Gruppe \texorpdfstring{$\SOrt(2)$}{SO2}}
+\subsubsection{Die spezielle orthogonale Gruppe \texorpdfstring{$\SOrt(2)$}{SO2}}
 Es sei
 \[
  \SOrt(2) \coloneqq
@@ -557,10 +767,9 @@ Insgesamt zeigt dies, dass $\SOrt(2)$ zusammen mit der üblichen Matrixmultiplik
 
 
 
-
-
-\subsection{Die oberen Dreiecksmatrizen \texorpdfstring{$B_n(k)$}{Bn(k)}}
+\subsubsection{Die oberen Dreiecksmatrizen \texorpdfstring{$B_n(k)$}{Bn(k)}}
 % TODO: Tippen
+
 
 
 
@@ -722,60 +931,55 @@ Wir identifiziert daher für gewöhnlich die Repräsentanten $0, \dotsc, n-1$ mi
 
 
 
+
+
 \subsection{Produkte von Gruppen}
 
-Es sei $n \in \Nbb$, $n \geq 1$ und $G_1, \dotsc, G_n$ seien Gruppen. Es sei
+Es sei $I$ ein Indexmenge und für jedes $i \in I$ sei $G_i$ eine Gruppe. Wir definieren auf dem Produkt $\prod_{i \in I} G_i$ eine Multiplikation durch
 \[
- G
- \coloneqq G_1 \times \dotsb \times G_n
- = \{(g_1, \dotsc, g_n) \mid g_1 \in G_1, \dotsc, g_n \in G_n\}.
-\]
-Auf $G$ definieren wir eine Multiplikation durch
-\[
- (g_1, \dotsc, g_n) \cdot (h_1, \dotsc, h_n)
- \coloneqq (g_1 h_1, \dotsc, g_n h_n)
+ (g_i)_{i \in I} \cdot (h_i)_{i \in I}
+ = (g_i \cdot h_i)_{i \in I}
  \quad
- \text{für alle $(g_1, \dotsc, g_n), (h_1, \dotsc, h_n) \in G$}.
+ \text{für alle $(g_i)_{i \in I}, (h_i)_{i \in I} \in \prod_{i \in I} G_i$}.
 \]
-$G$ wird zusammen mit dieser Multiplikation $\cdot$ zu einer Gruppe:
+Wir zeigen, dass $\prod_{i \in I} G_i$ zusammen mit dieser Multiplikation $\cdot$ eine Gruppe ist:
 
-Für alle $(g_1, \dotsc, g_n), (h_1, \dots, h_n), (k_1, \dotsc, k_n) \in G$ ist
+Für alle $(g_i)_{i \in I}, (h_i)_{i \in I}, (k_i)_{i \in I} \in \prod_{i \in I} G_i$ ist
 \begin{align*}
-  &\, ( (g_1, \dotsc, g_n) \cdot (h_1, \dotsc, h_n) ) \cdot (k_1, \dotsc, k_n) \\
- =&\, (g_1 h_1, \dotsc, g_n h_n) \cdot (k_1, \dotsc, k_n) \\
- =&\, (g_1 h_1 k_1, \dotsc, g_n h_n k_n) \\
- =&\, (g_1, \dotsc, g_n) \cdot (h_1 k_1, \dotsc, h_n k_n) \\
- =&\, (g_1, \dotsc, g_n) \cdot ( (h_1, \dotsc, h_n) \cdot (k_1, \dotsc, k_n) ),
+ ( (g_i)_{i \in I} \cdot (h_i)_{i \in I} ) \cdot (k_i)_{i \in I}
+ &= (g_i h_i)_{i \in I} \cdot (k_i)_{i \in I}
+ = (g_i h_i k_i)_{i \in I} \\r
+ &= (g_i)_{i \in I} \cdot (h_i k_i)_{i \in I}
+ = (g_i)_{i \in I} \cdot ( (h_i)_{i \in I} \cdot (k_i)_{i \in I} ),
 \end{align*}
 also ist $\cdot$ assoziativ.
 
-Für alle $(g_1, \dotsc, g_n) \in G$ ist
+Für alle $(g_i)_{i \in I} \in \prod_{i \in I}$ ist
 \begin{align*}
- (1, \dotsc, 1) \cdot (g_1, \dotsc, g_n)
- = (1 \cdot g_1, \dotsc, 1 \cdot g_n)
- = (g_1, \dotsc, g_n)
-\shortintertext{und}
- (g_1, \dotsc, g_n) \cdot (1, \dotsc, 1)
- = (g_1 \cdot 1, \dotsc, g_n \cdot 1)
- = (g_1, \dotsc, g_n),
+ (1)_{i \in I} \cdot (g_i)_{i \in I}
+ &= (1 \cdot g_i)_{i \in I}
+ = (g_i)_{i \in I}
+ \text{ und} \\
+ (g_i)_{i \in I} \cdot (1)_{i \in I}
+ &= (g_i \cdot 1)_{i \in I}
+ = (g_i)_{i \in I},
 \end{align*}
-also ist $(1, \dotsc, 1)$ neutral bezüglich $\cdot$.
+also ist $(1)_{i \in I}$ neutral bezüglich $\cdot$.
 
 Für jedes $(g_1, \dotsc, g_n) \in G$ ist
-\begin{gather*}
- (g_1, \dotsc, g_n) \cdot (g_1^{-1}, \dotsc, g_n^{-1})
- = (g_1 g_1^{-1}, \dotsc, g_n g_n^{-1})
- = (1, \dotsc, 1)
-\shortintertext{und}
- (g_1^{-1}, \dotsc, g_n^{-1}) \cdot (g_1, \dotsc, g_n)
- = (g_1^{-1} g_1, \dotsc, g_n^{-1} g_n)
- = (1, \dotsc, 1).
-\end{gather*}
-Also ist $(g_1^{-1}, \dotsc, g_n^{-1})$ invers zu $(g_1, \dotsc, g_n)$ bezüglich $\cdot$.
+\begin{align*}
+ (g_i)_{i \in I} \cdot (g_i^{-1})_{i \in I}
+ &= (g_i g_i^{-1})_{i \in I}
+ = (1)_{i \in I} \text{ und} \\
+ (g_i^{-1})_{i \in I} \cdot (g_i)_{i \in I}
+ &= (g_i^{-1} \cdot g_i)_{i \in I}
+ = (1)_{i \in I}
+\end{align*}
+Also ist $(g_i^{-1})_{i \in I}$ invers zu $(g_i)$ bezüglich $\cdot$.
 
-Insgesamt zeigt dies, dass $G$ bezüglich $\cdot$ eine Gruppe ist.
+Insgesamt zeigt dies, dass $\prod_{i \in I} G_i$ bezüglich $\cdot$ eine Gruppe ist.
 
-Ist etwa $G_1 = \dotsb = G_n = \Rbb$, so ist $G_1 \times \dotsb \times G_n = \Rbb^n$. Analog ist $\Zbb^n = \Zbb \times \dotsb \times \Zbb$, $\Qbb^n = \Qbb \times \dotsb \times \Qbb$ and $\Cbb^n = \Cbb \times \dotsb \times \Cbb$ (mit jeweils $n$ Faktoren).
+% Ist etwa $G_1 = \dotsb = G_n = \Rbb$, so ist $G_1 \times \dotsb \times G_n = \Rbb^n$. Analog ist $\Zbb^n = \Zbb \times \dotsb \times \Zbb$, $\Qbb^n = \Qbb \times \dotsb \times \Qbb$ and $\Cbb^n = \Cbb \times \dotsb \times \Cbb$ (mit jeweils $n$ Faktoren).
 
 
 

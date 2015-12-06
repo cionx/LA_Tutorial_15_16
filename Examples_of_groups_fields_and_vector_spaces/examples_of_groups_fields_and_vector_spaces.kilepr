@@ -46,7 +46,7 @@ Mode=LaTeX
 
 [item:Chapters/Definitions_And_Notations.tex]
 archive=true
-column=51
+column=0
 encoding=UTF-8
 highlight=LaTeX
 line=404
@@ -95,7 +95,7 @@ open=false
 order=-1
 
 [view-settings,view=0,item:Chapters/Definitions_And_Notations.tex]
-CursorColumn=51
+CursorColumn=0
 CursorLine=404
 JumpList=
 ViMarks=.,404,50,[,404,35,],404,50
