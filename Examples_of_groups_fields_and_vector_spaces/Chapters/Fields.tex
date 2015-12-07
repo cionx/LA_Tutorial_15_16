@@ -1,30 +1,14 @@
 \section{Beispiele für Körper}
 
 
-
-
-
-\subsection{Definition und Notationen}
-
-
-
-
-
-
-
-\begin{bem}
- Ist $L$ ein Körper und $K \subseteq L$ ein Unterkörper, so ist $K$ zusammen mit der Addition und Multiplikation aus $L$ selber ebenfalls ein Körper.
-\end{bem}
-
-
 \subsection{Einige kleine Beispiele}
 \begin{enumerate}[leftmargin=*]
  \item
   Die rationalen Zahlen $\Qbb$ und die reellen Zahlen $\Rbb$ bilden zusammen mit der üblichen Addition und Multiplikation jeweils einen Körper. $\Qbb$ ist ein Unterkörper von $\Rbb$.
  \item
-  Die ganzen Zahlen $\Zbb$ bilden zusammen mit der üblichen Addition und Multiplikation \emph{keinen} Körper: Ansonsten wäre $1$ das neutrale Element der Multiplikation und es gebe ein Element $x \in \Zbb$ mit $2x = 1$. Ein solches Element gibt es aber nicht.
+  Die ganzen Zahlen $\Zbb$ bilden zusammen mit der üblichen Addition und Multiplikation \emph{keinen} Körper: Ansonsten wäre $(\Zbb\setminus\{0\}, \cdot)$ ein Körper, aber $2 \in \Zbb\setminus\{0\}$ besitzt kein multiplikativ Inverses in $\Zbb$.
  \item
-  Für einen Körper $K$ und $n \in \Nbb$, $n \geq 2$ bilden die quadratischen Matrizen $\Mat(n \times n, K)$ zusammen mit der gewöhnlichen Addition und Multiplikation von Matrizen keinen Körper: Zum einen ist die Multiplikation in diesem Fall nicht kommutativ, da
+  Für einen beliebigen Körper $K$ und $n \in \Nbb$, $n \geq 2$ bilden die quadratischen Matrizen $\Mat(n \times n, K)$ zusammen mit der gewöhnlichen Addition und Multiplikation von Matrizen keinen Körper: Zum einen ist die Multiplikation in diesem Fall nicht kommutativ, da
   \[
    \begin{pmatrix}
     1 & 0 \\
@@ -80,6 +64,49 @@
 
 
 
+\subsection{Bilder von Körperhomomorphismen}
+Sind $K$ und $L$ Körper und ist $\phi \colon K \to L$ ein Körperhomomorphismus, so ist $\im(\phi) \subseteq L$ ein Unterkörper:
+
+Es ist $0 = \phi(0) \in \im(\phi)$. Für $x,y \in \im(\phi)$ gibt es $x', y' \in K$ mit $\phi(x') = x$ und $\phi(y') = y$, weshalb auch
+\[
+ x+y
+ = \phi(x')+\phi(y')
+ = \phi(x'+y')
+ \in \im(\phi).
+\]
+Für $x \in \im(\phi)$ gibt es $x' \in K$ mit $\phi(x') = x$, weshalb auch
+\[
+ -x
+ = -\phi(x')
+ = \phi(-x') \in \im(\phi).
+\]
+Also ist $\im(\phi)$ eine Untergruppe der additiven Gruppe von $L$.
+
+\begin{bem}
+ Kürzer und eleganter lässt sich die obige Rechnung so zusammenfassen: Da $\phi$ insbesondere ein Gruppenhomomorphismus von der additiven Gruppe von $K$ in die additive Gruppe von $L$ ist, ist $\im(\phi) \subseteq L$ eine abelsche Untergruppe, da Bilder von Gruppenhomomorphismen stets Untergruppen sind. 
+\end{bem}
+
+Es ist $1 = \phi(1) \in \im(\phi)$. Sind $x,y \in \im(\phi)$, so gibt es $x',y' \in K$ mit $x = \phi(x')$ und $y = \phi(x')$, weshalb dann auch
+\[
+ x \cdot y = \phi(x') \cdot \phi(y') = \phi(x' \cdot y') \im(\phi).
+\]
+Ist schließlich $x \in \im(\phi)$ mit $x \neq 0$, so gibt es $x' \in K$ mit $x = \phi(x')$. Da $x \neq 0$ ist auch $x \neq 0$. Da $\phi$ ein Körperhomomorphismus ist, ist somit $\phi(x')$ invertierbar mit $\phi(x')^{-1} = \phi((x')^{-1}) \in \im(\phi)$, also $x^{-1} = \phi(x')^{-1} \in \im(\phi)$.
+
+Insgesamt zeigt dies, dass $\im(\phi)$ ein Unterkörper von $L$ ist.
+
+\begin{bem}
+ \begin{enumerate}[leftmargin=*]
+  \item
+   Da $\phi$ als Körperhomomorphismus injektiv ist, ist die Abbildung $K \to \im(\phi), x \mapsto \phi(x)$ ein bijektiv und ein Körperhomomorphismus, also ein Körperisomorphismus. Inbesondere ist also $\im(\phi)$ isomorph zu $K$.
+  \item
+   Ist $L$ ein Körper und $K \subseteq L$ ein Unterkörper, so ist die Inklusion $K \to L$, $x \mapsto x$ ein Körperhomomorphismus. Es ist also jeder Unterkörper von $L$ gegeben als Bild eines Körperhomomorphismus $\phi \colon K \to L$, und wie bereits zuvor bemerkt $\im(\phi)$ ist isomorph zu $K$.
+   
+   Man kann deshalb einen Unterkörper $K$ eines Körpers $L$ statt als eine Teilmenge, die unter entsprechenden Rechenoperationen abgeschlossen ist, und somit selber wieder einen Körper bildet, auch als einen Körperhomomorphismus $K \to L$ definieren.
+ \end{enumerate}
+\end{bem}
+
+
+
 
 
 \subsection{Die komplexen Zahlen \texorpdfstring{$\Cbb$}{C}}
@@ -88,7 +115,7 @@ Die komplexen Zahlen $\Cbb$ sind ein Körper, der die reellen Zahlen $\Rbb$ enth
 
 
 \subsubsection{Die komplexen Zahlen als besserer \texorpdfstring{$\Rbb^2$}{R2}}
-Wir beginnen mit der abelschen Gruppe $\Cbb \coloneqq \Rbb^2 = \{(a,b) \mid a,b \in \Rbb\}$. Die Addition ist gegeben durch
+Wir beginnen mit der additiven Gruppe $\Cbb \coloneqq \Rbb^2 = \{(a,b) \mid a,b \in \Rbb\}$. Die Addition ist gegeben durch
 \[
  (a_1, b_1) + (a_2, b_2) = (a_1 + a_2, b_1 + b_2)
  \quad\text{für alle $(a_1, b_1), (a_2, b_2) \in \Cbb$}.
@@ -104,7 +131,7 @@ Wir definieren zusätzlich eine Multiplikation $\cdot$ auf $\Cbb$ durch
  $\Cbb$ ist zusammen mit der obigen Addition und Multiplikation ein Körper.
 \end{beh}
 \begin{proof}
- Dass $\Cbb$ zusammen mit der Addition eine abelsche Gruppe ist, ist bekannt. Das additiv neutrale Element ist $(0,0)$ und das additiv Inverse zu $(a,b) \in \Cbb$ ist $(-a,-b)$ Für alle $(a_1, b_1), (a_2, b_2), (a_3, b_3) \in \Cbb$ ist
+ Wir wissen bereits, dass $\Cbb$ zusammen mit der Addition $+$ eine abelsche Gruppe bildet. Das additiv neutrale Element ist $(0,0)$ und das additiv Inverse zu $(a,b) \in \Cbb$ ist $(-a,-b)$ Für alle $(a_1, b_1), (a_2, b_2), (a_3, b_3) \in \Cbb$ ist
  \begin{align*}
    &\, (a_1, b_1) \cdot ((a_2, b_2) \cdot (a_3, b_3))
   = (a_1, b_1) \cdot (a_2 a_3 - b_2 b_3, a_2 b_3 + a_3 b_2) \\
@@ -129,9 +156,9 @@ Wir definieren zusätzlich eine Multiplikation $\cdot$ auf $\Cbb$ durch
   = \left( a \frac{a}{a^2+b^2} + b \frac{b}{a^2+b^2}, b \frac{a}{a^2+b^2} - a \frac{b}{a^2+b^2} \right)
   = (1,0).
  \]
- Also ist $(a/(a^2+b^2), -b/(a^2+b^2))$ multiplikativ invers zu $(a,b)$. Sind $z_1, z_2 \in \Cbb$ mit $z_1, z_2 \neq 0$, so sind $z_1$ und $z_2$ invertierbar. Daher ist auch $z_1 \cdot z_2$ invertierbar und somit $z_1 \cdot z_2 \neq 0$. Also ist $\Cbb\setminus\{0\}$ unter der Multiplikation abgeschlossen.
+ Also ist $(a/(a^2+b^2), -b/(a^2+b^2))$ multiplikativ invers zu $(a,b)$.
  
- Ingesamt zeigt dies, dass $+$ und $\cdot$ assoziativ und kommutativ ist, und dass $(\Cbb,+)$ und $(\Cbb\setminus\{(0,0)\}, \cdot)$ abelsche Gruppen sind. Es muss nur noch die Distributivität gezeigt werden: Dies gilt, da für alle $(a_1, b_1), (a_2, b_2), (a_3, b_3) \in \Cbb$
+ Die Distributivität folgt daraus, dass für alle $(a_1, b_1), (a_2, b_2), (a_3, b_3) \in \Cbb$
  \begin{align*}
    &\, (a_1, b_1) \cdot ((a_2, b_2) + (a_3, b_3)) \\
   =&\,    (a_1, b_1) \cdot (a_2 + a_3, b_2 + b_3) \\
@@ -253,7 +280,10 @@ Für alle $a_1, a_2, b_1, b_2 \in \Rbb$ ist
   = Z(a_1 a_2 - b_1 b_2, a_1 b_2 + a_2 b_1).
  \end{aligned}
 \end{gather*}
-Um zu zeigen, dass $C$ bezüglich der Addition eine abelsche Gruppe bildet genügt es zu zeigen, dass $C$ eine Untergruppe der additiven Gruppe von $\Mat(2 \times 2, \Rbb)$ bildet. Es ist $0 = Z(0,0) \in C$ und für alle $a_1, a_2, b_1, b_2 \in \Rbb$ ist
+
+Um zu zeigen, dass $C$ bezüglich der Addition eine abelsche Gruppe bildet genügt es zu zeigen, dass $C$ eine Untergruppe der additiven Gruppe von $\Mat(2 \times 2, \Rbb)$ bildet.
+
+Es ist $0 = Z(0,0) \in C$ und für alle $a_1, a_2, b_1, b_2 \in \Rbb$ ist
 \[
  Z(a_1, b_1) + Z(a_2, b_2) = Z(a_1 + a_2, b_1 + b_2) \in C.
 \]
@@ -281,7 +311,8 @@ Die Assoziativität der Multiplikation ist bekannt. Die Matrixmultiplikation ist
  &= Z(a_2 a_1 - b_2 b_1, a_2 b_1 + a_1 b_2)
  = Z(a_2, b_2) \cdot Z(a_1, b_1).
 \end{align*}
-Es muss also nur noch gezeigt werden, dass $C\setminus\{0\}$ zusammen mit der Matrixmultiplikation eine Gruppe bildet. Es ist $I_2 = Z(1,0) \in C$ das neutrale Element. Für $a,b \in \Rbb$ mit $Z(a,b) \neq 0$ ist $a \neq 0$ oder $b \neq 0$ und somit $a^2+b^2 \neq 0$. Da
+
+Da die Einheitsmatrix $I_2 \in \Mat(2 \times 2, \Rbb)$ das Einselement bezüglich der Matrixmultiplikation ist und $I_2 \in C$ ist $I_2$ das Einselement in $C$. Für $a,b \in \Rbb$ mit $Z(a,b) \neq 0$ ist $a \neq 0$ oder $b \neq 0$ und somit $a^2+b^2 \neq 0$. Da
 \begin{align*}
   &\, Z(a,b) Z\left(\frac{a}{a^2+b^2}, -\frac{b}{a^2+b^2}\right) \\
  =&\, Z\left( a \frac{a}{a^2+b^2} + b\frac{b}{a^2+b^2}, b\frac{a}{a^2+b^2} - a\frac{b}{a^2+b^2} \right) \\
@@ -289,6 +320,168 @@ Es muss also nur noch gezeigt werden, dass $C\setminus\{0\}$ zusammen mit der Ma
  = I_2
 \end{align*}
 ist $Z(a/(a^2+b^2), -b/(a^2+b^2))$ das multiplikativ Inverse zu $Z(a,b)$ (da die Matrixmultiplikation auf $C$ kommutativ ist, zeigt die obige Rechnung, dass $Z(a/(a^2+b^2), -b/(a^2+b^2))$ bereits beidseitig Invers zu $Z(a,b)$ ist).
+
+Insgesamt zeigt dies, dass $C$ mit der üblichen Matrixaddition und -multiplikation einen Körper bildet.
+
+
+\subsubsection{Äquivalenz der beiden Konstruktionen}
+Die beiden Konstruktionen der komplexen Zahlen sind insofern äquivalent, als dass die Abbildung
+\[
+ \phi \colon \Cbb \to C, a + ib \mapsto Z(a,b) \quad \text{für alle $a,b \in \Rbb$}
+\]
+ein Körperisomorphismus ist: Die Bijektivität von $\phi$ folgt daraus, dass die beiden Abbildungen $\psi_1 \colon \Rbb^2 \to \Cbb, (a,b) \mapsto a+ib$ und $\psi_2 \colon \Rbb^2 \to C, (a,b) \mapsto Z(a,b)$ bijektiv sind, und daher auch $\phi = \psi_2 \psi_1^{-1}$. Außerdem ist $\phi(1) = \phi(1)= Z(1,0) = I_2$. Für alle $a,a',b,b' \in \Rbb$ ist zudem
+\begin{gather*}
+ \begin{aligned}
+  \phi((a+ib)+(a'+ib'))
+  &= \phi((a+a')+i(b+b'))
+  = Z(a+a',b+b') \\
+  &= Z(a,b) + Z(a',b')
+  = \phi(a+ib) + \phi(a'+ib')
+ \end{aligned}
+\shortintertext{und}
+ \begin{aligned}
+  \phi( (a+ib) \cdot (a'+ib') )
+  &= \phi( (aa'-bb')+i(ab'+a'b) ) \\
+  &= Z(aa'-bb', ab'+a'b)
+  = Z(a,b) \cdot Z(a',b').
+ \end{aligned}
+\end{gather*}
+Ingesamt zeigt dies, dass $\phi$ ein Körperisomorphismus ist.
+
+
+
+
+
+\subsection{Quadratische Körpererweiterungen von \texorpdfstring{$\Qbb$}{Q}}
+
+
+
+\subsubsection{\texorpdfstring{$\Qbb[i]$}{Q[i]}}
+Es sei
+\[
+ \Qbb[i]
+ \coloneqq
+ \{ q_1 + q_2 i \mid q_1, q_2 \in \Qbb \}
+ \subseteq \Cbb
+\]
+Wir zeigen, dass $\Qbb[i]$ ein Unterkörper von $\Cbb$ ist.
+
+Es ist $0 = 0 + 0 \cdot i \in \Qbb[i]$. Für $z,w \in \Qbb[i]$ ist $z = q_1 + q_2 i$ und $w = p_1 + p_2 i$ mit $q_1, q_2, p_1, p_2 \in \Qbb$. Daher ist auch
+\[
+ z + w
+ = (q_1 + q_2 i) + (p_1 + p_2 i)
+ = (q_1 + p_1) + (q_2 + p_2) i
+ \in \Qbb[i].
+\]
+Ist $z \in \Qbb$ so ist $z = q_1 + q_2 i$ mit $q_1, q_2 \in \Qbb$, weshalb auch
+\[
+ -z = -(q_1 + q_2 i) = (-q_1) + (-q_2) i \in \Qbb[i].
+\]
+Das zeigt, dass $\Qbb[i]$ eine Untergruppe der additiven Gruppe von $\Cbb$ ist.
+
+Es ist auch $1 = 1 + 0 \cdot i \in \Qbb[i]$. Sind $z, w \in \Qbb[i]$ so gibt es $q_1, q_2, p_1, p_2 \in \Qbb$ mit $z = q_1 + i q_2$ und $w = p_1 + i p_2$. Es ist daher auch
+\[
+ z \cdot w
+ = (q_1 + iq_2)(p_1 + ip_2)
+ = (q_1 p_1 - q_2 p_2) + i(q_1 p_2 + q_2 p_1)
+ \in \Qbb[i].
+\]
+Ist $z \in \Cbb[i]$ mit $z \neq 0$ so ist $z = q_1 + i q_2$ mit $q_1, q_2 \in \Qbb$ und $q_1 \neq 0$ oder $q_2 \neq 0$. Da $z \neq 0$ ist auch $q_1 - i q_2 = \overline{z} \neq 0$ Deshalb ist auch
+\[
+ \frac{1}{z}
+ = \frac{1}{q_1 + i q_2}
+ = \frac{q_1 - i q_2}{(q_1 + i q_2)(q_1 - i q_2)}
+ = \frac{q_1 - i q_2}{q_1^2 + q_2^2}
+ = \frac{q_1}{q_1^2 + q_2^2} + i \frac{-q_2}{q_1^2+q_2^2}
+ \in \Qbb[i].
+\]
+
+Ingesamt zeigt dies, dass $\Qbb[i]$ ein Unterkörper von $\Cbb$ ist. $\Qbb[i]$ ist der kleinste Unterkörper von $\Cbb$, der $i$ enthält, d.h.\ ist $K \subseteq \Cbb$ ein Unterkörper mit $i \in K$, so ist bereits $\Qbb[i] \subseteq K$.
+
+
+
+\subsubsection{\texorpdfstring{$\Qbb\left[\sqrt{2}\right]$}{Q[sqrt(2)]}}
+Wir zeigen zunächst, dass
+\[
+ \Qbb\left[\sqrt{2}\right] \coloneqq \{ q_1 + q_2 \sqrt{2} \mid q_1, q_2 \in \Qbb \} \subseteq \Rbb
+\]
+ein Unterkörper von $\Rbb$ ist:
+
+Es ist $0 = 0 + 0 \cdot 0 \in \Qbb\left[\sqrt{2}\right]$. Sind $x,y \in \Qbb\left[\sqrt{2}\right]$, so gibt es $q_1, q_2, p_1, p_2 \in \Qbb$ mit $x = q_1 + q_2 \sqrt{2}$ und $y = p_1 + p_2 \sqrt{2}$. Es ist daher auch
+\[
+ x+y
+ = (q_1 + q_2 \sqrt{2}) + (p_1 + p_2 \sqrt{2})
+ = (q_1 + p_1) + (q_2 + p_2) \sqrt{2}
+ \in \Qbb\left[\sqrt{2}\right].
+\]
+Ist $x \in \Qbb\left[\sqrt{2}\right]$ mit $x = q_1 + q_2 \sqrt{2}$ für $q_1, q_2 \in \Qbb$, so ist auch
+\[
+ -x = -(q_1 + q_2 \sqrt{2}) = (-q_1) + (-q_2) \sqrt{2} \in \Qbb\left[\sqrt{2}\right].
+\]
+Das zeigt, dass $\Qbb\left[\sqrt{2}\right]$ eine Untergruppe der additiven Gruppe von $\Rbb$ ist.
+
+\begin{bem}
+ Die obigen Rechnungen lassen sich auch großteils umgehen: Die Abbildung $\varphi \colon \Qbb^2 \to \Rbb$, $(q_1, q_2) \to \Qbb\left[\sqrt{2}\right]$ ist ein Gruppenhomomorphismus, da
+ \begin{align*}
+  \varphi( (q_1, q_2) + (p_1, p_2) )
+  &= \varphi( (q_1 + p_1, q_2 + p_2) )
+  = (q_1 + p_1) + (q_2 + p_2) \sqrt{2} \\
+  &= (q_1 +  q_2 \sqrt{2}) + (p_1 + p_2 \sqrt{2})
+  = \varphi((q_1, q_2)) + \varphi((p_1,p_2))
+ \end{align*}
+ für alle $(q_1, q_2), (p_1, p_2) \in \Qbb^2$. Daher ist
+ \[
+  \Qbb\left[\sqrt{2}\right]
+  = \{q_1 + q_2 \sqrt{2} \mid q_1, q_2 \in \Qbb\}
+  = \im(\varphi)
+ \]
+ eine Untergruppe der additiven Gruppe von $\Rbb$.
+\end{bem}
+
+Es ist $1 = 1 + 0 \cdot \sqrt{2} \in \Qbb\left[\sqrt{2}\right]$. Für $x, y \in \Qbb\left[\sqrt{2}\right]$ ist $x = q_1 + q_2 \sqrt{2}$ und $y = p_1 + p_2 \sqrt{2}$ mit $q_1, q_2, p_1, p_2 \in \Qbb$. Deshalb ist auch
+\[
+ x \cdot y
+ = (q_1 + q_2 \sqrt{2}) (p_1 + p_2 \sqrt{2})
+ = q_1 q_2 + 2 p_1 p_2 + (q_1 p_2 + q_2 p_1) \sqrt{2} \in \Qbb\left[\sqrt{2}\right].
+\]
+
+Es sei $x \in \Qbb\left[\sqrt{2}\right]$ mit $x \neq 0$. Dann ist $x = q_1 + q_2 \sqrt{2}$ mit $q_1, q_2 \in \Qbb$. Da $x \neq 0$ ist $q_1 \neq 0$ oder $q_2 \neq 0$. Es folgt, dass auch $q_1 - q_2 \sqrt{2} \neq 0$. Andernfalls wäre nämlich $\sqrt{2} = q_1/q_2$ (falls $q_2 \neq 0$) oder $1/\sqrt{2} = q_2/q_1$ und somit ebenfalls $\sqrt{2} = q_1/q_2$ (falls $q_1 \neq 0$). Dies stünde im Widerspruch zur Irrationalität von $\sqrt{2}$. Es folgt, dass auch
+\begin{align*}
+ \frac{1}{x}
+ &= \frac{1}{q_1 + q_2 \sqrt{2}}
+ = \frac{q_1 - q_2 \sqrt{2}}{(q_1 + q_2 \sqrt{2})(q_1 - q_2 \sqrt{2})} \\
+ &= \frac{q_1 - q_2 \sqrt{2}}{q_1^2 - 2 q_2^2}
+ = \frac{q_1}{q_1^2 - 2q_2^2} + \frac{-q_2}{q_1^2 - 2q_2^2} \sqrt{2}
+ \in \Qbb\left[\sqrt{2}\right].
+\end{align*}
+
+Insgesamt zeigt dies, dass $\Qbb\left[\sqrt{2}\right]$ ein Unterkörper von $\Rbb$ ist. Man bezeichnet $\Qbb[\sqrt{2}]$ als „$\Qbb$ adjungiert $\sqrt{2}$“. $\Qbb\left[\sqrt{2}\right]$ ist der kleinste Unterkörper von $\Rbb$, der $\sqrt{2}$ enthält, d.h.\ ist $K' \subseteq \Rbb$ ein Unterkörper mit $\sqrt{2} \in K'$, so ist bereits $\Qbb\left[\sqrt{2}\right] \subseteq K'$.
+
+
+
+
+
+\subsubsection{Die Gaußschen Zahlen}
+Die \emph{Gaußschen Zahlen} sind definiert als
+\[
+ \Zbb[i] \coloneqq \{a + b i \mid a,b \in \Zbb\}.
+\]
+
+Wie bereits für $\Qbb[i]$ ergibt sich auch für $\Zbb[i]$, dass es sich um eine additive Untergruppe von $\Cbb$ handelt: Es ist $0 \in \Zbb[i]$. Für $z, w \in \Zbb[i]$ ist $z = a + bi$ und $w = c + di$ mit $a,b,c,d \in \Zbb$, weshalb
+\[
+ z + w
+ = (a + bi) + (c + di)
+ = (a+c) + (b+d)i
+\]
+mit $a+c, b+d \in \Zbb$ und somit $z+w \in \Zbb[i]$. Für $z \in \Zbb[i]$ ist $z = a + bi$ mit $a,b \in \Zbb$, weshalb $-z = -(a+bi) = (-a) + (-b)i$ mit $-a, -b \in \Zbb$ und somit auch $-z \in \Zbb[i]$.
+
+
+\begin{bem}
+ Im Gegensatz zu $\Qbb[i]^\times = \Qbb[i] \cap \Cbb^\times$ ist $\Zbb[i] \cap \Cbb^{\times}$ \emph{keine} Untergruppe von $\Cbb^\times$, da $2 \in \Zbb[i] \cap \Cbb^\times$ aber $1/2 \notin \Zbb[i]$ und somit auch nicht $1/2 \in \Zbb[i] \cap \Cbb^\times$.
+\end{bem}
+
+
+
 
 
 

@@ -184,7 +184,7 @@ eine Untergruppe von $G_2$ ist: Da $1 \in H$ ist $1 = \varphi(1) \in G_2$. Sind 
  = \varphi(x') \cdot \varphi(y')
  = \varphi(x' \cdot y')
 \]
-ist dann auch $x \cdot y \in \varphi(H)$. Ist $x \in \varphi(H)$, so gibt es $x' \in H$ mit $\varphi(x') = x$. Da $H$ eine Untergrupppe ist, ist auch $(x')^{-1} \in H$. Da außerdem
+ist dann auch $x \cdot y \in \varphi(H)$. Ist $x \in \varphi(H)$, so gibt es $x' \in H$ mit $\varphi(x') = x$. Da $H$ eine Untergruppe ist, ist auch $(x')^{-1} \in H$. Da außerdem
 \[
  x^{-1}
  = \varphi(x')^{-1}
@@ -230,7 +230,7 @@ Es sei $G$ eine Gruppe.
 \subsubsection{Schnitte von Untergruppen}
 Es sei $I$ eine Indexmenge und für jedes $i \in I$ sei $H_i \subseteq G$ eine Untergruppe. Wir zeigen, dass dann auch $\bigcap_{i \in I} H_i \subseteq G$ eine Untergruppe ist:
 
-Da $H_i$ für jedes $i \in I$ eine UNtergruppe ist, ist $1 \in H_i$ für jedes $i \in I$, und somit $1 \in \bigcap_{i \in I} H_i$.
+Da $H_i$ für jedes $i \in I$ eine Untergruppe ist, ist $1 \in H_i$ für jedes $i \in I$, und somit $1 \in \bigcap_{i \in I} H_i$.
 
 Sind $x,y \in \bigcap_{i \in I} H_i$, so ist $x,y \in H_i$ für jedes $i \in I$. Damit ist auch $x \cdot y \in H_i$ für alle $i \in I$, da $H_i$ für jedes $i \in I$ eine Untergruppe ist. Also ist auch $x \cdot y \in \bigcap_{i \in I} H_i$.
 
@@ -272,6 +272,48 @@ Insgesamt zeigt dies, dass $\bigcup_{n \in \Nbb} H_n$ eine Untergruppe von $G$ i
 
 
 
+\subsection{Klassifikation der Untergruppen von \texorpdfstring{$\Zbb$}{Z}}
+In diesem Abschnitt bestimmen wir die Untergruppen von $\Zbb$ (d.h.\ von $(\Zbb,+)$, wobei $+$ die gewöhnliche Addition bezeichnet).
+
+Für jedes $n \in \Nbb$ sei
+\[
+ n \Zbb
+ \coloneqq \{n k \mid k \in \Zbb\}
+ = \{a \in \Zbb \mid \text{$a$ ist durch $n$ teilbar}.
+\]
+Wir zeigen zuänchst, dass $n \Zbb$ für jedes $n \in \Nbb$ eine Untergruppe definiert:
+
+Es ist $0 = n \cdot 0 \in \Zbb$. Sind $x,y \in n\Zbb$, so gibt es $k,l \in \Zbb$ mit $x = nk$ und $y = nl$. Da damit $x+y = nk + nl = n(k+l)$ ist auch $x+y \in n\Zbb$. Ist $x \in n\Zbb$, so gibt es $k \in \Zbb$ mit $x = nk$. Da damit $-x = -nk = n(-k)$ ist auch $-x \in \Zbb$. Das zeigt, dass $n\Zbb$ eine Untergruppe ist.
+
+\begin{bem}
+ Ein weniger rechenlastiger Beweis besteht darin, dass $\varphi_n \colon \Zbb \to \Zbb$, $k \mapsto nk$ ein Gruppenhomomorphismus ist, da $\varphi_n(k+l) = n(k+l) = nk + nl = \varphi_n(k) + \varphi_n(l)$ für alle $k,l \in \Zbb$, und deshalb
+ \[
+  \im(\varphi_n) = \{\varphi_n(k) \mid k \in \Zbb\} = \{nk \mid k \in \Zbb\} = n\Zbb
+ \]
+ eine Untergruppe von $\Zbb$ ist.
+\end{bem}
+
+Wir zeigen nun, dass jede Untergruppe $H \subseteq \Zbb$ von der Form $H = n\Zbb$ für ein eindeutiges $n \in \Nbb$ ist: Ist $H = \{0\}$, so gilt die Aussage mit $n = 0$. Wir betrachten daher den Fall, dass $\{0\} \subsetneq H$. Dann gibt es ein $m \in H$ mit $m > 0$, also ist $\{m \in H \mid m > 0\} \neq 0$. Da jede nicht-leere Teilmenge von $\Nbb$ ein minimales Element besitzt, existiert $n \coloneqq \min \{m \in H \mid m > 0\}$.
+
+Da $n \in H$ ist auch $n\Zbb \subseteq H$: Für alle $k \in \Nbb$, $k \geq 1$ ist $n k = \sum_{i=1}^k n \in H$, es ist $n \cdot 0 = 0 \in H$ und für alle $k \in \Nbb$ mit $k \leq -1$ ist wegen $n(-k) \in H$ auch $nk = -n(-k) \in H$.
+
+Wir zeigen nun, dass bereits $H = n\Zbb$. Angenommen, es gibt $m \in H$ mit $m \notin n\Zbb$. Dann gibt es eindeutige $k,l \in \Zbb$ mit $m = nk + l$, wobei $0 \leq l < n$. Da $m \notin n\Zbb$ ist $l \neq 0$, also $0 < l < n$. Da $m \in H$ ist dann aber auch $l = m - nk \in H$. Da $0 < l < n$ steht dies im Widerspruch zur Definition von $n = \min \{m' \in H \mid m' > 0\}$.
+
+Das zeigt, dass $H = n\Zbb$ mit $n \in \Nbb$. Die Eindeutigkeit von $n$ folgt daraus, dass sich $n$ aus $H$ bestimmen lässt durch $n = \min \{m \in H \mid m > 0\}$.
+
+Ingesamt zeigt dies, dass es eine Bijektion
+\[
+ \Nbb \rightarrow \{H \subseteq \Zbb \mid \text{$H$ ist eine Untergruppe}\}, n \mapsto n\Zbb
+\]
+gibt.
+
+
+
+
+
+
+
+
 \subsection{Untergruppen von \texorpdfstring{$\Cbb^\times$}{Cx}}
 
 
@@ -299,9 +341,31 @@ Wir zeigen, dass $S^1$ eine Untergruppe von $\Cbb^\times$ ist:
 
 Ist $z \in \Cbb$, so ist $0 \neq 1 = |z| = \sqrt{z \overline{z}}$, also $z \neq 0$ und somit $z \in \Cbb^\times$. Also ist $S^1 \subseteq \Cbb^\times$ eine Teilmenge.
 
-Da $|1| = 1$ ist $1 \in S^1$. Für $z_1, z_2 \in S^1$ ist $|z_1| = |z_2| = 1$, also auch $|z_1 z_2| = |z_1| |z_2| = 1 \cdot 1 = 1$, und somit $z_1 z_2 \in S^1$. Für $z \in S^1$ ist $|z|= 1$. Daher ist auch $1 = |z z^{-1}| = |z| |z^{-1}| = 1 \cdot |z^{-1}| = |z^{-1}|$ und deshalb $z^{-1} \in S^1$.
+Da $|1| = 1$ ist $1 \in S^1$. Für $z_1, z_2 \in S^1$ ist $|z_1| = |z_2| = 1$, also auch
+\[
+ |z_1 z_2| = |z_1| |z_2| = 1 \cdot 1 = 1,
+\]
+und somit $z_1 z_2 \in S^1$. Für $z \in S^1$ ist $|z|= 1$. Daher ist auch
+\[
+ 1 = |1| = |z z^{-1}| = |z| |z^{-1}| = 1 \cdot |z^{-1}| = |z^{-1}|
+\]
+und deshalb $z^{-1} \in S^1$.
 
 Das zeigt, dass $S^1$ ein Untergruppe von $\Cbb^\times$ ist.
+
+
+\begin{bem}
+ Die Aussage lässt sich auch weniger rechenlastig zeigen: Da $|z_1 z_2| = |z_1| \cdot |z_2|$ für alle $z_1, z_2 \in \Cbb$ und $|z| > 0$ für alle $z \neq 0$ ist die Abbildung $b \colon \Cbb^\times \to \Rbb_+$, $z \mapsto |z|$ ein Gruppenhomomorphismus. Daher ist
+ \[
+  S^1
+  = \{z \in \Cbb \mid |z| = 1\}
+  = \{z \in \Cbb^\times \mid |z| = 1\}
+  = \{z \in \Cbb^\times \mid b(z) = 1\}
+  = \ker(b)
+ \]
+ eine Untergruppe.
+\end{bem}
+
 
 
 
@@ -318,6 +382,19 @@ und deshalb $x \in R_n(k)$.
 
 Ingesamt zeigt dies, dass $R_n(k)$ eine Untergruppe von $\Cbb^\times$ ist.
 
+\begin{bem}
+ Da $x^n \neq 0$ für alle $x \neq 0$ und $0^n = 0$, sowie $(xy)^n = x^n y^n$ für alle $x,y \in k$, ist die Abbildung $p_n \colon \Cbb^\times \to \Cbb^\times$, $z \mapsto z^n$ ein Gruppenhomomorphismus. Daher folgt, dass
+ \[
+  R_n(k)
+  = \{x \in k \mid x^n = 1\}
+  = \{x \in k^\times \mid x^n = 1\}
+  = \{x \in k^\times \mid p_n(x) = 1\}
+  = \ker(p_n)
+ \]
+ eine Untergruppe ist.
+\end{bem}
+
+
 Für $k = \Rbb$ ist beispielsweise
 \[
  R_n(\Rbb)
@@ -328,88 +405,6 @@ Für $k = \Rbb$ ist beispielsweise
  \end{cases}
 \]
 Für $k = \Cbb$ und $z \in R_n(\Cbb)$ ist $|z| \in \Rbb$ mit $|z| \geq 0$ und $|z|^n = |z^n| = |1| = 1$. Es muss also $|z| = 1$ und somit $z \in S^1$. Also ist $R_n(\Cbb)$ bereits eine Untergruppe von $S^1$.
-
-
-% \subsubsection{Die Gruppen \texorpdfstring{$\Qbb[i]$}{Q[i]} und \texorpdfstring{$\Qbb[i]^\times$}{Q[i]x}}
-% Es sei
-% \begin{gather*}
-%  \Qbb[i]
-%  \coloneqq
-%  \{ q_1 + q_2 i \mid q_1, q_2 \in \Qbb \}
-%  \subseteq \Cbb
-% \shortintertext{und}
-%  \Qbb[i]^\times \coloneqq
-%  \Qbb[i] \cap \Cbb^\times
-%  = \Qbb[i] \setminus \{0\}
-%  = \{ q_1 + q_2 i
-%      \mid
-%      \text{
-%       $q_1, q_2 \in \Qbb$ mit $q_1 \neq 0$ oder $q_2 \neq 0$
-%       }
-%    \}
-% \end{gather*}
-% Man bezeichnet $\Qbb[i]$ als „$\Qbb$ adjungiert $i$“.
-% 
-% Wir zeigen zunächst, dass $\Qbb[i]$ eine Untergruppe der additiven Gruppe von $\Cbb$ ist: Es ist $0 = 0 + 0 \cdot i \in \Qbb[i]$. Für $z,w \in \Qbb[i]$ ist $z = q_1 + q_2 i$ und $w = p_1 + p_2 i$ mit $q_1, q_2, p_1, p_2 \in \Qbb$. Daher ist
-% \[
-%  z + w
-%  = (q_1 + q_2 i) + (p_1 + p_2 i)
-%  = (q_1 + p_1) + (q_2 + p_2) i
-% \]
-% mit $q_1 + p_1 \in \Qbb$ und $q_2 + p_2 \in \Qbb$, also $z+w \in \Qbb[i]$. Ist $z \in \Qbb$ so ist $z = q_1 + q_2 i$ mit $q_1, q_2 \in \Qbb$. Da damit
-% \[
-%  -z = -(q_1 + q_2 i) = (-q_1) + (-q_2) i
-% \]
-% mit $-q_1, -q_2 \in \Qbb$ ist auch $-z \in \Qbb[i]$.
-% 
-% Ingesamt zeigt dies, dass $\Qbb[i]$ eine Untergruppe von $\Cbb$ ist.
-% 
-% Wir zeigen, dass $\Qbb[i]^\times$ eine Untergruppe von $\Cbb^\times$ ist:
-% 
-% Dass $\Qbb[i]^\times \subseteq \Cbb^\times$ folgt direkt aus der Definition von $\Qbb[i]^\times$. Es ist auch $1 = 1 + 0 \cdot i \in \Qbb[i]^\times$. Sind $z, w \in \Qbb[i]^\times$ so gibt es $q_1, q_2, p_1, p_2 \in \Qbb$ mit $z = q_1 + i q_2$ und $w = p_1 + i p_2$. Es ist daher auch
-% \[
-%  zw
-%  = (q_1 + iq_2)(p_1 + ip_2)
-%  = (q_1 p_1 - q_2 p_2) + i(q_1 p_2 + q_2 p_1)
-%  \in \Qbb[i].
-% \]
-% Da $z,w \in \Cbb^\times$ ist auch $zw \in \Cbb^\times$. Zusammengefasst ist daher $zw \in \Qbb[i] \cap \Cbb^\times = \Qbb[i]^\times$. Ist $z \in \Cbb[i]^\times$ so ist $z = q_1 + i q_2$ mit $q_1, q_2 \in \Qbb$ und $q_1 \neq 0$ oder $q_2 \neq 0$. Deshalb ist
-% \[
-%  \frac{1}{z}
-%  = \frac{q_1 + i q_2}
-%  = \frac{q_1 - i q_2}{q_1^2 + q_2^2}
-%  = \frac{q_1}{q_1^2 + q_2^2} + i \frac{-q_2}{q_1^2+q_2^2}
-% \]
-% mit $q_1/(q_1^2+q_2^2), -q_2/(q_1^2+q_2^2) \in \Qbb$, also $z^{-1} \in \Qbb[i]$. Da außerdem $z^{-1} \in \Cbb^\times$ ist schon $z^{-1} \in \Qbb[i]^\times.$
-% 
-% Ingesamt zeigt dies, dass $\Qbb[i]^\times$ eine Untergruppe von $\Cbb^\times$ ist.
-% 
-% 
-% \begin{bem}
-%  Daraus $\Qbb[i]$ zusammen mit der Addition eine Gruppe ist und $\Qbb[i] \setminus \{0\} = \Qbb[i]^\times$ zusammen mit der Multiplikation eine Gruppe ist, folgt, dass $\Qbb[i]$ zusammen mit der Addition und Multiplikation bereits ein Körper ist. Die Distributivität folgt daraus, dass sie in $\Cbb$ gilt.
-% \end{bem}
-% 
-% 
-% \subsubsection{Die Gaußschen Zahlen}
-% Die \emph{Gaußschen Zahlen} sind definiert als
-% \[
-%  \Zbb[i] \coloneqq \{a + b i \mid a,b \in \Zbb\}.
-% \]
-% 
-% Wie bereits für $\Qbb[i]$ ergibt sich auch für $\Zbb[i]$, dass es sich um eine additive Untergruppe von $\Cbb$ handelt: Es ist $0 \in \Zbb[i]$. Für $z, w \in \Zbb[i]$ ist $z = a + bi$ und $w = c + di$ mit $a,b,c,d \in \Zbb$, weshalb
-% \[
-%  z + w
-%  = (a + bi) + (c + di)
-%  = (a+c) + (b+d)i
-% \]
-% mit $a+c, b+d \in \Zbb$ und somit $z+w \in \Zbb[i]$. Für $z \in \Zbb[i]$ ist $z = a + bi$ mit $a,b \in \Zbb$, weshalb $-z = -(a+bi) = (-a) + (-b)i$ mit $-a, -b \in \Zbb$ und somit auch $-z \in \Zbb[i]$.
-% 
-% 
-% \begin{bem}
-%  Im Gegensatz zu $\Qbb[i]^\times = \Qbb[i] \cap \Cbb^\times$ ist $\Zbb[i] \cap \Cbb^{\times}$ \emph{keine} Untergruppe von $\Cbb^\times$, da $2 \in \Zbb[i] \cap \Cbb^\times$ aber $1/2 \notin \Zbb[i]$ und somit auch nicht $1/2 \in \Zbb[i] \cap \Cbb^\times$.
-% \end{bem}
-
-
 
 
 
@@ -1048,6 +1043,158 @@ Insgesamt zeigt dies, dass $\prod_{i \in I} G_i$ bezüglich $\cdot$ eine Gruppe 
   \]
   ist $A$ abelsch.
 \end{enumerate}
+
+
+
+
+
+\subsection{Das semidirekte Produkt \texorpdfstring{$\Zbb \rtimes \Zbb$}{ZxZ}}
+Wir definieren auf der Menge $\Zbb \rtimes \Zbb \coloneqq \{(n,m) \mid n,m \in \Zbb\}$ eine Verknüpfung $*$ durch
+\[
+ (n_1, m_1) * (n_2, m_2)
+ = \left( n_1 + (-1)^{m_1} n_2, m_1 + m_2 \right)
+ \quad
+ \text{für alle $n_1, n_2, m_1, m_2 \in \Zbb$}.
+\]
+Wir zeigen, dass $\Zbb \rtimes \Zbb$ zusammen mit der Verknüpfung $*$ eine nicht-abelsche Gruppe bildet:
+
+Für alle $(n_1, m_1), (n_2, m_2), (n_3, m_3) \in \Zbb \rtimes \Zbb$ ist
+\begin{align*}
+ (n_1, m_1) * ( (n_2, m_2) * (n_3, m_3) )
+ &= (n_1, m_1) * (n_2 + (-1)^{m_2} n_3, m_2 + m_3) \\
+ &= (n_1 + (-1)^{m_1} (n_2 + (-1)^{m_2} n_3), m_1 + m_2 + m_3) \\
+ &= (n_1 + (-1)^{m_1} n_2 + (-1)^{m_1 + m_2} n_3, m_1 + m_2 + m_3) \\
+ &= (n_1 + (-1)^{m_1} n_2, m_1 + m_2) * (n_3, m_3) \\
+ &=( (n_1, m_1) * (n_2, m_2) ) * (n_3, m_3),
+\end{align*}
+was die Assoziativität zeigt. Für alle $(n,m) \in \Zbb \rtimes \Zbb$ ist
+\begin{align*}
+ (0,0) * (n,m) &= (0 + (-1)^0 n, 0 + m) = (n,m) \text{ und}\\
+ (n,m) * (0,0) &= (n + (-1)^m \cdot 0, m+0) = (n,m),
+\end{align*}
+also ist $(0,0)$ neutral bezüglich $*$. Für $(n,m) \in \Zbb \rtimes \Zbb$ ist
+\begin{gather*}
+ \begin{aligned}
+  (n,m) * \left( (-1)^{m+1} n, -m \right)
+  &= \left( n + (-1)^m (-1)^{m+1} n, m + (-m) \right) \\
+  &= (n-n, m-m)
+  = (0,0)
+ \end{aligned}
+\intertext{und}
+ \left( (-1)^{m+1} n, -m \right) * (n,m)
+ = \left( (-1)^{m+1} n + (-1)^{-m} n, -m + m \right)
+ = (0,0),
+\end{gather*}
+also $((-1)^{m+1} n, -m)$ invers zu $(n,m)$ bezüglich $*$. Das zeigt, dass $(\Zbb \rtimes \Zbb, *)$ eine Gruppe ist.
+
+Diese Gruppe ist nicht abelsch, da etwa
+\begin{align*}
+ (1,0) * (0,1) &= (1 + (-1)^0 \cdot 0, 0 + 1) = (1, 1) \text{ und} \\
+ (0,1) * (1,0) &= (0 + (-1)^1 \cdot 1, 1 + 0 = (-1, 1).
+\end{align*}
+
+Man bezeichnet die Gruppe $\Zbb \rtimes \Zbb$ als das \emph{semidirekte Produkt} von $\Zbb$ und $\Zbb$.
+
+
+
+
+
+
+
+
+
+
+\subsection{Ausblick: Quotienten von abelschen Gruppen}
+Als ein weiteres (abstraktes) Beispiel geben wir eine Verallgemeinerung der Konstruktion von $\Zbb/n\Zbb$ an, die für eine beliebige abelsche Gruppe $A$ und Untergruppe $H \subseteq A$ eine \emph{Quotientengruppe} $A/H$ liefert.
+
+Wir definieren auf $A$ eine Äquivalenzrelation durch
+\[
+ x \sim y \iff x-y \in H.
+\]
+Es muss zunächst gezeigt werden, dass dies tatsächlich eine Äquivalenzrelation definiert:
+
+Für alle $x \in A$ ist $x-x = 0 \in H$, da $H$ eine Untergruppe ist, also $x \sim x$, was die Reflexivität zeigt.
+
+Für $x,y \in A$ mit $x \sim y$ ist $x-y \in H$. Da $H$ eine Untergruppe ist, ist damit auch $y-x = -(x-y) \in H$, also $y \sim x$. Das zeigt die Symmetrie von $\sim$.
+
+Sind $x,y,z \in A$ mit $x \sim y$ und $y \sim z$, so ist $x-y \in H$ und $y-z \in H$. Da $H$ eine Untergruppe ist, ist damit auch $x-z = (x-y)+(y-z) \in H$, also $x \sim z$. Das zeigt die Transitivität von $\sim$.
+
+Ingesamt zeigt dies, dass $\sim$ eine Äquivalenzrelation auf $A$ definiert. Wir schreiben
+\[
+ A/H
+ \coloneqq \{[x] \mid x \in A\}
+\]
+für die Menge der Äquivalenzklassen.
+
+Wir definieren auf $A/H$ eine Verknüpfung durch
+\[
+ [x]+[y] = [x+y].
+\]
+Wir müssen überprüfen, dass diese Verknüpfung wohldefiniert ist: Es seien $x, x', y, y' \in A$ mit $x \sim x'$ und $y \sim y'$. Dann ist $x-x' \in H$ und $y-y' \in H$. Da $H$ eine Untergruppe ist, ist auch
+\[
+ (x+y)-(x'+y') = (x-x') + (y-y') \in H,
+\]
+also $x+y \sim x'+y'$. Das zeigt die Wohldefiniertheit.
+
+Wir zeigen, dass $A/H$ zusammen mit $+$ eine abelsche Gruppe bildet: Die Assoziativität folgt daraus, dass für alle $x,y,z \in A$
+\[
+ [x] + ([y] + [z])
+ = [x] + [y+z]
+ = [x+y+z]
+ = [x+y] + [z]
+ = ([x] + [y]) + [z].
+\]
+Die Kommutativität ergibt sich daraus, dass für alle $x,y \in A$
+\[
+ [x] + [y] = [x+y] = [y+x] = [y] + [x].
+\]
+Für die Äquivalenzklasse von $0$ gilt für alle $x \in A$, dass
+\[
+ [0] + [x] = [0+x] = [x] = [x+0] = [x] + [0], 
+\]
+weshalb $[0]$ neutral bezüglich $+$ ist. Für jedes $x \in A$ ist
+\[
+ [x] + [-x] = [x-x] = [0] = [x-x] = [-x] + [x],
+\]
+weshalb $[-x]$ invers zu $[x]$ bezüglich $+$ ist. Ingesamt zeigt dies, dass $(A/H, +)$ eine abelsche Gruppe ist.
+
+
+\begin{bem}
+ \begin{enumerate}[leftmargin=*]
+  \item
+   Für $A = \Zbb$ und $H = n\Zbb$ ergibt sich die bereits bekannte Konstruktion von $\Zbb/n\Zbb$.
+  \item
+   Die Äquivalenzklasse von $x \in A$ ist gegeben durch
+   \begin{align*}
+    [x]
+    = \{y \in A \mid y-x \in H\}
+    &= \{y \in A \mid \text{$y = x + h$ ein $h \in H$}\} \\
+    &= \{x+h \mid h \in H\}
+    = x + \{h \mid h \in H\}
+    = x + H.
+   \end{align*}
+  \item
+   Die Addition lässt sich alternativ auch wie folgt definieren: Für beliebige Teilmengen $R, S \subseteq A$ sei
+   \[
+    R + S = \{r+s \mid r \in R, s \in S\}.
+   \]
+   Für alle $x,y \in A$ ist dann
+   \begin{align*}
+    [x] + [y]
+    &= (x+H) + (y+H)
+    = \{x+h \mid h \in H\} + \{y+h' \mid h' \in H\} \\
+    &= \{x+h+y+h' \mid h, h' \in H\}
+    = \{(x+y)+(h+h') \mid h,h' \in H\} \\
+    &= \{(x+y)+h'' \mid h'' \in H\}
+    = (x+y)+H
+    = [x+y].
+   \end{align*}
+   Diese Definition der Addition hat den Vorteil, dass es keine Wohldefiniertheit zu überprüfen gilt.
+ \end{enumerate}
+\end{bem}
+
+
+
 
 
 
