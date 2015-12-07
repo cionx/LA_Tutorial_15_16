@@ -170,22 +170,13 @@ Wir definieren zusätzlich eine Multiplikation $\cdot$ auf $\Cbb$ durch
  Ingesamt zeigt dies, dass $\Cbb$ zusammen mit der angegebenen Addition und Multiplikation ein Körper ist.
 \end{proof}
 
-Wir wollen noch etwas Notation einführen, um das Rechnen mit $\Cbb$ einfacher zu machen: Wir schreiben $0 = (0,0)$ und $1 = (1,0)$. Wir bemerken zunächst, dass für alle $a, a' \in \Rbb$
-\[
+Wir wollen noch etwas Notation einführen, um den Umgang mit $\Cbb$ angenehmer zu gestalten: Wir schreiben $0 = (0,0)$ und $1 = (1,0)$. Wir bemerken zunächst, dass für alle $a, a' \in \Rbb$
+\begin{gather*}
  (a,0) + (a',0) = (a + a', 0)
- \quad\text{und}\quad
+\shortintertext{und}
  (a,0) \cdot (a',0) = (a a' - 0 \cdot 0, a \cdot 0 + 0 \cdot a') = (a a', 0)
-\]
-und dass $0, 1 \in \{(a,0) \mid a \in \Rbb\}$. Also ist $\{(a,0) \mid a \in \Rbb\} \subseteq \Cbb$ ein Unterkörper und für die Abbildung $\phi \colon \Rbb \to \{(a,0) \mid a \in \Rbb\}$, $x \mapsto (x,0)$ gilt:
-\begin{enumerate}[label=\roman*)]
- \item
-  $\phi$ ist bijektiv.
- \item
-  Für alle $a,a' \in \Rbb$ ist $\phi(a+a') = \phi(a)+\phi(a')$ und $\phi(aa') = \phi(a)\phi(a')$.
- \item
-  Es ist $\phi(1) = 1$.
-\end{enumerate}
-Dies erlaubt es uns, $\Rbb$ mit dem Unterkörper $\{(a,0) \mid a \in \Rbb\} \subseteq \Cbb$ zu identifizieren. Wir unterscheiden also im Folgenden nicht mehr zwischen $a \in \Rbb$ und $(a,0) \in \Cbb$.
+\end{gather*}
+und $1 = (1, 0)$. Deshalb ist die Abbildung $\phi \Rbb \colon \Cbb$, $a \mapsto (a,0)$ ein Körperhomomorphismus. Daher ist $\im(\phi) = \{(a,0) \mid a \in \Rbb\} \subseteq \Cbb$ ein Unterkörper, den wir durch $\phi$ mit $\Rbb$ identifizieren. Wir unterscheiden also im Folgenden nicht mehr zwischen $a \in \Rbb$ und $(a,0) \in \Cbb$.
 
 Wir schreiben $i \coloneqq (0,1) \in \Cbb$. Für jedes $b \in \Rbb$ gilt
 \[
@@ -314,7 +305,7 @@ Die Assoziativität der Multiplikation ist bekannt. Die Matrixmultiplikation ist
 
 Da die Einheitsmatrix $I_2 \in \Mat(2 \times 2, \Rbb)$ das Einselement bezüglich der Matrixmultiplikation ist und $I_2 \in C$ ist $I_2$ das Einselement in $C$. Für $a,b \in \Rbb$ mit $Z(a,b) \neq 0$ ist $a \neq 0$ oder $b \neq 0$ und somit $a^2+b^2 \neq 0$. Da
 \begin{align*}
-  &\, Z(a,b) Z\left(\frac{a}{a^2+b^2}, -\frac{b}{a^2+b^2}\right) \\
+  &\, Z(a,b) \cdot Z\left(\frac{a}{a^2+b^2}, -\frac{b}{a^2+b^2}\right) \\
  =&\, Z\left( a \frac{a}{a^2+b^2} + b\frac{b}{a^2+b^2}, b\frac{a}{a^2+b^2} - a\frac{b}{a^2+b^2} \right) \\
  =&\, Z(1, 0)
  = I_2
@@ -352,11 +343,11 @@ Ingesamt zeigt dies, dass $\phi$ ein Körperisomorphismus ist.
 
 
 
-\subsection{Quadratische Körpererweiterungen von \texorpdfstring{$\Qbb$}{Q}}
+\subsection{Quadratische Körpererweiterungen}
+Die komplexen Zahlen $\Cbb$ entstehen aus den reellen Zahlen $\Rbb$ durch hinzufügen einer Quadratwurzel von $-1$, d.h.\ eines Elementes $i$ mit $i^2 = -1$. Wir wollen hier noch weiter Beispiele von Körpern angeben, die durch hinzufügen von Wurzeln aus bereits bekannten Körpern entstehen.
 
 
-
-\subsubsection{\texorpdfstring{$\Qbb[i]$}{Q[i]}}
+\subsubsection{Der Körper \texorpdfstring{$\Qbb[i]$}{Q[i]}}
 Es sei
 \[
  \Qbb[i]
@@ -364,7 +355,7 @@ Es sei
  \{ q_1 + q_2 i \mid q_1, q_2 \in \Qbb \}
  \subseteq \Cbb
 \]
-Wir zeigen, dass $\Qbb[i]$ ein Unterkörper von $\Cbb$ ist.
+Wir zeigen, dass $\Qbb[i]$ ein Unterkörper von $\Cbb$ ist. (Man bezeichnet $\Qbb[i]$ als „$\Qbb$ adjungiert $i$“.)
 
 Es ist $0 = 0 + 0 \cdot i \in \Qbb[i]$. Für $z,w \in \Qbb[i]$ ist $z = q_1 + q_2 i$ und $w = p_1 + p_2 i$ mit $q_1, q_2, p_1, p_2 \in \Qbb$. Daher ist auch
 \[
@@ -400,12 +391,12 @@ Ingesamt zeigt dies, dass $\Qbb[i]$ ein Unterkörper von $\Cbb$ ist. $\Qbb[i]$ i
 
 
 
-\subsubsection{\texorpdfstring{$\Qbb\left[\sqrt{2}\right]$}{Q[sqrt(2)]}}
-Wir zeigen zunächst, dass
+\subsubsection{Der Körper \texorpdfstring{$\Qbb\left[\sqrt{2}\right]$}{Q[sqrt(2)]}}
+Nach gleichen Prinzip zeigen wir, dass
 \[
  \Qbb\left[\sqrt{2}\right] \coloneqq \{ q_1 + q_2 \sqrt{2} \mid q_1, q_2 \in \Qbb \} \subseteq \Rbb
 \]
-ein Unterkörper von $\Rbb$ ist:
+ein Unterkörper von $\Rbb$ ist. (Man bezeichnet $\Qbb\left[\sqrt{2}\right]$ als „$\Qbb$ adjungiert $\sqrt{2}$“.)
 
 Es ist $0 = 0 + 0 \cdot 0 \in \Qbb\left[\sqrt{2}\right]$. Sind $x,y \in \Qbb\left[\sqrt{2}\right]$, so gibt es $q_1, q_2, p_1, p_2 \in \Qbb$ mit $x = q_1 + q_2 \sqrt{2}$ und $y = p_1 + p_2 \sqrt{2}$. Es ist daher auch
 \[
@@ -455,30 +446,191 @@ Es sei $x \in \Qbb\left[\sqrt{2}\right]$ mit $x \neq 0$. Dann ist $x = q_1 + q_2
  \in \Qbb\left[\sqrt{2}\right].
 \end{align*}
 
-Insgesamt zeigt dies, dass $\Qbb\left[\sqrt{2}\right]$ ein Unterkörper von $\Rbb$ ist. Man bezeichnet $\Qbb[\sqrt{2}]$ als „$\Qbb$ adjungiert $\sqrt{2}$“. $\Qbb\left[\sqrt{2}\right]$ ist der kleinste Unterkörper von $\Rbb$, der $\sqrt{2}$ enthält, d.h.\ ist $K' \subseteq \Rbb$ ein Unterkörper mit $\sqrt{2} \in K'$, so ist bereits $\Qbb\left[\sqrt{2}\right] \subseteq K'$.
+Insgesamt zeigt dies, dass $\Qbb\left[\sqrt{2}\right]$ ein Unterkörper von $\Rbb$ ist. Man bezeichnet $\Qbb[\sqrt{2}]$ als „$\Qbb$ adjungiert $\sqrt{2}$“. $\Qbb\left[\sqrt{2}\right]$ ist der kleinste Unterkörper von $\Rbb$, der $\sqrt{2}$ enthält, d.h.\ ist $K \subseteq \Rbb$ ein Unterkörper mit $\sqrt{2} \in K$, so ist bereits $\Qbb\left[\sqrt{2}\right] \subseteq K$.
 
 
-
-
-
-\subsubsection{Die Gaußschen Zahlen}
-Die \emph{Gaußschen Zahlen} sind definiert als
+\subsubsection{\texorpdfstring{$K[\alpha]$}{K[α]} mit \texorpdfstring{$\alpha \notin K$}{α not in K} und \texorpdfstring{$\alpha^2 \in K$}{α² in K}}
+Die Konstruktion von $\Qbb[i]$ und $\Qbb\left[\sqrt{2}\right]$ lässt sich wie folgt verallgemeimern: Es sei $L$ ein Körper und $K \subseteq L$ ein Unterkörper. Es gebe ein Element $d \in K$, das in $K$ keine Quadratwurzel besitzt, d.h.\ $x^2 \neq d$ für alle $x \in K$, das aber in $L$ eine Quadratwurzel $\omega$ besitzt, also $\omega \in L$ mit $\omega^2 = d$. Dann ist
 \[
- \Zbb[i] \coloneqq \{a + b i \mid a,b \in \Zbb\}.
+ K[\omega] \coloneqq \{x + y \omega \mid x,y \in K\}
 \]
+ein Unterkörper von $L$. $K[\omega]$ ist dann der kleinste Unterkörper von $L$, der $K$ und $\omega$ enthält. Wir zeigen, dass $K[\omega]$ ein Unterkörper von $L$ ist:
 
-Wie bereits für $\Qbb[i]$ ergibt sich auch für $\Zbb[i]$, dass es sich um eine additive Untergruppe von $\Cbb$ handelt: Es ist $0 \in \Zbb[i]$. Für $z, w \in \Zbb[i]$ ist $z = a + bi$ und $w = c + di$ mit $a,b,c,d \in \Zbb$, weshalb
+Es ist $0 = 0 + 0 \cdot \omega \in K[\omega]$. Für $z_1, z_2 \in K[\omega]$ gibt es $x_1, y_1, x_2, y_2 \in \Rbb$ mit $z_1 = x_1 + y_1 \omega$ und $z_2 = x_2 + y_2 \omega$, weshalb auch
 \[
- z + w
- = (a + bi) + (c + di)
- = (a+c) + (b+d)i
+ z_1 + z_2
+ = (x_1 + y_1 \omega) + (x_2 + y_2 \omega)
+ = (x_1 + x_2) + (y_1 + y_2) \omega
+ \in K[\omega].
 \]
-mit $a+c, b+d \in \Zbb$ und somit $z+w \in \Zbb[i]$. Für $z \in \Zbb[i]$ ist $z = a + bi$ mit $a,b \in \Zbb$, weshalb $-z = -(a+bi) = (-a) + (-b)i$ mit $-a, -b \in \Zbb$ und somit auch $-z \in \Zbb[i]$.
-
+Für $z \in K[\omega]$ gibt es es $x,y \in K$ mit $z = x+y\omega$, weshalb auch
+\[
+ -z = -(x + y \omega) = (-x) + (-y) \omega \in K[\omega].
+\]
+Das zeigt, dass $K[\omega]$ eine Untergruppe der additiven Gruppe von $L$ ist.
 
 \begin{bem}
- Im Gegensatz zu $\Qbb[i]^\times = \Qbb[i] \cap \Cbb^\times$ ist $\Zbb[i] \cap \Cbb^{\times}$ \emph{keine} Untergruppe von $\Cbb^\times$, da $2 \in \Zbb[i] \cap \Cbb^\times$ aber $1/2 \notin \Zbb[i]$ und somit auch nicht $1/2 \in \Zbb[i] \cap \Cbb^\times$.
+ Auch hier lässt sich die Rechnung damit abkürzen, dass die Abbildung $\varphi \colon K^2 \to L$, $(x,y) \mapsto x+y\omega$ ein Gruppenhomomorphismus ist, da
+ \begin{align*}
+  \varphi((x,y) + (x',y'))
+  &= \varphi(x+x', y+y') \\
+  &= (x+x') + (y+y')\omega
+  = (x + y\omega) + (x' + y'\omega)
+ \end{align*}
+ für alle $(x, y), (x', y') \in K^2$, und somit
+ \[
+  \im(\varphi)
+  = \{\varphi((x,y)) \mid (x,y) \in K^2\}
+  = \{x+y\omega \mid x,y \in K\}
+  = K[\omega]
+ \]
+ eine Untergruppe.
 \end{bem}
+
+Es ist $1 = 1 + 0 \cdot \omega \in K[\omega]$. Für $z_1, z_2 \in K[\omega]$ gibt es $x_1, x_2, y_1, y_2 \in K$ mit $z_1 = x_1 + y_1 \omega$ und $z_2 = x_2 + y_2 \omega$. Da $\omega^2 = d \in K$ ist
+\[
+ z_1 \cdot z_2
+ = (x_1 + y_1 \omega) (x_2 + y_2 \omega)
+ = (x_1 x_2 + d y_1 y_2) + (x_1 y_2 + x_2 y_1) \omega
+ \in K[\omega].
+\]
+Ist $z \in K[\omega]$ mit $z \neq 0$, so gibt es $x,y \in K$ mit $z = x+y\omega$ und $x \neq 0$ oder $y \neq 0$. Dann ist auch $x-y\omega \neq 0$. Ansonsten wäre nämlich $\omega = x/y \in K$ (falls $y \neq 0$) oder $\omega^{-1} = y/x \in K$ (falls $x \neq 0$) und somit auch dann $\omega = x/y \in K$. Dies wiederspräche aber der Annahme, dass $\omega \notin K$ (da $a^2 \neq d$ für alle $a \in K$). Deshalb ist auch
+\[
+ \frac{1}{z}
+ = \frac{1}{x+y\omega}
+ = \frac{x-y\omega}{(x+y\omega)(x-y\omega)}
+ = \frac{x-y\omega}{x^2 + dy^2}
+ = \frac{x}{x^2 + dy^2} + \frac{-y}{x^2 + dy^2}\omega \in K[\omega].
+\]
+
+Ingesamt zeigt dies, dass $K[\omega]$ ein Unterkörper von $L$ ist.
+
+
+\subsubsection{Formales Hinzufügen von Wurzeln}
+Das vorherige Beispiel zeigt: Ist $K$ ein Körper und besitzt $d \in K$ keine Quadratwurzel, und gibt es einen größeren Körper $L \supsetneq K$, in dem $d$ ein Quadratwurzel besitzt, so lässt sich $K$ zu einem neuem Körper $K'$ erweitern, in dem $d$ eine Quadratwurzel besitzt (nämlich eine aus $L$). Das „Problem“ hierbei ist allerdings, dass diese Konstruktion auf den größeren Körper $L$ angewiesen ist, in dem eine entsprechende Quadratwurzel existiert.
+
+Wir wollen hier noch zeigen, wie man zu einem beliebigen Körper auf formale Art und Weise Quadratwurzeln hinzufügen kann. Die Konstruktion läuft analog dazu, wie sich $\Cbb$ als besserer $\Rbb^2$ konstruieren lässt.
+
+Es sei also $K$ ein Körper und es sei $d \in K$ ein Element, dass keine Quadratwurzel in $K$ besitzt, d.h.\ $x^2 \neq d$ für alle $x \in K$. Wir definieren $L \coloneqq K^2$. $L$ ist eine abelsche Gruppe mit der Addition
+\[
+ (x,y) + (x', y') = (x+x', y+y')
+ \quad
+ \text{für alle $x,x',y,y' \in K$}.
+\]
+Wir definieren auf $L$ eine Multiplikation $\cdot$ durch
+\[
+ (x_1, y_1) \cdot (x_2, y_2) \coloneqq (x_1 x_2 + d y_1 y_2, x_1 y_2 + x_2 y_1).
+\]
+Wir zeigen, dass diese Multiplikation die abelsche Gruppe $L$ zu einem Körper erweitert: Die Multiplikation ist assoziativ, denn für alle $x_1, x_2, x_3, y_1, y_2, y_3 \in K$ ist
+\begin{align*}
+  &\, (x_1, y_1) \cdot ((x_2, y_2) \cdot (x_3, y_3)) \\
+ =&\, (x_1, y_1) \cdot (x_2 x_3 + d y_2 y_3, x_2 y_3 + x_3 y_2) \\
+ =&\, (x_1 (x_2 x_3 + d y_2 y_3) + d y_1 (x_2 y_3 + x_3 y_2), x_1 (x_2 y_3 + x_3 y_2) + (x_2 x_3 + d y_2 y_3) y_1) \\
+ =&\, (x_1 x_2 x_3 + d x_1 y_2 y_3 + d x_2 y_1 y_3 + d x_3 y_1 y_2, x_1 x_2 y_3 + x_1 x_3 y_2 + x_2 x_3 y_1 + d y_1 y_2 y_3) \\
+ =&\, ((x_1 x_2 + d y_1 y_2) x_3 + d (x_1 y_2 + x_2 y_1) y_3, (x_1 x_2 + d y_1 y_2) y_3 + x_3 (x_1 y_2 + x_2 y_1)) \\
+ =&\, (x_1 x_2 + d y_1 y_2, x_1 y_2 + x_2 y_1) \cdot (x_3, y_3) \\
+ =&\, ((x_1, y_1) \cdot (x_2, y_2)) \cdot (x_3, y_3).
+\end{align*}
+Die Multiplikation ist kommutativ, da für alle $x_1, x_2, y_1, y_2 \in K$
+\begin{align*}
+ (x_1, y_1) \cdot (x_2, y_2)
+ &= (x_1 x_2 + d y_1 y_2, x_1 y_2 + x_2 y_1) \\
+ &= (x_2 x_1 + d y_2 y_1, x_2 y_1 + x_1 y_2)
+ = (x_2, y_2) \cdot (x_1, y_1).
+\end{align*}
+Für alle $x,y \in K$ ist
+\[
+ (1,0) \cdot (x,y)
+ = (1 \cdot x + d \cdot 0 \cdot y, 1 \cdot y + 0 \cdot x)
+ = (x,y),
+\]
+also ist $(1,0)$ neutral bezüglich der Multiplikation. Für $(x,y) \in L$ mit $(x,y) \neq 0$ ist $x \neq 0$ oder $y \neq 0$. Dann ist $x^2 - dy^2 \neq 0$: Ansonsten wäre $d = (x/y)^2$ (falls $y \neq 0$) oder $1/d = (y/x)^2$ (falls $x \neq 0$) und somit ebenfalls $d = (x/y)^2$. Dies würde im Widerspruch dazu stehen, dass $d$ keine Quadratwurzel in $K$ hat. Da also $x^2 - dy^2 \neq 0$ ist
+\begin{align*}
+  &\, (x,y) \cdot \left( \frac{x}{x^2-dy^2}, \frac{-y}{x^2-dy^2} \right) \\
+ =&\, \left( x\frac{x}{x^2-dy^2} + dy\frac{-y}{x^2-dy^2}, x\frac{-y}{x^2-dy^2}+y\frac{x}{x^2-dy^2} \right)
+ = (1,0),
+\end{align*}
+weshalb $(x/(x^2-dy^2), -y/(x^2-dy^2))$ multiplikativ invers zu $(x,y)$ ist.
+
+Insgesamt zeigt dies, dass $L$ zusammen mit der angegebenen Addition und Multiplikation ein Körper ist.
+
+Wie bereits bei der Konstruktion von $\Cbb$ führen wir noch Notation ein: Wir schreiben $1 = (1,0)$ und $0 = (0,0)$. Wir bemerken zunächst, dass für alle $x, x' \in K$
+\begin{gather*}
+ (x, 0) + (x', 0) = (x+x', 0)
+\shortintertext{und}
+ (x, 0) \cdot (x', 0)
+ = (x \cdot x' + 0 \cdot 0, x \cdot 0 + 0 \cdot x')
+ = (x \cdot x', 0).
+\end{gather*}
+Die Abbildung $\phi \colon K \to L$, $x \mapsto (x,0)$ ist also ein Körperhomomorphismus. Deshalb ist das Bild \mbox{$\im(\phi) = \{(x,0) \mid x \in K\} \subseteq L$} ein Unterkörper, den wir durch $\phi$ mit $K$ identifizieren. Wir unterscheiden also nicht zwischen dem Element $x \in K$ und dem entsprechenden Tupel $\phi(x) = (x,0) \in L$.
+
+Wir schreiben außerdem $\alpha \coloneqq (0,1) \in L$. Man bemerke, dass
+\[
+ \alpha^2
+ = (0,1) \cdot (0,1)
+ = (0 \cdot 0 + d \cdot 1 \cdot 1, 0 \cdot 1 + 1 \cdot 0)
+ = (d,0)
+ = d.
+\]
+Also ist $\alpha$ eine Quadratwurzel von $d$ in $L$. Für alle $y \in K$ gilt
+\[
+ y\alpha
+ = (y,0) \cdot (0,1)
+ = (y \cdot 0 + d \cdot 0 \cdot 1, y \cdot 1 + 0 \cdot 0)
+ = (0,y).
+\]
+Für alle $x,y \in L$ gilt deshalb
+\[
+ (x,y)
+ = (x,0) + (0,y)
+ = x + y \alpha.
+\]
+Mit den obigen Notationen erhalten wir also, dass
+\[
+ L = \{x + y\alpha \mid x,y \in K\}
+\]
+und $\alpha^2 = d$, und für jedes $z \in L$ ist die Zerlegung $z = x + y\alpha$ mit $x,y \in K$ eindeutig.
+
+
+% \subsection{Quotientenkörper}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% \subsubsection{Die Gaußschen Zahlen}
+% Die \emph{Gaußschen Zahlen} sind definiert als
+% \[
+%  \Zbb[i] \coloneqq \{a + b i \mid a,b \in \Zbb\}.
+% \]
+% 
+% Wie bereits für $\Qbb[i]$ ergibt sich auch für $\Zbb[i]$, dass es sich um eine additive Untergruppe von $\Cbb$ handelt: Es ist $0 \in \Zbb[i]$. Für $z, w \in \Zbb[i]$ ist $z = a + bi$ und $w = c + di$ mit $a,b,c,d \in \Zbb$, weshalb
+% \[
+%  z + w
+%  = (a + bi) + (c + di)
+%  = (a+c) + (b+d)i
+% \]
+% mit $a+c, b+d \in \Zbb$ und somit $z+w \in \Zbb[i]$. Für $z \in \Zbb[i]$ ist $z = a + bi$ mit $a,b \in \Zbb$, weshalb $-z = -(a+bi) = (-a) + (-b)i$ mit $-a, -b \in \Zbb$ und somit auch $-z \in \Zbb[i]$.
+% 
+% 
+% \begin{bem}
+%  Im Gegensatz zu $\Qbb[i]^\times = \Qbb[i] \cap \Cbb^\times$ ist $\Zbb[i] \cap \Cbb^{\times}$ \emph{keine} Untergruppe von $\Cbb^\times$, da $2 \in \Zbb[i] \cap \Cbb^\times$ aber $1/2 \notin \Zbb[i]$ und somit auch nicht $1/2 \in \Zbb[i] \cap \Cbb^\times$.
+% \end{bem}
 
 
 
