@@ -272,48 +272,6 @@ Insgesamt zeigt dies, dass $\bigcup_{n \in \Nbb} H_n$ eine Untergruppe von $G$ i
 
 
 
-\subsection{Klassifikation der Untergruppen von \texorpdfstring{$\Zbb$}{Z}}
-In diesem Abschnitt bestimmen wir die Untergruppen von $\Zbb$ (d.h.\ von $(\Zbb,+)$, wobei $+$ die gewöhnliche Addition bezeichnet).
-
-Für jedes $n \in \Nbb$ sei
-\[
- n \Zbb
- \coloneqq \{n k \mid k \in \Zbb\}
- = \{a \in \Zbb \mid \text{$a$ ist durch $n$ teilbar}.
-\]
-Wir zeigen zuänchst, dass $n \Zbb$ für jedes $n \in \Nbb$ eine Untergruppe definiert:
-
-Es ist $0 = n \cdot 0 \in \Zbb$. Sind $x,y \in n\Zbb$, so gibt es $k,l \in \Zbb$ mit $x = nk$ und $y = nl$. Da damit $x+y = nk + nl = n(k+l)$ ist auch $x+y \in n\Zbb$. Ist $x \in n\Zbb$, so gibt es $k \in \Zbb$ mit $x = nk$. Da damit $-x = -nk = n(-k)$ ist auch $-x \in \Zbb$. Das zeigt, dass $n\Zbb$ eine Untergruppe ist.
-
-\begin{bem}
- Ein weniger rechenlastiger Beweis besteht darin, dass $\varphi_n \colon \Zbb \to \Zbb$, $k \mapsto nk$ ein Gruppenhomomorphismus ist, da $\varphi_n(k+l) = n(k+l) = nk + nl = \varphi_n(k) + \varphi_n(l)$ für alle $k,l \in \Zbb$, und deshalb
- \[
-  \im(\varphi_n) = \{\varphi_n(k) \mid k \in \Zbb\} = \{nk \mid k \in \Zbb\} = n\Zbb
- \]
- eine Untergruppe von $\Zbb$ ist.
-\end{bem}
-
-Wir zeigen nun, dass jede Untergruppe $H \subseteq \Zbb$ von der Form $H = n\Zbb$ für ein eindeutiges $n \in \Nbb$ ist: Ist $H = \{0\}$, so gilt die Aussage mit $n = 0$. Wir betrachten daher den Fall, dass $\{0\} \subsetneq H$. Dann gibt es ein $m \in H$ mit $m > 0$, also ist $\{m \in H \mid m > 0\} \neq 0$. Da jede nicht-leere Teilmenge von $\Nbb$ ein minimales Element besitzt, existiert $n \coloneqq \min \{m \in H \mid m > 0\}$.
-
-Da $n \in H$ ist auch $n\Zbb \subseteq H$: Für alle $k \in \Nbb$, $k \geq 1$ ist $n k = \sum_{i=1}^k n \in H$, es ist $n \cdot 0 = 0 \in H$ und für alle $k \in \Nbb$ mit $k \leq -1$ ist wegen $n(-k) \in H$ auch $nk = -n(-k) \in H$.
-
-Wir zeigen nun, dass bereits $H = n\Zbb$. Angenommen, es gibt $m \in H$ mit $m \notin n\Zbb$. Dann gibt es eindeutige $k,l \in \Zbb$ mit $m = nk + l$, wobei $0 \leq l < n$. Da $m \notin n\Zbb$ ist $l \neq 0$, also $0 < l < n$. Da $m \in H$ ist dann aber auch $l = m - nk \in H$. Da $0 < l < n$ steht dies im Widerspruch zur Definition von $n = \min \{m' \in H \mid m' > 0\}$.
-
-Das zeigt, dass $H = n\Zbb$ mit $n \in \Nbb$. Die Eindeutigkeit von $n$ folgt daraus, dass sich $n$ aus $H$ bestimmen lässt durch $n = \min \{m \in H \mid m > 0\}$.
-
-Ingesamt zeigt dies, dass es eine Bijektion
-\[
- \Nbb \rightarrow \{H \subseteq \Zbb \mid \text{$H$ ist eine Untergruppe}\}, n \mapsto n\Zbb
-\]
-gibt.
-
-
-
-
-
-
-
-
 \subsection{Untergruppen von \texorpdfstring{$\Cbb^\times$}{Cx}}
 
 
@@ -368,7 +326,6 @@ Das zeigt, dass $S^1$ ein Untergruppe von $\Cbb^\times$ ist.
 
 
 
-
 \subsubsection{\texorpdfstring{$n$}{n}-te Einheitswurzeln}
 Es sei $k$ ein Körper und $n \in \Nbb$, $n \geq 1$. Ein Element $x \in k$ heißt \emph{$n$-te Einheitswurzel} falls $x^n = 1$. Wir zeigen, dass
 \[
@@ -408,7 +365,52 @@ Für $k = \Cbb$ und $z \in R_n(\Cbb)$ ist $|z| \in \Rbb$ mit $|z| \geq 0$ und $|
 
 
 
+
+
+\subsection{Klassifikation der Untergruppen von \texorpdfstring{$\Zbb$}{Z}}
+In diesem Abschnitt bestimmen wir die Untergruppen von $\Zbb$ (d.h.\ von $(\Zbb,+)$, wobei $+$ die gewöhnliche Addition bezeichnet).
+
+Für jedes $n \in \Nbb$ sei
+\[
+ n \Zbb
+ \coloneqq \{n k \mid k \in \Zbb\}
+ = \{a \in \Zbb \mid \text{$a$ ist durch $n$ teilbar}.
+\]
+Wir zeigen zuänchst, dass $n \Zbb$ für jedes $n \in \Nbb$ eine Untergruppe definiert:
+
+Es ist $0 = n \cdot 0 \in \Zbb$. Sind $x,y \in n\Zbb$, so gibt es $k,l \in \Zbb$ mit $x = nk$ und $y = nl$. Da damit $x+y = nk + nl = n(k+l)$ ist auch $x+y \in n\Zbb$. Ist $x \in n\Zbb$, so gibt es $k \in \Zbb$ mit $x = nk$. Da damit $-x = -nk = n(-k)$ ist auch $-x \in \Zbb$. Das zeigt, dass $n\Zbb$ eine Untergruppe ist.
+
+\begin{bem}
+ Ein weniger rechenlastiger Beweis besteht darin, dass $\varphi_n \colon \Zbb \to \Zbb$, $k \mapsto nk$ ein Gruppenhomomorphismus ist, da $\varphi_n(k+l) = n(k+l) = nk + nl = \varphi_n(k) + \varphi_n(l)$ für alle $k,l \in \Zbb$, und deshalb
+ \[
+  \im(\varphi_n) = \{\varphi_n(k) \mid k \in \Zbb\} = \{nk \mid k \in \Zbb\} = n\Zbb
+ \]
+ eine Untergruppe von $\Zbb$ ist.
+\end{bem}
+
+Wir zeigen nun, dass jede Untergruppe $H \subseteq \Zbb$ von der Form $H = n\Zbb$ für ein eindeutiges $n \in \Nbb$ ist: Ist $H = \{0\}$, so gilt die Aussage mit $n = 0$. Wir betrachten daher den Fall, dass $\{0\} \subsetneq H$. Dann gibt es ein $m \in H$ mit $m > 0$, also ist $\{m \in H \mid m > 0\} \neq 0$. Da jede nicht-leere Teilmenge von $\Nbb$ ein minimales Element besitzt, existiert $n \coloneqq \min \{m \in H \mid m > 0\}$.
+
+Da $n \in H$ ist auch $n\Zbb \subseteq H$: Für alle $k \in \Nbb$, $k \geq 1$ ist $n k = \sum_{i=1}^k n \in H$, es ist $n \cdot 0 = 0 \in H$ und für alle $k \in \Nbb$ mit $k \leq -1$ ist wegen $n(-k) \in H$ auch $nk = -n(-k) \in H$.
+
+Wir zeigen nun, dass bereits $H = n\Zbb$. Angenommen, es gibt $m \in H$ mit $m \notin n\Zbb$. Dann gibt es eindeutige $k,l \in \Zbb$ mit $m = nk + l$, wobei $0 \leq l < n$. Da $m \notin n\Zbb$ ist $l \neq 0$, also $0 < l < n$. Da $m \in H$ ist dann aber auch $l = m - nk \in H$. Da $0 < l < n$ steht dies im Widerspruch zur Definition von $n = \min \{m' \in H \mid m' > 0\}$.
+
+Das zeigt, dass $H = n\Zbb$ mit $n \in \Nbb$. Die Eindeutigkeit von $n$ folgt daraus, dass sich $n$ aus $H$ bestimmen lässt durch $n = \min \{m \in H \mid m > 0\}$.
+
+Ingesamt zeigt dies, dass es eine Bijektion
+\[
+ \Nbb \rightarrow \{H \subseteq \Zbb \mid \text{$H$ ist eine Untergruppe}\}, n \mapsto n\Zbb
+\]
+gibt.
+
+
+
+
+
 \subsection{Die symmetrische Gruppen \texorpdfstring{$S(X)$}{S(X)} und \texorpdfstring{$S_n$}{Sn} und Untergruppen}
+
+
+
+\subsubsection{Die symmetrische Gruppen \texorpdfstring{$S(X)$}{S(X)} und \texorpdfstring{$S_n$}{Sn}}
 Es sei $X$ eine beliebige Menge und $S(X) \coloneqq \{\sigma \colon X \to X \mid \text{$\sigma$ ist bijektiv}\}$. Für beliebige $\sigma_1, \sigma_2 \in S(X)$ ist auch $\sigma_1 \circ \sigma_2 \colon X \to X$ bijektiv, also $\sigma_1 \circ \sigma_2 \in S(X)$.
 
 Wir zeigen, dass $(S(X), \circ)$ eine Gruppe ist: Die Assoziativität von $\circ$ folgt direkt aus der allgemeinen Assoziativität der Funktionskomposition.
@@ -502,6 +504,9 @@ also $\sigma \in N(Y)$. Wir haben also eine Kette von Untergruppen $Z(Y) \subset
 \subsection{Die allgemeine lineare Gruppe \texorpdfstring{$\GL_n(k)$}{GLnk} und Untergruppen}
 Es sei $k$ ein Körper (etwa $k \in \{\Qbb, \Rbb, \Cbb\}$) und $n \in \Nbb$, $n \geq 1$.
 
+
+
+\subsubsection{Die allgemeine lineare Gruppe \texorpdfstring{$\GL_n(k)$}{GLnk}}
 \begin{defi}
  Eine Matrix $S \in \Mat(n \times n, k)$ heißt \emph{invertierbar}, falls es eine Matrix $T \in \Mat(n \times n, k)$ gibt, so dass $ST = I_n = TS$. (Hier bezeichnet $I_n \in \Mat(n \times n, k)$ die Einheitsmatrix.)
  
@@ -759,11 +764,6 @@ Insgesamt zeigt dies, dass $\SOrt(2)$ zusammen mit der üblichen Matrixmultiplik
    Für jede Matrix $S \in \GL_n(k)$ ist die Abbildung $M_S \colon \Rbb^2 \to \Rbb^2, x \mapsto S \cdot x$ linear. Ist $S = D_\varphi$, so ist $M_S = M_{D_\varphi}$ die Drehung der Ebene $\Rbb^2$ um den Winkel $\varphi$.
  \end{enumerate}
 \end{bem}
-
-
-
-\subsubsection{Die oberen Dreiecksmatrizen \texorpdfstring{$B_n(k)$}{Bn(k)}}
-% TODO: Tippen
 
 
 
