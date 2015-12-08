@@ -343,6 +343,266 @@ Ingesamt zeigt dies, dass $\phi$ ein Körperisomorphismus ist.
 
 
 
+\subsection{Die endlichen Körper \texorpdfstring{$\Fbb_p$}{Fp}}
+Es sei $n \in \Nbb$, $n \geq 1$. In \ref{ss: ZnZ} haben wir die endlichen abelschen Gruppen $\Zbb/n\Zbb$ konstruiert, indem wir auf $\Zbb$ die Äquivalenzrelation $\sim$ mit
+\[
+ k \sim l \iff \exists s \in \Zbb : k = l + sn
+\]
+definieren und auf der Menge der Äquivalenzklassen $\Zbb/n\Zbb = \Zbb/{\sim}$ die Addition
+\[
+ [k] + [l] = [k+l]
+ \quad
+ \text{für alle $k,l \in \Zbb$}
+\]
+definieren.
+
+Die Multiplikation von $\Zbb$ liefert auf $\Zbb/n\Zbb$ eine Multiplikation durch
+\[
+ [k] \cdot [l] = [k \cdot l]
+ \quad
+ \text{für alle $k,l \in \Zbb$}.
+\]
+Wir zeigen im Folgenden, dass diese Multiplikation wohldefiniert ist, und dass $\Zbb/n\Zbb$ zusammen mit der obigen Addition und Multiplikation genau dann einen Körper bildet, wenn $n$ eine Primzahl ist.
+
+Wir zeigen zunächst, dass die Multiplikation wohldefiniert ist: Es seien $k, k', l, l' \in \Zbb$ mit $k \sim k'$ und $l \sim l'$. Dann gibt es $s,t \in \Zbb$ mit $k = k' + sn$ und $l = l' + tn$. Deshalb ist
+\[
+ k \cdot l
+ = (k' + sn) \cdot (l' + tn)
+ = k' \cdot l' + l'sn + k'tn + stn^2
+ = k' \cdot l' + (l's + k't + stn)n,
+\]
+also auch $k \cdot l \sim k' \cdot l'$. Also ist die Multiplikation wohldefiniert.
+
+Für alle $k_1, k_2, k_3 \in \Zbb$ ist
+\[
+ [k_1] \cdot ([k_2] \cdot [k_3])
+ = [k_1] \cdot [k_2 \cdot k_3]
+ = [k_1 \cdot k_2 \cdot k_3]
+ = [k_1 \cdot k_2] \cdot [k_3]
+ = ([k_1] \cdot [k_3]) \cdot [k_3],
+\]
+also ist die Multiplikation assoziativ. Für alle $k, l \in \Zbb$ ist
+\[
+ [k] \cdot [l]
+ = [k \cdot l]
+ = [l \cdot k]
+ = [l] \cdot [k],
+\]
+also ist die Multiplikation kommutativ. Für alle $k \in \Zbb$ ist
+\[
+ [1] \cdot [k] = [1 \cdot k] = [k],
+\]
+also ist $[1]$ ein Einselement bezüglich der Multiplikation (dass auch $[k] \cdot [1] = [k]$ folgt sofort mithilfe der Kommutativität).
+
+Es bleibt zu zeigen, dass $\Zbb/n\Zbb$ genau dann ein Körper ist, wenn $n$ prim ist.
+
+Angenommen, $p$ ist eine Primzahl. Es sei $x \in \Zbb/p\Zbb$ mit $x \neq 0$, also $x \neq [0]$. Dann gibt es $k \in \Zbb$ mit $0 < k < p$, so dass $x = [k]$. Nach Euklid gibt es $s,t \in \Zbb$ mit $sk + tp = \ggT(k,p)$. Da $0 < k < p$ und $p$ prim ist, sind $k$ und $p$ teilerfremd. Also ist $\ggT(k,p) = 1$ und somit $sk + tp = 1$. Es folgt, dass
+\[
+ [s] \cdot x
+ = [s] \cdot [k]
+ = [sk]
+ = [sk + tp]
+ = [1],
+\]
+also $[s] \cdot x = 1$. Somit ist $x$ multiplikativ invertierbar.
+
+Angenommen, $n \in \Nbb$, $n \geq 1$ ist keine Primzahl. Ist $n = 1$, so ist $\Zbb/n\Zbb = \Zbb/1\Zbb = \{[0]\}$. Insbesondere ist daher $[0] = [1]$, also $\Zbb/n\Zbb$ kein Körper. Wir betrachten als den Fall, dass zusätzlich $n \geq 2$. Da $n$ nach Annahme nicht prim ist, gibt es $1 < \leq k,l < n$ mit $n = k \cdot l$. Da $0 < k,l < n$ ist $[k] \neq [0]$ und $[l] \neq [0]$. Da $n = k \cdot l$ ist aber
+\[
+ [k] \cdot [l]
+ = [k \cdot l]
+ = [n]
+ = [0].
+\]
+Wäre $\Zbb/n\Zbb$ ein Körper, so würde aus $[k] \cdot [l]$ aber folgen, dass $[k] = 0$ oder $[l] = 0$, was im Widerspruch zu $[k] \neq [0]$ oder $[l] \neq [0]$ stünde. Also ist $\Zbb/n\Zbb$ unter den obigen Annahmen kein Körper.
+
+Für eine Primzahl $p$ bezeichnet man den Körper $(\Zbb/p\Zbb, +, \cdot)$ als $\Fbb_p$. Dabei identifiziert man die Elemente von $\Zbb/p\Zbb$ wie bereits in \ref{ss: ZnZ} erläutert mit den entsprechenden Repräsentanten aus $\{0, \dotsc, p-1\}$, hat also $\Fbb_p = \{0, \dotsc, p-1\}$. Bezeichnen $+$ und $\cdot$ die Addition und Multiplikation auf $\Zbb$ und $\tilde{+}$ und $\tilde{\cdot}$ die Multiplikation auf $\Fbb_p$, so gilt dann
+\[
+ x \mathbin{\tilde{+}} y = (x + y) \bmod p
+ \quad\text{und}\quad
+ x \mathbin{\tilde{\cdot}} y = (x \cdot y) \bmod p
+ \quad
+ \text{für alle $x,y \in \Fbb_p$}.
+\]
+
+
+\begin{bsp}
+ \begin{enumerate}[leftmargin=*]
+  \item
+   Es ist $\Fbb_2 = \{0, 1\}$. Die Addition ist gegeben durch $0 + 0 = 1 + 1 = 0$ und $0 + 1 = 1 + 0 = 1$, und die Multiplikation durch $0 \cdot 0 = 0 \cdot 1 = 1 \cdot 0 = 0$ und $1 \cdot 1 = 1$.
+  \item
+   Es ist $\Fbb_3 = \{0, 1, 2\}$. Die Addition und Multiplikation sind wie in den folgenden Tabellen gegeben:
+   \begin{center}
+    \begin{tabular}{|c|c|c|c|}
+     \hline
+     $+$ & $0$ & $1$ & $2$ \\\hline
+     $0$ & $0$ & $1$ & $2$ \\\hline
+     $1$ & $1$ & $2$ & $0$ \\\hline
+     $2$ & $2$ & $0$ & $1$ \\\hline
+    \end{tabular}
+    \quad und \quad
+    \begin{tabular}{|c|c|c|c|}
+     \hline
+     $\cdot$ & $0$ & $1$ & $2$ \\\hline
+     $0$     & $0$ & $0$ & $0$ \\\hline
+     $1$     & $0$ & $1$ & $2$ \\\hline
+     $2$     & $0$ & $2$ & $1$ \\\hline
+    \end{tabular}
+   \end{center}
+  \item
+   Es ist $\Fbb_5 = \{0, 1, 2, 3, 4\}$ und die Addition und Multiplikation sind wie in den folgenden Tabellen gegeben:
+   \begin{center}
+    \begin{tabular}{|c|c|c|c|c|c|}
+     \hline
+     $+$ & $0$ & $1$ & $2$ & $3$ & $4$ \\\hline
+     $0$ & $0$ & $1$ & $2$ & $3$ & $4$ \\\hline
+     $1$ & $1$ & $2$ & $3$ & $4$ & $0$ \\\hline
+     $2$ & $2$ & $3$ & $4$ & $0$ & $1$ \\\hline
+     $3$ & $3$ & $4$ & $0$ & $1$ & $2$ \\\hline
+     $4$ & $4$ & $0$ & $1$ & $2$ & $3$ \\\hline
+    \end{tabular}
+    \quad und \quad
+    \begin{tabular}{|c|c|c|c|c|c|}
+     \hline
+     $\cdot$ & $0$ & $1$ & $2$ & $3$ & $4$ \\\hline
+     $0$     & $0$ & $0$ & $0$ & $0$ & $0$ \\\hline
+     $1$     & $0$ & $1$ & $2$ & $3$ & $4$ \\\hline
+     $2$     & $0$ & $2$ & $4$ & $1$ & $3$ \\\hline
+     $3$     & $0$ & $3$ & $1$ & $4$ & $2$ \\\hline
+     $4$     & $0$ & $4$ & $3$ & $2$ & $1$ \\\hline
+    \end{tabular}
+   \end{center}
+  \item
+   Für $\Fbb_7 = \{0, 1, 2, 3, 4, 5, 6\}$ sind die Tabellen der Addition und Multiplikation gegeben durch
+   \begin{center}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+     \hline
+     $+$ & $0$ & $1$ & $2$ & $3$ & $4$ & $5$ & $6$ \\\hline
+     $0$ & $0$ & $1$ & $2$ & $3$ & $4$ & $5$ & $6$ \\\hline
+     $1$ & $1$ & $2$ & $3$ & $4$ & $5$ & $6$ & $0$ \\\hline
+     $2$ & $2$ & $3$ & $4$ & $5$ & $6$ & $0$ & $1$ \\\hline
+     $3$ & $3$ & $4$ & $5$ & $6$ & $0$ & $1$ & $2$ \\\hline
+     $4$ & $4$ & $5$ & $6$ & $0$ & $1$ & $2$ & $3$ \\\hline
+     $5$ & $5$ & $6$ & $0$ & $1$ & $2$ & $3$ & $4$ \\\hline
+     $6$ & $6$ & $0$ & $1$ & $2$ & $3$ & $4$ & $5$ \\\hline
+    \end{tabular}
+    \quad und \quad
+    \begin{tabular}{|c|c|c|c|c|c|c|c|}
+     \hline
+     $\cdot$ & $0$ & $1$ & $2$ & $3$ & $4$ & $5$ & $6$ \\\hline
+     $0$     & $0$ & $0$ & $0$ & $0$ & $0$ & $0$ & $0$ \\\hline
+     $1$     & $0$ & $1$ & $2$ & $3$ & $4$ & $5$ & $6$ \\\hline
+     $2$     & $0$ & $2$ & $4$ & $6$ & $1$ & $3$ & $5$ \\\hline
+     $3$     & $0$ & $3$ & $6$ & $2$ & $5$ & $1$ & $4$ \\\hline
+     $4$     & $0$ & $4$ & $1$ & $5$ & $2$ & $6$ & $3$ \\\hline
+     $5$     & $0$ & $5$ & $3$ & $1$ & $6$ & $4$ & $2$ \\\hline
+     $6$     & $0$ & $6$ & $5$ & $4$ & $3$ & $2$ & $1$ \\\hline
+    \end{tabular}
+   \end{center}
+  \item
+   Man beachte, dass die obigen Tabelle alle symmetrisch sind, da die Addition und Multiplikation kommutativ sind.
+  \item
+   In $\Fbb_{11}$ gilt etwa $1/9 = 5$ und $1/7 = 8$, sowie $10 + 6 + 8 - 5 = 8$.
+  \item
+   Wir wollen die Matrix $A \in \Mat(4 \times 5, \Fbb_{11})$ mit
+   \[
+    A =
+    \begin{pmatrix}
+     4 &  9 & 6 &  3 &  2 \\
+     3 &  9 & 6 & 10 & 10 \\
+     5 &  5 & 5 &  5 &  2 \\
+     0 &  8 & 8 &  1 &  1
+    \end{pmatrix}
+   \]
+   durch elementare Zeilenumformungen in Zeilenstufenform bringen. Da wir uns über $\Fbb_{11}$ bewegen, müssen wir hierfür nicht mit Brüchen hantieren.
+   \begin{align*}
+    \begin{pmatrix}
+     4 & 9 & 6 &  3 &  2 \\
+     3 & 9 & 6 & 10 & 10 \\
+     5 & 5 & 5 &  5 &  2 \\
+     0 & 8 & 8 &  1 &  1
+    \end{pmatrix}
+    &\xrightarrow[3\mathrm{I}]{}
+    \begin{pmatrix}
+     1 & 5 & 7 &  9 &  6 \\
+     3 & 9 & 6 & 10 & 10 \\
+     5 & 5 & 5 &  5 &  2 \\
+     0 & 8 & 8 &  1 &  1
+    \end{pmatrix}
+    \xrightarrow[\substack{\mathrm{II}+8\mathrm{I} \\ \mathrm{III}+6\mathrm{I}}]{}
+    \begin{pmatrix}
+     1 & 5 & 7 & 9 & 6 \\
+     0 & 5 & 7 & 5 & 3 \\
+     0 & 2 & 3 & 4 & 5 \\
+     0 & 8 & 8 & 1 & 1
+    \end{pmatrix}
+    \\
+    &\xrightarrow[9\mathrm{II}]{}
+    \begin{pmatrix}
+     1 & 5 & 7 & 9 & 6 \\
+     0 & 1 & 8 & 1 & 5 \\
+     0 & 2 & 3 & 4 & 5 \\
+     0 & 8 & 8 & 1 & 1
+    \end{pmatrix}
+    \xrightarrow[\substack{\mathrm{III}+9\mathrm{II} \\ \mathrm{IV}+3\mathrm{II}}]{}
+    \begin{pmatrix}
+     1 & 5 &  7 & 9 & 6 \\
+     0 & 1 &  8 & 1 & 5 \\
+     0 & 0 &  9 & 2 & 6 \\
+     0 & 0 & 10 & 4 & 5
+    \end{pmatrix}
+    \\
+    &\xrightarrow[5\mathrm{III}]{}
+    \begin{pmatrix}
+     1 & 5 &  7 &  9 & 6 \\
+     0 & 1 &  8 &  1 & 5 \\
+     0 & 0 &  1 & 10 & 8 \\
+     0 & 0 & 10 &  4 & 5
+    \end{pmatrix}
+    \xrightarrow[\mathrm{IV}+\mathrm{III}]{}
+    \begin{pmatrix}
+     1 & 5 & 7 &  9 & 6 \\
+     0 & 1 & 8 &  1 & 5 \\
+     0 & 0 & 1 & 10 & 8 \\
+     0 & 0 & 0 &  3 & 2
+    \end{pmatrix}
+    \\
+    &\xrightarrow[4\mathrm{IV}]{}
+    \begin{pmatrix}
+     1 & 5 & 7 &  9 & 6 \\
+     0 & 1 & 8 &  1 & 5 \\
+     0 & 0 & 1 & 10 & 8 \\
+     0 & 0 & 0 &  1 & 8
+    \end{pmatrix}
+    \xrightarrow[\substack{\mathrm{I}+2\mathrm{IV} \\ \mathrm{II}+10\mathrm{IV} \\ \mathrm{III}+\mathrm{IV}}]{}
+    \begin{pmatrix}
+     1 & 5 & 7 & 0 & 0 \\
+     0 & 1 & 8 & 0 & 8 \\
+     0 & 0 & 1 & 0 & 5 \\
+     0 & 0 & 0 & 1 & 8
+    \end{pmatrix}
+    \\
+    &\xrightarrow[\substack{\mathrm{I}+4\mathrm{III} \\ \mathrm{II}+3\mathrm{III}}]{}
+    \begin{pmatrix}
+     1 & 5 & 0 & 0 & 9 \\
+     0 & 1 & 0 & 0 & 1 \\
+     0 & 0 & 1 & 0 & 5 \\
+     0 & 0 & 0 & 1 & 8
+    \end{pmatrix}
+    \xrightarrow[\mathrm{I}+6\mathrm{II}]{}
+    \begin{pmatrix}
+     1 & 0 & 0 & 0 & 4 \\
+     0 & 1 & 0 & 0 & 1 \\
+     0 & 0 & 1 & 0 & 5 \\
+     0 & 0 & 0 & 1 & 8
+    \end{pmatrix}
+   \end{align*}  
+ \end{enumerate}
+\end{bsp}
+ 
+
+
+
+
 \subsection{Quadratische Körpererweiterungen}
 Die komplexen Zahlen $\Cbb$ entstehen aus den reellen Zahlen $\Rbb$ durch hinzufügen einer Quadratwurzel von $-1$, d.h.\ eines Elementes $i$ mit $i^2 = -1$. Wir wollen hier noch weiter Beispiele von Körpern angeben, die durch hinzufügen von Wurzeln aus bereits bekannten Körpern entstehen.
 
@@ -590,6 +850,7 @@ Mit den obigen Notationen erhalten wir also, dass
  L = \{x + y\alpha \mid x,y \in K\}
 \]
 und $\alpha^2 = d$, und für jedes $z \in L$ ist die Zerlegung $z = x + y\alpha$ mit $x,y \in K$ eindeutig.
+
 
 
 % \subsection{Quotientenkörper}
