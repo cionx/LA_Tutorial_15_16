@@ -535,6 +535,118 @@ Insgesamt zeigt dies, dass $\GL_n(k)$ zusammen mit der üblichen Matrixmultiplik
 
 
 
+\subsubsection{Die Diagonalmatrizen \texorpdfstring{$\D_n(k)$}{Dn(k)}}
+Es sei $K$ ein Körper und $n \in \Nbb$, $n \geq 1$.
+
+\begin{defi}
+ Eine quadratische Matrix $D = (d_{ij})_{i,j = 1, \dotsc, n} \in \Mat(n \times n, K)$ heißt \emph{Diagonalmatrix}, falls $d_{ij} = 0$ für alle $1 \leq i \neq j \leq n$, d.h.\ wenn $D$ von der Form
+ \[
+  D =
+  \begin{pmatrix}
+   d_{11} & 0      & \cdots & 0      \\
+   0      & \ddots & \ddots & \vdots \\
+   \vdots & \ddots & \ddots & 0      \\
+   0      & \cdots & 0      & d_{nn}
+  \end{pmatrix}
+ \]
+ ist. Für all $\lambda_1, \dotsc, \lambda_n \in K$ sei abkürzend $\diag(\lambda_1, \dotsc, \lambda_n) \in \Mat(n \times n, K)$ die Diagonalmatrix mit Diagonaleinträgen $\lambda_1, \dotsc, \lambda_n$, d.h.\
+ \begin{gather*}
+  \diag(\lambda_1, \dotsc, \lambda_n)_{ij} = \delta_{ij} \lambda_i = \delta_{ij} \lambda_j
+  \quad
+  \text{für alle $1 \leq i,j \leq n$},
+ \shortintertext{also}
+  \diag(\lambda_1, \dotsc, \lambda_n) =
+  \begin{pmatrix}
+   \lambda_1 & 0      & \cdots & 0      \\
+   0         & \ddots & \ddots & \vdots \\
+   \vdots    & \ddots & \ddots & 0      \\
+   0         & \cdots & 0      & \lambda_n.
+  \end{pmatrix}
+ \end{gather*}
+\end{defi}
+
+Es sei
+\[
+ D_n(k) \coloneqq \{D \in \GL_n(k) \mid \text{$D$ ist eine Diagonalmatrix}\}.
+\]
+Wir zeigen, dass $D_n(k)$ eine Untergruppe von $\GL_n(k)$ ist, und wie diese aussieht.
+
+
+Wir wollen zunächt verstehe, wie das Produkt von Diagonalmatrizen mit anderen Matrizen aussieht. Hierfür sei $D \in \Mat(n \times n, K)$ eine Diagonalmatrix, $A \in \Mat(m \times n, K)$ sowie $B \in \Mat(n \times m, K)$. Es seien $\lambda_1, \dotsc, \lambda_n \in K$ mit $D = \diag(\lambda_1, \dotsc, \lambda_n)$. Für alle $1 \leq i \leq m$ und $1 \leq j \leq n$ ist
+\[
+ (AD)_{ij}
+ = \sum_{k=1}^n A_{ik} D_{kj}
+ = \lambda_j A_{ij},
+\]
+und für alle $1 \leq i \leq n$ und $1 \leq j \leq m$ ist
+\[
+ (DB)_{ij}
+ = \sum_{k=1}^n D_{ik} B_{ij}
+ = \lambda_i B_{ij}.
+\]
+Also ist
+\[
+ AD =
+ \begin{pmatrix}
+  \lambda_1 A_{11} & \cdots & \lambda_n A_{1n} \\
+  \lambda_1 A_{21} & \cdots & \lambda_n A_{2n} \\
+  \vdots           & \ddots & \vdots           \\
+  \lambda_1 A_{m1} & \cdots & \lambda_n A_{mn} 
+ \end{pmatrix}
+ \quad\text{und}\quad
+ DB =
+ \begin{pmatrix}
+  \lambda_1 B_{11} & \lambda_1 B_{12} & \cdots & \lambda_1 B_{1m} \\
+  \vdots           & \vdots           & \ddots & \vdots \\
+  \lambda_n B_{n1} & \lambda_n B_{n2} & \cdots & \lambda_n B_{nm}
+ \end{pmatrix}
+\]
+Ist $D' \in \Mat(n \times n, K)$ eine weiter Diagonalmatrix mit Diagonaleinträgen $\mu_1, \dotsc, \mu_n \in K$, also $D' = \diag(\mu_1, \dotsc, \mu_n)$, so ist insbesondere
+\begin{align*}
+  &\, \diag(\lambda_1, \dotsc, \lambda_n) \cdot \diag(\mu_1, \dotsc, \mu_n)
+ = D \cdot D' \\
+ =&\,
+ \begin{pmatrix}
+  \lambda_1 D'_{11} & \cdots & \lambda_1 D'_{1n} \\
+  \vdots            & \ddots & \vdots           \\
+  \lambda_n D'_{n1} & \cdots & \lambda_n D'_{nn}
+ \end{pmatrix}
+ =
+ \begin{pmatrix}
+  \lambda_1 \mu_1 & 0      & \cdots & 0      \\
+  0               & \ddots & \ddots & \vdots \\
+  \vdots          & \ddots & \ddots & 0      \\
+  0               & \cdots & 0      & \lambda_n \mu_n
+ \end{pmatrix} \\
+ =&\, \diag(\lambda_1 \mu_1, \dotsc, \lambda_n \mu_n).
+\end{align*}
+Die Multiplikation von Diagonalmatrizen funktioniert als „eintragsweise“.
+
+Dies zeigt zum einen, dass das Produkt von Diagonalmatrizen wieder eine Diagonalmatrix ist. Also ist $\D_n(k)$ unter Produkten abgeschlossen. Außerdem ist $I_n = \diag(1, \dotsc, 1) \in D_n(k)$. Es bleibt zu zeigen, dass für alle $D \in \D_n(k)$ auch $D^{-1} \in \D_n(k)$.
+
+Hierfür betrachten wir zunächst den Fall, dass $\lambda_i \neq 0$ für alle $1 \leq i \leq n$. Dann ist auch $D' \coloneqq \diag(\lambda_1^{-1}, \dotsc, \lambda_n^{-1})$ ein Diagonalmatrix, und es gilt
+\[
+ D \cdot D'
+ = \diag(\lambda_1 \lambda_1^{-1}, \dotsc, \lambda_n \lambda_n^{-1})
+ = \diag(1, \dotsc, 1)
+ = I_n.
+\]
+Also ist dann $D^{-1} = D'$ ein Diagonalmatrix.
+
+Tatsächlich muss, da $D$ invertierbar ist, bereits $\lambda_i \neq 0$ für alle $1 \leq i \leq n$: Ansonsten gebe ein $1 \leq i \leq n$ mit $\lambda_i = 0$ und somit $D_{ij} = 0$ für alle $1 \leq j \leq n$ (für alle $1 \leq j \leq n$ mit $j \neq i$ gilt bereits $D_{ij} = 0$, da $D$ ein Diagonalmatrix ist). Für jede Matrix $S \in \GL_n(k)$ wäre damit
+\[
+ (DS)_{ii}
+ = \sum_{j=1}^n \underbrace{D_{ij}}_{=0} S_{ji}
+ = 0.
+\]
+Insbesondere wäre somit $DS \neq I_n$ für alle $S \in \GL_n(K)$, was im Widerspruch zu der Invertierbarkeit von $D$ stünde.
+
+Das zeigt, dass eine Diagonalmatrix $D = \diag(\lambda_1, \dotsc, \lambda_n)$ genau dann invertierbar ist, wenn $\lambda_i \neq 0$ für alle $1 \leq i \leq n$, und dann $D^{-1} = \diag(\lambda_1^{-1}, \dotsc, \lambda_n^{-1})$ ebenfalls eine Diagonalmatrix ist. Also ist $\D_n(k)$ ein Untergruppe von $\GL_n(k)$.
+
+
+
+
+
 \subsubsection{Die orthogonale Gruppe \texorpdfstring{$\Ort_n(k)$}{On(k)}}
 Es sei $k$ ein Körper.
 
