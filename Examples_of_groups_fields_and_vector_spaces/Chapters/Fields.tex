@@ -1,7 +1,7 @@
-\section{Beispiele für Körper}
+\chapter{Beispiele für Körper}
 
 
-\subsection{Einige kleine Beispiele}
+\section{Einige kleine Beispiele}
 \begin{enumerate}[leftmargin=*]
  \item
   Die rationalen Zahlen $\Qbb$ und die reellen Zahlen $\Rbb$ bilden zusammen mit der üblichen Addition und Multiplikation jeweils einen Körper. $\Qbb$ ist ein Unterkörper von $\Rbb$.
@@ -64,7 +64,7 @@
 
 
 
-\subsection{Bilder von Körperhomomorphismen}
+\section{Bilder von Körperhomomorphismen}
 Sind $K$ und $L$ Körper und ist $\phi \colon K \to L$ ein Körperhomomorphismus, so ist $\im(\phi) \subseteq L$ ein Unterkörper:
 
 Es ist $0 = \phi(0) \in \im(\phi)$. Für $x,y \in \im(\phi)$ gibt es $x', y' \in K$ mit $\phi(x') = x$ und $\phi(y') = y$, weshalb auch
@@ -109,12 +109,12 @@ Insgesamt zeigt dies, dass $\im(\phi)$ ein Unterkörper von $L$ ist.
 
 
 
-\subsection{Die komplexen Zahlen \texorpdfstring{$\Cbb$}{C}}
+\section{Die komplexen Zahlen \texorpdfstring{$\Cbb$}{C}}
 Die komplexen Zahlen $\Cbb$ sind ein Körper, der die reellen Zahlen $\Rbb$ enthält, und in dem es ein Element $i \in \Cbb$ gibt, für das $i^2 = -1$. Wir geben an dieser Stelle zwei mögliche Konstruktionen der komplexen Zahlen an:
 
 
 
-\subsubsection{Die komplexen Zahlen als besserer \texorpdfstring{$\Rbb^2$}{R2}}
+\subsection{Die komplexen Zahlen als besserer \texorpdfstring{$\Rbb^2$}{R2}}
 Wir beginnen mit der additiven Gruppe $\Cbb \coloneqq \Rbb^2 = \{(a,b) \mid a,b \in \Rbb\}$. Die Addition ist gegeben durch
 \[
  (a_1, b_1) + (a_2, b_2) = (a_1 + a_2, b_1 + b_2)
@@ -204,7 +204,7 @@ und die Multiplikation so, dass
 
 
 
-\subsubsection{Die komplexen Zahlen als reelle (\texorpdfstring{$2 \times 2$}{2x2})-Matrizen}
+\subsection{Die komplexen Zahlen als reelle (\texorpdfstring{$2 \times 2$}{2x2})-Matrizen}
 Unabhängig von der ersten Methode geben wir noch eine weitere Konstruktion der komplexen Zahlen an: Es sei
 \[
  C \coloneqq
@@ -315,7 +315,7 @@ ist $Z(a/(a^2+b^2), -b/(a^2+b^2))$ das multiplikativ Inverse zu $Z(a,b)$ (da die
 Insgesamt zeigt dies, dass $C$ mit der üblichen Matrixaddition und -multiplikation einen Körper bildet.
 
 
-\subsubsection{Äquivalenz der beiden Konstruktionen}
+\subsection{Äquivalenz der beiden Konstruktionen}
 Die beiden Konstruktionen der komplexen Zahlen sind insofern äquivalent, als dass die Abbildung
 \[
  \phi \colon \Cbb \to C, a + ib \mapsto Z(a,b) \quad \text{für alle $a,b \in \Rbb$}
@@ -343,7 +343,7 @@ Ingesamt zeigt dies, dass $\phi$ ein Körperisomorphismus ist.
 
 
 
-\subsection{Die endlichen Körper \texorpdfstring{$\Fbb_p$}{Fp}}
+\section{Die endlichen Körper \texorpdfstring{$\Fbb_p$}{Fp}}
 Es sei $n \in \Nbb$, $n \geq 1$. In \ref{ss: ZnZ} haben wir die endlichen abelschen Gruppen $\Zbb/n\Zbb$ konstruiert, indem wir auf $\Zbb$ die Äquivalenzrelation $\sim$ mit
 \[
  k \sim l \iff \exists s \in \Zbb : k = l + sn
@@ -603,11 +603,11 @@ Für eine Primzahl $p$ bezeichnet man den Körper $(\Zbb/p\Zbb, +, \cdot)$ als $
 
 
 
-\subsection{Quadratische Körpererweiterungen}
+\section{Quadratische Körpererweiterungen}
 Die komplexen Zahlen $\Cbb$ entstehen aus den reellen Zahlen $\Rbb$ durch hinzufügen einer Quadratwurzel von $-1$, d.h.\ eines Elementes $i$ mit $i^2 = -1$. Wir wollen hier noch weiter Beispiele von Körpern angeben, die durch hinzufügen von Wurzeln aus bereits bekannten Körpern entstehen.
 
 
-\subsubsection{Der Körper \texorpdfstring{$\Qbb[i]$}{Q[i]}}
+\subsection{Der Körper \texorpdfstring{$\Qbb[i]$}{Q[i]}}
 Es sei
 \[
  \Qbb[i]
@@ -651,7 +651,7 @@ Ingesamt zeigt dies, dass $\Qbb[i]$ ein Unterkörper von $\Cbb$ ist. $\Qbb[i]$ i
 
 
 
-\subsubsection{Der Körper \texorpdfstring{$\Qbb\left[\sqrt{2}\right]$}{Q[sqrt(2)]}}
+\subsection{Der Körper \texorpdfstring{$\Qbb\left[\sqrt{2}\right]$}{Q[sqrt(2)]}}
 Nach gleichen Prinzip zeigen wir, dass
 \[
  \Qbb\left[\sqrt{2}\right] \coloneqq \{ q_1 + q_2 \sqrt{2} \mid q_1, q_2 \in \Qbb \} \subseteq \Rbb
@@ -709,7 +709,7 @@ Es sei $x \in \Qbb\left[\sqrt{2}\right]$ mit $x \neq 0$. Dann ist $x = q_1 + q_2
 Insgesamt zeigt dies, dass $\Qbb\left[\sqrt{2}\right]$ ein Unterkörper von $\Rbb$ ist. Man bezeichnet $\Qbb[\sqrt{2}]$ als „$\Qbb$ adjungiert $\sqrt{2}$“. $\Qbb\left[\sqrt{2}\right]$ ist der kleinste Unterkörper von $\Rbb$, der $\sqrt{2}$ enthält, d.h.\ ist $K \subseteq \Rbb$ ein Unterkörper mit $\sqrt{2} \in K$, so ist bereits $\Qbb\left[\sqrt{2}\right] \subseteq K$.
 
 
-\subsubsection{\texorpdfstring{$K[\alpha]$}{K[α]} mit \texorpdfstring{$\alpha \notin K$}{α not in K} und \texorpdfstring{$\alpha^2 \in K$}{α² in K}}
+\subsection{\texorpdfstring{$K[\alpha]$}{K[α]} mit \texorpdfstring{$\alpha \notin K$}{α not in K} und \texorpdfstring{$\alpha^2 \in K$}{α² in K}}
 Die Konstruktion von $\Qbb[i]$ und $\Qbb\left[\sqrt{2}\right]$ lässt sich wie folgt verallgemeimern: Es sei $L$ ein Körper und $K \subseteq L$ ein Unterkörper. Es gebe ein Element $d \in K$, das in $K$ keine Quadratwurzel besitzt, d.h.\ $x^2 \neq d$ für alle $x \in K$, das aber in $L$ eine Quadratwurzel $\omega$ besitzt, also $\omega \in L$ mit $\omega^2 = d$. Dann ist
 \[
  K[\omega] \coloneqq \{x + y \omega \mid x,y \in K\}
@@ -766,7 +766,7 @@ Ist $z \in K[\omega]$ mit $z \neq 0$, so gibt es $x,y \in K$ mit $z = x+y\omega$
 Ingesamt zeigt dies, dass $K[\omega]$ ein Unterkörper von $L$ ist.
 
 
-\subsubsection{Formales Hinzufügen von Wurzeln}
+\subsection{Formales Hinzufügen von Wurzeln}
 Das vorherige Beispiel zeigt: Ist $K$ ein Körper und besitzt $d \in K$ keine Quadratwurzel, und gibt es einen größeren Körper $L \supsetneq K$, in dem $d$ ein Quadratwurzel besitzt, so lässt sich $K$ zu einem neuem Körper $K'$ erweitern, in dem $d$ eine Quadratwurzel besitzt (nämlich eine aus $L$). Das „Problem“ hierbei ist allerdings, dass diese Konstruktion auf den größeren Körper $L$ angewiesen ist, in dem eine entsprechende Quadratwurzel existiert.
 
 Wir wollen hier noch zeigen, wie man zu einem beliebigen Körper auf formale Art und Weise Quadratwurzeln hinzufügen kann. Die Konstruktion läuft analog dazu, wie sich $\Cbb$ als besserer $\Rbb^2$ konstruieren lässt.
@@ -853,7 +853,7 @@ und $\alpha^2 = d$, und für jedes $z \in L$ ist die Zerlegung $z = x + y\alpha$
 
 
 
-% \subsection{Quotientenkörper}
+% \section{Quotientenkörper}
 
 
 
@@ -874,7 +874,7 @@ und $\alpha^2 = d$, und für jedes $z \in L$ ist die Zerlegung $z = x + y\alpha$
 
 
 
-% \subsubsection{Die Gaußschen Zahlen}
+% \subsection{Die Gaußschen Zahlen}
 % Die \emph{Gaußschen Zahlen} sind definiert als
 % \[
 %  \Zbb[i] \coloneqq \{a + b i \mid a,b \in \Zbb\}.

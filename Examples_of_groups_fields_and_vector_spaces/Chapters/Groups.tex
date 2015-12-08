@@ -1,10 +1,10 @@
-\section{Beispiele für Gruppen}
+\chapter{Beispiele für Gruppen}
 
 
 
 
 
-\subsection{Verschiedene kleinere Beispiele}
+\section{Verschiedene kleinere Beispiele}
 
 
 
@@ -107,12 +107,12 @@
 
 
 
-\subsection{Untergruppen bezüglich Gruppenhomomorphismen}
+\section{Untergruppen bezüglich Gruppenhomomorphismen}
 Es seien $G_1$ und $G_2$ Gruppen und es sei $\varphi \colon G_1 \to G_2$ ein Gruppenhomomorphismus.
 
 
 
-\subsubsection{Der Kern eines Gruppenhomomorphismus}
+\subsection{Der Kern eines Gruppenhomomorphismus}
 Wir zeigen, dass der \emph{Kern} von $f$
 \[
  \ker(\varphi) \coloneqq \{g \in G_1 \mid \varphi(g) = 1\}
@@ -152,7 +152,7 @@ also auch $x^{-1} \in \ker(\varphi)$. Ingesamt zeigt dies, dass $\ker(\varphi)$ 
 
 
 
-\subsubsection{Das Bild eines Gruppenhomomorphismus}
+\subsection{Das Bild eines Gruppenhomomorphismus}
 Wir zeigen, dass das Bild
 \[
  \im(\varphi) = \varphi(G_1) = \{\varphi(g) \mid g \in G_1\}
@@ -184,7 +184,7 @@ Ist $G_1$ abelsch, so ist es auch $\im(\varphi)$: Sind nämlich $x, y \in \im(\v
 
 
 
-\subsubsection{Bilder von Untergruppen}
+\subsection{Bilder von Untergruppen}
 Es sei $H \subseteq G_1$ eine Untergruppe. Wir zeigen, dass das Bild von $H$ unter $\varphi$
 \[
  \varphi(H) = \{\varphi(h) \mid h \in H\}
@@ -220,7 +220,7 @@ Ist $H$ abelsch, so ist es auch $\varphi(H)$: Für $x,y \in \im(\varphi)$ gibt e
 
 
 
-\subsubsection{Urbilder von Untergruppen}
+\subsection{Urbilder von Untergruppen}
 Es sei $H \subseteq G_2$ eine Untergruppe. Wir zeigen, dass das Urbild
 \[
  \varphi^{-1}(H) = \{x \in G_1 \mid \varphi(x) \in H\}
@@ -244,11 +244,11 @@ eine Untergruppe von $G_1$ ist: Da $H$ eine Untergruppe ist, ist $\varphi(1) = 1
 
 
 
-\subsection{Schnitte und Vereinigungen von Untergruppen}
+\section{Schnitte und Vereinigungen von Untergruppen}
 Es sei $G$ eine Gruppe.
 
 
-\subsubsection{Schnitte von Untergruppen}
+\subsection{Schnitte von Untergruppen}
 Es sei $I$ eine Indexmenge und für jedes $i \in I$ sei $H_i \subseteq G$ eine Untergruppe. Wir zeigen, dass dann auch $\bigcap_{i \in I} H_i \subseteq G$ eine Untergruppe ist:
 
 Da $H_i$ für jedes $i \in I$ eine Untergruppe ist, ist $1 \in H_i$ für jedes $i \in I$, und somit $1 \in \bigcap_{i \in I} H_i$.
@@ -260,7 +260,7 @@ Ist $x \in \bigcap_{i \in I} H_i$, so ist $x \in H_i$ für alle $i \in I$. Da $H
 Insgesamt zeigt dies, dass auch $\bigcap_{i \in I} H_i$ eine Untergruppe von $G$ ist.
 
 
-\subsubsection{Vereinigung von Untergruppen}
+\subsection{Vereinigung von Untergruppen}
 Vereinigungen von Untergruppen sind nicht notwendigerweise wieder Untergruppen: Wir zeigen, dass für zwei Untergruppen $H_1, H_2 \subseteq G$ die Vereinigung $H_1 \cup H_2$ genau dann eine Untergruppe ist, wenn $H_1 \subseteq H_2$ oder $H_2 \subseteq H_1$:
 
 Ist $H_1 \subseteq H_2$ oder $H_2 \subseteq H_1$, so ist $H_1 \cup H_2 = H_2$ oder $H_1 \cup H_2 = H_1$, also $H_1 \cup H_2$ ebenfalls eine Untergruppe.
@@ -276,7 +276,7 @@ Dieser Widerspruch zeigt, dass bereits $H_1 \subseteq H_2$ oder $H_2 \subseteq H
 \end{bsp}
 
 
-\subsubsection{Aufsteigende Vereinigungen von Untergruppen}
+\subsection{Aufsteigende Vereinigungen von Untergruppen}
 Für jedes $n \in \Nbb$ sei $H_n \subseteq G$ eine Untergruppe, so dass $H_n \subseteq H_m$ falls $n \leq m$, d.h.\ wir haben eine aufsteigende Kette
 \[
  H_0 \subseteq H_1 \subseteq H_2 \subseteq H_3 \subseteq \dotsb \subseteq G
@@ -293,11 +293,11 @@ Insgesamt zeigt dies, dass $\bigcup_{n \in \Nbb} H_n$ eine Untergruppe von $G$ i
 
 
 
-\subsection{Untergruppen von \texorpdfstring{$\Cbb^\times$}{Cx}}
+\section{Untergruppen von \texorpdfstring{$\Cbb^\times$}{Cx}}
 
 
 
-\subsubsection{Der Einheitskreis \texorpdfstring{$S^1$}{S1}}
+\subsection{Der Einheitskreis \texorpdfstring{$S^1$}{S1}}
 Der Betrag einer komplexen Zahl $z = x+iy \in \Cbb$ ist definiert als
 \[
  |z| \coloneqq \sqrt{x^2+y^2} = \sqrt{z \overline{z}}.
@@ -347,7 +347,7 @@ Das zeigt, dass $S^1$ ein Untergruppe von $\Cbb^\times$ ist.
 
 
 
-\subsubsection{\texorpdfstring{$n$}{n}-te Einheitswurzeln}
+\subsection{\texorpdfstring{$n$}{n}-te Einheitswurzeln}
 Es sei $k$ ein Körper und $n \in \Nbb$, $n \geq 1$. Ein Element $x \in k$ heißt \emph{$n$-te Einheitswurzel} falls $x^n = 1$. Wir zeigen, dass
 \[
  R_n(k) \coloneqq \{x \in k \mid x^n = 1\}
@@ -388,7 +388,7 @@ Für $k = \Cbb$ und $z \in R_n(\Cbb)$ ist $|z| \in \Rbb$ mit $|z| \geq 0$ und $|
 
 
 
-\subsection{Klassifikation der Untergruppen von \texorpdfstring{$\Zbb$}{Z}}
+\section{Klassifikation der Untergruppen von \texorpdfstring{$\Zbb$}{Z}}
 In diesem Abschnitt bestimmen wir die Untergruppen von $\Zbb$ (d.h.\ von $(\Zbb,+)$, wobei $+$ die gewöhnliche Addition bezeichnet).
 
 Für jedes $n \in \Nbb$ sei
@@ -427,11 +427,11 @@ gibt.
 
 
 
-\subsection{Die symmetrische Gruppen \texorpdfstring{$S(X)$}{S(X)} und \texorpdfstring{$S_n$}{Sn} und Untergruppen}
+\section{Die symmetrische Gruppen \texorpdfstring{$S(X)$}{S(X)} und \texorpdfstring{$S_n$}{Sn} und Untergruppen}
 
 
 
-\subsubsection{Die symmetrische Gruppen \texorpdfstring{$S(X)$}{S(X)} und \texorpdfstring{$S_n$}{Sn}}
+\subsection{Die symmetrische Gruppen \texorpdfstring{$S(X)$}{S(X)} und \texorpdfstring{$S_n$}{Sn}}
 Es sei $X$ eine beliebige Menge und $S(X) \coloneqq \{\sigma \colon X \to X \mid \text{$\sigma$ ist bijektiv}\}$. Für beliebige $\sigma_1, \sigma_2 \in S(X)$ ist auch $\sigma_1 \circ \sigma_2 \colon X \to X$ bijektiv, also $\sigma_1 \circ \sigma_2 \in S(X)$.
 
 Wir zeigen, dass $(S(X), \circ)$ eine Gruppe ist: Die Assoziativität von $\circ$ folgt direkt aus der allgemeinen Assoziativität der Funktionskomposition.
@@ -451,7 +451,7 @@ Für $n \in \Nbb$ schreibt man auch $S_n \coloneqq S(\{1, \dotsc, n\})$.
 
 
 
-\subsubsection{Normalisatoren \texorpdfstring{$N(Y)$}{N(Y)} und Zentralisatoren \texorpdfstring{$Z(Y)$}{Z(Y)}}
+\subsection{Normalisatoren \texorpdfstring{$N(Y)$}{N(Y)} und Zentralisatoren \texorpdfstring{$Z(Y)$}{Z(Y)}}
 Es sei $X$ eine Menge und $Y \subseteq X$ eine Teilmenge. Dann heißt
 \[
  N(Y) \coloneqq \{\sigma \in S(X) \mid \sigma(Y) = Y\}
@@ -522,12 +522,12 @@ also $\sigma \in N(Y)$. Wir haben also eine Kette von Untergruppen $Z(Y) \subset
 
 
 
-\subsection{Die allgemeine lineare Gruppe \texorpdfstring{$\GL_n(k)$}{GLnk} und Untergruppen}
+\section{Die allgemeine lineare Gruppe \texorpdfstring{$\GL_n(k)$}{GLnk} und Untergruppen}
 Es sei $k$ ein Körper (etwa $k \in \{\Qbb, \Rbb, \Cbb\}$) und $n \in \Nbb$, $n \geq 1$.
 
 
 
-\subsubsection{Die allgemeine lineare Gruppe \texorpdfstring{$\GL_n(k)$}{GLnk}}
+\subsection{Die allgemeine lineare Gruppe \texorpdfstring{$\GL_n(k)$}{GLnk}}
 \begin{defi}
  Eine Matrix $S \in \Mat(n \times n, k)$ heißt \emph{invertierbar}, falls es eine Matrix $T \in \Mat(n \times n, k)$ gibt, so dass $ST = I_n = TS$. (Hier bezeichnet $I_n \in \Mat(n \times n, k)$ die Einheitsmatrix.)
  
@@ -556,7 +556,7 @@ Insgesamt zeigt dies, dass $\GL_n(k)$ zusammen mit der üblichen Matrixmultiplik
 
 
 
-\subsubsection{Die Diagonalmatrizen \texorpdfstring{$\D_n(k)$}{Dn(k)}}
+\subsection{Die Diagonalmatrizen \texorpdfstring{$\D_n(k)$}{Dn(k)}}
 Es sei $K$ ein Körper und $n \in \Nbb$, $n \geq 1$.
 
 \begin{defi}
@@ -668,7 +668,7 @@ Das zeigt, dass eine Diagonalmatrix $D = \diag(\lambda_1, \dotsc, \lambda_n)$ ge
 
 
 
-\subsubsection{Die orthogonale Gruppe \texorpdfstring{$\Ort_n(k)$}{On(k)}}
+\subsection{Die orthogonale Gruppe \texorpdfstring{$\Ort_n(k)$}{On(k)}}
 Es sei $k$ ein Körper.
 
 \begin{defi}
@@ -760,7 +760,7 @@ Das zeigt, dass $\Ort_n(k) \subseteq \GL_n(k)$ eine Untergruppe ist; daher ist $
 
 
 
-\subsubsection{Die spezielle orthogonale Gruppe \texorpdfstring{$\SOrt(2)$}{SO2}}
+\subsection{Die spezielle orthogonale Gruppe \texorpdfstring{$\SOrt(2)$}{SO2}}
 Es sei
 \[
  \SOrt(2) \coloneqq
@@ -911,12 +911,12 @@ Insgesamt zeigt dies, dass $\SOrt(2)$ zusammen mit der üblichen Matrixmultiplik
 
 
 
-\subsection{Die abelschen Gruppen \texorpdfstring{$\Zbb/n\Zbb$}{Z/nZ}}\label{ss: ZnZ}
+\section{Die abelschen Gruppen \texorpdfstring{$\Zbb/n\Zbb$}{Z/nZ}}\label{ss: ZnZ}
 Wir fixieren ein $n \in \Nbb$ mit $n \geq 1$.
 
 
 
-\subsubsection{Konstruktion}
+\subsection{Konstruktion}
 
 \begin{defi}
  Eine ganze Zahl $m \in \Zbb$ ist durch $n$ teilbar, falls es ein $s \in \Zbb$ mit $m = sn$ gibt. Man schreibt dann $n \mid m$.
@@ -1008,7 +1008,7 @@ also ist $[-k]$ invers zu $[k]$ bezüglich $+$. Ingesamt zeigt dies, dass $\Zbb/
 
 
 
-\subsubsection{Erklärung}
+\subsection{Erklärung}
 Wir wollen noch eine bessere Erklärung dafür geben, wie $\Zbb/n\Zbb$ aussieht und sich die Addition verhält.
 
 Zunächst bemerken wir, dass für jedes $k \in \Zbb$
@@ -1070,7 +1070,7 @@ Wir identifiziert daher für gewöhnlich die Repräsentanten $0, \dotsc, n-1$ mi
 
 
 
-\subsection{Produkte von Gruppen}
+\section{Produkte von Gruppen}
 
 Es sei $I$ ein Indexmenge und für jedes $i \in I$ sei $G_i$ eine Gruppe. Wir definieren auf dem Produkt $\prod_{i \in I} G_i$ eine Multiplikation durch
 \[
@@ -1122,7 +1122,7 @@ Insgesamt zeigt dies, dass $\prod_{i \in I} G_i$ bezüglich $\cdot$ eine Gruppe 
 
 
 
-\subsection{Weitere kleine Beispiele}
+\section{Weitere kleine Beispiele}
 \begin{enumerate}[leftmargin=*]
  \item
   Es sei $k$ ein Körper und
@@ -1190,7 +1190,7 @@ Insgesamt zeigt dies, dass $\prod_{i \in I} G_i$ bezüglich $\cdot$ eine Gruppe 
 
 
 
-\subsection{Das semidirekte Produkt \texorpdfstring{$\Zbb \rtimes \Zbb$}{ZxZ}}
+\section{Das semidirekte Produkt \texorpdfstring{$\Zbb \rtimes \Zbb$}{ZxZ}}
 Wir definieren auf der Menge $\Zbb \rtimes \Zbb \coloneqq \{(n,m) \mid n,m \in \Zbb\}$ eine Verknüpfung $*$ durch
 \[
  (n_1, m_1) * (n_2, m_2)
@@ -1246,7 +1246,7 @@ Man bezeichnet die Gruppe $\Zbb \rtimes \Zbb$ als das \emph{semidirekte Produkt}
 
 
 
-\subsection{Ausblick: Quotienten von abelschen Gruppen}
+\section{Ausblick: Quotienten von abelschen Gruppen}
 Als ein weiteres (abstraktes) Beispiel geben wir eine Verallgemeinerung der Konstruktion von $\Zbb/n\Zbb$ an, die für eine beliebige abelsche Gruppe $A$ und Untergruppe $H \subseteq A$ eine \emph{Quotientengruppe} $A/H$ liefert.
 
 Wir definieren auf $A$ eine Äquivalenzrelation durch
