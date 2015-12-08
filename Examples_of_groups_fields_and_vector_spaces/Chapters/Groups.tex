@@ -171,6 +171,17 @@ also auch $x \cdot y \in \im(\varphi)$. Ist $x \in \im(\varphi)$, so gibt es $x'
 \]
 ist auch $x^{-1} \in \im(\varphi)$. Ingesamt zeigt dies, dass $\im(\varphi)$ ein Untergruppe von $G_2$ ist.
 
+Ist $G_1$ abelsch, so ist es auch $\im(\varphi)$: Sind nämlich $x, y \in \im(\varphi)$, so gibt es $x', y' \in G_1$ mit $x = \varphi(x')$ und $y = \varphi(y')$, weshalb
+\[
+ x \cdot y
+ = \varphi(x') \cdot \varphi(y')
+ = \varphi(x' \cdot y')
+ = \varphi(y' \cdot x')
+ = \varphi(y') \cdot \varphi(x')
+ = y \cdot x.
+\]
+
+
 
 
 \subsubsection{Bilder von Untergruppen}
@@ -191,6 +202,16 @@ ist dann auch $x \cdot y \in \varphi(H)$. Ist $x \in \varphi(H)$, so gibt es $x'
  = \varphi((x')^{-1})
 \]
 ist dann auch $x^{-1} \in \varphi(H)$. Ingesamt zeigt dies, dass $\varphi(H)$ eine Untergruppe von $G_2$ ist.
+
+Ist $H$ abelsch, so ist es auch $\varphi(H)$: Für $x,y \in \im(\varphi)$ gibt es nämlich $x', y' \in H$ mit $x = \varphi(x')$ und $y = \varphi(y')$, weshalb
+\[
+ x \cdot y
+ = \varphi(x') \cdot \varphi(y')
+ = \varphi(x' \cdot y')
+ = \varphi(y' \cdot x')
+ = \varphi(y') \cdot \varphi(x')
+ = y \cdot x.
+\]
 
 
 \begin{bem}
@@ -752,7 +773,7 @@ Es sei
   \varphi \in \Rbb
  \right\}.
 \]
-Wir zeigen, dass $\SOrt(2)$ mit der üblichen Matrixmultiplikation eine abelsche Gruppe bildet; hierfür nutzen wir die Additionstheoreme: Für alle $\varphi, \psi \in \Rbb$ gilt
+Wir zeigen, dass $\SOrt(2)$ mit der üblichen Matrixmultiplikation eine abelsche Gruppe bildet; hierfür nutzen wir die Additionstheoreme des Sinus und Kosinus: Für alle $\varphi, \psi \in \Rbb$ gilt
 \begin{align*}
  \cos(\varphi+\psi)
  = \cos(\varphi)\cos(\psi) - \sin(\varphi)\sin(\psi)
@@ -761,7 +782,7 @@ Wir zeigen, dass $\SOrt(2)$ mit der üblichen Matrixmultiplikation eine abelsche
  = \sin(\varphi)\cos(\psi)+\sin(\psi)\cos(\varphi).
 \end{align*}
 
-Für alle $\varphi \in \Rbb$ sei
+Wir führen zunächst Notation ein: Für alle $\varphi \in \Rbb$ sei
 \[
  D_\varphi \coloneqq
  \begin{pmatrix}
@@ -802,7 +823,7 @@ Für alle $\varphi \in \Rbb$ ist daher
  \quad\text{und}\quad
  D_{-\varphi} D_{\varphi} = D_0 = I_2
 \]
-und deshalb $D_{\varphi}^{-1} = D_{-\varphi}$, also
+und deshalb, also $D_{\varphi}$ invertierbar und $D_{\varphi}^{-1} = D_{-\varphi}$, also
 \[
  \begin{pmatrix}
   \cos(\varphi) &           -\sin(\varphi) \\
@@ -822,7 +843,7 @@ und deshalb $D_{\varphi}^{-1} = D_{-\varphi}$, also
 (denn $\sin(-\varphi) = -\sin(\varphi)$ und $\cos(-\varphi) = \cos(\varphi)$).
 
 
-Wir zeigen zunächst, dass $\SOrt(2) \subseteq \GL_2(\Rbb)$ eine Untergruppe ist: Es ist $I_2 = D_0 \in \SOrt(2)$. Für $S, T \in \SOrt(2)$ gibt es $\varphi, \psi \in \Rbb$ mit $S = D_{\varphi}$ und $T = D_{\psi}$, weshalb auch $S T = D_{\varphi} D_{\psi} D_{\varphi+\psi} \in \SOrt(2)$. Für $S \in \SOrt$ gibt es $\varphi \in \Rbb$ mit $S = D_{\varphi}$, weshalb auch $S^{-1} = D_{\varphi}^{-1} = D_{-\varphi} \in \SOrt(2)$.
+Wir zeigen zunächst, dass $\SOrt(2) \subseteq \GL_2(\Rbb)$ eine Untergruppe ist: Es ist \mbox{$I_2 = D_0 \in \SOrt(2)$}. Für $S, T \in \SOrt(2)$ gibt es $\varphi, \psi \in \Rbb$ mit $S = D_{\varphi}$ und $T = D_{\psi}$. Deshalb ist damit auch $S T = D_{\varphi} D_{\psi} = D_{\varphi+\psi} \in \SOrt(2)$. Für $S \in \SOrt$ gibt es $\varphi \in \Rbb$ mit $S = D_{\varphi}$, weshalb auch $S^{-1} = D_{\varphi}^{-1} = D_{-\varphi} \in \SOrt(2)$.
 
 Das zeigt, dass $\SOrt(2) \subseteq \GL_2(\Rbb)$ eine Untergruppe ist. Deshhalb ist $\SOrt(2)$ zusammen mit der üblichen Matrixmultiplikation eine Gruppe. Es gilt noch zu zeigen, dass $\SOrt(2)$ abelsch ist: Sind $S, T \in \SOrt(2)$ so gibt es $\varphi, \psi \in \Rbb$ mit $S = D_\varphi$ und $T = D_\psi$. Es ist daher
 \[
@@ -835,6 +856,15 @@ Das zeigt, dass $\SOrt(2) \subseteq \GL_2(\Rbb)$ eine Untergruppe ist. Deshhalb 
 \]
 
 Insgesamt zeigt dies, dass $\SOrt(2)$ zusammen mit der üblichen Matrixmultiplikation eine abelsche Gruppe bildet. Man bezeichnet diese als die \emph{spezielle orthogonale Gruppe (von Rang $2$)}.
+
+\begin{bem}
+ Die obige Rechnung lässt sich auch abkürzen: Da $D_{\varphi} \cdot D_{\psi} = D_{\varphi + \psi}$ für alle $\varphi, \psi \in \Rbb$ und $D_{\varphi}$ für alle $\varphi \in \Rbb$ invertierbar ist, also $D_{\varphi} \in \GL_2(\Rbb)$ für alle $\varphi \in \Rbb$, ist die Abbildung
+ \[
+  D \colon \Rbb \to \GL_2(\Rbb), \varphi \colon D_{\varphi}
+ \]
+ ein wohldefinierter Gruppenhomomorphismus. Folglich ist $\SOrt(2) = \im(D)$ eine Untergruppe. Da $\Rbb$ abelsch ist, ist es auch $\im(D)$
+\end{bem}
+
 
 \begin{bem}
  \begin{enumerate}[leftmargin=*]
