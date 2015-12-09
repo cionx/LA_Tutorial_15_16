@@ -202,15 +202,10 @@ da $U$ ein Untervektorraum ist. Also ist $f^{-1}(U)$ ein Untervektorraum.
 
 
 
-
-
-
-
-
-
-
-
 \section{Matrizenräume}
+
+
+\subsection{Die (\texorpdfstring{$m \times n$}{mxn})-Matrizen \texorpdfstring{$\Mat(m \times n, K)$}{Mat(mxn,K)}}
 Die ($m \times n$)-Matrizen $\Mat(m \times n, K)$ bilden zusammen mit der eintragsweisen Addition
 \[
  (a_{ij})_{\substack{i=1,\dotsc,m \\ j=1,\dotsc,n}} + (b_{ij})_{\substack{i=1,\dotsc,m \\ j=1,\dotsc,n}}
@@ -251,5 +246,120 @@ und für alle $(a_{ij})_{i,j} \in \Mat(m \times n, K)$ gilt
  = (a_{ij})_{i,j}.
 \]
 Ingesamt zeigt dies, dass $\Mat(m \times n, K)$ zusammen mit der üblichen eintragsweisen Addition und Skalarmultiplikation einen $K$-Vektorraum bildet.
+
+
+\subsection{Die (schief)symmetrischen Matrizen}
+
+
+\begin{defi}
+ Es sei $A \in \Mat(m \times n, K)$. Dann ist die \emph{transponierte} Matrix die ($n \times m$)-Matrix $A^T$ definiert durch
+ \begin{gather*}
+  (A^T)_{ij} = A_{ji}
+  \quad
+  \text{für alle $1 \leq i \leq n$ und $1 \leq j \leq m$},
+ \shortintertext{also}
+  A^T
+  =
+  \begin{pmatrix}
+   A_{11} & A_{12} & \cdots & A_{1n} \\
+   A_{21} & A_{22} & \cdots & A_{2n} \\
+   \vdots & \vdots & \ddots & \vdots \\
+   A_{m1} & A_{m2} & \cdots & A_{mn}
+  \end{pmatrix}^T
+  =
+  \begin{pmatrix}
+   A_{11} & A_{21} & \cdots & A_{m1} \\
+   A_{12} & A_{22} & \cdots & A_{m2} \\
+   \vdots & \vdots & \ddots & \vdots \\
+   A_{1n} & A_{2n} & \cdots & A_{mn}
+  \end{pmatrix}.
+ \end{gather*}
+\end{defi}
+
+
+\begin{bem}
+ \begin{enumerate}[leftmargin=*]
+  \item
+   Anschaulich gesehen entsteht $A^T$ aus $A$ durch Spiegelung der Matrix an der Diagonalen.
+  \item
+   Transponieren ist linear, d.h.\ die Abbildung
+   \[
+    \mc{T} \colon \Mat(m \times n, K) \to \Mat(n \times m, K), A \mapsto A^T
+   \]
+   ist linear: Für alle Skalare $\lambda \in K$ und Matrizen $A, B \in \Mat(m \times n, K)$ gilt für alle $1 \leq i \leq n$ und $1 \leq j \leq m$, dass
+   \[
+    ((A+B)^T)_{ij}
+    = (A+B)_{ji}
+    = A_{ji} + B_{ji}
+    = (A^T)_{ij} + (B^T)_{ij}
+    = (A^T + B^T)_{ij}
+   \]
+   und somit $(A+B)^T = A^T + B^T$, sowie
+   \[
+    ((\lambda A)^T)_{ij}
+    = (\lambda A)_{ji}
+    = \lambda A_{ji}
+    = \lambda (A^T)_{ij}
+    = (\lambda A^T)_{ij}
+   \]
+   und somit $(\lambda A)^T = \lambda A^T$.
+ \end{enumerate}
+\end{bem}
+
+
+\begin{defi}
+ Eine Matrix $A \in \Mat(n \times n, K)$ heißt \emph{symmetrisch}, falls \mbox{$A^T = A$}, und \emph{schiefsymmetrisch}, bzw.\ \emph{alternierend}, falls $A^T = -A$. Es ist
+ \begin{align*}
+  \Sym_n(K) &\coloneqq \{A \in \Mat(n \times n, K) \mid \text{$A$ ist symmetrisch}\}
+ \shortintertext{und}
+  \Alt_n(k) &\coloneqq \{A \in \Mat(n \times n, K) \mid \text{$A$ ist schiefsymmetrisch}\}.
+ \end{align*}
+\end{defi}
+
+
+\begin{bem}
+ Ist $A \in \Mat(m \times n, K)$ mit $A^T = A$ oder $A^T = -A$, so ist notwendigerweise $m = n$. Es genügt daher, den Begriff einer symmetrischen, bzw. schiefsymmetrischen Matrix für quadratische Matrizen zu definieren.
+\end{bem}
+
+
+Wir zeigen, dass $\Sym_n(K)$ und $\Alt_n(K)$ Untervektorräume von $\Mat(n \times n, K)$ bilden: Da $0^T = 0 = -0$ ist $0 \in \Sym_n(K)$ und $0 \in \Alt_n(K)$.
+
+Für $A, B \in \Sym_n(K)$ und $\lambda \in A$ ist
+\[
+ (A+B)^T = A^T + B^T = A+B
+ \quad\text{und}\quad
+ (\lambda A)^T = \lambda A^T = \lambda A,
+\]
+also auch $A+B \in \Sym_n(K)$ und $\lambda A \in \Sym_n(K)$. Das zeigt, dass $\Sym_n(K)$ ein Untervektorraum von $\Mat(n \times n, K)$ ist.
+
+Für $A, B \in \Alt_n(K)$ und $\lambda \in K$ ist
+\begin{gather*}
+ (A+B)^T = A^T+B^T = -A-B = -(A+B)
+\shortintertext{und}
+ (\lambda A)^T = \lambda A^T = \lambda(-A) = -\lambda A,
+\end{gather*}
+also auch $A+B \in \Alt_n(K)$ und $\lambda A \in \Alt_n(K)$. Das zeigt, dass $\Alt_n(K)$ ein Untervektorraum von $\Mat(n \times n, K)$ ist
+
+
+\begin{bem}
+ \begin{enumerate}[leftmargin=*]
+  \item
+   Analog lässt sich zeigen, dass
+   \[
+    E_\lambda \coloneqq \{A \in \Mat(n \times n, K) \mid A^T = \lambda A\}
+   \]
+   für alle $\lambda \in K$ einen Untervektorraum ist. Dabei ist insbesondere $\Sym_n(K)= E_1$ und $\Alt_n(K) = E_{-1}$.
+  \item
+   Ist $\kchar(K) = 2$, so ist $1 = -1$ und somit $\Sym_n(K) = \Alt_n(K)$.
+  \item
+   Ist $\kchar(K) \neq 2$, so lässt sich jede Matrix $M \in \Mat(n \times n, K)$ als Summe $M = S + A$ mit $S \in \Sym_n(K)$ und $A \in \Alt_n(K)$ schreiben, wobei $A$ und $S$ beide eindeutig sind: Existiert eine solche Zerlegung, so ist sie Eindeutig, da dann $S = (M + M^T)/2$ und $A = (M - M^T)/2$. Ist andererseits $M \in \Mat(n \times n, K)$ eine beliebige quadratische Matrix, so ist $S = (M+M^T)/2$ symmetrisch und $A = (M-M^T)/2$ schiefsymmetrisch (wegen der Linearität des Transponierens) und es gilt $M = S+A$.
+ \end{enumerate} 
+\end{bem}
+
+
+
+
+
+
 
 
