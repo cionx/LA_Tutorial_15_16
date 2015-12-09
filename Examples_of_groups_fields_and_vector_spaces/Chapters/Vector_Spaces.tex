@@ -199,7 +199,137 @@ da $U$ ein Untervektorraum ist. Also ist $f^{-1}(U)$ ein Untervektorraum.
 \end{bem}
 
 
+\section{Abbildungen in einen Vektorraum}
+Es sei $X$ eine beliebige Menge und $V$ ein $K$-Vektorraum. Auf der Menge
+\[
+ \Abb(X,V) = \{f \colon X \to V\}
+\]
+Wir definieren für $f,g \in \Abb(X,V)$ und $\lambda \in K$ eine die punktweise Addition und Skalarmultiplikation durch
+\begin{gather*}
+ (f+g)(x) \coloneqq f(x) + g(x)
+ \quad
+ \text{für alle $x \in X$}
+\shortintertext{und}
+ (\lambda \cdot f)(x) \coloneqq \lambda \cdot f(x)
+ \quad
+ \text{für alle $x \in X$}.
+\end{gather*}
+Wir zeigen, dass $\Abb(X,V)$ zusammen mit dieser Addition und Skalarmultiplikation einen $K$-Vektorraum bildet:
 
+Für alle $f,g,h \in \Abb(X,V)$ ist
+\begin{align*}
+ (f+(g+h))(x)
+ &= f(x) + (g+h)(x)
+ = f(x) + g(v) + h(x) \\
+ &= (f+g)(x) + h(x)
+ = ((f+g)+h)(x)
+\end{align*}
+für alle $x \in X$ und somit $f+(g+h) = (f+g)+h$. Also ist die Addition assoziativ. Für alle $f,g \in \Abb(X,V)$ ist
+\[
+ (f+g)(x) = f(x) + g(x) = g(x) + h(x) = (g+h)(x)
+ \quad
+ \text{für alle $x \in X$},
+\]
+also ist $f+g = g+f$, die Addition also kommutativ. Die \emph{Nullfunktion} ist definiert als
+\[
+ N \colon X \to V, x \mapsto 0.
+\]
+Für alle $f \in \Abb(X,V)$ ist
+\[
+ (f+N)(x) = f(x) + N(x) = f(x) + 0 = f(x)
+ \quad
+ \text{für alle $x \in X$},
+\]
+also ist $f+N = f$. Also ist $N$ neutral bezüglich der Addition. Für $f \in \Abb(X,V)$ sei
+\[
+ \tilde{f} \colon X \to V
+ \quad\text{und}\quad
+ \tilde{f}(x) \coloneqq -f(x)
+ \quad
+ \text{für alle $x \in X$}.
+\]
+Es ist dann
+\[
+ (f+\tilde{f})(x)
+ = f(x) + \tilde{f}(x)
+ = f(x) - f(x)
+ = 0
+ = N(x)
+ \quad
+ \text{für alle $x \in X$},
+\]
+also $f+\tilde{f} = N$. Somit ist $\tilde{f}$ additiv invers zu $f$. Ingesamt zeigt dies, dass $+$ tatsächlich eine Addition auf $\Abb(X,V)$ definiert.
+
+Für alle $\lambda, \mu \in K$ und $f,g \in \Abb(X,V)$ ist
+\begin{align*}
+ (\lambda \cdot (f+g))(x)
+ &= \lambda \cdot (f+g)(x)
+ = \lambda \cdot (f(x)+g(x)) \\
+ &= \lambda \cdot f(x) + \lambda \cdot g(x)
+ = (\lambda \cdot f)(x) + (\lambda \cdot g)(x)
+ = (\lambda \cdot f + \lambda \cdot g)(x)
+\end{align*}
+für alle $x \in X$ und somit $\lambda \cdot (f+g) = \lambda \cdot f + \lambda \cdot g$; es ist
+\begin{align*}
+ ((\lambda + \mu) \cdot f)(x)
+ = (\lambda+\mu) \cdot f(x)
+ &= \lambda \cdot f(x) + \mu \cdot f(x) \\
+ &= (\lambda \cdot f)(x) + (\mu \cdot f)(x)
+ = (\lambda \cdot f + \mu \cdot f)(x)
+\end{align*}
+für alle $x \in X$ und somit $(\lambda + \mu) \cdot f = \lambda \cdot f + \mu \cdot f$; es ist
+\[
+ (\lambda \cdot (\mu \cdot f))(x)
+ = \lambda \cdot (\mu \cdot f)(x)
+ = \lambda \cdot (\mu \cdot f(x))
+ = (\lambda \cdot \mu) \cdot f(x)
+ = ((\lambda \cdot \mu) \cdot f)(x)
+\]
+für alle $x \in X$ und somit $\lambda \cdot (\mu \cdot f) = (\lambda \cdot \mu) \cdot f$. Außerdem ist für jedes $f \in \Abb(X,V)$
+\[
+ (1 \cdot f)(x)
+ = 1 \cdot f(x)
+ = f(x)
+ \quad
+ \text{für alle $x \in X$},
+\]
+und somit $1 \cdot f = f$.
+
+Ingesamt zeigt dies, dass $\Abb(X,V)$ zusammen mit der punktweisen Addition und Skalarmultiplikation einen $K$-Vektorraum bildet.
+
+
+
+
+
+\section{\texorpdfstring{$\Hom$}{Hom}-Räume}
+Es seien $V$ und $W$ zwei $K$-Vektorräume und
+\[
+ \Hom(V, W) \coloneqq \{f \colon V \to W \mid \text{$f$ ist linear}\}.
+\]
+Wir zeigen, dass $\Hom(V,W) \subseteq \Abb(V,W)$ einen Untervektorraum bildet, und somit ebenfalls einen Vektorraum bezüglich der punktweisen Addition und Skalarmultiplikation.
+
+Die Nullfunktion $0 \in \Abb(V,W)$ ist linear, da $0(v+w) = 0 = 0(v)+0(w)$ sowie $0(\lambda v) = 0 = \lambda 0(v)$ für alle $v,w \in V$ und $\lambda \in K$. Also ist $0 \in \Hom(V,W)$.
+
+Sind $f,g \in \Hom(V,W)$ und $\lambda \in K$, so ist für alle $v,w \in V$ und $\mu \in K$
+\begin{gather*}
+ \begin{aligned}
+ (f+g)(v+w)
+ &= f(v+w) + g(v+w)
+ = f(v) + f(w) + g(v) + g(w) \\
+ &= f(v)+g(v) + f(w)+g(w)
+ = (f+g)(v) + (f+g)(w)
+ \end{aligned}
+\shortintertext{und}
+ (\lambda f)(\mu v)
+ = \lambda f(\mu v)
+ = \lambda \mu f(v)
+ = \mu \lambda f(v)
+ = \mu (\lambda f)(v),
+\end{gather*}
+also auch $f+g \in \Hom(V,W)$ und $\lambda f \in \Hom(V,W)$. Dies zeigt, dass $\Hom(V,W)$ ein Untervektorraum von $\Abb(V,W)$ ist.
+
+
+%TODO: \section{Eigenräume}
 
 
 \section{Matrizenräume}
