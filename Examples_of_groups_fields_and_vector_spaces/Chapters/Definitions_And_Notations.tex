@@ -475,12 +475,23 @@
 
 
 \begin{defi}
- Eine Teilmenge $U \subseteq V$ eines $K$-Vektorraums $V$ heißt \emph{Untervektorraum} falls $U$ eine abelsche Untergruppe von $V$ ist, und $\lambda u \in U$ für alle $\lambda \in K$ und $u \in U$.
+ Eine Teilmenge $U \subseteq V$ eines $K$-Vektorraums $V$ heißt \emph{Untervektorraum} falls
+ \begin{enumerate}[label=\roman*)]
+  \item
+   $0 \in U$,
+  \item
+   für alle $u,v \in U$ ist auch $u+v \in V$,
+  \item
+   für alle $u \in U$ und $\lambda \in K$ ist auch $\lambda \cdot v \in U$.
+ \end{enumerate}
+
 \end{defi}
 
 
 \begin{bem}
  \begin{enumerate}[leftmargin=*]
+  \item
+   Ist $U \subseteq V$ ein Untervektorraum, so ist $U$ insbesondere eine abelsche Untergruppe, denn für alle $u \in U$ ist auch $-u = (-1) \cdot u \in U$, und dass $0 \in U$ und $U$ unter der Addition abgeschlossen ist, ist gegeben.
   \item
    Für einen $K$-Vektorraum $V$ und Untervektorraum $U \subseteq V$ ist $(U,K,\cdot)$ ebenfalls ein $K$-Vektorraum. Da $U$ eine additive Untergruppe von $V$ ist, stimmt das Nullelement in $U$ mit dem in $V$ überein, und für jedes $u \in U$ stimmt das additiv Inverse Element in $U$ mit dem in $V$ überein.
   \item
