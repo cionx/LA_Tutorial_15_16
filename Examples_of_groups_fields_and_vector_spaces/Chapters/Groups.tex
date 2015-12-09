@@ -107,7 +107,7 @@
 
 
 
-\section{Untergruppen bezüglich Gruppenhomomorphismen}
+\section{Untergruppen bezüglich Gruppenhomomorphismen}\label{sec: subgroups and group homomorphisms}
 Es seien $G_1$ und $G_2$ Gruppen und es sei $\varphi \colon G_1 \to G_2$ ein Gruppenhomomorphismus.
 
 
@@ -1070,7 +1070,7 @@ Wir identifiziert daher für gewöhnlich die Repräsentanten $0, \dotsc, n-1$ mi
 
 
 
-\section{Produkte von Gruppen}
+\section{Produkte von Gruppen}\label{sec: product of groups}
 
 Es sei $I$ ein Indexmenge und für jedes $i \in I$ sei $G_i$ eine Gruppe. Wir definieren auf dem Produkt $\prod_{i \in I} G_i$ eine Multiplikation durch
 \[
@@ -1116,7 +1116,33 @@ Also ist $(g_i^{-1})_{i \in I}$ invers zu $(g_i)$ bezüglich $\cdot$.
 
 Insgesamt zeigt dies, dass $\prod_{i \in I} G_i$ bezüglich $\cdot$ eine Gruppe ist.
 
-% Ist etwa $G_1 = \dotsb = G_n = \Rbb$, so ist $G_1 \times \dotsb \times G_n = \Rbb^n$. Analog ist $\Zbb^n = \Zbb \times \dotsb \times \Zbb$, $\Qbb^n = \Qbb \times \dotsb \times \Qbb$ and $\Cbb^n = \Cbb \times \dotsb \times \Cbb$ (mit jeweils $n$ Faktoren).
+Insbesondere ist für beliebige Gruppen $G_1, \dotsc, G_n$ auch $G_1 \times \dotsb \times G_n$ mit der eintragsweisen Multiplikation
+\[
+ (g_1, \dotsc, g_n) \cdot (h_1, \dotsc, h_n) = (g_1 h_1, \dotsc, g_n h_n)
+\]
+eine Gruppe. Für eine beliebige Gruppe $G$ ist daher auch $G^n$ mit der eintragsweisen Multiplikation eine Gruppe.
+
+
+\begin{bem}
+ \begin{enumerate}[leftmargin=*]
+  \item
+   Das Produkt $\prod_{i \in I} G_i$ ist genau dann abelsch, wenn für alle $i \in I$ die Gruppe $G_i$ abelsch ist. Inbesondere ist auch das Produkt $G_1 \times \dotsb \times G_n$ genau dann abelsch, wenn $G_1, \dotsc, G_n$ alle abelsch sind, und das Produkt $G^n$ ist genau dann abelsch, wenn $G$ abelsch ist.
+  \item
+   Die hier angegebene Gruppenstruktur auf $\prod_{i \in I} G_i$ ist die einzige Gruppenstruktur auf $\prod_{i \in I} G_i$, so dass für jedes $j \in I$ die Projektionsabbildung
+   \[
+    \pi_j \colon \prod_{i \in I} G_i \to G_j, (g_i)_{i \in I} \mapsto g_j
+   \]
+   ein Gruppenhomomorphismus ist.
+  \item
+   Das Produkt $\prod_{i \in I} G_i$ hat die folgende Eigenschaft: Ist $G$ eine beliebige Gruppe und für jedes $i \in I$ ein Gruppenhomomorphismus $\varphi_i \colon G \to G_i$ gegeben, so gibt es einen eindeutigen Gruppenhomomorphismus $\varphi \colon G \to \prod_{i \in I} G_i$ mit $\pi_i \circ \varphi = \varphi_i$ für jedes $i \in I$. $\varphi$ ist dann durch
+   \[
+    \varphi(g) = (\varphi_i(g))_{i \in I}
+    \quad
+    \text{für alle $g \in G$}
+   \]
+   gegeben.
+ \end{enumerate}
+\end{bem}
 
 
 

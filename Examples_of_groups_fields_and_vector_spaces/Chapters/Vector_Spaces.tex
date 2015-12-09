@@ -1,8 +1,255 @@
-\chapter{Vektorräume}
-Sofern nicht anders angegeben, bezeichnet $K$ im folgenden einen beliebigen Körper.
+\chapter{Beispiele für Vektorräume}
+Sofern nicht anders angegeben, bezeichnen $K$ und $L$ im folgenden Körper mit $K \subseteq L$.
 
 
 
 
 
-\section{Einige kleine Beispiele}
+\section{Einige kleinere Beispiele}
+\begin{enumerate}[leftmargin=*]
+ \item
+  $K$ ist ein $K$-Vektorraum, indem man die Multiplikation $K \times K \to K$, $(x,y) \mapsto x \cdot y$ als Skalarmultiplikation wählt. Dass $\lambda \cdot (v+w) = \lambda v + \lambda w$ und $(\lambda+\mu) \cdot v = \lambda \cdot v + \mu \cdot v$ für alle $\lambda, \mu \in K$ und $v,w \in V$ folgt direkt aus der Distributivität der Multiplikation. Dass $\lambda \cdot (\mu \cdot v) = (\lambda \cdot \mu) \cdot v$ für alle $\lambda, \mu \in K$ folgt aus der Assoziativität der Multiplikation. Dass $1 \cdot v = v$ für alle $v \in V$ folgt aus der Definition des Einselementes $1$.
+ \item
+  Wie bereits in \ref{sec: product of groups} gesehen ist $K^n = \{(x_1, \dotsc, x_n) \mid x_1, \dotsc, x_n \in K\}$ mit der eintragsweisen Addition
+  \[
+   (x_1, \dotsc, x_n) + (y_1, \dotsc, y_n)
+   = (x_1 + y_1, \dotsc, x_n + y_n)
+  \]
+  eine abelsche Gruppe. Mit der eintragsweise Skalarmultiplikation
+  \[
+   \lambda \cdot (x_1, \dotsc, x_n)
+   = (\lambda x_1, \dotsc, \lambda x_n)
+   \quad
+   \text{für alle $\lambda \in K$ und $(x_1, \dotsc, x_n) \in K^n$}
+  \]
+  ist $K^n$ zu einem $K$-Vektorraum: Für alle $\lambda \in K$ und $(x_1, \dotsc, x_n), (y_1, \dotsc, y_n) \in K^n$ ist
+  \begin{align*}
+    &\, \lambda \cdot ((x_1, \dotsc, x_n) + (y_1, \dotsc, y_n))
+   =    \lambda \cdot (x_1 + y_1, \dotsc, x_n + y_n) \\
+   =&\, (\lambda (x_1 + y_1), \dotsc, \lambda (x_n + y_n))
+   =    (\lambda x_1 + \lambda y_m, \dotsc, \lambda x_n + \lambda y_n) \\
+   =&\, (\lambda x_1, \dotsc, \lambda x_n) + (\lambda y_1, \dotsc, \lambda y_n)
+   =    \lambda \cdot (x_1, \dotsc, x_n) + \lambda \cdot (y_1, \dotsc, y_n).
+  \end{align*}
+  Für alle $\lambda, \mu \in K$ und $(x_1, \dotsc, x_n) \in K^n$ ist
+  \begin{gather*}
+   \begin{aligned}
+     &\, (\lambda+\mu) \cdot (x_1, \dotsc, x_n)
+    =    ((\lambda+\mu)x_1, \dotsc, (\lambda+\mu)x_n) \\
+    =&\, (\lambda x_1 + \mu x_1, \dotsc, \lambda x_n + \mu x_n)
+    =    (\lambda x_1, \dotsc, \lambda x_n) + (\mu x_1, \dotsc, \mu x_n) \\
+    =&\, \lambda \cdot (x_1, \dotsc, x_n) + \mu \cdot (x_1, \dotsc, x_n)
+   \end{aligned}
+  \shortintertext{und}
+   \begin{aligned}
+    \lambda \cdot (\mu \cdot (x_1, \dotsc, x_n))
+    &= \lambda \cdot (\mu x_1, \dotsc, \mu  x_n) \\
+    &= (\lambda \mu x_1, \dotsc, \lambda \mu x_n)
+    = (\lambda \mu) \cdot (x_1, \dotsc, x_n).
+   \end{aligned}
+  \end{gather*}
+  Für alle $(x_1, \dotsc, x_n) \in K^n$ gilt schließlich
+  \[
+   1 \cdot (x_1, \dotsc, x_n)
+   = (1 \cdot x_1, \dotsc, 1 \cdot x_n)
+   = (x_1, \dotsc, x_n).
+  \]
+  Ingesamt zeigt dies, dass $K^n$ mit der eintragsweisen Addition und Skalarmultiplikation einen $K$-Vektorraum bildet.
+ \item
+  Ist $V$ ein $K$-Vektorraum, so ist $\{0\} \subseteq V$ ein Untervektorraum. Man bezeichnet diesen als den \emph{Nulluntervektorraum}.
+ \item
+  Die $L$-Vektorraum auf $L$ schränkt sich zu einer $K$-Vektorraumstruktur auf $L$ ein. $L$ ist also ein $K$-Vektorraum durch $\lambda \cdot v = \lambda v$ für alle $\lambda \in K$ und $v \in L$, wobei die punktlose Multiplikation auf der rechten Seite die Multiplikation des Körpers $L$ bezeichnet.
+ \item
+  Ist allgemein $V$ ein $L$-Vektorraum, so wird $V$ durch Einschränkung der Skalarmultiplikation zu einem $K$-Vektorraum. Dass die Axiome eines $K$-Vektorraums erfüllt sind, folgt direkt daraus, dass sie für Skalare aus $L$ erfüllt sind. Man bezeichnet diese Einschränkung von $L$-Vektorräumen zu $K$-Vektorräumen als \emph{Skalarrestriktion}.
+ \item
+  Ist $V$ ein $\Cbb$-Vektorraum, so ist $V$ auch durch die Skalarmultiplikation
+  \[
+   \lambda * v = \overline{\lambda} \cdot v
+   \quad
+   \text{für alle $\lambda \in Cbb$ und $v \in V$}
+  \]
+  ein $\Cbb$-Vektorraum: Für alle $\lambda \in \Cbb$ und $v,w \in V$ ist
+  \[
+   \lambda * (v+w)
+   = \overline{\lambda} \cdot (v+w)
+   = \overline{\lambda} \cdot v + \overline{\lambda} \cdot w
+   = \lambda * v + \lambda * w.
+  \]
+  Für alle $\lambda, \mu \in \Cbb$ und $v \in V$ ist
+  \begin{gather*}
+   (\lambda + \mu) * v
+   = \overline{\lambda + \mu} \cdot v
+   = (\overline{\lambda} + \overline{\mu}) \cdot v
+   = \overline{\lambda} \cdot v + \overline{\mu} \cdot v
+   = \lambda * v + \mu * v.
+  \shortintertext{und}
+   \lambda * (\mu * v)
+   = \overline{\lambda} \cdot (\overline{\mu} \cdot v)
+   = (\overline{\lambda} \cdot \overline{\mu}) \cdot v
+   = \overline{\lambda \cdot \mu} \cdot v
+   = (\lambda \cdot \mu) * v.
+  \end{gather*}
+  Außerdem ist für alle $v \in V$
+  \[
+   1 * v = 1 \cdot v = v.
+  \]
+ \item
+  Ist allgemeinen $\phi \colon K \to K'$ ein Körperhomomorphismus und $V$ ein $K'$-Vektorraum, so wird $V$ ein $K$-Vektorraum durch die Skalarmultiplikation
+  \[
+   \lambda * v = \phi(\lambda) \cdot v
+   \quad
+   \text{für alle $\lambda \in K$ und $v \in V$}.
+  \]
+  Für alle $\lambda, \mu \in K$ und $v, w \in V$ ist nämlich
+  \begin{gather*}
+    \lambda * (v+w)
+    = \phi(\lambda) \cdot (v+w)
+    = \phi(\lambda) \cdot v + \phi(\lambda) \cdot w
+    = \lambda * v + \lambda * w
+  \shortintertext{und}
+   \begin{aligned}
+    (\lambda + \mu) * v
+    = \phi(\lambda + \mu) \cdot v
+    &= (\phi(\lambda) + \phi(\mu)) \cdot v \\
+    &= \phi(\lambda) \cdot v + \phi(\mu) \cdot v
+    = \lambda * v + \mu * v,
+   \end{aligned}
+  \shortintertext{sowie}
+   \begin{aligned}
+    \lambda * (\mu * v)
+    = \phi(\lambda) \cdot (\phi(\mu) \cdot v)
+    &= (\phi(\lambda) \cdot \phi(\mu)) \cdot v \\
+    &= \phi(\lambda \cdot \mu) \cdot v
+    = (\lambda \cdot \mu) * v,
+   \end{aligned}
+  \end{gather*}
+  und für alle $v \in V$ gilt
+  \[
+   1 * v = \phi(1) \cdot v = 1 \cdot v = v.
+  \]
+  
+  Die vorherigen beiden Beispiele ergeben sich als Sonderfall hievon: Die Skalarrestriktion ergibt sich durch die Inklusion $K \hookrightarrow L$ und das vorherige Beispiel durch die Konjugation $\Cbb \to \Cbb, z \mapsto \overline{z}$.
+\end{enumerate}
+
+
+\section{Untervektorräume bezüglich linearer Abbildungen}
+Es seien $V$ und $W$ $K$-Vektorräume und $f \colon V \to W$ sei eine $K$-lineare Abbildung.
+
+
+
+\subsection{Kern und Bild einer linearen Abbildung}
+Wir zeigen, dass der \emph{Kern} von $f$
+\[
+ \ker(f) \coloneqq \{v \in V \mid f(v) = 0\}
+\]
+ein Untervektorraum von $V$ ist: Da $f$ insbesondere ein Gruppenhomomorphismus der unterliegenden abelschen Gruppen ist, haben wir in \ref{sec: subgroups and group homomorphisms} bereits gesehen, dass $\ker(f)$ eine additive Untergruppe ist. Für alle $\lambda \in K$ und $v \in \ker(f)$ ist auch
+\[
+ f(\lambda v) = \lambda f(v) = \lambda \cdot 0 = 0,
+\]
+also $\lambda v \in \ker(f)$. Das zeigt, dass $\ker(f)$ ein Untervektorraum ist.
+
+\begin{bem}
+ Wir haben in \ref{sec: subgroups and group homomorphisms} auch schon gesehen, dass $f$ genau dann injektiv ist, wenn $\ker(f) = \{0\}$.
+\end{bem}
+
+Das \emph{Bild} von $f$
+\[
+ \im(f) = \{f(v) \mid v \in V\}
+\]
+ist ein Untervektorraum von $W$: Da $f$ insbesondere ein Gruppenhomomorphismus der unterliegenden abelschen Gruppen ist, haben wir in \ref{sec: subgroups and group homomorphisms} bereits gesehen, dass $\im(f)$ eine additive Untergruppe ist. Für $w \in \im(f)$ gibt es ein $v \in V$ mit $w = f(v)$, weshalb für alle $\lambda \in K$ auch
+\[
+ \lambda w
+ = \lambda f(v)
+ = f(\lambda w)
+ \in \im(f).
+\]
+Das zeigt, dass $\im(f)$ ein Untervektorraum ist.
+
+
+
+\subsection{Bilder und Urbilder von Untervektorräumen}
+Ist $U \subseteq V$ ein Untervektorraum, so ist das Bild $f(U)$ ein Untervektorraum von $W$: Da $f$ inbesondere ein Gruppenhomomorphismen der unterliegenden abelschen Gruppen ist haben wir bereits in \ref{sec: subgroups and group homomorphisms} gesehen, dass $f(U)$ ein additive Untergruppe ist. Ist $w \in f(U)$, so gibt es $u \in U$ mit $w = f(u)$. Da $U$ ein Untervektorraum ist, ist für alle $\lambda \in K$ auch $\lambda u \in U$, weshalb für alle $\lambda \in K$ auch
+\[
+ \lambda w
+ = \lambda f(u)
+ = f(\lambda u)
+ \in f(U).
+\]
+Also ist $f(U)$ ein Untervektorraum von $f$.
+
+
+\begin{bem}
+ Wie bereits in \ref{sec: subgroups and group homomorphisms} lassen sich Rechnungen auch hier umgehen: Da $f$ linear ist, ist es auch die Einschränkung $f|_{U} \colon U \to W$, $u \mapsto f(u)$. Wie bereits gesehen, ist deshalb $f(U) = \im(f|_{U})$ ein Untervektorraum.
+\end{bem}
+
+
+Ist $U \subseteq W$ ein Untervektorraum, so ist das Urbild $f^{-1}(U)$ ein Untervektorraum von $V$: Da $f$ inbesondere ein Gruppenhomomorphismus zwischen den unterliegenden abelschen Gruppen ist, haben wir bereits in \ref{sec: subgroups and group homomorphisms} gesehen, dass $f^{-1}(U)$ eine additive Untergruppe der unterliegenden abelschen Gruppe von $V$ ist. Für $v \in f^{-1}(U)$ ist $f(v) \in U$, also für alle $\lambda \in K$ auch
+\[
+ f(\lambda v) = \lambda f(v) \in U,
+\]
+da $U$ ein Untervektorraum ist. Also ist $f^{-1}(U)$ ein Untervektorraum.
+
+
+\begin{bem}
+ Ähnlich wie in \ref{sec: subgroups and group homomorphisms} folgt auch hieraus, dass
+ \[
+  \ker(f) = f^{-1}(\{0\})
+ \]
+ ein Untervektorraum ist.
+\end{bem}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Matrizenräume}
+Die ($m \times n$)-Matrizen $\Mat(m \times n, K)$ bilden zusammen mit der eintragsweisen Addition
+\[
+ (a_{ij})_{\substack{i=1,\dotsc,m \\ j=1,\dotsc,n}} + (b_{ij})_{\substack{i=1,\dotsc,m \\ j=1,\dotsc,n}}
+ = (a_{ij}+b_{ij})_{\substack{i=1,\dotsc,m \\ j=1,\dotsc,n}}
+\]
+eine abelsche Gruppe. Zusammen mit der eintragsweisen Skalarmultiplikation
+\[
+ \lambda \cdot (a_{ij})_{\substack{i=1,\dotsc,m \\ j=1,\dotsc,n}}
+ = (\lambda a_{ij})_{\substack{i=1,\dotsc,m \\ j=1,\dotsc,n}}
+\]
+wird $\Mat(m \times n, K)$ zu einem $K$-Vektorraum: Für alle Skalare $\lambda, \mu \in K$ und Matrizen $(a_{ij})_{i,j}, (b_{ij})_{i,j} \in \Mat(m \times n, K)$ ist
+\begin{gather*}
+ \begin{aligned}
+  \lambda \cdot ((a_{ij})_{i,j} + (b_{ij})_{i,j})
+  &= \lambda \cdot (a_{ij} + b_{ij})_{i,j}
+  = (\lambda (a_{ij}+b_{ij}))_{i,j} \\
+  &= (\lambda a_{ij} + \lambda b_{ij})_{i,j}
+  = (\lambda a_{ij})_{i,j} + (\lambda b_{ij})_{i,j}
+  = \lambda (a_{ij})_{i,j} + \lambda (b_{ij})_{i,j},
+ \end{aligned}
+\shortintertext{und}
+ \begin{aligned}
+  (\lambda+\mu) \cdot (a_{ij})_{i,j}
+  &= ((\lambda+\mu)a_{ij})_{i,j} \\
+  &= (\lambda a_{ij} + \mu a_{ij})_{i,j}
+  = \lambda \cdot (a_{ij})_{i,j} + \mu \cdot (a_{ij})_{i,j},
+ \end{aligned}
+\shortintertext{sowie}
+ \lambda \cdot (\mu \cdot (a_{ij})_{i,j})
+ = \lambda \cdot (\mu \cdot a_{ij})_{i,j}
+ = (\lambda \cdot \mu a_{ij})_{i,j}
+ = (\lambda \cdot \mu) \cdot (a_{ij})_{i,j},
+\end{gather*}
+und für alle $(a_{ij})_{i,j} \in \Mat(m \times n, K)$ gilt
+\[
+ 1 \cdot (a_{ij})_{i,j}
+ = (1 \cdot a_{ij})_{i,j}
+ = (a_{ij})_{i,j}.
+\]
+Ingesamt zeigt dies, dass $\Mat(m \times n, K)$ zusammen mit der üblichen eintragsweisen Addition und Skalarmultiplikation einen $K$-Vektorraum bildet.
+
+

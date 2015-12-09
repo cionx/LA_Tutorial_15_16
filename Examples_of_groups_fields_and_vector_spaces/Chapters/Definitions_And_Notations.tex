@@ -219,7 +219,50 @@
   \item
    Man bezeichnet einen Körper meistens nur mit $K$ statt mit $(K,+,\cdot)$, d.h.\ man nennt die Addition und Multiplikation nicht explizit. Das neutrale Element bezüglich der Addition wird mit $0$ bezeichnet, das neutrale Element der Multiplikation mit $1$.
   \item
-   Man bezeichnet die Gruppe $(K,+)$ als die \emph{additive Gruppe} von $K$. Man schreibt abkürzend $K^\times \coloneqq K\setminus\{0\}$ und bezeichnet die Gruppe $(K^\times,\cdot)$ als die \emph{multiplikative Gruppe} von $K$.
+   Man rechnet „Punkt vor Strich“, d.h.\ für alle $x,y,z \in K$ ist
+   \[
+    x + y \cdot z \coloneqq x + (y \cdot z).
+   \]
+  \item
+   In einem Körper $K$ gelten die gewöhnlichen Rechenregeln, beispielsweise die folgenden:
+   \begin{enumerate}[label=\alph*)]
+    \item
+     Für alle $x \in K$ ist $0 \cdot x = 0$, denn
+     \[
+      0 \cdot x = (0+0) \cdot x = (0 \cdot x) + (0 \cdot x),
+     \]
+     woraus sich die Gleichung durch Addition mit $-(0 \cdot x)$ ergibt. Da $1 \neq 0$ ist $0$ insbesondere nicht multiplikativ invertierbar.
+    \item
+     Für alle $x \in K$ ist $-x = (-1) \cdot x$, da
+     \[
+      x + (-1) \cdot x
+      = 1 \cdot x + (-1) \cdot x
+      = (1 + (-1)) \cdot x
+      = 0 \cdot x
+      = 0.
+     \]
+    \item
+     Für alle $x,y \neq 0$ ist auch $x \cdot y \neq 0$ mit $(x \cdot y)^{-1} = x^{-1} \cdot y^{-1}$. Es ist nämlich
+     \[
+      (x \cdot y) \cdot (x^{-1} \cdot y^{-1})
+      = x \cdot x^{-1} \cdot y \cdot y^{-1}
+      = 1 \cdot 1
+      = 1,
+     \]
+     und $0$ ist nicht multiplikativ invertierbar.
+    \item
+     Für alle $x \neq 0$ ist $(-x)^{-1} = -(x^{-1})$. Da $(-1) \cdot (-1) = -(-1) = 1$ ist nämlich $-1 = (-1)^{-1}$ und somit
+     \begin{align*}
+      x^{-1} + (-x)^{-1})
+      &= x^{-1} + ((-1) \cdot x)^{-1}
+      = x^{-1} + (-1)^{-1} \cdot x^{-1} \\
+      &= x^{-1} + (-1) \cdot x^{-1}
+      = x^{-1} - x^{-1}
+      = 0.
+     \end{align*}
+   \end{enumerate}
+  \item
+   Man bezeichnet die Gruppe $(K,+)$ als die \emph{additive Gruppe} von $K$. Man schreibt abkürzend $K^\times \coloneqq K\setminus\{0\}$; aus den obigen Rechenregeln folgt, dass $K^\times$ zusammen mit der Multiplikation des Körpers eine Gruppe bildet. Diese Gruppe $(K^\times,\cdot)$ wird als die \emph{multiplikative Gruppe} von $K$ bezeichnet.
   \item
    In der Definition eines Körpers lässt sich der Begriff einer Gruppe umgehen, indem man die darin versteckten Bedingungen alle explizit angibt: Ein Körper ist dann definiert als ein Tupel $(K,+,\cdot)$ bestehend aus einer Menge $K$ und zwei binären Verknüpfungen $+$ und $\cdot$ auf $K$, so dass die folgenden Bedingungen erfüllt sind:
    \begin{enumerate}[label=\roman*)]
@@ -241,18 +284,6 @@
      Für jedes $x \in K\setminus\{0\}$ gibt es ein multiplikativ inverses Element $y \in K$, d.h.\ $x \cdot y = 1$.
     \item
      $+$ ist distributiv bezüglich $\cdot$, d.h.\ $x \cdot (y+z) = (x \cdot y) + (x \cdot z)$ für alle $x,y,z \in K$.
-   \end{enumerate}
-  \item
-   Man rechnet „Punkt vor Strich“, d.h.\ für alle $x,y,z \in K$ ist
-   \[
-    x + y \cdot z \coloneqq x + (y \cdot z).
-   \]
-  \item
-   In einem Körper $K$ gelten die gewöhnlichen Rechenregeln, beispielsweise die folgenden:
-   \begin{enumerate}[label=\alph*)]
-    \item $0 \cdot x = 0$ für alle $x \in K$.
-    \item $-x = (-1) \cdot x$ für alle $x \in K$.
-    \item $(-x)^{-1} = -x^{-1}$ für alle $x \in K^\times$.
    \end{enumerate}
  \end{enumerate}
 \end{bem}
@@ -404,7 +435,24 @@
      \[
       0 \cdot v = (0+0) \cdot v = 0 \cdot v + 0 \cdot v,
      \]
-     woraus sich die Aussage durch Subtraktion von $0 \cdot x$ von beiden Seiten ergibt.
+     woraus sich die Aussage durch Subtraktion von $0 \cdot x$ von beiden Seiten der Gleichungskette ergibt.
+    \item
+     Für alle $\lambda \in K$ ist $\lambda \cdot 0 = 0$. Es ist nämlich
+     \[
+      \lambda \cdot 0
+      = \lambda \cdot (0+0)
+      = \lambda \cdot 0 + \lambda \cdot 0,
+     \]
+     woraus sich die Aussage durch Subtraktion von $\lambda \cdot 0$ von beiden Seiten der Gleichungkette ergibt.
+    \item
+     Sind andererseits $\lambda \in K$ und $v \in V$ mit $\lambda \neq 0$ und $v \neq 0$, so ist auch $\lambda \cdot v \neq 0$. Andernfalls wäre nämlich
+     \[
+      v
+      = 1 \cdot v
+      = \lambda^{-1} \cdot \lambda \cdot v = 
+      = \lambda^{-1} \cdot 0
+      = 0.
+     \]
     \item
      $(-1) \cdot v = -v$ für alle $v \in V$. Da nämlich
      \[
