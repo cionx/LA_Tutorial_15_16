@@ -199,7 +199,7 @@ da $U$ ein Untervektorraum ist. Also ist $f^{-1}(U)$ ein Untervektorraum.
 \end{bem}
 
 
-\section{Abbildungen in einen Vektorraum}
+\section{Abbildungen in einen Vektorraum}\label{sec: maps into a vector space}
 Es sei $X$ eine beliebige Menge und $V$ ein $K$-Vektorraum. Auf der Menge
 \[
  \Abb(X,V) = \{f \colon X \to V\}
@@ -304,13 +304,13 @@ Ingesamt zeigt dies, dass $\Abb(X,V)$ zusammen mit der punktweisen Addition und 
 \section{\texorpdfstring{$\Hom$}{Hom}-Räume}
 Es seien $V$ und $W$ zwei $K$-Vektorräume und
 \[
- \Hom(V, W) \coloneqq \{f \colon V \to W \mid \text{$f$ ist linear}\}.
+ \Hom_K(V, W) \coloneqq \{f \colon V \to W \mid \text{$f$ ist linear}\}.
 \]
-Wir zeigen, dass $\Hom(V,W) \subseteq \Abb(V,W)$ einen Untervektorraum bildet, und somit ebenfalls einen Vektorraum bezüglich der punktweisen Addition und Skalarmultiplikation.
+Wir zeigen, dass $\Hom_K(V,W) \subseteq \Abb(V,W)$ einen Untervektorraum bildet, und somit ebenfalls einen Vektorraum bezüglich der punktweisen Addition und Skalarmultiplikation.
 
-Die Nullfunktion $0 \in \Abb(V,W)$ ist linear, da $0(v+w) = 0 = 0(v)+0(w)$ sowie $0(\lambda v) = 0 = \lambda 0(v)$ für alle $v,w \in V$ und $\lambda \in K$. Also ist $0 \in \Hom(V,W)$.
+Die Nullfunktion $0 \in \Abb(V,W)$ ist linear, da $0(v+w) = 0 = 0(v)+0(w)$ sowie $0(\lambda v) = 0 = \lambda 0(v)$ für alle $v,w \in V$ und $\lambda \in K$. Also ist $0 \in \Hom_K(V,W)$.
 
-Sind $f,g \in \Hom(V,W)$ und $\lambda \in K$, so ist für alle $v,w \in V$ und $\mu \in K$
+Sind $f,g \in \Hom_K(V,W)$ und $\lambda \in K$, so ist für alle $v,w \in V$ und $\mu \in K$
 \begin{gather*}
  \begin{aligned}
  (f+g)(v+w)
@@ -326,7 +326,12 @@ Sind $f,g \in \Hom(V,W)$ und $\lambda \in K$, so ist für alle $v,w \in V$ und $
  = \mu \lambda f(v)
  = \mu (\lambda f)(v),
 \end{gather*}
-also auch $f+g \in \Hom(V,W)$ und $\lambda f \in \Hom(V,W)$. Dies zeigt, dass $\Hom(V,W)$ ein Untervektorraum von $\Abb(V,W)$ ist.
+also auch $f+g \in \Hom_K(V,W)$ und $\lambda f \in \Hom_K(V,W)$. Dies zeigt, dass $\Hom_K(V,W)$ ein Untervektorraum von $\Abb(V,W)$ ist.
+
+
+\begin{bem}
+ Ist $V$ ein $K$-Vektorraum, so heißt $V^* \coloneqq \Hom(V,K)$ der \emph{Dualraum} von $V$.
+\end{bem}
 
 
 %TODO: \section{Eigenräume}
@@ -636,6 +641,163 @@ also auch $A+B \in \Alt_n(K)$ und $\lambda A \in \Alt_n(K)$. Das zeigt, dass $\A
    \end{gather*}
  \end{enumerate} 
 \end{bem}
+
+
+
+
+
+\section{Funktionenräume}
+Wie in \ref{sec: maps into a vector space} gesehen wird $\Abb(X,K)$ vermöge der punktweisen Addition und Skalarmultiplikation zu einem $K$-Vektorraum, d.h.\ für alle $f,g \in \Abb(X,K)$ und $\lambda \in K$ ist
+\[
+ (f+g)(x) = f(x)+g(x)
+ \quad\text{und}\quad
+ (\lambda \cdot f)(x) = \lambda \cdot f(x)
+ \quad\text{für alle $x \in X$}.
+\]
+Wir geben in diesem Abschnitt verschiedene Beispiele für Vektorräume von reellwertigen Funktionen, wie sie etwa in der Analysis eine Rolle spielen. Wir werden diese jeweils als Untervektorräume von Vektorräumen der Form $\Abb(X,\Rbb)$ konstruieren.
+
+
+\subsection{Beschränkte Funktionen}
+Es sei $X$ eine beliebige Menge. Eine Funktion $f \colon X \to \Rbb$ heißt \emph{beschränkt}, falls es eine Konstante $C \geq 0$ gibt, so dass $|f(x)| \leq C$ für alle $x \in X$. Es sei
+\[
+ B(X, \Rbb)
+ \coloneqq \{f \colon X \to \Rbb \mid \text{$f$ ist beschränkt}\}
+ \subseteq \Abb(X,\Rbb).
+\]
+Wir zeigen, dass $B(X,\Rbb)$ bezüglich der punktweisen Addition und Skalarmultiplikation einen $\Rbb$-Vektorraum bildet. Hierfür zeigen wir, dass $B(X, \Rbb) \subseteq \Abb(X,\Rbb)$ ein Untervektorraum ist.
+
+Die Nullfunktion $N \in \Abb(X,\Rbb)$ ist beschränkt, denn für $C \coloneqq 0$ ist
+\[
+ |N(x)| = |0| = 0 \leq C 
+ \quad\text{für alle $x \in X$}.
+\]
+Also ist die Nullfunktion $N$ beschränkt und deshalb $N \in B(X, \Rbb)$. Sind $f, g \in B(X, \Rbb)$, so gibt es Konstanten $C_f, C_g \geq 0$ mit
+\[
+ |f(x)| \leq C_f
+ \quad\text{und}\quad
+ |g(x)| \leq C_g
+ \quad
+ \text{für alle $x \in X$}.
+\]
+Für $C_{f+g} \coloneqq C_f + C_g$ ist $C_{f+g} \geq 0$ und nach der Dreieckungleichung ist
+\[
+ |(f+g)(x)|
+ = |f(x) + g(x)|
+ \leq |f(x)| + |g(x)|
+ \leq C_f + C_g
+ = C_{f+g}
+ \quad
+ \text{für alle $x \in X$}.
+\]
+Also ist auch $f+g$ beschränkt und somit $f+g \in B(X, \Rbb)$. Für $\lambda \in \Rbb$ und $C_{\lambda f} \coloneqq |\lambda| C_f \geq 0$ ist nach der Homogenität des Betrags
+\[
+ |(\lambda f)(x)|
+ = |\lambda f(x)|
+ = |\lambda| |f(x)|
+ \leq |\lambda| C_f
+ = C_{\lambda f}
+ \quad
+ \text{für alle $x \in X$}.
+\]
+Also ist auch $\lambda f$ beschränkt und somit $\lambda f \in B(X,\Rbb)$. Ingesamt zeigt dies, dass $B(X,\Rbb)$ ein Untervektorraum von $\Abb(X,\Rbb)$ ist.
+
+
+\begin{bem}
+ Ersetzt man $\Rbb$ und $\Cbb$, so enthält man den $\Cbb$-Vektorraum $B(X,\Cbb)$ der komplexwertigen beschränkten Funktionen auf $X$.
+\end{bem}
+
+
+
+
+\subsection{Stetige reellwertige Funktionen auf \texorpdfstring{$\Rbb$}{R}}
+Eine Funktion $f \colon \Rbb \to \Rbb$ heißt \emph{stetig}, falls für jede konvergente Folge $(x_n)_{n \in \Nbb}$ reeller Zahlen auch die Bildfolge $(f(x_n))_{n \in \Nbb}$ konvergiert und
+\[
+ f\left( \lim_{n \to \infty} x_n \right)
+ = \lim_{n \to \infty} f(x_n).
+\]
+Wir zeigen, dass
+\[
+ C(\Rbb,\Rbb)
+ \coloneqq \{f \colon \Rbb \to \Rbb \mid \text{$f$ ist stetig}\}
+ \subseteq \Abb(\Rbb, \Rbb)
+\]
+zusammen mit der punktweisen Addition und Skalarmultiplikation einen Vektorraum bildet, indem wir zeigen, dass $C(\Rbb, \Rbb) \subseteq \Abb(\Rbb, \Rbb)$ ein Untervektorraum ist (der Buchstabe C steht hier für \emph{continuous}, die englische Übersetzung von \emph{stetig}).
+
+
+\begin{bem}
+ Wir erinnern an einige Fakten über konvergente Folgen reeller Zahlen:
+ \begin{enumerate}[label=\roman*)]
+  \item
+   Ist $(x_n)_{n \in \Nbb}$ eine konstante Folge, d.h.\ es gibt $c \in \Rbb$ mit $x_n = c$ für alle $n \in \Nbb$, so konvergiert die Folge $(x_n)_{n \in \Nbb}$ und es gilt $\lim_{n \to \infty} x_n = c$.
+  \item
+   Sind $(x_n)_{n \in \Nbb}$ und $(y_n)_{n \in \Nbb}$ zwei konvergente Folgen reeller Zahlen, so konvergiert auch die Folge $(x_n + y_n)_{n \in \Nbb}$ und $\lim_{n \to \infty} (a_n+b_n) = (\lim_{n \to \infty} a_n) + (\lim_{n \to \infty} b_n)$.
+  \item
+   Ist $\lambda \in \Rbb$ und $(x_n)_{n \in \Nbb}$ eine konvergente Folge reeller Zahlen, so konvergiert auch die Folge $(\lambda \cdot x_n)_{n \in \Nbb}$ und es gilt $\lim_{n \to \infty} (\lambda \cdot x_n) = \lambda \cdot \lim_{n \to \infty} x_n$.
+ \end{enumerate}
+\end{bem}
+
+
+Für die Nullfunktion $N \colon \Rbb \to \Rbb$ ist $N(x) = 0$ für alle $x \in \Rbb$. Ist $(x_n)_{n \in \Nbb}$ eine konvergente Folge reeller Zahlen, so ist deshalb die Bildfolge $(f(x_n))_{n \in \Nbb}$ die konstante Nullfolge. Inbesondere ist die Bildfolge konvergent und
+\[
+ \lim_{n \to \infty} f(x_n)
+ = \lim_{n \to \infty} 0
+ = 0
+ = f\left( \lim_{n \to \infty} x_n \right).
+\]
+Also ist die Nullfunktion stetig und somit $N \in C(\Rbb,\Rbb)$.
+
+Sind $f,g \in C(\Rbb,\Rbb)$ und ist $(x_n)_{n \in \Nbb}$ eine konvergente Folge reeller Zahlen, so konvergieren auch die beiden Folgen $(f(x_n))_{n \in \Nbb}$ und $(g(x_n))_{n \in \Nbb}$ und
+\[
+ \lim_{n \to \infty} f(x_n) = f\left( \lim_{n \to \infty} x_n \right)
+ \quad\text{und}\quad
+ \lim_{n \to \infty} g(x_n) = g\left( \lim_{n \to \infty} x_n \right).
+\]
+Daher ist konvergiert auch die Folge $(f(x_n) + g(x_n))_{n \in \Nbb} = ((f+g)(x_n))_{n \in \Nbb}$ und es gilt
+\begin{align*}
+ \lim_{n \to \infty} (f+g)(x_n)
+ &= \lim_{n \to \infty} (f(x_n) + g(x_n))
+ = \left(\lim_{n \to \infty} f(x_n)\right) + \left(\lim_{n \to \infty} g(x_n)\right) \\
+ &=f\left( \lim_{n \to \infty} x_n \right) + g\left( \lim_{n \to \infty} x_n \right)
+ = (f+g)\left( \lim_{n \to \infty} x_n \right).
+\end{align*}
+Also ist auch $f+g$ stetig und somit $f+g \in C(\Rbb, \Rbb)$.
+
+Ist $\lambda \in \Rbb$, $f \in C(\Rbb, \Rbb)$ und $(x_n)_{n \in \Nbb}$ eine konvergente Folge reeller Zahlen, so konvergiert auch die Folge $(f(x_n))_{n \in \Nbb}$ und es ist $\lim_{n \to \infty} f(x_n) = f(\lim_{n \to \infty} x_n)$. Daher konvergiert auch die Folge $(\lambda f(x_n))_{n \in \Nbb} = ((\lambda f)(x_n))_{n \in \Nbb}$ und
+\[
+ \lim_{n \to \infty} (\lambda f)(x_n)
+ = \lim_{n \to \infty}( \lambda f(x_n) )
+ = \lambda \lim_{n \to \infty} f(x_n)
+ = \lambda f\left( \lim_{n \to \infty} x_n \right)
+ = (\lambda f) \left( \lim_{n \to \infty} x_n \right).
+\]
+Also ist auch $\lambda f$ stetig und somit $\lambda f \in C(\Rbb, \Rbb)$.
+
+Ingesamt zeigt dies, dass $C(\Rbb, \Rbb)$ ein Untervektorraum von $\Abb(\Rbb, \Rbb)$ ist.
+
+
+\begin{bem}
+ Statt reellwertige Funktionen lassen sich auch komplexwertige Funktionen betrachten, und statt $\Rbb$ lässt sich auch $\Cbb$ als Definitionsbereich nutzen. So erhält man die $\Rbb$-Vektorräume
+ \[
+  C(\Rbb,\Rbb) = \{f \colon \Rbb \to \Rbb \mid \text{$f$ ist stetig}\}
+  \quad\text{und}\quad
+  C(\Cbb,\Rbb) = \{f \colon \Cbb \to \Rbb \mid \text{$f$ ist stetig}\}
+ \]
+ und die $\Cbb$-Vektorräume
+ \[
+  C(\Rbb,\Cbb) = \{f \colon \Rbb \to \Cbb \mid \text{$f$ ist stetig}\}
+  \quad\text{und}\quad
+  C(\Cbb,\Cbb) = \{f \colon \Cbb \to \Cbb \mid \text{$f$ ist stetig}\}.
+ \]
+\end{bem}
+
+
+
+
+
+
+
+
+
 
 
 
