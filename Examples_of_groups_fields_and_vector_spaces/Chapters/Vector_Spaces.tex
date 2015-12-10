@@ -891,6 +891,60 @@ Ingesamt zeigt dies, dass $C(\Rbb, \Rbb)$ ein Untervektorraum von $\Abb(\Rbb, \R
 
 
 
+\subsection{Hölder-stetige Funktionen auf \texorpdfstring{$\Rbb$}{R}}
+Es sei $\alpha > 0$.
+
+\begin{defi}
+ Eine Abbildung $f \colon \Rbb \to \Rbb$ heißt \emph{Hölder-stetig mit Exponent $\alpha$} falls es eine Konstante $C_f \geq 0$ gibt, so dass $|f(x)-f(y)| \leq C_f |x-y|$ für alle $x,y \in \Rbb$. Es sei
+ \[
+  C^\alpha(\Rbb)
+  \coloneqq \{f \colon \Rbb \to \Rbb \mid \text{$f$ ist Hölder-stetig mit Exponent $\alpha$}\}.
+ \]
+\end{defi}
+
+Wir zeigen, dass die Hölder-stetigen Funktionen mit Exponent $\alpha$ zusammen mit der punktweisen Addition und Skalarmultiplikation einen $\Rbb$-Vektorraum bildet, indem wir zeiges, dass $C^\alpha(\Rbb) \subseteq \Abb(\Rbb,\Rbb)$ ein Untervektorraum ist.
+
+Für die Nullfunktion $N \colon \Rbb \to \Rbb$ und $C_0 \coloneqq 0$ ist
+\[
+ |N(x) - N(y)|
+ = |0 - 0|
+ = 0
+ = 0 \cdot |x-y|^\alpha
+ \leq C_0 \cdot |x-y|^\alpha
+ \quad
+ \text{für alle $x,y \in \Rbb$}.
+\]
+Also ist $N$ Hölder-stetig mit Exponent $\alpha$ und somit $N \in C^\alpha(\Rbb)$.
+
+Sind $f,g \in C^\alpha(\Rbb)$, so gibt es Konstanten $C_f, C_g \geq 0$ mit $|f(x)-f(y)| \leq C_f |x-y|$ und $|g(x)-g(y)| \leq C_g |x-y|$ für alle $x,y \in \Rbb$. Für $C_{f+g} \coloneqq C_f + C_g$ ergibt sich mithilfe der Dreiecksungleichung, dass
+\begin{align*}
+ |(f+g)(x) - (f+g)(y)|
+ &= |f(x)+g(x)-f(y)-g(y)|
+ = |f(x)-f(y) + g(x)-g(y)| \\
+ &\leq |f(x)-f(y)| + |g(x)-g(y)|
+ \leq C_f |x-y|^\alpha + C_g |x-y|^\alpha \\
+ &= (C_f + C_g) |x-y|^\alpha
+ = C_{f+g} |x-y|^\alpha
+\end{align*}
+für alle $x,y \in \Rbb$. Also ist auch $f+g$ Hölder-stetig mit Exponent $\alpha$ und somit $f+g \in C^\alpha(\Rbb)$.
+
+Ist $f \in C^\alpha(\Rbb)$ und $\lambda \in \Rbb$, so gibt es eine Konstante $C_f \geq 0$ mit $|f(x)-f(y)| \leq C_f |x-y|$ für alle $x,y \in \Rbb$. Für $C_{\lambda f} \coloneqq |\lambda| C_f$ ist deshalb
+\begin{align*}
+ |(\lambda f)(x) - (\lambda f)(y)|
+ &= |\lambda f(x) - \lambda f(y)|
+ = |\lambda (f(x) - f(y))| \\
+ &= |\lambda| |f(x)-f(y)|
+ \leq |\lambda| C_f |x-y|^\alpha
+ = C_{\lambda f} |x-y|^\alpha
+\end{align*}
+für alle $x,y \in \Rbb$. Also ist auch $\lambda f$ Hölder-stetig mit Exponent $\alpha$ und somit $\lambda f \in C^\alpha(\Rbb)$.
+
+Ingesamt zeigt dies, dass $C^\alpha(\Rbb) \subseteq \Abb(\Rbb, \Rbb)$ ein Untervektorraum ist.
+
+\begin{bem}
+ Es lässt sich zeigen, dass Hölder-stetige Funktionen bereits stetig sind (wie der Name vermuten lässt). Für $\alpha > 1$ ist zudem $C^\alpha(\Rbb) = \{0\}$, d.h.\ die Nullfunktionen ist die einzige Hölder-stetige Funktion $\Rbb \to \Rbb$ mit Exponent $\alpha > 1$.
+\end{bem}
+
 
 
 
