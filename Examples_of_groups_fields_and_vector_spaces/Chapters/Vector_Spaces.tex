@@ -707,6 +707,65 @@ Also ist auch $\lambda f$ beschränkt und somit $\lambda f \in B(X,\Rbb)$. Inges
 \end{bem}
 
 
+\subsection{Gerade und ungerade Funktionen}
+Eine Funktion $f \colon \Rbb \to \Rbb$ heißt \emph{gerade}, falls $f(x) = f(-x)$ für alle $x \in \Rbb$ und \emph{ungerade}, falls $f(-x) = -f(x)$ für alle $x \in \Rbb$. Es seien
+\begin{align*}
+ G(\Rbb,\Rbb) &\coloneqq \{f \colon \Rbb \to \Rbb \mid \text{$f$ ist gerade}\}
+\shortintertext{und}
+ U(\Rbb,\Rbb) &\coloneqq \{f \colon \Rbb \to \Rbb \mid \text{$f$ ist ungerade}\}.
+\end{align*}
+Wir zeigen, dass $G$ und $U$ mit der punktweisen Addition und Skalarmultiplikation einen $\Rbb$-Vektorraum, indem wir zeigen, dass $G(\Rbb, \Rbb) \subseteq \Abb(\Rbb,\Rbb)$ und $U(\Rbb, \Rbb) \subseteq \Abb(\Rbb, \Rbb)$ Untervektorräume sind.
+
+Für die Nullfunktion $N \colon \Rbb \to \Rbb$ gilt $N(x) = 0 = N(-x)$ und $N(-x) = 0 = -0 = -N(x)$ für alle $x \in \Rbb$, also ist $N$ gerade und ungerade, und somit $N \in G(\Rbb, \Rbb)$ und $N \in U(\Rbb, \Rbb)$.
+
+Sind $f,g \in G(\Rbb, \Rbb)$ und ist $\lambda \in \Rbb$, so ist
+\begin{gather*}
+ (f+g)(-x)
+ = f(-x) + g(-x)
+ = f(x) + g(x)
+ = (f+g)(x)
+ \quad\text{für alle $x \in \Rbb$}
+\shortintertext{und}
+ (\lambda f)(-x) = \lambda f(-x) = \lambda f(x) = (\lambda f)(x)
+ \quad\text{für alle $x \in \Rbb$}.
+\end{gather*}
+Also sind dann auch $f+g$ und $\lambda f$ gerade und somit $f+g, \lambda f \in G(\Rbb, \Rbb)$. Das zeigt, dass $G(\Rbb, \Rbb)$ ein Untervektorraum von $\Abb(\Rbb, \Rbb)$ ist.
+
+Sind $f,g \in U(\Rbb, \Rbb)$ und ist $\lambda \in \Rbb$, so ist
+\begin{gather*}
+ (f+g)(-x)
+ = f(-x) + g(-x)
+ = -f(x) - g(x)
+ = -(f(x) + g(x))
+ = -(f+g)(x)
+\shortintertext{und}
+ (\lambda f)(-x)
+ = \lambda f(-x)
+ = -\lambda f(x)
+ = -(\lambda f)(x)
+\end{gather*}
+für alle $x \in \Rbb$. Also sind dann auch $f+g$ und $\lambda f$ ungerade und somit $f+g, \lambda f \in U(\Rbb, \Rbb)$. Das zeigt, dass $U(\Rbb, \Rbb)$ ein Untervektorraum von $\Abb(\Rbb, \Rbb)$ ist.
+
+
+\begin{bem}
+ \begin{enumerate}[leftmargin=*]
+  \item
+   Ist $f \colon \Rbb \to \Rbb$  eine beliebige Funktion, so gibt es eine eindeutige gerade Funktion $g \colon \Rbb \to \Rbb$ und eindeutige ungerade Funktion $u \colon \Rbb \to \Rbb$ mit $f = g+u$. Die Eindeutigkeit folgt daraus, falls $f = g+u$ mit $g$ gerade und $u$ ungerade, sich $g$ und $u$ durch $g(x) = (f(x) + f(-x))/2$ und $u(x) = (f(x) - f(-x))/2$ für alle $x \in \Rbb$ ergeben.
+   
+   Ist andererseits $f \colon \Rbb \to \Rbb$ beliebig, so definiert $g(x) \coloneqq (f(x)+f(-x))/2$ eine gerade Funktion und $u(x) \coloneqq (f(x)-f(-x))/2$ eine ungerade Funktion, und es gilt $f = g+u$. Das zeigt die Existenz.
+  \item
+   Für einen beliebigen Körper $K$ und zwei $K$-Vektorräume $V$ und $W$ kann man eine Funktion $f \colon V \to W$ als gerade definieren, falls $f(v) = f(-v)$ für alle $v \in V$, und als ungerade, falls $f(-v) = -f(v)$ für alle $v \in V$. Dann sind
+   \begin{align*}
+    G(V,W) &\coloneqq \{f \colon V \to W \mid \text{$f$ ist gerade}\}
+   \shortintertext{und}
+    U(V,W) &\coloneqq \{f \colon V \to W \mid \text{$f$ ist ungerade}\}
+   \end{align*}
+   Untervektorräume des $K$-Vektorraums $\Abb(V,W)$, und somit selber $K$-Vektorräume bezüglich der punktweisen Addition und Skalarmultiplikation.
+   
+   Ist $f \colon V \to W$ linear, so ist $f(-v) = -f(v)$ für alle $v \in V$, also $f$ ungerade. Daher ist $\Hom_K(V,W) \subseteq U(V,W)$ ein Untervektorraum.
+ \end{enumerate}
+\end{bem}
+
 
 
 \subsection{Stetige reellwertige Funktionen auf \texorpdfstring{$\Rbb$}{R}}
@@ -788,6 +847,7 @@ Ingesamt zeigt dies, dass $C(\Rbb, \Rbb)$ ein Untervektorraum von $\Abb(\Rbb, \R
   \quad\text{und}\quad
   C(\Cbb,\Cbb) = \{f \colon \Cbb \to \Cbb \mid \text{$f$ ist stetig}\}.
  \]
+ Fasst man $C(\Rbb, \Cbb)$ und $C(\Cbb, \Cbb)$ als $\Rbb$-Vektorräume auf, so sind $C(\Rbb, \Rbb) \subseteq C(\Rbb, \Cbb)$ und $C(\Cbb, \Rbb) \subseteq C(\Cbb, \Cbb)$ Untervektorräume.
 \end{bem}
 
 
