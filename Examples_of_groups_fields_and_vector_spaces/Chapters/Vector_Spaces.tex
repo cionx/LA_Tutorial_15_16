@@ -768,6 +768,45 @@ für alle $x \in \Rbb$. Also sind dann auch $f+g$ und $\lambda f$ ungerade und s
 
 
 
+\subsection{Radialsymmetrische reellwertige Funktionen auf \texorpdfstring{$\Rbb^n$}{Rn}}
+\begin{defi}
+ Eine Funktion $f \colon \Rbb^n \to \Rbb$ heißt \emph{radialsymmetrisch}, falls es eine Funktion $\rho_f \colon [0,\infty) \to \Rbb$ gibt, so dass $f(x) = \rho(|x|)$ für alle $x \in \Rbb^n$.
+\end{defi}
+
+Es sei
+\[
+ R \coloneqq \{f \colon \Rbb^n \to \Rbb \mid \text{$f$ ist radialsymmetrisch}\}.
+\]
+Wir zeigen, dass $R$ ein Vektorraum bezüglich der punktweisen Addition und Skalarmultiplikation ist, indem wir zeigen, dass $R \subseteq \Abb(\Rbb^n, \Rbb)$ ein Untervektorraum ist:
+
+Die Nullfunktion $N \colon \Rbb^n \to \Rbb$ ist radialsymmetrisch, denn für $\rho_N \colon [0,\infty) \to \Rbb$, $r \mapsto 0$ ist
+\[
+ N(x) = 0 = \rho_N(|0|)
+ \quad
+ \text{für alle $x \in \Rbb^n$}.
+\]
+Also ist $N \in R$. Sind $f,g \in R$, so gibt es Funktionen $\rho_f, \rho_g \colon [0,\infty) \to \Rbb$ mit $f(x) = \rho_f(|x|)$ und $g(x) = \rho_g(|x|)$ für alle $x \in \Rbb^n$. Für $\rho_{f+g} = \rho_f + \rho_g$ ist daher
+\[
+ (f+g)(x)
+ = f(x) + g(x)
+ = \rho_f(|x|) + \rho_g(|x|)
+ = (\rho_f + \rho_g)(|x|)
+ = \rho_{f+g}(|x|)
+\]
+für alle $x \in \Rbb^n$. Also ist $f+g$ radialsymmetrisch und deshalb auch $f+g \in R$. Ist ferner $\lambda \in \Rbb$, so gilt für $\rho_{\lambda f} = \lambda \rho_f$, dass
+\[
+ (\lambda f)(x)
+ = \lambda f(x)
+ = \lambda \rho_f(|x|)
+ = (\lambda \rho_f)(|x|)
+ = \rho_{\lambda f}(|x|)
+ \quad
+ \text{für alle $x \in \Rbb^n$}.
+\]
+Also ist auch $\lambda f$ radialsymmetrisch und somit $\lambda f \in R$. Dies zeigt, dass \mbox{$R \subseteq \Abb(\Rbb^n, \Rbb)$} ein Untervektorraum ist.
+
+
+
 \subsection{Stetige reellwertige Funktionen auf \texorpdfstring{$\Rbb$}{R}}
 Eine Funktion $f \colon \Rbb \to \Rbb$ heißt \emph{stetig}, falls für jede konvergente Folge $(x_n)_{n \in \Nbb}$ reeller Zahlen auch die Bildfolge $(f(x_n))_{n \in \Nbb}$ konvergiert und
 \[
