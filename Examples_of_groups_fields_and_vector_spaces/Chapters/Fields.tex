@@ -114,7 +114,7 @@ Die komplexen Zahlen $\Cbb$ sind ein Körper, der die reellen Zahlen $\Rbb$ enth
 
 
 
-\subsection{Die komplexen Zahlen als besserer \texorpdfstring{$\Rbb^2$}{R2}}
+\subsection{Die komplexen Zahlen als besserer \texorpdfstring{$\Rbb^2$}{R2}}\label{subsec: C as R2}
 Wir beginnen mit der additiven Gruppe $\Cbb \coloneqq \Rbb^2 = \{(a,b) \mid a,b \in \Rbb\}$. Die Addition ist gegeben durch
 \[
  (a_1, b_1) + (a_2, b_2) = (a_1 + a_2, b_1 + b_2)
@@ -604,7 +604,47 @@ Für eine Primzahl $p$ bezeichnet man den Körper $(\Zbb/p\Zbb, +, \cdot)$ als $
 
 
 \section{Quadratische Körpererweiterungen}
-Die komplexen Zahlen $\Cbb$ entstehen aus den reellen Zahlen $\Rbb$ durch hinzufügen einer Quadratwurzel von $-1$, d.h.\ eines Elementes $i$ mit $i^2 = -1$. Wir wollen hier noch weiter Beispiele von Körpern angeben, die durch hinzufügen von Wurzeln aus bereits bekannten Körpern entstehen.
+\begin{defi}
+ Es sei $K$ ein Körper und $x \in K$. Ein Element $y \in K$ heißt \emph{Quadratwurzel von $x$}, falls $y^2 = x$.
+\end{defi}
+
+
+\begin{bsp}
+ \begin{enumerate}[leftmargin=*]
+  \item
+   Für $K = \Cbb$ ist $i^2 = -1$, also ist $i$ eine Quadratwurzel von $-1$. Analog ist auch $-i$ eine Quadratwurzel von $-1$.
+  \item
+   Für $K = \Rbb$ ist $x^2 \leq 0$ für alle $x \in \Rbb$ und somit $x^2 \neq -1$ für alle $x \in \Rbb$. Also hat $-1$ keine Quadratwurzel in $\Rbb$.
+  \item
+   Für $K = \Qbb$ ist $4/9 = (2/3)^2 = (-2/3)^2$, also sind $2/3$ und $-2/3$ Quadratwurzeln von $2/3$. Da $x^2 \neq 2$ für alle $x \in \Qbb$ hat $2$ keine Quadratwurzel in $\Qbb$.
+  \item
+   Ist $x \in K$ und $y \in K$ eine Quadratwurzel von $x$, so ist auch $-y$ eine Quadratwurzel von $x$, da dann $(-x)^2 = x^2 = y$. Dies sind dann die einzigen beiden Quadratwurzeln von $x$: Ist $z \in K$ eine Quadratwurzel von $x$, so ist
+   \[
+    0
+    = x - x
+    = z^2 - y^2
+    = (z - y)(z + y),
+   \]
+   also $z - y = 0$ oder $z + y = 0$, und somit $z = y$ oder $z = -y$.
+  \item
+   Für $K = \Fbb_3$ ist $0^2 = 0$, $1^2 = 1$ und $2^2 = 1$, also hat $2 \in \Fbb_3$ keine Quadratwurzel.
+  \item
+   Für $K = \Fbb_5$ ist $0^2 = 0$, $1^2 = 4^2 = 1$ und $2^2 = 3^2 = 4$, also haben $0$, $1$ und $4$ Quadratwurzeln in $\Fbb_5$, und $2$ und $3$ keine Quadratwurzeln in $\Fbb_5$.
+  \item
+   Für $K = \Fbb_7$ ist $0^2 = 0$, $1^2 = 6^2 = 1$, $2^2 = 5^2 = 4$ und $3^2 = 4^2 = 2$. Also haben $0$, $1$, $2$ und $4$ Quadratwurzeln in $\Fbb_7$, und $3$, $5$ und $6$ haben keine Quadratwurzeln in $\Fbb_7$.
+  \item
+   Ist $y \in K$ eine Quadratwurzel von $x \in K$, so mag es naheliegend sein, dies als $y = \sqrt{x}$ zu schreiben. Wir wollen hier vor dieser Notation warnen: Wie bereits gesehen, ist auch $-y$ eine Quadratwurzel von $x$, und ist $\kchar(K) \neq 2$, so ist $y \neq -y$. Der Ausdruck $\sqrt{x}$ ist daher a priori nicht eindeutig definiert.
+   
+   Im Falle von $K = \Rbb$ ist es möglich, $\sqrt{x}$ konsistent als die nicht-negative der beiden Wurzeln $y$ und $-y$ zu definieren; in diesem Sonderfall werden wir daher die Notation $\sqrt{x}$ für $x \in \Rbb$ mit $x \geq 0$ nutzen.
+ \end{enumerate}
+\end{bsp}
+
+
+Die komplexen Zahlen $\Cbb$ entstehen aus den reellen Zahlen $\Rbb$ durch hinzufügen einer Quadratwurzel von $-1$, d.h.\ eines Elementes $i$ mit $i^2 = -1$. Wir wollen hier noch weiter Beispiele von Körpern angeben, die durch hinzufügen von Quadratwurzeln aus bereits bekannten Körpern entstehen.
+
+
+
+
 
 
 \subsection{Der Körper \texorpdfstring{$\Qbb[i]$}{Q[i]}}
@@ -851,7 +891,22 @@ Mit den obigen Notationen erhalten wir also, dass
 \]
 und $\alpha^2 = d$, und für jedes $z \in L$ ist die Zerlegung $z = x + y\alpha$ mit $x,y \in K$ eindeutig.
 
-%TODO: Vorherige Definition von Quadratwurzeln und Beispiele von formalen Erweiterungen
+
+\begin{bsp}
+ \begin{enumerate}[leftmargin=*]
+  \item
+   Für $K = \Rbb$ und $d = -1$ ergibt sich die Konstruktion von $\Cbb$ aus \ref{subsec: C as R2}.
+  \item
+   Für $K = \Fbb_3$ und $d = 2 \in \Fbb_3$ besitzt $d$ keine Quadratwurzeln in $\Fbb_3$, da $0^2 = 0$ und $1^1 = 2^2 = 1$. Die obige Konstruktion liefert einen neuen Körper
+   \[
+    L
+    = \{x + y\alpha \mid x,y \in \Fbb_3\
+    = \{0, 1, 2, \alpha, 1 + \alpha, 2 + \alpha, 2\alpha, 1 + 2\alpha, 2+2\alpha\}
+   \]
+   mit $\alpha^2 = d = 2$.
+ \end{enumerate}
+\end{bsp}
+
 
 %TODO: \section{Quotientenkörper}
 
