@@ -826,4 +826,85 @@ definiert. Wir geben hier eine formale Konstruktion von beliebig großen (bzw. m
 
 
 
+\section{Konvergenz von Folgen}
+Da wir im Folgenden auch Räume konventer Folgen betrachten wollen, erinnern wir hier an die grundlegenden Definitionen und Eigenschafter konvergenter Folgen. In diesem Abschnitt sei $\Kbb \in \{\Qbb, \Rbb, \Cbb\}$.
+
+
+\begin{defi}
+ Es sei $(x_n)_{n \in \Nbb} \in \ell(\Kbb)$, also $(x_n)_{n \in \Nbb}$ eine Folge mit Werten in $\Kbb$, und $x \in \Kbb$. Wir sagen, dass die Folge $(x_n)_{n \in \Nbb}$ gegen $x$ \emph{konvergiert}, falls es für jedes $\varepsilon > 0$ ein $N \in \Nbb$ gibt, so dass $|x_n - x| < \varepsilon$ für alle $n \geq N$. Die Folge $(x_n)_{n \in \Nbb}$ heißt dann \emph{konvergent} und $x$ heißt \emph{Grenzwert} der Folge $(x_n)_{n \in \Nbb}$. Wir schreiben abkürzend, dass $x_n \to x$ für $n \to \infty$ falls die Folge $(x_n)_{n \in \Nbb}$ gegen $x$ konvergiert.
+\end{defi}
+
+
+\begin{bem}
+ Ist $(x_n)_{n \in \Nbb}$ eine konvergente $\Kbb$-wertige Folge, so ist der Grenzwert eindeutig: Angenommen, es gibt $x,y \in \Kbb$ mit $x_n \to x$ für $n \to \infty$ und $x_n \to y$ für $n \to \infty$, aber $x \neq y$. Dann ist $|x-y| > 0$ und somit auch $\varepsilon \coloneqq |x-y|/3 > 0$. Da $x_n \to x$ für $n \to \infty$ gibt es $N_x \in \Nbb$ mit $|x-x_n| < \varepsilon$ für alle $n \geq N_x$, und da $x_n \to y$ für $n \to \infty$ gibt es $N_y \in \Nbb$ mit $|y-x_n| < \varepsilon$ für alle $n \geq N_y$. Für $N \coloneqq \max \{N_1, N_2\}$ ist daher
+ \[
+  |x-y|
+  = |x-x_N+x_N-y|
+  \leq |x - x_N| + |y - x_N|
+  < \varepsilon + \varepsilon
+  = \frac{2}{3}|x-y|,
+ \]
+ was $|x-y| > 0$ widerspricht. Also muss bereits $x = y$.
+ 
+ Konvergiert eine $\Kbb$-wertige Folge $(x_n)_{n \in \Nbb}$ gegen ein Element $x \in \Kbb$, so schreiben wir auch $\lim_{n \to \infty} x_n \coloneqq x$.
+\end{bem}
+
+
+\begin{bem}
+ \begin{enumerate}[leftmargin=*]
+  \item
+   Ist $(x_n)_{n \in \Nbb} \in \ell(\Kbb)$ eine konstante Folge, d.h.\ es gibt $c \in \Kbb$ mit $x_n = c$ für alle $n \in \Nbb$, so konvergiert $(x_n)_{n \in \Nbb}$ und $\lim_{n \to \infty} x_n = c$. Für beliebige $\varepsilon > 0$ ist nämlich $|c-x_n| = 0 < \varepsilon$ für alle $n \geq 0$.
+  \item
+   Sind $(x_n)_{n \in \Nbb}, (y_n)_{n \in \Nbb} \in \ell(\Kbb)$ konvergente Folgen, so konvergiert auch die Folge $(x_n + y_n)_{n \in \Nbb}$ und es gilt
+   \[
+    \lim_{n \to \infty} (x_n + y_n)
+    = \left( \lim_{n \to \infty} x_n \right) + \left( \lim_{n \to \infty} y_n \right).
+   \]
+   Ist nämlich $x \coloneqq \lim_{n \to \infty} x_n$, $y \coloneqq \lim_{n \to \infty} y_n$ und $\varepsilon > 0$, so gibt es $N_x, N_y \in \Nbb$ mit $|x-x_n| < \varepsilon/2$ für alle $n \geq N_x$ und $|y-y_n| < \varepsilon/2$ für alle $n \geq N_y$, weshalb für alle $n \geq N \coloneqq \max\{N_x, N_y\}$ auch
+   \[
+    |(x+y)-(x_n+y_n)|
+    = |(x-x_n) + (y-y_n)|
+    \leq |x - x_n| + |y - y_n|
+    < \frac{\varepsilon}{2} + \frac{\varepsilon}{2}
+    = \varepsilon.
+   \]
+  \item
+   Ist $(x_n)_{n \in \Nbb} \in \ell(\Kbb)$ konvergent und $\lambda \in \Kbb$, so ist auch die Folge $(\lambda x_n)_{n \in \Nbb}$ konvergent und $\lim_{n \to \infty} (\lambda x_n) = \lambda \lim_{n \to \infty} x_n$: Es sei $x \coloneqq \lim_{n \to \infty} x_n$. Ist $\lambda = 0$, so ist $(\lambda x_n)_{n \in \Nbb}$ die konstante Nullfolge und somit
+   \[
+    \lim_{n \to \infty} \lambda x_n
+    = \lim_{n \to \infty} 0
+    = 0
+    = 0 \cdot \lim_{n \to \infty} x_n.
+   \]
+   Ist $\lambda \neq 0$ und $\varepsilon > 0$, so gibt es $N \in \Nbb$ mit $|x-x_n| < \varepsilon/|\lambda|$ für alle $n \geq N$. Für alle $n \geq N$ ist daher auch
+   \[
+    |\lambda x - \lambda x_n|
+    = |\lambda| |x-x_n|
+    < |\lambda| \frac{\varepsilon}{|\lambda|}
+    = \varepsilon.
+   \]
+ \end{enumerate}
+\end{bem}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
