@@ -557,7 +557,11 @@
 
 
 
-\section{Mengentheoretische Notationen}
+\section{Mengentheoretische Grundbegriffe und Notationen}
+
+
+
+\subsection{Allgemeine Notationen und Begriffe}
 
 
 \begin{defi}
@@ -581,6 +585,77 @@
 \end{defi}
 
 
+\begin{defi}
+ Für Mengen $A$ und $B$ ist die Differenz $A \setminus B$ als
+ \[
+  A \setminus B \{a \in A \mid a \notin B\}
+ \]
+ definiert. Die symmetrische Differenz $A \symm B$ ist als
+ \[
+  A \symm B = (A \cup B) \setminus (A \cap B)
+ \]
+ definiert.
+\end{defi}
+
+
+\begin{defi}
+ Ist $A$ eine fixierte (!) Menge und $S \subseteq A$ eine Teilmenge, so ist das \emph{Komplement} $S^C$ als
+ \[
+  S^C
+  \coloneqq A \setminus S
+  = \{a \in A \mid a \notin S\}
+ \]
+ definiert.
+\end{defi}
+
+
+\begin{bem}
+ \begin{enumerate}[leftmargin=*]
+  \item
+   Die Notation des Komplementes ergibt nur für Teilmengen $S \subseteq A$ einer fest fixierten Grundmenge  $A$ Sinn, und hängt $A$ ab!
+  \item
+   Ist $S \subseteq A$ eine Teilmenge, so ist $(S^C)^C = S$ und $S \cap S^C = \emptyset$. ($S^C$ ist die größte Teilmenge von $A$, die $S$ trivial schneidet, d.h.\ ist $T \subseteq A$ eine Teilmenge mit $T \cap S = \emptyset$, so ist $T \subseteq S^C$.)
+  \item
+   Sind $S, T \subseteq A$ Teilmengen, so ist
+   \[
+    S \setminus T
+    = \{s \in S \mid s \notin T\}
+    = \{s \in S \mid s \in T^C\}
+    = S \cap T^C.
+   \]
+ \end{enumerate}
+\end{bem}
+
+
+\begin{bem}
+ Ist $A$ eine Menge und $A_i$, $i \in I$ eine Kollektion von Teilmengen $A_i \subseteq A$, so gelten die \emph{De Morgansche Regeln}
+ \[
+  \left( \bigcup_{i \in I} A_i \right)^{\mathclap{C}} = \bigcap_{i \in I} A_i^C
+  \quad\text{und}\quad
+  \left( \bigcap_{i \in I} A_i \right)^{\mathclap{C}} = \bigcup_{i \in I} A_i^C.
+ \]
+ Für jedes $a \in A$ gilt nämlich
+ \begin{align*}
+      &\, a \in \left( \bigcup_{i \in I} A_i \right)^{\mathclap{C}}
+  \iff    a \notin \bigcup_{i \in I} A_i
+  \iff    \text{es gibt kein $i \in I$ mit $a \in A_i$} \\
+  \iff&\, \text{für jedes $i \in I$ ist $a \notin A_i$}
+  \iff    \text{für jedes $i \in I$ ist $a \in A_i^C$}
+  \iff    a \in \bigcap_{i \in I} A_i^C,
+ \end{align*}
+ was die erste Regel zeigt. Die zweite Regel ergibt sich aus der ersten, da
+ \[
+  \left( \bigcap_{i \in I} A_i \right)^C
+  = \left( \bigcap_{i \in I} (A_i^C)^C \right)^C
+  = \left( \left( \bigcup_{i \in I} A_i^C \right)^C \right)^C
+  = \bigcup_{i \in I} A_i^C.
+ \]
+\end{bem}
+
+
+
+
+\subsection{Produkte und Potenzen}
 Für Mengen $A_1, \dotsc, A_n$ wird das Produkt $A_1 \times \dotsb \times A_n$ für gewöhnlich als
 \[
  A_1 \times \dotsb \times A_n
@@ -627,13 +702,96 @@ definiert. Wir geben hier eine formale Konstruktion von beliebig großen (bzw. m
     A^I = \{(f_i)_{i \in I} \mid \text{$f_i \in A$ für alle $i \in I$}\}.
    \end{gather*}
   \item
-   Schreiben wir im Folgenden $\prod_{i \in I} A_i$ oder $A^I$, so verstehen wir dies immer als Menge von Tupeln. Die obige Definition von Tupeln als Funktionen dient für uns nur als mengentheoretische Implementation des Ganzen.
-  \item
-   Möchten wir tatsälich die Menge der Funktionen zwischen zwei Mengen $X$ und $Y$ betrachten, so schreiben wir hierfür im Folgenden
+   Schreiben wir im Folgenden $\prod_{i \in I} A_i$ oder $A^I$, so verstehen wir dies in erster Linie. Die obige Definition von Tupeln als Funktionen dient für uns nur als mengentheoretische Implementation des Ganzen.
+
+   Möchten wir tatsächlich die Menge der Funktionen zwischen zwei Mengen $X$ und $Y$ betrachten, so schreiben wir hierfür im Folgenden
    \[
     \Abb(X,Y) \coloneqq \{f \colon X \to Y\}.
    \]
+   
+   Sofern es uns nützlich erscheint, werden wir Gleichheit $\Abb(I,X)$ und $X^I$ aber nutzen, um uns doppelte Rechnungen zu ersparen. So werden wir Beispiele angeben, die über Produkte zustande kommen (etwa Produkte von Gruppen und Produkte von Vektorräumen), und aus diese ohne weiteren Rechenaufwand auch Beispiele von Abbildungsräumen (Abbildungen in eine Gruppe und Abbildungen in einen Vektorraum) erhalten.
  \end{enumerate}
+\end{bem}
+
+
+
+
+
+\section{Folgen und Matrizen}
+\begin{defi}
+ Es sei $X$ eine Menge. Eine \emph{Folge} auf $X$ ist eine Funktion $a \colon \Nbb \to X$. Die Folge $a$ wird als Tupel $a = (a_n)_{n \in \Nbb}$ geschrieben, wobei $a_n = a(n)$ für alle $n \in \Nbb$. Die Element $a_n$ mit $n \in \Nbb$ werden \emph{Einträge} von $(a_n)_{n \in \Nbb} \in K$ genannt. Es sei
+ \begin{align*}
+  \ell(X)
+  &\coloneqq \Abb(\Nbb, X)
+  = \{a \colon \Nbb \to X\} \\
+  &= \{ (a_n)_{n \in \Nbb} \mid \text{$(a_n)_{n \in \Nbb}$ ist eine Folge auf $X$} \} \\
+  &= \{ (a_n)_{n \in \Nbb} \mid \text{$a_n \in X$ für alle $n \in \Nbb$} \}.
+ \end{align*}
+\end{defi}
+
+
+\begin{defi}
+ Es seien $m, n \in \Nbb$ und $X$ ein Menge. Eine \emph{$(m \times n)$-Matrix} mit \emph{Einträgen} in $X$ ist eine Abbildung $A \colon \{1, \dotsc, m\} \times \{1, \dotsc, n\} \to X$. Die Matrix $A$ wird als Tupel
+ \[
+  (A_{ij})_{(i,j) \in \{1, \dotsc, m\} \times \{1, \dotsc, n\}}
+  =
+  (A_{ij})_{\substack{i = 1, \dotsc, m \\ j = 1, \dotsc, n}}
+ \]
+ geschrieben, wobei $A_{ij} = A((i,j)) \in X$ für alle $(i,j) \in \{1, \dotsc, m\} \times \{1, \dotsc, n\}$ also alle $1 \leq i \leq m$ und $1 \leq j \leq n$. $A$ wird auch als ein rechteckiges Schema
+ \[
+  A =
+  \begin{pmatrix}
+   A_{11} & \cdots & A_{1n} \\
+   \vdots & \ddots & \vdots \\
+   A_{m1} & \cdots & A_{mn}
+  \end{pmatrix}
+ \]
+ geschrieben. Die Menge der ($m \times n$)-Matrizen mit Einträgen in $X$ wird mit
+ \[
+  \Mat(m \times n, X)
+  =
+  \left\{
+   \begin{pmatrix}
+    A_{11} & \cdots & A_{1n} \\
+    \vdots & \ddots & \vdots \\
+    A_{m1} & \cdots & A_{mn}
+   \end{pmatrix}
+   \,\middle|\,
+    \text{$A_{ij} \in X$ für alle $1 \leq i \leq m$ und $1 \leq j \leq n$}
+  \right\}
+ \]
+ bezeichnet.
+\end{defi}
+
+
+\begin{defi}
+ Es sei $K$ ein Körper. Es seien $l,m,n \in \Nbb$, sowie $A \in \Mat(l \times m, K)$ und $B \in \Mat(m \times n, K)$. Das Produkt $A \cdot B \in \Mat(l \times n, K)$ ist als
+ \[
+  (A \cdot B)_{ik} = \sum_{j=1}^m A_{ij} B_{jk}
+  \quad
+  \text{für alle $1 \leq i \leq l$ und $1 \leq k \leq m$}
+ \]
+ definiert.
+\end{defi}
+
+
+\begin{bem}
+ Das Matrixprodukt ist assoziativ, d.h.\ für alle $p,q,r,s \in \Nbb$ und Matrizen $A \in \Mat(p \times q, K)$, $B \in \Mat(q \times r, K)$ und $C \in \Mat(r \times s, K)$ ist $A \cdot (B \cdot C) = (A \cdot B) \cdot C$, denn für alle $1 \leq i \leq p$ und $1 \leq l \leq s$ ist
+ \begin{align*}
+  (A \cdot (B \cdot C))_{il}
+  &= \sum_{j=1}^q A_{ij} (B \cdot C)_{jl}
+  = \sum_{j=1}^q A_{ij} \sum_{k=1}^r B_{jk} C_{kl}
+  = \sum_{j=1}^q \sum_{k=1}^r A_{ij} B_{jk} C_{kl} \\
+  &= \sum_{k=1}^r \sum_{j=1}^q A_{ij} B_{jk} C_{kl}
+  = \sum_{k=1}^r \left( \sum_{j=1}^q A_{ij} B_{jk} \right) C_{kl}
+  = \sum_{k=1}^r (A \cdot B)_{ik} C_{kl} \\
+  &= ((A \cdot B) \cdot C)_{il}.
+ \end{align*}
+\end{bem}
+
+
+\begin{bem}
+ Wir werden im Folgenden auf die Definition von Folgen und Matrizen als Abbildungen $\Nbb \to X$, bzw. $\{1, \dotsc, m\} \times \{1, \dotsc, n\} \to X$ zurückkommen, um aus Beispielen von Abbildungsräumen (Abbildungen in eine Gruppe, Abbildungen in einen Vektorraum) Aussagen über Folgen und Matrizen zu erhalten.
 \end{bem}
 
 
