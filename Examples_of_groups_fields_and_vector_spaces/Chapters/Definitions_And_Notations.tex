@@ -653,6 +653,34 @@
 \end{bem}
 
 
+\begin{bem}
+ Sind $A_i$, $i \in I$ und $B_i$, $i \in I$ zwei Kollektionen von Mengen, so ist
+ \[
+  \left( \bigcup_{i \in I} A_i \right) \cap \left( \bigcup_{j \in I} B_j \right)
+  = \bigcup_{i,j \in I} (A_i \cap B_j),
+ \]
+ denn es ist
+ \begin{align*}
+      &\, x \in \left( \bigcup_{i \in I} A_i \right) \cap \left( \bigcup_{j \in I} B_j \right)
+  \iff    \text{$x \bigcup_{i \in I} A_i$ und $\bigcup_{j \in I} B_j$} \\
+  \iff&\, \text{es gibt $i,j \in I$ mit $x \in A_i$ und $x \in B_j$} 
+  \iff    \text{es gibt $i,j \in I$ mit $x \in A_i \cap B_j$} \\
+  \iff&\, x \in \bigcup_{i,j \in I} (A_i \cap B_j).
+ \end{align*}
+ Es ist daher auch
+ \[
+  \left( \bigcap_{i \in I} A_i \right) \cup \left( \bigcap_{j \in I} B_j \right)
+  = \bigcap_{i,j \in I} (A_i \cup B_j),
+ \]
+ denn es ist
+ \[
+  \left( \bigcup_{i \in I} A_i^C \right) \cap \left( \bigcup_{j \in I} B_j^C \right)
+  = \bigcup_{i,j \in I} (A_i^C \cap B_j^C),
+ \]
+ wodurch sich durch Anwendung des Komplements auf beiden Seiten und den De Morganschen Regeln die behauptete Gleichung ergibt.
+\end{bem}
+
+
 
 
 \subsection{Produkte und Potenzen}

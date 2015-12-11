@@ -1148,6 +1148,82 @@ eine Gruppe. Für eine beliebige Gruppe $G$ ist daher auch $G^n$ mit der eintrag
 
 
 
+\section{Die Potenzmenge als abelsche Gruppe}
+Es sei $X$ eine beliebige Menge und $\pwr(X) = \{S \mid S \subseteq X\}$ die Potenzmenge. Für je zwei Teilmengen $A, B \subseteq X$ ist auch $A \symm B = (A \cup B) \setminus (A \cap B) \subseteq X$. Also ist
+\[
+ \symm \colon \pwr(X) \times \pwr(X) \to \pwr(X),
+ (A,B) \mapsto A \symm B
+\]
+eine binäre Verknüpfung. Wir zeigen, dass $\pwr(X)$ zusammen mit $\symm$ ein abelsche Gruppe bildet:
+
+Die Kommutativität ergibt sich daraus, dass für alle $A, B \subseteq X$
+\[
+ A \symm B
+ = (A \cup B) \setminus (A \cap B)
+ = (B \cup A) \setminus (B \cap A)
+ = B \symm A.
+\]
+Für jede Teilmenge $A \subseteq X$ ist
+\[
+ A \symm \emptyset
+ = (A \cup \emptyset) \setminus (A \cap \emptyset)
+ = A \setminus \emptyset
+ = A,
+\]
+also ist $\emptyset$ neutral bezüglich $\symm$. Für jede Teilmeng $A \subseteq X$ ist
+\[
+ A \symm A
+ = (A \cup A) \setminus (A \cap A)
+ = A \setminus A
+ = \emptyset,
+\]
+also ist $A$ selbstinvers bezöglich $\symm$.
+
+Es muss nur noch die Assoziativität gezeigt werden: Hierfür bemerken wir zunächst, dass für alle Teilmengen $A, B \subseteq X$
+\begin{align*}
+ A \symm B
+ &= (A \cup B) \setminus (A \cap B)
+ = (A \cup B) \cap (A \cap B)^C
+ = (A \cup B) \cap (A^C \cup B^C) \\
+ &= (A \cap A^C) \cup (A \cap B^C) \cup (B \cap A^C) \cup (B \cap B^C)
+ = (A \cap B^C) \cup (A^C \cap B).
+\end{align*}
+Für alle Teilmengen $A, B, C \subseteq X$ ist daher
+\begin{align*}
+  &\, A \symm (B \symm C) \\
+ =&\, (A \cap (B \symm C)^C) \cup (A^C \cap (B \symm C)) \\
+ =&\, \left( A \cap ((B \cap C^C) \cup (B^C \cup C))^C \right)
+      \cup \left( A^C \cap ((B \cap C^C) \cup (B^C \cap C)) \right) \\
+ =&\, \left( A \cap ((B \cap C^C)^C \cap (B^C \cup C)^C) \right)
+      \cup \left( A^C \cap ((B \cap C^C) \cup (B^C \cap C)) \right) \\
+ =&\, \left( A \cap (B^C \cup C) \cap (B \cap C^C) \right)
+      \cup \left( A^C \cap ((B \cap C^C) \cup (B^C \cap C)) \right) \\
+ =&\, (A \cap B^C \cap B) \cup (A \cap B^C \cap C^C) \cup (A \cap C \cap B) \cup (A \cap C \cap C^C) \\
+  &\, \cup (A^C \cap B \cap C^C) \cup (A^C \cap B^C \cap C) \\
+ =&\, (A \cap B \cap C) \cup (A \cap B^C \cap C^C) \cup (B \cap A^C \cap C^C) \cup (C \cap A^C \cap B^C).
+\end{align*}
+Da der rechte Ausdruck invariant unter Permutation von $A$, $B$ und $C$ ist, ist
+\begin{align*}
+  &\, (A \symm B) \symm C
+ =    C \symm (A \symm B) \\
+ =&\, (C \cap A \cap B) \cup (C \cap A^C \cap B^C) \cup (A \cap C^C \cap B^C) \cup (B \cap C^C \cap A^C) \\
+ =&\, (A \cap B \cap C) \cup (A \cap B^C \cap C^C) \cup (B \cap A^C \cap C^C) \cup (C \cap A^C \cap B^C) \\
+ =&\, A \symm (B \symm C).
+\end{align*}
+Dies zeigt die Assoziativität von $\symm$ auf $\pwr(X)$.
+
+Ingesamt zeigt dies, dass $\pwr(X)$ bezüglich $\symm$ eine abelsche Gruppe bildet.
+
+
+\begin{bem}
+ Dieses Beispiel dient in erster Linie der Belustigung des Lesers und des Schreibers.
+\end{bem}
+
+
+
+
+
+
 % \section{Weitere kleine Beispiele}
 % \begin{enumerate}[leftmargin=*]
 %  \item
