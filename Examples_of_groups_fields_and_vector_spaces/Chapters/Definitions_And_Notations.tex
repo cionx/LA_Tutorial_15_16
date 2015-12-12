@@ -826,7 +826,7 @@ definiert. Wir geben hier eine formale Konstruktion von beliebig großen (bzw. m
 
 
 
-\section{Konvergenz von Folgen und Reihen}
+\section{Konvergenz und (absolute) Summierbarkeit von Folgen}
 Da wir im Folgenden auch Räume konventer Folgen und Reihen betrachten wollen, erinnern wir hier an die entsprechenden grundlegenden Definitionen und Aussagen über konvergente Folgen und Reihen. In diesem Abschnitt sei $\Kbb \in \{\Qbb, \Rbb, \Cbb\}$.
 
 
@@ -916,7 +916,48 @@ Da wir im Folgenden auch Räume konventer Folgen und Reihen betrachten wollen, e
 \end{defi}
 
 
-% TODO: Summen, Vielfache von summierbaren Folgen
+\begin{bem}
+ \begin{enumerate}[leftmargin=*]
+  \item
+   Die konstante Nullfolge $(0)_{n \in \Nbb}$ ist summierbar mit $\sum_{n=0}^\infty a_n = 0$. Für alle $m \in \Nbb$ ist nämlich $\sum_{n=0}^m 0 = 0$, also $(\sum_{n=0}^m a_n)_{m \in \Nbb} = 0$, die Folge der Partialsummen also ebenfalls die Nullfolge. Daher konvergiert die Folge der Partialsummen gegen $0$, also $\lim_{m \to \infty} \sum_{n=0}^m 0 = 0$. Dies bedeutet gerade, dass die Nullfolge $(0)_{n \in \Nbb}$ summierbar ist, und dass $\sum_{n=0}^\infty 0 = 0$.
+  \item
+   Sind $(a_n)_{n \in \Nbb}, (b_n)_{n \in \Nbb} \in \ell(\Kbb)$ summierbare Folgen, so ist auch die Folge $(a_n + b_n)_{n \in \Nbb}$ summierbar und $\sum_{n=0}^\infty (a_n+b_n) = (\sum_{n=0}^\infty a_n) + (\sum_{n=0}^\infty b_n)$.
+   
+   Ist nämlich $S_m \coloneqq \sum_{n=0}^m a_n$ und $T_n \coloneqq \sum_{n=0}^m b_n$ für alle $m \in \Nbb$, so bedeutet die Summierbarkeit von $(a_n)_{n \in \Nbb}$ und $(b_n)_{n \in \Nbb}$, dass die Folgen $(S_m)_{m \in \Nbb}$ und $(T_m)_{m \in \Nbb}$ konvergieren, und dass $S \coloneqq \lim_{m \to \infty} S_m = \sum_{n=0}^\infty a_n$ und $T \coloneqq \lim_{m \to \infty} T_m = \sum_{n=0}^\infty b_n$. Da $(S_m)_{m \in \Nbb}$ und $(T_m)_{m \in \Nbb}$ konvergieren, konvergiert auch die Folge $(S_m + T_m)_{m \in \Nbb}$ und $\lim_{m \to \infty} (S_m + T_m) = S + T$.
+   
+   Für alle $m \in \Nbb$ ist nun
+   \begin{gather*}
+    S_m + T_m
+    = \left( \sum_{n=0}^m a_n \right) + \left( \sum_{n=0}^m b_n \right)
+    = \sum_{n=0}^m (a_n + b_n)
+   \shortintertext{und es ist}
+    \left( \sum_{n=0}^\infty a_n \right) + \left( \sum_{n=0}^\infty b_n \right)
+    = S + T
+    = \lim_{m \to \infty} (S_m + T_m)
+    = \lim_{m \to \infty} \sum_{n=0}^m (a_n + b_n).
+   \end{gather*}
+   Das zeigt, dass die Folge der Partialsummen $(\sum_{n=0}^m (a_n+b_n))_{m \in \Nbb}$ konvergiert, und dass $\lim_{m \to \infty} \sum_{n=0}^m (a_n+b_n) = (\sum_{n=0}^\infty a_n) + (\sum_{n=0}^\infty b_n)$. Dies bedeutet gerade, dass die Folge $(a_n + b_n)_{n \in \Nbb}$ summierbar ist, und dass $\sum_{n=0}^\infty (a_n+b_n) = (\sum_{n=0}^\infty a_n) + (\sum_{n=0}^\infty b_n)$.
+  \item
+   Ist $(a_n)_{n \in \Nbb} \in \ell(\Kbb)$ summierbar und $\lambda \in \Kbb$, so ist auch die Folge $(\lambda a_n)_{n \in \Nbb}$ summierbar und $\sum_{n=0}^\infty (\lambda a_n) = \lambda \sum_{n=0}^\infty a_n$.
+   
+   Ist $S_m \coloneqq \sum_{n=0}^m a_n$ die $m$-te Partialsumme der Folge $(a_n)_{n \in \Nbb}$, so bedeutet die Summierbarkeit der Folge $(a_n)_{n \in \Nbb}$, dass die Folge der Partialsummen $(S_m)_{m \in \Nbb}$ konvergiert, und dass $S \coloneqq \lim_{m \to \infty} S_m = \sum_{n=0}^\infty a_n$. Da die Folge $(S_m)_{m \in \Nbb}$ konvergiert, konvergiert auch die Folge $(\lambda S_m)_{m \in \Nbb}$ und es gilt $\lim_{m \to \infty} \lambda S_m = \lambda S$.
+   
+   Für alle $m \in \Nbb$ ist nun
+   \begin{gather*}
+    \lambda S_m
+    = \lambda \sum_{n=0}^m a_n
+    = \sum_{n=0}^m (\lambda a_n),
+   \shortintertext{und es gilt}
+    \lambda \sum_{n=0}^\infty a_n
+    = \lambda \lim_{m \to \infty} S_m
+    = \lim_{m \to \infty} \lambda S_m
+    = \lim_{m \to \infty} \lambda \sum_{n=0}^m a_n
+    = \lim_{m \to \infty} \sum_{n=0}^m (\lambda a_n).
+   \end{gather*}
+   Die Konvergenz der Folge $(\lambda S_m)_{m \in \Nbb}$ bedeutet also genau die Summierbarkeit der Folge $(\lambda a_n)_{n \in \Nbb}$, und es ist $\sum_{n=0}^\infty (\lambda a_n) = \lim_{m \to \infty} \sum_{n=0}^m (\lambda a_n) = \lambda \sum_{n=0}^\infty a_n$.
+ \end{enumerate}
+\end{bem}
+
 
 
 \begin{defi}
@@ -945,7 +986,7 @@ Da wir im Folgenden auch Räume konventer Folgen und Reihen betrachten wollen, e
 
 
 \begin{bem}
- Ist die Folge $(a_n)_{n \in \Nbb} \in \ell(\Kbb)$ summierbar, so ist $(a_n)_{n \in \Nbb}$ eine Nullfolge, d.h.\ $(a_n)_{n \in \Nbb}$ ist konvergent und $\lim_{n \to \infty} a_n = 0$: Für alle $m uin \Nbb$ sei $S_m \coloneqq \sum_{n=0}^m a_n$ die $m$-te Partialsumme von $(a_n)_{n \in \Nbb}$. Dass $(a_n)_{n \in \Nbb}$ summierbar ist, bedeutet, dass die Folge $(S_m)_{m \in \Nbb}$ konvergiert. Es konvergiert daher die Folge $(S_{m+1})_{m \in \Nbb}$ mit $\lim_{m \to \infty} S_{m+1} = \lim_{m \to \infty} S_m$. Daher konvergiert auch die Folge $(S_{m+1} - S_m)_{m \in \Nbb}$ mit
+ Ist die Folge $(a_n)_{n \in \Nbb} \in \ell(\Kbb)$ summierbar, so ist $(a_n)_{n \in \Nbb}$ eine Nullfolge, d.h.\ $(a_n)_{n \in \Nbb}$ ist konvergent und $\lim_{n \to \infty} a_n = 0$: Für alle $m \in \Nbb$ sei $S_m \coloneqq \sum_{n=0}^m a_n$ die $m$-te Partialsumme von $(a_n)_{n \in \Nbb}$. Dass $(a_n)_{n \in \Nbb}$ summierbar ist, bedeutet, dass die Folge $(S_m)_{m \in \Nbb}$ konvergiert. Es konvergiert daher die Folge $(S_{m+1})_{m \in \Nbb}$ mit $\lim_{m \to \infty} S_{m+1} = \lim_{m \to \infty} S_m$. Daher konvergiert auch die Folge $(S_{m+1} - S_m)_{m \in \Nbb}$ mit
  \[
   \lim_{m \to \infty} (S_{m+1} - S_m)
   = \lim_{m \to \infty} S_{m+1} - \lim_{m \to \infty} S_m
