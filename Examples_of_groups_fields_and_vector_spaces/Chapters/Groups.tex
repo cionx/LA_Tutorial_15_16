@@ -538,8 +538,10 @@ Für $k = \Cbb$ und $z \in R_n(\Cbb)$ ist $|z| \in \Rbb$ mit $|z| \geq 0$ und $|
 
 
 \section{Klassifikation der Untergruppen von \texorpdfstring{$\Zbb$}{Z}}
-In diesem Abschnitt bestimmen wir die Untergruppen von $\Zbb$ (d.h.\ von $(\Zbb,+)$, wobei $+$ die gewöhnliche Addition bezeichnet).
+In diesem Abschnitt bestimmen wir die Untergruppen von $\Zbb$ (d.h.\ von $(\Zbb,+)$, wobei $+$ die gewöhnliche Addition bezeichnet). Als Anwendung dieser Klassifikation führen wir die Charakteristik eines Körpers ein.
 
+
+\subsection{Die Klassifikation selbst}
 Für jedes $n \in \Nbb$ sei
 \[
  n \Zbb
@@ -571,6 +573,40 @@ Ingesamt zeigt dies, dass es eine Bijektion
  \Nbb \rightarrow \{H \subseteq \Zbb \mid \text{$H$ ist eine Untergruppe}\}, n \mapsto n\Zbb
 \]
 gibt.
+
+
+\subsection{Anwendung: Die Charakteristik eines Körpers}
+Ist $K$ eine Körper, so ist die Abbildung $\varphi_K \colon \Zbb \to K$, $n \mapsto n \cdot 1$ ein Gruppenhomomorphismus von $\Zbb$ in die unterliegende additive Gruppe von $K$. Also ist $\ker(\varphi_K) = \{m \in \Zbb \mid m \cdot 1 = 0\}$ eine Untergruppe. Nach der obigen Klassifikation gibt es ein eindeutiges $n \in \Zbb$ mit $\ker(\varphi_K) = n \Zbb$. Man bezeichnet $n$ als die \emph{Charakteristik} von $K$, und schreibt $\kchar K$ für diese. Es ist also
+\[
+ \kchar(K) =
+ \begin{cases}
+  \min\{m > 0 \mid m \cdot 1 = 0\} & \text{falls es ein $m > 0$ with $m \cdot 1 = 0$ gibt} \\
+  0                                & \text{sonst}.
+ \end{cases}
+\]
+
+
+\begin{bsp}
+ Für $K = \Qbb$ ist $\varphi_\Qbb$ injektiv, also $\ker(\varphi_K) = \{0\}$ und somit $\kchar K = 0$. Gleiches gilt für $K = \Rbb$ und $K = \Cbb$.
+ 
+ Ist $p > 0$ prim, so gilt für den in \ref{sec: the finite fields Fp} konstruierten Körper $\Fbb_p$, dass $\ker(\varphi_{\Fbb_p}) = p\Zbb$ und somit $\kchar(\Fbb_p) = p$.
+\end{bsp}
+
+\begin{bem}
+ \begin{enumerate}[leftmargin=*]
+  \item
+   Ist $L$ ein Körper und $K \subseteq L$ ein Unterkörper, so ist $\ker(\varphi_L) = \ker(\varphi_K)$ und somit $\kchar(K) = \kchar(L)$.
+  \item
+   Ist $K$ ein Körper so ist entweder $\kchar(K) = 0$, oder $\kchar(K) > 0$ eine Primzahl. Ist nämlich $n \coloneqq \kchar(K) \neq 0$, so ist $n \cdot 1 = 0$. Ist $n$ keine Primzahl, so gibt es $a, b \in \Nbb$ mit $0 < a,b < n$ und $a \cdot b = n$. Da
+   \[
+    (a \cdot 1) \cdot (b \cdot 1)
+    = (a \cdot b) \cdot 1
+    = n \cdot 1
+    = 0
+   \]
+   und $K$ ein Körper ist, muss bereits $a \cdot 1 = 0$ oder $b \cdot 1 = 0$. Da $0 < a,b < n$ steht dies im Widerspruch dazu, dass $n = \min \{m > 0 \mid m \cdot 1 = 0\}$.
+ \end{enumerate}
+\end{bem}
 
 
 

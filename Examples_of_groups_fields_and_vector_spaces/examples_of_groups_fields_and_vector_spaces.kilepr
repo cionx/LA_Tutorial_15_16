@@ -63,20 +63,20 @@ order=1
 
 [item:Chapters/Fields.tex]
 archive=true
-column=82
+column=67
 encoding=UTF-8
 highlight=LaTeX
-line=116
+line=346
 mode=LaTeX
 open=true
 order=3
 
 [item:Chapters/Groups.tex]
 archive=true
-column=97
+column=0
 encoding=UTF-8
 highlight=LaTeX
-line=251
+line=615
 mode=LaTeX
 open=true
 order=2
@@ -118,16 +118,16 @@ JumpList=
 ViMarks=.,918,48,[,918,43,],918,48
 
 [view-settings,view=0,item:Chapters/Fields.tex]
-CursorColumn=82
-CursorLine=116
+CursorColumn=67
+CursorLine=346
 JumpList=
-ViMarks=.,923,221,[,923,201,],923,221
+ViMarks=.,346,75,[,346,73,],346,75
 
 [view-settings,view=0,item:Chapters/Groups.tex]
-CursorColumn=97
-CursorLine=251
+CursorColumn=0
+CursorLine=615
 JumpList=
-ViMarks=.,251,97,[,251,97,],251,97
+ViMarks=.,610,0,[,611,0,],-1,-1
 
 [view-settings,view=0,item:Chapters/Vector_Spaces.tex]
 CursorColumn=0
