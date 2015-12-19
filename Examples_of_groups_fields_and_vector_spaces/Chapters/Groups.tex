@@ -256,6 +256,38 @@
 
 
 
+\section{Gruppen mit zwei Elementen}\label{sec: groups with two elements}
+Wir wollen in diesem Abschnitt erläutern, wieso es quasi nur eine Gruppe mit zwei Elementen gibt. Konkret zeigen wir, dass es für zweielementige Gruppen $G$ und $H$ einen eindeutigen Isomorphismus $\varphi \colon G \to H$ gibt.
+
+Ist $G$ eine zweielementige Gruppe, so ist $G = \{e, \alpha\}$, wobei $e$ das neutrale Element von $G$ bezeichnet und $\alpha \neq e$. Es muss $\alpha^{-1} = \alpha$; ansonsten wäre nämlich $\alpha^{-1} = e$ und somit $\alpha = (\alpha^{-1})^{-1} = e^{-1} = e$. Da $\alpha = \alpha^{-1}$ ist $\alpha^2 = e$. Die Multplikation auf $G$ ist damit eindeutig bestimmt, da $e \cdot e = \alpha \cdot \alpha = e$ und $e \cdot \alpha = \alpha \cdot e = \alpha$.
+
+Dies zeigt, dass es auf einer zweielementigen Menge nur eine Gruppenstruktur geben kann. Inbesondere sollten daher je zwei zweielementige Gruppen „gleich“ sein. Diese intuitive Idee von Gleichheit lässt sich mithilfe des Idee der eindeutigen Isomorphie konkretisieren:
+
+Sind $G$ und $H$ zwei zweielementige Gruppen, so gibt es eindeutige Elemente $\alpha \in G$ und $\beta \in H$ mit $\alpha \neq e_G$ und $\beta \neq e_H$, wobei $e_G$ das neutrale Element von $G$ bezeichnet und $e_H$ das neutrale Element von $H$. Nach der obigen Diskussion ist $\alpha^2 = e_G$ und $\beta^2 = e_H$.
+
+Die Abbildung
+\[
+ \varphi \colon G \to H,
+ \quad\text{mit}\quad
+ \varphi(e_G) = e_H
+ \quad\text{und}\quad
+ \varphi(\alpha) = \beta
+\]
+ist bijektiv. Sie ist ein Gruppenisomorphismus, da
+\begin{align*}
+ \varphi(e_G \cdot e_G) &= \varphi(e_G) = e_H = e_H \cdot e_H = \varphi(e_G) \cdot \varphi(e_G), \\
+ \varphi(e_G \cdot \alpha) &= \varphi(\alpha) = \beta = e_H \cdot \beta = \varphi(e_G) \cdot \varphi(\alpha), \\
+ \varphi(\alpha \cdot e_G) &= \varphi(\alpha) = \beta = \beta \cdot e_H = \varphi(\alpha) \cdot \varphi(e_G), \\
+ \varphi(\alpha \cdot \alpha) &= \varphi(e_G) = e_H = \beta \cdot \beta = \varphi(\beta) \cdot \varphi(\beta).
+\end{align*}
+Also sind $G$ und $H$ isomorph.
+
+Ist $\psi \colon G \to H$ ein Gruppenisomorphismus, so muss bereits $\varphi = \psi$: Da $\psi$ ein Gruppenhomomorphismus ist, muss $\psi(e_G) = e_H$. Da $\psi$ injektiv ist, muss außerdem $\psi(\alpha) \neq \psi(e_G) = e_H$, also $\psi(\alpha) = \beta$. Also ist $\varphi$ bereits der eindeutige Gruppenisomorphismus $G \to H$. Man sagt, dass $G$ und $H$ \emph{eindeutig isomorph} sind.
+
+
+
+
+
 \section{Untergruppen bezüglich Gruppenhomomorphismen}\label{sec: subgroups and group homomorphisms}
 Es seien $G$ und $H$ Gruppen und es sei $\varphi \colon G \to H$ ein Gruppenhomomorphismus.
 
@@ -1289,6 +1321,104 @@ mit $[k] \neq [l]$ für alle $0 \leq k \neq l \leq n-1$, und die Addition ist ge
 Wir identifiziert daher für gewöhnlich die Repräsentanten $0, \dotsc, n-1$ mit den entsprechenden Äquivalenzklassen $[0], \dotsc, [n-1]$. Es ist also $\Zbb/n\Zbb = \{0, \dotsc, n-1\}$, und bezeichnet $+$ die Addition auf $\Zbb$ und $\tilde{+}$ die Addition auf $\Zbb/n\Zbb$, so ist $k \mathbin{\tilde{+}} l = (k+l) \bmod n$.
 
 
+\begin{bem}
+ In \ref{sec: groups with two elements} haben wir bereits gesehen, dass jede zweielementige Gruppe eindeutig isomorph zu $\Zbb/2\Zbb$ ist. Allgemeiner lässt sich für jede Primzahl $p > 0$ zeigen, dass jede $p$-elementige Gruppe eindeutig isomorph zu $\Zbb/p\Zbb$ ist.
+\end{bem}
+
+
+
+
+
+\section{Ausblick: Quotienten von abelschen Gruppen}
+Als ein weiteres (abstraktes) Beispiel geben wir eine Verallgemeinerung der Konstruktion von $\Zbb/n\Zbb$ an, die für eine beliebige abelsche Gruppe $A$ und Untergruppe $H \subseteq A$ eine \emph{Quotientengruppe} $A/H$ liefert.
+
+Wir definieren auf $A$ eine Äquivalenzrelation durch
+\[
+ x \sim y \iff x-y \in H.
+\]
+Es muss zunächst gezeigt werden, dass dies tatsächlich eine Äquivalenzrelation definiert:
+
+Für alle $x \in A$ ist $x-x = 0 \in H$, da $H$ eine Untergruppe ist, also $x \sim x$, was die Reflexivität zeigt.
+
+Für $x,y \in A$ mit $x \sim y$ ist $x-y \in H$. Da $H$ eine Untergruppe ist, ist damit auch $y-x = -(x-y) \in H$, also $y \sim x$. Das zeigt die Symmetrie von $\sim$.
+
+Sind $x,y,z \in A$ mit $x \sim y$ und $y \sim z$, so ist $x-y \in H$ und $y-z \in H$. Da $H$ eine Untergruppe ist, ist damit auch $x-z = (x-y)+(y-z) \in H$, also $x \sim z$. Das zeigt die Transitivität von $\sim$.
+
+Ingesamt zeigt dies, dass $\sim$ eine Äquivalenzrelation auf $A$ definiert. Wir schreiben
+\[
+ A/H
+ \coloneqq \{[x] \mid x \in A\}
+\]
+für die Menge der Äquivalenzklassen.
+
+Wir definieren auf $A/H$ eine Verknüpfung durch
+\[
+ [x]+[y] = [x+y].
+\]
+Wir müssen überprüfen, dass diese Verknüpfung wohldefiniert ist: Es seien $x, x', y, y' \in A$ mit $x \sim x'$ und $y \sim y'$. Dann ist $x-x' \in H$ und $y-y' \in H$. Da $H$ eine Untergruppe ist, ist auch
+\[
+ (x+y)-(x'+y') = (x-x') + (y-y') \in H,
+\]
+also $x+y \sim x'+y'$. Das zeigt die Wohldefiniertheit.
+
+Wir zeigen, dass $A/H$ zusammen mit $+$ eine abelsche Gruppe bildet: Die Assoziativität folgt daraus, dass für alle $x,y,z \in A$
+\[
+ [x] + ([y] + [z])
+ = [x] + [y+z]
+ = [x+y+z]
+ = [x+y] + [z]
+ = ([x] + [y]) + [z].
+\]
+Die Kommutativität ergibt sich daraus, dass für alle $x,y \in A$
+\[
+ [x] + [y] = [x+y] = [y+x] = [y] + [x].
+\]
+Für die Äquivalenzklasse von $0$ gilt für alle $x \in A$, dass
+\[
+ [0] + [x] = [0+x] = [x] = [x+0] = [x] + [0], 
+\]
+weshalb $[0]$ neutral bezüglich $+$ ist. Für jedes $x \in A$ ist
+\[
+ [x] + [-x] = [x-x] = [0] = [x-x] = [-x] + [x],
+\]
+weshalb $[-x]$ invers zu $[x]$ bezüglich $+$ ist. Ingesamt zeigt dies, dass $(A/H, +)$ eine abelsche Gruppe ist.
+
+
+\begin{bem}
+ \begin{enumerate}[leftmargin=*]
+  \item
+   Für $A = \Zbb$ und $H = n\Zbb$ ergibt sich die bereits bekannte Konstruktion von $\Zbb/n\Zbb$.
+  \item
+   Die Äquivalenzklasse von $x \in A$ ist gegeben durch
+   \begin{align*}
+    [x]
+    = \{y \in A \mid y-x \in H\}
+    &= \{y \in A \mid \text{$y = x + h$ ein $h \in H$}\} \\
+    &= \{x+h \mid h \in H\}
+    = x + \{h \mid h \in H\}
+    = x + H.
+   \end{align*}
+  \item
+   Die Addition lässt sich alternativ auch wie folgt definieren: Für beliebige Teilmengen $R, S \subseteq A$ sei
+   \[
+    R + S = \{r+s \mid r \in R, s \in S\}.
+   \]
+   Für alle $x,y \in A$ ist dann
+   \begin{align*}
+    [x] + [y]
+    &= (x+H) + (y+H)
+    = \{x+h \mid h \in H\} + \{y+h' \mid h' \in H\} \\
+    &= \{x+h+y+h' \mid h, h' \in H\}
+    = \{(x+y)+(h+h') \mid h,h' \in H\} \\
+    &= \{(x+y)+h'' \mid h'' \in H\}
+    = (x+y)+H
+    = [x+y].
+   \end{align*}
+   Diese Definition der Addition hat den Vorteil, dass es keine Wohldefiniertheit zu überprüfen gilt.
+ \end{enumerate}
+\end{bem}
+
+
 
 
 
@@ -1596,110 +1726,20 @@ Diese Gruppe ist nicht abelsch, da etwa
 Man bezeichnet die Gruppe $\Zbb \rtimes \Zbb$ als das \emph{semidirekte Produkt} von $\Zbb$ und $\Zbb$.
 
 
-
-
-\section{Gruppen mit zwei Elementen}
-%TODO: Tippen
-
-
-
-
-
-\section{Ausblick: Quotienten von abelschen Gruppen}
-Als ein weiteres (abstraktes) Beispiel geben wir eine Verallgemeinerung der Konstruktion von $\Zbb/n\Zbb$ an, die für eine beliebige abelsche Gruppe $A$ und Untergruppe $H \subseteq A$ eine \emph{Quotientengruppe} $A/H$ liefert.
-
-Wir definieren auf $A$ eine Äquivalenzrelation durch
-\[
- x \sim y \iff x-y \in H.
-\]
-Es muss zunächst gezeigt werden, dass dies tatsächlich eine Äquivalenzrelation definiert:
-
-Für alle $x \in A$ ist $x-x = 0 \in H$, da $H$ eine Untergruppe ist, also $x \sim x$, was die Reflexivität zeigt.
-
-Für $x,y \in A$ mit $x \sim y$ ist $x-y \in H$. Da $H$ eine Untergruppe ist, ist damit auch $y-x = -(x-y) \in H$, also $y \sim x$. Das zeigt die Symmetrie von $\sim$.
-
-Sind $x,y,z \in A$ mit $x \sim y$ und $y \sim z$, so ist $x-y \in H$ und $y-z \in H$. Da $H$ eine Untergruppe ist, ist damit auch $x-z = (x-y)+(y-z) \in H$, also $x \sim z$. Das zeigt die Transitivität von $\sim$.
-
-Ingesamt zeigt dies, dass $\sim$ eine Äquivalenzrelation auf $A$ definiert. Wir schreiben
-\[
- A/H
- \coloneqq \{[x] \mid x \in A\}
-\]
-für die Menge der Äquivalenzklassen.
-
-Wir definieren auf $A/H$ eine Verknüpfung durch
-\[
- [x]+[y] = [x+y].
-\]
-Wir müssen überprüfen, dass diese Verknüpfung wohldefiniert ist: Es seien $x, x', y, y' \in A$ mit $x \sim x'$ und $y \sim y'$. Dann ist $x-x' \in H$ und $y-y' \in H$. Da $H$ eine Untergruppe ist, ist auch
-\[
- (x+y)-(x'+y') = (x-x') + (y-y') \in H,
-\]
-also $x+y \sim x'+y'$. Das zeigt die Wohldefiniertheit.
-
-Wir zeigen, dass $A/H$ zusammen mit $+$ eine abelsche Gruppe bildet: Die Assoziativität folgt daraus, dass für alle $x,y,z \in A$
-\[
- [x] + ([y] + [z])
- = [x] + [y+z]
- = [x+y+z]
- = [x+y] + [z]
- = ([x] + [y]) + [z].
-\]
-Die Kommutativität ergibt sich daraus, dass für alle $x,y \in A$
-\[
- [x] + [y] = [x+y] = [y+x] = [y] + [x].
-\]
-Für die Äquivalenzklasse von $0$ gilt für alle $x \in A$, dass
-\[
- [0] + [x] = [0+x] = [x] = [x+0] = [x] + [0], 
-\]
-weshalb $[0]$ neutral bezüglich $+$ ist. Für jedes $x \in A$ ist
-\[
- [x] + [-x] = [x-x] = [0] = [x-x] = [-x] + [x],
-\]
-weshalb $[-x]$ invers zu $[x]$ bezüglich $+$ ist. Ingesamt zeigt dies, dass $(A/H, +)$ eine abelsche Gruppe ist.
-
-
-\begin{bem}
- \begin{enumerate}[leftmargin=*]
-  \item
-   Für $A = \Zbb$ und $H = n\Zbb$ ergibt sich die bereits bekannte Konstruktion von $\Zbb/n\Zbb$.
-  \item
-   Die Äquivalenzklasse von $x \in A$ ist gegeben durch
-   \begin{align*}
-    [x]
-    = \{y \in A \mid y-x \in H\}
-    &= \{y \in A \mid \text{$y = x + h$ ein $h \in H$}\} \\
-    &= \{x+h \mid h \in H\}
-    = x + \{h \mid h \in H\}
-    = x + H.
-   \end{align*}
-  \item
-   Die Addition lässt sich alternativ auch wie folgt definieren: Für beliebige Teilmengen $R, S \subseteq A$ sei
-   \[
-    R + S = \{r+s \mid r \in R, s \in S\}.
-   \]
-   Für alle $x,y \in A$ ist dann
-   \begin{align*}
-    [x] + [y]
-    &= (x+H) + (y+H)
-    = \{x+h \mid h \in H\} + \{y+h' \mid h' \in H\} \\
-    &= \{x+h+y+h' \mid h, h' \in H\}
-    = \{(x+y)+(h+h') \mid h,h' \in H\} \\
-    &= \{(x+y)+h'' \mid h'' \in H\}
-    = (x+y)+H
-    = [x+y].
-   \end{align*}
-   Diese Definition der Addition hat den Vorteil, dass es keine Wohldefiniertheit zu überprüfen gilt.
- \end{enumerate}
-\end{bem}
-
-
-
-
-
 \section{Ausblick: Semidirekte Summen}
 %TODO: Tippen
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,0 +1,175 @@
+\chapter{Konvergenz und Summierbarkeit von Folgen}\label{sec: sequences and series}
+Wir erinnern hier an grundlegende Definitionen und Aussagen über konvergente Folgen und Reihen. In diesem Abschnitt sei $\Kbb \in \{\Qbb, \Rbb, \Cbb\}$.
+
+
+\begin{defi}
+ Es sei $(x_n)_{n \in \Nbb} \in \ell(\Kbb)$, also $(x_n)_{n \in \Nbb}$ eine Folge mit Werten in $\Kbb$, und $x \in \Kbb$. Wir sagen, dass die Folge $(x_n)_{n \in \Nbb}$ gegen $x$ \emph{konvergiert}, falls es für jedes $\varepsilon > 0$ ein $N \in \Nbb$ gibt, so dass $|x_n - x| < \varepsilon$ für alle $n \geq N$. Die Folge $(x_n)_{n \in \Nbb}$ heißt dann \emph{konvergent} und $x$ heißt \emph{Grenzwert} der Folge $(x_n)_{n \in \Nbb}$. Wir schreiben abkürzend, dass $x_n \to x$ für $n \to \infty$ falls die Folge $(x_n)_{n \in \Nbb}$ gegen $x$ konvergiert.
+\end{defi}
+
+
+\begin{bem}
+ Ist $(x_n)_{n \in \Nbb}$ eine konvergente $\Kbb$-wertige Folge, so ist der Grenzwert eindeutig: Angenommen, es gibt $x,y \in \Kbb$ mit $x_n \to x$ für $n \to \infty$ und $x_n \to y$ für $n \to \infty$, aber $x \neq y$. Dann ist $|x-y| > 0$ und somit auch $\varepsilon \coloneqq |x-y|/3 > 0$. Da $x_n \to x$ für $n \to \infty$ gibt es $N_x \in \Nbb$ mit $|x-x_n| < \varepsilon$ für alle $n \geq N_x$, und da $x_n \to y$ für $n \to \infty$ gibt es $N_y \in \Nbb$ mit $|y-x_n| < \varepsilon$ für alle $n \geq N_y$. Für $n \coloneqq \max \{N_1, N_2\}$ ist daher
+ \[
+  |x-y|
+  = |x-x_n+x_n-y|
+  \leq |x - x_n| + |y - x_n|
+  < \varepsilon + \varepsilon
+  = \frac{2}{3}|x-y|,
+ \]
+ was $|x-y| > 0$ widerspricht. Also muss bereits $x = y$.
+ 
+ Konvergiert eine $\Kbb$-wertige Folge $(x_n)_{n \in \Nbb}$ gegen ein Element $x \in \Kbb$, so schreiben wir auch $\lim_{n \to \infty} x_n \coloneqq x$.
+\end{bem}
+
+
+\begin{bem}\label{bem: properties of convergent sequences}.
+ \begin{enumerate}[leftmargin=*]
+  \item
+   Ist $(x_n)_{n \in \Nbb} \in \ell(\Kbb)$ eine konstante Folge, d.h.\ es gibt $c \in \Kbb$ mit $x_n = c$ für alle $n \in \Nbb$, so konvergiert $(x_n)_{n \in \Nbb}$ und $\lim_{n \to \infty} x_n = c$. Für beliebige $\varepsilon > 0$ ist nämlich $|c-x_n| = 0 < \varepsilon$ für alle $n \geq 0$.
+  \item
+   Sind $(x_n)_{n \in \Nbb}, (y_n)_{n \in \Nbb} \in \ell(\Kbb)$ konvergente Folgen, so konvergiert auch die Folge $(x_n + y_n)_{n \in \Nbb}$ und es gilt
+   \[
+    \lim_{n \to \infty} (x_n + y_n)
+    = \left( \lim_{n \to \infty} x_n \right) + \left( \lim_{n \to \infty} y_n \right).
+   \]
+   Ist nämlich $x \coloneqq \lim_{n \to \infty} x_n$, $y \coloneqq \lim_{n \to \infty} y_n$ und $\varepsilon > 0$, so gibt es $N_x, N_y \in \Nbb$ mit $|x-x_n| < \varepsilon/2$ für alle $n \geq N_x$ und $|y-y_n| < \varepsilon/2$ für alle $n \geq N_y$, weshalb für alle $n \geq N \coloneqq \max\{N_x, N_y\}$ auch
+   \[
+    |(x+y)-(x_n+y_n)|
+    = |(x-x_n) + (y-y_n)|
+    \leq |x - x_n| + |y - y_n|
+    < \frac{\varepsilon}{2} + \frac{\varepsilon}{2}
+    = \varepsilon.
+   \]
+  \item
+   Ist $(x_n)_{n \in \Nbb} \in \ell(\Kbb)$ konvergent und $\lambda \in \Kbb$, so ist auch die Folge $(\lambda x_n)_{n \in \Nbb}$ konvergent und $\lim_{n \to \infty} (\lambda x_n) = \lambda \lim_{n \to \infty} x_n$: Es sei $x \coloneqq \lim_{n \to \infty} x_n$. Ist $\lambda = 0$, so ist $(\lambda x_n)_{n \in \Nbb}$ die konstante Nullfolge und somit
+   \[
+    \lim_{n \to \infty} \lambda x_n
+    = \lim_{n \to \infty} 0
+    = 0
+    = 0 \cdot \lim_{n \to \infty} x_n.
+   \]
+   Ist $\lambda \neq 0$ und $\varepsilon > 0$, so gibt es $N \in \Nbb$ mit $|x-x_n| < \varepsilon/|\lambda|$ für alle $n \geq N$. Für alle $n \geq N$ ist daher auch
+   \[
+    |\lambda x - \lambda x_n|
+    = |\lambda| |x-x_n|
+    < |\lambda| \frac{\varepsilon}{|\lambda|}
+    = \varepsilon.
+   \]
+ \end{enumerate}
+\end{bem}
+
+
+\begin{defi}
+ Eine Folge $(x_n)_{n \in \Nbb} \in \ell(\Kbb)$ heißt \emph{Cauchy-Folge}, falls es für jedes $\varepsilon > 0$ ein $N \in \Nbb$ gibt, so dass $|x_n - x_m| < \varepsilon$ für alle $n,m \geq N$.
+\end{defi}
+
+
+\begin{bem}
+ \begin{enumerate}[leftmargin=*]
+  \item
+   Ist $(x_n)_{n \in \Nbb} \in \ell(\Kbb)$ konvergent, so ist $(x_n)_{n \in \Nbb}$ auch eine Cauchy-Folge: Ist nämlich $\varepsilon > 0$ und $x \coloneqq \lim_{n \to \infty} x_n$, so gibt es $N \in \Nbb$ mit $|x - x_n| < \varepsilon/2$ für alle $n \geq N$, weshalb für alle $n,m \geq N$ auch
+   \[
+    |x_n - x_m|
+    = |x_n - x + x - x_m|
+    \leq |x_n - x| + |x - x_m|
+    \leq \frac{\varepsilon}{2} + \frac{\varepsilon}{2}
+    = \varepsilon.
+   \]
+  \item
+   Für die reellen Zahlen $\Rbb$ und komplexen Zahlen $\Cbb$ gilt auch die Umkehrung: Ist $(x_n)_{n \in \Nbb}$ eine Cauchy-Folge reeller oder komplexer Zahlen, also $(x_n)_{n \in \Nbb} \in \ell(\Rbb)$ oder $(x_n)_{n \in \Nbb} \in \ell(\Cbb)$, so ist $(x_n)_{n \in \Nbb}$ auch konvergent. Man sagt, dass $\Rbb$ und $\Cbb$ \emph{vollständig} sind. (Wir werden dies hier nicht zeigen. Für die reellen Zahlen ist der Beweis abhängig davon, wie diese konstruiert werden. Die Vollständigkeit der komplexen Zahlen lässt sich dann aus der Vollständigkeit der reellen Zahlen folgern.)
+  \item
+   Für die rationalen Zahlen $\Qbb$ gilt diese Aussage nicht: Es gibt Cauchy-Folgen von rationalen Zahlen, die in $\Qbb$ keinen Grenzwert besitzen. $\Qbb$ ist also nicht vollständig. (Auch diese Aussage werden wir hier nicht zeigen.)
+ \end{enumerate}
+\end{bem}
+
+
+\begin{defi}
+ Für eine Folge $(a_n)_{n \in \Nbb} \in \ell(\Kbb)$ und $m \in \Nbb$ ist die $m$-te \emph{Partialsumme} der Folge $(a_n)_{n \in \Nbb}$ als $\sum_{n=0}^m a_n$ definiert. Die Folge $(a_n)_{n \in \Nbb}$ heißt \emph{summierbar}, falls die Folge der Partialsummen $(\sum_{n=0}^m a_n)_{m \in \Nbb}$ konvergiert. Es ist dann $\sum_{n=0}^\infty a_n \coloneqq \lim_{m \to \infty} \sum_{n=0}^m a_n$.
+\end{defi}
+
+
+\begin{bem}\label{bem: properties of convergent series}
+ \begin{enumerate}[leftmargin=*]
+  \item
+   Die konstante Nullfolge $(0)_{n \in \Nbb}$ ist summierbar mit $\sum_{n=0}^\infty a_n = 0$. Für alle $m \in \Nbb$ ist nämlich $\sum_{n=0}^m 0 = 0$, also $(\sum_{n=0}^m a_n)_{m \in \Nbb} = 0$, die Folge der Partialsummen also ebenfalls die Nullfolge. Daher konvergiert die Folge der Partialsummen gegen $0$, also $\lim_{m \to \infty} \sum_{n=0}^m 0 = 0$. Dies bedeutet gerade, dass die Nullfolge $(0)_{n \in \Nbb}$ summierbar ist, und dass $\sum_{n=0}^\infty 0 = 0$.
+  \item
+   Sind $(a_n)_{n \in \Nbb}, (b_n)_{n \in \Nbb} \in \ell(\Kbb)$ summierbare Folgen, so ist auch die Folge $(a_n + b_n)_{n \in \Nbb}$ summierbar und $\sum_{n=0}^\infty (a_n+b_n) = (\sum_{n=0}^\infty a_n) + (\sum_{n=0}^\infty b_n)$.
+   
+   Ist nämlich $S_m \coloneqq \sum_{n=0}^m a_n$ und $T_n \coloneqq \sum_{n=0}^m b_n$ für alle $m \in \Nbb$, so bedeutet die Summierbarkeit von $(a_n)_{n \in \Nbb}$ und $(b_n)_{n \in \Nbb}$, dass die Folgen $(S_m)_{m \in \Nbb}$ und $(T_m)_{m \in \Nbb}$ konvergieren, und dass $S \coloneqq \lim_{m \to \infty} S_m = \sum_{n=0}^\infty a_n$ und $T \coloneqq \lim_{m \to \infty} T_m = \sum_{n=0}^\infty b_n$. Da $(S_m)_{m \in \Nbb}$ und $(T_m)_{m \in \Nbb}$ konvergieren, konvergiert auch die Folge $(S_m + T_m)_{m \in \Nbb}$ und $\lim_{m \to \infty} (S_m + T_m) = S + T$.
+   
+   Für alle $m \in \Nbb$ ist nun
+   \begin{gather*}
+    S_m + T_m
+    = \left( \sum_{n=0}^m a_n \right) + \left( \sum_{n=0}^m b_n \right)
+    = \sum_{n=0}^m (a_n + b_n)
+   \shortintertext{und es ist}
+    \left( \sum_{n=0}^\infty a_n \right) + \left( \sum_{n=0}^\infty b_n \right)
+    = S + T
+    = \lim_{m \to \infty} (S_m + T_m)
+    = \lim_{m \to \infty} \sum_{n=0}^m (a_n + b_n).
+   \end{gather*}
+   Das zeigt, dass die Folge der Partialsummen $(\sum_{n=0}^m (a_n+b_n))_{m \in \Nbb}$ konvergiert, und dass $\lim_{m \to \infty} \sum_{n=0}^m (a_n+b_n) = (\sum_{n=0}^\infty a_n) + (\sum_{n=0}^\infty b_n)$. Dies bedeutet gerade, dass die Folge $(a_n + b_n)_{n \in \Nbb}$ summierbar ist, und dass $\sum_{n=0}^\infty (a_n+b_n) = (\sum_{n=0}^\infty a_n) + (\sum_{n=0}^\infty b_n)$.
+  \item
+   Ist $(a_n)_{n \in \Nbb} \in \ell(\Kbb)$ summierbar und $\lambda \in \Kbb$, so ist auch die Folge $(\lambda a_n)_{n \in \Nbb}$ summierbar und $\sum_{n=0}^\infty (\lambda a_n) = \lambda \sum_{n=0}^\infty a_n$.
+   
+   Ist $S_m \coloneqq \sum_{n=0}^m a_n$ die $m$-te Partialsumme der Folge $(a_n)_{n \in \Nbb}$, so bedeutet die Summierbarkeit der Folge $(a_n)_{n \in \Nbb}$, dass die Folge der Partialsummen $(S_m)_{m \in \Nbb}$ konvergiert, und dass $S \coloneqq \lim_{m \to \infty} S_m = \sum_{n=0}^\infty a_n$. Da die Folge $(S_m)_{m \in \Nbb}$ konvergiert, konvergiert auch die Folge $(\lambda S_m)_{m \in \Nbb}$ und es gilt $\lim_{m \to \infty} \lambda S_m = \lambda S$.
+   
+   Für alle $m \in \Nbb$ ist nun
+   \begin{gather*}
+    \lambda S_m
+    = \lambda \sum_{n=0}^m a_n
+    = \sum_{n=0}^m (\lambda a_n),
+   \shortintertext{und es gilt}
+    \lambda \sum_{n=0}^\infty a_n
+    = \lambda \lim_{m \to \infty} S_m
+    = \lim_{m \to \infty} \lambda S_m
+    = \lim_{m \to \infty} \lambda \sum_{n=0}^m a_n
+    = \lim_{m \to \infty} \sum_{n=0}^m (\lambda a_n).
+   \end{gather*}
+   Die Konvergenz der Folge $(\lambda S_m)_{m \in \Nbb}$ bedeutet also genau die Summierbarkeit der Folge $(\lambda a_n)_{n \in \Nbb}$, und es ist $\sum_{n=0}^\infty (\lambda a_n) = \lim_{m \to \infty} \sum_{n=0}^m (\lambda a_n) = \lambda \sum_{n=0}^\infty a_n$.
+ \end{enumerate}
+\end{bem}
+
+
+
+\begin{defi}
+ Eine Folge $(a_n)_{n \in \Nbb} \in \ell(\Kbb)$ heißt \emph{absolut summierbar}, falls die Folge $(|a_n|)_{n \in \Nbb}$ summierbar ist.
+\end{defi}
+
+
+\begin{bem}
+ Ist $(a_n)_{n \in \Nbb}$ eine absolut summierbare Folge reeller oder komplexer Zahlen, so ist $(a_n)_{n \in \Nbb}$ auch summierbar: Dass die Folge $(a_n)_{n \in \Nbb}$ absolut summierbar ist, bedeutet, dass die Folge $(|a_n|)_{n \in \Nbb}$ summierbar ist. Das bedeutet, dass die Folge der Partialsummen $(\sum_{n=0}^m |a_n|)_{m \in \Nbb}$ konvergiert. Also ist die Folge der Partialsummen $(\sum_{n=0}^m |a_n|)_{m \in \Nbb}$ eine Cauchy-Folge.
+ 
+ Es sei $\varepsilon > 0$. Da die Folge der Partialsummen $(\sum_{n=0}^m |a_n|)_{m \in \Nbb}$ eine Cauchy-Folge ist, gibt es $N \in \Nbb$, so dass für alle $l \geq m \geq N$
+ \[
+  \sum_{n=m+1}^l |a_n|
+  = \left| \sum_{n=0}^l |a_n| - \sum_{n=0}^m |a_n| \right|
+  < \varepsilon.
+ \]
+ Für alle $l \geq m \leq N$ ist deshalb auch
+ \[
+  \left| \sum_{n=0}^l a_n - \sum_{n=0}^m a_n \right|
+  = \left| \sum_{n=m+1}^l a_n \right|
+  \leq \sum_{n=m+1}^l |a_n|
+  < \varepsilon.
+ \]
+ Deshalb ist die Folge der Partialsummen $(\sum_{n=0}^m a_n)_{m \in \Nbb}$ eine Cauchy-Folge. Da $\Rbb$ und $\Cbb$ vollständig sind, ist die Folge der Partialsummen $(\sum_{n=0}^m a_n)_{m \in \Nbb}$ deshalb bereits konvergent. Dies bedeutet, dass die Folge $(a_n)_{n \in \Nbb}$ summierbar ist.
+\end{bem}
+
+
+\begin{bem}
+ Ist die Folge $(a_n)_{n \in \Nbb} \in \ell(\Kbb)$ summierbar, so ist $(a_n)_{n \in \Nbb}$ eine Nullfolge, d.h.\ $(a_n)_{n \in \Nbb}$ ist konvergent und $\lim_{n \to \infty} a_n = 0$: Für alle $m \in \Nbb$ sei $S_m \coloneqq \sum_{n=0}^m a_n$ die $m$-te Partialsumme von $(a_n)_{n \in \Nbb}$. Dass $(a_n)_{n \in \Nbb}$ summierbar ist, bedeutet, dass die Folge $(S_m)_{m \in \Nbb}$ konvergiert. Es konvergiert daher die Folge $(S_{m+1})_{m \in \Nbb}$ mit $\lim_{m \to \infty} S_{m+1} = \lim_{m \to \infty} S_m$. Daher konvergiert auch die Folge $(S_{m+1} - S_m)_{m \in \Nbb}$ mit
+ \[
+  \lim_{m \to \infty} (S_{m+1} - S_m)
+  = \lim_{m \to \infty} S_{m+1} - \lim_{m \to \infty} S_m
+  = \lim_{m \to \infty} S_m - \lim_{m \to \infty} S_m
+  = 0.
+ \]
+ Für alle $m \in \Nbb$ ist jedoch
+ \[
+  S_{m+1} - S_m
+  = \sum_{n=0}^{m+1} a_n - \sum_{n=0}^m a_n
+  = a_{m+1},
+ \]
+ also ist $0 = \lim_{m \to \infty} (S_{m+1} - S_m) = \lim_{m \to \infty} a_{m+1} = \lim_{m \to \infty} a_m$.
+\end{bem}

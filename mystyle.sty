@@ -1,5 +1,6 @@
 \usepackage{xltxtra}
 \usepackage[autooneside,headsepline]{scrlayer-scrpage} %for headers
+\usepackage[titletoc,toc,page]{appendix} % for appendix
 \usepackage[ngerman]{babel} % German
 \usepackage{amsmath,amssymb,amsthm} % math stuff
 \usepackage{mathtools} % math stuff
@@ -15,6 +16,13 @@
 \rohead{\rightmark}
 \cefoot[\pagemark]{\pagemark}
 \cofoot[\pagemark]{\pagemark}
+
+% do not include subsections into table of content
+\setcounter{tocdepth}{1}
+
+% German word for appendices
+\renewcommand{\appendixtocname}{Anhänge}
+\renewcommand{\appendixpagename}{Anhänge}
 
 \setromanfont[Mapping=tex-text]{Linux Libertine O}
 % \setsansfont[Mapping=tex-text]{DejaVu Sans}
@@ -48,8 +56,9 @@
 \newcommand{\Mat}{\ensuremath{\mathrm{Mat}}}
 \newcommand{\Ort}{\ensuremath{\mathrm{O}}}
 \newcommand{\pwr}{\ensuremath{\mathcal{P}}}
-\newcommand{\Sym}{\ensuremath{\mathrm{Sym}}}
+\newcommand{\sll}{\ensuremath{\mathcal{sl}}}
 \newcommand{\SOrt}{\ensuremath{\mathrm{SO}}}
+\newcommand{\Sym}{\ensuremath{\mathrm{Sym}}}
 
 \newcommand{\diag}{\ensuremath{\mathrm{diag}}}
 \newcommand{\ggT}{\ensuremath{\mathrm{ggT}}}
