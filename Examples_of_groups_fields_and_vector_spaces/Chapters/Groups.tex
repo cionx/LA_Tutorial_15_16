@@ -633,7 +633,7 @@ Ist $K$ eine Körper, so ist die Abbildung $\varphi_K \colon \Zbb \to K$, $n \ma
 
 
 
-\subsection{Die symmetrische Gruppen \texorpdfstring{$S(X)$}{S(X)} und \texorpdfstring{$S_n$}{Sn}}
+\subsection{Die symmetrische Gruppe \texorpdfstring{$S(X)$}{S(X)}}
 
 Es sei $X$ eine beliebige Menge und $S(X) \coloneqq \{\sigma \colon X \to X \mid \text{$\sigma$ ist bijektiv}\}$. Für beliebige $\sigma_1, \sigma_2 \in S(X)$ ist auch $\sigma_1 \circ \sigma_2 \colon X \to X$ bijektiv, also $\sigma_1 \circ \sigma_2 \in S(X)$.
 
@@ -646,16 +646,31 @@ Ist $\sigma \in S(X)$ so ist $\sigma$ bijektiv und somit invertierbar, d.h.\ es 
 Insgesamt zeigt dies, dass $(S(X), \circ)$ eine Gruppe ist.
 
 \begin{defi}
- Ist $X$ eine Menge, so heißt die Gruppe $(S(X), \circ)$ die \emph{symmetrische Gruppe von $X$}. Ein Element $\sigma \in S(X)$ heißt \emph{Permutation}. Für $n \in \Nbb$ ist $S_n \coloneqq S(\{1, \dotsc, n\})$.
+ Ist $X$ eine Menge, so heißt die Gruppe $(S(X), \circ)$ die \emph{symmetrische Gruppe von $X$}. Ein Element $\sigma \in S(X)$ heißt \emph{Permutation}.
 \end{defi}
 
 
 \begin{bem}
- Statt $S(X)$ schreibt man auch $\Sigma(X)$ und für $S_n$ schreibt man auch $\Sigma_n$.
+ Statt $S(X)$ schreibt man auch $\Sigma(X)$.
 \end{bem}
 
 
-%TODO: S_2 und S_3 explizit bestimmen, allgemein S_n
+\subsection{Die symmetrische Gruppe \texorpdfstring{$S_n$}{Sn}}
+Für $n \in \Nbb$ ist $S_n \coloneqq S(\{1, \dotsc, n\})$. Ein Element $\sigma \in S_n$ schreibt man auch als
+\[
+ \sigma
+ =
+ \begin{psmallmatrix}
+  1         & 2         & \cdots & n \\
+  \sigma(1) & \sigma(2) & \cdots & \sigma(n)
+ \end{psmallmatrix}.
+\]
+
+\begin{bem}
+ Statt $S_n$ schreibt man auch $\Sigma_n$.
+\end{bem}
+
+%TODO: Anzahl der Elemente von S_n, S_2 und S_3 als besondere Gruppen; Untergruppen von S_3
 
 
 
@@ -1277,6 +1292,40 @@ Wir identifiziert daher für gewöhnlich die Repräsentanten $0, \dotsc, n-1$ mi
 
 
 
+\section{Automorphismengruppen}
+
+
+\subsection{Automorphismengruppen von Gruppen}
+% TODO: Tippen
+
+
+\subsection{Automorphismengruppen von Körper}
+% TODO: Tippen
+% TODO: Bemerkung zu Automorphismen relativ eines Unterkörpers
+
+
+\subsection{Automorphismengruppen von Vektorräumen}
+%TODO: Tippen
+
+
+\subsection{Automorphismengruppen geordneter Mengen}
+%TODO: Tippen
+
+
+\subsection{Innere Automorphismen einer Gruppe}
+%TODO: Tippen
+
+
+
+
+
+\section{Einheitengruppen}
+%TODO: Tippen
+
+
+
+
+
 \section{Produkte von Gruppen}\label{sec: product of groups}
 
 Es sei $I$ ein Indexmenge und für jedes $i \in I$ sei $G_i$ eine Gruppe. Wir definieren auf dem Produkt $\prod_{i \in I} G_i$ eine Multiplikation durch
@@ -1549,7 +1598,8 @@ Man bezeichnet die Gruppe $\Zbb \rtimes \Zbb$ als das \emph{semidirekte Produkt}
 
 
 
-
+\section{Gruppen mit zwei Elementen}
+%TODO: Tippen
 
 
 
@@ -1646,6 +1696,10 @@ weshalb $[-x]$ invers zu $[x]$ bezüglich $+$ ist. Ingesamt zeigt dies, dass $(A
 
 
 
+
+
+\section{Ausblick: Semidirekte Summen}
+%TODO: Tippen
 
 
 
