@@ -103,6 +103,153 @@
   Analog ergibt sich, dass $\Zbb^n$, $\Qbb^n$ und $\Cbb^n$ zusammen mit der eintragsweisen Addition jeweils Gruppen bilden. Es ergibt sich damit eine Kette von Untergruppen $\Zbb^n \subseteq \Qbb^n \subseteq \Rbb^n \subseteq \Cbb^n$.
  \item
   Ist allgemeiner $K$ ein Körper, so ist $K^n$ mit der eintragsweisen Addition eine abelsche Gruppe.
+ \item
+  Für zwei reelle Zahlen $a,b \in \Rbb$ ist das \emph{arithmetische} Mittel als $a \oplus b = (a+b)/2$ definiert. Die reellen Zahlen $\Rbb$ bilden zusammen mit dem arithmetischen Mittel $\oplus$ \emph{keine} Gruppe: Für alle $a,b,c \in \Rbb$ ist
+  \begin{gather*}
+   a \oplus (b \oplus c)
+   = a \oplus \frac{b+c}{2}
+   = \frac{a}{2} + \frac{b+c}{4}
+   = \frac{2a+b+c}{4}
+  \shortintertext{und}
+   (a \oplus b) \oplus c
+   = \frac{a+b}{2} \oplus c
+   = \frac{a+b}{4} + \frac{c}{2}
+   = \frac{a+b+2c}{4},
+  \end{gather*}
+  für $a = 1$, $b = 0$ and $c = 2$ ist daher $a \oplus (b \oplus c) = 1$ und $(a \oplus b) \oplus c = 5/4$, also $a \oplus (b \oplus c) \neq (a \oplus b) \oplus c$. Also ist das arithmetische Mittel nicht assoziativ.
+ \item
+  Für je zwei Teilmengen $A, B \subseteq \Rbb$ sei
+  \[
+   A \boxplus B
+   \coloneqq \{a+b \mid a \in A, b \in B\}.
+  \]
+  Wir untersuchen, ob die Potenzmeneg $\pwr(\Rbb) = \{A \mid A \subseteq \Rbb\}$ zusammen mit der obigen Verknüpfung eine (abelsche) Gruppe bildet:
+  
+  Für $A, B, C \in \pwr(\Rbb)$ ist
+  \begin{align*}
+   A \boxplus (B \boxplus C)
+   &= \{a + d \mid a \in A, d \in B \boxplus C\} \\
+   &= \{a + d \mid a \in A, d \in \{b+c \mid b \in B, c \in C\}\} \\
+   &= \{a + b + c \mid a \in A, b \in B, c \in C\} \\
+   &= \{d + c \mid d \in \{a + b \mid a \in A, b \in B\}, c \in C\} \\
+   &= \{d + c \mid d \in A \boxplus B, c \in C\}
+   = (A \boxplus B) \boxplus C,
+  \end{align*}
+  also ist $\boxplus$ assoziativ. Da für alle $A, B \in \pwr(\Rbb)$
+  \[
+   A \boxplus B
+   = \{a + b \mid a \in A, b \in B\}
+   = \{b + a \mid b \in B, a \in A\}
+   = B \boxplus A.
+  \]
+  ist $\boxplus$ auch kommutativ. Die Teilmenge $\{0\} \subseteq \Rbb$ ist neutral bezüglich $\boxplus$, denn für alle $A \in \pwr(\Rbb)$ ist
+  \[
+   A \boxplus \{0\}
+   = \{a + b \mid a \in A, b \in \{0\}\}
+   = \{a + 0 \mid a \in A\}
+   = \{a \mid a \in A\}
+   = A.
+  \]
+  Es fehlt nur noch, dass jedes $A \in \pwr(X)$ ein inverses Element $B \in \pwr(X)$ bezüglich $\boxplus$ besitzt, d.h.\ dass $A \boxplus (-A) = \{0\}$. Da aber beispielsweise
+ \[
+  \emptyset \boxplus \emptyset
+  = \{a+b \mid a \in \emptyset, b \in \emptyset\}
+  = \emptyset
+ \]
+ besitzt $\emptyset \in \pwr(X)$ kein Inverses. Also definiert $\boxplus$ \emph{keine} Gruppenstruktur auf $\pwr(X)$.
+ 
+ \item
+  Für ein fixiertes $c \in \Rbb$ definieren wir eine binäre Verknüpfung $+_c$ auf $\Rbb$ durch
+  \[
+   x +_c y
+   \coloneqq x + y - c
+   \quad
+   \text{für alle $x,y \in \Rbb$}.
+  \]
+  Wir überprüfen, ob $\Rbb$ zusammen mit $+_c$ eine (abelsche) Gruppe bildet: Für alle $x, y, z \in \Rbb$ ist
+  \begin{align*}
+   x +_c (y +_c z)
+   &= x +_c + (y + z - c)
+   = x + y + z - 2c \\
+   &= (x + y - c) + z - c
+   = (x + y - c) +_c z
+   = (x +_c y) +_c z,
+  \end{align*}
+  also ist $+_c$ assoziativ. Für alle $x, y \in \Rbb$ ist auch
+  \[
+   x +_c y
+   = x + y - c
+   = y + x - c
+   = y +_c x,
+  \]
+  also ist $+_c$ kommutativ. Für alle $x, e \in \Rbb$ ist
+  \[
+   x = x +_c e = x + e - c \Leftrightarrow e = c,
+  \]
+  also ist $c$ neutral bezüglich $+_c$. Für $x,y \in \Rbb$ ist
+  \[
+   c = x +_c y = x + y - c \Leftrightarrow y = 2c - x,
+  \]
+  also ist $2c - x$ invers zu $x$ bezüglich $+_c$. Ingesamt zeigt dies, dass $\Rbb$ zusammen mit $+_c$ eine abelsche Gruppe bildet. (Für $c = 0$ erhalten wir die additive Gruppe von $\Rbb$.)
+  
+ \item
+  Als Verallgemeinerung des obigen Beispiels ergibt sich für eine beliebige abelsche Gruppe $A$ und ein beliebiges Element $c \in A$, dass die Verknüpfung $+_c$ mit
+  \[
+   a +_c b \coloneqq a + b - c
+   \quad
+   \text{für alle $a,b \in A$}
+  \]
+  auf der unterliegenden Menge von $A$ eine (neue) Gruppenstruktur definiert. Diese Verknüpfung $+_c$ stimmt genau dann mit der ursprünglichen Addition $+$ überein, wenn $c = 0$ (denn $0 + 0 = 0$ und $0 +_c 0 = -c$.
+  
+ \item
+  Für $n,m \in \Nbb$ sei $n * m \coloneqq n^m$ (wobei $0^0 = 1$). Dann bildet $\Nbb$ zusammen mit $*$ keine Gruppe, da etwa
+  \[
+   2 * (3 * 2)
+   = 2^{(3^2)}
+   = 2^9 \neq 2^6
+   = (2^3)^2
+   = (2 * 3) * 2.
+  \]
+  
+ \item
+  Für $x,y \in \Rbb$ sei $x \vee y = \max\{x,y\}$. Wir überprüfen, ob $\Rbb$ zusammen mit $\vee$ eine (abelsche) Gruppe bildet:
+  
+  Für alle $x,y,z \in \Rbb$ ist
+  \begin{align*}
+   x \vee (y \vee z)
+   &= x \vee \max\{y,z\}
+   = \max\{x, \max\{y,z\}\}
+   = \max\{x,y,z\} \\
+   &= \max\{\max\{x,y\}, z\}
+   = \max\{x,y\} \vee z
+   = (x \vee y) \vee z,
+  \end{align*}
+  also ist $\vee$ assoziativ. Für alle $x,y \in \Rbb$ ist
+  \[
+   x \vee y = \max\{x,y\} = \max\{y,z\} = y \vee x,
+  \]
+  also ist $\vee$ auch kommutativ. Wäre $e \in \Rbb$ neutral bezüglich $\vee$, so wäre
+  \[
+   x = x \vee e = \max\{x,e\} \quad\text{für alle $x \in \Rbb$}.
+  \]
+  Somit wäre $e \leq x$ für alle $x \in \Rbb$; es gibt aber keine reelle Zahl, die diese Bedingung erfüllt. Also ist $\Rbb$ zusammen mit $\vee$ keine Gruppe.
+  
+ \item
+  Es sei $R = \Rbb \cup \{-\infty\} = [-\infty,\infty)$. Wir untersuchen, ob $R$ zusammen mit der Verknüpfung $\vee$ mit
+  \[
+   x \vee y = \max\{x,y\} \quad \text{für alle $x,y \in R$}
+  \]
+  eine abelsche Gruppe bildet: Wie bereits im vorherigen Beispiel ergibt sich, dass $\vee$ assoziativ und kommutativ ist. Da
+  \[
+   x \vee -\infty = \max\{x,-\infty\} = x \quad \text{für alle $x \in R$}
+  \]
+  ist $-\infty$ neutral bezüglich $\vee$. Es gilt nur noch zu überprüfen, ob $x \in R$ ein Inverses bezüglich $\vee$ besitzt: Ist bereits $x \in \Rbb$, so ist
+  \[
+   x \vee y = \max\{x,y\} \geq x > -\infty
+   \quad
+   \text{für alle $y \in R$},
+  \]
+  weshalb $x$ kein Inverses bezüglich $\vee$ besitzt. Also ist $R$ keine Gruppe bezüglich $\vee$.
 \end{enumerate}
 
 
@@ -408,8 +555,10 @@ Für $K = \Cbb$ und $z \in W_n(\Cbb)$ ist $|z| \in \Rbb$ mit $|z| \geq 0$ und $|
 
 
 \section{Klassifikation der Untergruppen von \texorpdfstring{$\Zbb$}{Z}}
-In diesem Abschnitt bestimmen wir die Untergruppen von $\Zbb$ (d.h.\ von $(\Zbb,+)$, wobei $+$ die gewöhnliche Addition bezeichnet).
+In diesem Abschnitt bestimmen wir die Untergruppen von $\Zbb$ (d.h.\ von $(\Zbb,+)$, wobei $+$ die gewöhnliche Addition bezeichnet). Als Anwendung dieser Klassifikation führen wir die Charakteristik eines Körpers ein.
 
+
+\subsection{Die Klassifikation selbst}
 Für jedes $n \in \Nbb$ sei
 \[
  n \Zbb
@@ -441,6 +590,40 @@ Ingesamt zeigt dies, dass es eine Bijektion
  \Nbb \rightarrow \{H \subseteq \Zbb \mid \text{$H$ ist eine Untergruppe}\}, n \mapsto n\Zbb
 \]
 gibt.
+
+
+\subsection{Anwendung: Die Charakteristik eines Körpers}
+Ist $K$ eine Körper, so ist die Abbildung $\varphi_K \colon \Zbb \to K$, $n \mapsto n \cdot 1$ ein Gruppenhomomorphismus von $\Zbb$ in die unterliegende additive Gruppe von $K$. Also ist $\ker(\varphi_K) = \{m \in \Zbb \mid m \cdot 1 = 0\}$ eine Untergruppe. Nach der obigen Klassifikation gibt es ein eindeutiges $n \in \Zbb$ mit $\ker(\varphi_K) = n \Zbb$. Man bezeichnet $n$ als die \emph{Charakteristik} von $K$, und schreibt $\kchar K$ für diese. Es ist also
+\[
+ \kchar(K) =
+ \begin{cases}
+  \min\{m > 0 \mid m \cdot 1 = 0\} & \text{falls es ein $m > 0$ with $m \cdot 1 = 0$ gibt} \\
+  0                                & \text{sonst}.
+ \end{cases}
+\]
+
+
+\begin{bsp}
+ Für $K = \Qbb$ ist $\varphi_\Qbb$ injektiv, also $\ker(\varphi_K) = \{0\}$ und somit $\kchar K = 0$. Gleiches gilt für $K = \Rbb$ und $K = \Cbb$.
+ 
+ Ist $p > 0$ prim, so gilt für den in \ref{sec: the finite fields Fp} konstruierten Körper $\Fbb_p$, dass $\ker(\varphi_{\Fbb_p}) = p\Zbb$ und somit $\kchar(\Fbb_p) = p$.
+\end{bsp}
+
+\begin{bem}
+ \begin{enumerate}[leftmargin=*]
+  \item
+   Ist $L$ ein Körper und $K \subseteq L$ ein Unterkörper, so ist $\ker(\varphi_L) = \ker(\varphi_K)$ und somit $\kchar(K) = \kchar(L)$.
+  \item
+   Ist $K$ ein Körper so ist entweder $\kchar(K) = 0$, oder $\kchar(K) > 0$ eine Primzahl. Ist nämlich $n \coloneqq \kchar(K) \neq 0$, so ist $n \cdot 1 = 0$. Ist $n$ keine Primzahl, so gibt es $a, b \in \Nbb$ mit $0 < a,b < n$ und $a \cdot b = n$. Da
+   \[
+    (a \cdot 1) \cdot (b \cdot 1)
+    = (a \cdot b) \cdot 1
+    = n \cdot 1
+    = 0
+   \]
+   und $K$ ein Körper ist, muss bereits $a \cdot 1 = 0$ oder $b \cdot 1 = 0$. Da $0 < a,b < n$ steht dies im Widerspruch dazu, dass $n = \min \{m > 0 \mid m \cdot 1 = 0\}$.
+ \end{enumerate}
+\end{bem}
 
 
 
