@@ -176,7 +176,7 @@
 
 
 \begin{defi}
- Ein Körper ist ein Tupel $(K, +, \cdot)$ bestehend aus einer Menge $K$ und zwei binären Verknüpfungen, einer \emph{Addition} $+ \colon K \times K \to K$, $(x,y) \mapsto x + y$ und einer \emph{Multiplikation} $\cdot \colon K \to K$, $(x,y) \mapsto xy$, so dass die folgenden Bedingungen erfüllt sind:
+ Ein Körper ist ein Tupel $(K, +, \cdot)$ bestehend aus einer Menge $K$ und zwei binären Verknüpfungen, einer \emph{Addition} $+ \colon K \times K \to K$, $(x,y) \mapsto x + y$ und einer \emph{Multiplikation} $\cdot \colon K \to K$, $(x,y) \mapsto x \cdot y$, so dass die folgenden Bedingungen erfüllt sind:
  \begin{enumerate}[label=\roman*)]
   \item
    $(K,+)$ ist eine abelsche Gruppe.
@@ -190,7 +190,7 @@
     \item
      Es gibt ein Einselement $1 \in K$, d.h.\ $1 \cdot x = x$ für alle $x \in K$, und es gilt $1 \neq 0$.
     \item
-     Für jedes Element $x \in K$ mit $x \neq 0$ gibt es ein multiplikativ Inverses Element $y \in K$, d.h.\ $x \cdot y = 1$.
+     Für jedes Element $x \in K$ mit $x \neq 0$ gibt es ein multiplikativ inverses Element $y \in K$, d.h.\ $x \cdot y = 1$.
    \end{enumerate}
   \item
    Es gilt die Distributivität von $+$ und $\cdot$, d.h.\ für alle $x,y,z \in K$ ist
@@ -826,7 +826,7 @@ definiert. Wir geben hier eine formale Konstruktion von beliebig großen (bzw. m
 
 
 
-\section{Konvergenz und Summierbarkeit von Folgen}
+\section{Konvergenz und Summierbarkeit von Folgen}\label{sec: sequences and series}
 Da wir im Folgenden auch Räume konventer Folgen und Reihen betrachten wollen, erinnern wir hier an die entsprechenden grundlegenden Definitionen und Aussagen über konvergente Folgen und Reihen. In diesem Abschnitt sei $\Kbb \in \{\Qbb, \Rbb, \Cbb\}$.
 
 
@@ -916,7 +916,7 @@ Da wir im Folgenden auch Räume konventer Folgen und Reihen betrachten wollen, e
 \end{defi}
 
 
-\begin{bem}
+\begin{bem}\label{bem: properties of convergent series}
  \begin{enumerate}[leftmargin=*]
   \item
    Die konstante Nullfolge $(0)_{n \in \Nbb}$ ist summierbar mit $\sum_{n=0}^\infty a_n = 0$. Für alle $m \in \Nbb$ ist nämlich $\sum_{n=0}^m 0 = 0$, also $(\sum_{n=0}^m a_n)_{m \in \Nbb} = 0$, die Folge der Partialsummen also ebenfalls die Nullfolge. Daher konvergiert die Folge der Partialsummen gegen $0$, also $\lim_{m \to \infty} \sum_{n=0}^m 0 = 0$. Dies bedeutet gerade, dass die Nullfolge $(0)_{n \in \Nbb}$ summierbar ist, und dass $\sum_{n=0}^\infty 0 = 0$.

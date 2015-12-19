@@ -53,10 +53,10 @@ Mode=LaTeX
 
 [item:Chapters/Definitions_And_Notations.tex]
 archive=true
-column=49
+column=75
 encoding=UTF-8
 highlight=LaTeX
-line=918
+line=192
 mode=LaTeX
 open=true
 order=1
@@ -73,20 +73,20 @@ order=3
 
 [item:Chapters/Groups.tex]
 archive=true
-column=85
+column=78
 encoding=UTF-8
 highlight=LaTeX
-line=1218
+line=786
 mode=LaTeX
 open=true
 order=2
 
 [item:Chapters/Vector_Spaces.tex]
 archive=true
-column=180
+column=36
 encoding=UTF-8
 highlight=LaTeX
-line=823
+line=825
 mode=LaTeX
 open=true
 order=4
@@ -112,10 +112,10 @@ open=false
 order=-1
 
 [view-settings,view=0,item:Chapters/Definitions_And_Notations.tex]
-CursorColumn=49
-CursorLine=918
+CursorColumn=75
+CursorLine=192
 JumpList=
-ViMarks=.,918,48,[,918,43,],918,48
+ViMarks=.,192,74,[,192,74,],192,74
 
 [view-settings,view=0,item:Chapters/Fields.tex]
 CursorColumn=82
@@ -124,16 +124,16 @@ JumpList=
 ViMarks=.,923,221,[,923,201,],923,221
 
 [view-settings,view=0,item:Chapters/Groups.tex]
-CursorColumn=85
-CursorLine=1218
+CursorColumn=78
+CursorLine=786
 JumpList=
-ViMarks=.,1218,85,[,1218,85,],1218,85
+ViMarks=.,553,44,[,553,39,],553,44
 
 [view-settings,view=0,item:Chapters/Vector_Spaces.tex]
-CursorColumn=180
-CursorLine=823
+CursorColumn=36
+CursorLine=825
 JumpList=
-ViMarks=.,823,179,[,823,179,],823,179
+ViMarks=.,825,35,[,825,35,],825,35
 
 [view-settings,view=0,item:Examples_of_groups_fields_and_vector_spaces.tex]
 CursorColumn=32

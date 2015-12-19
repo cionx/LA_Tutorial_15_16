@@ -808,34 +808,24 @@ Also ist auch $\lambda f$ radialsymmetrisch und somit $\lambda f \in R$. Dies ze
 
 
 \subsection{Stetige reellwertige Funktionen auf \texorpdfstring{$\Rbb$}{R}}
-Eine Funktion $f \colon \Rbb \to \Rbb$ heißt \emph{stetig}, falls für jede konvergente Folge $(x_n)_{n \in \Nbb}$ reeller Zahlen auch die Bildfolge $(f(x_n))_{n \in \Nbb}$ konvergiert und
-\[
- f\left( \lim_{n \to \infty} x_n \right)
- = \lim_{n \to \infty} f(x_n).
-\]
-Wir zeigen, dass
-\[
- C(\Rbb,\Rbb)
- \coloneqq \{f \colon \Rbb \to \Rbb \mid \text{$f$ ist stetig}\}
- \subseteq \Abb(\Rbb, \Rbb)
-\]
-zusammen mit der punktweisen Addition und Skalarmultiplikation einen Vektorraum bildet, indem wir zeigen, dass $C(\Rbb, \Rbb) \subseteq \Abb(\Rbb, \Rbb)$ ein Untervektorraum ist (der Buchstabe C steht hier für \emph{continuous}, die englische Übersetzung von \emph{stetig}).
+Wir werden für dieses Beispiel den Begriff konvergenter Folgen nutzen. An die entsprechenden Begriffe und Eigeschaften erinnern wir in \ref{sec: sequences and series}. Wir werden insbesondere die Eigenschaften aus Bemerkung \ref{bem: properties of convergent sequences} nutzen.
 
+\begin{defi}
+ Eine Funktion $f \colon \Rbb \to \Rbb$ heißt \emph{stetig}, falls für jede konvergente Folge $(x_n)_{n \in \Nbb}$ reeller Zahlen auch die Bildfolge $(f(x_n))_{n \in \Nbb}$ konvergiert und dann auch
+ \[
+  f\left( \lim_{n \to \infty} x_n \right)
+  = \lim_{n \to \infty} f(x_n).
+ \]
+ Es sei
+ \[
+  C(\Rbb,\Rbb) \coloneqq \{f \colon \Rbb \to \Rbb \mid \text{$f$ ist stetig}\}.
+ \]
+ (Der Buchstabe C steht hier für \emph{continuous}, die englische Übersetzung von \emph{stetig}.)
+\end{defi}
 
-\begin{bem}
- Wir erinnern an einige Fakten über konvergente Folgen reeller Zahlen:
- \begin{enumerate}[label=\roman*)]
-  \item
-   Ist $(x_n)_{n \in \Nbb}$ eine konstante Folge, d.h.\ es gibt $c \in \Rbb$ mit $x_n = c$ für alle $n \in \Nbb$, so konvergiert die Folge $(x_n)_{n \in \Nbb}$ und es gilt $\lim_{n \to \infty} x_n = c$.
-  \item
-   Sind $(x_n)_{n \in \Nbb}$ und $(y_n)_{n \in \Nbb}$ zwei konvergente Folgen reeller Zahlen, so konvergiert auch die Folge $(x_n + y_n)_{n \in \Nbb}$ und $\lim_{n \to \infty} (a_n+b_n) = (\lim_{n \to \infty} a_n) + (\lim_{n \to \infty} b_n)$.
-  \item
-   Ist $\lambda \in \Rbb$ und $(x_n)_{n \in \Nbb}$ eine konvergente Folge reeller Zahlen, so konvergiert auch die Folge $(\lambda \cdot x_n)_{n \in \Nbb}$ und es gilt $\lim_{n \to \infty} (\lambda \cdot x_n) = \lambda \cdot \lim_{n \to \infty} x_n$.
- \end{enumerate}
-\end{bem}
+Wir zeigen, dass Summen und skalare Vielfache von stetigen Funktionen wieder stetig sind, dass also $C(\Rbb,\Rbb)$ zusammen mit der punktweisen Addition und Skalarmultiplikation einen Vektorraum bildet, indem wir zeigen, dass $C(\Rbb, \Rbb) \subseteq \Abb(\Rbb, \Rbb)$ ein Untervektorraum ist.
 
-
-Für die Nullfunktion $N \colon \Rbb \to \Rbb$ ist $N(x) = 0$ für alle $x \in \Rbb$. Ist $(x_n)_{n \in \Nbb}$ eine konvergente Folge reeller Zahlen, so ist deshalb die Bildfolge $(f(x_n))_{n \in \Nbb}$ die konstante Nullfolge. Inbesondere ist die Bildfolge konvergent und
+Für die Nullfunktion $N \colon \Rbb \to \Rbb$ ist $N(x) = 0$ für alle $x \in \Rbb$. Ist $(x_n)_{n \in \Nbb}$ eine konvergente Folge reeller Zahlen, so ist deshalb die Bildfolge $(N(x_n))_{n \in \Nbb}$ die konstante Nullfolge. Inbesondere ist die Bildfolge konvergent und
 \[
  \lim_{n \to \infty} f(x_n)
  = \lim_{n \to \infty} 0
@@ -944,6 +934,59 @@ Ingesamt zeigt dies, dass $C^\alpha(\Rbb) \subseteq \Abb(\Rbb, \Rbb)$ ein Unterv
 \begin{bem}
  Es lässt sich zeigen, dass Hölder-stetige Funktionen bereits stetig sind (wie der Name vermuten lässt). Für $\alpha > 1$ ist zudem $C^\alpha(\Rbb) = \{0\}$, d.h.\ die Nullfunktionen ist die einzige Hölder-stetige Funktion $\Rbb \to \Rbb$ mit Exponent $\alpha > 1$.
 \end{bem}
+
+
+
+
+
+\section{Folgenräume}
+Für einen Körper $K$ sei
+\[
+ \ell(K)
+ \coloneqq \Abb(\Nbb, K)
+ = \{a \colon \Nbb \to K\}
+ = \{(a_n)_{n \in \Nbb} \mid \text{$a_n \in K$ für alle $n \in K$}\}
+\]
+der Raum der Folgen in $K$. Wie bereits in \ref{sec: maps into a vector space} gesehen, ist $\ell(K)$ ein $K$-Vektorraum bezüglich der eintragsweisen Addition
+\[
+ (a_n)_{n \in \Nbb} + (b_n)_{n \in \Nbb} = (a_n + b_n)_{n \in \Nbb}
+ \quad
+ \text{für alle $(a_n)_{n \in \Nbb}, (b_n)_{n \in \Nbb} \in \ell(K)$}.
+\]
+und eintragsweisen Skalarmultiplikation
+\[
+ \lambda \cdot (a_n)_{n \in \Nbb}
+ = (\lambda \cdot a_n)_{n \in \Nbb}
+ \quad
+ \text{für alle $\lambda \in K$ und $(a_n)_{n \in \Nbb} \in \ell(K)$}.
+\]
+
+
+\subsection{Konvergente Folgen}
+Für $\Kbb \in \{\Qbb, \Rbb, \Cbb\}$  sei
+\[
+ \mc{K}(\Kbb)
+ \coloneqq
+ \{(a_n)_{n \in \Nbb} \in \ell(\Kbb) \mid \text{$(a_n)_{n \in \Nbb}$ konvergiert (mit Grenzwert in $\Kbb$)}\}.
+\]
+Wir zeigen, dass $\mc{K}(\Kbb)$ ein $\Kbb$-Vektorraum bezüglich der eintragsweisen Addition und Skalarmultiplikation ist, indem wir zeigen, dass $\mc{K}(\Kbb) \subseteq \ell(\Kbb)$ ein Untervektorraum ist:
+
+Wie bereits in Bemerkung \ref{bem: properties of convergent sequences} konvergiert die konstante Nullfolge $(0)_{n \in \Nbb}$ gegen $0$. Also ist $(0)_{n \in \Nbb} \in \mc{K}(\Kbb)$.
+
+Sind $(x_n)_{n \in \Nbb}, (y_n)_{n \in \Nbb} \in \mc{K}(\Kbb)$, so konvergiert auch die Folge $(x_n + y_n)_{n \in \Nbb}$, weshalb auch $(x_n)_{n \in \Nbb} + (y_n)_{n \in \Nbb} = (x_n + y_n)_{n \in \Nbb} \in \mc{K}(\Kbb)$.
+
+Ist $(x_n)_{n \in \Nbb} \in \mc{K}(\Kbb)$ und $\lambda \in \Kbb$, so konvergiert auch die Folge $(\lambda x_n)_{n \in \Nbb}$, weshalb auch $\lambda (x_n)_{n \in \Nbb} = (\lambda x_n)_{n \in \Nbb} \in \mc{K}(\Kbb)$.
+
+Insgesamt zeigt dies, dass $\mc{K}(\Kbb)$ ein Untervektorraum von $\ell(\Kbb)$ ist.
+
+
+\subsection{Cauchy-Folgen}
+Für $\Kbb \in \{\Qbb, \Rbb, \Cbb\}$ sei
+\[
+ \mc{C}(\Kbb)
+ \coloneqq
+ \{(a_n)_{n \in \Nbb} \mid \text{$(a_n)_{n \in \Nbb}$ ist eine Cauchy-Folge}\}.
+\]
 
 
 

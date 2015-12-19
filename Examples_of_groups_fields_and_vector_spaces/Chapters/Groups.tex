@@ -102,22 +102,27 @@
  \item
   Analog ergibt sich, dass $\Zbb^n$, $\Qbb^n$ und $\Cbb^n$ zusammen mit der eintragsweisen Addition jeweils Gruppen bilden. Es ergibt sich damit eine Kette von Untergruppen $\Zbb^n \subseteq \Qbb^n \subseteq \Rbb^n \subseteq \Cbb^n$.
  \item
-  Ist allgemeiner $K$ ein Körper, so ist $K^n$ mit der eintragsweisen Addition ein Körper.
+  Ist allgemeiner $K$ ein Körper, so ist $K^n$ mit der eintragsweisen Addition eine abelsche Gruppe.
 \end{enumerate}
 
 
 
+
+
 \section{Untergruppen bezüglich Gruppenhomomorphismen}\label{sec: subgroups and group homomorphisms}
-Es seien $G_1$ und $G_2$ Gruppen und es sei $\varphi \colon G_1 \to G_2$ ein Gruppenhomomorphismus.
+Es seien $G$ und $H$ Gruppen und es sei $\varphi \colon G \to H$ ein Gruppenhomomorphismus.
 
 
 
 \subsection{Der Kern eines Gruppenhomomorphismus}
-Wir zeigen, dass der \emph{Kern} von $f$
-\[
- \ker(\varphi) \coloneqq \{g \in G_1 \mid \varphi(g) = 1\}
-\]
-eine Untergruppe von $G_1$ ist: Da $\varphi(1) = 1$ ist $1 \in \ker(\varphi)$. Sind $x,y \in \ker(\varphi)$, so ist $\varphi(x) = \varphi(y) = 1$ und deshalb
+\begin{defi}
+ Der \emph{Kern} von $\varphi$ ist
+ \[
+  \ker(\varphi) \coloneqq \{g \in G \mid \varphi(g) = 1\}.
+ \]
+\end{defi}
+
+Wir zeigen, dass $\ker(\varphi)$ eine Untergruppe von $G$ ist: Da $\varphi(1) = 1$ ist $1 \in \ker(\varphi)$. Sind $x,y \in \ker(\varphi)$, so ist $\varphi(x) = \varphi(y) = 1$ und deshalb
 \[
  \varphi(x \cdot y)
  = \varphi(x) \cdot \varphi(y)
@@ -131,7 +136,7 @@ also auch $x \cdot y \in \ker(\varphi)$. Ist $x \in \ker(\varphi)$, so ist $\var
  = 1^{-1}
  = 1,
 \]
-also auch $x^{-1} \in \ker(\varphi)$. Ingesamt zeigt dies, dass $\ker(\varphi)$ eine Untergruppe von $G_1$ ist.
+also auch $x^{-1} \in \ker(\varphi)$. Ingesamt zeigt dies, dass $\ker(\varphi)$ eine Untergruppe von $G$ ist.
 
 
 \begin{bem}
@@ -139,7 +144,7 @@ also auch $x^{-1} \in \ker(\varphi)$. Ingesamt zeigt dies, dass $\ker(\varphi)$ 
  
  Ist $\varphi$ injektiv und $x \in \ker(\varphi)$ so ist $\varphi(x) = 1 = \varphi(1)$, wegen der Injektivität von $\varphi$ also $x = 1$. Somit ist dann $\ker(\varphi) = \{1\}$.
  
- Ist $\ker(\varphi) = \{1\}$ und sind $x,y \in G_1$ mit $\varphi(x) = \varphi(y)$, so ist
+ Ist $\ker(\varphi) = \{1\}$ und sind $x,y \in G$ mit $\varphi(x) = \varphi(y)$, so ist
  \[
   \varphi(x\cdot y^{-1})
   = \varphi(x)\cdot \varphi(y^{-1})
@@ -155,23 +160,23 @@ also auch $x^{-1} \in \ker(\varphi)$. Ingesamt zeigt dies, dass $\ker(\varphi)$ 
 \subsection{Das Bild eines Gruppenhomomorphismus}
 Wir zeigen, dass das Bild
 \[
- \im(\varphi) = \varphi(G_1) = \{\varphi(g) \mid g \in G_1\}
+ \im(\varphi) = \varphi(G) = \{\varphi(g) \mid g \in G\}
 \]
-eine Untergruppe von $G_2$ ist: Da $1 = \varphi(1)$ ist $1 \in \im(\varphi)$. Sind $x,y \in \im(\varphi)$, so gibt es $x', y' \in G_1$ mit $\varphi(x') = x$ und $\varphi(y') = y$. Damit ist
+eine Untergruppe von $H$ ist: Da $1 = \varphi(1)$ ist $1 \in \im(\varphi)$. Sind $x,y \in \im(\varphi)$, so gibt es $x', y' \in G$ mit $\varphi(x') = x$ und $\varphi(y') = y$. Damit ist
 \[
  x \cdot y
  = \varphi(x') \cdot \varphi(y')
  = \varphi(x' \cdot y'),
 \]
-also auch $x \cdot y \in \im(\varphi)$. Ist $x \in \im(\varphi)$, so gibt es $x' \in G_1$ mit $\varphi(x') = x$. Da damit
+also auch $x \cdot y \in \im(\varphi)$. Ist $x \in \im(\varphi)$, so gibt es $x' \in G$ mit $\varphi(x') = x$. Da damit
 \[
  x^{-1}
  = \varphi(x')^{-1}
  = \varphi((x')^{-1})
 \]
-ist auch $x^{-1} \in \im(\varphi)$. Ingesamt zeigt dies, dass $\im(\varphi)$ ein Untergruppe von $G_2$ ist.
+ist auch $x^{-1} \in \im(\varphi)$. Ingesamt zeigt dies, dass $\im(\varphi)$ ein Untergruppe von $H$ ist.
 
-Ist $G_1$ abelsch, so ist es auch $\im(\varphi)$: Sind nämlich $x, y \in \im(\varphi)$, so gibt es $x', y' \in G_1$ mit $x = \varphi(x')$ und $y = \varphi(y')$, weshalb
+Ist $G$ abelsch, so ist es auch $\im(\varphi)$: Sind nämlich $x, y \in \im(\varphi)$, so gibt es $x', y' \in G$ mit $x = \varphi(x')$ und $y = \varphi(y')$, weshalb
 \[
  x \cdot y
  = \varphi(x') \cdot \varphi(y')
@@ -183,27 +188,26 @@ Ist $G_1$ abelsch, so ist es auch $\im(\varphi)$: Sind nämlich $x, y \in \im(\v
 
 
 
-
 \subsection{Bilder von Untergruppen}
-Es sei $H \subseteq G_1$ eine Untergruppe. Wir zeigen, dass das Bild von $H$ unter $\varphi$
+Es sei $K \subseteq G$ eine Untergruppe. Wir zeigen, dass das Bild von $K$ unter $\varphi$, also
 \[
- \varphi(H) = \{\varphi(h) \mid h \in H\}
+ \varphi(K) = \{\varphi(k) \mid k \in K\},
 \]
-eine Untergruppe von $G_2$ ist: Da $1 \in H$ ist $1 = \varphi(1) \in G_2$. Sind $x,y \in \varphi(H)$ so gibt es $x', y' \in G_1$ mit $\varphi(x') = x$ und $\varphi(y') = y$. Da $H$ ein Untergruppe ist, ist auch $x' \cdot y' \in H$. Da außerdem
+eine Untergruppe von $H$ ist: Da $1 \in K$ ist $1 = \varphi(1) \in H$. Sind $x,y \in \varphi(K)$ so gibt es $x', y' \in K$ mit $\varphi(x') = x$ und $\varphi(y') = y$. Da $K$ ein Untergruppe ist, ist auch $x' \cdot y' \in K$. Da außerdem
 \[
  x \cdot y
  = \varphi(x') \cdot \varphi(y')
  = \varphi(x' \cdot y')
 \]
-ist dann auch $x \cdot y \in \varphi(H)$. Ist $x \in \varphi(H)$, so gibt es $x' \in H$ mit $\varphi(x') = x$. Da $H$ eine Untergruppe ist, ist auch $(x')^{-1} \in H$. Da außerdem
+ist dann auch $x \cdot y \in \varphi(K)$. Ist $x \in \varphi(K)$, so gibt es $x' \in K$ mit $\varphi(x') = x$. Da $K$ eine Untergruppe ist, ist auch $(x')^{-1} \in K$. Da außerdem
 \[
  x^{-1}
  = \varphi(x')^{-1}
  = \varphi((x')^{-1})
 \]
-ist dann auch $x^{-1} \in \varphi(H)$. Ingesamt zeigt dies, dass $\varphi(H)$ eine Untergruppe von $G_2$ ist.
+ist dann auch $x^{-1} \in \varphi(K)$. Ingesamt zeigt dies, dass $\varphi(K)$ eine Untergruppe von $K$ ist.
 
-Ist $H$ abelsch, so ist es auch $\varphi(H)$: Für $x,y \in \im(\varphi)$ gibt es nämlich $x', y' \in H$ mit $x = \varphi(x')$ und $y = \varphi(y')$, weshalb
+Ist $K$ abelsch, so ist es auch $\varphi(K)$: Für $x,y \in \im(\varphi)$ gibt es nämlich $x', y' \in K$ mit $x = \varphi(x')$ und $y = \varphi(y')$, weshalb
 \[
  x \cdot y
  = \varphi(x') \cdot \varphi(y')
@@ -215,29 +219,29 @@ Ist $H$ abelsch, so ist es auch $\varphi(H)$: Für $x,y \in \im(\varphi)$ gibt e
 
 
 \begin{bem}
- Es fällt auf, dass der Beweis, dass $\varphi(H)$ ein Untergruppe ist, analog zu dem Beweis verläuft, dass $\im(\varphi)$ eine Untegruppe ist. Dies ist kein Zufall: Da $\varphi$ ein Gruppenhomomorphismus ist, ist auch die Einschränkung $\varphi|_H \colon H \to G_2$ ein Gruppenhomomorphismus. Daraus folgt direkt, dass $\varphi(H) = \im(\varphi|_H)$ eine Untergruppe von $G_2$ ist.
+ Es fällt auf, dass der Beweis, dass $\varphi(K)$ ein Untergruppe ist, analog zu dem Beweis verläuft, dass $\im(\varphi)$ eine Untegruppe ist. Dies ist kein Zufall: Da $\varphi$ ein Gruppenhomomorphismus ist, ist auch die Einschränkung $\varphi|_K \colon K \to H$ ein Gruppenhomomorphismus. Daraus folgt direkt, dass $\varphi(K) = \im(\varphi|_K)$ eine Untergruppe von $H$ ist.
 \end{bem}
 
 
 
 \subsection{Urbilder von Untergruppen}
-Es sei $H \subseteq G_2$ eine Untergruppe. Wir zeigen, dass das Urbild
+Es sei $K \subseteq H$ eine Untergruppe. Wir zeigen, dass das Urbild von $K$ unter $\varphi$, also
 \[
- \varphi^{-1}(H) = \{x \in G_1 \mid \varphi(x) \in H\}
+ \varphi^{-1}(K) = \{x \in G_1 \mid \varphi(x) \in K\},
 \]
-eine Untergruppe von $G_1$ ist: Da $H$ eine Untergruppe ist, ist $\varphi(1) = 1 \in H$. Also ist $1 \in \varphi^{-1}(H)$. Sind $x,y \in \varphi^{-1}(H)$, so ist $\varphi(x), \varphi(y) \in H$. Da $H$ eine Untergruppe ist, ist damit auch $\varphi(xy) = \varphi(x)\varphi(y) \in H$, also $xy \in \varphi^{-1}(H)$. Ist $x \in \varphi^{-1}(H)$, so ist $\varphi(x) \in H$. Da $H$ eine Untergruppe ist, ist damit auch $\varphi(x^{-1}) = \varphi(x)^{-1} \in H$, also $x^{-1} \in \varphi^{-1}(H)$. Insgesamt zeigt dies, dass $\varphi^{-1}(H)$ eine Untergruppe von $G_1$ ist.
+eine Untergruppe von $G$ ist: Da $K$ eine Untergruppe ist, ist $\varphi(1) = 1 \in K$. Also ist $1 \in \varphi^{-1}(K)$. Sind $x,y \in \varphi^{-1}(K)$, so ist $\varphi(x), \varphi(y) \in K$. Da $K$ eine Untergruppe ist, ist damit auch $\varphi(xy) = \varphi(x)\varphi(y) \in K$, also $xy \in \varphi^{-1}(K)$. Ist $x \in \varphi^{-1}(K)$, so ist $\varphi(x) \in K$. Da $K$ eine Untergruppe ist, ist damit auch $\varphi(x^{-1}) = \varphi(x)^{-1} \in K$, also $x^{-1} \in \varphi^{-1}(K)$. Insgesamt zeigt dies, dass $\varphi^{-1}(K)$ eine Untergruppe von $G$ ist.
 
 
 \begin{bem}
- Indem man $H = \{1\}$ wählt, erhält man auch so einen neuen Beweis, dass
+ Indem man $K = \{1\}$ wählt, erhält man auch so einen neuen Beweis, dass
  \[
-  \varphi^{-1}(H)
+  \varphi^{-1}(K)
   = \varphi^{-1}(\{1\})
-  = \{x \in G_1 \mid \varphi(x) \in \{1\}\}
-  = \{x \in G_1 \mid \varphi(x) = 1\}
+  = \{x \in G \mid \varphi(x) \in \{1\}\}
+  = \{x \in G \mid \varphi(x) = 1\}
   = \ker(\varphi)
  \]
- eine Untergruppe von $G_1$ ist.
+ eine Untergruppe von $G$ ist.
 \end{bem}
 
 
@@ -249,9 +253,9 @@ Es sei $G$ eine Gruppe.
 
 
 \subsection{Schnitte von Untergruppen}
-Es sei $I$ eine Indexmenge und für jedes $i \in I$ sei $H_i \subseteq G$ eine Untergruppe. Wir zeigen, dass dann auch $\bigcap_{i \in I} H_i \subseteq G$ eine Untergruppe ist:
+Es sei $I$ eine Indexmenge und für jedes $i \in I$ sei $H_i \subseteq G$ eine Untergruppe. Wir zeigen, dass dann auch der Schnitt $\bigcap_{i \in I} H_i \subseteq G$ eine Untergruppe ist:
 
-Da $H_i$ für jedes $i \in I$ eine Untergruppe ist, ist $1 \in H_i$ für jedes $i \in I$, und somit $1 \in \bigcap_{i \in I} H_i$.
+Da $H_i$ für jedes $i \in I$ eine Untergruppe ist, ist $1 \in H_i$ für jedes $i \in I$, und somit auch $1 \in \bigcap_{i \in I} H_i$.
 
 Sind $x,y \in \bigcap_{i \in I} H_i$, so ist $x,y \in H_i$ für jedes $i \in I$. Damit ist auch $x \cdot y \in H_i$ für alle $i \in I$, da $H_i$ für jedes $i \in I$ eine Untergruppe ist. Also ist auch $x \cdot y \in \bigcap_{i \in I} H_i$.
 
@@ -272,7 +276,7 @@ Ist $h_1 h_2 \in H_1$, so ist auch $h_2 = h_1^{-1} h_1 h_2 \in H_1$, was der Ann
 Dieser Widerspruch zeigt, dass bereits $H_1 \subseteq H_2$ oder $H_2 \subseteq H_1$ gelten muss, wenn die Vereinigung $H_1 \cup H_2$ ebenfalls eine Untergruppe ist.
 
 \begin{bsp}
- Durch direktes Nachrechnen ergibt sich, dass sowohl $H_1 \coloneqq \{(x, 0) \mid x \in \Rbb\}$ als auch $H_2 \coloneqq \{(0,y) \mid y \in \Rbb\}$ je eine additive Untergruppe von $\Rbb^2$ ist. Da aber weder $H_1 \subseteq H_2$ noch $H_2 \subseteq H_1$, ist $H_1 \cup H_2$ keine Untergruppe von $\Rbb^2$.
+ Durch direktes Nachrechnen ergibt sich, dass sowohl $H_1 \coloneqq \{(x, 0) \mid x \in \Rbb\}$ als auch $H_2 \coloneqq \{(0,y) \mid y \in \Rbb\}$ je eine additive Untergruppe von $\Rbb^2$ ist. (Eine abstrakte Alternative zum Nachrechnen: Die beiden Abbildungen $\iota_1 \colon \Rbb \to \Rbb^2, x \mapsto (x,0)$ und $\iota_2 \colon \Rbb \to \Rbb^2, y \mapsto (0,y)$ sind Gruppenhomomorphismen. Also sind $H_1 = \im(\iota_1)$ und $H_2 = \im(\iota_2)$ Untergruppen.) Da aber weder $H_1 \subseteq H_2$ (da $(1,0) \in H_1$ aber $(1,0) \notin H_2$) noch $H_2 \subseteq H_1$ (da $(0,1) \in H_2$ aber $(0,1) \notin H_1$), ist $H_1 \cup H_2$ keine Untergruppe von $\Rbb^2$.
 \end{bsp}
 
 
@@ -283,11 +287,20 @@ Für jedes $n \in \Nbb$ sei $H_n \subseteq G$ eine Untergruppe, so dass $H_n \su
 \]
 von Untergruppen. Wir zeigen, dass dann die Vereinigung $\bigcup_{n \in \Nbb} H_n$ ebenfalls eine Untergruppe von $G$ ist:
 
-Es ist $1 \in H_0 \bigcup_{n \in \Nbb} H_n$, da $H_0$ eine Untergruppe ist. Ist $x \in \bigcup_{n \in \Nbb} H_n$, so gibt es ein $m \in \Nbb$ mit $x \in H_m$. Da $H_m$ eine Untergruppe ist, ist auch $x^{-1} \in H_m \subseteq \bigcup_{n \in \Nbb} H_n$.
+Es ist $1 \in H_0 \subseteq \bigcup_{n \in \Nbb} H_n$, da $H_0$ eine Untergruppe ist. Ist $x \in \bigcup_{n \in \Nbb} H_n$, so gibt es ein $m \in \Nbb$ mit $x \in H_m$. Da $H_m$ eine Untergruppe ist, ist auch $x^{-1} \in H_m \subseteq \bigcup_{n \in \Nbb} H_n$.
 
 Für $x,y \in \bigcup_{n \in \Nbb} H_n$ gibt es $m_1, m_2 \in \Nbb$ mit $x \in H_{m_1}$ und $y \in H_{m_2}$. Da $m_1 \leq m_2$ oder $m_2 \leq m_1$ ist $H_{m_1} \subseteq H_{m_2}$ oder $H_{m_2} \subseteq H_{m_1}$. Wir betrachten o.B.d.A. den Fall, dass $m_1 \leq m_2$, also $H_{m_1} \subseteq H_{m_2}$. Da $x \in H_{m_1} \subseteq H_{m_2}$ und $y \in H_{m_2}$, und $H_{m_2}$ eine Untergruppe ist, ist auch $x \cdot y \in H_{m_2} \subseteq \bigcup_{n \in \Nbb} H_n$.
 
 Insgesamt zeigt dies, dass $\bigcup_{n \in \Nbb} H_n$ eine Untergruppe von $G$ ist.
+
+\begin{bem}
+ \begin{enumerate}[leftmargin=*]
+  \item
+   Allgmeiner gilt: Ist $(I, \subseteq)$ eine total, bzw.\ linear geordnete Menge, und $H_i \subseteq G$ für jedes $i \in I$ eine Untergruppe, so dass $H_i \subseteq H_j$ für alle $i,j \in I$ mit $i \leq j$, so ist die aufsteigende Vereinigung $\bigcup_{i \in I} H_i \subseteq G$ eine Untergruppe. Der Beweis verläuft analog obigen Sonderfall $(\Nbb, \leq)$.
+  \item
+   Noch allgemeiner: Es sei $(I, \subseteq)$ eine \emph{gerichtete Menge}, d.h.\ eine partiell geordnete Menge, so dass es für alle $i,j \in I$ ein $k \in I$ mit $i \leq k$ und $j \leq k$ gibt. Für jedes $i \in I$ sei $H_i \subseteq G$ eine Untergruppe, so dass $H_i \subseteq H_j$ für alle $i,j \in I$ mit $i \leq j$. Dann ist auch die Vereinigung $\bigcup_{i \in I} H_i$ wieder eine Untergruppe. Der Beweis hierfür verläuft ähnlich zu dem Beweis für total geordnete Mengen.
+ \end{enumerate}
+\end{bem}
 
 
 
@@ -312,13 +325,16 @@ Für alle $z_1, z_2 \in \Cbb$ ist
 \]
 und es ist $|1| = \sqrt{1 \cdot \overline{1}} = \sqrt{1 \cdot 1} = \sqrt{1} = 1$.
 
-Der \emph{Einheitskreis} ist definiert als
+\begin{defi}
+ Der \emph{Einheitskreis} ist definiert als
 \[
  S^1 \coloneqq \{z \in \Cbb \mid |z| = 1\}.
 \]
-Wir zeigen, dass $S^1$ eine Untergruppe von $\Cbb^\times$ ist:
+\end{defi}
 
-Ist $z \in \Cbb$, so ist $0 \neq 1 = |z| = \sqrt{z \overline{z}}$, also $z \neq 0$ und somit $z \in \Cbb^\times$. Also ist $S^1 \subseteq \Cbb^\times$ eine Teilmenge.
+%TODO: Bild von S1 hinzufügen.
+
+Wir zeigen, dass $S^1$ eine Untergruppe von $\Cbb^\times$ ist: Ist $z \in \Cbb$, so ist $0 \neq 1 = |z| = \sqrt{z \overline{z}}$, also $z \neq 0$ und somit $z \in \Cbb^\times$. Also ist $S^1 \subseteq \Cbb^\times$ eine Teilmenge.
 
 Da $|1| = 1$ ist $1 \in S^1$. Für $z_1, z_2 \in S^1$ ist $|z_1| = |z_2| = 1$, also auch
 \[
@@ -334,7 +350,7 @@ Das zeigt, dass $S^1$ ein Untergruppe von $\Cbb^\times$ ist.
 
 
 \begin{bem}
- Die Aussage lässt sich auch weniger rechenlastig zeigen: Da $|z_1 z_2| = |z_1| \cdot |z_2|$ für alle $z_1, z_2 \in \Cbb$ und $|z| > 0$ für alle $z \neq 0$ ist die Abbildung $b \colon \Cbb^\times \to \Rbb_+$, $z \mapsto |z|$ ein Gruppenhomomorphismus. Daher ist
+ Die Aussage lässt sich auch abstrakter zeigen: Da $|z_1 z_2| = |z_1| \cdot |z_2|$ für alle $z_1, z_2 \in \Cbb$, und $|z| > 0$ für alle $z \neq 0$, ist die Abbildung $b \colon \Cbb^\times \to \Rbb_+$, $z \mapsto |z|$ ein Gruppenhomomorphismus. Daher ist
  \[
   S^1
   = \{z \in \Cbb \mid |z| = 1\}
@@ -348,41 +364,44 @@ Das zeigt, dass $S^1$ ein Untergruppe von $\Cbb^\times$ ist.
 
 
 \subsection{\texorpdfstring{$n$}{n}-te Einheitswurzeln}
-Es sei $k$ ein Körper und $n \in \Nbb$, $n \geq 1$. Ein Element $x \in k$ heißt \emph{$n$-te Einheitswurzel} falls $x^n = 1$. Wir zeigen, dass
+Es sei $K$ ein Körper und $n \in \Nbb$, $n \geq 1$. Ein Element $x \in K$ heißt \emph{$n$-te Einheitswurzel} falls $x^n = 1$. Wir zeigen, dass
 \[
- R_n(k) \coloneqq \{x \in k \mid x^n = 1\}
+ W_n(K) \coloneqq \{x \in K \mid x^n = 1\}
 \]
-eine Untergruppe von $k^\times$ ist: Da $1^n = 1$ ist $1 \in R_n(k)$. Sind $x,y \in R_n(k)$ so ist $x^n = 1$ und $y^n = 1$, also auch $(xy)^n = x^n y^n = 1 \cdot 1 = 1$ und deshalb $xy \in R_n(k)$. Für $x \in R_n(k)$ ist $x^n = 1$, also
+eine Untergruppe von $K^\times$ ist: Da $1^n = 1$ ist $1 \in W_n(K)$. Sind $x,y \in W_n(K)$ so ist $x^n = 1$ und $y^n = 1$, also auch $(xy)^n = x^n y^n = 1 \cdot 1 = 1$ und deshalb $xy \in W_n(K)$. Für $x \in W_n(K)$ ist $x^n = 1$, also
 \[
  (x^{-1})^n = (x^n)^{-1} = 1^{-1} = 1
 \]
-und deshalb $x \in R_n(k)$.
+und deshalb $x \in W_n(K)$.
 
-Ingesamt zeigt dies, dass $R_n(k)$ eine Untergruppe von $\Cbb^\times$ ist.
+Ingesamt zeigt dies, dass $W_n(K)$ eine Untergruppe von $\Cbb^\times$ ist.
 
 \begin{bem}
- Da $x^n \neq 0$ für alle $x \neq 0$ und $0^n = 0$, sowie $(xy)^n = x^n y^n$ für alle $x,y \in k$, ist die Abbildung $p_n \colon \Cbb^\times \to \Cbb^\times$, $z \mapsto z^n$ ein Gruppenhomomorphismus. Daher folgt, dass
+ Da $x^n \neq 0$ für alle $x \neq 0$ und $(xy)^n = x^n y^n$ für alle $x,y \in K$ ist die Abbildung $p_n \colon \Cbb^\times \to \Cbb^\times$, $z \mapsto z^n$ ein Gruppenhomomorphismus. Daher folgt, dass
  \[
-  R_n(k)
-  = \{x \in k \mid x^n = 1\}
-  = \{x \in k^\times \mid x^n = 1\}
-  = \{x \in k^\times \mid p_n(x) = 1\}
+  W_n(K)
+  = \{x \in K \mid x^n = 1\}
+  = \{x \in K^\times \mid x^n = 1\}
+  = \{x \in K^\times \mid p_n(x) = 1\}
   = \ker(p_n)
  \]
  eine Untergruppe ist.
 \end{bem}
 
 
-Für $k = \Rbb$ ist beispielsweise
+Für $K = \Rbb$ ist beispielsweise
 \[
- R_n(\Rbb)
+ W_n(\Rbb)
  =
  \begin{cases}
   \{-1,1\} & \text{falls $n$ ungerade ist},\\
      \{1\} & \text{falls $n$ ungerade ist}.
  \end{cases}
 \]
-Für $k = \Cbb$ und $z \in R_n(\Cbb)$ ist $|z| \in \Rbb$ mit $|z| \geq 0$ und $|z|^n = |z^n| = |1| = 1$. Es muss also $|z| = 1$ und somit $z \in S^1$. Also ist $R_n(\Cbb)$ bereits eine Untergruppe von $S^1$.
+
+Für $K = \Cbb$ und $z \in W_n(\Cbb)$ ist $|z| \in \Rbb$ mit $|z| \geq 0$ und $|z|^n = |z^n| = |1| = 1$. Es muss also $|z| = 1$ und somit $z \in S^1$. Also ist $W_n(\Cbb)$ bereits eine Untergruppe von $S^1$. Es stellt sich heraus, dass $W_n(\Cbb)$ aus $n$ Elementen besteht, die gleichmäßig auf dem Einheitskreis $S^1$ verteilt sind.
+
+%TODO: Bild hinzufügen.
 
 
 
@@ -432,6 +451,7 @@ gibt.
 
 
 \subsection{Die symmetrische Gruppen \texorpdfstring{$S(X)$}{S(X)} und \texorpdfstring{$S_n$}{Sn}}
+
 Es sei $X$ eine beliebige Menge und $S(X) \coloneqq \{\sigma \colon X \to X \mid \text{$\sigma$ ist bijektiv}\}$. Für beliebige $\sigma_1, \sigma_2 \in S(X)$ ist auch $\sigma_1 \circ \sigma_2 \colon X \to X$ bijektiv, also $\sigma_1 \circ \sigma_2 \in S(X)$.
 
 Wir zeigen, dass $(S(X), \circ)$ eine Gruppe ist: Die Assoziativität von $\circ$ folgt direkt aus der allgemeinen Assoziativität der Funktionskomposition.
@@ -440,9 +460,11 @@ Für die Identitätsfunktion $\id_X \colon X \to X$, $x \mapsto x$ ist $\id_X \i
 
 Ist $\sigma \in S(X)$ so ist $\sigma$ bijektiv und somit invertierbar, d.h.\ es gibt eine (eindeutige) Abbildung $\sigma^{-1} \colon X \to X$ mit $\sigma \circ \sigma^{-1} = \sigma^{-1} \circ \sigma = \id_X$. Also sind $\sigma^{-1}$ und $\sigma$ invers zueinander bezüglich $\circ$.
 
-Insgesamt zeigt dies, dass $(S(X), \circ)$ eine Gruppe ist. Man nennt die Element $\sigma \in S(X)$ \emph{Permutationen} und $S(X)$ die \emph{symmetrische Gruppe von $X$}.
+Insgesamt zeigt dies, dass $(S(X), \circ)$ eine Gruppe ist.
 
-Für $n \in \Nbb$ schreibt man auch $S_n \coloneqq S(\{1, \dotsc, n\})$.
+\begin{defi}
+ Ist $X$ eine Menge, so heißt die Gruppe $(S(X), \circ)$ die \emph{symmetrische Gruppe von $X$}. Ein Element $\sigma \in S(X)$ heißt \emph{Permutation}. Für $n \in \Nbb$ ist $S_n \coloneqq S(\{1, \dotsc, n\})$.
+\end{defi}
 
 
 \begin{bem}
@@ -450,19 +472,26 @@ Für $n \in \Nbb$ schreibt man auch $S_n \coloneqq S(\{1, \dotsc, n\})$.
 \end{bem}
 
 
+%TODO: S_2 und S_3 explizit bestimmen, allgemein S_n
+
+
 
 \subsection{Normalisatoren \texorpdfstring{$N(Y)$}{N(Y)} und Zentralisatoren \texorpdfstring{$Z(Y)$}{Z(Y)}}
-Es sei $X$ eine Menge und $Y \subseteq X$ eine Teilmenge. Dann heißt
-\[
- N(Y) \coloneqq \{\sigma \in S(X) \mid \sigma(Y) = Y\}
-\]
-der \emph{Normalisator von $Y$} und
-\[
- Z(Y)
- \coloneqq
- \{\sigma \in S(X) \mid \text{$\sigma(y) = y$ für alle $y \in Y$}\}
-\]
-der \emph{Zentralisator von $Y$}.
+
+
+\begin{defi}
+ Es sei $X$ eine Menge und $Y \subseteq X$ eine Teilmenge. Dann heißt
+ \[
+  N(Y) \coloneqq \{\sigma \in S(X) \mid \sigma(Y) = Y\}
+ \]
+ der \emph{Normalisator von $Y$} und
+ \[
+  Z(Y)
+  \coloneqq
+  \{\sigma \in S(X) \mid \text{$\sigma(y) = y$ für alle $y \in Y$}\}
+ \]
+ der \emph{Zentralisator von $Y$}.
+\end{defi}
 
 Wir zeigen zunächst, dass $N(Y)$ eine Untergruppe von $S(X)$ ist: Da $\id_X(Y) = Y$ ist $\id_X \in N(Y)$. Sind $\sigma, \tau \in N(Y)$ so ist $\sigma(Y) = Y$ und $\tau(Y) = Y$. Daher ist
 \begin{align*}
@@ -521,24 +550,22 @@ also $\sigma \in N(Y)$. Wir haben also eine Kette von Untergruppen $Z(Y) \subset
 
 
 
-
 \section{Die allgemeine lineare Gruppe \texorpdfstring{$\GL_n(k)$}{GLnk} und Untergruppen}
-Es sei $k$ ein Körper (etwa $k \in \{\Qbb, \Rbb, \Cbb\}$) und $n \in \Nbb$, $n \geq 1$.
-
-
+Im Folgenden sei $K$ ein (beliebiger) Körper.
 
 \subsection{Die allgemeine lineare Gruppe \texorpdfstring{$\GL_n(k)$}{GLnk}}
+
 \begin{defi}
- Eine Matrix $S \in \Mat(n \times n, k)$ heißt \emph{invertierbar}, falls es eine Matrix $T \in \Mat(n \times n, k)$ gibt, so dass $ST = I_n = TS$. (Hier bezeichnet $I_n \in \Mat(n \times n, k)$ die Einheitsmatrix.)
+ Eine Matrix $S \in \Mat(n \times n, K)$ heißt \emph{invertierbar}, falls es eine Matrix $T \in \Mat(n \times n, K)$ gibt, so dass $ST = I_n = TS$. (Hier bezeichnet $I_n \in \Mat(n \times n, K)$ die Einheitsmatrix.)
  
- Es ist $\GL_n(k) \coloneqq \{S \in \Mat(n \times n, k) \mid \text{$S$ ist invertierbar}\}$.
+ Es ist $\GL_n(K) \coloneqq \{S \in \Mat(n \times n, K) \mid \text{$S$ ist invertierbar}\}$.
 \end{defi}
 
-Wir zeigen, dass $\GL_n(k)$ zusammen mit der üblichen Matrixmultiplikation eine Gruppe bildet:
+Wir zeigen, dass $\GL_n(K)$ zusammen mit der üblichen Matrixmultiplikation eine Gruppe bildet:
 
 Es ist bekannt, dass Matrixmultiplikation assoziativ ist.
 
-Sind $S_1, S_2 \in \GL_n(k)$ invertierbar, so gibt es $T_1, T_2 \in \Mat(n \times n, k)$ mit $S_1 T_1 = I_n$ und $S_2 T_2 = I_n$. Da
+Sind $S_1, S_2 \in \GL_n(K)$ invertierbar, so gibt es $T_1, T_2 \in \Mat(n \times n, K)$ mit $S_1 T_1 = I_n$ und $S_2 T_2 = I_n$. Da
 \[
  (S_1 S_2) (T_2 T_1)
  = S_1 S_2 T_2 T_1
@@ -546,18 +573,17 @@ Sind $S_1, S_2 \in \GL_n(k)$ invertierbar, so gibt es $T_1, T_2 \in \Mat(n \time
  = S_1 T_1
  = I_n
 \]
-ist auch $S_1 S_2$ invertierbar. Das zeigt, dass die Multiplikation $\GL_n(k) \times \GL_n(k) \to \GL_n(k)$, $(S_1, S_2) \mapsto S_1 S_2$ wohldefiniert ist.
+ist auch $S_1 S_2$ invertierbar. Das zeigt, dass die Multiplikation $\GL_n(K) \times \GL_n(K) \to \GL_n(K)$, $(S_1, S_2) \mapsto S_1 S_2$ wohldefiniert ist.
 
-Da $I_n I_n = I_n$ ist $I_n$ invertierbar, also $I_n \in \GL_n(k)$. Da $S I_n = I_n S = S$ für alle $S \in \Mat(n \times n, k)$, und somit insbesondere für alle $S \in \GL_n(k)$, ist $I_n$ neutral bezüglich der Matrixmultiplikation.
+Da $I_n I_n = I_n$ ist $I_n$ invertierbar, also $I_n \in \GL_n(K)$. Da $S I_n = I_n S = S$ für alle $S \in \Mat(n \times n, k)$, und somit insbesondere für alle $S \in \GL_n(K)$, ist $I_n$ neutral bezüglich der Matrixmultiplikation.
 
-Für jedes $S \in \GL_n(k)$ gibt es per Definition von $\GL_n(k)$ eine Matrix $T \in \Mat(n \times n, k)$ mit $ST = TS = I_n$. Aus diesen Gleichungen folgt, dass auch $T$ invertierbar ist, also $T \in \GL_n(k)$, und dass $T$ bezüglich der Matrixmultiplikation invers zu $S$ ist.
+Für jedes $S \in \GL_n(K)$ gibt es per Definition von $\GL_n(K)$ eine Matrix $T \in \Mat(n \times n, K)$ mit $ST = TS = I_n$. Aus diesen Gleichungen folgt, dass auch $T$ invertierbar ist, also $T \in \GL_n(K)$, und dass $T$ bezüglich der Matrixmultiplikation invers zu $S$ ist.
 
-Insgesamt zeigt dies, dass $\GL_n(k)$ zusammen mit der üblichen Matrixmultiplikation eine Gruppe bildet. Man bezeichnet diese als die \emph{allgemeine lineare Gruppe} (\textbf{G}eneral \textbf{L}inear group).
+Insgesamt zeigt dies, dass $\GL_n(K)$ zusammen mit der üblichen Matrixmultiplikation eine Gruppe bildet. Man bezeichnet diese als die \emph{allgemeine lineare Gruppe} (\textbf{G}eneral \textbf{L}inear group).
 
 
 
 \subsection{Die Diagonalmatrizen \texorpdfstring{$\D_n(k)$}{Dn(k)}}
-Es sei $K$ ein Körper und $n \in \Nbb$, $n \geq 1$.
 
 \begin{defi}
  Eine quadratische Matrix $D = (d_{ij})_{i,j = 1, \dotsc, n} \in \Mat(n \times n, K)$ heißt \emph{Diagonalmatrix}, falls $d_{ij} = 0$ für alle $1 \leq i \neq j \leq n$, d.h.\ wenn $D$ von der Form
@@ -584,14 +610,13 @@ Es sei $K$ ein Körper und $n \in \Nbb$, $n \geq 1$.
    0         & \cdots & 0      & \lambda_n.
   \end{pmatrix}
  \end{gather*}
-\end{defi}
-
-Es sei
+ Es sei
 \[
  D_n(k) \coloneqq \{D \in \GL_n(k) \mid \text{$D$ ist eine Diagonalmatrix}\}.
 \]
-Wir zeigen, dass $D_n(k)$ eine Untergruppe von $\GL_n(k)$ ist, und wie diese aussieht.
+\end{defi}
 
+Wir zeigen, dass $\D_n(k)$ zusammen mit der üblichen Matrixmultiplikation eine Gruppe bildet, indem wir zeigen, dass $\D_n(K)$ eine Untergruppe von $\GL_n(k)$ ist.
 
 Wir wollen zunächt verstehe, wie das Produkt von Diagonalmatrizen mit anderen Matrizen aussieht. Hierfür sei $D \in \Mat(n \times n, K)$ eine Diagonalmatrix, $A \in \Mat(m \times n, K)$ sowie $B \in \Mat(n \times m, K)$. Es seien $\lambda_1, \dotsc, \lambda_n \in K$ mit $D = \diag(\lambda_1, \dotsc, \lambda_n)$. Für alle $1 \leq i \leq m$ und $1 \leq j \leq n$ ist
 \[
@@ -668,11 +693,10 @@ Das zeigt, dass eine Diagonalmatrix $D = \diag(\lambda_1, \dotsc, \lambda_n)$ ge
 
 
 
-\subsection{Die orthogonale Gruppe \texorpdfstring{$\Ort_n(k)$}{On(k)}}
-Es sei $k$ ein Körper.
+\subsection{Die orthogonale Gruppe \texorpdfstring{$\Ort_n(K)$}{On(K)}}
 
 \begin{defi}
- Für $A \in \Mat(m \times n, k)$ ist das \emph{Transponierte von $A$} definiert als die Matrix $A^T \in \Mat(n \times m, k)$ mit $(A^T)_{ij} = A_{ij}$ für alle $1 \leq i \leq m$ und $1 \leq j \leq n$. Es ist also
+ Für $A \in \Mat(m \times n, K)$ ist das \emph{Transponierte von $A$} definiert als die Matrix $A^T \in \Mat(n \times m, K)$ mit $(A^T)_{ij} = A_{ij}$ für alle $1 \leq i \leq m$ und $1 \leq j \leq n$. Es ist also
  \[
   A^T
   =
@@ -696,7 +720,7 @@ Es sei $k$ ein Körper.
 \begin{bem}
  \begin{enumerate}[leftmargin=*]
   \item
-   Für $A \in \Mat(l \times m, k)$ und $B \in \Mat(m \times n, k)$ ist $(AB)^T = B^T A^T$, da für alle $1 \leq i \leq n$ und $1 \leq j \leq l$
+   Für $A \in \Mat(l \times m, K)$ und $B \in \Mat(m \times n, K)$ ist $(AB)^T = B^T A^T$, da für alle $1 \leq i \leq n$ und $1 \leq j \leq l$
    \[
     (B^T A^T)_{ij}
     = \sum_{p=1}^m (B^T)_{ip} (A^T)_{pj}
@@ -706,7 +730,7 @@ Es sei $k$ ein Körper.
     = ((AB)^T)_{ij}.
    \]
   \item
-   Für $S \in \GL_n(k)$ ist auch $S^T \in \GL_n(k)$, mit $(S^T)^{-1} = (S^{-1})^T$, da
+   Für $S \in \GL_n(K)$ ist auch $S^T \in \GL_n(K)$, mit $(S^T)^{-1} = (S^{-1})^T$, da
    \[
     S^T (S^{-1})^T = (S^{-1} S)^T = I_n^T = I_n
     \quad\text{und}\quad
