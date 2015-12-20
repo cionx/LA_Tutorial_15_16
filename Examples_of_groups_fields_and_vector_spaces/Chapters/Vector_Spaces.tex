@@ -218,8 +218,21 @@ Ist $V$ ein beliebiger $K$-Vektorraum, und sind $U_1, U_2 \subset V$ zwei Unterv
 
 
 \subsection{Aufsteigende Vereinigung von Untervektorräumen}
+Es sei $V$ ein $K$-Vektorraum und $\{U_n\}_{n \in \Nbb}$ eine Kollektion von Untervektorräumen mit $U_n \subseteq U_m$ falls $n \leq m$, d.h.\ wir haben eine aufsteigende Kette
+\[
+ U_0 \subseteq U_1 \subseteq U_2 \subseteq U_3 \subseteq U_4 \subseteq \dotsb \subseteq V
+\]
+von Untervektorräumen. Dann ist auch die Vereinigung $U \coloneqq \bigcup_{n \in \Nbb} U_n$ ein Untervektorraum:
 
-%TODO: Tippen
+Es ist $0 \in U_0 \subseteq U$. Sind $x,y \in U$ so gibt es $n_x, n_y \in \Nbb$ mit $x \in U_{n_x}$ und $y \in U_{n_y}$. Für $m \coloneqq \max\{n_x, n_y\}$ ist $U_{n_x}, U_{n_y} \subseteq U_m$ und somit auch $x,y \in U_m$. Damit ist auch $x+y \in U_m \subseteq U$, da $U_m$ ein Untervektorraum ist. Für alle $\lambda \in K$ ist außerdem $\lambda x \in U_{n_x} \subseteq U$, da $U_{n_x}$ ein Untervektorraum ist. Ingesamt zeigt dies, dass $U$ ein Untervektorraum von $V$ ist.
+
+
+\begin{bem}
+ Wie bereits in Bemerkung \ref{bem: increasing union of subgroups} über die aufsteigende Vereinigung von Untergruppen lässt sich hier $\Nbb$ durch eine total geordnete Menge, oder sogar durch eine gerichtete Menge ersetzen.
+\end{bem}
+
+
+
 
 
 \section{Die lineare Hülle einer Teilmenge}
@@ -262,7 +275,7 @@ Also ist auch $x \in \Ell(S)$. Ingesamt zeigt dies, dass $\Ell(S)$ ein Untervekt
 \begin{bem}\label{bem: span is the smallest vector space}
  $\Ell(S)$ ist der kleinste Untervektorraum, der $S$ enthält, d.h.\ ist $U \subseteq V$ ein Untervektorraum mit $S \subseteq U$, so ist auch $\Ell(S) \subseteq U$. Dies folgt direkt daraus, dass $U$ unter der Skalarmultiplikation und Addition von $V$ abgeschlossen ist.
  
- Für $\mc{U} \coloneqq \{U \subseteq V \mid \text{$U$ ist ein Untervektorraum mit $S \subseteq U$}\}$ ist auch $W \coloneqq \bigcap_{U \in \mc{U}} U$ ein Untervektorraum von $V$, da Schnitte von Untervektorräumen wieder Untervektorräume sind. Da $S \subseteq U$ für alle $U \in \mc{U}$ ist auch $S \subseteq \bigcap_{U \in \mc{U}} U = W$. Ist $U \subseteq V$ ein beliebiger Untervektorräum mit $S \subseteq U$ so ist $U \in \mc{U}$ und somit $W = \bigcap_{U' \in \mc{U}} U' = W$. Also ist auch $W$ der kleinste Untervektorraum von $V$, der $S$ enthält.
+ Für $\mc{U} \coloneqq \{U \subseteq V \mid \text{$U$ ist ein Untervektorraum mit $S \subseteq U$}\}$ ist auch $W \coloneqq \bigcap_{U \in \mc{U}} U$ ein Untervektorraum von $V$, da Schnitte von Untervektorräumen wieder Untervektorräume sind. Da $S \subseteq U$ für alle $U \in \mc{U}$ ist auch $S \subseteq \bigcap_{U \in \mc{U}} U = W$. Ist $U \subseteq V$ ein beliebiger Untervektorraum mit $S \subseteq U$ so ist $U \in \mc{U}$ und somit $W = \bigcap_{U' \in \mc{U}} U' = W$. Also ist auch $W$ der kleinste Untervektorraum von $V$, der $S$ enthält.
  
  Es ist daher $\Ell(S) = W = \bigcap_{U \in \mc{U}} U$. (Da $\Ell(S)$ der kleinste Untervektorraum von $V$ ist, der $S$ enthält, und $W$ ein Untervektorraum ist, der $S$ enthält, ist $\Ell(S) \subseteq W$. Da $W$ der kleinste Untervektorraum ist, der $S$ enthält, und auch $\Ell(S)$ ein Untervektorraum ist, der $S$ enthält, ist auch $W \subseteq \Ell(S)$. Also ist bereits $\Ell(S) = W$.)
 \end{bem}
