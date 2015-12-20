@@ -694,7 +694,6 @@ ist nun $\dl_n(K) = M_{\mc{I}_1}$, $\bl^+_n(K) = M_{\mc{I}_2}$, $\bl^-_n(K) = M_
 
 
 
-
 \subsection{Die (schief)symmetrischen Matrizen}
 
 
@@ -956,7 +955,84 @@ also auch $A+B \in \Alt_n(K)$ und $\lambda A \in \Alt_n(K)$. Das zeigt, dass $\A
 
 
 \subsection{Die spurlosen Matrizen \texorpdfstring{$\sll_n(K)$}{sln(K)}}
-%TODO: Tippen
+\begin{defi}
+ Die \emph{Spur} (engl.\ \emph{trace}) einer quadratischen Matrix $A \in \Mat(n \times n, K)$ ist die Summe ihrer Diagonaleinträge, d.h.\
+ \[
+  \spur(A)
+  =
+  \spur \left(
+   \begin{pmatrix}
+    A_{11} & \cdots & A_{1n} \\
+    \vdots & \ddots & \vdots \\
+    A_{n1} & \cdots & A_{nn}
+   \end{pmatrix}
+  \right)
+  = A_{11} + \dotsb + A_{nn}.
+ \]
+ Die Matrix $A$ heißt \emph{spurlos}, falls $\spur(A) = 0$. Es ist
+ \[
+  \sll_n(K) = \{A \in \Mat(n \times n, K) \mid \text{$A$ ist spurlos}\}.
+ \]
+\end{defi}
+
+Wir zeigen, dass $\sll_n(K)$ ein Untervektorraum von $\Mat(n \times n, K)$ ist: Als Abbildung $\spur \colon \Mat(n \times n, K) \to K$ ist die Spur linear, denn für alle $\lambda \in K$ und $A, B \in \Mat(n \times n, K)$ ist
+\begin{gather*}
+ \begin{aligned}
+  \spur(A+B)
+  &= \sum_{i=1}^n (A+B)_{ii}
+  = \sum_{i=1}^n (A_{ii} + B_{ii})
+  = \sum_{i=1}^n A_{ii} + \sum_{i=1}^n B_{ii} \\
+  &= \spur(A) + \spur(B)
+ \end{aligned}
+\shortintertext{und}
+ \spur(\lambda A)
+ = \sum_{i=1}^n (\lambda A)_{ii}
+ = \sum_{i=1}^n \lambda A_{ii}
+ = \lambda \sum_{i=1}^n A_{ii}
+ = \lambda \spur(A).
+\end{gather*}
+Da $\sll_n(K) = \ker(\spur)$ ist $\sll_n(K)$ somit ein Untervektorraum.
+
+\begin{bem}
+ \begin{enumerate}[leftmargin=*]
+  \item
+   Für $A, B \in \Mat(n \times n, K)$ ist
+   \begin{align*}
+    \spur(AB)
+    &= \sum_{i=1}^n (AB)_{ii}
+    = \sum_{i=1}^n \sum_{j=1}^n A_{ij} B_{ji}
+    = \sum_{j=1}^n \sum_{i=1}^n B_{ji} A_{ij}
+    = \sum_{j=1}^n (BA)_{jj} \\
+    &= \spur(BA).
+   \end{align*}
+   Hierdurch ist die Spur als lineare Abbildung bis auf skalares Vielfaches eindeutig bestimmt, d.h.\ ist $\varphi \colon \Mat(n \times n, K) \to K$ eine lineare Abbildung mit $\varphi(AB) = \varphi(BA)$ für alle $A,B \in \Mat(n \times n, K)$, so gibt es einen eindeutigen Skalar $\lambda \in K$ mit $\varphi = \lambda\, \spur$.
+  \item
+   Dass $\spur(AB) = \spur(BA)$ für alle $A,B \in \Mat(n \times n, K)$ ist wegen der Linearität der Spur äquivalent dazu, dass $\spur(AB-BA) = 0$ für alle $A,B \in \Mat(n \times n, K)$. Also ist $AB - BA \in \sll_n(K)$ für alle $A,B \in \Mat(n \times n, K)$. Es lässt sich zeigen, dass sogar
+   \[
+    \sll_n(K) = \Ell(\{AB-BA \mid A, B \in \Mat(n \times n, K)\}),
+   \]
+   wobei $\Ell$ die linear Hülle bezeichnet.
+  \item
+   Als lineare Abbildung $\spur \colon \Mat(n \times n, K) \to K$ ist die Spur surjektiv, denn für alle $\lambda \in K$ ist $\lambda = \spur(\diag(\lambda, 0, \dotsc, 0))$. Daher ist
+   \begin{align*}
+    \dim(\sll_n(K))
+    &= \dim(\ker(\spur))
+    = \dim(\Mat(n \times n, K)) - \dim(\im(\spur)) \\
+    &= \dim(\Mat(n \times n, K)) - \dim(K)
+    = n^2 - 1.
+   \end{align*}
+   Bezeichnet $E_{ij} \in \Mat(n \times n, K)$ für $1 \leq i,j \leq n$ die Matrix mit
+   \[
+    (E_{ij})_{kl}
+    =
+    \begin{cases}
+     1 & \text{falls $(k,l) = (i,j)$}, \\
+     0 & \text{sonst},
+    \end{cases}
+   \]
+   so ist $\{E_{ij} \mid 1 \leq i \neq j \leq n\} \cup \{E_{ii} - E_{i+1,i+1} \mid i \in \{1, \dotsc, n-1\}\}$ eine Basis von $\sll_n(K)$.
+ \end{enumerate}
+\end{bem}
 
 
 
