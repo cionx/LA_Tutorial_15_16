@@ -203,10 +203,23 @@ da $U$ ein Untervektorraum ist. Also ist $f^{-1}(U)$ ein Untervektorraum.
 
 
 \section{Schnitte und Vereinigungen von Untervektorräumen}
+
+
+\subsection{Schnitte von Untervektorräumen}
+Es sei $V$ ein $K$-Vektorraum und $\{U_i\}_{i \in I}$ eine Kollektion von Untervektorräumen, d.h.\ für jedes $i \in I$ ist $U_i \subseteq V$ ein Untervektorraum. Wir zeigen, dass dann auch der Schnitt $U \coloneqq \bigcap_{i \in I} U_i$ ein Untervektorraum von $V$ ist:
+
+Für alle $i \in I$ ist $U_i$ ein Untervektorraum, und somit $0 \in U_i$. Deshalb ist auch $0 \in U$. Sind $x,y \in U$, so ist $x,y \in U_i$ für alle $i \in I$. Für jedes $i \in I$ ist $U_i$ ein Untervektorraum und deshalb auch $x+y \in U_i$. Also ist auch $x+y \in U$. Ist außerdem $\lambda \in K$, so ist daher auch $\lambda x \in U_i$ für alle $i \in I$ und somit $\lambda x \in U$. Insgesamt zeigt dies, dass $U = \bigcap_{i \in I} U_i$ ein Untervektorraum von $V$ ist.
+
+
+\subsection{Vereinigungen von Untervektorräumen}
+Die beliebige Vereinigung von Untervektorräumen ist im Allgemeinen kein Untervektorraum. Für einen Körper $K$ sind beispielsweise $U_1, U_2 \subseteq K^2$ mit $U_1 = \{(x,0) \mid x \in K\}$ und $U_2 = \{(0,y) \mid y \in K\}$ zwei Untervektorräume, deren Vereinigung $U \coloneqq U_1 \cup U_2$ kein Untervektorraum ist, da $(1,0), (0,1) \in U$ aber $(1,0)+(0,1) = (1,1) \notin U$.
+
+Ist $V$ ein beliebiger $K$-Vektorraum, und sind $U_1, U_2 \subset V$ zwei Untervektorräume, so ist die Vereinigung $U_1 \cup U_2$ genau dann ein Untervektorraum, wenn $U_1 \subseteq U_2$ oder $U_2 \subseteq U_1$: Es sind nämlich $U_1$ und $U_2$ Untergruppen der unterliegenden abelschen Gruppe von $V$, und ist $U_1 \cup U_2$ ebenfalls ein Untervektorraum von $V$, so ist dann auch $U_1 \cup U_2$ eine Untergruppe der unterliegenden abelschen Gruppe von $V$. Wie bereits in \ref{ssec: union of subgroups} gesehen, muss daher $U_1 \subseteq U_2$ oder $U_2 \subseteq U_1$.
+
+
+\subsection{Aufsteigende Vereinigung von Untervektorräumen}
+
 %TODO: Tippen
-
-
-
 
 
 \section{Die lineare Hülle einer Teilmenge}
