@@ -644,7 +644,7 @@ Ist $K$ eine Körper, so ist die Abbildung $\varphi_K \colon \Zbb \to K$, $n \ma
 \begin{bem}
  \begin{enumerate}[leftmargin=*]
   \item
-   Ist $L$ ein Körper und $K \subseteq L$ ein Unterkörper, so ist $\ker(\varphi_L) = \ker(\varphi_K)$ und somit $\kchar(K) = \kchar(L)$.
+   Für einen Körper $L$ und Unterkörper $K \subseteq L$ ist $\ker(\varphi_L) = \ker(\varphi_K)$ und somit $\kchar(K) = \kchar(L)$.
   \item
    Ist $K$ ein Körper so ist entweder $\kchar(K) = 0$, oder $\kchar(K) > 0$ eine Primzahl. Ist nämlich $n \coloneqq \kchar(K) \neq 0$, so ist $n \cdot 1 = 0$. Ist $n$ keine Primzahl, so gibt es $a, b \in \Nbb$ mit $0 < a,b < n$ und $a \cdot b = n$. Da
    \[
@@ -920,6 +920,8 @@ Insbesondere wäre somit $DS \neq I_n$ für alle $S \in \GL_n(K)$, was im Widers
 Das zeigt, dass eine Diagonalmatrix $D = \diag(\lambda_1, \dotsc, \lambda_n)$ genau dann invertierbar ist, wenn $\lambda_i \neq 0$ für alle $1 \leq i \leq n$, und dann $D^{-1} = \diag(\lambda_1^{-1}, \dotsc, \lambda_n^{-1})$ ebenfalls eine Diagonalmatrix ist. Also ist $\D_n(k)$ ein Untergruppe von $\GL_n(k)$.
 
 
+\subsection{Skalarmatrizen}
+%TODO: Tippen
 
 
 
@@ -1123,7 +1125,7 @@ Insgesamt zeigt dies, dass $\SOrt(2)$ zusammen mit der üblichen Matrixmultiplik
 \begin{bem}
  \begin{enumerate}[leftmargin=*]
   \item
-   Wie der Name bereits vermuten lässt, ist die spezielle orthogonale Gruppe eine Untergruppe der orthogonalen Gruppe, d.h.\ $\SOrt(2) \subseteq \Ort(2)$. Dies folgt daraus, dass für alle $\varphi \in \Rbb$
+   Wie der Name bereits andeutet, ist die spezielle orthogonale Gruppe eine Untergruppe der orthogonalen Gruppe, d.h.\ $\SOrt(2) \subseteq \Ort(2)$. Dies folgt daraus, dass für alle $\varphi \in \Rbb$
    \begin{align*}
     D_\varphi^T D_\varphi
     &=
@@ -1259,6 +1261,25 @@ also ist $[0]$ das neutrale Element bezüglich $+$. Für jedes $k \in \Zbb$ ist
  [k] + [-k] = [k+(-k)] = [k-k] = [0],
 \]
 also ist $[-k]$ invers zu $[k]$ bezüglich $+$. Ingesamt zeigt dies, dass $\Zbb/n\Zbb$ zusammen mit der Addition $+$ aus \eqref{eqn: addition on residue classes} eine abelsche Gruppe bildet.
+
+
+\begin{bem}\label{bem: rules for ZnZ}
+ Für alle $n \in \Zbb$ ist $n \cdot [k] = [n \cdot k]$ für alle $k \in \Zbb$: Für $n \geq 0$ ist nämlich
+ \[
+  n \cdot [k]
+  = \sum_{i=1}^n [k]
+  = \left[ \sum_{i=1}^n k \right]
+  = [n \cdot k],
+ \]
+ und für $n \leq 0$ ist somit
+ \[
+  n \cdot [k]
+  = - ((-n) \cdot [k])
+  = - [(-n) \cdot k]
+  = [- (-n) \cdot k]
+  = [n \cdot k].
+ \]
+\end{bem}
 
 
 
@@ -1425,8 +1446,123 @@ weshalb $[-x]$ invers zu $[x]$ bezüglich $+$ ist. Ingesamt zeigt dies, dass $(A
 \section{Automorphismengruppen}
 
 
-\subsection{Automorphismengruppen von Gruppen}
-% TODO: Tippen
+\subsection{Automorphismengruppe einer Gruppe}
+\begin{defi}
+ Ist $G$ ein Gruppe, so heißt
+ \[
+  \Aut(G) \coloneqq \{\varphi \colon G \to G \mid \text{$\varphi$ ist ein Gruppenautomorphismus}\}
+ \]
+ die \emph{Automorphismengruppe von $G$}.
+\end{defi}
+
+Es sei $G$ eine Gruppe. Wir zeigen, dass $\Aut(G)$ zusammen mit der Funktionskomposition eine Gruppe bildet, indem wir zeigen, dass $\Aut(G) \subseteq S(G)$ eine Untergruppe ist:
+
+Da die Identität $\id_G \colon G \to G$ ein Gruppenautomorphismus ist, ist $\id_G \in \Aut(G)$. Sind $\varphi, \psi \in \Aut(G)$, also $\varphi$ und $\psi$ bijektiv und Gruppenhomomorphismen, so ist auch die Verknüpfung $\varphi \circ \psi \colon G \to G$ bijektiv und ein Gruppenhomomorphismus, also $\varphi \circ \psi$ ein Gruppenautomorphismus, und somit $\varphi \circ \psi \in \Aut(G)$. Ist $\varphi \in \Aut(G)$, also $\varphi \colon G \to G$ ein Gruppenisomorphismus, so ist auch $\varphi^{-1} \colon G \to G$ ein Gruppenisomorphismus, und somit $\varphi^{-1} \in \Aut(G)$.
+
+Ingesamt zeigt dies, dass $\Aut(G) \subset S(G)$ eine Untergruppe ist.
+
+\begin{bsp}
+ Ist $G$ eine zweielementige Gruppe, so gibt es einen eindeutigen Isomorphismus $G \to G$; dieser ist notwendigerweise die Identität $\id_G$. Also ist $\Aut(G) = \{\id_G\}$ die triviale Gruppe.
+\end{bsp}
+
+\begin{bsp}
+ Wir bestimmen $\Aut(\Zbb)$. Wir wissen bereits, dass $\id_{\Zbb} \colon \Zbb \to \Zbb$ ein Gruppenautomorphismus ist. Auch $i \colon \Zbb \to \Zbb$, $n \mapsto -n$ ist ein Gruppenautomorphismus; da $i^2 = \id_\Zbb$ ist $i$ bijektiv mit $i^{-1} = i$, und da
+ \[
+  i(x+y)
+  = -(x+y)
+  = (-x) + (-y)
+  = i(x) + i(y)
+  \quad
+  \text{für alle $x,y \in \Zbb$}
+ \]
+ ist $i$ ein Gruppenhomomorphismus.
+ 
+ Es sei nun $\varphi \colon \Zbb \to \Zbb$ ein beliebiger Gruppenhomomorphismus und $m \coloneqq \varphi(n)$. Für alle $n \in \Zbb$ ist dann
+ \[
+  \varphi(n)
+  = \varphi(n \cdot 1)
+  = n \cdot \varphi(1)
+  = n \cdot m,
+ \]
+ also ist $\varphi$ durch Multiplikation mit $m$ gegeben. Inbesonder ist deshalb $\im(\varphi) = n\Zbb$. Damit $\varphi$ surjektiv ist, muss also $m \in \{1,+1\}$. Ist $m = 1$, so zeigt die obige Rechnung, dass $\varphi = \id_\Zbb$. Ist $m = -1$, so zeigt die obige Rechnung, dass $\varphi = i$.
+ 
+ Das zeigt, dass $\id_\Zbb$ und $i$ die einzigen surjektiven Gruppenhomomorphismen $\Zbb \to \Zbb$ sind. Inbesondere sind damit $\id_\Zbb$ und $i$ die einzigen Gruppenautomorphismen von $\Zbb$. Also ist $\Aut(\Zbb) = \{\id_\Zbb, i\}$ mit $i^2 = \id_\Zbb$. Es handelt sich bei $\Aut(\Zbb)$ also um die zweielementige Gruppe.
+\end{bsp}
+
+
+\begin{bsp}
+ Es sei $p > 0$. Wir untersuchen die Automorphismengruppe von $\Zbb/p\Zbb$. Hierfür klassifizieren wir zunächst alle Gruppenendomorphismen $\Zbb/p\Zbb \to \Zbb/p\Zbb$.
+   
+ Für jedes $m \in \{0, 1, \dotsc, p-1\} \subseteq \Nbb$ sei $\varphi_m \colon \Zbb/p\Zbb \to \Zbb/p\Zbb$, $x \mapsto m \cdot x$. Für jedes $m \in \{0, \dotsc, p-1\}$ ist $\varphi_m$ ein Gruppenhomomorphismus, da
+ \begin{align*}
+  \varphi_m([k] + [l])
+  &= m \cdot [k+l]
+  = [m \cdot (k+l)]
+  = [m \cdot k + m \cdot l] \\
+  &= [m \cdot k] + [m \cdot l]
+  = m \cdot [k] + m \cdot [l]
+  = \varphi_m([k]) + \varphi_m([l])
+ \end{align*}
+ für alle $k,l \in \Zbb$. (Siehe Bemerkung \ref{bem: rules for ZnZ} für die entsprechenden Rechenregeln.) Sind außerdem $m_1, m_2 \in \{0, \dotsc, p-1\}$ mit $\varphi_{m_1} = \varphi_{m_2}$, so ist
+ \[
+  [m_1]
+  = m_1 \cdot [1]
+  = \varphi_{m_1}([1])
+  = \varphi_{m_2}([1])
+  = m_2 \cdot [1]
+  = [m_2]
+ \]
+ und deshalb $m_1 = m_2$. Also sind die Gruppenhomomorphismen $\varphi_0, \dotsc, \varphi_m$ paarweise verschieden.
+ 
+ Ist $\psi \colon \Zbb/p\Zbb \to \Zbb/p\Zbb$ ein Gruppenhomomorphismus und \mbox{$m \in \{0, \dotsc, p-1\} \subseteq \Nbb$} mit $\psi([1]) = [m]$, so ist für alle $k \in \{0, \dotsc, p-1\}$
+ \begin{align*}
+  \psi([k])
+  = \psi(k \cdot [1])
+  = k \cdot \psi([1])
+  = k \cdot [m]
+  = [k \cdot m]
+  = [m \cdot k]
+  = m \cdot [k]
+  = \varphi_m([k]).
+ \end{align*}
+ Also ist $\psi = \varphi_m$.
+ 
+ Die Abbildung
+ \begin{align*}
+  \{0, \dotsc, p-1\}
+  &\to
+  \{\psi \colon \Zbb/p\Zbb \to \Zbb/p\Zbb \mid \text{$\psi$ ist ein Gruppenhomomorphismus}\}, \\
+  m &\mapsto \varphi_m
+ \end{align*}
+ ist nach den obigen Diskussionen sowohl injektiv als auch surjektiv, also eine Bijektion. Es gilt also zu bestimmen, für welche $m \in \{0, \dotsc, m-1\}$ der Gruppenhomomorphismus $\varphi_m$ bijektiv ist.
+ 
+ Da $\varphi_0([k]) = 0 \cdot [k] = 0$ für alle $k \in \Zbb$ ist $\varphi_0$ weder injektiv noch surjektiv und somit nicht invertierbar. Ist $m \in \{1, \dotsc, p-1\}$, so sind $m$ und $p$ teilerfremd. Deshalb gibt es dann $a,b \in \Zbb$ mit $a m + b p = 1$. Somit ist
+ \[
+  \varphi_m([a])
+  = m \cdot [a]
+  = [m \cdot a]
+  = [a m + b p]
+  = [1].
+ \]
+ Für alle $k \in \{0, \dotsc, p-1\}$ ist deshalb
+ \[
+  \varphi_m([ka])
+  = m \cdot [ka]
+  = [m k a]
+  = k [m \cdot a]
+  = k \cdot [1]
+  = [k].
+ \]
+ Also ist $\varphi_m$ injektiv. Da $\Zbb/p\Zbb$ endlich ist, ist $\varphi_m$ damit bereits bijektiv.
+ 
+ Damit haben wir gezeigt, dass
+ \[
+  \Aut(\Zbb/p\Zbb) =  \{\varphi_m \mid \{1, \dotsc, p-1\}\},
+ \]
+ wobei die Gruppenautomorphismen $\varphi_m$ mit $m \in \{1, \dotsc, p-1\}$ paarweis verschieden sind und $\varphi_1 = \id_{\Zbb/p\Zbb}$. Es lässt sich zeigen, dass $\Aut(\Zbb/p\Zbb)$ bereits isomorph zu $\Zbb/(p-1)\Zbb$ ist.
+\end{bsp}
+
+
 
 
 \subsection{Automorphismengruppen von Körper}
@@ -1446,11 +1582,28 @@ weshalb $[-x]$ invers zu $[x]$ bezüglich $+$ ist. Ingesamt zeigt dies, dass $(A
 %TODO: Tippen
 
 
-
-
-
 \section{Einheitengruppen}
+
+
+\subsection{Einheitengruppe eines Monoids}
 %TODO: Tippen
+
+
+\subsection{Einheitengruppe eines Rings}
+%TODO: Tippen
+
+
+
+
+
+\section{Das Zentrum einer Gruppe}
+\begin{defi}
+ Das \emph{Zentrum} einer Gruppe $G$ ist
+ \[
+  Z(G) \coloneqq \{g \in G \mid \text{$gh = hg$ für alle $h \in G$}\}.
+ \]
+\end{defi}
+
 
 
 

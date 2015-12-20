@@ -152,6 +152,23 @@
    \]
    und $\varphi(g^{-1})$ somit das inverse Element zu $\varphi(g)$ ist.
   \item
+   Sind $G$ und $H$ Gruppen und ist $\varphi \colon G \to H$ ein Gruppenhomomorphismus, so ist allgemeiner $\varphi(g^n) = \varphi(g)^n$ für alle $n \in \Zbb$. Für $n \geq 0$ ist nämlich
+   \[
+    \varphi(g^n)
+    = \varphi(g \dotsm g)
+    = \varphi(g) \dotsm \varphi(g)
+    = \varphi(g)^n,
+   \]
+   und für $n \leq 0$ ist deshalb ebenfalls
+   \[
+    \varphi(g^n)
+    = \varphi\left( \left(g^{-1}\right)^{-n} \right)
+    = \varphi\left( g^{-1} \right)^{-n}
+    = \left( \varphi(g)^{-1} \right)^{-n}
+    = \varphi(g)^n.
+   \]
+
+  \item
    Sind $G$ und $H$ Gruppen und ist $\varphi \colon G \to H$ ein Gruppenisomorphismus (also ein Gruppenhomomorphismus und bijektiv), so ist auch $\varphi^{-1} \colon H \to G$ ein Gruppenisomorphismus, da für alle $x,y \in H$
    \begin{align*}
     \varphi^{-1}(x \cdot y)
@@ -583,7 +600,7 @@
 
 
 \begin{bem}
- Analog zu Bemerkung \ref{bem: groups being isomorphis is an equivalence relationship} lässt sich auch die Isomorphie von $K$-Vektorräumen als Äquivalenzrelation auffassen.
+ Analog zu Bemerkung \ref{bem: groups being isomorphis is an equivalence relationship} lässt sich auch die Isomorphie von $K$-Vek\-tor\-räu\-men als Äquivalenzrelation auffassen.
 \end{bem}
 
 

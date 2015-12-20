@@ -28,13 +28,16 @@
 % \setsansfont[Mapping=tex-text]{DejaVu Sans}
 % \setmonofont[Mapping=tex-text]{DejaVu Sans Mono}
 
-\newcounter{everything}
+\newcounter{everything}[chapter]
 \newtheorem{defi}[everything]{Definition}
 \newtheorem*{beh}{Behauptung}
 
 \theoremstyle{definition}
 \newtheorem{bem}[everything]{Bemerkung}
 \newtheorem*{bsp}{Beispiel(e)}
+
+% counters and such
+\renewcommand{\theeverything}{\arabic{chapter}.\arabic{everything}}
 
 \newcommand{\mc}[1]{\mathcal{#1}}
 \newcommand{\symm}{\ensuremath{\bigtriangleup}}
@@ -48,6 +51,7 @@
 \newcommand{\Kbb}{\ensuremath{\mathbb{K}}}
 
 \newcommand{\Abb}{\ensuremath{\mathrm{Abb}}}
+\newcommand{\Aut}{\ensuremath{\mathrm{Aut}}}
 \newcommand{\Alt}{\ensuremath{\mathrm{Alt}}}
 \newcommand{\D}{\ensuremath{\mathrm{D}}}
 \newcommand{\GL}{\ensuremath{\mathrm{GL}}}
