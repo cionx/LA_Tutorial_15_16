@@ -1522,7 +1522,7 @@ und somit auch $g^{-1} \in Z(G)$. Insgesamt zeigt dies, dass $Z(G)$ eine Untergr
 \section{Automorphismengruppen}
 
 
-\subsection{Automorphismengruppe einer Gruppe}
+\subsection{Automorphismengruppe einer Gruppe}\label{ssec: automorphism group of a group}
 \begin{defi}
  Ist $G$ ein Gruppe, so heißt
  \[
@@ -1654,7 +1654,7 @@ Ingesamt zeigt dies, dass $\Aut(G) \subset S(G)$ eine Untergruppe ist.
 %TODO: Tippen
 
 
-\subsection{Innere Automorphismen einer Gruppe}
+\subsection{Innere Automorphismen einer Gruppe}\label{ssec: inner automorphisms}
 \begin{defi}
  Es sei $G$ eine Gruppe. Für $\alpha \in G$ sei
  \begin{gather*}
@@ -2026,7 +2026,7 @@ Ingesamt zeigt dies, dass $\pwr(X)$ bezüglich $\symm$ eine abelsche Gruppe bild
 
 
 
-\section{Das semidirekte Produkt \texorpdfstring{$\Zbb \rtimes \Zbb$}{ZxZ}}
+\section{Das semidirekte Produkt \texorpdfstring{$\Zbb \rtimes \Zbb$}{ZxZ}}\label{sec: semidirect product ZxZ}
 Wir definieren auf der Menge $\Zbb \rtimes \Zbb \coloneqq \{(n,m) \mid n,m \in \Zbb\}$ eine Verknüpfung $*$ durch
 \[
  (n_1, m_1) * (n_2, m_2)
@@ -2077,7 +2077,201 @@ Man bezeichnet die Gruppe $\Zbb \rtimes \Zbb$ als das \emph{semidirekte Produkt}
 \section{Ausblick: Semidirekte Produkte}
 Als Verallgemeinerung des vorherigen Beispiels geben wir hier die allgemeine Konstruktion von semidirekten Produkten an:
 
-%TODO: Tippen
+Es seien $G$ und $H$ zwei Gruppen und $\theta \colon H \to \Aut(G)$ ein Gruppenhomomorphismus. (Hier bezeichnet $\Aut(G)$ die Automorphismengruppe von $G$, siehe \ref{ssec: automorphism group of a group}.) Auf der Menge $G \times H = \{(g,h) \mid g \in G, h \in H\}$ definieren wir eine binäre Verknüpfung durch
+\[
+ (g_1, h_1) \cdot (g_2, h_2)
+ = (g_1 \theta(h_1)(g_2), h_1 h_2).
+\]
+Wir zeigen, dass $G \rtimes_\theta H$ zusammen mit dieser Verknüpfung eine Gruppe bildet: Hierfür bemerken wir zunächst, dass für alle $h, h' \in H$ und $g \in G$
+\[
+ \theta(h)(\theta(h')(g))
+ = (\theta(h) \circ \theta(h'))(g)
+ = \theta(h h')(g),
+\]
+da $\theta$ ein Gruppenhomomorphismus ist. Für alle $(g_1, h_1), (g_2, h_2), (g_3, h_3) \in G \times H$ ist daher
+\begin{align*}
+  &\, (g_1,h_1) \cdot ((g_2,h_2) \cdot (g_3,h_3))
+ =    (g_1,h_1) \cdot (g_2 \theta(h_2)(g_3), h_2 h_3) \\
+ =&\, (g_1 \theta(h_1)(g_2 \theta(h_2)(g_3)), h_1 h_2 h_3)
+ =    (g_1 \theta(h_1)(g_2) \theta(h_1)(\theta(h_2)(g_3)) \\
+ =&\, (g_1 \theta(h_1)(g_2) \theta(h_1 h_2)(g_3), h_1 h_2 h_3)
+ =    (g_1 \theta(h_1)(g_2), h_1 h_2) \cdot (g_3,h_3) \\
+ =&\, ((g_1,h_1) \cdot (g_2,h_2)) \cdot (g_3,h_3),
+\end{align*}
+was die Assoziativität von $\cdot$ zeigt.
+
+Für alle $h \in H$ ist $\theta(h)$ ein Gruppenhomomorphismus, und somit $\theta(h)(1) = 1$; außerdem ist $\theta(1) = \id_G$. Für alle $(g,h) \in G \times H$ ist deshalb
+\begin{gather*}
+ (g,h) \cdot (1,1)
+ = (g \theta(h)(1), h \cdot 1)
+ = (g \cdot 1, h \cdot 1)
+ = (g,h)
+\shortintertext{und}
+ (1,1) \cdot (g,h)
+ = (1 \cdot \theta(1)(g), 1 \cdot h)
+ = (1 \cdot g, 1 \cdot h)
+ = (g,h).
+\end{gather*}
+Also ist $(1,1)$ neutral bezüglich $\cdot$.
+
+Für alle $h \in H$ ist $\theta(h^{-1}) = \theta(h)^{-1}$, da $\theta$ ein Gruppenhomomorphismus ist, sowie $\theta(h)(g^{-1}) = \theta(h)(g)^{-1}$ für alle $g \in G$, da $\theta(h)$ ein Gruppenhomomorphismus ist. Für alle $(g,h) \in G \times H$ ist deshalb
+\begin{gather*}
+ \begin{aligned}
+   &\, (g,h) \cdot (\theta(h^{-1})(g^{-1}), h^{-1})
+  =    (g \theta(h)(\theta(h^{-1})(g^{-1})), h h^{-1}) \\
+  =&\, (g \theta(h)(\theta(h)^{-1}(g^{-1})), h h^{-1})
+  = (g g^{-1}, h h^{-1})
+  = (1,1)
+ \end{aligned}
+ \shortintertext{und}
+ \begin{aligned}
+  (\theta(h^{-1})(g^{-1}), h^{-1}) \cdot (g,h)
+  &= (\theta(h^{-1})(g^{-1}) \theta(h^{-1})(g), h^{-1} h) \\
+  &= (\theta(h^{-1})(g)^{-1} \theta(h^{-1})(g), h^{-1} h)
+  = (1,1).
+ \end{aligned}
+\end{gather*}
+Also ist $(\theta(h^{-1})(g^{-1}), h^{-1})$ invers zu $(g,h)$ bezüglich $\cdot$.
+
+Ingesamt zeigt dies, dass die Menge $G \times H$ zusammen mit der Verknüpfung $\cdot$ eine Gruppe bildet. Man bemerke, dass die Multiplikation $\cdot$ von dem Gruppenhomomorphismus $\cdot$ abhängt.
+
+\begin{defi}
+ Es seien $G$ und $H$ Gruppen und $\theta \colon H \to G$ ein Gruppenhomomorphismus. Dann sei die binäre Verknüpfung $\cdot_\theta$ auf $G \times H$ definiert als
+ \[
+  (g_1, h_1) \cdot_\theta (g_2, h_2)
+  = (g_1 \theta(h_1)(g_2), h_1 h_2)
+  \quad
+  \text{für alle $(g_1, h_1), (g_2, h_2) \in G \times H$}.
+ \]
+ Die Gruppe $(G \times H, \cdot_\theta)$. Bezeichnet man als ein \emph{semidirektes Produkt} der Gruppen $G$ und $H$, und schreibt dieses als $G \rtimes_\theta H$.
+\end{defi}
+
+\begin{bsp}
+ \begin{enumerate}[leftmargin=*]
+  \item
+   Sind $G$ und $H$ Gruppen und ist $\theta \colon H \to \Aut(G)$ der triviale Gruppenhomomorphismus, d.h.\ $\theta(h) = \id_G$ für alle $h \in H$, so ist die Multiplikation auf $G \rtimes_\theta H$ für alle $(g_1, h_1), (g_2, h_2) \in G \rtimes_\theta H$ gegeben durch
+   \[
+    (g_1, h_1) \cdot (g_2, h_2)
+    = (g_1 \theta(h_1)(g_2), h_1 h_2)
+    = (g_1 g_2, h_1 h_2).
+   \]
+   Es handelt sich also um das gewöhnliche Produkt $G \times H$.
+   
+  \item
+   Für jedes $m \in \Zbb$ ist die Abbildung
+   \[
+    \theta(m) \colon \Zbb \to \Zbb, \quad n \mapsto (-1)^m n
+   \]
+   ein Gruppenautomorphismus: Da $\theta(m)^2 =  \id_{\Zbb}$ ist $\theta(m)$ invertierbar mit $\theta(m)^{-1} = \theta(m)$, und $\theta(m)$ ist ein Gruppenhomomorphismus, denn für alle $n_1, n_2 \in \Zbb$ ist
+   \begin{align*}
+    \theta(m)(n_1 + n_2)
+    &= (-1)^m (n_1 + n_2) \\
+    &= (-1)^m n_1 + (-1)^m n_2
+    = \theta(m)(n_1) + \theta(m)(n_2)
+   \end{align*}
+   Die Abbildung $\theta \colon \Zbb \to \Aut(\Zbb)$ ist außerdem eine Gruppenhomomorphismus, denn für alle $m_1, m_2 \in \Zbb$ ist
+   \begin{align*}
+    \theta(m_1 + m_2)(n)
+    &= (-1)^{m_1 + m_2} n
+    = (-1)^{m_1} (-1)^{m_2} n \\
+    &= \theta(m_1)(\theta(m_2)(n))
+    = (\theta(m_1) \circ \theta(m_2))(n)
+   \end{align*}
+   für alle $n \in \Zbb$, also $\theta(m_1 + m_2) = \theta(m_1) \circ \theta(m_2)$. Ingesamt zeigt dies, dass $\theta \colon \Zbb \to \Aut(\Zbb)$ ein Gruppenhomomorphismus ist.
+   
+   Die Multiplikation auf dem entsprechenden semidirekten Produkt $\Zbb \rtimes_\theta \Zbb$ ist gegeben durch
+   \[
+    (n_1, m_1) \cdot (n_2, m_2)
+    = (n_1 + \theta(m_1)(n_2), m_1 + m_2)
+    = (n_1 + (-1)^{m_1} n_2, m_1 + m_2)
+   \]
+   für alle $(n_1, m_1), (n_2, m_2) \in \Zbb \rtimes_\theta \Zbb$. Dies ist das semidirekte Produkt aus \ref{sec: semidirect product ZxZ}.
+   
+  \item
+   Es sei $G$ eine Gruppe. Wie in \ref{ssec: inner automorphisms} gesehen, ist die Abbildung \mbox{$c \colon G \to \Aut(G), h \mapsto c_h$} mit
+   \[
+    c_h(g) = h g h^{-1}
+    \quad
+    \text{für alle $h,g \in G$}
+   \]
+   ein wohldefnierter Gruppenhomorphismus. Ist $H \subseteq G$ eine Untergruppe, so ist daher auch die Einschränkung $c|_{H} \colon H \to \Aut(G)$, $h \mapsto c_h$ ein Gruppenhomomorphismus. Hieraus ergibt sich das semidirekte Produkt $H \rtimes_{c|_H} G$ mit
+   \[
+    (g_1, h_1) \cdot (g_2, h_2)
+    = (g_1 c_{h_1}(g_2), h_1 h_2)
+    = (g_1 h_1 g_2 h_1^{-1}, h_1 h_2)
+   \]
+   für alle $(g_1, h_1), (g_2, h_2) \in G \rtimes_{c|_H} H$.
+   
+  \item
+   Es sei $S = \{1,-1\}$ und $G = \Zbb/3\Zbb$. ($S$ ist eine Gruppe bezüglich der üblichen Multiplikation.) Für $s \in S$ sei $\theta(s) \colon G \to G$, $x \mapsto sx$; für alle $g \in G$ ist also $\theta(1)(g) = g$ und $\theta(-1)(g) = -g$.
+   
+   Da $\theta(-1)^2 = \id_G$ ist $\theta(-1)$ bijektiv mit $\theta(-1)^{-1} = \theta(-1)$; $\theta(-1)$ ist auch ein Gruppenhomomorphismus, da
+   \[
+    \theta(-1)(g_1 + g_2)
+    = -(g_1 + g_2)
+    = (-g_1) + (-g_2)
+    = \theta(-1)(g_1) + \theta(-1)(g_2)
+   \]
+   für alle $g_1, g_2 \in G$. Also sind $\theta(1) = \id_G$ und $\theta(-1)$ Gruppenautomorphismen von $G$. Somit ist die Abbildung $\theta \colon S \to \Aut(G)$ wohldefiniert. $\theta$ ist ein Gruppenhomomorphismus, denn
+   \begin{align*}
+    \theta(1 \cdot 1
+    &= \theta(1)
+    = \id_G
+    = \id_G \circ \id_G
+    = \theta(1) \circ \theta(1), \\
+    \theta((-1) \cdot 1)
+    &= \theta(-1)
+    = \theta(-1) \circ \id_G
+    = \theta(-1) \circ \theta(1), \\
+    \theta(1 \cdot (-1))
+    &= \theta(-1)
+    = \id_G \circ \theta(-1)
+    = \theta(1) \circ \theta(-1), \\
+    \theta((-1) \cdot (-1))
+    &= \theta(1)
+    = \id_G
+    = \theta(-1) \circ \theta(-1).
+   \end{align*}
+  Damit ergibt sich das semidirekte Produkt $G \rtimes_\theta S = (\Zbb/3\Zbb) \rtimes_\theta S$ mit
+  \[
+   (g_1, s_1) \cdot (g_2, s_2)
+   = (g_1 + \theta(s_1)(g_2), s_1 s_2)
+   = (g_1 + s_1 g_2, s_1 s_2)
+  \]
+  für alle $(g_1, s_1), (g_2, s_2) \in (\Zbb/3\Zbb) \rtimes_\theta S$.
+  
+  \begin{bem}
+   Die Gruppe $(\Zbb/3\Zbb) \rtimes_\theta S$ hat $6$ Element, und es lässt sich zeigen, dass \mbox{$(\Zbb/3\Zbb) \rtimes_\theta S \cong S_3$}. Da $S$ zweielementig ist, gibt es, wie in \ref{sec: groups with two elements} gesehen, außerdem einen eindeutigen Gruppenisomorphismus $\varphi \colon \Zbb/2\Zbb \to S$, der durch $\varphi(0) = 1$ und $\varphi(1) = -1$ gegeben ist.
+   
+   Da $\varphi$ und $\theta$ Gruppenhomomorphismen sind, ist auch \mbox{$\theta \circ \varphi \colon \Zbb/2\Zbb \to \Aut(\Zbb/3\Zbb)$} ein Gruppenhomomorphismus. Durch den Gruppenhomomorphismus $\theta \circ \varphi$ ergibt sich auch ein semidirektes Produkt \mbox{$(\Zbb/3\Zbb) \rtimes_{\theta \circ \varphi} (\Zbb/2\Zbb)$}.
+   
+   Es lässt sich zeigen, dass $\varphi$ einen Gruppenisomorphismus
+   \[
+    \varphi_*
+    \colon
+    (\Zbb/3\Zbb) \rtimes_{\theta \circ \varphi} (\Zbb/2\Zbb)
+    \to
+    (\Zbb/3\Zbb) \rtimes_\theta S,
+    \quad
+    (g,h) \mapsto (g,\varphi(h))
+   \]
+   induziert. Damit ergibt sich dann, dass
+   \[
+    (\Zbb/3\Zbb) \rtimes_{\theta \circ \varphi} (\Zbb/2\Zbb)
+    \cong
+    (\Zbb/3\Zbb) \rtimes_\theta S
+    \cong
+    S_3.
+   \]
+   Die symmetrische Gruppe $S_3$ lässt sich daher als semidirektes Produkt von $\Zbb/3\Zbb$ und $\Zbb/2\Zbb$ auffassen.
+  \end{bem}
+ \end{enumerate}
+\end{bsp}
+
+
+
+
+
 
 
 
