@@ -1655,7 +1655,54 @@ Ingesamt zeigt dies, dass $\Aut(G) \subset S(G)$ eine Untergruppe ist.
 
 
 \subsection{Innere Automorphismen einer Gruppe}
-%TODO: Tippen
+\begin{defi}
+ Es sei $G$ eine Gruppe. Für $\alpha \in G$ sei
+ \begin{gather*}
+  c_\alpha \colon G \to G, \quad g \mapsto \alpha g \alpha^{-1},
+ \shortintertext{und es sei}
+  \Int(G) = \{c_\alpha \mid \alpha \in G\}.
+ \end{gather*}
+\end{defi}
+
+Es sei $G$ eine Gruppe. Wir zeigen, dass $c_\alpha$ für alle $\alpha \in G$ ein Gruppenautomorphismus von $G$ ist, und dass $\Int(G)$ eine Untergruppe von $G$ ist.
+
+Es sei $\alpha \in G$. Für alle $g \in G$ ist
+\[
+ (c_\alpha \circ c_{\alpha^{-1}})(g)
+ = c_\alpha(c_{\alpha^{-1}}(g))
+ = c_\alpha(\alpha^{-1} g \alpha)
+ = \alpha \alpha^{-1} g \alpha \alpha^{-1}
+ = 1 \cdot g \cdot 1
+ = g,
+\]
+also $c_\alpha \circ c_{\alpha^{-1}} = \id_G$. Deshalb ist auch $c_{\alpha^{-1}} \circ c_\alpha = c_{\alpha^{-1}} \circ c_{(\alpha^{-1})^{-1}} = \id_G$. Als ist $c_\alpha$ bijektiv mit $c_\alpha^{-1} = c_{\alpha^{-1}}$. Für alle $g,h \in G$ ist
+\[
+ c_\alpha(g h)
+ = \alpha g h \alpha^{-1}
+ = \alpha g \alpha^{-1} \alpha h \alpha^{-1}
+ = c_\alpha(g) c_\alpha(h),
+\]
+also ist $c_\alpha$ ein Gruppenhomomorphismus. Zusammen zeigt dies, dass $c_\alpha$ ein Gruppenautomorphismus ist. Das zeigt bereits, dass $\Int(G) \subseteq \Aut(G)$ eine Teilmenge ist.
+
+Für alle $g \in G$ ist $c_1(g) = 1 \cdot g \cdot 1^{-1} = g$, also ist $\id_G = c_1 \in \Int(G)$. Für $\alpha, \beta \in G$ ist für alle $g \in G$
+\[
+ (c_\alpha \circ c_\beta)(g)
+ = c_\alpha( c_\beta(g) )
+ = \alpha \beta g \beta^{-1} \alpha^{-1}
+ = (\alpha \beta) g (\alpha \beta)^{-1}
+ = c_{\alpha \beta}(g),
+\]
+also ist $c_\alpha \circ c_\beta \in \Int(G)$. Außerdem ist $c_\alpha^{-1} = c_{\alpha^{-1}} \in \Int(G)$ für alle $\alpha \in G$. Ingesamt zeigt dies, dass $\Int(G) \subseteq \Aut(G)$ bereits eine Untergruppe ist.
+
+Man bezeichnet die Elemente von $\Int(G)$ als die \emph{innere Automorphismen} und $\Int(G)$ als die \emph{Gruppe der inneren Automorphismen}.
+
+\begin{bem}
+ Die obigen Rechnungen lassen sich auch umgehen: Da $c_\alpha \circ c_\beta = c_{\alpha \beta}$ für alle $\alpha \beta$ ist die Abbildung $c \colon G \to \Aut(G)$, $\alpha \mapsto c_\alpha$ ein Gruppenhomomorphismus. Also ist $\Aut(G) = \im(c)$ eine Untergruppe.
+ 
+ Auch $\ker(c) \subseteq G$ ist eine Untergruppe. Das $\alpha \in \ker(c)$ bedeutet, dass $c_\alpha = \id_G$, also $g = c_\alpha(g) = \alpha g \alpha^{-1}$ für alle $g \in G$. Dies ist äquivalent dazu, dass $g \alpha = \alpha g$ für alle $g \in G$, also $\alpha \in Z(G)$. Also ist $\ker(c) = Z(G)$.
+\end{bem}
+
+
 
 
 
