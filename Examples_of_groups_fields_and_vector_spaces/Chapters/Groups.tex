@@ -702,6 +702,8 @@ Für $n \in \Nbb$ ist $S_n \coloneqq S(\{1, \dotsc, n\})$. Ein Element $\sigma \
  Statt $S_n$ schreibt man auch $\Sigma_n$.
 \end{bem}
 
+Wir bemerken zunächst, dass $S_n$ genau $n!$ viele Elemente hat: 
+
 %TODO: Anzahl der Elemente von S_n, S_2 und S_3 als besondere Gruppen; Untergruppen von S_3
 
 
@@ -780,8 +782,10 @@ also $\sigma \in N(Y)$. Wir haben also eine Kette von Untergruppen $Z(Y) \subset
 
 
 
-\section{Die allgemeine lineare Gruppe \texorpdfstring{$\GL_n(k)$}{GLnk} und Untergruppen}
+\section{Die allgemeine lineare Gruppe \texorpdfstring{$\GL_n(k)$}{GLnk} und ihre Untergruppen}
 Im Folgenden sei $K$ ein (beliebiger) Körper.
+
+
 
 \subsection{Die allgemeine lineare Gruppe \texorpdfstring{$\GL_n(k)$}{GLnk}}
 
@@ -842,7 +846,7 @@ Insgesamt zeigt dies, dass $\GL_n(K)$ zusammen mit der üblichen Matrixmultiplik
  \end{gather*}
  Es sei
 \[
- D_n(k) \coloneqq \{D \in \GL_n(k) \mid \text{$D$ ist eine Diagonalmatrix}\}.
+ \D_n(k) \coloneqq \{D \in \GL_n(k) \mid \text{$D$ ist eine Diagonalmatrix}\}.
 \]
 \end{defi}
 
@@ -921,7 +925,34 @@ Das zeigt, dass eine Diagonalmatrix $D = \diag(\lambda_1, \dotsc, \lambda_n)$ ge
 
 
 \subsection{Skalarmatrizen}
-%TODO: Tippen
+\begin{defi}
+ Eine quadratische Matrix $S \subseteq \Mat(n \times n, K)$ heißt \emph{Skalarmatrix}, falls $S$ eine Diagonalmatrix ist, deren Diagonaleinträge alle gleich sind, d.h.\ $S = \diag(\lambda, \dotsc, \lambda)$ für ein $\lambda \in K$. Es sei
+ \[
+  \Sc_n(K) \coloneqq \{S \in \GL(n \times n, K) \mid \text{$S$ ist eine Skalarmatrix}\}.
+ \]
+\end{defi}
+Wir zeigen, dass $\Sc_n(K)$ eine Untergruppe von $\GL_n(K)$ ist: Es ist $I_n = \diag(1, \dotsc, 1) \in \Sc_n(K)$. Für $S, T \in \Sc_n(K)$ gibt es $\lambda, \mu \in K$ mit $S = \diag(\lambda, \dotsc, \lambda)$ und $T = \diag(\mu, \dotsc, \mu)$, weshalb auch
+\[
+ S \cdot T
+ = \diag(\lambda, \dotsc, \lambda) \cdot \diag(\mu, \dotsc, \mu)
+ = \diag(\lambda \mu, \dotsc, \lambda \mu) \in \Sc_n(K).
+\]
+Außerdem ist damit auch
+\[
+ S^{-1}
+ = \diag(\lambda, \dotsc, \lambda)^{-1}
+ = \diag(\lambda^{-1}, \dotsc, \lambda^{-1}) \in \Sc_n(K).
+\]
+Insgesamt zeigt dies, dass $\Sc_n(K)$ eine Untergruppe von $\GL_n(K)$ ist.
+
+
+\begin{bem}
+ Da eine Diagonalmatrix $\diag(\lambda_1, \dotsc, \lambda_n)$ genau dann invertierbar ist, wenn $\lambda_i \neq 0$ für alle $i = 1, \dotsc, n$, ist eine Skalarmatrix $\diag(\lambda, \dotsc, \lambda)$ genau dann invertierbar, wenn $\lambda \neq 0$. Bezeichnet $s(\lambda) \in \Mat(n \times n, K)$ die Skalarmatrix mit Diagonaleinträgen $\lambda \in K$, also $s(\lambda) = \diag(\lambda, \dotsc, \lambda)$, so zeigen die obigen Rechnungen, dass $s(\lambda) \cdot s(\mu) = s(\lambda \cdot \mu)$ für alle $\lambda, \mu \in K$ und $s(\lambda)^{-1} = s(\lambda^{-1})$ für alle $\lambda \in K$ mit $\lambda \neq 0$. Damit ergibt sich, dass die Abbildung
+ \[
+  K^\times \to \Sc_n(K), \quad \lambda \mapsto s(\lambda)
+ \]
+ ein Gruppenisomorphismus ist. Also ist $\Sc_n(K) \cong K^\times$.
+\end{bem}
 
 
 
@@ -1443,6 +1474,50 @@ weshalb $[-x]$ invers zu $[x]$ bezüglich $+$ ist. Ingesamt zeigt dies, dass $(A
 
 
 
+\section{Das Zentrum einer Gruppe}
+\begin{defi}
+ Das \emph{Zentrum} einer Gruppe $G$ ist
+ \[
+  Z(G) \coloneqq \{g \in G \mid \text{$gh = hg$ für alle $h \in G$}\}.
+ \]
+\end{defi}
+
+Es sei $G$ eine Gruppe. Wir zeigen, dass $Z(G)$ eine Untergruppe ist: Da $1 \cdot g = g = g \cdot 1$ für alle $g \in G$ ist $1 \in Z(G)$. Sind $g_1, g_2 \in G$, so ist
+\[
+ g_1 g_2 h
+ = g_1 h g_2
+ = h g_1 g_2
+ \quad
+ \text{für alle $h \in G$},
+\]
+und somit auch $g_1 g_2 \in Z(G)$. Ist $g \in Z(G)$, so ist
+\[
+ g^{-1} h
+ = g^{-1} h g g^{-1}
+ = g^{-1} g h g^{-1}
+ = h g^{-1}
+ \quad
+ \text{für alle $h \in G$},
+\]
+und somit auch $g^{-1} \in Z(G)$. Insgesamt zeigt dies, dass $Z(G)$ eine Untergruppe ist.
+
+\begin{bsp}
+ \begin{enumerate}[leftmargin=*]
+  \item
+   Eine Gruppe $G$ ist genau dann abelsch, wenn $Z(G) = G$.
+  \item
+   Es lässt sich zeigen, dass $Z(\GL_n(K)) = \Sc_n(K)$ genau die Untergruppe der Skalarmatrizen ist.
+   %TODO: Beweisen.
+  \item
+   %TODO: Zentrum von S_n
+ \end{enumerate}
+\end{bsp}
+
+
+
+
+
+
 \section{Automorphismengruppen}
 
 
@@ -1596,13 +1671,6 @@ Ingesamt zeigt dies, dass $\Aut(G) \subset S(G)$ eine Untergruppe ist.
 
 
 
-\section{Das Zentrum einer Gruppe}
-\begin{defi}
- Das \emph{Zentrum} einer Gruppe $G$ ist
- \[
-  Z(G) \coloneqq \{g \in G \mid \text{$gh = hg$ für alle $h \in G$}\}.
- \]
-\end{defi}
 
 
 
