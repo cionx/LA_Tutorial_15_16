@@ -490,11 +490,16 @@ also auch $f+g \in \Hom_K(V,W)$ und $\lambda f \in \Hom_K(V,W)$. Dies zeigt, das
 
 
 \begin{bem}
- Ist $V$ ein $K$-Vektorraum, so heißt $V^* \coloneqq \Hom(V,K)$ der \emph{Dualraum} von $V$.
+ \begin{enumerate}[leftmargin=*]
+  \item
+   Für einen $K$-Vektorraum $V$ ist $\End_K(V) \coloneqq \Hom_K(V,V)$.
+  \item
+   Ist $V$ ein $K$-Vektorraum, so heißt $V^* \coloneqq \Hom(V,K)$ der \emph{Dualraum} von $V$.
+ \end{enumerate}
 \end{bem}
 
 
-%TODO: \section{Eigenräume}
+
 
 
 \section{Matrizenräume}
@@ -578,7 +583,7 @@ Ingesamt zeigt dies, dass $\Mat(m \times n, K)$ zusammen mit der üblichen eintr
 \end{defi}
 
 
-\begin{bem}
+\begin{bem}\label{bem: properties of the transpose}
  \begin{enumerate}[leftmargin=*]
   \item
    Anschaulich gesehen entsteht $A^T$ aus $A$ durch Spiegelung der Matrix an der Diagonalen.
@@ -1182,7 +1187,7 @@ Für $\Kbb \in \{\Qbb, \Rbb, \Cbb\}$ sei
 %TODO: Fast überall 0
 
 
-\subsection{Folgen von Rekursionsformeln}
+\subsection{Rekursiv definierte Folgen}
 %TODO: Tippen
 
 
@@ -1196,7 +1201,74 @@ Für $\Kbb \in \{\Qbb, \Rbb, \Cbb\}$ sei
 
 
 
-\section{\texorpdfstring{$\Qbb$}{Q}-Vektorräume und teilbare abelsche Gruppen}
+\section{Eigenräume}
+\begin{defi}
+ Es sei $V$ ein $K$-Vektorraum und $f \colon V \to V$ ein Endomorphismus. Ein Vektor $v \in V$ mit $v \neq 0$ heißt \emph{Eigenvektor} von $f$, falls es ein $\lambda \in K$ gibt, so dass $f(v) = \lambda v$. Der Skalar $\lambda$ heißt dann \emph{Eigenwert} von $f$. Für alle $\lambda \in K$ ist
+ \begin{align*}
+  \Eig(f,\lambda)
+  \coloneqq&\, \{v \in V \mid f(v) = \lambda v\} \\ 
+  =&\, \{v \in V \mid \text{$v$ ist ein Eigenvektor von $f$ zum Eigenwert $\lambda$}\} \cup \{0\}.
+ \end{align*}
+ der \emph{Eigenraum} von $f$ zum Eigenwert $\lambda$.
+\end{defi}
+
+Es sei $V$ ein $K$-Vektorraum, $f \colon V \to V$ ein Endomorphismus und $\lambda \in K$. Wir zeigen, dass der Eigenraum $\Eig(f,\lambda)$ ein Untervektorraum von $V$ ist.
+
+Da $f(0) = 0 = \lambda \cdot 0$ ist $0 \in \Eig(f,\lambda)$. Für $v,w \in \Eig(f,\lambda)$ ist $f(v) = \lambda v$ und $f(w) = \lambda w$ und somit
+\[
+ f(v+w)
+ = f(v) + f(w)
+ = \lambda v + \lambda w
+ = \lambda (v+w),
+\]
+also auch $v+w \in \Eig(f,\lambda)$. Ist $v \in \Eig(f,\lambda)$ und $\mu \in K$, so ist wegen $f(v) = \lambda v$ auch
+\[
+ f(\mu v)
+ = \mu f(v)
+ = \mu \lambda f(v)
+ = \lambda (\mu v),
+\]
+also auch $\mu v \in \Eig(f,\lambda)$. Ingesamt zeigt dies, dass $\Eig(f,\lambda)$ ein Untervektorraum von $V$ ist.
+
+\begin{bem}
+ Die obigen Rechnungen lassen sich auch umgehen: Für $v \in V$ ist
+ \[
+  f(v) = \lambda v
+  \iff
+  f(v) - \lambda v = 0
+  \iff 
+  (f - \lambda \id_V)(v) = 0.
+ \]
+ Wegen der Vektorraumstruktur von $\End_K(V)$ ist auch $f - \lambda \id_V \colon V \to V$ linear. Also ist
+ \[
+  \ker(f - \lambda \id_V) = \Eig(f,\lambda)
+ \]
+ ein Untervektorraum.
+\end{bem}
+
+
+\begin{bsp}
+ Es sei $\mc{T} \colon \Mat(n \times n, K) \to \Mat(n \times n, K)$, $A \mapsto A^T$ das Transponieren. Wie bereits in Bemerkung \ref{bem: properties of the transpose} gesehen ist $\mc{T}$ linear. Es ist
+ \begin{gather*}
+  \Eig(\mc{T},1)
+  = \{A \in \Mat(n \times n, K) \mid A^T = 1 \cdot A = A\}
+  = \Sym_n(K)
+ \shortintertext{und}
+  \Eig(\mc{T},-1)
+  = \{A \in \Mat(n \times n, K) \mid A^T = (-1) \cdot A = -A\}
+  = \Alt_n(K).
+ \end{gather*}
+ %TODO: Weitere Beispiele hinzufügen.
+\end{bsp}
+
+
+
+
+
+
+
+
+\section{Ausblick: \texorpdfstring{$\Qbb$}{Q}-Vektorräume und teilbare abelsche Gruppen}
 %TODO: Tippen
 
 
