@@ -1509,7 +1509,8 @@ und somit auch $g^{-1} \in Z(G)$. Insgesamt zeigt dies, dass $Z(G)$ eine Untergr
    Es lässt sich zeigen, dass $Z(\GL_n(K)) = \Sc_n(K)$ genau die Untergruppe der Skalarmatrizen ist.
    %TODO: Beweisen.
   \item
-   %TODO: Zentrum von S_n
+   Es lässt sich zeigen, dass $Z(S_n) = \{1\}$ die triviale Gruppe ist.
+   %TODO: Beweisen.
  \end{enumerate}
 \end{bsp}
 
@@ -1657,11 +1658,90 @@ Ingesamt zeigt dies, dass $\Aut(G) \subset S(G)$ eine Untergruppe ist.
 %TODO: Tippen
 
 
+
 \section{Einheitengruppen}
 
 
 \subsection{Einheitengruppe eines Monoids}
-%TODO: Tippen
+\begin{defi}
+ Ein \emph{Monoid} ist ein Tupel $(M, \cdot)$ bestehend aus einer Menge $M$ und einer binären Verknüpfung $\cdot \colon M \times M \to M$, die die folgenden Bedingungen erfüllt:
+ \begin{enumerate}[label=\roman*)]
+  \item
+   Die Verknüpfung $\cdot$ ist assoziativ, d.h.\ $a \cdot (b \cdot c) = (a \cdot b) \cdot c$ für alle $a,b,c \in M$.
+  \item
+   Es gibt ein neutrales Element $e \in M$ bezüglich $\cdot$, d.h.\ $m \cdot e = e \cdot m$ für alle $m \in M$.
+ \end{enumerate}
+\end{defi}
+
+\begin{bem}
+ \begin{enumerate}
+  \item
+   Der Unterschied zwischen der Definition eines Monoids und der Definition einer Gruppe besteht darin, dass in einem Monoid nicht jedes Element ein Inverses besitzen muss. Inbesondere ist jede Gruppe ein Monoid.
+  \item
+   Die Verknüpfung eines Monoids wird häufig nicht explizit genannt, d.h.\ statt von einem Monoid $(M,\cdot)$ spricht man von einem Monoid $M$.
+  \item
+   Das neutrale Element eines Monoids ist eindeutig, d.h.\ ist $M$ ein Monoid und sind $e, e' \in M$ neutrale Elemente, dann ist $e = e \cdot e' = e'$. Man spricht daher auch von \emph{dem} neutralen Element von $M$.
+  \item
+   Das neutrale Element eines Monoids wird auch als $1$ geschrieben.
+ \end{enumerate}
+\end{bem}
+
+\begin{defi}
+ Ein Element $m \in M$ eines Monoids $M$ heißt \emph{invertierbar}, bzw.\ eine \emph{Einheit}, falls es ein inverses Element $n \in M$ gibt, d.h.\ dass $m \cdot n = n \cdot m = 1$. Es ist
+ \[
+  M^\times = \{m \in M \mid \text{$m$ ist invertierbar}
+ \]
+ die \emph{Einheitengruppe} von $M$.
+\end{defi}
+
+\begin{bem}
+ \begin{enumerate}[leftmargin=*]
+  \item
+   Ist $m \in M$ invertierbar, so ist das Inverse von $m$ eindeutig: Sind nämlich $n_1, n_2 \in M$ invers zu $m$, so ist $n_1 = n_1 \cdot 1 = n_1 \cdot m \cdot n_2 = 1 \cdot n_2 = n_2$. Das Inverse von $m$ wird als $m^{-1}$ bezeichnet.
+  \item
+   Ist $m \in M$, so ist $m \cdot m^{-1} = m^{-1} \cdot m = 1$, also $m$ invers zu $m^{-1}$. Daher ist auch $m^{-1}$ invertierbar mit $(m^{-1})^{-1} = m$.
+ \end{enumerate}
+\end{bem}
+
+Es sei $M$ ein Monoid. Wir zeigen, dass $M^\times$ eine Gruppe bildet: Sind $m, n \in M^\times$, so ist
+\[
+ (m \cdot n) \cdot (n^{-1} \cdot m^{-1})
+ = m \cdot n \cdot n^{-1} \cdot m^{-1}
+ = m \cdot 1 \cdot m^{-1}
+ = m \cdot m^{-1}
+ = 1,
+\]
+also ist auch $m \cdot n$ invertierbar. Das zeigt, dass auch $m \cdot n \in M^\times$. Als lässt sich die Verknüpfung $\cdot$ auf $M$ einschränken.
+
+Die Assoziativität von $\cdot$ auf $M^\times$ ergibt sich direkt aus der Assoziativität von $\cdot$ auf $M$.
+
+Da $1 = 1 \cdot 1$ ist $1 \in M$ invertierbar mit $1^{-1} = 1$, also auch $1 \in M^\times$. Da $1 \cdot m = m \cdot 1 = m$ für alle $m \in M$ gilt dies insbesondere für alle $m \in M^\times$, also ist $1$ auch in $M^\times$ neutral bezüglich $\cdot$.
+
+Ist $m \in M^\times$ so ist auch $m^{-1}$ invertierbar, also $m^{-1} \in M^\times$. Auch in $M^\times$ sind $m$ und $m^{-1}$ invers zueinander.
+
+Ingesamt zeigt dies, dass $M^\times$ eine Gruppe bildet.
+
+\begin{bem}
+ Ein Monoid $M$ ist genau dann eine Gruppe, wenn $M^\times = M$.
+\end{bem}
+
+\begin{bsp}
+ \begin{enumerate}
+  \item
+   Für eine Menge $X$ sei $E(X) \coloneqq \{f \mid f \colon X \to X\}$ die Menge aller Abbildungen $X \to X$. Funktionskomposition ist assoziativ und für alle $f \in E(X)$ ist $f \circ \id = f = \id \circ f$, also ist $\id_X$ auf $E(X)$ neutral bezüglich der Funktionskomposition. Also bildet $E(X)$ zusammen mit der Funktionskomposition ein Monoid. Es gilt $E(X)^\times = S(X)$.
+  \item
+   Ist $G$ eine Gruppe, so sei
+   \[
+    \End(G) \coloneqq \{ \varphi \colon G \to G \mid \text{$\varphi$ ist ein Gruppenhomomorphismus} \}.
+   \]
+   Funktionskomposition ist assoziativ und die Verknüpfung zweier Gruppenhomomorphismen ist ebenfalls ein Gruppenhomomorphismus. Deshalb bildet $\End(G)$ zusammen mit der Funktionskomposition ein Monoid bildet, und es gilt $\End(G)^\times = \Aut(G)$.
+  %TODO: Andere Automorphismengruppen.
+ \end{enumerate}
+\end{bsp}
+
+
+
+
 
 
 \subsection{Einheitengruppe eines Rings}
@@ -1947,7 +2027,9 @@ Diese Gruppe ist nicht abelsch, da etwa
 Man bezeichnet die Gruppe $\Zbb \rtimes \Zbb$ als das \emph{semidirekte Produkt} von $\Zbb$ und $\Zbb$.
 
 
-\section{Ausblick: Semidirekte Summen}
+\section{Ausblick: Semidirekte Produkte}
+Als Verallgemeinerung des vorherigen Beispiels geben wir hier die allgemeine Konstruktion von semidirekten Produkten an:
+
 %TODO: Tippen
 
 
