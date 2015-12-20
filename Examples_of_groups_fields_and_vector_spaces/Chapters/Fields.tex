@@ -112,6 +112,22 @@ Insgesamt zeigt dies, dass $\im(\phi)$ ein Unterkörper von $L$ ist.
 \section{Schnitte und Vereinigungen von Unterkörpern}
 
 
+\subsection{Schnitte von Unterkörpern}
+Es sei $L$ ein Körper und $\{K_i\}_{i \in I}$ eine Kollektion von Unterkörpern, d.h.\ für alle $i \in I$ ist $K_i \subseteq L$ ein Unterkörper. Dann ist auch der Schnitt $K \coloneqq \bigcap_{i \in I} K_i$ ein Unterkörper:
+
+Da $K_i$ für jedes $i \in I$ ein Unterkörper ist, ist $0,1 \in K_i$ für alle $i \in I$ und somit auch $0,1 \in \bigcap_{i \in I} K_i$.
+
+Sind $x,y \in K$, so sind $x,y \in K_i$ für alle $i \in I$. Da $K_i$ für alle $i \in I$ ein Unterkörper ist, ist damit auch $x+y \in K_i$ für alle $i \in I$ und $x \cdot y \in K_i$ für alle $i \in I$. Somit ist damit auch $x + y, x \cdot y \in K$.
+
+Sind $x,y  \in K$ mit $y \neq 0$, so sind $x,y \in K_i$ für alle $i \in I$. Da $K_i$ für alle $i \in I$ ein Unterkörper ist, ist damit auch $-x, y^{-1} \in K_i$ für alle $i \in I$. Also ist damit auch $-x, y^{-1} \in K$.
+
+Ingesamt zeigt dies, dass $K = \bigcap_{i \in I} K_i$ ein Unterkörper ist.
+
+
+\subsection{Vereinigung von Unterkörpern}
+%TODO: Tippen
+
+
 
 
 
@@ -651,9 +667,6 @@ Die komplexen Zahlen $\Cbb$ entstehen aus den reellen Zahlen $\Rbb$ durch hinzuf
 
 
 
-
-
-
 \subsection{Der Körper \texorpdfstring{$\Qbb[i]$}{Q[i]}}
 Es sei
 \[
@@ -944,7 +957,20 @@ und $\alpha^2 = d$, und für jedes $z \in L$ ist die Zerlegung $z = x + y\alpha$
 
 
 \section{Primkörper eines Körpers}
-%TODO: Tippen
+\begin{defi}
+ Für einen Körper $K$ und $U = \{L \subseteq K \mid \text{$L$ ist ein Unterkörper von $K$}\}$ heißt
+ \[
+  P(K) = \bigcap_{L \in U} L
+ \]
+ der \emph{Primkörper} von $K$.
+\end{defi}
+
+Es sei $K$ ein Körper. Da Schnitte von Unterkörpern wieder Unterkörper sind ist $P(K) \subseteq K$ ein Unterkörper. $P(K)$ ist der kleinste Unterkörper von $K$, d.h.\ ist $L \subseteq K$ ein Unterkörper, so ist $P(K) \subseteq L$. Dies folgt direkt daraus, dass $P(K)$ der Schnitt \emph{aller} Unterkörper von $K$ ist.
+
+Wir zeigen, dass es einen eindeutigen Isomorphismus von Körpern $\Qbb \to P(K)$ gibt, falls $\kchar(K) = 0$, und einen eindeutigen Isomorphismus von Körpern $\Fbb_p \to P(K)$, falls $\kchar(K) = p > 0$.
+
+%TODO: Zeigen
+
 
 
 

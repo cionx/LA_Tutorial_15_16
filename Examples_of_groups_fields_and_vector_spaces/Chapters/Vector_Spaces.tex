@@ -199,8 +199,90 @@ da $U$ ein Untervektorraum ist. Also ist $f^{-1}(U)$ ein Untervektorraum.
 \end{bem}
 
 
-\section{Schnitte, Vereinigung und Summen von Untervektorräumen}
+
+
+
+\section{Schnitte und Vereinigungen von Untervektorräumen}
 %TODO: Tippen
+
+
+
+
+
+\section{Die lineare Hülle einer Teilmenge}
+\begin{defi}
+ Für einen $K$-Vektorraum $V$ und eine Teilmenge $S \subseteq V$ ist
+ \[
+  \Ell(S)
+  \coloneqq
+  \left\{
+   \sum_{s \in S} \lambda_s s
+   \,\middle|\,
+   \text{$s \in S$, $\lambda_s \in K$ für alle $s \in S$ mit $\lambda_s = 0$ für fast alle $s \in S$ }
+  \right\}
+ \]
+ die \emph{lineare Hülle} von $S$, bzw.\ den \emph{($K$-)Span} von $S$.
+\end{defi}
+
+\begin{bem}
+ Die Formulierung „für fast alle“ bedeutet „alle bis auf endlich viele“. Das $\lambda_s = 0$ für fast alle $s \in S$ bedeutet also, dass die Menge $\{s \in S \mid \lambda_s \neq 0\}$ endlich ist.
+\end{bem}
+
+Es sei $V$ ein $K$-Vektorraum und $S \subseteq V$ eine Teilmenge. Wir zeigen, dass $\Ell(S)$ ein Untervektorraum von $V$ ist:
+
+Setzt man $\lambda_s = 0$ für alle $s \in S$, so ist $\sum_{s \in S} \lambda_s s = \sum_{s \in S} 0 = 0$, also ist $0 \in \Ell(S)$.
+
+Sind $x,y \in \Ell(S)$ so gibt es Koeffizienten $\lambda_s, \mu_s \in K$, $s \in S$ mit $\lambda_s = 0$ für fast alle $s \in S$ und $\mu_s = 0$ für fast alle $s \in S$, so dass $x = \sum_{s \in S} \lambda_s s$ und $y = \sum_{s \in S} \mu_s s$. Es ist damit auch $\lambda_s + \mu_s = 0$ für fast alle $s \in S$ und
+\[
+ x + y
+ = \sum_{s \in S} \lambda_s s + \sum_{s \in S} \mu_s s
+ = \sum_{s \in S} (\lambda_s + \mu_s) s.
+\]
+Also ist auch $x+y \in \Ell(S)$. Für $\mu \in K$ ist außerdem auch $\mu \cdot \lambda_s = 0$ für fast alle $s \in S$ und
+\[
+ \mu x
+ = \mu \sum_{s \in S} \lambda s
+ = \sum_{s \in S} (\mu \lambda_s) x.
+\]
+Also ist auch $x \in \Ell(S)$. Ingesamt zeigt dies, dass $\Ell(S)$ ein Untervektorraum von $V$ ist.
+
+\begin{bem}
+ $\Ell(S)$ ist der kleinste Untervektorraum, der $S$ enthält, d.h.\ ist $U \subseteq V$ ein Untervektorraum mit $S \subseteq U$, so ist auch $\Ell(S) \subseteq U$. Dies folgt direkt daraus, dass $U$ unter der Skalarmultiplikation und Addition von $V$ abgeschlossen ist.
+ 
+ Für $\mc{U} \coloneqq \{U \subseteq V \mid \text{$U$ ist ein Untervektorraum mit $S \subseteq U$}\}$ ist auch $W \coloneqq \bigcap_{U \in \mc{U}} U$ ein Untervektorraum von $V$, da Schnitte von Untervektorräumen wieder Untervektorräume sind. Da $S \subseteq U$ für alle $U \in \mc{U}$ ist auch $S \subseteq \bigcap_{U \in \mc{U}} U = W$. Ist $U \subseteq V$ ein beliebiger Untervektorräum mit $S \subseteq U$ so ist $U \in \mc{U}$ und somit $W = \bigcap_{U' \in \mc{U}} U' = W$. Also ist auch $W$ der kleinste Untervektorraum von $V$, der $S$ enthält.
+ 
+ Es ist daher $\Ell(S) = W = \bigcap_{U \in \mc{U}} U$. (Da $\Ell(S)$ der kleinste Untervektorraum von $V$ ist, der $S$ enthält, und $W$ ein Untervektorraum ist, der $S$ enthält, ist $\Ell(S) \subseteq W$. Da $W$ der kleinste Untervektorraum ist, der $S$ enthält, und auch $\Ell(S)$ ein Untervektorraum ist, der $S$ enthält, ist auch $W \subseteq \Ell(S)$. Also ist bereits $\Ell(S) = W$.)
+\end{bem}
+
+
+
+
+
+
+
+
+
+
+\section{Summen von Untervektorräumen}
+
+\begin{defi}
+ Es sei $V$ ein $K$-Vektorraum und $\{U_i\}_{i \in I}$ eine Kollektion von Untervektorräumen von $V$, d.h.\ für alle $i \in I$ ist $U_i \subseteq V$ ein Untervektorraum. Dann sei
+ \[
+  \sum_{i \in I} U_i
+  \coloneqq
+  \left\{
+   \sum_{i \in I} u_i
+   \,\middle|\,
+   \text{$u_i \in U_i$ für alle $i \in I$, und $u_i = 0$ für fast alle $i \in I$}
+  \right\}.
+ \]
+\end{defi}
+
+%TODO: Schreiben
+
+
+
+
 
 
 \section{Abbildungen in einen Vektorraum}\label{sec: maps into a vector space}
