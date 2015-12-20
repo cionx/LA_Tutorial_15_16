@@ -246,7 +246,7 @@ Also ist auch $x+y \in \Ell(S)$. Für $\mu \in K$ ist außerdem auch $\mu \cdot 
 \]
 Also ist auch $x \in \Ell(S)$. Ingesamt zeigt dies, dass $\Ell(S)$ ein Untervektorraum von $V$ ist.
 
-\begin{bem}
+\begin{bem}\label{bem: span is the smallest vector space}
  $\Ell(S)$ ist der kleinste Untervektorraum, der $S$ enthält, d.h.\ ist $U \subseteq V$ ein Untervektorraum mit $S \subseteq U$, so ist auch $\Ell(S) \subseteq U$. Dies folgt direkt daraus, dass $U$ unter der Skalarmultiplikation und Addition von $V$ abgeschlossen ist.
  
  Für $\mc{U} \coloneqq \{U \subseteq V \mid \text{$U$ ist ein Untervektorraum mit $S \subseteq U$}\}$ ist auch $W \coloneqq \bigcap_{U \in \mc{U}} U$ ein Untervektorraum von $V$, da Schnitte von Untervektorräumen wieder Untervektorräume sind. Da $S \subseteq U$ für alle $U \in \mc{U}$ ist auch $S \subseteq \bigcap_{U \in \mc{U}} U = W$. Ist $U \subseteq V$ ein beliebiger Untervektorräum mit $S \subseteq U$ so ist $U \in \mc{U}$ und somit $W = \bigcap_{U' \in \mc{U}} U' = W$. Also ist auch $W$ der kleinste Untervektorraum von $V$, der $S$ enthält.
@@ -258,15 +258,10 @@ Also ist auch $x \in \Ell(S)$. Ingesamt zeigt dies, dass $\Ell(S)$ ein Untervekt
 
 
 
-
-
-
-
-
 \section{Summen von Untervektorräumen}
 
 \begin{defi}
- Es sei $V$ ein $K$-Vektorraum und $\{U_i\}_{i \in I}$ eine Kollektion von Untervektorräumen von $V$, d.h.\ für alle $i \in I$ ist $U_i \subseteq V$ ein Untervektorraum. Dann sei
+ Es sei $V$ ein $K$-Vektorraum und $\{U_i\}_{i \in I}$ eine Kollektion von Untervektorräumen von $V$, d.h.\ für alle $i \in I$ ist $U_i \subseteq V$ ein Untervektorraum. Dann ist
  \[
   \sum_{i \in I} U_i
   \coloneqq
@@ -276,10 +271,63 @@ Also ist auch $x \in \Ell(S)$. Ingesamt zeigt dies, dass $\Ell(S)$ ein Untervekt
    \text{$u_i \in U_i$ für alle $i \in I$, und $u_i = 0$ für fast alle $i \in I$}
   \right\}.
  \]
+ die \emph{Summe} der Untervektorräume $U_i$, $i \in I$.
 \end{defi}
 
-%TODO: Schreiben
+Wir zeigen, dass $\sum_{i \in I} U_i$ ein Untervektorraum von $V$ ist: Indem man $u_i = 0$ für alle $i \in I$ wählt, ergibt sich, dass $0 = \sum_{i \in I} u_i \in \sum_{i \in I} U_i$. Sind $x,y \in \sum_{i \in I} U_i$, so gibt es $u_i, v_i \in U_i$, $i \in I$ mit $u_i = 0$ für fast alle $i \in I$ und $v_i = 0$ für fast alle $i \in I$, so dass $x = \sum_{i \in I} u_i$ und $y = \sum_{i \in I} v_i$. Es ist daher auch $u_i + v_i = 0$ für fast alle $i \in I$ mit
+\[
+ x + y
+ = \sum_{i \in I} u_i + \sum_{i \in I} v_i
+ = \sum_{i \in I} (u_i + v_i).
+\]
+Also ist auch $x+y \in \sum_{i \in I} U_i$. Ist außerdem $\mu \in K$, so ist auch $\mu u_i = 0$ für fast alle $i \in I$, und somit
+\[
+ \mu x
+ = \mu \sum_{i \in I} u_i
+ = \sum_{i \in I} (\mu u_i).
+\]
+Also ist auch $\mu x \in \sum_{i \in I} U_i$. Ingesamt zeigt dies, dass $\sum_{i \in I} U_i$ ein Untervektorraum von $V$ ist.
 
+
+\begin{bem}
+ \begin{enumerate}[leftmargin=*]
+  \item
+   Analog zu Bemerkung \ref{bem: span is the smallest vector space} ergibt sich, dass $\sum_{i \in I} U_i$ der kleinste Untervektorraum von $V$ ist, der $U_i$ für alle $i \in I$ enthält, und dass somit
+   \[
+    \sum_{i \in I} U_i
+    =
+    \bigcap \{W \subseteq V \mid \text{$W$ ist ein Untervektorraum mit $U_i \subseteq W$ für alle $i \in I$}\}.
+   \]
+  \item
+   Dass $\sum_{i \in I} U_i$ der kleinte Untervektorraum ist, der $U_i$ für alle $i \in I$ enthält, ist äquivalent dazu, dass $\sum_{i \in I} U_i$ der kleinste Untervektorraum ist, der $\bigcup_{i \in I} U_i$ enthält. Deshalb ist $\sum_{i \in I} U_i = \Ell(\bigcup_{i \in I} U_i)$.
+  \item
+   Ist $S \subseteq V$ ist $\Ell(\{s\}) = \{\lambda s \mid \lambda \in K\}$. Daher ist
+   \begin{align*}
+    \Ell(S)
+    &=
+    \left\{
+     \sum_{s \in S} \lambda_s s
+     \,\middle|\,
+     \text{$s \in S$, $\lambda_s \in K$ für alle $s \in S$ mit $\lambda_s = 0$ für fast alle $s \in S$ }
+    \right\} \\
+    &=
+    \left\{
+     \sum_{s \in S} u_s
+     \,\middle|\,
+     \text{$u_s \in \Ell(s)$ für alle $s \in S$, und $u_s = 0$ für fast alle $i \in I$}
+    \right\}
+    =
+    \sum_{s \in S} \Ell(\{s\}).
+   \end{align*}
+  \item
+   Für endlich viele Untervektorräume $U_1, \dotsc, U_n \subseteq V$ schreibt man auch $U_1 + \dotsb + U_n$ und $\sum_{i=1}^n U_i$ für $\sum_{i \in \{1, \dotsc, n\}} U_i$.
+  \item
+   Für je zwei endlichdimensional Untervektorräume $U, W \subseteq V$ gilt die Dimensionsformal
+   \[
+    \dim(U + W) = \dim(U) + \dim(W) - \dim(U \cap W).
+   \]
+ \end{enumerate}
+\end{bem}
 
 
 
@@ -288,7 +336,7 @@ Also ist auch $x \in \Ell(S)$. Ingesamt zeigt dies, dass $\Ell(S)$ ein Untervekt
 \section{Abbildungen in einen Vektorraum}\label{sec: maps into a vector space}
 Es sei $X$ eine beliebige Menge und $V$ ein $K$-Vektorraum. Auf der Menge
 \[
- \Abb(X,V) = \{f \colon X \to V\}
+ \Abb(X,V) = \{f \colon f \colon X \to V\}
 \]
 Wir definieren für $f,g \in \Abb(X,V)$ und $\lambda \in K$ eine die punktweise Addition und Skalarmultiplikation durch
 \begin{gather*}
