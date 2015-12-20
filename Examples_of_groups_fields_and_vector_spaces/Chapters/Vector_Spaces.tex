@@ -549,8 +549,150 @@ Ingesamt zeigt dies, dass $\Mat(m \times n, K)$ zusammen mit der üblichen eintr
 
 
 
-\subsection{Diagonalmatrizen und (echte) obere/untere Dreiecksmatrizen}
-%TODO: Tippen
+\subsection{Diagonalmatrizen und Dreiecksmatrizen}
+\begin{defi}
+ Es sei $\dl_n(K) = \{D \in \Mat(n \times n, K) \mid \text{$D$ ist eine Diagonalmatrix}\}$.
+\end{defi}
+
+(Der Begriff einer Diagonalmatrix wurde in Definition \ref{defi: diagonal matrices} eingeführt.)
+
+\begin{defi}
+ Eine quadratische Matrix $B \in \Mat(n \times n, K)$ heißt \emph{obere Dreiecksmatrix}, falls $A_{ij} = 0$ für alle $1 \leq j < i \leq n$, falls also $A$ von der Form
+ \[
+  A =
+  \begin{pmatrix}
+   a_{11} & \cdots & \cdots & a_{1n} \\
+   0      & \ddots &        & \vdots \\
+   \vdots & \ddots & \ddots & \vdots \\
+   0      & \cdots & 0      & a_{nn}
+  \end{pmatrix}
+ \]
+ ist. $A$ heißt \emph{echte obere Dreiecksmatrix}, falls zusätzlich $a_{ii} = 0$ für alle $1 \leq i \leq n$, also $A$ von der Form
+ \[
+  A =
+  \begin{pmatrix}
+   0      & a_{12} & \cdots & a_{1n}    \\
+   \vdots & \ddots & \ddots & \vdots    \\
+   \vdots &        & \ddots & a_{n-1,n} \\
+   0      & \cdots & \cdots & 0
+  \end{pmatrix}
+ \]
+ ist. Analog heißt $A$ \emph{untere Dreiecksmatrix}, falls $A_{ij} = 0$ für alle $1 \leq i < j \leq n$, also $A$ von der Form
+ \[
+  A = 
+  \begin{pmatrix}
+   a_{11} & 0      & \cdots & 0      \\
+   \vdots & \ddots & \ddots & \vdots \\
+   \vdots &        & \ddots & 0      \\
+   a_{n1} & \cdots & \cdots & a_{nn}
+  \end{pmatrix}
+ \]
+ ist, und $A$ heißt \emph{echte untere Dreiecksmatrix}, falls zusätzlich $A_{ii} = 0$ für alle $1 \leq i \leq n$, also $A$ von der Form
+ \[
+  A =
+  \begin{pmatrix}
+   0      & \cdots & \cdots    & 0      \\
+   a_{21} & \ddots &           & \vdots \\
+   \vdots & \ddots & \ddots    & \vdots \\
+   a_{n1} & \cdots & a_{n,n-1} & 0
+  \end{pmatrix}
+ \]
+ ist. Es seien
+ \begin{align*}
+  \bl^+_n(K) &\coloneqq \{A \in \Mat(n \times n, K) \mid \text{$A$ ist eine obere Dreiecksmatrix}\}, \\
+  \bl^-_n(K) &\coloneqq \{A \in \Mat(n \times n, K) \mid \text{$A$ ist eine untere Dreiecksmatrix}\}, \\
+  \nl^+_n(K) &\coloneqq \{A \in \Mat(n \times n, K) \mid \text{$A$ ist eine echte obere Dreiecksmatrix}\}, \\
+  \nl^-_n(K) &\coloneqq \{A \in \Mat(n \times n, K) \mid \text{$A$ ist eine echte untere Dreiecksmatrix}\}.
+ \end{align*}
+\end{defi}
+
+Wir zeigen, dass $\dl_n(K)$, $\bl^+_n(K)$, $\bl^-_n(K)$, $\nl^+_n(K)$ sowie $\nl^-_n(K)$ Untervektorräume von $\Mat(n \times n, K)$ sind. Wir zeigen dies mithilfe der folgenden Verallgemeinerung:
+
+Für eine Teilmenge $\mc{I} \subseteq \{1, \dotsc, m\} \times \{1, \dotsc, n\}$ sei
+\[
+ M_{\mc{I}}
+ = \{A \in \Mat(m \times n, K) \mid \text{$A_{ij} = 0$ für alle $(i,j) \in \mc{I}$}\}.
+\]
+Wir zeigen, dass $M_{\mc{I}}$ ein Untervektorraum von $\Mat(m \times n, K)$ ist:
+
+Für die Nullmatrix $0 \in \Mat(m \times n, K)$ ist $0_{ij} = 0$ für alle $1 \leq i \leq n$ und $1 \leq j \leq m$ und somit insbesondere für alle $(i,j) \in \mc{I}$. Also ist $0 \in M_{\mc{I}}$.
+
+Sind $A, B \in M_{\mc{I}}$, so ist $A_{ij} = 0$ für alle $(i,j) \in \mc{I}$ und $B_{ij} = 0$ für alle $(i,j) \in \mc{I}$. Somit ist
+\[
+ (A+B)_{ij}
+ = A_{ij} + B_{ij}
+ = 0 + 0
+ = 0
+ \quad
+ \text{für alle $(i,j) \in \mc{I}$},
+\]
+also auch $A + B \in \mc{I}$. Für alle $\lambda \in K$ ist zudem
+\[
+ (\lambda A)_{ij}
+ = \lambda A_{ij}
+ = \lambda \cdot 0
+ = 0
+ \quad
+ \text{für alle $(i,j) \in \mc{I}$},
+\]
+also auch $\lambda A \in M_{\mc{I}}$. Ingesamt zeigt dies, dass $M_{\mc{I}}$ ein Untervektorraum von $\Mat(m \times n, K)$ ist.
+
+\begin{bem}
+ Die obige Rechnungen lassen sich auch umgehen: Für jeden Einträgen $(i,j) \in \{1, \dotsc, m\} \times \{1, \dotsc, n\}$ ist die Abbildng $p_{ij} \colon \Mat(m \times n, K) \to K$, $A \mapsto A_{ij}$ linear, denn für alle $A, B \in \Mat(m \times n, K)$ ist
+ \[
+  p_{ij}(A+B)
+  = (A+B)_{ij}
+  = A_{ij} + B_{ij}
+  = p_{ij}(A) + p_{ij}(B)
+ \]
+ und für alle $A \in \Mat(m \times n, K)$ und $\lambda \in K$ ist
+ \[
+  p_{ij}(\lambda A)
+  = (\lambda A)_{ij}
+  = \lambda A_{ij}
+  = \lambda p_{ij}(A).
+ \]
+ Wegen der Linearität von $p_{ij}$ ist
+ \[
+  \ker(p_{ij}) = \{A \in \Mat(n \times n, K) \mid A_{ij} = 0\}
+ \]
+ ein Untervektorraum. Für eine beliebige Menge von Einträgen $\mc{I} \subseteq \{1, \dotsc, m\} \times \{1, \dotsc, n\}$ ist daher auch
+ \begin{align*}
+  M_{\mc{I}}
+  &= \{A \in \Mat(m \times n, K) \mid \text{$A_{ij} = 0$ für alle $(i,j) \in \mc{I}$}\} \\
+  &= \bigcap_{(i,j) \in \mc{I}} \{A \in \Mat(m \times n, K) \mid A_{ij} = 0\}
+ \end{align*}
+ ein Untervektorraum von $\Mat(m \times n, K)$, da Schnitte von Untervektorräumen wieder Untervektorräume sind.
+\end{bem}
+
+Für die Einträge
+\begin{align*}
+ \mc{I}_1 &= \{(i,j) \in \{1, \dotsc, n\} \times \{1, \dotsc, n\} \mid i \neq j\}, \\
+ \mc{I}_2 &= \{(i,j) \in \{1, \dotsc, n\} \times \{1, \dotsc, n\} \mid j < i\}, \\
+ \mc{I}_3 &= \{(i,j) \in \{1, \dotsc, n\} \times \{1, \dotsc, n\} \mid i < j\}, \\
+ \mc{I}_4 &= \{(i,j) \in \{1, \dotsc, n\} \times \{1, \dotsc, n\} \mid j \leq i\} \\
+ \mc{I}_5 &= \{(i,j) \in \{1, \dotsc, n\} \times \{1, \dotsc, n\} \mid i \leq j\}
+\end{align*}
+ist nun $\dl_n(K) = M_{\mc{I}_1}$, $\bl^+_n(K) = M_{\mc{I}_2}$, $\bl^-_n(K) = M_{\mc{I}_3}$, $\nl^+_n(K) = M_{\mc{I}_4}$ und $\nl^-_n(K) = M_{\mc{I}_5}$. Also sind $\dl_n(K)$, $\bl^+_n(K)$, $\bl^-_n(K)$, $\nl^+_n(K)$ und $\nl^-_n(K)$ Untervektorräume von $\Mat(n \times n, K)$.
+
+\begin{bem}
+ Die Untervektorräume $\dl_n(K)$, $\bl^+_n(K)$, $\bl^-_n(K)$, $\nl^+_n(K)$ und $\nl^-_n(K)$ sind auch unter der Matrixmultiplikation abgelschlossen.
+ 
+ Dass $\dl_n(K)$ unter der Matrixmultiplikation abgelschlossen ist, also das Produkt von Diagonalmatrizen ebenfalls eine Diagonalmatrix ist, haben wir in \ref{ssec: diagonal matrices} gesehen.
+ 
+ Wir zeigen beispielsweise, dass auch die oberen Dreiecksmatrizen $\bl^+_n(K)$ unter der Matrixmultiplikation abgeschlossen sind; für die anderen Räume läuft das vorgehen analog.
+ 
+ Sind $A, B \in \bl^+_n(K)$ obere Dreiecksmatrizen, so ist $A_{ij} = 0$ für alle $1 \leq j < i \leq n$ und $B_{ij} = 0$ für alle $1 \leq j < i \leq n$. Für alle $1 \leq j < i \leq n$ ist deshalb
+ \[
+  (A \cdot B)_{ij}
+  = \sum_{k=1}^n A_{ik} B_{kj}
+  = \sum_{k=1}^{i-1} \underbrace{A_{ik}}_{=0} B_{kj} + \sum_{k=i}^n A_{ik} \underbrace{B_{kj}}_{=0}
+  = 0,
+ \]
+ weshalb auch $A \cdot B$ eine obere Dreiecksmatrix ist, also $A \cdot B \in \bl^+_n(K)$.
+
+\end{bem}
+
 
 
 
