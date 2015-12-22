@@ -688,44 +688,265 @@ Insgesamt zeigt dies, dass $(S(X), \circ)$ eine Gruppe ist.
 
 
 \subsection{Die symmetrische Gruppe \texorpdfstring{$S_n$}{Sn}}
-Für $n \in \Nbb$ ist $S_n \coloneqq S(\{1, \dotsc, n\})$. Ein Element $\sigma \in S_n$ schreibt man auch als
+\begin{defi}
+ Für $n \in \Nbb$ sei $S_n \coloneqq S(\{1, \dotsc, n\})$ die \emph{symmetrische Gruppe auf $n$ Elementen}.
+\end{defi}
+
+Ein Element $\sigma \in S_n$ schreibt man auch als
 \[
  \sigma
  =
- \begin{psmallmatrix}
+ \begin{pmatrix}
   1         & 2         & \cdots & n \\
   \sigma(1) & \sigma(2) & \cdots & \sigma(n)
- \end{psmallmatrix}.
+ \end{pmatrix}.
 \]
+
+\begin{bsp}
+ Für $\sigma \in S_5$ mit $\sigma(1) = 3$ $\sigma(2) = 5$, $\sigma(3) = 2$, $\sigma(4) = 1$, $\sigma(5) = 4$ ist
+ \[
+  \sigma =
+  \begin{pmatrix}
+   1 & 2 & 3 & 4 & 5 \\
+   3 & 5 & 2 & 1 & 4.
+  \end{pmatrix}
+ \]
+\end{bsp}
+
 
 \begin{bem}
  Statt $S_n$ schreibt man auch $\Sigma_n$.
 \end{bem}
 
-Wir bemerken zunächst, dass $S_n$ genau $n!$ viele Elemente hat: 
+Wir bemerken zunächst, dass $S_n$ genau $n!$ viele Elemente hat, da es genau $n!$ viele Bijektionen $\{1, \dotsc, n\} \to \{1, \dotsc, n\}$ gibt: Wählt man das Bild von $1$ beliebig, so gibt es für das Bild von $2$ noch $n-1$ Möglichkeiten, für das Bild von $3$ anschließend noch $n-2$ Möglichkeiten, usw. Damit ergeben sich insgesamt $n \cdot (n-1) \cdot (n-2) \dotsm 2 \cdot 1 = n!$ mögliche Bijektionen.
 
-%TODO: Anzahl der Elemente von S_n, S_2 und S_3 als besondere Gruppen; Untergruppen von S_3
+\begin{bsp}
+ \begin{enumerate}[leftmargin=*]
+  \item
+   Die symmetrische Gruppe $S_1$ besitzt nur ein Element, nämlich $\id_{\{1\}}$. Insbesonder ist $S_1$ abelsch.
+  \item
+   Die symmetrische Gruppe $S_2$ besteht aus $2! = 2$ Elementen, nämlich
+   \[
+    1 =
+    \begin{pmatrix}
+     1 & 2 \\
+     1 & 2
+    \end{pmatrix}
+    = \id_{\{1,2\}}
+    \quad\text{und}\quad
+    \tau
+    =
+    \begin{pmatrix}
+     1 & 2 \\
+     2 & 1
+    \end{pmatrix}.
+   \]
+   Dabei ist $\tau^2 = 1$, was der Klassifikation zweielementiger Mengen in \ref{sec: groups with two elements} entspricht. Inbesondere ist $S_2$ abelsch.
+  \item
+   Die symmetrische Gruppe $S_3$ besteht aus $3! = 6$ Elementen, nämlich
+   \[
+    1 =
+    \begin{psmallmatrix}
+     1 & 2 & 3 \\
+     1 & 2 & 3
+    \end{psmallmatrix},
+    \;
+    \tau_{12}
+    =
+    \begin{psmallmatrix}
+     1 & 2 & 3 \\
+     2 & 1 & 3
+    \end{psmallmatrix},
+    \;
+    \tau_{23}
+    =
+    \begin{psmallmatrix}
+     1 & 2 & 3 \\
+     1 & 3 & 2
+    \end{psmallmatrix},
+    \;
+    \tau_{13}
+    =
+    \begin{psmallmatrix}
+     1 & 2 & 3 \\
+     3 & 2 & 1
+    \end{psmallmatrix},
+    \;
+    r
+    =
+    \begin{psmallmatrix}
+     1 & 2 & 3 \\
+     2 & 3 & 1
+    \end{psmallmatrix},
+    \;
+    r^2
+    =
+    \begin{psmallmatrix}
+     1 & 2 & 3 \\
+     3 & 1 & 2
+    \end{psmallmatrix}.
+   \]
+   Dabei steht $\tau$ für „Transposition“, d.h.\ das Vertauschen zweier Elemente, und $r$ für „Rotation“. Man bemerke, dass $r^3 = 1$, bzw.\ $r^2 = r^{-1}$, d.h.\ einmal nach links rotieren ist das gleich wie zweimal nach rechts rotieren.
+   %TODO: Cayleygraph von S_3 hinzufügen
+   
+   Man bemerke, dass die Gruppe $S_3$ nicht abelsch ist, da etwa $r \tau_{12} = \tau_{23} \neq \tau_{13} = \tau_{12} r$.
+  
+  \item
+   Die symmetrische Gruppe $S_4$ besteht aus den folgenden $4! = 24$ Elementen:
+   \begin{gather*}
+    \begin{psmallmatrix}
+     1 & 2 & 3 & 4 \\
+     1 & 2 & 3 & 4
+    \end{psmallmatrix}\;
+    \begin{psmallmatrix}
+     1 & 2 & 3 & 4 \\
+     1 & 2 & 4 & 3
+    \end{psmallmatrix}\;
+    \begin{psmallmatrix}
+     1 & 2 & 3 & 4 \\
+     1 & 3 & 2 & 4
+    \end{psmallmatrix}\;
+    \begin{psmallmatrix}
+     1 & 2 & 3 & 4 \\
+     1 & 3 & 4 & 2
+    \end{psmallmatrix}\;
+    \begin{psmallmatrix}
+     1 & 2 & 3 & 4 \\
+     1 & 4 & 2 & 3
+    \end{psmallmatrix}\;
+    \begin{psmallmatrix}
+     1 & 2 & 3 & 4 \\
+     1 & 4 & 3 & 2
+    \end{psmallmatrix}\\
+    \begin{psmallmatrix}
+     1 & 2 & 3 & 4 \\
+     2 & 1 & 3 & 4
+    \end{psmallmatrix}\;
+    \begin{psmallmatrix}
+     1 & 2 & 3 & 4 \\
+     2 & 1 & 4 & 3
+    \end{psmallmatrix}\;
+    \begin{psmallmatrix}
+     1 & 2 & 3 & 4 \\
+     2 & 3 & 1 & 4
+    \end{psmallmatrix}\;
+    \begin{psmallmatrix}
+     1 & 2 & 3 & 4 \\
+     2 & 3 & 4 & 1
+    \end{psmallmatrix}\;
+    \begin{psmallmatrix}
+     1 & 2 & 3 & 4 \\
+     2 & 4 & 1 & 3
+    \end{psmallmatrix}\;
+    \begin{psmallmatrix}
+     1 & 2 & 3 & 4 \\
+     2 & 4 & 3 & 1
+    \end{psmallmatrix}\\
+    \begin{psmallmatrix}
+     1 & 2 & 3 & 4 \\
+     3 & 1 & 2 & 4
+    \end{psmallmatrix}\;
+    \begin{psmallmatrix}
+     1 & 2 & 3 & 4 \\
+     3 & 1 & 4 & 2
+    \end{psmallmatrix}\;
+    \begin{psmallmatrix}
+     1 & 2 & 3 & 4 \\
+     3 & 2 & 1 & 4
+    \end{psmallmatrix}\;
+    \begin{psmallmatrix}
+     1 & 2 & 3 & 4 \\
+     3 & 2 & 4 & 1
+    \end{psmallmatrix}\;
+    \begin{psmallmatrix}
+     1 & 2 & 3 & 4 \\
+     3 & 4 & 1 & 2
+    \end{psmallmatrix}\;
+    \begin{psmallmatrix}
+     1 & 2 & 3 & 4 \\
+     3 & 4 & 2 & 1
+    \end{psmallmatrix}\\
+    \begin{psmallmatrix}
+     1 & 2 & 3 & 4 \\
+     4 & 1 & 2 & 3
+    \end{psmallmatrix}\;
+    \begin{psmallmatrix}
+     1 & 2 & 3 & 4 \\
+     4 & 1 & 3 & 2
+    \end{psmallmatrix}\;
+    \begin{psmallmatrix}
+     1 & 2 & 3 & 4 \\
+     4 & 2 & 1 & 3
+    \end{psmallmatrix}\;
+    \begin{psmallmatrix}
+     1 & 2 & 3 & 4 \\
+     4 & 2 & 3 & 1
+    \end{psmallmatrix}\;
+    \begin{psmallmatrix}
+     1 & 2 & 3 & 4 \\
+     4 & 3 & 1 & 2
+    \end{psmallmatrix}\;
+    \begin{psmallmatrix}
+     1 & 2 & 3 & 4 \\
+     4 & 3 & 1 & 2
+    \end{psmallmatrix}
+   \end{gather*}
+  \item
+   Wir möchten den geneigten Leser dazu ermutigen, sich auch die Element von $S_5$ aufzuschreiben.
+ \end{enumerate}
+\end{bsp}
 
+
+\begin{bem}
+ Wie oben gesehen ist $S_3$ nicht abelsch. Allgemeiner gilt, dass $S_n$ für $n \geq 3$ nicht abelsch ist. Ein entsprechendes Gegenbeispiel lässt sich leicht aus dem von $S_3$ verallgemeinern: Für $\tau, r \in S_n$ mit
+ \begin{gather*}
+  \tau =
+  \begin{pmatrix}
+   1 & 2 & 3 & 4 & \cdots & n \\
+   2 & 1 & 3 & 4 & \cdots & n
+  \end{pmatrix}
+  \quad\text{und}\quad
+  r =
+  \begin{pmatrix}
+   1 & 2 & 3 & 4 & \cdots & n \\
+   2 & 3 & 1 & 4 & \cdots & n
+  \end{pmatrix}.
+ \shortintertext{ist}
+  r \tau
+  =
+  \begin{pmatrix}
+   1 & 2 & 3 & 4 & \cdots & n \\
+   1 & 3 & 2 & 4 & \cdots & n
+  \end{pmatrix}
+  \neq
+  \begin{pmatrix}
+   1 & 2 & 3 & 4 \cdots & n \\
+   3 & 2 & 1 & 4 \cdots & n
+  \end{pmatrix}
+  = \tau r.
+ \end{gather*}
+\end{bem}
+
+
+%TODO: Satz von Cayley
 
 
 \subsection{Normalisatoren \texorpdfstring{$N(Y)$}{N(Y)} und Zentralisatoren \texorpdfstring{$Z(Y)$}{Z(Y)}}
-
-
 \begin{defi}
  Es sei $X$ eine Menge und $Y \subseteq X$ eine Teilmenge. Dann heißt
  \[
-  N(Y) \coloneqq \{\sigma \in S(X) \mid \sigma(Y) = Y\}
+  N_{S(X)}(Y) \coloneqq \{\sigma \in S(X) \mid \sigma(Y) = Y\}
  \]
- der \emph{Normalisator von $Y$} und
+ der \emph{Normalisator} von $Y$ (in $S(X)$) und
  \[
-  Z(Y)
+  Z_{S(X)}(Y)
   \coloneqq
   \{\sigma \in S(X) \mid \text{$\sigma(y) = y$ für alle $y \in Y$}\}
  \]
- der \emph{Zentralisator von $Y$}.
+ der \emph{Zentralisator} von $Y$ (in $S(X)$).
 \end{defi}
 
-Wir zeigen zunächst, dass $N(Y)$ eine Untergruppe von $S(X)$ ist: Da $\id_X(Y) = Y$ ist $\id_X \in N(Y)$. Sind $\sigma, \tau \in N(Y)$ so ist $\sigma(Y) = Y$ und $\tau(Y) = Y$. Daher ist
+Wir zeigen zunächst, dass $N_{S(X)}(Y)$ eine Untergruppe von $S(X)$ ist: Da $\id_X(Y) = Y$ ist $\id_X \in N_{S(X)}(Y)$. Sind $\sigma, \tau \in N_{S(X)}(Y)$ so ist $\sigma(Y) = Y$ und $\tau(Y) = Y$. Daher ist
 \begin{align*}
  (\sigma \circ \tau)(Y)
  &= \{(\sigma \circ \tau)(y) \mid y \in Y\}
@@ -735,7 +956,7 @@ Wir zeigen zunächst, dass $N(Y)$ eine Untergruppe von $S(X)$ ist: Da $\id_X(Y) 
  = \sigma(Y)
  = Y
 \end{align*}
-und deshalb auch $\sigma \circ \tau \in N(Y)$. Ist $\sigma \in N(X)$, so ist $\sigma(Y) = Y$ und deshalb
+und deshalb auch $\sigma \circ \tau \in N_{S(X)}(Y)$. Ist $\sigma \in N_{S(X)}(X)$, so ist $\sigma(Y) = Y$ und deshalb
 \begin{align*}
  Y
  &= \id_X(Y)
@@ -746,11 +967,11 @@ und deshalb auch $\sigma \circ \tau \in N(Y)$. Ist $\sigma \in N(X)$, so ist $\s
  = \sigma^{-1}(\sigma(Y))
  = \sigma^{-1}(Y),
 \end{align*}
-also auch $\sigma^{-1} \in N(Y)$.
+also auch $\sigma^{-1} \in N_{S(X)}(Y)$.
 
-Insgesamt zeigt dies, dass $N(Y) \subseteq S(X)$ eine Untergruppe ist. Inbesondere ist daher $N(Y)$ zusammen mit der Funktionskomposition $\circ$ wieder eine Gruppe.
+Insgesamt zeigt dies, dass $N_{S(X)}(Y) \subseteq S(X)$ eine Untergruppe ist. Inbesondere ist daher $N_{S(X)}(Y)$ zusammen mit der Funktionskomposition $\circ$ eine Gruppe.
 
-Als nächstes zeigen wir, dass auch $Z(Y) \subseteq S(X)$ eine Untergruppe ist: Da $\id_X(x) = x$ für alle $x \in X$, und damit inbesondere $\id_X(y) = y$ für alle $y \in Y$, ist $\id_X \in Z(Y)$. Sind $\sigma, \tau \in Z(Y)$, so ist $\sigma(y) = y$ und $\tau(y) = y$ für alle $y \in Y$ und deshalb auch
+Nun zeigen wir, dass auch $Z_{S(X)}(Y) \subseteq S(X)$ eine Untergruppe ist: Da $\id_X(x) = x$ für alle $x \in X$, und damit inbesondere $\id_X(y) = y$ für alle $y \in Y$, ist $\id_X \in Z_{S(X)}(Y)$. Sind $\sigma, \tau \in Z_{S(X)}(Y)$, so ist $\sigma(y) = y$ und $\tau(y) = y$ für alle $y \in Y$ und deshalb auch
 \[
  (\sigma \circ \tau)(y)
  = \sigma(\tau(y))
@@ -759,35 +980,117 @@ Als nächstes zeigen wir, dass auch $Z(Y) \subseteq S(X)$ eine Untergruppe ist: 
  \quad
  \text{für alle $y \in Y$}.
 \]
-Also ist auch $\sigma \circ \tau \in Z(Y)$. Ist $\sigma \in Z(Y)$, so ist $\sigma(y) = y$ für jedes $y \in Y$ und daher
+Also ist auch $\sigma \circ \tau \in Z_{S(X)}(Y)$. Ist $\sigma \in Z_{S(X)}(Y)$, so ist $\sigma(y) = y$ für jedes $y \in Y$ und daher
 \[
  \sigma^{-1}(y) = \sigma^{-1}(\sigma(y)) = y
  \quad
  \text{für alle $y \in Y$}.
 \]
-Also ist auch $\sigma \in Z(Y)$.
+Also ist auch $\sigma \in Z_{S(X)}(Y)$.
 
-Ingesamt zeigt dies, dass $Z(Y)$ eine Untergruppe von $S(X)$ ist. Deshalb ist $Z(Y)$ zusammen mit der Funktionskomposition $\circ$ wieder eine Gruppe.
+Ingesamt zeigt dies, dass $Z_{S(X)}(Y)$ eine Untergruppe von $S(X)$ ist. Deshalb ist $Z_{S(X)}(Y)$ zusammen mit der Funktionskomposition $\circ$ wieder eine Gruppe.
 
-Für jedes $\sigma \in Z(Y)$ ist auch
+Für jedes $\sigma \in Z_{S(X)}(Y)$ ist auch
 \[
  \sigma(Y)
  = \{\sigma(y) \mid y \in Y\}
  = \{y \mid y \in Y\}
  = Y,
 \]
-also $\sigma \in N(Y)$. Wir haben also eine Kette von Untergruppen $Z(Y) \subseteq N(Y) \subseteq S(X)$.
+also $\sigma \in N_{S(X)}(Y)$. Wir haben also eine Kette von Untergruppen
+\[
+ Z_{S(X)}(Y) \subseteq N_{S(X)}(Y) \subseteq S(X).
+\]
+
+
+\begin{bsp}
+ \begin{enumerate}[leftmargin=*]
+  \item
+   Es sei $X = \{1,2,3,4,5\}$, also $S(X) = S_5$, und $Y = \{4,5\}$. Dann ist
+   \[
+    Z_{S_5}(\{4,5\}) = \{\sigma \in S_5 \mid \sigma(4) = 4, \sigma(5) = 5\}.
+   \]
+   Die Elemente von $Z_{S_5}(Y)$ sind also diejenigen Permutationen aus $S_5$, die tatächlich nur die ersten drei Element vertauschen. Diese sind 
+   \[
+    \begin{psmallmatrix}
+     1 & 2 & 3 & 4 & 5 \\
+     1 & 2 & 3 & 4 & 5
+    \end{psmallmatrix},
+    \;
+    \begin{psmallmatrix}
+     1 & 2 & 3 & 4 & 5 \\
+     2 & 1 & 3 & 4 & 5
+    \end{psmallmatrix},
+    \;
+    \begin{psmallmatrix}
+     1 & 2 & 3 & 4 & 5 \\
+     1 & 3 & 2 & 4 & 5
+    \end{psmallmatrix},
+    \;
+    \begin{psmallmatrix}
+     1 & 2 & 3 & 4 & 5 \\
+     3 & 2 & 1 & 4 & 5
+    \end{psmallmatrix},
+    \;
+    \begin{psmallmatrix}
+     1 & 2 & 3 & 4 & 5 \\
+     2 & 3 & 1 & 4 & 5
+    \end{psmallmatrix},
+    \;
+    \begin{psmallmatrix}
+     1 & 2 & 3 & 4 & 5 \\
+     3 & 1 & 2 & 4 & 5
+    \end{psmallmatrix}.
+   \]
+   Insbesondere ist deshalb $Z_{S_5}(\{4,5\}) \cong S_3$, wobei ein möglicher (und naheliegender) Gruppenisomorphismus durch
+   \begin{align*}
+    \varphi \colon S_3 &\longrightarrow Z_{S_5}(\{4,5\}), \\
+    \sigma =
+    \begin{pmatrix}
+     1         & 2         & 3 \\
+     \sigma(1) & \sigma(2) & \sigma(3)
+    \end{pmatrix}
+    &\longmapsto
+    \begin{pmatrix}
+     1         & 2         & 3         & 4 & 5 \\
+     \sigma(1) & \sigma(2) & \sigma(3) & 4 & 5
+    \end{pmatrix},
+   \end{align*}
+   gegeben ist. Das Inverse $\varphi^{-1}$ ist gegeben durch die Einschränkung
+   \[
+    \varphi^{-1} \colon S_5 \to S_3,
+    \quad
+    \sigma \mapsto \sigma|_{\{1,2,3\}}.
+   \]
+  \item
+   Ist allgemeiner $Y \subseteq X$, so ist die Abbildung $\varphi \colon S(X \setminus Y) \to Z_{S(X)}(Y)$ mit
+   \[
+    \varphi(\sigma)(x) =
+    \begin{cases}
+     \sigma(x) & \text{falls $x \notin Y$}, \\
+            x  & \text{falls $x \in Y$},
+    \end{cases}
+   \]
+   ein Gruppenisomorphismus, und das Inverse $\varphi^{-1}$ ist gegeben durch die Einschränkung
+   \[
+    \varphi^{-1} \colon Z_{S(X)}(Y) \to S(X \setminus Y),
+    \quad
+    \sigma \mapsto \sigma|_{X \setminus Y}.
+   \]
+ \end{enumerate}
+\end{bsp}
 
 
 
 
 
-\section{Die allgemeine lineare Gruppe \texorpdfstring{$\GL_n(k)$}{GLnk} und ihre Untergruppen}
+
+\section{Die allgemeine lineare Gruppe \texorpdfstring{$\GL_n(K)$}{GLnK} und ihre Untergruppen}
 Im Folgenden sei $K$ ein (beliebiger) Körper.
 
 
 
-\subsection{Die allgemeine lineare Gruppe \texorpdfstring{$\GL_n(k)$}{GLnk}}
+\subsection{Die allgemeine lineare Gruppe \texorpdfstring{$\GL_n(K)$}{GLnK}}
 
 \begin{defi}
  Eine Matrix $S \in \Mat(n \times n, K)$ heißt \emph{invertierbar}, falls es eine Matrix $T \in \Mat(n \times n, K)$ gibt, so dass $ST = I_n = TS$. (Hier bezeichnet $I_n \in \Mat(n \times n, K)$ die Einheitsmatrix.)
@@ -846,11 +1149,11 @@ Insgesamt zeigt dies, dass $\GL_n(K)$ zusammen mit der üblichen Matrixmultiplik
  \end{gather*}
  Es sei
 \[
- \D_n(k) \coloneqq \{D \in \GL_n(k) \mid \text{$D$ ist eine Diagonalmatrix}\}.
+ \D_n(k) \coloneqq \{D \in \GL_n(K) \mid \text{$D$ ist eine Diagonalmatrix}\}.
 \]
 \end{defi}
 
-Wir zeigen, dass $\D_n(k)$ zusammen mit der üblichen Matrixmultiplikation eine Gruppe bildet, indem wir zeigen, dass $\D_n(K)$ eine Untergruppe von $\GL_n(k)$ ist.
+Wir zeigen, dass $\D_n(k)$ zusammen mit der üblichen Matrixmultiplikation eine Gruppe bildet, indem wir zeigen, dass $\D_n(K)$ eine Untergruppe von $\GL_n(K)$ ist.
 
 Wir wollen zunächt verstehe, wie das Produkt von Diagonalmatrizen mit anderen Matrizen aussieht. Hierfür sei $D \in \Mat(n \times n, K)$ eine Diagonalmatrix, $A \in \Mat(m \times n, K)$ sowie $B \in \Mat(n \times m, K)$. Es seien $\lambda_1, \dotsc, \lambda_n \in K$ mit $D = \diag(\lambda_1, \dotsc, \lambda_n)$. Für alle $1 \leq i \leq m$ und $1 \leq j \leq n$ ist
 \[
@@ -913,7 +1216,7 @@ Hierfür betrachten wir zunächst den Fall, dass $\lambda_i \neq 0$ für alle $1
 \]
 Also ist dann $D^{-1} = D'$ ein Diagonalmatrix.
 
-Tatsächlich muss, da $D$ invertierbar ist, bereits $\lambda_i \neq 0$ für alle $1 \leq i \leq n$: Ansonsten gebe ein $1 \leq i \leq n$ mit $\lambda_i = 0$ und somit $D_{ij} = 0$ für alle $1 \leq j \leq n$ (für alle $1 \leq j \leq n$ mit $j \neq i$ gilt bereits $D_{ij} = 0$, da $D$ ein Diagonalmatrix ist). Für jede Matrix $S \in \GL_n(k)$ wäre damit
+Tatsächlich muss, da $D$ invertierbar ist, bereits $\lambda_i \neq 0$ für alle $1 \leq i \leq n$: Ansonsten gebe ein $1 \leq i \leq n$ mit $\lambda_i = 0$ und somit $D_{ij} = 0$ für alle $1 \leq j \leq n$ (für alle $1 \leq j \leq n$ mit $j \neq i$ gilt bereits $D_{ij} = 0$, da $D$ ein Diagonalmatrix ist). Für jede Matrix $S \in \GL_n(K)$ wäre damit
 \[
  (DS)_{ii}
  = \sum_{j=1}^n \underbrace{D_{ij}}_{=0} S_{ji}
@@ -921,10 +1224,10 @@ Tatsächlich muss, da $D$ invertierbar ist, bereits $\lambda_i \neq 0$ für alle
 \]
 Insbesondere wäre somit $DS \neq I_n$ für alle $S \in \GL_n(K)$, was im Widerspruch zu der Invertierbarkeit von $D$ stünde.
 
-Das zeigt, dass eine Diagonalmatrix $D = \diag(\lambda_1, \dotsc, \lambda_n)$ genau dann invertierbar ist, wenn $\lambda_i \neq 0$ für alle $1 \leq i \leq n$, und dann $D^{-1} = \diag(\lambda_1^{-1}, \dotsc, \lambda_n^{-1})$ ebenfalls eine Diagonalmatrix ist. Also ist $\D_n(k)$ ein Untergruppe von $\GL_n(k)$.
+Das zeigt, dass eine Diagonalmatrix $D = \diag(\lambda_1, \dotsc, \lambda_n)$ genau dann invertierbar ist, wenn $\lambda_i \neq 0$ für alle $1 \leq i \leq n$, und dann $D^{-1} = \diag(\lambda_1^{-1}, \dotsc, \lambda_n^{-1})$ ebenfalls eine Diagonalmatrix ist. Also ist $\D_n(k)$ ein Untergruppe von $\GL_n(K)$.
 
 
-\subsection{Skalarmatrizen}
+\subsection{Die Skalarmatrizen \texorpdfstring{$\Sc_n(K)$}{Sn(K)}}
 \begin{defi}
  Eine quadratische Matrix $S \subseteq \Mat(n \times n, K)$ heißt \emph{Skalarmatrix}, falls $S$ eine Diagonalmatrix ist, deren Diagonaleinträge alle gleich sind, d.h.\ $S = \diag(\lambda, \dotsc, \lambda)$ für ein $\lambda \in K$. Es sei
  \[
@@ -943,7 +1246,11 @@ Außerdem ist damit auch
  = \diag(\lambda, \dotsc, \lambda)^{-1}
  = \diag(\lambda^{-1}, \dotsc, \lambda^{-1}) \in \Sc_n(K).
 \]
-Insgesamt zeigt dies, dass $\Sc_n(K)$ eine Untergruppe von $\GL_n(K)$ ist.
+Insgesamt zeigt dies, dass $\Sc_n(K)$ eine Untergruppe von $\GL_n(K)$ ist. Da Skalarmatrizen stets Diagonalmatrizen sind, ist bereits $\Sc_n(K) \subseteq \D_n(K)$. Wir haben also eine Kette von Untergruppen
+\[
+ \Sc_n(K) \subseteq \D_n(K) \subseteq \GL_n(K).
+\]
+
 
 
 \begin{bem}
@@ -1004,13 +1311,13 @@ Insgesamt zeigt dies, dass $\Sc_n(K)$ eine Untergruppe von $\GL_n(K)$ ist.
 
 Für $n \in \Nbb$, $n \geq 1$ sei
 \[
- \Ort_n(k)
- \coloneqq \{S \in \GL_n(k) \mid S^T S = I_n\}
- = \{S \in \GL_n(k) \mid S^{-1} = S^T\}.
+ \Ort_n(K)
+ \coloneqq \{S \in \GL_n(K) \mid S^T S = I_n\}
+ = \{S \in \GL_n(K) \mid S^{-1} = S^T\}.
 \]
-Wir zeigen, dass $\Ort_n(k) \subseteq \GL_n(k)$ eine Untergruppe ist:
+Wir zeigen, dass $\Ort_n(K) \subseteq \GL_n(K)$ eine Untergruppe ist:
 
-Da $I_n^T I_n = I_n^2 = I_n$ ist $I_n \in \Ort_n(k)$. Für $S_1, S_2 \in \Ort_n(k)$ ist $S_1^T S_1 = I_n$ und $S_2^T S_2 = I_n$, also auch
+Da $I_n^T I_n = I_n^2 = I_n$ ist $I_n \in \Ort_n(K)$. Für $S_1, S_2 \in \Ort_n(K)$ ist $S_1^T S_1 = I_n$ und $S_2^T S_2 = I_n$, also auch
 \[
  (S_1 S_2)^T (S_1 S_2)
  = S_2^T S_1^T S_1 S_2
@@ -1018,7 +1325,7 @@ Da $I_n^T I_n = I_n^2 = I_n$ ist $I_n \in \Ort_n(k)$. Für $S_1, S_2 \in \Ort_n(
  = S_2^T S_2
  = I_n
 \]
-und somit $S_1 S_2 \in \Ort_n(k)$. Ist $S \in \Ort_n(k)$, so ist $S^T S = I_n$. Durch Multiplikation mit $(S^T)^{-1}$ von links und $S^{-1}$ von rechts ergibt sich daraus, dass
+und somit $S_1 S_2 \in \Ort_n(K)$. Ist $S \in \Ort_n(K)$, so ist $S^T S = I_n$. Durch Multiplikation mit $(S^T)^{-1}$ von links und $S^{-1}$ von rechts ergibt sich daraus, dass
 \begin{align*}
  I_n
  &= I_n^2
@@ -1028,9 +1335,9 @@ und somit $S_1 S_2 \in \Ort_n(k)$. Ist $S \in \Ort_n(k)$, so ist $S^T S = I_n$. 
  = (S^T)^{-1} S^{-1}
  = (S^{-1})^T S^{-1}.
 \end{align*}
-Somit ist auch $S^{-1} \in \Ort_n(k)$.
+Somit ist auch $S^{-1} \in \Ort_n(K)$.
 
-Das zeigt, dass $\Ort_n(k) \subseteq \GL_n(k)$ eine Untergruppe ist; daher ist $\Ort_n(k)$ zusammen mit der üblichen Matrixmultiplikation eine Gruppe. Man bezeichnet diese als die \emph{orthogonale Gruppe über $k$}.
+Das zeigt, dass $\Ort_n(K) \subseteq \GL_n(K)$ eine Untergruppe ist; daher ist $\Ort_n(K)$ zusammen mit der üblichen Matrixmultiplikation eine Gruppe. Man bezeichnet diese als die \emph{orthogonale Gruppe über $K$}.
 
 \begin{bem}
  \begin{enumerate}[leftmargin=*]
@@ -1039,9 +1346,9 @@ Das zeigt, dass $\Ort_n(k) \subseteq \GL_n(k)$ eine Untergruppe ist; daher ist $
   \item
    Analog zur obigen Rechnung kann man zeigen, dass für eine beliebige quadratische Matrix $B \in \Mat(n \times n, k)$ die Menge
    \[
-    \Ort(B) \coloneqq \{S \in \GL_n(k) \mid S^T B S = B\}
+    \Ort(B) \coloneqq \{S \in \GL_n(K) \mid S^T B S = B\}
    \]
-   eine Untergruppe von $\GL_n(k)$ ist. Inbsondere ist $\Ort_n(k) = \Ort(I_n)$.
+   eine Untergruppe von $\GL_n(K)$ ist. Die orthogonale Gruppe ergibt sich als der Sonderfall $\Ort_n(K) = \Ort(I_n)$.
  \end{enumerate}
 \end{bem}
 
@@ -1190,7 +1497,7 @@ Insgesamt zeigt dies, dass $\SOrt(2)$ zusammen mit der üblichen Matrixmultiplik
     = I_2.
    \end{align*}
   \item
-   Für jede Matrix $S \in \GL_n(k)$ ist die Abbildung $M_S \colon \Rbb^2 \to \Rbb^2, x \mapsto S \cdot x$ linear. Ist $S = D_\varphi$, so ist $M_S = M_{D_\varphi}$ die Drehung der Ebene $\Rbb^2$ um den Winkel $\varphi$.
+   Für jede Matrix $S \in \GL_n(K)$ ist die Abbildung $M_S \colon \Rbb^2 \to \Rbb^2, x \mapsto S \cdot x$ linear. Ist $S = D_\varphi$, so ist $M_S = M_{D_\varphi}$ die Drehung der Ebene $\Rbb^2$ um den Winkel $\varphi$.
  \end{enumerate}
 \end{bem}
 
@@ -1381,7 +1688,7 @@ Wir identifiziert daher für gewöhnlich die Repräsentanten $0, \dotsc, n-1$ mi
 
 
 
-\section{Ausblick: Quotienten von abelschen Gruppen}
+\section{Ausblick: Quotienten abelscher Gruppen}
 Als ein weiteres (abstraktes) Beispiel geben wir eine Verallgemeinerung der Konstruktion von $\Zbb/n\Zbb$ an, die für eine beliebige abelsche Gruppe $A$ und Untergruppe $H \subseteq A$ eine \emph{Quotientengruppe} $A/H$ liefert.
 
 Wir definieren auf $A$ eine Äquivalenzrelation durch
@@ -1509,11 +1816,26 @@ und somit auch $g^{-1} \in Z(G)$. Insgesamt zeigt dies, dass $Z(G)$ eine Untergr
    Es lässt sich zeigen, dass $Z(\GL_n(K)) = \Sc_n(K)$ genau die Untergruppe der Skalarmatrizen ist.
    %TODO: Beweisen.
   \item
-   Es lässt sich zeigen, dass $Z(S_n) = \{1\}$ die triviale Gruppe ist.
-   %TODO: Beweisen.
+   Da die symmetrischen Gruppen $S_1$ und $S_2$ sind abelsch ist $Z(S_1) = S_1$ und \mbox{$Z(S_2) = S_2$}. Für $n \geq 3$ ist $S_n$ nicht abelsch, also $Z(S_n) \subsetneq S_n$. Es lässt sich allgemeiner zeigen, dass bereits $Z(S_n) = \{1\}$ für alle $n \geq 3$:
+   
+   Angenommen, es ist $\sigma \in Z(S_n)$ mit $\sigma \neq 1 = \id_{\{1,\dotsc,n\}}$. Dann gibt es ein $k \in \{1, \dotsc, n\}$ mit $\sigma(k) \neq k$. Da $n \geq 3$ gibt es ein $l \in \{1, \dotsc, n\}$ mit $k_0 \notin \{k, \sigma(k)\}$. Die drei Element $k$, $\sigma(k)$ und $k_0$ sind also paarweise verschieden. Es sei $\tau \in S_n$ definiert als
+   \[
+    \tau(l) \coloneqq
+    \begin{cases}
+     k_0       & \text{für $l = \sigma(k)$}, \\
+     \sigma(k) & \text{für $l = k_0$}, \\
+     l         & \text{sonst}.
+    \end{cases}
+   \]
+   $\tau$ vertauscht also die beiden Elemente $k_0$ und $\sigma(k)$ und lässt alle anderen Element unverändert; insbesondere ist $\tau(k) = k$ Es gilt nun
+   \[
+   \tau(\sigma(k)) = k_0 \neq \sigma(k) = \sigma(\tau(k)),
+   \]
+   also ist $\tau \circ \sigma \neq \sigma \circ \tau$. Deshalb ist $\sigma \notin Z(S_n)$.
+  \item
+   Allgemeiner lässt sich für eine beliebige Teilmenge $X \subseteq G$ einer Gruppe $G$ der \emph{Zentralisator} $Z_G(X) \coloneqq \{g \in G \mid \text{$gh = hg$ für alle $h \in X$}\}$ betrachten; dies ist stets eine Untergruppe von $G$. Das Zentrum ergibt sich dann als Sonderfall für $X = G$, also $Z(G) = Z_G(G)$.
  \end{enumerate}
 \end{bsp}
-
 
 
 
