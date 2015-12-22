@@ -1099,7 +1099,7 @@ Also ist auch $\lambda f$ beschränkt und somit $\lambda f \in B(X,\Rbb)$. Inges
 \end{bem}
 
 
-\subsection{Gerade und ungerade Funktionen}
+\subsection{Gerade und ungerade Funktionen}\label{ssec: even and odd functions}
 Eine Funktion $f \colon \Rbb \to \Rbb$ heißt \emph{gerade}, falls $f(x) = f(-x)$ für alle $x \in \Rbb$ und \emph{ungerade}, falls $f(-x) = -f(x)$ für alle $x \in \Rbb$. Es seien
 \begin{align*}
  G(\Rbb,\Rbb) &\coloneqq \{f \colon \Rbb \to \Rbb \mid \text{$f$ ist gerade}\}
@@ -1196,6 +1196,50 @@ für alle $x \in \Rbb^n$. Also ist $f+g$ radialsymmetrisch und deshalb auch $f+g
  \text{für alle $x \in \Rbb^n$}.
 \]
 Also ist auch $\lambda f$ radialsymmetrisch und somit $\lambda f \in R$. Dies zeigt, dass \mbox{$R \subseteq \Abb(\Rbb^n, \Rbb)$} ein Untervektorraum ist.
+
+
+
+\subsection{Periodische Funktionen auf \texorpdfstring{$\Rbb$}{R}}
+\begin{defi}
+ Eine reellwertige Funktion $f \colon \Rbb \to \Rbb$ heißt \emph{periodisch} mit \emph{Periode} $T >  0$, oder auch \emph{$T$-periodisch}, falls
+ \[
+  f(x+T) = f(x)
+  \quad
+  \text{für alle $x \in \Rbb$}.
+ \]
+ Für $T > 0$ sei $P_T(\Rbb) \coloneqq \{f \colon \Rbb \to \Rbb \mid \text{$f$ ist $T$-periodisch}\}$.
+\end{defi}
+
+Es sei $T > 0$. Wir zeigen, dass Summen und Vielfache von $T$-periodischen Funktionen ebenfalls $T$-periodisch sind, dass also $P_T(\Rbb) \subseteq \Abb(\Rbb,\Rbb)$ ein Untervektorraum ist:
+
+Die Nullfunktion $N \colon \Rbb \to \Rbb$ ist $T$-periodisch, denn
+\[
+ N(x+T) = 0 = N(x)
+ \quad
+ \text{für alle $x \in \Rbb$}.
+\]
+(Allgemeiner gilt, dass jede konstante Funktion $T$-periodisch ist.) Sind $f,g \in P_T(\Rbb)$, so ist
+\[
+ (f+g)(x+T) = f(x+T) + g(x+T) = f(x) + g(x) = (f+g)(x)
+ \quad
+ \text{für alle $x \in \Rbb$},
+\]
+also auch $f+g \in P_T(\Rbb)$. Ist $f \in P_T(\Rbb)$ und $\lambda \in \Rbb$, so ist
+\[
+ (\lambda f)(x+T)
+ = \lambda f(x+T)
+ = \lambda f(x)
+ = (\lambda f)(x)
+ \quad
+ \text{für alle $x \in \Rbb$},
+\]
+also auch $\lambda f \in P_T(\Rbb)$. Das zeigt, dass $P_T(\Rbb)$ ein Untervektorraum von $\Abb(\Rbb,\Rbb)$ ist.
+
+\begin{bem}
+ Statt den $T$-periodischen reellwertigen Funktionen lassen sich auch die $T$-periodische komplexwertige Funktionen betrachten, d.h.\ die Funktionen der Form \mbox{$f \colon \Rbb \to \Cbb$} mit $f(x+T) = f(x)$ für alle $x \in \Rbb$. Anstelle des reellen Vektorraums $P_T(\Rbb)$ erhalten wir dann den komplexen Vektorraum $P_T(\Cbb) = \{f \colon \Rbb \to \Cbb \mid \text{$f$ ist $T$-periodisch} \}$. Dabei ist eine Funktion $f \colon \Rbb \to \Cbb$ genau dann $T$-periodisch, falls der Realteil $\Re(f) \colon \Rbb \to \Rbb$ und der Imaginärteil $\Im(f) \colon \Rbb \to \Rbb$ beide $T$-periodisch ist.
+ 
+ Fassen wir $P_T(\Cbb)$ als reellen Vektorraum auf, so ist $P_T(\Rbb) \subseteq P_T(\Cbb)$ ein Untervektorraum.
+\end{bem}
 
 
 
@@ -1333,10 +1377,14 @@ Ingesamt zeigt dies, dass $C^\alpha(\Rbb) \subseteq \Abb(\Rbb, \Rbb)$ ein Unterv
 \end{bem}
 
 
-\subsection{Funktionen mit kompakten Träger}
 
+\subsection{Funktionen mit kompakten Träger}
 %TODO: Tippen
 
+
+
+\subsection{Funktionen, die \texorpdfstring{$\lambda$}{lambda}-fast überall verschwinden}
+%TODO: Tippen
 
 
 
@@ -1465,22 +1513,115 @@ also auch $\mu v \in \Eig(f,\lambda)$. Ingesamt zeigt dies, dass $\Eig(f,\lambda
 
 
 \begin{bsp}
- Es sei $\mc{T} \colon \Mat(n \times n, K) \to \Mat(n \times n, K)$, $A \mapsto A^T$ das Transponieren. Wie bereits in Bemerkung \ref{bem: properties of the transpose} gesehen ist $\mc{T}$ linear. Es ist
- \begin{gather*}
-  \Eig(\mc{T},1)
-  = \{A \in \Mat(n \times n, K) \mid A^T = 1 \cdot A = A\}
-  = \Sym_n(K)
- \shortintertext{und}
-  \Eig(\mc{T},-1)
-  = \{A \in \Mat(n \times n, K) \mid A^T = (-1) \cdot A = -A\}
-  = \Alt_n(K).
- \end{gather*}
+ \begin{enumerate}
+  \item
+   Ist $V$ ein $K$-Vektorraum und $f \colon V \to V$ ein Endomorphismus, so ist
+   \[
+    \Eig(f,0)
+    = \{v \in V \mid f(v) = 0 \cdot v\}
+    = \{v \in V \mid f(v) = 0\}
+    = \ker(f).
+   \]
+   Die Elemente von
+   \[
+    \Eig(f,1)
+    = \{v \in V \mid f(v) = 1 \cdot v\}
+    = \{v \in V \mid f(v) = v\}
+   \]
+   sind die \emph{Fixpunkte} von $f$.
+  \item
+   Es sei $\mc{T} \colon \Mat(n \times n, K) \to \Mat(n \times n, K)$, $A \mapsto A^T$ das Transponieren. Wie bereits in Bemerkung \ref{bem: properties of the transpose} gesehen ist $\mc{T}$ linear. Es ist
+   \begin{gather*}
+    \Eig(\mc{T},1)
+    = \{A \in \Mat(n \times n, K) \mid A^T = 1 \cdot A = A\}
+    = \Sym_n(K)
+   \shortintertext{und}
+    \Eig(\mc{T},-1)
+    = \{A \in \Mat(n \times n, K) \mid A^T = (-1) \cdot A = -A\}
+    = \Alt_n(K).
+   \end{gather*}
+   
+   Für alle $\lambda \in K$ mit $\lambda \notin \{1,-1\}$ ist $\Eig(\mc{T},\lambda) = \{0\}$, d.h.\ $1$ und $-1$ sind die einzigen Eigenwerte von $\mc{T}$. Ist nämlich $\lambda \in K$ ein Eigenwert von $\mc{T}$ und $A \in \Mat(n \times n, K)$ ein Eigenvektor von $\mc{T}$ zum Eigenwert $\lambda$, so ist
+   \[
+    A
+    = (A^T)^T
+    = \mc{T}(\mc{T}(A))
+    = \mc{T}(\lambda A)
+    = \lambda \mc{T}(A)
+    = \lambda^2 A.
+   \]
+   Da $A$ ein Eigenvektor ist, ist insbesondere $A \neq 0$; daher folgt aus der obigen Gleichung, dass $\lambda^2 = 1$, also $\lambda = \pm 1$.
+  \item
+   Wir betrachten den reellen Vektorraum $V \coloneqq \Abb(\Rbb,\Rbb)$ und den Endomorphismus $\Phi \colon V \to V$ mit
+   \[
+    \Phi(f)(x) = f(-x)
+    \quad
+    \text{für alle $x \in \Rbb$}.
+   \]
+   $\Phi$ ist linear, denn für alle $f,g \in V$ ist
+   \begin{align*}
+    \Phi(f+g)(x)
+    &= (f+g)(-x) \\
+    &= f(-x) + g(-x)
+    = \Phi(f)(x) + \Phi(g)(x)
+    = (\Phi(x) + \Phi(g))(x)
+   \end{align*}
+   für alle $x \in \Rbb$, und somit $\Phi(f+g) = \Phi(f) + \Phi(g)$; für alle $f \in V$ und $\lambda \in \Rbb$ ist
+   \[
+    \Phi(\lambda f)(x)
+    = (\lambda f)(-x)
+    = \lambda f(-x)
+    = \lambda \Phi(f)(x)
+    = (\lambda \Phi(f))(x)
+   \]
+   für alle $x \in \Rbb$, und somit $\Phi(\lambda f) = \lambda \Phi(f)$.
+   
+   Eine Funktion $f \in V$ ist ein Eigenvektor von $\Phi$ zum Eigenwert $1$, falls $f = \Phi(f)$, also
+   \[
+    f(x) = \Phi(f)(x) = f(-x)
+    \quad
+    \text{für alle $x \in \Rbb$}.
+   \]
+   Also ist $\Eig(\Phi, 1)$ der Vektorraum der geraden Funktionen (siehe \ref{ssec: even and odd functions}. Eine Funktion $f \in V$ ist ein Eigenvektor von $\Phi$ zum Eigenwert $-1$, falls $f = -\Phi(f)$, also
+   \[
+    f(-x) = \Phi(f)(x) = (-f)(x) = -f(x)
+    \quad
+    \text{für alle $x \in \Rbb$}.
+   \]
+   Also ist $\Eig(\Phi, -1)$ der Vektorraum der ungeraden Funktionen.
+   
+   Für alle $f \in V$ ist
+   \[
+    \Phi(\Phi(f))(x)
+    = \Phi(f)(-x)
+    = f(-(-x))
+    = f(x)
+    \quad
+    \text{für alle $x \in \Rbb$},
+   \]
+   also $\Phi(\Phi(f)) = f$. Analog wie beim vorherigen Beispiel der Transposition ergibt sich daraus, dass $1$ und $-1$ die einzigen Eigenwerte von $\Phi$ sind.
+ \end{enumerate}
  %TODO: Weitere Beispiele hinzufügen.
 \end{bsp}
 
 
 
 
+
+\section{Bilineare Abbildungen}
+
+
+\subsection{Allgemeine bilineare Abbildungen}
+%TODO: Tippen
+
+
+\subsection{Symmetrische, alternierende und schiefsymmetrische bilneare Abbildungen}
+%TODO: Tippen
+
+
+\subsection{Unterräume bezüglich bilinearer Abbildungen}
+%TODO: Tippen
+% Orthogonale Komplemente, Entartete Elemente
 
 
 
@@ -1502,12 +1643,26 @@ also auch $\mu v \in \Eig(f,\lambda)$. Ingesamt zeigt dies, dass $\Eig(f,\lambda
 
 
 
-
-
-\section{Freie Vektorräume}
+\section{Ausblick: Quotientenvektorräume}
 %TODO: Tippen
 
 
+
+\section{Ausblick: Freie Vektorräume}
+%TODO: Tippen
+
+
+
+\section{Ausblick: Zusätzliche Strukturen auf Vektorräumen}
+%TODO: Tippen
+
+
+\subsection{\texorpdfstring{$K$}{K}-Algebren}
+%TODO: Tippen
+
+
+\subsection{Lie-Algebren}
+%TODO: Tippen
 
 
 
