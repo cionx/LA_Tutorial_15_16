@@ -1850,7 +1850,7 @@ und somit auch $g^{-1} \in Z(G)$. Insgesamt zeigt dies, dass $Z(G)$ eine Untergr
  die \emph{Automorphismengruppe von $G$}.
 \end{defi}
 
-Es sei $G$ eine Gruppe. Wir zeigen, dass $\Aut(G)$ zusammen mit der Funktionskomposition eine Gruppe bildet, indem wir zeigen, dass $\Aut(G) \subseteq S(G)$ eine Untergruppe ist:
+Es sei $G$ eine Gruppe. Wir zeigen, dass $\Aut(G)$ zusammen mit der Funktionskomposition eine Gruppe bildet, indem wir zeigen, dass $\Aut(G) \subseteq S(G)$ eine Untergruppe ist. Dass $\Aut(G) \subseteq S(G)$ eine Teilmenge ist, folgt direkt daraus, dass Gruppenautomorphismen bijektiv sind.
 
 Da die Identität $\id_G \colon G \to G$ ein Gruppenautomorphismus ist, ist $\id_G \in \Aut(G)$. Sind $\varphi, \psi \in \Aut(G)$, also $\varphi$ und $\psi$ bijektiv und Gruppenhomomorphismen, so ist auch die Verknüpfung $\varphi \circ \psi \colon G \to G$ bijektiv und ein Gruppenhomomorphismus, also $\varphi \circ \psi$ ein Gruppenautomorphismus, und somit $\varphi \circ \psi \in \Aut(G)$. Ist $\varphi \in \Aut(G)$, also $\varphi \colon G \to G$ ein Gruppenisomorphismus, so ist auch $\varphi^{-1} \colon G \to G$ ein Gruppenisomorphismus, und somit $\varphi^{-1} \in \Aut(G)$.
 
@@ -2065,8 +2065,34 @@ Ingesamt zeigt dies, dass $\Aut(K)$ ein Untergruppe von $S(X)$ ist.
 
 
 \subsection{Automorphismengruppen von Vektorräumen}
-%TODO: Tippen
+\begin{defi}
+ Für einen $K$-Vektorraum $V$ ist
+ \[
+  \Aut_K(V) \coloneqq \{f \colon V \to V \mid \text{$f$ ist ein ($K$-linearer) Automorphismus}\}
+ \]
+ die \emph{Automorphismengruppe} von $V$.
+\end{defi}
 
+\begin{bem}
+ \begin{enumerate}[leftmargin=*]
+  \item
+   Für einen $K$-Vektorraum $V$ schreibt man auch $\GL_K(V)$ statt $\Aut_K(V)$.
+  \item
+   Ist klar, über welchem Körper $K$ man sich bewegt, schreibt man auch nur $\Aut(V)$ statt $\Aut_K(V)$, bzw.\ $\GL(V)$ statt $\GL_K(V)$.
+ \end{enumerate}
+\end{bem}
+
+Es sei $V$ ein $K$-Vektorraum. Wir zeigen, dass $\Aut_K(V)$ zusammen mit der Funktionskomposition eine Gruppe bildet, indem wir zeigen, dass $\Aut_K(V) \subseteq S(V)$ eine Untergruppe bildet. Dass $\Aut_K(V) \subseteq S(V)$ eine Teilmenge ist, folgt dabei direkt daraus, dass Automorphismen bijektiv sind.
+
+Die Identität $\id_V \colon V \to V$ ist ein Automorphismus, also ist $\id_V \in \Aut_K(V)$.
+
+Sind $f,g \in \Aut(V)$ Automorphismen, so sind $f$ und $g$ bijektiv und $K$-linear. Also ist auch die Verknüpfung $f \circ g \colon V \to V$ bijektiv und $K$-linear, und somit $f \circ g$ ein Automorphismus. Also ist auch $f \circ g \in \Aut_K(V)$.
+
+Ist $f \in \Aut(V)$ ein Automorphismus, so ist $f$ bijektiv und $K$-linear. Also ist auch $f^{-1} \colon V \to V$ bijektiv und $K$-linear, also ein Automorphismus. Also ist auch $f^{-1} \in \Aut(V)$.
+
+Ingesamt zeigt dies, dass $\Aut_K(V) \subseteq S(V)$ eine Untergruppe ist.
+
+%TODO: Examples for Automorphisms
 
 \subsection{Automorphismengruppen geordneter Mengen}
 %TODO: Tippen
