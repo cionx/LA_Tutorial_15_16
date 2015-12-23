@@ -1383,11 +1383,6 @@ Ingesamt zeigt dies, dass $C^\alpha(\Rbb) \subseteq \Abb(\Rbb, \Rbb)$ ein Unterv
 
 
 
-\subsection{Funktionen, die \texorpdfstring{$\lambda$}{lambda}-fast überall verschwinden}
-%TODO: Tippen
-
-
-
 
 
 \section{Folgenräume}
@@ -1608,23 +1603,6 @@ also auch $\mu v \in \Eig(f,\lambda)$. Ingesamt zeigt dies, dass $\Eig(f,\lambda
 
 
 
-\section{Bilineare Abbildungen}
-
-
-\subsection{Allgemeine bilineare Abbildungen}
-%TODO: Tippen
-
-
-\subsection{Symmetrische, alternierende und schiefsymmetrische bilneare Abbildungen}
-%TODO: Tippen
-
-
-\subsection{Unterräume bezüglich bilinearer Abbildungen}
-%TODO: Tippen
-% Orthogonale Komplemente, Entartete Elemente
-
-
-
 
 \section{Ausblick: \texorpdfstring{$\Qbb$}{Q}-Vektorräume und teilbare abelsche Gruppen}
 %TODO: Tippen
@@ -1648,8 +1626,115 @@ also auch $\mu v \in \Eig(f,\lambda)$. Ingesamt zeigt dies, dass $\Eig(f,\lambda
 
 
 
+
+
 \section{Ausblick: Freie Vektorräume}
 %TODO: Tippen
+
+\section{(Ausblick?) Bilineare Abbildungen}
+% Vektorraumstrukturen vererben sich auf viele Sachen, die mit Vektorräumen zu tun haben. Hier als Beispiel: Vektorräume
+
+
+\subsection{Allgemeine bilineare Abbildungen}
+\begin{defi}
+ Es seien $V_1$, $V_2$ und $W$ drei $K$-Vektorräume. Eine Abbildung $B \colon V_1 \times V_2 \to W$ heißt \emph{$K$-bilinear}, falls
+ \begin{enumerate}[label=\roman*)]
+  \item
+   $B(x_1 + x_2, y) = B(x_1, y) + B(x_2, y)$ für alle $x_1, x_2 \in V_1$ und $y \in V_2$,
+  \item
+   $B(x, y_1 + y_2) = B(x, y_1) + B(x, y_2)$ für alle $x \in V_1$ und $y_1, y_2 \in V_2$,
+  \item
+   $B(\lambda x, y) = \lambda B(x,y)$ und $B(x, \lambda y) = 0$ für alle $\lambda \in K$, $x \in V_1$ und $y \in V_2$.
+ \end{enumerate}
+ Es sei
+ \[
+  \Bil(V_1, V_2; W)
+  = \{B \colon V_1 \times V_2 \to W \mid \text{$B$ ist bilinear}\}.
+ \]
+\end{defi}
+
+
+\begin{bem}
+ Die Bilinearität von $B \colon V_1 \times V_2 \to W$ ist äquivalent dazu, dass die Abbildungen
+ \begin{gather*}
+  B(x, -) \colon V_2 \to W, \quad y \mapsto B(x,y)
+ \shortintertext{und}
+  B(-, y) \colon V_1 \to W, \quad x \mapsto B(x,y)
+ \end{gather*}
+ für alle $x \in V_1$ und $y \in V_2$ linear sind. Daher erklärt den Begriff „bilinear“.
+\end{bem}
+
+
+Die folgenden Beispiele erläutern, dass man sich Skalarprodukte im Großen und Ganzen als Produkte vorstellen kann.
+
+
+\begin{bsp}
+ \begin{enumerate}[leftmargin=*]
+  \item
+   Für alle $l,m,n \in \Nbb$ ist die Matrixmultiplikation
+   \[
+    m \colon \Mat(l \times m, K) \times \Mat(m \times n, K) \to \Mat(l \times n, K), \quad (A,B) \mapsto AB
+   \]
+   $K$-bilinear.
+  \item
+   Das \emph{Standardskalarprodukt}
+   \[
+    \Rbb^n \times \Rbb^n \to \Rbb, \quad (x,y) \mapsto x \cdot y \coloneqq \sum_{i=1}^n x_i y_i
+   \]
+   ist $\Rbb$-bilinear.
+  \item
+   Das \emph{Kreuzprodukt}
+   \[
+    \Rbb^3 \times \Rbb^3 \to \Rbb,
+    \quad
+    (x,y) \mapsto x \times y \coloneqq (x_1 y_3 - x_3 y_2, x_3 y_1 - x_1 y_3, x_1 y_2 - x_2 y_1)
+   \]
+   ist eine $\Rbb$-lineare Abbildung.
+  \item
+   Allgemeiner ist für jedes $n \in \Nbb$ die \emph{Standardbilinearform}
+   \[
+    \sprod{-,-} \colon K^n \times K^n \to K, \quad (x,y) \mapsto \sprod{x,y} \coloneqq \sum_{i=1}^n x_i y_i
+   \]
+   $K$-bilinear.
+  \item
+   Ist $V$ ein $K$-Vektorraum, so ist die \emph{Evaluation}
+   \[
+    \eval \colon V^* \times V \to K, \quad (f, v) \mapsto f(v)
+   \]
+   $K$-bilinear.
+  \item
+   Ist $V$ ein $K$-Vektorraum, so ist die \emph{Anwendung}
+   \[
+    A \colon \End(V) \times V \to V, \quad (f, v) \mapsto f(v)
+   \]
+   $K$-bilinear.
+  \item
+   Ist $K$ ein Körper, so ist die Multiplikation des Körpers
+   \[
+    m \colon K \times K \to K, \quad (x,y) \mapsto x \cdot y
+   \]
+   eine $K$-bilineare Abbildung.
+  \item
+   Für jedes $n \in \Nbb$ ist der \emph{Kommutator}
+   \begin{align*}
+    \Mat(n \times n, K) \times \Mat(n \times n, K) &\to \Mat(n \times n, K), \\
+    (A,B) &\mapsto [A,B] \coloneqq AB-BA
+   \end{align*}
+   eine $K$-bilineare Abbildung.
+ \end{enumerate}
+\end{bsp}
+%TODO: Beispiele Nachrechnen
+
+
+\subsection{Symmetrische, alternierende und schiefsymmetrische bilneare Abbildungen}
+%TODO: Tippen
+
+
+\subsection{Unterräume bezüglich bilinearer Abbildungen}
+%TODO: Tippen
+% Orthogonale Komplemente, Entartete Elemente
+
+
 
 
 
