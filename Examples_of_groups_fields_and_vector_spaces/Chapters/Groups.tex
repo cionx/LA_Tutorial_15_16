@@ -928,8 +928,6 @@ Wir bemerken zunächst, dass $S_n$ genau $n!$ viele Elemente hat, da es genau $n
 \end{bem}
 
 
-%TODO: Satz von Cayley
-
 
 \subsection{Normalisatoren \texorpdfstring{$N(Y)$}{N(Y)} und Zentralisatoren \texorpdfstring{$Z(Y)$}{Z(Y)}}
 \begin{defi}
@@ -1814,7 +1812,6 @@ und somit auch $g^{-1} \in Z(G)$. Insgesamt zeigt dies, dass $Z(G)$ eine Untergr
    Eine Gruppe $G$ ist genau dann abelsch, wenn $Z(G) = G$.
   \item
    Es lässt sich zeigen, dass $Z(\GL_n(K)) = \Sc_n(K)$ genau die Untergruppe der Skalarmatrizen ist.
-   %TODO: Beweisen.
   \item
    Da die symmetrischen Gruppen $S_1$ und $S_2$ sind abelsch ist $Z(S_1) = S_1$ und \mbox{$Z(S_2) = S_2$}. Für $n \geq 3$ ist $S_n$ nicht abelsch, also $Z(S_n) \subsetneq S_n$. Es lässt sich allgemeiner zeigen, dass bereits $Z(S_n) = \{1\}$ für alle $n \geq 3$:
    
@@ -1963,8 +1960,107 @@ Ingesamt zeigt dies, dass $\Aut(G) \subset S(G)$ eine Untergruppe ist.
 
 
 
-\subsection{Automorphismengruppen von Körper}
-% TODO: Tippen
+\subsection{Automorphismengruppen von Körpern}
+\begin{defi}
+ Ist $K$ ein Körper, so heißt
+ \[
+  \Aut(K) = \{\phi \colon K \to K \mid \text{$\phi$ ist ein Körperautomorphismus}\}
+ \]
+ die Automorphismengruppen von $K$.
+\end{defi}
+
+Es sei $K$ ein Körper. Wir zeigen, dass $\Aut(K)$ eine Gruppe bezüglich der Funktionskomposition $\circ$ ist, indem wir zeigen, dass $\Aut(K) \subseteq S(K)$ eine Untergruppe bildet. Dass $\Aut(K) \subseteq S(K)$ ein Teilmenge ist, folgt direkt daraus, dass Körperautomorphismen bijektiv sind.
+
+Die Identität $\id_K \colon K \to K$ ist ein Körperautomorphismus, also ist $\id_K \in \Aut(K)$.
+
+Sind $\phi, \psi \in \Aut(K)$ zwei Körperautomorphismen, so sind $\phi$ und $\psi$ bijektive Körperhomomorphismen. Damit ist auch die Verknüpfung $\phi \circ \psi \colon K \to K$ ein bijektiver Körperhomomorphismus, also ein Körperautomorphismus. Deshalb ist auch $\phi \circ \psi \in \Aut(K)$.
+
+Ist $\phi \in \Aut(K)$ ein Körperautomorphismus, so ist $\phi$ ein bijektiver Körperhomomorphismus. Deshalb ist auch $\phi^{-1} \colon K \to K$ ein bijektiver Körperhomomorphismus, und somit $\phi^{-1}$ ein Körperautomorphismus. Also ist auch $\phi^{-1} \in \Aut(K)$
+
+Ingesamt zeigt dies, dass $\Aut(K)$ ein Untergruppe von $S(X)$ ist.
+
+\begin{bsp}
+ \begin{enumerate}[leftmargin=*]
+  \item
+   Wir bestimmen $\Aut(\Qbb)$. Hierfür überlegen wir uns zunächst, dass ein Körperhomomorphismus $\phi \colon \Qbb \to \Qbb$ bereits eindeutig dadurch bestimmt ist, dass $\phi(1) = 1$. Für alle natürlichen Zahlen $n \in \Nbb$ ist deshalb nämlich schon
+   \[
+    \phi(n)
+    = \phi\left( \sum_{i=1}^n 1 \right)
+    = \sum_{i=1}^n \phi(1)
+    = \sum_{i=1}^n 1
+    = n.
+   \]
+   Ist $n \in \Zbb$ mit $n \leq 0$, so ist $-n \geq 0$ und deshalb
+   \[
+    \phi(n)
+    = \phi(-(-n))
+    = -\phi(-n)
+    = -(-n)
+    = n.
+   \]
+   Also ist bereits $\phi(n) = n$ für alle $n \in \Zbb$. Sind $p \in \Zbb$ und $q \in \Nbb$ mid $q \neq 0$ so ist damit sogar schon $\phi(p/q) = p/q$, da
+   \[
+    q \cdot \phi\left( \frac{p}{q} \right)
+    = \sum_{i=1}^q \phi\left( \frac{p}{q} \right)
+    = \phi\left( \sum_{i=1}^q \frac{p}{q} \right)
+    = \phi\left(q \cdot \frac{p}{q}\right)
+    = \phi(p)
+    = p.
+   \]
+   Damit haben wir gezeigt, dass berets $\phi(x) = x$ für alle $x \in \Qbb$. Also ist $\phi = \id_\Qbb$.
+   
+   Die Identität $\id_\Qbb$ ist also der einzige Körperhomomorphismus $\Qbb \to \Qbb$, inbesondere also der einzige Körperautomorphismus. Somit ist $\Aut(\Qbb) = \{\id_\Qbb\}$.
+  \item
+   Analog zur obigen Rechnung ergibt sich, dass für jeden Körper $K$ mit $\kchar(K) = 0$ und Körperhomomorphismus $\phi \colon \Qbb \to K$ gilt, dass
+   \[
+    \phi\left(\frac{p}{q}\right) = \frac{p \cdot 1_K}{q \cdot 1_K}
+    \quad
+    \text{für alle $p \in \Zbb$ und $q \in \Nbb$ mit $q \neq 0$}.
+   \]
+   Die Bedingung, dass $\kchar(K) = 0$ wird hier benötigt, damit $q \cdot 1_K \neq 0$ für alle $q \in \Nbb$ mit $q > 0$.
+  \item
+   Wie in \ref{ssec: Q[i]} gezeigt wird, ist $\Qbb[i] = \{a+ib \mid a,b \in \Qbb\} \subseteq \Cbb$ ein Unterkörper. Wir bestimmen $\Aut(\Qbb[i])$.
+   
+   Zunächst bemerken wir, dass es neben der Identität $\id_{\Qbb[i]} \colon \Qbb[i] \to \Qbb[i]$ noch einen weiteren Körperautomorphismus $\Qbb[i]$ gibt: Für die komplexe Konjugation gilt nämlich, dass $\overline{1} = 1$, $\overline{z+w} = \overline{z}+\overline{w}$ und $\overline{z \cdot w} = \overline{z} \cdot \overline{w}$ für alle $z,w \in \Cbb$, und somit inbesondere für alle $z,w \in \Qbb[i]$. Ist $z \in \Qbb[i]$, also $z = a+bi$ mit $a,b \in \Qbb$, so ist auch $\overline{z} = a-bi \in \Qbb[i]$. Also ergibt such durch die Einschränkung der komplexen Konjugation auf $\Qbb[i]$ in Körperhomomorphismus
+   \[
+    k \colon \Qbb[i] \to \Qbb[i], \quad z \mapsto \overline{z}.
+   \]
+   Da $k(k(z)) = k(\overline{z}) = \overline{(\overline{z})} = z$ für alle $z \in \Qbb[i]$ ist $k \circ k = \id_{\Qbb[i]}$, also $k$ bijektiv mit $k^{-1} = k$. Also ist $k$ ein Körperautomorphismus.
+   
+   Die Identitat $\id_{\Qbb[i]}$ und die komplexe Konjugation $k$ sind tatsächlich schon die einzigen Körperautomorphismen von $\Qbb[i]$: Um dies zu zeigen, sei $\phi \colon \Qbb[i] \to \Qbb[i]$ ein Körperhomomorphismus. Wie bereits oben bemerkt ist $\phi(a) = a$ für alle $a \in \Qbb$. Da $i^2 = -1$ ist daher
+   \[
+    \phi(i)^2
+    = \phi(i^2)
+    = \phi(-1)
+    = -1.
+   \]
+   Also muss $\phi(i) = i$ oder $\phi(i) = -i$. Im Falle von $\phi(i) = i$ ist
+   \[
+    \phi(a+bi)
+    = \phi(a) + \phi(b)\phi(i)
+    = a + bi
+    \quad
+    \text{für alle $a,b \in \Qbb$},
+   \]
+   also $\phi(z) = z$ für alle $z \in \Qbb[i]$ und somit $\phi = \id_{\Qbb[i]}$. Ist andererseits $\phi(i) = -i$, so ist
+   \[
+    \phi(a+bi)
+    = \phi(a) + \phi(b)\phi(i)
+    = a + b(-i)
+    = a - bi
+    = k(a+bi)
+    \quad
+    \text{für alle $a,b \in \Qbb$},
+   \]
+   also $\phi(z) = k(z)$ für alle $z \in \Qbb[i]$ und somit $\phi = k$.
+   
+   Also sind $\phi$ und $k$ die einzigen Körperhomomorphismen $\Qbb[i] \to \Qbb[i]$, und somit insbesondere die einzigen Körperautomorphismen. Somit ist $\Aut(\Qbb[i]) = \{\id_{\Qbb[i]}, k\}$ mit $k^2 = \id_{\Qbb[i]}$ die zweielementige Gruppe.
+  \item
+   Mithilfe von analytischer Methoden lässt sich zeigen, dass $\Aut(\Rbb) = \{\id_{\Rbb}\}$. Es ergibt sich nämlich, dass ein Körperisomorphismus $\phi \colon \Rbb \to \Rbb$ bereits stetig ist, und da $\phi(x) = x$ für alle $x \in \Qbb$ ergibt sich damit, dass bereits $\phi(x) = x$ für alle $x \in \Rbb$.
+ \end{enumerate}
+\end{bsp}
+
+
 % TODO: Bemerkung zu Automorphismen relativ eines Unterkörpers
 
 
