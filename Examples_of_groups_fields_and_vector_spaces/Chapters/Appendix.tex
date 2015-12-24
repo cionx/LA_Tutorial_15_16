@@ -1,3 +1,395 @@
+\chapter{Äquivalenz- und Ordnungsrelationen}
+
+\begin{defi}
+ Eine \emph{Relation} auf einer Mengen $X$ ist eine Teilmenge $R \subseteq X \times X$. Für $x,y \in X$ sagen wir, dass $x$ in Relation zu $y$ steht, wenn $(x,y) \in R$.
+ 
+ Die Relation $R$ heißt
+ \begin{enumerate}[label=\roman*)]
+  \item
+   \emph{reflexiv}, falls $(x,x) \in R$ für alle $x \in X$,
+  \item
+   \emph{symmetrisch}, falls für alle $x,y \in X$ mit $(x,y) \in R$ auch $(y,x) \in R$,
+  \item
+   \emph{anti-symmetrisch}, falls für alle $x,y \in X$ mit $(x,y) \in R$ und $(y,x) \in R$ bereits $x=y$.
+  \item
+   \emph{transitiv}, falls für alle $x,y,z \in X$ mit $(x,y) \in R$ und $(y,z) \in R$ auch $(x,y) \in R$,
+ \end{enumerate}
+\end{defi}
+
+\begin{bem}
+ Manche Autoren nutzen für $(x,y) \in R$ auch die Notation $xRy$.
+\end{bem}
+
+\begin{bsp}
+ \begin{enumerate}[leftmargin=*]
+  
+  \item
+   Auf der Menge $\Rbb$ der reellen Zahlen definieren wir die Relation $R$ durch
+   \[
+    R_1 \coloneqq \{(x,y) \in \Rbb \times \Rbb \mid x \leq y\}.
+   \]
+   $R$ ist reflexiv, denn für alle $x \in \Rbb$ ist $x \leq x$, also $(x,x) \in R$. $R$ ist \emph{nicht} symmetrisch, da etwa $(1,2) \in R$ aber $(2,1) \notin R$. $R$ ist allerdings schief-symmetrisch, denn für $x,y \in \Rbb$ mit $(x,y), (y,x) \in R$ ist $x \leq y$ und $y \leq x$, also $x = y$. $R$ ist auch transitiv, denn für $x,y,z \in \Rbb$ mit $(x,y), (y,z) \in R$ ist $x \leq y$ und $y \leq z$, also auch $x \leq z$ und somit $(x,z) \in \Rbb$.
+  
+  \item
+   Wir definieren auf der Menge $\Qbb$ der rationalen Zahlen eine Relation $R$ durch
+   \[
+    R_1 = \{(x,y) \in \Qbb \times \Qbb \mid x < y\}.
+   \]
+   $R$ ist weder reflexiv, noch symmetrisch oder anti-symmetrisch. $R$ ist allerdings transitiv.
+  
+  \item
+   Es sei $X$ eine beliebige Menge und
+   \[
+    R = \{(x,x) \mid x \in X\}.
+   \]
+   (Es steht also jedes Element nur zu sich selbst in Relation.) Es folgt direkt, dass $R$ reflexiv ist. $R$ ist symmetrisch, denn für $(x,y) \in R$ ist $x = y$, also $(y,x) = (x,y) = (x,x) \in R$. $R$ ist auch anti-symmetrisch, denn für $x,y \in X$ mit $(x,y), (y,x) \in R$ ist $x = y$. $R$ ist transitiv, den für $x,y,z \in X$ mit $(x,y), (y,z) \in R$ ist $x = y$ und $y = z$, also auch $x = z$ und somit $(x,z) \in R$.
+  
+  \item
+   Auf der Menge $\Zbb$ der ganzen Zahlen definieren wir die Relation
+   \[
+    R = \{(n,n+1) \mid n \in \Zbb\}.
+   \]
+   (Es steht also jedes ganze Zahl mit genau ihrem Nachfolger in Relation.) $R$ ist nicht reflexiv, da etwa $(1,1) \notin R$. $R$ ist auch nicht symmetrisch, denn für $n,m \in \Zbb$ mit $(n,m) \in R$ ist $m = n+1$, also $(m,n) = (n+1,n) \notin R$. $R$ ist auch nicht transitiv, denn für $l,m,n \in \Zbb$ mit $(l,m),(m,n) \in R$ ist $m = l+1$ und $n = m+1$, also $n = l+2$ und somit $(l,n) = (l,l+2) \notin R$.
+   
+   $R$ ist allerdings anti-symmetrisch: Sind $n,m \in \Zbb$ mit $(n,m), (m,n) \in R$, so ist $m = n+1$ ud $n = m+1$, also $n = n+2$, was nicht möglich ist. Es gibt also keine $n,m \in \Zbb$ mit $(n,m) \in R$; daher handelt es sich bei der Anti-Symmetrie von $R$ um eine leere Aussage, die daher gilt.
+  
+  \item
+   Auf $\Rbb$ definieren wir die Reation
+   \[
+    R
+    = \{(x,y) \in \Rbb \times \Rbb \mid x = \pm y\}.
+   \]
+   (Zwei Zahlen sind also in Relation, wenn sie bis auf Vorzeichen gleich sind.) Da $x \in R$ für alle $x \in \Rbb$ ist $\Rbb$ reflexiv. $R$ ist symmmetrisch, denn sind $x,y \in \Rbb$ mit $(x,y) \in R$, so ist $x = \pm y$, also auch $y = \pm x$ und somit $(y,x) \in R$. $R$ ist allerdings nicht anti-symmetrisch, da etwa $(1,-1), (-1,1) \in R$ aber $1 \neq -1$. $R$ ist allerdings transitiv, denn für $x,y,z \in \Rbb$ mit $(x,y), (y,z) \in R$ ist $x = \pm y$ und $y = \pm z$, also auch $x = \pm z$, und somit $(x,z) \in R$.
+   
+  \item
+   Wir definieren auf der Menge der reellen Zahlen $\Rbb$ eine Relation
+   \[
+    R = \{(x,y) \in \Rbb \times \Rbb \mid y = x^2\}.
+   \]
+   ($x$ steht also in Relation zu $y$, falls $x$ ein Quadratwurzel von $y$ ist.) $R$ ist nicht reflexiv, da etwa $(2,2) \notin R$. $R$ ist auch nicht symmetrisch, da etwa $(2,4) \in R$ aber $(4,2) \notin R$. $R$ ist auch nicht transitiv, da etwa $(2,4) \in R$ und $(4,16) \in R$, aber $(2,16) \notin R$.
+   
+   $R$ ist allerdings schief-symmetrisch: Sind $x, y \in \Rbb$ mit $(x,y), (y,x) \in R$, so ist $y = x^2$ und $x = y^2$. Inbesondere sind daher $x,y \geq 0$ mit $x = y^2 = (x^2)^2 = x^4$ und analog $y = y^4$. Es ist also $x \in \{0,1\}$ und $y \in \{0,1\}$. Ist $x = 0$, so ist $y = x^2 = 0$ und $x = 0 = y$. Ist $x = 1$, so ist $y = x^2 = 1$ und somit $x = 1 = y$. Es ist also in beiden Fällen $x = y$.
+ \end{enumerate}
+\end{bsp}
+
+
+
+
+
+\section{Äquivalenzrelationen}
+\begin{defi}
+ Eine Relation $\sim$ auf einer Menge $X$ heißt \emph{Äquivalenzrelation}, falls $\sim$ reflexiv, symmetrisch und transitiv ist. Für alle $x,y \in X$ schreibt man $x \sim y$ statt $(x,y) \in \sim$.
+\end{defi}
+
+\begin{bsp}
+ \begin{enumerate}[leftmargin=*]
+  \item
+   Es sei $X$ eine Menge. Wie bereits gesehen ist Gleichheit $=$ eine Äquivalenzrelation auf $X$, d.h.\
+   \[
+    R = \{(x,y) \mid x = y\} \subseteq X \times X
+   \]
+   ist eine Äquivalenzrelation.
+  \item
+   Für $n,m \in \Zbb$ sei $n \sim m$ genau dann, wenn $n-m$ gerade ist, d.h.\ falls es $k \in \Zbb$ mit $n-m = 2k$ gibt. Wir zeigen, dass $\sim$ eine Äquivalenzrelation auf $\Zbb$ definiert:
+   
+   $\sim$ ist reflexiv, denn alle $n \in \Zbb$ ist $n-n = 0$ gerade, also $n \sim n$.
+   
+   Sind $n,m \in \Zbb$ mit $n \sim m$, so ist $n-m$ gerade, also $n-m = 2k$ für ein $k \in \Zbb$. Dann ist auch $m-n = 2(-k)$ gerade, also $m \sim n$. Also ist $\sim$ symmetrisch.
+   
+   Sind $p,q,r \in \Zbb$ mit $p \sim q$ und $q \sim r$, so sind $p-q$ und $q-r$ ungerade, d.h.\ es gibt $k,l \in \Zbb$ mit $p-q = 2k$ und $q-r = 2l$. Daher ist auch $p-r = (p-q)+(q-r) = 2k + 2l = 2(k+l)$ gerade, also $p \sim r$. Das zeigt, dass $\sim$ auch transitiv ist.
+  \item
+   Es sei $X$ ein Menge und $f \colon X \to Y$ eine Funktion. Für $x_1, x_2 \in X$ sei $x_1 \sim x_2$ genau dann, wenn $f(x_1) = f(x_2)$. Dann ist $\sim$ ein Äquivalenzrelation:
+   
+   Dass $\sim$ reflexiv ist, folgt direkt daraus, dass $f(x) = f(x)$ für alle $x \in X$.
+   
+   Sind $x_1, x_2 \in X$ mit $x_1 \sim x_2$, also $f(x_1) = f(x_2)$, so ist auch $f(x_2) = f(x_1)$, also $x_2 \sim x_2$. Das zeigt, dass $\sim$ symmetrisch ist.
+   
+   Sind $x_1, x_2, x_3 \in X$ mit $x_1 \sim x_2$ und $x_2 \sim x_3$, also $f(x_1) = f(x_2)$ und $f(x_2) = f(x_3)$, so ist deshalb $f(x_1) = f(x_3)$, also $x_1 \sim x_3$. Somit ist $\sim$ auch transitiv.
+  \item
+   Auf $x,y \in \Rbb$ sei $x \sim y$ genau dann, wenn $x-y \in \Zbb$. Hierdurch wird eine Äquivalenzrelation auf $\Rbb$ definiert:
+   
+   Dass $\sim$ reflexiv ist, also $x \sim x$ für alle $x \in\ \Rbb$, folgt direkt daraus, dass $x-x = 0 \in \Zbb$ für alle $x \in \Rbb$.
+   
+   Sind $x,y \in \Rbb$ mit $x \sim y$, also $x-y \in \Zbb$, so ist auch $y-x \in \Zbb$, und somit $y \sim x$. Deshalb ist $\sim$ symmetrisch.
+   
+   Sind $x,y,z \in \Rbb$ mit $x \sim y$ und $y \sim z$, so ist $x-y, y-z \in \Zbb$. Deshalb ist auch $x-z = (x-y)+(y-z) \in \Zbb$, also $x \sim z$. Das zeigt die Transitivität von $\sim$.
+ \end{enumerate}
+\end{bsp}
+
+\begin{defi}
+ Es sei $\sim$ eine Äquivalenzrelation auf einer Menge $X$. Für $x \in X$ ist
+ \[
+  [x]_{\sim} \coloneqq \{y \in X \mid x \sim y\}
+ \]
+ die \emph{Äquivalenzklasse} von $x$, und $X/{\sim} \coloneqq \{[x] \mid x \in X\}$ ist die Menge der Äquivalenzklassen von $X$.
+\end{defi}
+
+\begin{bem}
+ \begin{enumerate}[leftmargin=*]
+  \item
+   Ist klar, um welche Äquivalenzrelation es sich handelt, so schreibt man auch nur $[x]$ statt $[x]_\sim$.
+  \item
+   Ist $\sim$ eine Äquivalenzrelation auf einer Menge $X$, so gilt für alle $x,y \in X$, dass entweder $[x] \cap [y] = \emptyset$ oder $[x] = [y]$.
+   
+   Ist nämlich $x \sim y$, so ist für jedes $z \in X$ genau dann $z \sim x$, falls $z \sim y$, da
+   \begin{gather*}
+    x \sim z
+    \implies y \sim x, x \sim z
+    \implies y \sim z
+   \shortintertext{und analog}
+    y \sim z
+    \implies x \sim y, y \sim z
+    \implies x \sim z.
+   \end{gather*}
+   Also ist in diesem Fall
+   \[
+    [x] = \{z \in X \mid x \sim z\} = \{z \in X \mid y \sim z\} = [y].
+   \]
+   
+   Ist andererseits $x \nsim y$, und gebe es ein $z \in [x] \cap [y]$, so wäre $x \sim z$ und $z \sim y$, wegen der Transitivität von $\sim$ also auch $x \sim y$, ein Widerspruch.
+   
+   Es ist also $x \sim y \implies [x] = [y]$ und $x \nsim y \implies [x] \cap [y] = \emptyset$. Da entweder $x \sim y$ oder $x \nsim y$ handelt es sich schon jeweils um Äquivalenzen.
+ \end{enumerate}
+\end{bem}
+
+\begin{bsp}
+ \begin{enumerate}[leftmargin=*]
+  \item
+   Für die Gleichheit $=$ auf einer Menge $X$ ist für jedes $x \in X$ die Äquivalenzklasse gegeben durch
+   \[
+    [x] = \{y \in X \mid y = x\} = \{x\}.
+   \]
+   Also ist die Abbildung
+   \[
+    X \to X/{\sim}, \quad x \mapsto [x]
+   \]
+   eine Bijektion.
+  \item
+   Wir betrachten auf $\Zbb$ die Äquivalenzrelation $\sim$ mit $n \sim m$ genau dann wenn $n-m$ gerade ist, d.h.\ wenn $n-m = 2k$ für ein $k \in \Zbb$. Für $n \in \Zbb$ ist dann
+   \[
+    [n]
+    = \{m \in \Zbb \mid \text{$n-m = 2k$ für ein $k \in \Zbb$}\}
+    = \{n + 2k \mid k \in \Zbb\}
+    = n+2\Zbb.
+   \]
+   Inbesondere ist deshalb $[0] = \{2k \mid k \in \Zbb\} = 2\Zbb$ die Menge der geraden Zahlen und $[1] = \{1+2k \mid k \in \Zbb\} = 1+2\Zbb$ die Menge der ungeraden Zahlen. Ist $n \in \Zbb$ gerade, so ist $n \in [0]$, also $[n] \cap [0] \neq \emptyset$ und somit $[n] = [0]$ die Menge der geraden Zahlen. Ist andererseits $n$ ungerade, so ist $[n] \in [1]$, also $n \cap [1] \neq \emptyset$ und somit $[n] = [1]$ die Menge der ganzen Zahlen.
+   
+   Es gibt in diesem Fall also nur zwei verschieden Äquivalenzklassen, nämlich die geraden Zahlen $[0]$ und die ungeraden Zahlen $[1]$. Also ist die Abbildung
+   \[
+    \{0,1\} \mapsto \Zbb/{\sim}, \quad n \mapsto [n]
+   \]
+   eine Bijektion.
+  \item
+   Wir betrachten auf $\Rbb$ die Äquivalenzrelation $\sim$ mit $x \sim y$ genau dann, wenn $x-y$ ganzzahlig ist, d.h.\ wenn $x-y \in \Zbb$. Für jedes $x \in \Rbb$ ist dann
+   \begin{align*}
+    [x]
+    &= \{y \in \Rbb \mid x-y \in \Zbb\}
+    = \{y \in \Rbb \mid \text{es gibt $k \in \Zbb$ mit $x-y = k$}\} \\
+    &= \{x+k \mid k \in \Zbb\}
+    = x + \Zbb.
+   \end{align*}
+   Für jede ganze Zahl $n \in \Zbb$ ist etwa $[n] = \Zbb$, und es sind
+   \begin{align*}
+    \left[ \frac{1}{2} \right]
+    &= \left\{ \dotso, -\frac{3}{2}, -\frac{1}{2}, \frac{1}{2}, \frac{3}{2}, \frac{5}{2}, \dotso \right\}
+   \shortintertext{und}
+    [\pi] &= \{ \dotso, \pi-2, \pi-1, \pi, \pi+1, \pi+2, \dotso \}.
+   \end{align*}
+   Es ist nun einfach zu sehen, dass es für jedes $x \in \Rbb$ genau ein $x' \in [0,1)$ mit $x \sim x'$ gibt. Daher ist die Abbildung
+   \[
+    [0,1) \to \Rbb/{\sim}, \quad x \mapsto [x]
+   \]
+   eine Bijektion.
+  \item
+   Durch den Betracht $b \colon \Cbb \to \Rbb_{\geq 0}$, $z \mapsto |z|$ ergibt sich eine Äquivalenzrelation auf $\Cbb$ durch
+   \[
+    z \sim w
+    \iff b(z) = b(w)
+    \iff |z| = |w|.
+   \]
+   Für jedes $r \in \Rbb$ mit $r \geq 0$ ist 
+   \[
+    [r]
+    = \{z \in \Cbb \mid z \sim r\}
+    = \{z \in \Cbb \mid |z| = |r|\}
+    = \{z \in \Cbb \mid |z| = r\}.
+   \]
+   Also ist $[0] = \{0\}$ und für alle $r > 0$ ist $[r] = \{z \in \Cbb \mid |z| = r\}$ der Kreis mit Radius $r$ um den Mittelpunkt $0 \in \Cbb$. Da $[z] = [|z|]$ für alle $z \in \Cbb$ und $[r_1] \cap [r_2] = \emptyset$ für alle $0 \leq r_1 < r_2$ ist die Abbildung
+   \[
+    [0,\infty) \to \Cbb/{\sim}, \quad z \mapsto [z]
+   \]
+   eine Bjiektion.
+ \end{enumerate}
+\end{bsp}
+
+\begin{defi}
+ Es sei $\sim$ ein Äquivalenzrelation auf einer Menge $X$. Ein Element $x \in A$ einer Äquivalenzklasse $A \in X/{\sim}$ bezeichnet man als \emph{Repräsentantensystem} der Äquivalenzklasse $A$. Eine Teilmenge $R \subseteq X$ heißt \emph{Repräsentantensystem}, falls es für jedes $x \in X$ genau ein $r \in R$ gibt, so dass $x \sim r$, d.h.\ die Abbildung
+ \[
+  R \to X/{\sim}, \quad r \mapsto [r]
+ \]
+ ist eine Bijektion.
+\end{defi}
+
+\begin{bem}
+ Allgemein erhält man für eine Äquivalenzrelation $\sim$ auf einer Menge $X$ ein Repräsentantensystem, indem man aus jeder Äquivalenzklasse $A \in X/{\sim}$ einen Repräsentanten $r_A \in A$ wählt, und diese Repräsentanten anschließend zu $R = \{r_A \mid A \in X/{\sim}\}$ zusammenfasst.
+\end{bem}
+
+
+\begin{bsp}
+ \begin{enumerate}[leftmargin=*]
+  \item
+   Ist $X$ ein Menge, so ist für die Äquivalenzrelation der Gleichheit $=$ die Menge $X$ selbst das einzige Repräsentantensystem.
+  \item
+   Bezüglich der Äquivalenzrelation $\sim$ auf $\Zbb$ mit $n \sim m$ genau dann, wenn $n-m$ gerade ist, ist ein Repräsentantensystem gegeben durch $\{0,1\}$.
+   
+   Da $\Zbb/{\sim} = \{2\Zbb, 1+2\Zbb\}$, die Äquivalenzklassen von $\sim$ also die geraden und ungeraden Zahlen sind, sind die Repräsentantensysteme von $\sim$ genau die Teilmengen $R \subseteq \Zbb$ von der Form $R = \{n,m\}$ mit $n$ gerade und $m$ ungerade.
+  \item
+   Bezüglich der Äquivalenzrelation $\sim$ auf $\Rbb$ mit $x \sim y$ genau dann, wenn $x-y \in \Zbb$, ist ein mögliches Repräsentantensystem durch $[0,1)$ gegeben. Allgemeiner ist für jedes $y \in \Rbb$ eine Repräsentantensystem durch das halboffene Intervall $[y,y+1)$ gegeben.
+  \item
+   Für die Äquivalenzrelation $\sim$ auf $\Cbb$ mit $z \sim w$ genau dann, wenn $|z| = |w|$, ist ein mögliches Repräsentantensystem durch das halboffene reelle Intervall $[0,\infty) \subseteq \Rbb$ gegeben.
+ \end{enumerate}
+\end{bsp}
+
+
+
+
+
+
+
+
+
+\section{Ordnungsrelationen}
+\begin{defi}
+ Eine Relation $R$ auf einer Menge $X$ heißt \emph{Ordnungsrelation}, falls $R$ reflexiv, anti-symmetrisch und transitiv ist.
+\end{defi}
+
+\begin{bsp}
+ \begin{enumerate}[leftmargin=*]
+
+  \item
+   Wie bereits gesehen, ist
+   \[
+    R = \{(x,y) \in \Rbb \times \Rbb \mid x \leq y\}
+   \]
+   eine Ordnungsrelation auf $\Rbb$.
+   
+  \item
+   Für eine Menge $X$ sei
+   \[
+    R = \{(A,B) \in \pwr(X) \times \pwr(X) \mid A \subseteq B\},
+   \]
+   wobei $\pwr(X) = \{A \mid A \subseteq X\}$ die Potenmenge von $X$ bezeichnet. $R$ ist reflexiv, den für jede Teilmenge $A \subseteq X$ ist $A \subseteq A$. $R$ ist anti-symmetrisch, denn sind $A, B \subseteq X$ zwei Teilmengen mit $(A,B), (B,A) \in R$, also $A \subseteq B$ und $B \subseteq A$, so ist bereits $A = B$. $R$ ist auch transitiv, denn für Teilmengen $A,B,C \subseteq X$ mit $(A,B), (B,C) \in R$ ist $A \subseteq B$ und $B \subseteq C$, also auch $A \subseteq C$, und somit $(A,C) \in R$.
+   
+  \item
+   Für zwei ganze Zahlen $n,m \in \Zbb$ sagen wir, \emph{$n$ teilt $m$}, wenn es ein $k \in \Zbb$ mit $m = kn$ gibt; wir schreiben dann $n \mid m$.
+   \begin{enumerate}[label=\alph*)]
+    \item
+     Wir definieren auf $\Nbb$ die Relation
+     \[
+      R = \{(n,m) \in \Nbb \mid n \mid m\}.
+     \]
+     $R$ ist reflexiv, denn für alle $n \in \Nbb$ ist $n = 1 \cdot n$, also $n \mid n$.
+     
+     $R$ ist anti-symmetrisch, denn sind $n,m \in \Nbb$ mit $(n,m), (m,n) \in R$, so ist $n \mid m$ und $m \mid n$, d.h.\ es gibt $k,l \in \Zbb$ mit $m = kn$ und $n = lm$. Es ist dann $n = km = kln$. Ist $n = 0$, so ist auch $m = kn = 0$, also $n = m$. Ist $n \neq 0$, so folgt aus $n = kln$ dass $kl = 1$; da $k,l \in \Zbb$ ist bereits $k = l = \pm 1$. Da $m = kn$ muss $k = l = 1$. Somit ist $n = k m = m$. In beiden Fällen ist also $n = m$.
+     
+     $R$ ist auch transitiv, denn für $p,q,r \in \Nbb$ mit $(p,q), (q,r) \in R$ ist $p \mid q$ und $q \mid r$, d.h.\ es gibt $k,l \in \Zbb$ mit $q = kp$ und $r = lq$. Es ist daher $r = lq = lkp$, also auch $p \mid r$, und somit $(p,r) \in R$.
+     
+     Also ist $R$ eine Ordnungsrelation auf $\Nbb$.
+    \item
+     Wir definieren auf $\Zbb$ die Relation
+     \[
+      R = \{(n,m) \in \Zbb \mid n \mid m\}.
+     \]
+     Wie bereits zuvor ergibt sich, dass $R$ reflexiv und transitiv ist. $R$ ist allerdings nicht anti-symmetrisch. So ist etwa $(-1) \mid 1$ und $1 \mid (-1)$, da $1 = (-1) \cdot (-1)$ und $-1 = (-1) \cdot 1$, aber $1 \neq -1$. $R$ definiert also keine Ordnungsrelation auf $R$.
+   \end{enumerate}
+ \end{enumerate}
+\end{bsp}
+
+Die obigen Beispiele motivieren die folgende Definition.
+
+\begin{defi}
+ Eine \emph{geordnete Menge} ist ein Paar $(X,\leq)$ bestehend aus einer Menge $X$ und einer Ordnungsrelation $\leq$ auf $X$. Für $x,y \in X$ schreibt man $x \leq y$ statt $(x,y) \in \leq$. Außerdem führt man für $x,y \in X$ die folgenden Notationen ein:
+ \begin{enumerate}[label=\roman*)]
+  \item
+   Man schreibt $y \geq x$ falls $x \leq y$.
+  \item
+   Man schreibt $x < y$ falls $x \leq y$ und $x \neq y$.
+  \item
+   Man schreibt $y > x$ falls $y \geq x$ und $x \neq y$.
+ \end{enumerate}
+\end{defi}
+
+\begin{bem}
+ \begin{enumerate}[leftmargin=*]
+  \item
+   Häufig nennt man die Ordnungsrelation nicht explizit, d.h.\ statt von einer geordneten Menge $(X,\leq)$ spricht man von einer geordneten Menge $X$.
+  \item
+   Ist $(X,\leq)$ eine geordnete Menge und $Y \subseteq X$ eine Teilmenge, so ist auch die Einschränkung $\leq_Y = \leq \cap (Y \times Y) \subseteq Y \times Y$ eine Ordnungsrelation auf $Y$, d.h.\
+   \[
+    y_1 \leq_Y y_2 \iff y_1 \leq y_2
+    \quad
+    \text{für alle $y_1, y_2 \in Y$}.
+   \]
+   Wegen dieser Äquivalenz schreibt man auch einfach nur $\leq$ statt $\leq_Y$, benutzt also kein zusätzliches Symbol für die eingeschränkte Ordnungsrelation.
+ \end{enumerate}
+\end{bem}
+
+\begin{defi}
+ Eine geordnete Menge $X$ heißt \emph{linear geordnet}, bzw.\ \emph{total geordnet}, falls für alle $x,y \in X$ gilt, dass $x \leq y$ oder $y \leq x$.
+\end{defi}
+
+\begin{bsp}
+ \begin{enumerate}[leftmargin=*]
+  \item
+   Die reellen Zahlen sind bezüglich der üblichen Ordnungsrelation $\leq$ linear geordnet.
+  \item
+   Ist $X$ eine Menge, so ist $\pwr(X)$ bezüglich der Teilmengenrelation $\subseteq$ im Allgemeinen nicht linear geordnet: Besitzt $X$ mindestens zwei verschiedene Elemente $x,y \in X$, so sind $\{x\}, \{y\} \subseteq X$ zwei Teilmengen mit $\{x\} \nsubseteq \{y\}$ und $\{y\} \nsubseteq \{y\}$.
+  \item
+   Die natürlichen Zahlen $\Nbb$ sind bezüglich der Teilbarkeitsrelation $|$ nicht linear geordnet, da etwa $2 \nmid 3$ und $3 \nmid 2$.
+  \item
+   Ist $(X,\leq)$ eine total geordnete Menge und $Y \subseteq X$ eine Teilmenge, so ist auch $Y$ linear geordnet bezüglich $\leq$.
+ \end{enumerate}
+\end{bsp}
+
+\begin{defi}
+ Es sei $X$ eine geordnete Menge und $Y \subseteq X$ eine Teilmenge. Ein Element $x \in X$ heißt
+ \begin{enumerate}[label=\roman*)]
+  \item
+   \emph{obere Schranke} von $Y$, falls $y \leq x$ für all $y \in Y$,
+  \item
+   \emph{untere Schranke} von $Y$, falls $x \leq y$ für alle $y \in Y$,
+  \item
+   \emph{Supremum} von $Y$, falls $x$ eine kleineste obere Schranke von $Y$ ist, d.h.\ $x$ ist eine obere Schranke von $Y$, und für jede obere Schranke $s$ von $Y$ ist $x \leq s$,
+  \item
+   \emph{Infimum} von $Y$, falls $x$ eine größte untere Schranke von $Y$ ist, d.h.\ $x$ ist eine untere Schranke von $Y$, und für jede untere Schranke $t$ von $Y$ ist $t \leq x$.
+ \end{enumerate}
+\end{defi}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \chapter{Konvergenz und Summierbarkeit von Folgen}\label{sec: sequences and series}
 Wir erinnern hier an grundlegende Definitionen und Aussagen über konvergente Folgen und Reihen. In diesem Abschnitt sei $\Kbb \in \{\Qbb, \Rbb, \Cbb\}$.
 
