@@ -1,0 +1,32 @@
+\usepackage[autooneside,headsepline]{scrlayer-scrpage} %for headers
+\usepackage[titletoc,toc,page]{appendix} % for appendix
+\usepackage{tikz}
+\usepackage[colorlinks=true]{hyperref} % for links in pdf
+
+% settings for scrlayer-scrpage
+\pagestyle{scrheadings}
+\clearscrheadfoot
+\lehead{\leftmark}
+\rehead{\rightmark}
+\lohead{\leftmark}
+\rohead{\rightmark}
+\cefoot[\pagemark]{\pagemark}
+\cofoot[\pagemark]{\pagemark}
+
+% do not include subsections into table of content
+%\setcounter{tocdepth}{1}
+
+% German word for appendices
+\renewcommand{\appendixtocname}{Anhänge}
+\renewcommand{\appendixpagename}{Anhänge}
+
+\newcounter{everything}[chapter]
+\newtheorem{defi}[everything]{Definition}
+\newtheorem*{beh}{Behauptung}
+
+\theoremstyle{definition}
+\newtheorem{bem}[everything]{Bemerkung}
+\newtheorem*{bsp}{Beispiel(e)}
+
+% counters and such
+\renewcommand{\theeverything}{\arabic{chapter}.\arabic{everything}}
