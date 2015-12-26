@@ -90,7 +90,7 @@ Wir fassen zusammen:
 
 
 
-\section{Der Dualraum von $K^n$}
+\section{Der Dualraum von $K^n$}\label{sec: dual space of Kn}
 Es sei $n \in \Nbb$. Bevor wir uns abstrakten Vektorräumen zuwenden, wollen zunächst den Dualraum $(K^n)^*$ verstehen.
 
 \begin{bem}
@@ -381,7 +381,7 @@ Also ist $\spur = 2f^{\mc{B}_2}_1$.
 Auch hier lässt sich wieder der allgemeine Ansatz nutzen: Wir wissen bereits, dass $\spur = a_1 f^{\mc{B}_2}_1 + a_2 f^{\mc{B}_2}_2 + a_3 f^{\mc{B}_2}_3 + a_4 f^{\mc{B}_2}_4$ mit $a_i = \spur(F_i)$ für alle $1 \leq i \leq 4$. Da $\spur(F_1) = 2$ und $\spur(F_2) = \spur(F_3) = \spur(F_4) = 0$ ergibt sich damit, dass $\spur = 2 f^{\mc{B}_2}_1$.
 
 
-\subsection{Eine weiter seltsame Basis}
+\subsubsection{Eine weitere seltsame Basis}
 Wir betrachten $\mc{B}_3 = (G_1, G_2, G_3, G_4)$ mit
 \[
  G_1 = \begin{pmatrix} 2 & 3 \\ 1 & 0 \end{pmatrix}, \;
@@ -475,7 +475,175 @@ Ein genaueres Ausrechnen der dualen Basis $\mc{B}_3^*$ wollen wir uns hier erspa
  f^{\mc{B}_3}_3(A) &= -\frac{1}{7} A_{11} + \frac{1}{21} A_{12} + \frac{1}{7} A_{21} + \frac{1}{28} A_{22}, \\
  f^{\mc{B}_3}_4(A) &= \frac{5}{42} A_{11} - \frac{2}{21} A_{12} + \frac{1}{21} A_{21} + \frac{1}{84} A_{22}.
 \end{align*}
-Auch hieraus lässt sich nachrechnen, dass $\spur = 2 f^{\mc{B}_3}_1 + 6 f^{\mc{B}_3}_2 + 4 f^{\mc{B}_3}_3 + 10 f^{\mc{B}_3}_4$.
+Hiermit lässt sich auch nachrechnen, dass $\spur = 2 f^{\mc{B}_3}_1 + 6 f^{\mc{B}_3}_2 + 4 f^{\mc{B}_3}_3 + 10 f^{\mc{B}_3}_4$.
+
+
+
+
+
+\subsection{Verschieden Basen von $\Rbb^2$}
+
+
+\subsubsection{Die Standardbasis von $\Rbb^2$}
+Betrachten wir $\Cbb^2$ mit der Standardbasis $\mc{B} = (e_1, e_2)$, so sind für die duale Basis $\mc{B}^* = (f^\mc{B}_1, f^\mc{B}_2)$ die entsprechenden Koordinatenfunktionen $f^\mc{B}_1, f^\mc{B}_2 \colon \Rbb^2 \to \Rbb$ dadurch gegeben, dass
+\[
+ f^\mc{B}_i\left( \vect{x_1 \\ x_2} \right)
+ = f^\mc{B}_i(x_1 e_1 + x_2 e_2) = x_i.
+\]
+für alle $i \in \{1,2\}$. Also handelt es sich bei $\mc{B}^*$ hierbei um die Basis von $(\Rbb^2)^*$, die wir schon in Abschnitt \ref{sec: dual space of Kn} entdeckt haben.
+
+
+\subsubsection{Erste andere Basis}
+Es sei nun $\mc{B}_1 = (b_1, b_2)$ mit
+\[
+ b_1 = \vect{1 \\ 1}
+ \quad\text{und}\quad
+ b_2 = \vect{1 \\ -1}.
+\]
+Da $e_1 = (b_1+b_2)/2$ und $e_2 = (b_1-b_2)/2$ ist $\mc{B}_1$ ein Erzeugendensystem von $\Rbb^2$. Da $\mc{B}$ aus zwei Elementen besteht und $\Rbb^2$ zweidimensional ist, ist $\mc{B}_2$ damit bereits eine Basis von $\Rbb^2$.
+
+Für die duale Basis $\mc{B}_1^* = (f^{\mc{B}_1}_1, f^{\mc{B}_1}_2)$ ist nun
+\begin{gather*}
+ f^{\mc{B}_1}_1\left( \vect{x_1 \\ x_2} \right)
+ = f^{\mc{B}_1}_1\left( \frac{x_1 + x_2}{2} b_1 + \frac{x_1 - x_2}{2} b_2 \right)
+ = \frac{x_1 + x_2}{2}
+\shortintertext{sowie}
+ f^{\mc{B}_1}_2\left( \vect{x_1 \\ x_2} \right)
+ = f^{\mc{B}_1}_2\left( \frac{x_1 + x_2}{2} b_1 + \frac{x_1 - x_2}{2} b_2 \right)
+ = \frac{x_1 - x_2}{2}.
+\end{gather*}
+
+Wollen wir nun etwa das Element $f \in (\Rbb^2)^*$ mit
+\[
+ f\left( \vect{x_1 \\ x_2} \right)
+ = 7x_1 - 3x_2
+ \quad
+ \text{für alle $\vect{x_1 \\ x_2} \in \Rbb^2$}
+\]
+als Linearkombination von $f^{\mc{B}_1}_1$ und $f^{\mc{B}_1}_2$ darstellen, so ist $f = a_1 f^{\mc{B}_1}_1 + a_2 f^{\mc{B}_1}_2$ mit $a_1 = f(b_1) = 4$ und $a_2 = f(b_2) = 10$, also $f = 4 f^{\mc{B}_1}_1 + 10 f^{\mc{B}_1}_2$.
+
+
+\subsection{Zweite andere Basis}\label{ssec: second different basis of R2}
+Es sei nun $\mc{B}_2 = (c_1, c_2)$ mit
+\[
+ c_1 = e_1 = \vect{1 \\ 0}
+ \quad\text{und}\quad
+ c_2 = \vect{4 \\ -2}.
+\]
+Da $e_2 = 2c_1 - c_2/2$ ist $\mc{B}_2$ ein Erzeugendensystem von $\Rbb^2$. Da $\mc{B}_2$ aus zwei Elementen besteht und $\Rbb^2$ zweidimensional ist, ist $\mc{B}_2$ damit bereits eine Basis von $\Rbb^2$.
+
+Für die duale Basis $\mc{B}_2^* = (f^{\mc{B}_2}_1, f^{\mc{B}_2}_2)$ ist nun
+\begin{gather*}
+ \begin{aligned}
+  f^{\mc{B}_2}_1\left( \vect{x_1 \\ x_2} \right)
+  &= f^{\mc{B}_2}_1\left( x_1 e_1 + x_2 e_2 \right)
+  = f^{\mc{B}_2}_1\left( x_1 c_1 + x_2 \left( 2c_1 - \frac{1}{2} c_2 \right) \right) \\
+  &= f^{\mc{B}_2}_1\left( (x_1 + 2x_2) c_1 - \frac{x_2}{2} c_2 \right)
+  = x_1 + 2 x_2,
+ \end{aligned}
+\shortintertext{sowie analog}
+ f^{\mc{B}_2}_2\left( \vect{x_1 \\ x_2} \right)
+ = f^{\mc{B}_2}_2\left( (x_1 - 2x_2) c_1 - \frac{x_2}{2} c_2 \right)
+ = -\frac{1}{2} x_2.
+\end{gather*}
+
+Obwohl der erste Vektor der Standardbasis $\mc{B}$ und der Basis $\mc{B}_2$ gleich sind ($e_1 = c_1$) sind die entsprechenden Elemente $f^{\mc{B}}_1$ und $f^{\mc{B}_2}_1$ der dualen Basis $\mc{B}^*$ ud $\mc{B}_2^*$ verschieden. Hieraus wird deutlich, dass die Elemente der duale Basis $\mc{C}^*$ einer Basis $\mc{C}$ von der kompletten Basis $\mc{C}$ abhängen.
+
+
+
+
+
+
+
+
+
+
+\section{Notation}
+Ist $V$ ein endlichdimensionaler $K$-Vektorraum und $\mc{B} = (v_1, \dotsc, v_n)$ eine Basis von $V$, so bezeichnet mit die entsprechende duale Basis $\mc{B}^*$ mit $(v_1^*, \dotsc, v_n^*)$ statt mit $(f^\mc{B}_1, \dotsc, f^\mc{B}_n)$, d.h.\ es ist $v_i^* = f^\mc{B}_i$ für alle $1 \leq i \leq n$.
+
+Diese Notation hat den Vorteil, dass man kein zusätzliches Symbol ($f$) einführt, und dass man die Basis $\mc{B}$ nicht dauernd angibt.
+
+Der zweite Punkt hat dafür den Nachteil, dass aus der Notation $\mc{B}^* = (v_1^*, \dotsc, v_n^*)$ nicht klar wird, das Element $v_i^*$ tatsächlich von der gesamten Basis $\mc{B}$ abhängt, und nicht nur von $v_i$. So kann es durchaus passieren, dass wir zwei Basen $(v_1, \dotsc, v_n)$ und $(w_1, \dotsc, w_n)$ von $V$ haben, so dass zwar $v_1 = w_1$, aber $v_i^* \neq w_i^*$ (siehe etwa Abschnitt \ref{ssec: second different basis of R2}).
+
+Wir halten also fest:
+
+\begin{shaded}
+ Ist $V$ ein endlichdimensionaler $K$-Vektorraum und $\mc{B} = (v_1, \dotsc, v_n)$ ein Basis von $V$, so hängt ein Element $v_i^*$ der dualen Basis $(v_1^*, \dotsc, v_n^*)$ im Allgemeinen von der kompletten Basis $\mc{B}$ ab, und nicht nur von $v_i$.
+\end{shaded}
+
+
+
+
+
+
+
+
+
+
+\section{Der Bidualraum}
+Nachdem wir den Dualraum eines endlichdimensionalen Vektorraumes nun verstanden haben, gehen wir jetzt noch einen Schritt weiter, und versuchen den Dualraums des Dualsraums zu verstehen.
+
+\begin{defi}
+ Ist $V$ ein $K$-Vektorraum, so heißt $V^{**} \coloneqq (V^*)^*$ der \emph{Bidualraum} von $V$.
+\end{defi}
+
+Elemente von $V^{**}$ sind also lineare Abbildungen $V^* \to K$. Nachdem wir den Dualraum mithilfe der dualen Basis verstanden haben, erscheint es nun naheliegend, so etwas wie eine „doppeltduale“ Basis einzuführen. Tatsächlich haben wir bereits eine solche Basis:
+
+Ist $V$ ein endlichdimensionaler $K$-Vektorraum, $\mc{B} = (v_1, \dotsc, v_n)$ eine Basis von $V$ und $\mc{B}^* = (v_1^*, \dotsc, v_1^*)$ die duale Basis von $\mc{B}$, so können wir die duale Basis von $\mc{B}^*$ bilden, um eine Basis $(\mc{B}^*)^* = ((v_1^*)^*, \dotsc, (v_n^*)^*)$ von $(V^*)^* = V^{**}$ zu erhalten. Wir schreiben auch nur $\mc{B}^{**} \coloneqq (\mc{B}^*)^*$ und $v_i^{**} \coloneqq (v_i^*)^*$ für alle $1 \leq i \leq n$.
+
+Der unerfahrene Leser mag beim Anblick dieser itertieren Dualisierung in Panik ausbrechen: Wenn der Dualraum und duale Basen schon seltsam und umständlich erscheinen, so dürfte der Bidualraum mitseiner doppeltdualen Basis als nahezu unverstehbar anmuten. Es stellt sich jedoch heraus, das der Bidualraum $V^{**}$ mit seiner Basis $\mc{B}^{**}$ deutlich einfacher zu verstehen ist, also $V^*$ und $\mc{B}^*$.
+
+Für jedes $v \in V$ sei
+\[
+ \eval_v \colon V^* \to K, \quad f \mapsto f(v).
+\]
+Man bezeichnet $\eval_v$ als die \emph{Evaluation} (d.h.\ Auswertung) an $v$. Diese Evaluation ist linear, denn für all $f,g \in V^*$ und $\lambda \in K$ ist
+\begin{gather*}
+ \eval_v(f+g)
+ = (f+g)(v)
+ = f(v) + g(v)
+ = \eval_v(f) + \eval_v(g)
+\shortintertext{sowie}
+ \eval_v(\lambda f)
+ = (\lambda f)(v)
+ = \lambda f(v)
+ = \lambda \eval_v(f).
+\end{gather*}
+Also ist $\eval_v \in V^{**}$. Die Abbildung $\eval \colon V \to V^{**}$, $v \mapsto \eval_v$ ist außerdem selber linear, denn für alle $v,w \in V$ und $\lambda \in K$ ist
+\begin{gather*}
+ \eval_{v+w}(f)
+ = f(v+w)
+ = f(v) + f(w)
+ = \eval_v(f) + \eval_w(f)
+ = (\eval_v + \eval_w)(f)
+\shortintertext{sowie}
+ \eval_{\lambda v}(f)
+ = f(\lambda v)
+ = \lambda f(v)
+ = \lambda \eval_v(f)
+ = (\lambda \eval_v)(f)
+\end{gather*}
+für alle $f \in V^*$, und somit $\eval_{v+w} = \eval_v + \eval_w$ und $\eval_{\lambda v} = \lambda \eval_v$.
+
+Ist $f \in V^*$ mit $f = a_1 v_1^* + \dotsb + a_n v_n^*$, so ist
+\[
+ v_i^{**}(f)
+ = v_i^{**}(a_1 v_1^* + \dotsb + a_n v_n^*)
+ = a_i
+ \quad\text{für alle $1 \leq i \leq n$}.
+\]
+Wir wissan aber bereits, dass auch $a_i = f(v_i)$ für alle $1 \leq i \leq n$. Also ist $v_i^{**}(f) = f(v_i) = \eval_{v_i}$ für alle $1 \leq i \leq n$. Da dies für alle $f \in V^*$ gilt, ist damit schon $v_i^{**} = \eval_{v_i}$ für alle $1 \leq 1 \leq n$. Die Elemente $v_1^{**}, \dotsc, v_n^{**} \in V^{**}$ sind also nichts anderes als die Evaluationen an $v_1, \dotsc, v_n$! Außerdem bildet die lineare Abbildung $\eval \colon V \to V^{**}$ die Basis $\mc{B} = (v_1, \dotsc, v_n)$ von $V$ auf die Basis $\mc{B}^{**} = (v_1^{**}, \dotsc, v_n^{**})$ von $V^{**}$ ab, und ist deshalb schon ein Isomorphismus von Vektorräumen. Wir erhalten also:
+
+\begin{shaded}
+ Ist $V$ ein endlichdimensionaler $K$-Vektorraum, so ist die lineare Abbildung \mbox{$\eval \colon V \to V^{**}$}, $v \mapsto \eval_v$ ein Isomorphismus, wobei $\eval_v$ die Evaluation an $V$ bezeichnet.
+ 
+ Ist ferner $\mc{B} = (v_1, \dotsc, v_n)$ eine Basis von $V$, so ist $v_i^{**} = \eval_{v_i}$ für alle $1 \leq i \leq n$.
+\end{shaded}
+
+
+
+
+
 
 
 
