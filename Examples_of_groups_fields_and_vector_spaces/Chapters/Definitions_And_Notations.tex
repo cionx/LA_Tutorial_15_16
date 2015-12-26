@@ -63,9 +63,9 @@
      (-n) \cdot (-a)                                & \text{falls $n \leq -1$}.
     \end{cases}
    \]
-   Es gilt dann $na + ma = (n+m)a$ für alle $a \in A$ und $n,m \in \Zbb$, sowie $0 \cdot a = 0$ und $-(n \cdot a) = n \cdot (-a) = (-n) \cdot a$ für alle $a \in A$ und $n \in \Zbb$.
+   Es gilt dann $n \cdot a + m \cdot a = (n+m) \cdot a$ für alle $a \in A$ und $n,m \in \Zbb$, $n \cdot (a+b) = n \cdot a + n \cdot b$ für alle $n \in \Zbb$ und $a,b \in A$, sowie $0 \cdot a = 0$ und $-(n \cdot a) = n \cdot (-a) = (-n) \cdot a$ für alle $a \in A$ und $n \in \Zbb$.
   \item
-   Obwohl eine Gruppe, per Definition, ein Paar $(G, \cdot)$ ist, nennt man die Verknüpfung $\cdot$ häufig nicht explizit. Statt von einer Gruppe $(G, \cdot)$, bzw.\ $(G, +)$ spricht man also nur von einer Gruppe $G$.
+   Obwohl eine Gruppe, per Definition, ein Paar $(G, \cdot)$, bzw.\ $(G,+)$ ist, nennt man die Verknüpfung $\cdot$ häufig nicht explizit. Statt von einer Gruppe $(G, \cdot)$, bzw.\ $(G, +)$, spricht man also nur von einer Gruppe $G$.
  \end{enumerate}
 \end{bem}
 
@@ -167,6 +167,9 @@
     = \left( \varphi(g)^{-1} \right)^{-n}
     = \varphi(g)^n.
    \]
+   
+  \item
+   Sind $G$ und $H$ abelsche Gruppen und $\varphi \colon G \to H$ ein Gruppenhomomorphismus, so schreibt sich die vorherigen Beobachtung also $\varphi(n \cdot g) = n \cdot \varphi(g)$ für alle $n \in \Zbb$ und $g \in G$.
 
   \item
    Sind $G$ und $H$ Gruppen und ist $\varphi \colon G \to H$ ein Gruppenisomorphismus (also ein Gruppenhomomorphismus und bijektiv), so ist auch $\varphi^{-1} \colon H \to G$ ein Gruppenisomorphismus, da für alle $x,y \in H$
@@ -386,6 +389,13 @@
     = 1.
    \end{gather*}
   \item
+   Sind $K$ und $L$ Körper und ist $\phi \colon K \to L$ ein Körperhomomorphismus, so ist $\phi$ inbesondere ein Gruppenhomomorphismus zwischen den unterliegenden abelschen Gruppen $(K,+)$ und $(L,+)$. Daher ist insbesondere
+   \[
+    \phi(n \cdot x) = n \cdot \phi(x)
+    \quad
+    \text{für alle $n \in \Zbb$ und $x \in K$}.
+   \]
+  \item
    Sind $K$ und $L$ Körper und ist $\phi \colon K \to L$ ein Körperisomorphismus, so ist auch die Umkehrabbildung $\phi^{-1} \colon L \to K$ ein Körperisomorphismus: $\phi$ ist bijektiv und für alle $x,y \in L$ ist
    \begin{gather*}
     \begin{aligned}
@@ -574,6 +584,13 @@
     = g(\lambda f(v))
     = \lambda g(f(v))
     = \lambda (g \circ f)(v).
+   \]
+  \item
+   Sind $V$ und $W$ $K$-Vektorräume und ist $f \colon V \to W$ linear, so ist $f$ inbesondere ein Gruppenhomomorphismus zwischen den unterliegenden abelschen Gruppen $(V,+)$ und $(W,+)$. Deshalb ist insbesondere
+   \[
+    f(n \cdot v) = n \cdot f(v)
+    \quad
+    \text{für alle $n \in \Zbb$ und $v \in V$}.
    \]
   \item
    Sind $V$ und $W$ $K$-Vektorräume und ist $f \colon V \to W$ ein Isomorphismus, so ist auch $f^{-1} \colon W \to V$ ein Isomorphismus: $f^{-1}$ ist bijektiv, für alle $x,y \in W$ ist

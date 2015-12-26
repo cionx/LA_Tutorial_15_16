@@ -960,29 +960,164 @@ und $\alpha^2 = d$, und für jedes $z \in L$ ist die Zerlegung $z = x + y\alpha$
 \begin{defi}
  Für einen Körper $K$ und $U = \{L \subseteq K \mid \text{$L$ ist ein Unterkörper von $K$}\}$ heißt
  \[
-  P(K) = \bigcap_{L \in U} L
+  P(K) \coloneqq \bigcap_{L \in U} L
  \]
  der \emph{Primkörper} von $K$.
 \end{defi}
 
-Es sei $K$ ein Körper. Da Schnitte von Unterkörpern wieder Unterkörper sind ist $P(K) \subseteq K$ ein Unterkörper. $P(K)$ ist der kleinste Unterkörper von $K$, d.h.\ ist $L \subseteq K$ ein Unterkörper, so ist $P(K) \subseteq L$. Dies folgt direkt daraus, dass $P(K)$ der Schnitt \emph{aller} Unterkörper von $K$ ist.
+Es sei $K$ ein Körper. Da Schnitte von Unterkörpern wieder Unterkörper sind, ist $P(K)$ ein Unterkörper von $K$. $P(K)$ ist der \emph{kleinste} Unterkörper von $K$, d.h.\ ist $L \subseteq K$ ein Unterkörper, so ist $P(K) \subseteq L$. Dies folgt direkt daraus, dass $P(K)$ der Schnitt \emph{aller} Unterkörper von $K$ ist.
 
-Wir zeigen, dass es einen eindeutigen Isomorphismus von Körpern $\Qbb \to P(K)$ gibt, falls $\kchar(K) = 0$, und einen eindeutigen Isomorphismus von Körpern $\Fbb_p \to P(K)$, falls $\kchar(K) = p > 0$.
-
-%TODO: Zeigen
+Wir untersuchen im Folgenden, wie $P(K)$ aussieht, und zeigen, dass es einen eindeutigen Isomorphismus von Körpern $\Qbb \to P(K)$ gibt falls $\kchar(K) = 0$, und einen eindeutigen Isomorphismus von Körpern $\Fbb_p \to P(K)$ falls $\kchar(K) = p > 0$.
 
 
 
+\subsection{Körper mit Charakteristik \texorpdfstring{$p$}{p}}
+Wir betrachten zunächst den Falls, dass $\kchar(K) = p > 0$.
+
+Wir zeigen zunächst die Eindeutigkeit, d.h.\ dass es höchstens einen Körperhomomorphismus $\Fbb_p \to P(K)$ gibt: Sind nämlich $\phi, \psi \colon \Fbb_p \to P(K)$ zwei Körperhomomorphismen, so ist für alle $n \in \Zbb$
+\[
+ \phi([n])
+ = \phi(n \cdot [1])
+ = n \cdot \phi([1])
+ = n \cdot \phi(1_{\Fbb_p})
+ = n \cdot 1_K.
+\]
+Analog ist für alle $n \in \Zbb$ auch $\psi([n]) = n \cdot 1_K$ und somit $\psi([n]) = \psi([n])$. Also ist bereits $\phi = \psi$. Das zeigt die Eindeutigkeit.
+
+Um die Existenz zu zeigen konstruieren wir einen Isomorphismus $\Fbb_p \to K$. Wie dieser aussehen muss, wissen wir aus dem obigen Beweis der Eindeutigkeit; es sei also
+\[
+ \tilde{\phi} \colon \Fbb_p \to K, \quad [n] \mapsto n \cdot 1_K.
+\]
+$\tilde{\phi}$ ist wohldefiniert, denn sind $n,m \in \Zbb$ mit $[n] = [m]$, so ist $n-m = pk$ für ein $k \in \Zbb$, weshalb
+\[
+ n \cdot 1_K
+ = (m + (n-m)) \cdot 1_K
+ = m \cdot 1_K + (n-m) \cdot 1_K
+ = m \cdot 1_K + pk \cdot 1_K
+ = m \cdot 1_K.
+\]
+Dabei nutzen wir, dass $pk \cdot 1_K = 0$, da $\kchar(K) = p$. $\tilde{\phi}$ ist ein Körperhomomorphismus, denn es ist $\tilde{\phi}(1_{\Fbb_p}) = \tilde{\phi}([1]) = 1 \cdot 1_K = 1_K$, und für alle $n,m \in \Zbb$ ist
+\begin{gather*}
+ \tilde{\phi}([n] \cdot [m])
+ = \tilde{\phi}([nm])
+ = (nm) \cdot 1_K
+ = (n \cdot 1_K) \cdot (m \cdot 1_K)
+ = \tilde{\phi}([n]) \cdot \tilde{\phi}([m])
+\shortintertext{und}
+ \tilde{\phi}([n] + [m])
+ = \tilde{\phi}([n+m])
+ = (n+m) \cdot 1_K
+ = (n \cdot 1_K) + (m \cdot 1_K)
+ = \tilde{\phi}([n]) + \tilde{\phi}([m]).
+\end{gather*}
+
+Da $\tilde{\phi}$ ein Körperhomomorphismus ist, ist $P \coloneqq \im(\tilde{\phi}) \subseteq K$ ein Unterkörper. Indem wir den Bildbereich von $K$ auf $P$ einschränken, schränkt sich $\tilde{\phi}$ zu einer Abbildung \mbox{$\phi \colon \Fbb_p \to P$}, \mbox{$x \mapsto \tilde{\phi}{(x)}$} ein. $\phi$ ist dann ein surjektiver Körperhomomorphismus. Da Körperhomomorphismen stets injektiv sind, ist $\phi$ auch injektiv, und somit bereits ein Körper\emph{isomorphismus}.
+
+Da $\Fbb_p = \{[0], \dotsc, [p-1]\}$ und $\phi$ bijektiv ist, ist
+\begin{align*}
+ P
+ &= \im(\tilde{\phi}) 
+ = \im(\phi)
+ = \{\phi([0]), \dotsc, \phi([p-1])\} \\
+ &= \{0 \cdot 1_K, \dotsc, (p-1) \cdot 1_K\}
+ = \{0, 1_K, 2 \cdot 1_K, \dotsc, (p-1) \cdot 1_K\}.
+\end{align*}
+Da $P$ ein Unterkörper von $K$ ist, und $P(K)$ der kleinste Unterkörper von $K$ ist, folgt zum einen, dass $P(K) \subseteq P$. Da $0, 1_K \in P(K)$ und $P(K)$ unter Summen abgeschlossen ist, ist auch $P(K) \subseteq P$. Somit ist $P = P(K)$ der Primkörper von $K$. Deshalb ist $\phi \colon \Fbb_p \to P(K)$, $[n] \mapsto n \cdot 1_K$ ein Körperisomorphismus.
+
+Damit haben wir insgesamt gezeigt, dass $P(K) = \{0, 1_K, \dotsc, (p-1) \cdot 1_K\}$, dass die Abbildung $\Fbb_p \colon P(K)$, $[n] \mapsto n \cdot 1_K$ ein Körperisomorphismus ist, und dass dies der einzige Körperisomorphismus $\Fbb_p \to P(K)$ ist.
 
 
+\subsection{Körper mit Charakteristik \texorpdfstring{$0$}{0}}
+Nun betrachten wir den Fall, dass $\kchar(K) = 0$, wobei wir uns am Vorgehen des Falls $\kchar(K) = p > 0$ orientieren:
+
+Sind $\phi, \psi \colon \Qbb \to P(K)$ zwei Körperisomorphismen, so ist
+\[
+ \phi(n)
+ = \phi(n \cdot 1)
+ = n \cdot \phi(1)
+ = n \cdot 1_K
+ \quad
+ \text{für alle $n \in \Zbb$}.
+\]
+Analog ergibt sich, dass auch $\psi(n) = n \cdot 1_K$ für alle $n \in \Zbb$. Also ist bereits $\phi(n) = \psi(n)$ für alle $n \in \Zbb$. Sind nun $p \in \Zbb$ und $q \in \Nbb$ mit $q > 0$, so ist
+\[
+ (q \cdot 1_K) \cdot \phi\left( \frac{p}{q} \right)
+ = \phi(q) \cdot \phi\left( \frac{p}{q} \right)
+ = \phi\left( q \cdot \frac{p}{q} \right)
+ = \phi(p)
+ = p \cdot 1_K.
+\]
+Da $\kchar(K) = 0$ ist $q \cdot 1_K \neq 0$, durch Teilen von $q \cdot 1_K$ auf beiden Seiten der obigen Gleichung ergibt sich damit, dass
+\[
+ \phi\left( \frac{p}{q} \right) = \frac{p \cdot 1_K}{q \cdot 1_K}.
+\]
+Analog ergibt sich, dass auch $\psi(p/q) = (p \cdot 1_K)/(q \cdot 1_K)$. Also ist $\phi(x) = \psi(x)$ für alle $x \in \Qbb$ und somit $\phi = \psi$. Das zeigt die Eindeutigkeit.
+
+Wir zeigen die Existenz eines Isomorphismus $\Qbb \to P(K)$, indem wir diesen explizit konstruieren. Dabei wissen wir aus der obigen Definition der Eindeutigkeit, wie dieser aussehen muss: Es sei
+\[
+ \tilde{\phi} \colon \Qbb \to K, \quad \frac{p}{q} \mapsto \frac{p \cdot 1_K}{q \cdot 1_K}.
+\]
+Wir zeigen zunächst, dass $\tilde{\phi}$ wohldefiniert ist: Ist $q \in \Zbb$ mit $q \neq 0$, so ist $q \cdot 1_K \neq 0$. Also ist der Quotient $(p \cdot 1_K)/(q \cdot 1_K)$ für alle $p,q \in \Zbb$ mit $q \neq 0$ definiert. Sind $p_1, p_2, q_1, q_2 \in \Zbb$ mit $q_1, q_2 \neq 0$, so ist
+\begin{align*}
+ \frac{p_1 \cdot 1_K}{q_1 \cdot 1_K} = \frac{p_2 \cdot 1_K}{q_2 \cdot 1_K}
+ &\iff
+ (p_1 \cdot 1_K)(q_2 \cdot 1_K) = (p_2 \cdot 1_K)(q_1 \cdot 1_K) \\
+ &\iff
+ (p_1 q_2) \cdot 1_K = (p_2 q_1) \cdot 1_K
+ \iff
+ (p_1 q_2 - p_2 q_1) \cdot 1_K = 0.
+\end{align*}
+da $\kchar(K) = 0$ ist genau dann $(p_1 q_2 - p_2 q_1) \cdot 1_K = 0$, wenn $p_1 q_2 - p_2 q_1 = 0$, was wiederum äquivalent dazu ist, dass $p_1/q_1 = p_2/q_2$. Ist also $p_1/q_1 = p_2/q_2$, so ist deshalb $(p_1 \cdot 1_K)/(q_1 \cdot 1_K) = (p_2 \cdot 1_K)/(q_2 \cdot 1_K)$. Also ist $(p \cdot 1_K)/(q \cdot 1_K)$ von der Wahl des Repräsentanten $p/q$ unabhängig, und die Abbildung $\tilde{\phi}$ somit wohldefiniert.
+
+Die Abbildung $\tilde{\phi}$ ist ein Körperhomomorphismus, denn es ist
+\[
+ \tilde{\phi}(1_\Qbb)
+ = \tilde{\phi}\left( \frac{1}{1} \right)
+ = \frac{1 \cdot 1_K}{1 \cdot 1_K}
+ = \frac{1_K}{1_K} = 1_K,
+\]
+und für alle $p_1/q_1, p_2/q_2 \in \Qbb$ ist
+\begin{gather*}
+ \begin{aligned}
+  \tilde{\phi}\left( \frac{p_1}{q_1} \cdot \frac{p_2}{q_2} \right)
+  &= \tilde{\phi}\left( \frac{p_1 p_2}{q_1 q_2} \right)
+  = \frac{(p_1 p_2) \cdot 1_K}{(q_1 q_2) \cdot 1_K}
+  = \frac{(p_1 \cdot 1_K) \cdot (p_2 \cdot 1_K)}{(q_1 \cdot 1_K) \cdot (q_2 \cdot 1_K)} \\
+  &= \frac{p_1 \cdot 1_K}{q_1 \cdot 1_K} \cdot \frac{p_2 \cdot 1_K}{q_2 \cdot 1_K}
+  = \tilde{\phi}\left( \frac{p_1}{q_1} \right) \cdot \tilde{\phi}\left( \frac{p_2}{q_2} \right).
+ \end{aligned}
+\shortintertext{und}
+ \begin{aligned}
+  \tilde{\phi}\left( \frac{p_1}{q_1} + \frac{p_2}{q_2} \right)
+  &= \tilde{\phi}\left( \frac{p_1 q_2 + p_2 q_1}{q_1 q_2} \right)
+  = \frac{(p_1 q_2 + p_2 q_1) \cdot 1_K}{(q_1 q_2) \cdot 1_K} \\
+  &= \frac{(p_1 \cdot 1_K) \cdot (q_2 \cdot 1_K) + (p_2 \cdot 1_K) \cdot (q_1 \cdot 1_K)}{(q_1 \cdot 1_K) \cdot (q_2 \cdot 1_K)} \\
+  &= \frac{p_1 \cdot 1_K}{q_1 \cdot 1_K} \cdot \frac{p_2 \cdot 1_K}{q_2 \cdot 1_K}
+  = \tilde{\phi}\left( \frac{p_1}{q_1} \right) \cdot \tilde{\phi}\left( \frac{p_2}{q_2} \right).
+ \end{aligned}
+\end{gather*}
+
+Da $\tilde{\phi}$ ein Körperhomomorphismus ist, ist $P \coloneqq \im(\tilde{\phi})$ ein Unterkörper von $K$. Indem wir den Bildbereich von $\tilde{\phi}$ von $K$ auf $P$ einschränken erhalten wir einen surjektiven Körperhomomorphismus $\phi \colon \Qbb \to P$, $x \mapsto \tilde{\phi}(x)$. Da Körperhomomorphismen stets injektiv sind, ist $\phi$ auch injektiv. Somit ist $\phi$ bereits ein Körperisomorphismus.
+
+Da $P$ ein Unterkörper von $K$ ist, ist $P \subseteq P(K)$. Da $0, 1_K \in P(K)$ und $P(K)$ unter Summen und Brüchen abgeschlossen ist, und
+\[
+ P
+ = \im(\phi)
+ = \left\{ \frac{p \cdot 1_K}{q \cdot 1_K} \mid \frac{p}{q} \in \Qbb \right\},
+\]
+ist auch $P \subseteq P(K)$. Somit ist $P = P(K)$ und $\phi \colon \Qbb \to P(K)$, $p/q \mapsto (p \cdot 1_K)/(q \cdot 1_K)$ ein Körperisomorphismus. Wie bereits gezeigt, ist dies auch der einzige Körperisomorphismus $\Qbb \to P(K)$.
 
 
+\subsection{Anwendung: Endliche Körper}
+Als Anwendung der obigen Ergebnisse ergibt sich insbesondere, dass es für jeden endlichen Körper $K$ eindeutige $p,n \in \Nbb$ gibt, mit $p$ prim und $n \geq 1$, so dass $|K| = p^n$; dabei ist $p = \kchar(K)$.
 
+Die Eindeutigkeit von $p$ und $n$ folgt direkt aus der Eindeutigkeit von Primfaktorzerlegungen.
 
+Für die Existenz von $p$ und $n$ bemerken wir, dass $K$ ein $P(K)$-Vektorraum ist. Da $K$ endlich ist, ist $K$ inbesondere endlichdimensional über $P(K)$, also $n \coloneqq \dim_{P(K)} K < \infty$. Da $|K| \geq 2$ ist auch $n > 0$. Da $K$ endlich ist, ist $p \coloneqq \kchar(K) > 0$ prim. Da $P(K)$ als Körper isomorph zu $\Fbb_p$ ist, ist $|P(K)| = |\Fbb_p| = p$. Als $n$-dimensionaler $P(K)$-Vektorraum ist $K$ isomorph zu $P(K)^n$. Somit ist $|K| = |P(K)^n| = p^n$, wobei $p = \kchar(K)$ und \mbox{$n = \dim_{P(K)}(K)$}.
 
-
-
-
+\begin{bem}
+ Es lässt sich zeigen, dass es für jede Primzahl $p > 0$ und jedes $n \in \Nbb$, $n > 0$ auch tatsächlich einen Körper $K$ mit $p^n$ Elementen gibt. Dieser Körper ist bis auf Isomorphismus eindeutig, d.h.\ sind $K$ und $L$ zwei Körper mit $p^n$ Elementen, so gibt es einen Körperisomorphismus $K \to L$.
+\end{bem}
 
 
 
