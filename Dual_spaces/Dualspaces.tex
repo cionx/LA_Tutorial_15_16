@@ -1,0 +1,257 @@
+\documentclass[a4paper,10pt]{article}
+%\documentclass[a4paper,10pt]{scrartcl}
+
+\usepackage{../generalstyle}
+\usepackage{specificstyle}
+
+\setromanfont[Mapping=tex-text]{Linux Libertine O}
+% \setsansfont[Mapping=tex-text]{DejaVu Sans}
+% \setmonofont[Mapping=tex-text]{DejaVu Sans Mono}
+
+\title{Dualräume}
+\author{Jendrik Stelzner}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+
+
+
+
+
+
+
+
+
+
+\section{Definitionen}
+
+\begin{defi}
+ Ist $V$ ein $K$-Vektorraum, so heißt
+ \[
+  V^* \coloneqq \{f \colon V \to K \mid \text{$f$ ist $K$-linear}\}
+ \]
+ der \emph{Dualraum} von $V$.
+\end{defi}
+
+Ist $V$ ein $K$-Vektorraum, so ist auch $V^*$ ein $K$-Vektorraum durch die punktweise Addition und Skalarmultiplikation, d.h.\ für alle $f,g \in V^*$ und $\lambda \in K$ ist
+\[
+ (f+g)(v) = f(v) + g(v)
+ \quad\text{und}\quad
+ (\lambda f)(v)0= \lambda f(v)
+ \quad \text{für alle $v \in V$}.
+\]
+
+\begin{defi}
+ Sind $V$ und $W$ $K$-Vektorräume und ist $\varphi \colon V \to W$ $K$-linear, so ist
+ \[
+  \varphi^* \colon W^* \to V^*, \quad f \mapsto f \circ \varphi
+ \]
+ die \emph{duale Abbildung} zu $f$. (Man beachte, dass sich die „Richtung“ der Abbildung ändert.)
+\end{defi}
+
+$\varphi^*$ ist also die Prekomposition mit $\varphi$. Die Wohldefiniertheit der dualen Abbildung ergibt sich daraus, dass die Verknüpfung von linearen Abbildungen wieder linear ist: Ist nämlich $f \in W*$, als $f \colon W \to K$ linear, und $\varphi \colon V \to W$ linear, so ist auch die Verknüpfung $f \circ \varphi \colon V \to K$ linear, also $f \circ \varphi \in V^*$.
+
+Die duale Abbildung ist ebenfalls linear: Es sei $\varphi \colon V \to W$ linear und es seien $f,g \in W^*$ und $\lambda \in K$. Für alle $v \in V$ ist dann
+\begin{align*}
+ \varphi^*(f+g)(v)
+ &= ((f+g) \circ \varphi)(v)
+ = (f+g)(\varphi(v)) \\
+ &= f(\varphi(v)) + g(\varphi(v))
+ = (f \circ \varphi)(v) + (g \circ \varphi)(v) \\
+ &= \varphi^*(f)(v) + \varphi^*(g)(v)
+ = (\varphi^*(f)+\varphi^*(g))(v),
+\end{align*}
+und somit $\varphi^*(f+g) = \varphi^*(f) + \varphi^*(g)$, sowie
+\begin{align*}
+ \varphi^*(\lambda f)(v)
+ &= ((\lambda f) \circ \varphi)(v)
+ = (\lambda f)(\varphi(v))
+ = \lambda f(\varphi(v)) \\
+ &= \lambda \varphi^*(f)(v)
+ = (\lambda \varphi^*(f))(v),
+\end{align*}
+und somit $\varphi^*(\lambda f) =  \lambda \varphi^*(f)$.
+
+Wir fassen zusammen:
+
+\begin{shaded}
+ Für jeden $K$-Vektorraum ist auch $V^*$ durch die punktweise Addition und Skalarmultiplikation ein $K$-Vektorraum. Jede lineare Abbildung $\varphi \colon V \to W$ zwischen $K$-Vektorräumen $V$ und $W$ induziert durch Prekomposition eine $K$-lineare Abbildung $\varphi^* \colon W^* \to V^*$.
+\end{shaded}
+
+
+
+
+
+
+
+
+
+
+\section{Der Dualraum von $K^n$}
+Es sei $n \in \Nbb$. Bevor wir uns abstrakten Vektorräumen zuwenden, wollen zunächst den Dualraum $(K^n)^*$ verstehen.
+
+\begin{bem}
+ Wir unterscheiden im Folgenden nicht zwischen $K$ und $K^1$, also dem Skalar $\lambda \in K$ und dem entsprechenden $1$-Tupel $(\lambda) \in K^1$.
+\end{bem}
+
+Für jede Matrix $A \in \Mat(1 \times n, K)$ ist die Abbildung
+\[
+ m_A \colon K^n \to K, \quad x \mapsto A \cdot x
+\]
+$K$-linear, und für jede $K$-lineare Abbildung $f \colon K^n \to K = K^1$ (also $f \in (K^n)^*$) gibt es eine eindeutige ($1 \times n$)-Matrix $M_f \in \Mat(1 \times n, K)$ mit
+\[
+ f(x) = M_f \cdot x
+ \quad \text{für alle $x \in K^n$},
+\]
+also $f = m_{M_f}$. Zusammengefasst sagt dies, dass die Abbildung
+\[
+ \Phi \colon \Mat(1 \times n, K) \xrightarrow{\sim} (K^n)^*, \quad A \mapsto m_A
+\]
+eine Bijektion ist, wobei $\Phi^{-1}(f) = M_f$ für alle $f \in (K^n)^*$. (Die Tilde $\sim$ über dem Pfeil symbolisiert, dass es sich um eine Bijektion handelt.)
+
+$\Phi$ ist auch ein $K$-linear, denn für alle $A, B \in \Mat(1 \times n, K)$ und $\lambda \in K$ ist
+\begin{align*}
+ \Phi(A+B)(x)
+ &= m_{A+B}(x)
+ = (A+B)x
+ = Ax + Bx \\
+ &= m_A(x) + m_B(x)
+ = (m_A+m_B)(x)
+ = (\Phi(A)+\Phi(B))(x)
+\end{align*}
+für alle $x \in K^n$ und somit $\Phi(A+B) = \Phi(A) + \Phi(B)$, und da
+\[
+ \Phi(\lambda A)(x)
+ = m_{\lambda A}(x)
+ = (\lambda A)x
+ = \lambda Ax
+ = \lambda m_A(x)
+ = (\lambda m_A)(x)
+ = (\lambda \Phi(A))(x)
+\]
+für alle $x \in K^n$ ist auch $\Phi(\lambda A) = \lambda \Phi(A)$.
+
+Damit ist also $\Phi$ ein Isomorphismus von $K$-Vektorräumen. Da wir $\Mat(1 \times n, K)$ und $K^n$ verstehen, können wir nun $\Phi$ nutzen, um auch $V^*$ zu verstehen.
+
+Wir wissen nun, dass jedes Element $f \in (K^n)^*$ von der Form $f = m_A$ für eine eindeutige Matrix $A = \begin{pmatrix} a_1 & \cdots & a_n \end{pmatrix}$ ist. Da
+\[
+ f(x)
+ = m_A(x)
+ = A \cdot \vect{x_1 \\ \vdots \\ x_n}
+ = a_1 x_1 + \dotsb + a_n x_n
+ \quad
+ \text{für alle $x = \vect{x_1 \\ \vdots \\ x_n} \in K^n$}
+\]
+erhalten wir auch eine Beschreibung von $(K^n)^*$, die ohne Matrizen auskommt:
+
+
+\begin{shaded}
+ Jedes $f \in (K^n)^*$ ist von der Form
+ \[
+  f(x) = a_1 x_1 + \dotsb + a_n x_n
+  \quad
+  \text{für alle $x = \vect{x_1 \\ \vdots \\ x_n} \in K^n$}
+ \]
+ mit eindeutig bestimmten $a_1, \dotsc, a_n \in K$.
+\end{shaded}
+
+Damit erhalten wir aus direkt eine Basis von $(K^n)^*$: Sind für jedes $1 \leq i \leq n$ sei definiert als
+\[
+ f_i \colon K^n \to K, \quad \vect{x_1 \\ \vdots \\ x_n} \mapsto x_i,
+\]
+d.h.\ $f_i(x)$ gibt die $i$-te Koordinate von $x$ an. Nach dem obigen Ergebnis sind die Abbildungen $f_1, \dotsc, f_n$ linear und bilden eine Basis von $(K^n)^*$, denn für alle $a_1, \dotsc, a_n \in K$ ist
+\[
+ (a_1 f_1 + \dotsb + a_n f_n)(x)
+ = a_1 f_1(x) + \dotsb + a_n f_n(x)
+ = a_1 x_1 + \dotsb + a_n x_n.
+\]
+Wir können das obige Ergebnis also auch umformulieren:
+
+\begin{shaded}
+ Die Koordinatenabbildungen $f_1, \dotsc, f_n$ mit
+ \[
+  f_i \colon K^n \to K, \quad \vect{x_1 \\ \vdots \\ x_n} \mapsto x_i
+ \]
+ bilden eine Basis von $(K^n)^*$. Für jedes $f \in (K^n)^*$ gibt es daher eindeutige $a_1, \dotsc, a_n \in K$ mit $f = a_1 f_1 + \dotsb + a_n f_n$.
+\end{shaded}
+
+Man beachte, dass $f_i(e_j) = \delta_{ij}$ für alle $1 \leq i,j \leq n$; da $(e_1, \dotsc, e_n)$ eine Basis von $K^n$ bildet, sind $(f_1, \dotsc, f_n)$ dadurch eindeutig bestimmt. Man sagt wegen dieser Relation, dass die Basen $(e_1, \dotsc, e_n)$ von $K^n$ und $(f_1, \dotsc, f_n)$ von $(K^n)^*$ \emph{dual} zueinander sind.
+
+Diese Dualität der Basen $(e_1, \dotsc, e_n)$ und $(f_1, \dotsc, f_n)$ hat für uns die praktische Konsequenz, dass wir für ein Element $f \in (K^n)^*$ die Koeffizienten $a_1, \dotsc, a_n \in K$ mit $f = a_1 f_1 + \dotsb + a_n f_n$ durch
+\begin{equation}\label{eq: coefficients and duality}
+ f(e_i)
+ = (a_1 f_1 + \dotsb + a_n f_n)(e_i)
+ = a_1 \underbrace{f_1(e_i)}_{=\delta_{1i}} + \dotsb + a_n \underbrace{f_n(e_i)}_{=\delta_{ni}}
+ = a_i
+\end{equation}
+bestimmen können. Es ist also $f = f(e_1) f_1 + \dotsb + f(e_n) f_n$ für alle $f \in (K^n)^*$.
+
+Damit haben wir nun eine Beschreibung von $(K^n)^*$ gefunden: Eine mögliche Basis von $(K^n)^*$ ist durch die Koordinatenfunktionen $(f_1, \dotsc, f_n)$ gegeben.
+
+Wir bemerken noch, dass $(K^n)^*$ inbesondere $n$-dimensional ist, also $K^n$ und $(K^n)^*$ gleichdimensional ist.
+
+
+
+
+
+
+\section{Der Dualraum eines endlichendimensionalen Vektorraums}
+Wir möchten die obigen Ergebnisse nun gerne auf endlichdimensionale Vektorräume verallgemeinern. Es sei hierfür $V$ ein $n$-dimensionaler $K$-Vektorraum. Ähnlich wie für $K^n$ würden wir gerne eine Basis von „Koordinatenfunktionen“ von $V$ angeben. Das Problem ist, dass es in $V$ a priori keinen geeigneten Begriff von Koordinaten gibt.
+
+Die Lösung dieses Problems besteht darin, mithilfe einer Basis Koordinaten einzuführen. Es sei also $\mc{B} = (v_1, \dotsc, v_n)$ eine Basis von $V$. Dann lässt sich jedes Element $v \in V$ als eindeutige Linearkombination $v = \lambda_1 v_1 + \dotsb + \lambda_n v_n$. Wir können nun die eindeutigen Koeffizienten $\lambda_1, \dotsc, \lambda_n$ als „Koordinaten“ von $v$ auffassen, und damit für alle $1 \leq i \leq n$ die Koordinatenfunktion
+\[
+ f^\mc{B}_i \colon V \to K, \quad \lambda_1 v_1 + \dotsb + \lambda_n v_n \mapsto \lambda_i
+\]
+zu definieren.
+
+Als Verallgemeinerung der Ergebnisse für $(K^n)^*$ überlegen wir uns nun, dass $\mc{B}^* \coloneq (f^\mc{B}_1, \dotsc, f^\mc{B}_n)$ eine Basis von $V^*$ bildet. Dass $f^\mc{B}_i$ für alle $1 \leq i \leq n$ linear ist, folgt dabei direkt daraus, dass die Addition und Skalarmultiplikation in $V$ koeffizientenweise funktioniert.
+
+Entscheident ist, dass $f^{\mc{B}}_i(v_j) = \delta_{ij}$ für alle $1 \leq i \leq n$. Es verhält sich also $\mc{B}^* = (f^\mc{B}_1, \dotsc, f^\mc{B}_n)$ \emph{dual} zu der Basis $\mc{B} = (v_1, \dotsc, v_n)$ von $V$. Dies wollen wir nun ausnutzen.
+
+Als erstes überlegen wir uns, dass $V^*$ von $\mc{B}^*$ erzeugt wird. Es sei also $f \in V^*$, und wir suchen $a_1, \dotsc, a_n \in K$ mit $f = a_1 f^\mc{B}_1 + \dotsb + a_n f^\mc{B}_n$. Analog zu \eqref{eq: coefficients and duality} erhalten wir, dass dann
+\[
+ f(v_i)
+ = (a_1 f^\mc{B}_1 + \dotsb + a_n f^\mc{B}_n)(v_i)
+ = a_1 \underbrace{f^\mc{B}_1(v_i)}_{=\delta_{1i}} + \dotsb + a_n \underbrace{f^\mc{B}_n(v_i)}_{=\delta_{ni}}
+ = a_i
+\]
+gelten muss. Wir definieren daher $a_i \coloneqq f(v_i)$ für alle $1 \leq i \leq n$ und schreiben $f' \coloneqq a_1 f^\mc{B}_1 + \dotsb + a_n f^\mc{B}_n$. Indem wir in der obigen Rechnung $f$ durch $f'$ ersetzen, erhalten wir, dass $f'(v_i) = a_i = f(v_i)$ für alle $1 \leq i \leq n$. Wegen der Linearität von $f'$ und $f$ gilt daher bereits $f'(v) = f(v)$ für alle $v \in \Ell(v_1, \dotsc, v_n)$. Da $\mc{B}$ ein Basis von $V$ ist, ist bereits $\Ell(v_1, \dotsc, v_n) = V$, und somit $f'(v) = f(v)$ für alle $v \in V$. Also ist $f = f' = a_1 f^\mc{B}_1 + \dotsb + a_n f^\mc{B}_n$. Somit ist $\mc{B}^*$ ein Erzeugendensystem von $V^*$.
+
+Die lineare Unabhängigkeit ergibt sich ähnlich: Für Koeffizienten $a_1, \dotsc, a_n \in K$ mit $0 = a_1 f_1 + \dotsb + a_n f_n$ ist analog zur obigen Rechnung
+\[
+ 0 = f(v_i) = a_i
+ \quad
+ \text{für alle $1 \leq i \leq n$}.
+\]
+Also ist $\mc{B}^*$ linear unabhängig.
+
+Damit haben wir eine Basis von $V^*$ gefunden.
+
+\begin{shaded}
+ Ist $\mc{B} = (v_1, \dotsc, v_n)$ ein Basis von $V$, so ergeben die Koordinatenfunktionen
+ \[
+  f^\mc{B}_i \colon V \to K, \quad \lambda_1 v_1 + \dotsb + \lambda_n v_n \mapsto \lambda_i
+  \quad
+  \text{für alle $1 \leq i \leq n$}
+ \]
+ eine Basis $\mc{B}^* = (f^\mc{B}_1, \dotsc, f^\mc{B}_n)$ von $V^*$, die dual zur Basis $\mc{B}$ ist (in dem Sinne, dass $f^\mc{B}_i(v_j) = \delta_{ij}$ für alle $1 \leq i,j \leq n$).
+\end{shaded}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
