@@ -238,7 +238,252 @@ Damit haben wir eine Basis von $V^*$ gefunden.
   \text{für alle $1 \leq i \leq n$}
  \]
  eine Basis $\mc{B}^* = (f^\mc{B}_1, \dotsc, f^\mc{B}_n)$ von $V^*$, die dual zur Basis $\mc{B}$ ist (in dem Sinne, dass $f^\mc{B}_i(v_j) = \delta_{ij}$ für alle $1 \leq i,j \leq n$).
+ 
+ Jedes $f \in V^*$ ist also von der Form
+ \[
+  f(\lambda_1 v_1 + \dotsb + \lambda_n v_n)
+  = a_1 \lambda_1 + \dotsb + a_n \lambda_n
+  \quad
+  \text{für alle $\lambda_1, \dotsc, \lambda_n \in K$}
+ \]
+ für eindeutig bestimmte $a_1, \dotsc, a_n \in K$. Dabei gilt $a_i = f(v_i)$ für alle $1 \leq i \leq n$.
 \end{shaded}
+
+Zum einen ergibt sich hiermit, dass $\dim(V^*) = n$, also $V^*$ und $V$ gleichdimensional ist. 
+
+Eine weitere interessante Beobachtung, dass mit die Element aus $V$ durch die Abbildungen aus $V^*$ trennen, bzw.\ unterscheiden kann, d.h.\ es gibt für je zwei Element $v,w \in V$ mit $v \neq w$ ein Element $f \in V^*$ mit $f(v) \neq f(w)$: Da $v \neq w$ ist nämlich $v-w \neq 0$. Wir können daher $v-w$ zu einer Basis $\mc{B} = (v_1, v_2, \dotsc, v_n)$ mit $v_1 = v-w$ von $V$ ergänzen. Für die duale Basis $\mc{B}^* = (f^\mc{B}_1, \dotsc, f^\mc{B}_n)$ von $V^*$ gilt dann $1 = f^\mc{B}_1(v_1) = f^\mc{B}_1(v-w) = f^\mc{B}_1(v) - f^\mc{B}_1(w)$, also $f^\mc{B}_1(v) \neq f^\mc{B}_1(w)$.
+
+
+
+
+
+
+
+
+
+
+\section{Konkrete Rechenbeispiele}
+Wir betrachten nun verschieden konkrete Beispiele für duale Basen und stellen Element des Dualraums durch diese da.
+
+
+\subsection{Die Spur von $2 \times 2$-Matrizen}
+Die Spur einer ($2 \times 2$)-Matrix ist definiert als
+\[
+ \spur
+ \begin{pmatrix}
+  a_{11} & a_{12} \\
+  a_{21} & a_{22}
+ \end{pmatrix}
+ = a_{11}+a_{22},
+\]
+d.h.\ $\spur A = A_{11} + A_{22}$ ist die Summe der Diagonaleinträge von $A$. Die Spur ist linear, denn für alle $A,B \in \Mat(2 \times 2, \Rbb)$ und $\lambda \in \Rbb$ ist
+\begin{gather*}
+ \begin{aligned}
+  \spur(A+B)
+  &= (A+B)_{11} + (A+B)_{22}
+  = A_{11} + B_{11} + A_{22} + B_{22} \\
+  &= A_{11} + A_{22} + B_{11} + B_{22}
+  = \spur(A) + \spur(B)
+ \end{aligned}
+\intertext{sowie}
+ \spur(\lambda A)
+ = (\lambda A)_{11} + (\lambda A)_{22}
+ = \lambda A_{11} + \lambda A_{22}
+ = \lambda (A_{11} + A_{22})
+ = \lambda \spur(A).
+\end{gather*}
+Also ist $\spur \in \Mat(2 \times 2, \Rbb)^*$. Wir wollen verschiedene duale Basen betrachten, und $\spur$ jeweils bezüglich dieser darstellen.
+
+
+
+
+
+\subsubsection{Standardbasis}
+
+Eine naheliegende Basis von $\Mat(2 \times 2, \Rbb)$ ist $\mc{B}_1 = (E_1, E_2, E_3, E_4)$ mit
+\[
+ E_1 = \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix}, \;
+ E_2 = \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}, \;
+ E_2 = \begin{pmatrix} 0 & 0 \\ 1 & 0 \end{pmatrix}, \;
+ E_3 = \begin{pmatrix} 0 & 0 \\ 0 & 1 \end{pmatrix}.
+\]
+Für die zugehörige duale Basis $\mc{B}_1^* = (f^{\mc{B}_1}_1, f^{\mc{B}_1}_2, f^{\mc{B}_1}_3, f^{\mc{B}_1}_4)$ von $\Mat(2 \times 2, \Rbb)$ ist dann etwa
+\[
+ f^{\mc{B}_1}_1\left( \begin{pmatrix} a & b \\ c & d \end{pmatrix} \right)
+ = f^{\mc{B}_1}_1( a E_1 + b E_2 + c E_3 + d E_4 )
+ = a.
+\]
+Analog lässen sich auch $f^{\mc{B}_1}_2$, $f^{\mc{B}_1}_3$ und $f^{\mc{B}_1}_4$ betrachten, und wir erhalten, dass
+\[
+ f^{\mc{B}_1}_1(A) = A_{11}, \;
+ f^{\mc{B}_1}_2(A) = A_{12}, \;
+ f^{\mc{B}_1}_3(A) = A_{21}, \;
+ f^{\mc{B}_1}_4(A) = A_{22}
+\]
+für alle $A \in \Mat(2 \times 2, \Rbb)$.
+
+Wollen wir nun $\spur$ durch die Basis $\mc{B}_1^*$ ausdrücken, so ergibt sich etwa durch direktes Hinsehen, dass $\spur = f^{\mc{B}_1}_1 + f^{\mc{B}_1}_4$, da
+\[
+ (f^{\mc{B}_1}_1 + f^{\mc{B}_1}_4)(A)
+ = f^{\mc{B}_1}_1(A) + f^{\mc{B}_1}_4(A)
+ = A_{11} + A_{22}
+ = \spur(A)
+\]
+für alle $A \in \Mat(2 \times 2, \Rbb)$.
+
+Alternativ wissen wir, dass $\spur = a_1 f^{\mc{B}_1}_1 + a_2 f^{\mc{B}_1}_2 + a_3 f^{\mc{B}_1}_3 + a_4 f^{\mc{B}_1}_4$, wobei $a_i = \spur(E_i)$ für alle $1 \leq i \leq n$. Durch direktes (und sehr einfaches) Ausrechnen ergibt sich, dass $\spur(E_1) = \spur(E_4) = 1$ und \mbox{$\spur(E_3) = \spur(E_4) = 0$}. Somit ergibt sich, dass $\spur = f^{\mc{B}_1}_1 + f^{\mc{B}_1}_4$.
+
+
+
+\subsubsection{Eine seltsamere Basis}
+Als weiter Basis von $\Mat(2 \times 2, \Rbb)$ betrachten wir nun $\mc{B}_2 = (F_1, F_2, F_3, F_4)$ mit
+\[
+ F_1 = \begin{pmatrix} 1 & 0 \\  0 &  1 \end{pmatrix}, \;
+ F_2 = \begin{pmatrix} 1 & 0 \\  0 & -1 \end{pmatrix}, \;
+ F_3 = \begin{pmatrix} 0 & 1 \\  1 &  0 \end{pmatrix}, \;
+ F_4 = \begin{pmatrix} 0 & 1 \\ -1 &  0 \end{pmatrix}.
+\]
+
+Zunächst überlegen wir uns, dass $\mc{B}_2$ tatsächlich eine Basis von $\Mat(2 \times 2, \Rbb)$ ist: Da $\mc{B}_1 = (E_1, E_2, E_3, E_4)$ eine Basis von $\Mat(2 \times 2, \Rbb)$ ist, und da
+\begin{equation}\label{eqn: change of basis}
+ E_1 = \frac{1}{2}(F_1+F_2), \;
+ E_2 = \frac{1}{2}(F_3+F_4), \;
+ E_3 = \frac{1}{2}(F_3-F_4), \;
+ E_4 = \frac{1}{2}(F_1-F_2),
+\end{equation}
+ist $\mc{B}_2$ ein Erzeugendensystem von $\Mat(2 \times 2, \Rbb)$; da $\Mat(2 \times 2, \Rbb)$ vierdimensional ist, und $\mc{B}_2$ aus vier Vektoren besteht, muss $\mc{B}_2$ bereits linear unabhängig und somit eine Basis sein.
+
+Wir wollen zunächst verstehen, wie die duale Basis $\mc{B}_2^* = (f^{\mc{B}_2}_1, f^{\mc{B}_2}_2, f^{\mc{B}_2}_3, f^{\mc{B}_2}_4)$ aussieht. Mithilfe von \eqref{eqn: change of basis} sehen wir, dass für alle $A \in \Mat(2 \times 2, \Rbb)$
+\begin{align*}
+ A
+ &= A_{11} E_1 + A_{12} E_2 + A_{21} E_3 + A_{22} E_4 \\
+ &= \frac{A_{11}}{2} (F_1 + F_2) + \frac{A_{12}}{2} (F_3 + F_4)
+   + \frac{A_{21}}{2} (F_3 - F_4) + \frac{A_{22}}{2} (F_1 - F_2) \\
+ &= \frac{A_{11}+A_{22}}{2} F_1 + \frac{A_{11}-A_{22}}{2} F_2 + \frac{A_{12}+A_{21}}{2} F_3 + \frac{A_{12}-A_{21}}{2} F_4.
+\end{align*}
+Für alle $A \in \Mat(2 \times 2, \Rbb)$ ist deshalb
+\begin{gather*}
+ f^{\mc{B}_2}_1(A) = \frac{A_{11}+A_{22}}{2}, \;
+ f^{\mc{B}_2}_2(A) = \frac{A_{11}-A_{22}}{2}, \\
+ f^{\mc{B}_2}_3(A) = \frac{A_{12}+A_{21}}{2}, \;
+ f^{\mc{B}_2}_4(A) = \frac{A_{12}-A_{21}}{2}.
+\end{gather*}
+
+Hierdurch sieht man bereits, dass für alle $A \in \Mat(2 \times 2, \Rbb)$
+\[
+ \spur(A)
+ = A_{11} + A_{22}
+ = 2 \frac{A_{11} + A_{22}}{2}
+ = 2 f^{\mc{B}_2}_1(A).
+\]
+Also ist $\spur = 2f^{\mc{B}_2}_1$.
+
+Auch hier lässt sich wieder der allgemeine Ansatz nutzen: Wir wissen bereits, dass $\spur = a_1 f^{\mc{B}_2}_1 + a_2 f^{\mc{B}_2}_2 + a_3 f^{\mc{B}_2}_3 + a_4 f^{\mc{B}_2}_4$ mit $a_i = \spur(F_i)$ für alle $1 \leq i \leq 4$. Da $\spur(F_1) = 2$ und $\spur(F_2) = \spur(F_3) = \spur(F_4) = 0$ ergibt sich damit, dass $\spur = 2 f^{\mc{B}_2}_1$.
+
+
+\subsection{Eine weiter seltsame Basis}
+Wir betrachten $\mc{B}_3 = (G_1, G_2, G_3, G_4)$ mit
+\[
+ G_1 = \begin{pmatrix} 2 & 3 \\ 1 & 0 \end{pmatrix}, \;
+ G_2 = \begin{pmatrix} 2 & 3 \\ 0 & 4 \end{pmatrix}, \;
+ G_3 = \begin{pmatrix} 0 & 3 \\ 5 & 4 \end{pmatrix}, \;
+ G_4 = \begin{pmatrix} 6 & 0 \\ 5 & 4 \end{pmatrix}.
+\]
+Wir zeigen zunächst, dass $\mc{B}_3$ eine Basis von $\Mat(2 \times 2, \Rbb)$ ist. Da $\mc{B}_3$ aus vier Element besteht und $\Mat(2 \times 2, \Rbb)$ vierdimensional ist, genügt es zu zeigen, dass $\mc{B}_3$ linear unabhängig ist. Es seien also $\lambda_1, \lambda_2, \lambda_3, \lambda_4 \in \Rbb$ mit
+\[
+ \lambda_1 G_1 + \lambda_2 G_2 + \lambda_3 G_3 + \lambda_4 G_4 = 0.
+\]
+Durch Betrachtung der einzelnen Einträge ergibt sich, dass dies äquivalent dazu ist, dass
+\[
+ \left\{
+  \begin{matrix}
+   2\lambda_1 & +2\lambda_2 &             & +6\lambda_4 & = 0, \\
+   3\lambda_1 & +3\lambda_2 & +3\lambda_3 &             & = 0, \\
+    \lambda_1 &             & +5\lambda_3 & +5\lambda_4 & = 0, \\
+              & 4\lambda_2  & +4\lambda_3 & +4\lambda_4 & = 0.
+  \end{matrix}
+  \right.
+\]
+Wir formen das entsprechend homogene LGS:
+\begin{align*}
+ \begin{pmatrix}
+  2 & 2 & 0 & 6 \\
+  3 & 3 & 3 & 0 \\
+  1 & 0 & 5 & 5 \\
+  0 & 4 & 4 & 4
+ \end{pmatrix}
+ &\xrightarrow[\substack{\text{I}-2\text{III} \\ \text{II}-3\text{III}}]{}
+ \begin{pmatrix}
+  0 & 2 & -10 &  -4 \\
+  0 & 3 &  -8 & -15 \\
+  1 & 0 &   5 &   5 \\
+  0 & 4 &   4 &   4
+ \end{pmatrix}
+ \xrightarrow[\frac{1}{2}\text{I}]{}
+ \begin{pmatrix}
+  0 & 1 & -5 &  -2 \\
+  0 & 3 & -8 & -15 \\
+  1 & 0 &  5 &   5 \\
+  0 & 4 &  4 &   4
+ \end{pmatrix}
+ \\
+ &\xrightarrow[\substack{\text{II}-3\text{I} \\ \text{IV}-4\text{I}}]{}
+ \begin{pmatrix}
+  0 & 1 & -5 & -2 \\
+  0 & 0 &  3 & -9 \\
+  1 & 0 &  5 &  5 \\
+  0 & 0 & 24 & 12
+ \end{pmatrix}
+ \xrightarrow[\substack{\frac{1}{3}\text{II} \\ \frac{1}{12}\text{IV}}]{}
+ \begin{pmatrix}
+  0 & 1 & -5 & -2 \\
+  0 & 0 &  1 & -3 \\
+  1 & 0 &  5 &  5 \\
+  0 & 0 &  2 &  1
+ \end{pmatrix}
+ \\
+ &\xrightarrow[\text{IV}-2\text{II}]{}
+ \begin{pmatrix}
+  0 & 1 & -5 & -2 \\
+  0 & 0 &  1 & -3 \\
+  1 & 0 &  5 &  5 \\
+  0 & 0 &  0 &  7
+ \end{pmatrix}
+ \xrightarrow[\text{Reihenfolge}]{}
+ \begin{pmatrix}
+  1 & 0 &  5 &  5 \\
+  0 & 1 & -5 & -2 \\
+  0 & 0 &  1 & -3 \\
+  0 & 0 &  0 &  7
+ \end{pmatrix}
+\end{align*}
+Wir erhalten also, dass $\lambda_4 = \lambda_3 = \lambda_2 = \lambda_1 = 0$. Also ist $\mc{B}_3$ linear unabhängig und somit eine Basis von $\Mat(2 \times 2, \Rbb)$.
+
+Wir wollen nun $\spur$ durch die duale Basis $\mc{B}_3^* = (f^{\mc{B}_3}_1, f^{\mc{B}_3}_2, f^{\mc{B}_3}_3, f^{\mc{B}_3}_4)$ ausdrücken. Hierfür wissen wir bereits, dass $\spur = a_1 f^{\mc{B}_3}_1 + a_2 f^{\mc{B}_3}_2 + a_3 f^{\mc{B}_3}_3 + a_4 f^{\mc{B}_3}_4$, wobei $a_i = \spur(G_i)$ für alle $1 \leq i \leq 4$. Durch direktes (und einfaches) ausrechnen ergibt sich, dass
+\[
+ \spur(G_1) = 2, \;
+ \spur(G_2) = 6, \;
+ \spur(G_3) = 4, \;
+ \spur(G_4) = 10.
+\]
+Also ist $\spur = 2 f^{\mc{B}_3}_1 + 6 f^{\mc{B}_3}_2 + 4 f^{\mc{B}_3}_3 + 10 f^{\mc{B}_3}_4$.
+
+Ein genaueres Ausrechnen der dualen Basis $\mc{B}_3^*$ wollen wir uns hier ersparen; es ergibt sich aber, dass für alle $A \in \Mat(2 \times 2, \Rbb)$
+\begin{align*}
+ f^{\mc{B}_3}_1(A) &= \frac{5}{42} A_{11} + \frac{5}{21} A_{12} + \frac{1}{21} A_{21} -\frac{5}{21} A_{22}, \\
+ f^{\mc{B}_3}_2(A) &= \frac{1}{42} A_{11} + \frac{1}{21} A_{12} - \frac{4}{21} A_{21} + \frac{17}{84} A_{22}, \\
+ f^{\mc{B}_3}_3(A) &= -\frac{1}{7} A_{11} + \frac{1}{21} A_{12} + \frac{1}{7} A_{21} + \frac{1}{28} A_{22}, \\
+ f^{\mc{B}_3}_4(A) &= \frac{5}{42} A_{11} - \frac{2}{21} A_{12} + \frac{1}{21} A_{21} + \frac{1}{84} A_{22}.
+\end{align*}
+Auch hieraus lässt sich nachrechnen, dass $\spur = 2 f^{\mc{B}_3}_1 + 6 f^{\mc{B}_3}_2 + 4 f^{\mc{B}_3}_3 + 10 f^{\mc{B}_3}_4$.
+
+
+
+
+
+
+
+
 
 
 
