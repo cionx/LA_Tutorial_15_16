@@ -1,0 +1,234 @@
+%\documentclass[a4paper,10pt]{article}
+\documentclass[a4paper,10pt]{scrartcl}
+
+\usepackage{../generalstyle}
+\usepackage{specificstyle}
+
+\setromanfont[Mapping=tex-text]{Linux Libertine O}
+% \setsansfont[Mapping=tex-text]{DejaVu Sans}
+% \setmonofont[Mapping=tex-text]{DejaVu Sans Mono}
+
+\title{Lösungen zu Übungszettel 7}
+\author{Jendrik Stelzner}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+
+
+
+
+
+
+
+
+\addtocounter{section}{1}
+
+
+
+
+
+
+
+
+
+
+\section{}
+Es sei $\mc{S} \subseteq K$ eine $L$-Basis von $K$ und $\mc{B} \subseteq V$ eine $K$-Basis von $V$. Wir zeigen, dass
+\[
+ \mc{C} \coloneqq \{\mu b \mid (\mu, b) \in \mc{S} \times \mc{B}\}
+\]
+eine $L$-Basis von $V$ ist, wobei die Elemente $\mu b$ mit $(\mu, b) \in \mc{S} \times \mc{B}$ paarweise verschieden sind.
+
+Wir zeigen zunächst, dass $\mc{C}$ ein $L$-Erzeugendensystem von $V$ ist; hierfür fixieren wir zunächst ein $v \in V$. Da $\mc{B}$ ist ein $K$-Erzeugendensystem von $V$ ist, gibt es $\lambda_b \in K$ mit $b \in \mc{B}$, so dass $\lambda_b = 0$ für fast alle $b \in B$ und $v = \sum_{b \in \mc{B}} \lambda_b b$.
+
+Da $\mc{S}$ ein $L$-Erzeugendensystem von $K$ ist, gibt es nun für jedes $b \in \mc{B}$ Koeffizienten $c^b_\mu \in L$ mit $\mu \in \mc{S}$, so dass $c^b_\mu = 0$ für fast alle $\mu \in L$ und $\lambda_b = \sum_{\mu \in \mc{S}} c^b_\mu \mu$.
+
+Ist dabei $b \in \mc{B}$ mit $\lambda_b = 0$, so ist dabei $c^b_\mu = 0$ für alle $\mu \in L$, da $\mc{S}$ auch linear unabhängig über $L$ ist. Somit ist $c^b_\mu = 0$ für fast alle $(b,\mu) \in  \times \mc{S} \times \mc{B}$. Da
+\[
+ v
+ = \sum_{b \in \mc{B}} \lambda_b b
+ = \sum_{b \in \mc{B}} \sum_{\mu \in \mc{S}} c^b_\mu \mu b
+ = \sum_{(\mu,b) \in \mc{S} \times \mc{B}} c^b_\mu \, \mu b
+\]
+ist somit $v \in \Ell_L(\mc{C})$. Also ist $\mc{C}$ ein $L$-Erzeugendensystem von $V$.
+
+Sind andererseits $c^b_\mu \in L$ mit $(\mu,b) \in \mc{S} \times \mc{B}$, so dass $c^b_\mu = 0$ für fast alle $(\mu,b) \in \mc{S} \times \mc{B}$ und $0 = \sum_{(\mu,b) \in \mc{S} \times \mc{B}} c^b_\mu \, \mu b$, so ist
+\[
+ 0
+ = \sum_{(\mu,b) \in \mc{S} \times \mc{B}} c^b_\mu \, \mu b
+ = \sum_{b \in \mc{B}} \sum_{\mu \in \mc{S}} c^b_\mu \, \mu b
+ = \sum_{b \in \mc{B}} \left( \sum_{\mu \in \mc{S}} c^b_\mu \mu \right) b.
+\]
+Da $\mc{B}$ linear unabhängig über $K$ ist, folgt hieraus, dass $\sum_{\mu \in \mc{S}} c^b_\mu \mu = 0$ für alle $b \in \mc{B}$. Da $\mc{S}$ linear unabhängig über $L$ ist, ist bereits $c^b_\mu = 0$ für alle $(\mu,b) \in \mc{S} \times \mc{B}$. Also ist $\mc{C}$ auch linear unabhängig über $L$ und die Elemente $\mu b$ mit $(\mu,b) \in \mc{S} \times \mc{B}$ sind paarweise verschieden.
+
+Somit ist $\mc{C}$ ein $L$-Basis von $V$ und
+\[
+ \# \mc{C} = \#(\mc{S} \times \mc{B}) = (\# \mc{S}) \cdot (\# \mc{B}).
+\]
+Da $\dim_L(K) = \# \mc{S}$, $\dim_K(V) = \# \mc{B}$ und $\dim_L(V) = \# \mc{C}$ folgt daraus, dass
+\[
+ \dim_L(V) = \dim_L(K) \cdot \dim_K(V).
+\]
+Man bemerke, dass $\dim_K(V) > 0$ da $V \neq 0$, und dass $\dim_L(K) > 0$ da $K \neq 0$. Daher $\dim_L(V) < \infty$ genau dann, wenn $\dim_L(K) < \infty$ und $\dim_K(V)$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{}
+Für alle $w_1, w_2 \in W$ ist
+\begin{align*}
+ f^{-1}(w_1 + w_2)
+ &= f^{-1}(f(f^{-1}(w_1)) + f(f^{-1}(w_2))) \\
+ &= f^{-1}(f(f^{-1}(w_1) + f^{-1}(w_2)))
+ = f^{-1}(w_1) + f^{-1}(w_2),
+\end{align*}
+und für alle $\lambda \in K$ und $w \in W$ ist
+\[
+ f^{-1}(\lambda w)
+ = f^{-1}(\lambda f(f^{-1}(w)))
+ = f^{-1}(f(\lambda f^{-1}(w)))
+ = \lambda f^{-1}(w).
+\]
+Also ist auch $f^{-1}$ linear.
+
+
+
+
+
+
+
+
+\section{}
+Für eine lineare Abbildung $f \colon V \to W$ zeigen wir die Äquivalenz der folgenden Aussagen:
+
+\begin{enumerate}[label=(\roman*)]
+ \item\label{enum: image of generating set}
+  Für jedes Erzeugendensystem $S \subseteq V$ ist $f(S)$ ein Erzeugendensystem von $W$.
+ \item\label{enum: image of a subset}
+  Es gibt eine Teilmenge $S \subseteq V$, so dass $f(S)$ ein Erzeugendensystem von $W$ ist.
+ \item\label{enum: surjective}
+  $f$ ist surjektiv.
+\end{enumerate}
+
+
+( \ref{enum: image of generating set} $\implies$ \ref{enum: image of a subset} ) Dies ergibt sich direkt daraus, dass man das Erzeugendensystem $S = V$ betrachtet.
+
+( \ref{enum: image of a subset} $\implies$ \ref{enum: surjective} ) Da $f(S)$ ein Erzeugendensystem von $W$ ist, gilt $\Ell(f(S)) = W$. Also ist
+\[
+ W = \Ell(f(S)) =  f(\Ell(S)) \subseteq f(V) \subseteq W,
+\]
+also bereits $f(V) = W$. Somit ist $f$ surjektiv.
+
+( \ref{enum: surjective} $\implies$ \ref{enum: image of generating set} ) Da $f$ surjektiv ist, ist $f(V) = W$. Ist $S \subseteq V$ ein Erzeugendensystem, so gilt deshalb
+\[
+ \Ell(f(S)) = f(\Ell(S)) = f(V) = W.
+\]
+Also ist $f(S)$ ein Erzeugendensystem von $W$.
+
+Gilt eine der Bedingungen und ist $\mc{B} \subseteq V$ eine Basis, so ist $f(\mc{B}) \subseteq W$ nach \ref{enum: image of generating set} ein Erzeugendensystem von $W$. Also ist dann
+\[
+ \dim V = |\mc{B}| \geq |f(\mc{B})| \geq \dim W.
+\]
+
+
+
+
+
+
+
+
+
+
+
+\section{}
+Es sei
+\[
+ A =
+ \begin{pmatrix}
+  a_{11} & \cdots & a_{1n} \\
+  \vdots & \ddots & \vdots \\
+  a_{m1} & \cdots & a_{mn}
+ \end{pmatrix},
+\]
+und für alle $1 \leq j \leq n$ sei
+\[
+ a_j = \vect{a_{1j} \\ \vdots \\ a_{mj}}
+\]
+der $j$-te Spaltenvektor von $A$.
+
+
+
+
+
+\subsection{}
+Die Matrix $\tilde{A}$ entstehe aus $A$ durch elementare Zeilenumformungen und sei in Zeilenstufenform.
+
+Dass die Zeilen von $A$ linear unabhängig sind ist äquivalent dazu, dass die $\tilde{A}$ keine Nullzeilen enthält.
+
+Da $\tilde{A}$ in Zeilenstufenform ist, enthält $\tilde{A}$ genau dann keine Nullzeilen, wenn das lineare Gleichungssystem $\tilde{A}x = y$ für alle $y \in K^m$ eine Lösung hat
+
+Da $\tilde{A}$ durch $A$ aus elementaren Zeilenumformungen hervorgeht, hat das lineare Gleichungssystem $\tilde{A}x = y$ genau dann für jedes $y \in K^m$ eine Lösung, wenn das lineare Gleichungssystem $Ax = y$ für alle $y \in K^m$ ein Lösung hat (diese Lösungen müssen allerdings nicht notwendigerweise gleich sein).
+
+Dass das lineare Gleichungssystem $Ax = y$ für jedes $y \in K^m$ eine Lösung hat, bedeutet aber nichts anderes, als dass die Abbildung $A \cdot -$ surjektiv ist.
+
+Also sind die Zeilen von $A$ genau dann linear unabhängig, falls $A \cdot -$ surjektiv ist.
+
+
+
+\subsection{}
+Für alle $\lambda_1, \dotsc, \lambda_n \in K$ ist
+\begin{align*}
+ A \cdot \vect{\lambda_1 \\ \vdots \\ \lambda_n}
+ &=
+ \begin{pmatrix}
+  a_{11} & \cdots & a_{1n} \\
+  \vdots & \ddots & \vdots \\
+  a_{m1} & \cdots & a_{mn}
+ \end{pmatrix}
+ \cdot
+ \vect{\lambda_1 \\ \vdots \\ \lambda_n}
+ =
+ \vect{\lambda_1 a_{11} + \dotsb + \lambda_n a_{1n} \\ \vdots \\ \lambda_1 a_{m1} + \dotsb + \lambda_n a_{mn}} \\
+ &= \lambda_1 \vect{a_{11} \\ \vdots \\ a_{m1}} + \dotsb + \lambda_n \vect{a_{1n} \\ \vdots \\ a_{mn}}
+ = \lambda_1 a_1 + \dotsb + \lambda_n a_n.
+\end{align*}
+Dass $\lambda_1 a_1 + \dotsb + \lambda_n a_n = 0$ eine Linearkombination der Spaltenvektoren $a_1, \dotsc, a_n$ ist, ist also äquivalent dazu, dass
+\[
+ A \cdot \vect{\lambda_1 \\ \vdots \\ \lambda_n} = 0.
+\]
+Also sind die Spalten von $A$ genau dann linear unabhängig, wenn $\ker(A) = 0$, also $A$ injektiv sind.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
