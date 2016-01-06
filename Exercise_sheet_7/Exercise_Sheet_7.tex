@@ -45,7 +45,7 @@ Wir zeigen zunächst, dass $\mc{C}$ ein $L$-Erzeugendensystem von $V$ ist; hierf
 
 Da $\mc{S}$ ein $L$-Erzeugendensystem von $K$ ist, gibt es nun für jedes $b \in \mc{B}$ Koeffizienten $c^b_\mu \in L$ mit $\mu \in \mc{S}$, so dass $c^b_\mu = 0$ für fast alle $\mu \in L$ und $\lambda_b = \sum_{\mu \in \mc{S}} c^b_\mu \mu$.
 
-Ist dabei $b \in \mc{B}$ mit $\lambda_b = 0$, so ist dabei $c^b_\mu = 0$ für alle $\mu \in L$, da $\mc{S}$ auch linear unabhängig über $L$ ist. Somit ist $c^b_\mu = 0$ für fast alle $(b,\mu) \in  \times \mc{S} \times \mc{B}$. Da
+Ist dabei $b \in \mc{B}$ mit $\lambda_b = 0$, so ist dabei $c^b_\mu = 0$ für alle $\mu \in L$, da $\mc{S}$ auch linear unabhängig über $L$ ist. Somit ist $c^b_\mu = 0$ für fast alle $(\mu,b) \in  \mc{S} \times \mc{B}$. Da
 \[
  v
  = \sum_{b \in \mc{B}} \lambda_b b
@@ -71,7 +71,7 @@ Da $\dim_L(K) = \# \mc{S}$, $\dim_K(V) = \# \mc{B}$ und $\dim_L(V) = \# \mc{C}$ 
 \[
  \dim_L(V) = \dim_L(K) \cdot \dim_K(V).
 \]
-Man bemerke, dass $\dim_K(V) > 0$ da $V \neq 0$, und dass $\dim_L(K) > 0$ da $K \neq 0$. Daher $\dim_L(V) < \infty$ genau dann, wenn $\dim_L(K) < \infty$ und $\dim_K(V)$.
+Man bemerke, dass $\dim_K(V) > 0$ da $V \neq 0$, und dass $\dim_L(K) > 0$ da $K \neq 0$. Daher $\dim_L(V) < \infty$ genau dann, wenn $\dim_L(K) < \infty$ und $\dim_K(V) < \infty$.
 
 
 
@@ -114,7 +114,7 @@ Für eine lineare Abbildung $f \colon V \to W$ zeigen wir die Äquivalenz der fo
 
 \begin{enumerate}[label=(\roman*)]
  \item\label{enum: image of generating set}
-  Für jedes Erzeugendensystem $S \subseteq V$ ist $f(S)$ ein Erzeugendensystem von $W$.
+  Für jedes Erzeugendensystem $S$ von $V$ ist $f(S)$ ein Erzeugendensystem von $W$.
  \item\label{enum: image of a subset}
   Es gibt eine Teilmenge $S \subseteq V$, so dass $f(S)$ ein Erzeugendensystem von $W$ ist.
  \item\label{enum: surjective}
@@ -122,21 +122,21 @@ Für eine lineare Abbildung $f \colon V \to W$ zeigen wir die Äquivalenz der fo
 \end{enumerate}
 
 
-( \ref{enum: image of generating set} $\implies$ \ref{enum: image of a subset} ) Dies ergibt sich direkt daraus, dass man das Erzeugendensystem $S = V$ betrachtet.
+(\ref{enum: image of generating set} $\implies$ \ref{enum: image of a subset}) Dies ergibt sich direkt daraus, dass man das Erzeugendensystem $S = V$ betrachtet.
 
-( \ref{enum: image of a subset} $\implies$ \ref{enum: surjective} ) Da $f(S)$ ein Erzeugendensystem von $W$ ist, gilt $\Ell(f(S)) = W$. Also ist
+(\ref{enum: image of a subset} $\implies$ \ref{enum: surjective}) Da $f(S)$ ein Erzeugendensystem von $W$ ist, gilt $\Ell(f(S)) = W$. Also ist
 \[
  W = \Ell(f(S)) =  f(\Ell(S)) \subseteq f(V) \subseteq W,
 \]
 also bereits $f(V) = W$. Somit ist $f$ surjektiv.
 
-( \ref{enum: surjective} $\implies$ \ref{enum: image of generating set} ) Da $f$ surjektiv ist, ist $f(V) = W$. Ist $S \subseteq V$ ein Erzeugendensystem, so gilt deshalb
+(\ref{enum: surjective} $\implies$ \ref{enum: image of generating set}) Da $f$ surjektiv ist, ist $f(V) = W$. Ist $S \subseteq V$ ein Erzeugendensystem, so gilt deshalb
 \[
  \Ell(f(S)) = f(\Ell(S)) = f(V) = W.
 \]
 Also ist $f(S)$ ein Erzeugendensystem von $W$.
 
-Gilt eine der Bedingungen und ist $\mc{B} \subseteq V$ eine Basis, so ist $f(\mc{B}) \subseteq W$ nach \ref{enum: image of generating set} ein Erzeugendensystem von $W$. Also ist dann
+Das zeigt die Äquivalenz der Aussagen. Gilt nun eine (und damit alle) dieser Aussagen und ist $\mc{B} \subseteq V$ eine Basis, so ist $f(\mc{B}) \subseteq W$ nach \ref{enum: image of generating set} ein Erzeugendensystem von $W$. Also ist dann
 \[
  \dim V = |\mc{B}| \geq |f(\mc{B})| \geq \dim W.
 \]
@@ -174,7 +174,7 @@ der $j$-te Spaltenvektor von $A$.
 \subsection{}
 Die Matrix $\tilde{A}$ entstehe aus $A$ durch elementare Zeilenumformungen und sei in Zeilenstufenform.
 
-Dass die Zeilen von $A$ linear unabhängig sind ist äquivalent dazu, dass die $\tilde{A}$ keine Nullzeilen enthält.
+Dass die Zeilen von $A$ linear unabhängig sind, ist äquivalent dazu, dass die $\tilde{A}$ keine Nullzeilen enthält.
 
 Da $\tilde{A}$ in Zeilenstufenform ist, enthält $\tilde{A}$ genau dann keine Nullzeilen, wenn das lineare Gleichungssystem $\tilde{A}x = y$ für alle $y \in K^m$ eine Lösung hat
 
@@ -207,7 +207,7 @@ Dass $\lambda_1 a_1 + \dotsb + \lambda_n a_n = 0$ eine Linearkombination der Spa
 \[
  A \cdot \vect{\lambda_1 \\ \vdots \\ \lambda_n} = 0.
 \]
-Also sind die Spalten von $A$ genau dann linear unabhängig, wenn $\ker(A) = 0$, also $A$ injektiv sind.
+Also sind die Spalten von $A$ genau dann linear unabhängig, wenn $\ker(A) = 0$, also $A$ injektiv ist.
 
 
 
