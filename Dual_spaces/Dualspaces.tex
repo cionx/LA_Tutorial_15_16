@@ -178,9 +178,9 @@ Wir können unser bisheriges Ergebnis also auch umformulieren:
  bilden eine Basis von $(K^n)^*$. Für jedes $f \in (K^n)^*$ gibt es daher eindeutige Skalare $a_1, \dotsc, a_n \in K$ mit $f = a_1 f_1 + \dotsb + a_n f_n$.
 \end{shaded}
 
-Man beachte, dass $f_i(e_j) = \delta_{ij}$ für alle $1 \leq i,j \leq n$; da $(e_1, \dotsc, e_n)$ eine Basis von $K^n$ bildet, sind $(f_1, \dotsc, f_n)$ dadurch eindeutig bestimmt\footnote{Ist nämlich $g \colon K^n \to K$ eine lineare Abbildung, so ist $g$ durch die Werte $g(e_1), \dotsc, g(e_n)$ eindeutig bestimmt, da $g(x) = \sum_{i=1}^n x_i g(e_i)$ für alle $x = (x_1, \dotsc, x_n)^T \in K^n$.}.  Man sagt hierzu, dass die Basen $(e_1, \dotsc, e_n)$ von $K^n$ und $(f_1, \dotsc, f_n)$ von $(K^n)^*$ \emph{dual} zueinander sind.
+Man beachte, dass $f_i(e_j) = \delta_{ij}$ für alle $1 \leq i,j \leq n$; da $\{e_1, \dotsc, e_n\}$ eine Basis von $K^n$ bildet, sind $\{f_1, \dotsc, f_n\}$ dadurch eindeutig bestimmt\footnote{Ist nämlich $g \colon K^n \to K$ eine lineare Abbildung, so ist $g$ durch die Werte $g(e_1), \dotsc, g(e_n)$ eindeutig bestimmt, da $g(x) = \sum_{i=1}^n x_i g(e_i)$ für alle $x = (x_1, \dotsc, x_n)^T \in K^n$.}.  Man sagt hierzu, dass die Basen $\{e_1, \dotsc, e_n\}$ von $K^n$ und $\{f_1, \dotsc, f_n\}$ von $(K^n)^*$ \emph{dual} zueinander sind.
 
-Diese Dualität der Basen $(e_1, \dotsc, e_n)$ und $(f_1, \dotsc, f_n)$ hat für uns die praktische Konsequenz, dass wir für ein Element $f \in (K^n)^*$ die Koeffizienten $a_1, \dotsc, a_n \in K$ mit $f = a_1 f_1 + \dotsb + a_n f_n$ durch
+Diese Dualität der Basen $\{e_1, \dotsc, e_n\}$ und $\{f_1, \dotsc, f_n\}$ hat für uns die praktische Konsequenz, dass wir für ein Element $f \in (K^n)^*$ die Koeffizienten $a_1, \dotsc, a_n \in K$ mit $f = a_1 f_1 + \dotsb + a_n f_n$ durch
 \begin{equation}\label{eq: coefficients and duality}
  f(e_i)
  = (a_1 f_1 + \dotsb + a_n f_n)(e_i)
@@ -205,13 +205,13 @@ Wir bemerken noch, dass $(K^n)^*$ inbesondere $n$-dimensional ist, also $K^n$ un
 \section{Der Dualraum eines endlichendimensionalen Vektorraums}
 Wir möchten die obigen Ergebnisse nun gerne auf beliebige endlichdimensionale Vektorräume verallgemeinern. Es sei hierfür $V$ ein $n$-dimensionaler $K$-Vektorraum. Ähnlich wie für $K^n$ würden wir gerne eine Basis von „Koordinatenfunktionen“ von $V$ angeben. Das Problem ist, dass es in $V$ a priori keinen geeigneten Begriff von Koordinaten gibt.
 
-Die Lösung dieses Problems besteht darin, mithilfe einer Basis Koordinaten einzuführen. Es sei also $\mc{B} = (v_1, \dotsc, v_n)$ eine Basis von $V$. Jedes Element $v \in V$ lässt sich als eindeutige Linearkombination $v = \lambda_1 v_1 + \dotsb + \lambda_n v_n$ schreiben. Wir können nun die eindeutigen Koeffizienten $\lambda_1, \dotsc, \lambda_n$ als „Koordinaten“ von $v$ auffassen, und damit für alle $1 \leq i \leq n$ die Koordinatenfunktion
+Die Lösung dieses Problems besteht darin, mithilfe einer Basis Koordinaten einzuführen. Es sei also $\mc{B} = \{v_1, \dotsc, v_n\}$ eine Basis von $V$. Jedes Element $v \in V$ lässt sich als eindeutige Linearkombination $v = \lambda_1 v_1 + \dotsb + \lambda_n v_n$ schreiben. Wir können nun die eindeutigen Koeffizienten $\lambda_1, \dotsc, \lambda_n$ als „Koordinaten“ von $v$ auffassen, und damit für alle $1 \leq i \leq n$ die Koordinatenfunktion
 \[
  f^\mc{B}_i \colon V \to K, \quad \lambda_1 v_1 + \dotsb + \lambda_n v_n \mapsto \lambda_i
 \]
 zu definieren.
 
-Als Verallgemeinerung der Ergebnisse für $(K^n)^*$ überlegen wir uns nun, dass $\mc{B}^* \coloneqq (f^\mc{B}_1, \dotsc, f^\mc{B}_n)$ eine Basis von $V^*$ bildet. Dass $f^\mc{B}_i$ für alle $1 \leq i \leq n$ linear ist, also $f^\mc{B}_i \in V^*$, folgt dabei direkt daraus, dass die Addition und Skalarmultiplikation in $V$ dadurch gegeben ist, dass für alle $\lambda_1, \dotsc, \lambda_n, \mu_1, \dotsc, \mu_n, \mu \in K$
+Als Verallgemeinerung der Ergebnisse für $(K^n)^*$ überlegen wir uns nun, dass $\mc{B}^* \coloneqq \{f^\mc{B}_1, \dotsc, f^\mc{B}_n\}$ eine Basis von $V^*$ bildet. Dass $f^\mc{B}_i$ für alle $1 \leq i \leq n$ linear ist, also $f^\mc{B}_i \in V^*$, folgt dabei direkt daraus, dass die Addition und Skalarmultiplikation in $V$ dadurch gegeben ist, dass für alle $\lambda_1, \dotsc, \lambda_n, \mu_1, \dotsc, \mu_n, \mu \in K$
 \begin{gather*}
  \begin{gathered}
     (\lambda_1 v_1 + \dotsb + \lambda_n v_n) + (\mu_1 v_1 + \dotsb + \mu_n v_n) \\
@@ -222,7 +222,7 @@ Als Verallgemeinerung der Ergebnisse für $(K^n)^*$ überlegen wir uns nun, dass
  = (\mu \lambda_1) v_1 + \dotsb + (\mu \lambda_n) v_n.
 \end{gather*}
 
-Entscheident ist nun, dass $f^{\mc{B}}_i(v_j) = \delta_{ij}$ für alle $1 \leq i \leq n$. Es verhält sich also $\mc{B}^* = (f^\mc{B}_1, \dotsc, f^\mc{B}_n)$ \emph{dual} zu der Basis $\mc{B} = (v_1, \dotsc, v_n)$ von $V$. Dies wollen wir nun ausnutzen.
+Entscheident ist nun, dass $f^{\mc{B}}_i(v_j) = \delta_{ij}$ für alle $1 \leq i \leq n$. Es verhält sich also $\mc{B}^* = \{f^\mc{B}_1, \dotsc, f^\mc{B}_n\}$ \emph{dual} zu der Basis $\mc{B} = \{v_1, \dotsc, v_n\}$ von $V$. Dies wollen wir nun ausnutzen.
 
 Als erstes überlegen wir uns, dass $V^*$ von $\mc{B}^*$ erzeugt wird. Es sei also $f \in V^*$, und wir suchen $a_1, \dotsc, a_n \in K$ mit $f = a_1 f^\mc{B}_1 + \dotsb + a_n f^\mc{B}_n$. Analog zu \eqref{eq: coefficients and duality} erhalten wir, dass dann
 \[
@@ -231,7 +231,7 @@ Als erstes überlegen wir uns, dass $V^*$ von $\mc{B}^*$ erzeugt wird. Es sei al
  = a_1 \underbrace{f^\mc{B}_1(v_i)}_{=\delta_{1i}} + \dotsb + a_n \underbrace{f^\mc{B}_n(v_i)}_{=\delta_{ni}}
  = a_i
 \]
-gelten muss. Wir definieren daher $a_i \coloneqq f(v_i)$ für alle $1 \leq i \leq n$ und betrachten $f' \coloneqq a_1 f^\mc{B}_1 + \dotsb + a_n f^\mc{B}_n$. Indem wir in der obigen Rechnung $f$ durch $f'$ ersetzen, erhalten wir, dass $f'(v_i) = a_i = f(v_i)$ für alle $1 \leq i \leq n$. Wegen der Linearität von $f'$ und $f$ gilt daher bereits $f'(v) = f(v)$ für alle $v \in \Ell(v_1, \dotsc, v_n)$. Da $\mc{B}$ ein Basis von $V$ ist, ist bereits $\Ell(v_1, \dotsc, v_n) = V$, und somit $f'(v) = f(v)$ für alle $v \in V$. Also ist $f = f' = a_1 f^\mc{B}_1 + \dotsb + a_n f^\mc{B}_n$. Somit ist $\mc{B}^*$ ein Erzeugendensystem von $V^*$.
+gelten muss. Wir definieren daher $a_i \coloneqq f(v_i)$ für alle $1 \leq i \leq n$ und betrachten $f' \coloneqq a_1 f^\mc{B}_1 + \dotsb + a_n f^\mc{B}_n$. Indem wir in der obigen Rechnung $f$ durch $f'$ ersetzen, erhalten wir, dass $f'(v_i) = a_i = f(v_i)$ für alle $1 \leq i \leq n$. Wegen der Linearität von $f'$ und $f$ gilt daher bereits $f'(v) = f(v)$ für alle $v \in \Ell(\{v_1, \dotsc, v_n\})$. Da $\mc{B}$ ein Basis von $V$ ist, ist bereits $\Ell(\{v_1, \dotsc, v_n\}) = V$, und somit $f'(v) = f(v)$ für alle $v \in V$. Also ist $f = f' = a_1 f^\mc{B}_1 + \dotsb + a_n f^\mc{B}_n$. Somit ist $\mc{B}^*$ ein Erzeugendensystem von $V^*$.
 
 Die lineare Unabhängigkeit ergibt sich ähnlich: Für Koeffizienten $a_1, \dotsc, a_n \in K$ mit $0 = a_1 f_1 + \dotsb + a_n f_n$ ist analog zur obigen Rechnung
 \[
@@ -244,13 +244,13 @@ Also ist $\mc{B}^*$ linear unabhängig.
 Damit haben wir eine Basis von $V^*$ gefunden.
 
 \begin{shaded}
- Ist $\mc{B} = (v_1, \dotsc, v_n)$ ein Basis von $V$, so ergeben die Koordinatenfunktionen
+ Ist $\mc{B} = \{v_1, \dotsc, v_n\}$ ein Basis von $V$, so ergeben die Koordinatenfunktionen
  \[
   f^\mc{B}_i \colon V \to K, \quad \lambda_1 v_1 + \dotsb + \lambda_n v_n \mapsto \lambda_i
   \quad
   \text{für alle $1 \leq i \leq n$}
  \]
- eine Basis $\mc{B}^* = (f^\mc{B}_1, \dotsc, f^\mc{B}_n)$ von $V^*$, die dual zur Basis $\mc{B}$ ist (in dem Sinne, dass $f^\mc{B}_i(v_j) = \delta_{ij}$ für alle $1 \leq i,j \leq n$). Jedes $f \in V^*$ ist also von der Form
+ eine Basis $\mc{B}^* = \{f^\mc{B}_1, \dotsc, f^\mc{B}_n\}$ von $V^*$, die dual zur Basis $\mc{B}$ ist (in dem Sinne, dass $f^\mc{B}_i(v_j) = \delta_{ij}$ für alle $1 \leq i,j \leq n$). Jedes $f \in V^*$ ist also von der Form
  \[
   f(\lambda_1 v_1 + \dotsb + \lambda_n v_n)
   = a_1 \lambda_1 + \dotsb + a_n \lambda_n
@@ -260,7 +260,7 @@ Damit haben wir eine Basis von $V^*$ gefunden.
  für eindeutig bestimmte $a_1, \dotsc, a_n \in K$. Dabei gilt $a_i = f(v_i)$ für alle $1 \leq i \leq n$.
 \end{shaded}
 
-Zum einen ergibt sich hiermit, dass $\dim(V^*) = n$, also $V^*$ und $V$ gleichdimensional sind. Es lässt sich auch ein Isomorphismus $V \to V^*$ angeben: Zwischen der Basis $\mc{B} = (v_1, \dotsc, v_n)$ von $V$ und der dualen Basis $\mc{B}^* = (f^\mc{B}_1, \dotsc, f^\mc{B}_n)$ von $V^*$ haben wir eine naheliegende Bijektion $v_i \mapsto f^\mc{B}_i$; diese können wir zu einem Isomorphismus
+Zum einen ergibt sich hiermit, dass $\dim(V^*) = n$, also $V^*$ und $V$ gleichdimensional sind. Es lässt sich auch ein Isomorphismus $V \to V^*$ angeben: Zwischen der Basis $\mc{B} = \{v_1, \dotsc, v_n\}$ von $V$ und der dualen Basis $\mc{B}^* = \{f^\mc{B}_1, \dotsc, f^\mc{B}_n\}$ von $V^*$ haben wir eine naheliegende Bijektion $v_i \mapsto f^\mc{B}_i$; diese können wir zu einem Isomorphismus
 \[
  \Phi_{\mc{B}} \colon V \to V^*,
  \quad
@@ -272,7 +272,7 @@ fortsetzen. Wir sagen auch, die Basis $\mc{B}$ \emph{induziert} den Isomorphismu
 
 Eine weitere interessante Beobachtung ist, dass man die Element aus $V$ durch die Abbildungen aus $V^*$ trennen, bzw.\ unterscheiden kann, d.h.\ es gibt für je zwei Elemente $v,w \in V$ mit $v \neq w$ ein Element $f \in V^*$ mit $f(v) \neq f(w)$:
 
-Da $v \neq w$ ist nämlich $v-w \neq 0$. Wir können daher $v_1 \coloneqq v-w$ zu einer Basis $\mc{B} = (v_1, v_2, \dotsc, v_n)$ von $V$ ergänzen. Für die duale Basis $\mc{B}^* = (f^\mc{B}_1, \dotsc, f^\mc{B}_n)$ von $V^*$ gilt dann $1 = f^\mc{B}_1(v_1) = f^\mc{B}_1(v-w) = f^\mc{B}_1(v) - f^\mc{B}_1(w)$, also $f^\mc{B}_1(v) \neq f^\mc{B}_1(w)$.
+Da $v \neq w$ ist nämlich $v-w \neq 0$. Wir können daher $v_1 \coloneqq v-w$ zu einer Basis $\mc{B} = \{v_1, v_2, \dotsc, v_n\}$ von $V$ ergänzen. Für die duale Basis $\mc{B}^* = \{f^\mc{B}_1, \dotsc, f^\mc{B}_n\}$ von $V^*$ gilt dann $1 = f^\mc{B}_1(v_1) = f^\mc{B}_1(v-w) = f^\mc{B}_1(v) - f^\mc{B}_1(w)$, also $f^\mc{B}_1(v) \neq f^\mc{B}_1(w)$.
 
 
 
@@ -320,14 +320,14 @@ Also ist $\spur \in (\Mat(2 \times 2, \Rbb))^*$. Wir wollen verschiedene duale B
 
 
 \subsubsection{Naheliegende Basis}
-Eine naheliegende Basis von $\Mat(2 \times 2, \Rbb)$ ist $\mc{B} = (E_1, E_2, E_3, E_4)$ mit
+Eine naheliegende Basis von $\Mat(2 \times 2, \Rbb)$ ist $\mc{B} = \{E_1, E_2, E_3, E_4\}$ mit
 \[
  E_1 = \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix}, \quad
  E_2 = \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix}, \quad
  E_2 = \begin{pmatrix} 0 & 0 \\ 1 & 0 \end{pmatrix}, \quad
  E_3 = \begin{pmatrix} 0 & 0 \\ 0 & 1 \end{pmatrix}.
 \]
-Für die zugehörige duale Basis $\mc{B}^* = (f^{\mc{B}}_1, f^{\mc{B}}_2, f^{\mc{B}}_3, f^{\mc{B}}_4)$ von $\Mat(2 \times 2, \Rbb)$ ist dann etwa
+Für die zugehörige duale Basis $\mc{B}^* = \{f^{\mc{B}}_1, f^{\mc{B}}_2, f^{\mc{B}}_3, f^{\mc{B}}_4\}$ von $\Mat(2 \times 2, \Rbb)$ ist dann etwa
 \[
  f^{\mc{B}}_1\left( \begin{pmatrix} a & b \\ c & d \end{pmatrix} \right)
  = f^{\mc{B}}_1( a E_1 + b E_2 + c E_3 + d E_4 )
@@ -375,7 +375,7 @@ gegeben ist. Für jede weitere Matrix $B \in \Mat(2 \times 2, \Rbb)$ ist also
 
 
 \subsubsection{Eine alternative Basis}
-Als weiter Basis von $\Mat(2 \times 2, \Rbb)$ betrachten wir nun $\mc{C} = (F_1, F_2, F_3, F_4)$ mit
+Als weiter Basis von $\Mat(2 \times 2, \Rbb)$ betrachten wir nun $\mc{C} = \{F_1, F_2, F_3, F_4\}$ mit
 \[
  F_1 = \begin{pmatrix} 1 & 0 \\  0 &  1 \end{pmatrix}, \;
  F_2 = \begin{pmatrix} 1 & 0 \\  0 & -1 \end{pmatrix}, \;
@@ -383,7 +383,7 @@ Als weiter Basis von $\Mat(2 \times 2, \Rbb)$ betrachten wir nun $\mc{C} = (F_1,
  F_4 = \begin{pmatrix} 0 & 1 \\ -1 &  0 \end{pmatrix}.
 \]
 
-Zunächst überlegen wir uns, dass $\mc{C}$ tatsächlich eine Basis von $\Mat(2 \times 2, \Rbb)$ ist: Da $\mc{B} = (E_1, E_2, E_3, E_4)$ eine Basis von $\Mat(2 \times 2, \Rbb)$ ist, und da
+Zunächst überlegen wir uns, dass $\mc{C}$ tatsächlich eine Basis von $\Mat(2 \times 2, \Rbb)$ ist: Da $\mc{B} = \{E_1, E_2, E_3, E_4\}$ eine Basis von $\Mat(2 \times 2, \Rbb)$ ist, und da
 \begin{equation}\label{eqn: change of basis}
  \begin{aligned}
   E_1 &= \frac{1}{2}(F_1+F_2), &
@@ -394,7 +394,7 @@ Zunächst überlegen wir uns, dass $\mc{C}$ tatsächlich eine Basis von $\Mat(2 
 \end{equation}
 ist $\mc{C}$ ein Erzeugendensystem von $\Mat(2 \times 2, \Rbb)$; da $\Mat(2 \times 2, \Rbb)$ vierdimensional ist, und $\mc{C}$ aus vier Vektoren besteht, muss $\mc{C}$ bereits linear unabhängig, und somit eine Basis sein.
 
-Wir wollen zunächst verstehen, wie die duale Basis $\mc{C}^* = (f^{\mc{C}}_1, f^{\mc{C}}_2, f^{\mc{C}}_3, f^{\mc{C}}_4)$ aussieht. Mithilfe von \eqref{eqn: change of basis} sehen wir, dass für alle $A \in \Mat(2 \times 2, \Rbb)$
+Wir wollen zunächst verstehen, wie die duale Basis $\mc{C}^* = \{f^{\mc{C}}_1, f^{\mc{C}}_2, f^{\mc{C}}_3, f^{\mc{C}}_4\}$ aussieht. Mithilfe von \eqref{eqn: change of basis} sehen wir, dass für alle $A \in \Mat(2 \times 2, \Rbb)$
 \begin{align*}
  A
  &= A_{11} E_1 + A_{12} E_2 + A_{21} E_3 + A_{22} E_4 \\
@@ -453,7 +453,7 @@ Wir heben hier noch hervor, dass insbesondere $\Phi_{\mc{B}} \neq \Phi_{\mc{C}}$
 
 
 \subsubsection{Eine alternativere Basis}
-Wir betrachten $\mc{D} = (G_1, G_2, G_3, G_4)$ mit
+Wir betrachten $\mc{D} = \{G_1, G_2, G_3, G_4\}$ mit
 \[
  G_1 = \begin{pmatrix} 2 & 3 \\ 1 & 0 \end{pmatrix}, \;
  G_2 = \begin{pmatrix} 2 & 3 \\ 0 & 4 \end{pmatrix}, \;
@@ -530,7 +530,7 @@ Wir formen das entsprechend homogene LGS um:
 \end{align*}
 Wir erhalten also, dass $\lambda_4 = \lambda_3 = \lambda_2 = \lambda_1 = 0$. Also ist $\mc{D}$ linear unabhängig und somit eine Basis von $\Mat(2 \times 2, \Rbb)$.
 
-Wir wollen nun die Spur durch die duale Basis $\mc{D}^* = (f^{\mc{D}}_1, f^{\mc{D}}_2, f^{\mc{D}}_3, f^{\mc{D}}_4)$ ausdrücken. Hierfür wissen wir, dass $\spur = a_1 f^{\mc{D}}_1 + a_2 f^{\mc{D}}_2 + a_3 f^{\mc{D}}_3 + a_4 f^{\mc{D}}_4$, wobei $a_i = \spur(G_i)$ für alle $1 \leq i \leq 4$. Durch direktes (und einfaches) ausrechnen ergibt sich, dass
+Wir wollen nun die Spur durch die duale Basis $\mc{D}^* = \{f^{\mc{D}}_1, f^{\mc{D}}_2, f^{\mc{D}}_3, f^{\mc{D}}_4\}$ ausdrücken. Hierfür wissen wir, dass $\spur = a_1 f^{\mc{D}}_1 + a_2 f^{\mc{D}}_2 + a_3 f^{\mc{D}}_3 + a_4 f^{\mc{D}}_4$, wobei $a_i = \spur(G_i)$ für alle $1 \leq i \leq 4$. Durch direktes (und einfaches) ausrechnen ergibt sich, dass
 \[
  \spur(G_1) = 2, \quad
  \spur(G_2) = 6, \quad
@@ -557,7 +557,7 @@ Auch hiermit lässt sich dann ausrechnen, dass $\spur = 2 f^{\mc{D}}_1 + 6 f^{\m
 
 
 \subsubsection{Die Standardbasis von $\Rbb^2$}
-Betrachten wir $\Rbb^2$ mit der Standardbasis $\mc{B} = (e_1, e_2)$, so sind für die duale Basis $\mc{B}^* = (f^\mc{B}_1, f^\mc{B}_2)$ die entsprechenden Koordinatenfunktionen $f^\mc{B}_1, f^\mc{B}_2 \colon \Rbb^2 \to \Rbb$ dadurch gegeben, dass
+Betrachten wir $\Rbb^2$ mit der Standardbasis $\mc{B} = \{e_1, e_2\}$, so sind für die duale Basis $\mc{B}^* = \{f^\mc{B}_1, f^\mc{B}_2\}$ die entsprechenden Koordinatenfunktionen $f^\mc{B}_1, f^\mc{B}_2 \colon \Rbb^2 \to \Rbb$ dadurch gegeben, dass
 \[
  f^\mc{B}_i\left( \vect{x_1 \\ x_2} \right)
  = f^\mc{B}_i(x_1 e_1 + x_2 e_2) = x_i.
@@ -584,7 +584,7 @@ Für alle $\vect{y_1,y_2}^T \in \Rbb^2$ ist daher
 
 
 \subsubsection{Erste andere Basis}
-Es sei nun $\mc{C} = (c_1, c_2)$ mit
+Es sei nun $\mc{C} = \{c_1, c_2\}$ mit
 \[
  c_1 = \vect{1 \\ 1}
  \quad\text{und}\quad
@@ -592,7 +592,7 @@ Es sei nun $\mc{C} = (c_1, c_2)$ mit
 \]
 Da $e_1 = (c_1+c_2)/2$ und $e_2 = (c_1-c_2)/2$ ist $\mc{C}$ ein Erzeugendensystem von $\Rbb^2$. Da $\mc{C}$ aus zwei Elementen besteht und $\Rbb^2$ zweidimensional ist, ist $\mc{C}$ damit bereits eine Basis von $\Rbb^2$.
 
-Für die duale Basis $\mc{C}^* = (f^{\mc{C}}_1, f^{\mc{C}}_2)$ ist nun
+Für die duale Basis $\mc{C}^* = \{f^{\mc{C}}_1, f^{\mc{C}}_2\}$ ist nun
 \begin{gather*}
  f^{\mc{C}}_1\left( \vect{x_1 \\ x_2} \right)
  = f^{\mc{C}}_1\left( \frac{x_1 + x_2}{2} c_1 + \frac{x_1 - x_2}{2} c_2 \right)
@@ -612,9 +612,24 @@ Wollen wir nun etwa das Element $f \in (\Rbb^2)^*$ mit
 \]
 als Linearkombination von $f^{\mc{C}}_1$ und $f^{\mc{C}}_2$ darstellen, so haben wir $f = a_1 f^{\mc{C}}_1 + a_2 f^{\mc{C}}_2$ und die Koeffizienten sind durch $a_1 = f(c_1) = 4$ und $a_2 = f(c_2) = 10$ gegeben. Also ist $f = 4 f^{\mc{C}}_1 + 10 f^{\mc{C}}_2$.
 
+Der induzierte Isomorphismus $\Phi_\mc{C} \colon \mathbb{R}^2 \to (\mathbb{R}^2)^*$ ist dadurch gegeben, dass für jeden Vektor $(x_1, x_2)^T \in \mathbb{R}^2$
+\[
+ \Phi_{\mc{C}}\left( \vect{x_1 \\ x_2} \right)
+ = \Phi_{\mc{C}}\left( \frac{x_1 + x_2}{2} c_1 + \frac{x_1 - x_2}{2} c_2 \right)
+ = \frac{x_1 + x_2}{2} f^{\mc{C}}_1 + \frac{x_1 - x_2}{2} f^{\mc{C}}_2.
+\]
+Für jedes weiteren Vektor $(y_1, y_2) \in \mathbb{R}^2$ ist deshalb
+\begin{align*}
+ \left( \Phi_{\mc{C}}\left( \vect{x_1 \\ x_2} \right) \right)\left( \vect{y_1 \\ y_2} \right)
+ &= \frac{x_1 + x_2}{2} f^{\mc{C}}_1\left( \vect{y_1 \\ y_2} \right)
+   + \frac{x_1 - x_2}{2} f^{\mc{C}}_2\left( \vect{y_1 \\ y_2} \right) \\
+ &= \frac{x_1 + x_2}{2} \frac{y_1 + y_2}{2} + \frac{x_1 - x_2}{2} \frac{y_1 - y_2}{2} \\
+ &= \frac{1}{2}\left( x_1 y_1 + x_2 y_2 \right)
+\end{align*}
+
 
 \subsubsection{Zweite andere Basis}\label{ssec: second different basis of R2}
-Es sei nun $\mc{D} = (d_1, d_2)$ mit
+Es sei nun $\mc{D} = \{d_1, d_2\}$ mit
 \[
  d_1 = c_1 = \vect{1 \\ 0}
  \quad\text{und}\quad
@@ -622,7 +637,7 @@ Es sei nun $\mc{D} = (d_1, d_2)$ mit
 \]
 Da $e_1 = d_1$ und $e_2 = 2d_1 - d_2/2$ ist $\mc{D}$ ein Erzeugendensystem von $\Rbb^2$. Da $\mc{D}$ aus zwei Elementen besteht, und $\Rbb^2$ zweidimensional ist, ist $\mc{D}$ damit bereits eine Basis von $\Rbb^2$.
 
-Für die duale Basis $\mc{D}^* = (f^{\mc{D}}_1, f^{\mc{D}}_2)$ ist nun
+Für die duale Basis $\mc{D}^* = \{f^{\mc{D}}_1, f^{\mc{D}}_2\}$ ist nun
 \begin{gather*}
  \begin{aligned}
   f^{\mc{D}}_1\left( \vect{x_1 \\ x_2} \right)
@@ -633,11 +648,26 @@ Für die duale Basis $\mc{D}^* = (f^{\mc{D}}_1, f^{\mc{D}}_2)$ ist nun
  \end{aligned}
 \shortintertext{sowie analog}
  f^{\mc{D}}_2\left( \vect{x_1 \\ x_2} \right)
- = f^{\mc{D}}_2\left( (x_1 - 2x_2) d_1 - \frac{x_2}{2} d_2 \right)
+ = f^{\mc{D}}_2\left( (x_1 + 2x_2) d_1 - \frac{x_2}{2} d_2 \right)
  = -\frac{1}{2} x_2.
 \end{gather*}
 
-Obwohl der erste Vektor der Standardbasis $\mc{B}$ und der Basis $\mc{D}$ gleich sind ($e_1 = d_1$), sind die entsprechenden Elemente $f^{\mc{B}}_1$ und $f^{\mc{D}}_1$ der dualen Basis $\mc{B}^*$ ud $\mc{D}^*$ verschieden. Hieraus wird deutlich, dass die Elemente der duale Basis $\mc{C}^*$ einer Basis $\mc{C}$ von der kompletten Basis $\mc{C}$ abhängen.
+Obwohl der erste Vektor der Standardbasis $\mc{B}$ und der Basis $\mc{D}$ gleich sind (also $e_1 = d_1$), sind die entsprechenden Elemente $f^{\mc{B}}_1$ und $f^{\mc{D}}_1$ der dualen Basis $\mc{B}^*$ und $\mc{D}^*$ verschieden. Hieraus wird deutlich, dass die Elemente der duale Basis $\mc{C}^*$ einer Basis $\mc{C}$ von der kompletten Basis $\mc{C}$ abhängen.
+
+Der induzierte Isomorphismus $\Phi_\mc{D} \colon \mathbb{R}^2 \to (\mathbb{R}^2)^*$ ist dadurch gegeben, dass für jeden Vektor $(x_1, x_2)^T \in \mathbb{R}^2$
+\[
+ \Phi_{\mc{D}}\left(\vect{x_1 \\ x_2}\right)
+ = \Phi_{\mc{D}}\left( (x_1 + 2 x_2) d_1 - \frac{x_2}{2} d_2 \right)
+ = (x_1 + 2 x_2) f^{\mc{D}}_1 - x_2 f^{\mc{D}}_2.
+\]
+Für jedes weiteren Vektor $(y_1, y_2) \in \mathbb{R}^2$ ist deshalb
+\begin{align*}
+ \left( \Phi_{\mc{D}}\left(\vect{x_1 \\ x_2}\right) \right)\left( \vect{y_1 \\ y_2} \right)
+ &= (x_1 + 2 x_2) f^{\mc{D}}_1\left( \vect{y_1 \\ y_2} \right) - x_2 f^{\mc{D}}_2\left( \vect{y_1 \\ y_2} \right) \\
+ &= (x_1 + 2 x_2) (y_1 + 2 y_2) - x_2 y_2 \\
+ &= x_1 y_1 + 2 x_1 y_2 + 2 x_2 y_1 + 3 x_2 y_2.
+\end{align*}
+
 
 
 
@@ -649,16 +679,16 @@ Obwohl der erste Vektor der Standardbasis $\mc{B}$ und der Basis $\mc{D}$ gleich
 
 
 \section{Notation}
-Ist $V$ ein endlichdimensionaler $K$-Vektorraum und $\mc{B} = (v_1, \dotsc, v_n)$ eine Basis von $V$, so bezeichnet man die entsprechende duale Basis $\mc{B}^*$ häufig mit $(v_1^*, \dotsc, v_n^*)$ statt mit $(f^\mc{B}_1, \dotsc, f^\mc{B}_n)$, d.h.\ es ist $v_i^* = f^\mc{B}_i$ für alle $1 \leq i \leq n$.
+Ist $V$ ein endlichdimensionaler $K$-Vektorraum und $\mc{B} = \{v_1, \dotsc, v_n\}$ eine Basis von $V$, so bezeichnet man die entsprechende duale Basis $\mc{B}^*$ häufig mit $\{v_1^*, \dotsc, v_n^*\}$ statt mit $\{f^\mc{B}_1, \dotsc, f^\mc{B}_n\}$, d.h.\ es ist $v_i^* = f^\mc{B}_i$ für alle $1 \leq i \leq n$.
 
 Diese Notation hat den Vorteil, dass sie automatisch zur Verfügung steht, ohne ein zusätzliches Symbol (nämlich $f$) einzuführen, und ohne die Elemente der dualen Basis $\mc{B}^*$ explizit bennen zu müssen.
 
-Sie hat allerdings den Nachteil, dass aus der Notation $\mc{B}^* = (v_1^*, \dotsc, v_n^*)$ nicht klar wird, dass das Element $v_i^*$ von der gesamten Basis $\mc{B}$ abhängt, und nicht nur von dem einzelnen Basiselement $v_i$. So kann es durchaus passieren, dass wir zwei Basen $(v_1, \dotsc, v_n)$ und $(w_1, \dotsc, w_n)$ von $V$ haben, so dass zwar $v_1 = w_1$, aber $v_1^* \neq w_1^*$ (siehe etwa Abschnitt \ref{ssec: second different basis of R2}).
+Sie hat allerdings den Nachteil, dass aus der Notation $\mc{B}^* = \{v_1^*, \dotsc, v_n^*\}$ nicht klar wird, dass das Element $v_i^*$ von der gesamten Basis $\mc{B}$ abhängt, und nicht nur von dem einzelnen Basiselement $v_i$. So kann es durchaus passieren, dass wir zwei Basen $\{v_1, \dotsc, v_n\}$ und $\{w_1, \dotsc, w_n\}$ von $V$ haben, so dass zwar $v_1 = w_1$, aber $v_1^* \neq w_1^*$ (siehe etwa Abschnitt \ref{ssec: second different basis of R2}).
 
 Wir halten also fest:
 
 \begin{shaded}
- Ist $V$ ein endlichdimensionaler $K$-Vektorraum und $\mc{B} = (v_1, \dotsc, v_n)$ ein Basis von $V$, so hängt ein Element $v_i^*$ der dualen Basis $(v_1^*, \dotsc, v_n^*)$ im Allgemeinen von der kompletten Basis $\mc{B}$ ab, und nicht nur von dem einzelnen Basiselement $v_i$.
+ Ist $V$ ein endlichdimensionaler $K$-Vektorraum und $\mc{B} = \{v_1, \dotsc, v_n\}$ ein Basis von $V$, so hängt ein Element $v_i^*$ der dualen Basis $\{v_1^*, \dotsc, v_n^*\}$ im Allgemeinen von der kompletten Basis $\mc{B}$ ab, und nicht nur von dem einzelnen Basiselement $v_i$.
 \end{shaded}
 
 
@@ -679,7 +709,7 @@ Nachdem wir den Dualraum endlichdimensionaler Vektorräume verstanden haben, geh
 
 Elemente von $V^{**}$ sind also lineare Abbildungen $V^* \to K$. Nachdem wir den Dualraum mithilfe der dualen Basis verstanden haben, erscheint es nun naheliegend, so etwas wie eine „doppeltduale“ Basis einzuführen. Tatsächlich haben wir bereits eine solche Basis:
 
-Ist $V$ ein endlichdimensionaler $K$-Vektorraum, $\mc{B} = (v_1, \dotsc, v_n)$ eine Basis von $V$, und $\mc{B}^* = (v_1^*, \dotsc, v_1^*)$ die duale Basis von $\mc{B}$, so können wir die duale Basis von $\mc{B}^*$ bilden, um eine Basis $(\mc{B}^*)^* = ((v_1^*)^*, \dotsc, (v_n^*)^*)$ von $(V^*)^* = V^{**}$ zu erhalten. Wir schreiben auch nur $\mc{B}^{**} \coloneqq (\mc{B}^*)^*$ und $v_i^{**} \coloneqq (v_i^*)^*$ für alle $1 \leq i \leq n$.
+Ist $V$ ein endlichdimensionaler $K$-Vektorraum, $\mc{B} = \{v_1, \dotsc, v_n\}$ eine Basis von $V$, und $\mc{B}^* = \{v_1^*, \dotsc, v_1^*\}$ die duale Basis von $\mc{B}$, so können wir die duale Basis von $\mc{B}^*$ bilden, um eine Basis $(\mc{B}^*)^* = \{(v_1^*)^*, \dotsc, (v_n^*)^*\}$ von $(V^*)^* = V^{**}$ zu erhalten. Wir schreiben auch nur $\mc{B}^{**} \coloneqq (\mc{B}^*)^*$ und $v_i^{**} \coloneqq (v_i^*)^*$ für alle $1 \leq i \leq n$.
 
 Der Leser mag beim Anblick dieser itertieren Dualisierung in Panik ausbrechen: Wenn der Dualraum mit seinen duale Basen schon seltsam und umständlich erscheinen, so dürfte der Bidualraum mit der doppeltdualen Basis als nahezu unverstehbar anmuten. Es stellt sich jedoch heraus, das der Bidualraum $V^{**}$ mit seiner Basis $\mc{B}^{**}$ deutlich einfacher zu verstehen ist, also $V^*$ und $\mc{B}^*$.
 
@@ -731,12 +761,12 @@ Wir wissen aber bereits, dass auch $a_i = f(v_i)$ für alle $1 \leq i \leq n$. A
 \]
 Da dies für alle $f \in V^*$ gilt, ist damit schon $v_i^{**} = \eval_{v_i}$ für alle $1 \leq 1 \leq n$. Die Elemente $v_1^{**}, \dotsc, v_n^{**} \in V^{**}$ sind also nichts anderes als die Evaluationen an den Basiselementen $v_1, \dotsc, v_n$.
 
-Außerdem zeigt dies, dass die lineare Abbildung $\eval \colon V \to V^{**}$, $v \mapsto \eval_v$ die Basis \mbox{$\mc{B} = (v_1, \dotsc, v_n)$} von $V$ auf die Basis $\mc{B}^{**} = (v_1^{**}, \dotsc, v_n^{**})$ von $V^{**}$ abbildet, und somit schon ein Isomorphismus von Vektorräumen ist. Wir erhalten also:
+Außerdem zeigt dies, dass die lineare Abbildung $\eval \colon V \to V^{**}$, $v \mapsto \eval_v$ die Basis \mbox{$\mc{B} = \{v_1, \dotsc, v_n\}$} von $V$ auf die Basis $\mc{B}^{**} = \{v_1^{**}, \dotsc, v_n^{**}\}$ von $V^{**}$ abbildet, und somit schon ein Isomorphismus von Vektorräumen ist. Wir erhalten also:
 
 \begin{shaded}
  Ist $V$ ein endlichdimensionaler $K$-Vektorraum, so ist die lineare Abbildung \mbox{$\eval \colon V \to V^{**}$}, $v \mapsto \eval_v$ ein Isomorphismus, wobei $\eval_v$ die Evaluation an $V$ bezeichnet.
  
- Ist ferner $\mc{B} = (v_1, \dotsc, v_n)$ eine Basis von $V$, so ist $v_i^{**} = \eval_{v_i}$ für alle $1 \leq i \leq n$.
+ Ist ferner $\mc{B} = \{v_1, \dotsc, v_n\}$ eine Basis von $V$, so ist $v_i^{**} = \eval_{v_i}$ für alle $1 \leq i \leq n$.
 \end{shaded}
 
 Hieraus ergibt sich auch eine interessante Beobachtung: Verknüpfen wir den Isomorphismus $\Phi_\mc{B} \colon V \to V^*$, der durch die Basis $\mc{B}$ induziert wird, und den Isomorphismus $\Phi_{\mc{B}^*} \colon V^* \to V^{**}$, der durch die duale Basis induziert wird, so erhalten wir den Isomorphismus $\Phi_{\mc{B}^*} \circ \Phi_{\mc{B}}$. Dieser ist dadurch gegeben, dass 
@@ -749,7 +779,7 @@ Hieraus ergibt sich auch eine interessante Beobachtung: Verknüpfen wir den Isom
  \quad
  \text{für alle $1 \leq i \leq n$}.
 \]
-Da $\mc{B}$ eine Basis von $V$ ist, ist damit bereits $\Phi_{\mc{B}^*} \circ \Phi_{\mc{B}} = \eval$. Obwohl also sowohl $\Phi_{\mc{B}^*}$ als auch $\Phi_{\mc{B}}$ von der Wahl unser ursprünglichen Basis $\mc{B}$ abhängen, ist der entstehende Isomorphismus $\Phi_{\mc{B}^*} \circ \Phi_{\mc{B}} = \eval \colon V \to V^**$ unabhängig von der Basis $\mc{B}$.
+Da $\mc{B}$ eine Basis von $V$ ist, ist damit bereits $\Phi_{\mc{B}^*} \circ \Phi_{\mc{B}} = \eval$. Obwohl also sowohl $\Phi_{\mc{B}^*}$ als auch $\Phi_{\mc{B}}$ von der Wahl unser ursprünglichen Basis $\mc{B}$ abhängen, ist der entstehende Isomorphismus $\Phi_{\mc{B}^*} \circ \Phi_{\mc{B}} = \eval \colon V \to V^{**}$ unabhängig von der Basis $\mc{B}$.
 
 
 
