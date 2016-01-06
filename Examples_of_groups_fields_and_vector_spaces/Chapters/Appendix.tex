@@ -12,7 +12,7 @@
   \item
    \emph{anti-symmetrisch}, falls für alle $x,y \in X$ mit $(x,y) \in R$ und $(y,x) \in R$ bereits $x=y$.
   \item
-   \emph{transitiv}, falls für alle $x,y,z \in X$ mit $(x,y) \in R$ und $(y,z) \in R$ auch $(x,y) \in R$,
+   \emph{transitiv}, falls für alle $x,y,z \in X$ mit $(x,y) \in R$ und $(y,z) \in R$ auch $(x,z) \in R$,
  \end{enumerate}
 \end{defi}
 
@@ -26,32 +26,51 @@
   \item
    Auf der Menge $\Rbb$ der reellen Zahlen definieren wir die Relation $R$ durch
    \[
-    R_1 \coloneqq \{(x,y) \in \Rbb \times \Rbb \mid x \leq y\}.
+    R \coloneqq \{(x,y) \in \Rbb \times \Rbb \mid x \leq y\}.
    \]
-   $R$ ist reflexiv, denn für alle $x \in \Rbb$ ist $x \leq x$, also $(x,x) \in R$. $R$ ist \emph{nicht} symmetrisch, da etwa $(1,2) \in R$ aber $(2,1) \notin R$. $R$ ist allerdings schief-symmetrisch, denn für $x,y \in \Rbb$ mit $(x,y), (y,x) \in R$ ist $x \leq y$ und $y \leq x$, also $x = y$. $R$ ist auch transitiv, denn für $x,y,z \in \Rbb$ mit $(x,y), (y,z) \in R$ ist $x \leq y$ und $y \leq z$, also auch $x \leq z$ und somit $(x,z) \in \Rbb$.
+   $R$ ist reflexiv, denn für alle $x \in \Rbb$ ist $x \leq x$, also $(x,x) \in R$.
+   
+   $R$ ist \emph{nicht} symmetrisch, da etwa $(1,2) \in R$ aber $(2,1) \notin R$.
+   
+   $R$ ist allerdings schief-symmetrisch, denn für $x,y \in \Rbb$ mit $(x,y), (y,x) \in R$ ist $x \leq y$ und $y \leq x$, also $x = y$.
+   
+   $R$ ist auch transitiv, denn für $x,y,z \in \Rbb$ mit $(x,y), (y,z) \in R$ ist $x \leq y$ und $y \leq z$, also auch $x \leq z$, und somit $(x,z) \in \Rbb$.
   
   \item
    Wir definieren auf der Menge $\Qbb$ der rationalen Zahlen eine Relation $R$ durch
    \[
-    R_1 = \{(x,y) \in \Qbb \times \Qbb \mid x < y\}.
+    R = \{(x,y) \in \Qbb \times \Qbb \mid x < y\}.
    \]
-   $R$ ist weder reflexiv, noch symmetrisch oder anti-symmetrisch. $R$ ist allerdings transitiv.
+   $R$ ist nicht reflexiv, da etwa $(1,1) \notin R$.
+   
+   $R$ ist auch nicht symmetrisch, da etwa $(1,2) \in R$ aber $(2,1) \notin R$.
+   
+   $R$ ist anti-symmetrisch, allerdings aus anderen Gründen als in dem vorherigen Beispiel: Sind $x,y \in \Qbb$ mit $(x,y), (y,x) \in R$, so ist $x < y$ und $y < x$. Dann ist also $x \leq y$ und $y \leq x$ mit $x \neq y$. also $x = y$ mit $x \neq y$. Da dies nicht möglich ist, \emph{gibt es keine} $x,y \in \Qbb$, so dass sowohl $(x,y) \in R$ also auch $(y,x) \in R$. Die Anti-symmetrie von $R$ ist daher eine leere Aussage und somit erfüllt.
+   
+   $R$ ist auch transitiv, denn für $x,y,z \in \Qbb$ mit $(x,y), (y,z) \in R$ ist $x < y$ und $y < z$, also auch $x < z$, und somit $(x,z) \in R$.
   
   \item
    Es sei $X$ eine beliebige Menge und
    \[
     R = \{(x,x) \mid x \in X\}.
    \]
-   (Es steht also jedes Element nur zu sich selbst in Relation.) Es folgt direkt, dass $R$ reflexiv ist. $R$ ist symmetrisch, denn für $(x,y) \in R$ ist $x = y$, also $(y,x) = (x,y) = (x,x) \in R$. $R$ ist auch anti-symmetrisch, denn für $x,y \in X$ mit $(x,y), (y,x) \in R$ ist $x = y$. $R$ ist transitiv, den für $x,y,z \in X$ mit $(x,y), (y,z) \in R$ ist $x = y$ und $y = z$, also auch $x = z$ und somit $(x,z) \in R$.
+   (Es steht also jedes Element nur zu sich selbst in Relation.) Es folgt direkt, dass $R$ reflexiv ist. $R$ ist symmetrisch, denn für $(x,y) \in R$ ist $x = y$, also $(y,x) = (x,y) \in R$. $R$ ist auch anti-symmetrisch, denn für $x,y \in X$ mit $(x,y), (y,x) \in R$ ist $x = y$. $R$ ist transitiv, den für $x,y,z \in X$ mit $(x,y), (y,z) \in R$ ist $x = y$ und $y = z$, also auch $x = z$, und somit $(x,z) \in R$.
   
   \item
    Auf der Menge $\Zbb$ der ganzen Zahlen definieren wir die Relation
    \[
     R = \{(n,n+1) \mid n \in \Zbb\}.
    \]
-   (Es steht also jedes ganze Zahl mit genau ihrem Nachfolger in Relation.) $R$ ist nicht reflexiv, da etwa $(1,1) \notin R$. $R$ ist auch nicht symmetrisch, denn für $n,m \in \Zbb$ mit $(n,m) \in R$ ist $m = n+1$, also $(m,n) = (n+1,n) \notin R$. $R$ ist auch nicht transitiv, denn für $l,m,n \in \Zbb$ mit $(l,m),(m,n) \in R$ ist $m = l+1$ und $n = m+1$, also $n = l+2$ und somit $(l,n) = (l,l+2) \notin R$.
+   (Es steht also jedes ganze Zahl mit genau ihrem Nachfolger in Relation.)
+   
+   $R$ ist nicht reflexiv, da etwa $(1,1) \notin R$.
+   
+   $R$ ist auch nicht symmetrisch, denn für $n,m \in \Zbb$ mit $(n,m) \in R$ ist $m = n+1$, also $(m,n) = (n+1,n) \notin R$.
+   
+   $R$ ist auch nicht transitiv, denn für $l,m,n \in \Zbb$ mit $(l,m),(m,n) \in R$ ist $m = l+1$ und $n = m+1$, also $n = l+2$ und somit $(l,n) = (l,l+2) \notin R$.
    
    $R$ ist allerdings anti-symmetrisch: Sind $n,m \in \Zbb$ mit $(n,m), (m,n) \in R$, so ist $m = n+1$ ud $n = m+1$, also $n = n+2$, was nicht möglich ist. Es gibt also keine $n,m \in \Zbb$ mit $(n,m) \in R$; daher handelt es sich bei der Anti-Symmetrie von $R$ um eine leere Aussage, die daher gilt.
+   
   
   \item
    Auf $\Rbb$ definieren wir die Reation
@@ -59,16 +78,66 @@
     R
     = \{(x,y) \in \Rbb \times \Rbb \mid x = \pm y\}.
    \]
-   (Zwei Zahlen sind also in Relation, wenn sie bis auf Vorzeichen gleich sind.) Da $x \in R$ für alle $x \in \Rbb$ ist $\Rbb$ reflexiv. $R$ ist symmmetrisch, denn sind $x,y \in \Rbb$ mit $(x,y) \in R$, so ist $x = \pm y$, also auch $y = \pm x$ und somit $(y,x) \in R$. $R$ ist allerdings nicht anti-symmetrisch, da etwa $(1,-1), (-1,1) \in R$ aber $1 \neq -1$. $R$ ist allerdings transitiv, denn für $x,y,z \in \Rbb$ mit $(x,y), (y,z) \in R$ ist $x = \pm y$ und $y = \pm z$, also auch $x = \pm z$, und somit $(x,z) \in R$.
+   (Zwei Zahlen sind also in Relation, wenn sie bis auf Vorzeichen gleich sind.)
+   
+   Für jedes $x \in \Rbb$ ist $x = \pm x$, also $(x,x) \in R$. Somit ist $R$ reflexiv.
+   
+   $R$ ist symmetrisch, denn sind $x,y \in \Rbb$ mit $(x,y) \in R$, so ist $x = \pm y$, also auch $y = \pm x$, und somit $(y,x) \in R$.
+   
+   $R$ ist allerdings nicht anti-symmetrisch, da etwa $(1,-1), (-1,1) \in R$ aber $1 \neq -1$.
+   
+   $R$ ist allerdings transitiv, denn für $x,y,z \in \Rbb$ mit $(x,y), (y,z) \in R$ ist $x = \pm y$ und $y = \pm z$, also auch $x = \pm z$, und somit $(x,z) \in R$.
    
   \item
    Wir definieren auf der Menge der reellen Zahlen $\Rbb$ eine Relation
    \[
     R = \{(x,y) \in \Rbb \times \Rbb \mid y = x^2\}.
    \]
-   ($x$ steht also in Relation zu $y$, falls $x$ ein Quadratwurzel von $y$ ist.) $R$ ist nicht reflexiv, da etwa $(2,2) \notin R$. $R$ ist auch nicht symmetrisch, da etwa $(2,4) \in R$ aber $(4,2) \notin R$. $R$ ist auch nicht transitiv, da etwa $(2,4) \in R$ und $(4,16) \in R$, aber $(2,16) \notin R$.
+   ($x$ steht also in Relation zu $y$, falls $x$ ein Quadratwurzel von $y$ ist.)
    
-   $R$ ist allerdings schief-symmetrisch: Sind $x, y \in \Rbb$ mit $(x,y), (y,x) \in R$, so ist $y = x^2$ und $x = y^2$. Inbesondere sind daher $x,y \geq 0$ mit $x = y^2 = (x^2)^2 = x^4$ und analog $y = y^4$. Es ist also $x \in \{0,1\}$ und $y \in \{0,1\}$. Ist $x = 0$, so ist $y = x^2 = 0$ und $x = 0 = y$. Ist $x = 1$, so ist $y = x^2 = 1$ und somit $x = 1 = y$. Es ist also in beiden Fällen $x = y$.
+   $R$ ist nicht reflexiv, da etwa $(2,2) \notin R$.
+   
+   $R$ ist auch nicht symmetrisch, da etwa $(2,4) \in R$ aber $(4,2) \notin R$.
+   
+   $R$ ist auch nicht transitiv, da etwa $(2,4) \in R$ und $(4,16) \in R$, aber $(2,16) \notin R$.
+   
+   $R$ ist allerdings schief-symmetrisch: Sind $x, y \in \Rbb$ mit $(x,y), (y,x) \in R$, so ist $y = x^2$ und $x = y^2$. Inbesondere sind daher $x,y \geq 0$ (da Quadrate reeller Zahlen stets nicht-negativ sind) mit $x = y^2 = (x^2)^2 = x^4$ und analog $y = y^4$. Deshalb ist $x, y \in \{0,1\}$. Ist $x = 0$, so ist $y = x^2 = 0$ und $x = 0 = y$. Ist $x = 1$, so ist $y = x^2 = 1$ und somit $x = 1 = y$. Es ist also in beiden Fällen $x = y$.
+   
+  \item
+   Für $x,y \in \Rbb$ sei
+   \[
+    I(x,y) =
+    \begin{cases}
+     [x,y] & \text{falls $y \geq x$}, \\
+     [y,x] & \text{falls $x \leq y$}.
+    \end{cases}
+   \]
+   ($I(x,y)$ ist also das nicht-leere Intervall mit Randpunkten $x$ und $y$.) Man bemerke, dass $I(x,z) \subseteq I(x,y) \cup I(y,z)$ für alle $x,y,z \in \Rbb$:
+   
+   Ist $x \leq z$ und $a \in I(x,z) = [x,z]$, so ist $x \leq a \leq z$; ist dann $a \leq y$, so ist $x \leq a \leq y$, also $a \in [x,y] = I(x,y)$; ist wiederum $y \leq a$, so ist $y \leq a \leq z$, also $a \in [y,z] = I(y,z)$; es ist also in jedem Fall $a \in I(x,y) \cup I(y,z)$.
+   
+   Ist andererseits $z \leq x$ und $a \in I(x,z) = [z,x]$, so ist $z \leq a \leq x$; ist dann $y \leq a$, so ist $y \leq a \leq x$, also $a \in [y,x] = I(y,x)$; ist andererseits $a \leq y$, so ist $z \leq a \leq y$, also $a \in [z,y] = I(z,y)$;  es ist also in jedem Fall $a \in I(y,x) \cup I(z,y) = I(x,y) \cup I(y,z)$.
+   
+   Für eine Teilmenge $X \subseteq \Rbb$ sei nun
+   \[
+    R(X) \coloneqq \{(x,y) \in X \times X \mid I(x,y) \subseteq X\}.
+   \]
+   (Zwei Elemente von $x,y \in X$ stehen also in Relation, wenn man innerhalb der Menge $X$ von $x$ nach $y$ laufen kann.)
+   
+   $R(X)$ ist transitiv, denn für jedes $x \in X$ ist $I(x,x) = [x,x] = \{x\} \subseteq X$.
+   
+   Sind $x,y \in X$ mit $(x,y) \in R(X)$, so ist $I(x,y) \subseteq X$. Daher ist $I(y,x) = I(x,y) \subseteq X$, also $(y,x) \in R(X)$. Das zeigt, dass $R(X)$ symmetrisch ist.
+   
+   Sind $x,y,z \in X$ mit $(x,y), (y,z) \in X$, so ist $I(x,y), I(y,z) \subseteq X$. Damit ist auch $I(x,z) \subseteq I(x,y) \cup I(y,z) \subseteq X$, also $(x,z) \in R$. Somit ist $R(X)$ transitiv.
+   
+   Ob $R(X)$ anti-symmetrisch ist, hängt von der Menge $X$ ab. Für alle $x,y \in X$ ist nämlich $I(x,y) = I(y,x)$, und deshalb
+   \[
+    (x,y) \in R(X)
+    \iff I(x,y) \subseteq X
+    \iff I(y,x) \subseteq X
+    \iff (y,x) \in R(X).
+   \]
+   Daher ist $R(X)$ genau dann anti-symmetrisch, wenn es keine $x,y \in X$ mit $x \neq y$ gibt, so dass $I(x,y) \subseteq X$, wenn also $X$ keine Intervall positiver Länge enthält.
  \end{enumerate}
 \end{bsp}
 
@@ -83,12 +152,14 @@
 
 \begin{bsp}
  \begin{enumerate}[leftmargin=*]
+ 
   \item
    Es sei $X$ eine Menge. Wie bereits gesehen ist Gleichheit $=$ eine Äquivalenzrelation auf $X$, d.h.\
    \[
     R = \{(x,y) \mid x = y\} \subseteq X \times X
    \]
    ist eine Äquivalenzrelation.
+   
   \item
    Für $n,m \in \Zbb$ sei $n \sim m$ genau dann, wenn $n-m$ gerade ist, d.h.\ falls es $k \in \Zbb$ mit $n-m = 2k$ gibt. Wir zeigen, dass $\sim$ eine Äquivalenzrelation auf $\Zbb$ definiert:
    
@@ -97,6 +168,7 @@
    Sind $n,m \in \Zbb$ mit $n \sim m$, so ist $n-m$ gerade, also $n-m = 2k$ für ein $k \in \Zbb$. Dann ist auch $m-n = 2(-k)$ gerade, also $m \sim n$. Also ist $\sim$ symmetrisch.
    
    Sind $p,q,r \in \Zbb$ mit $p \sim q$ und $q \sim r$, so sind $p-q$ und $q-r$ ungerade, d.h.\ es gibt $k,l \in \Zbb$ mit $p-q = 2k$ und $q-r = 2l$. Daher ist auch $p-r = (p-q)+(q-r) = 2k + 2l = 2(k+l)$ gerade, also $p \sim r$. Das zeigt, dass $\sim$ auch transitiv ist.
+   
   \item
    Es sei $X$ ein Menge und $f \colon X \to Y$ eine Funktion. Für $x_1, x_2 \in X$ sei $x_1 \sim x_2$ genau dann, wenn $f(x_1) = f(x_2)$. Dann ist $\sim$ ein Äquivalenzrelation:
    
@@ -105,6 +177,7 @@
    Sind $x_1, x_2 \in X$ mit $x_1 \sim x_2$, also $f(x_1) = f(x_2)$, so ist auch $f(x_2) = f(x_1)$, also $x_2 \sim x_2$. Das zeigt, dass $\sim$ symmetrisch ist.
    
    Sind $x_1, x_2, x_3 \in X$ mit $x_1 \sim x_2$ und $x_2 \sim x_3$, also $f(x_1) = f(x_2)$ und $f(x_2) = f(x_3)$, so ist deshalb $f(x_1) = f(x_3)$, also $x_1 \sim x_3$. Somit ist $\sim$ auch transitiv.
+   
   \item
    Auf $x,y \in \Rbb$ sei $x \sim y$ genau dann, wenn $x-y \in \Zbb$. Hierdurch wird eine Äquivalenzrelation auf $\Rbb$ definiert:
    
@@ -113,6 +186,53 @@
    Sind $x,y \in \Rbb$ mit $x \sim y$, also $x-y \in \Zbb$, so ist auch $y-x \in \Zbb$, und somit $y \sim x$. Deshalb ist $\sim$ symmetrisch.
    
    Sind $x,y,z \in \Rbb$ mit $x \sim y$ und $y \sim z$, so ist $x-y, y-z \in \Zbb$. Deshalb ist auch $x-z = (x-y)+(y-z) \in \Zbb$, also $x \sim z$. Das zeigt die Transitivität von $\sim$.
+  
+  \item
+   Für einen Körper $K$ sei $R \subseteq \Mat(n \times n, K) \times \Mat(n \times n, K)$ gegeben durch
+   \[
+    (A,B) \in R \iff \text{es gibt eine invertierbare Matrix $S \in \GL_n(K)$ mit $SAS^{-1} = B$};
+   \]
+   man sagt auch, dass die Matrix $A$ äquivalent zu der Matrix $B$ ist. Hierdurch ergibt sich eine Äquivalenzrelation auf $\Mat(n \times n, K)$:
+   
+   Jede Matrix $A \in \Mat(n \times n, K)$ ist zu sich selbst äquivalent, da $A = I_n A I_n^{-1}$ für die Einheitsmatrix $I_n \in \GL_n(K)$. Also ist $R$ reflexiv.
+   
+   Sind $A, B \in \Mat(n \times n, K)$, so dass $A$ äquivalent zu $B$ ist, also $S A S^{-1} = B$ für eine invertierbare Matrix $S \in \GL_n(K)$, so ist auch $S^{-1} \in \GL_n(K)$ invertierbar mit
+   \[
+    S A S^{-1} = B \iff A = S^{-1} B S = S^{-1} B (S^{-1})^{-1}.
+   \]
+   Also ist dann auch $B$ äquivalent zu $A$. Somit ist $R$ symmetrisch.
+   
+   Sind $A,B,C \in \Mat(n \times n, K)$, so dass $A$ äquivalent zu $B$ ist, und $B$ äquivalent zu $C$ ist, so gibt es invertierbare Matrizen $S,T \in \GL_n(K)$ mit $B = SAS^{-1}$ und $C = TBT^{-1}$. Dann ist auch $TS \in \GL_n(K)$ invertierbar mit
+   \[
+    C = T B T^{-1} = T S A S^{-1} T^{-1} = (TS) A (TS)^{-1},
+   \]
+   weshalb auch $C$ äquivalent zu $A$ ist. Also ist $R$ auch transitiv.
+  
+  \item
+   Es sei $G$ ein Gruppe und $R \subseteq G \times G$ dadurch gegeben, dass
+   \[
+    (g,h) \in G \iff \text{es gibt $\alpha \in G$ mit $g = \alpha h \alpha^{-1}$}.
+   \]
+   Man sagt, dass $g$ konjugiert zu $h$ ist. Dies liefert eine Äquivalenzrelation auf $G$:
+   
+   Jedes Element $g \in G$ ist zu sich selbst konjugiert, da $g = e g e^{-1}$ für das neutrale Element $e \in G$. Also ist $R$ reflexiv.
+   
+   Sind $g,h \in G$, so dass $g$ konjugiert zu $h$ ist, so gibt es $\alpha \in G$ mit $g = \alpha h \alpha^{-1}$. Da
+   \[
+    g = \alpha h \alpha^{-1}
+    \iff
+    h = \alpha^{-1} g \alpha = \alpha^{-1} g (\alpha^{-1})^{-1}
+   \]
+   ist dann auch $h$ äquivalent zu $g$. Das zeigt, dass $R$ symmetrisch ist.
+   
+   Sind $g,h,k \in G$, so dass $g$ konjugiert zu $h$ ist, und $h$ konjugiert zu $k$ ist, so gibt es $\alpha, \beta \in G$ mit $g = \alpha h \alpha^{-1}$ und $h = \beta k \beta^{-1}$. Dann ist
+   \[
+    g
+    = \alpha h \alpha^{-1}
+    = \alpha \beta k \beta^{-1} \alpha^{-1}
+    = (\alpha \beta) k (\alpha \beta)^{-1},
+   \]
+   also auch $g$ konjugiert zu $k$. Das zeigt, dass $R$ transitiv ist.
  \end{enumerate}
 \end{bsp}
 
@@ -234,7 +354,6 @@
  Allgemein erhält man für eine Äquivalenzrelation $\sim$ auf einer Menge $X$ ein Repräsentantensystem, indem man aus jeder Äquivalenzklasse $A \in X/{\sim}$ einen Repräsentanten $r_A \in A$ wählt, und diese Repräsentanten anschließend zu $R = \{r_A \mid A \in X/{\sim}\}$ zusammenfasst.
 \end{bem}
 
-
 \begin{bsp}
  \begin{enumerate}[leftmargin=*]
   \item
@@ -253,11 +372,7 @@
 
 
 
-
-
-
-
-
+%TODO: Ordnungsrelationen weiterschreiben
 \section{Ordnungsrelationen}
 \begin{defi}
  Eine Relation $R$ auf einer Menge $X$ heißt \emph{Ordnungsrelation}, falls $R$ reflexiv, anti-symmetrisch und transitiv ist.
@@ -298,7 +413,7 @@
     \item
      Wir definieren auf $\Zbb$ die Relation
      \[
-      R = \{(n,m) \in \Zbb \mid n \mid m\}.
+      R = \{(n,m) \in \Zbb \mid \text{$n$ teilt $m$}\}.
      \]
      Wie bereits zuvor ergibt sich, dass $R$ reflexiv und transitiv ist. $R$ ist allerdings nicht anti-symmetrisch. So ist etwa $(-1) \mid 1$ und $1 \mid (-1)$, da $1 = (-1) \cdot (-1)$ und $-1 = (-1) \cdot 1$, aber $1 \neq -1$. $R$ definiert also keine Ordnungsrelation auf $R$.
    \end{enumerate}
