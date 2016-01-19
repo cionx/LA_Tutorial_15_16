@@ -1,0 +1,283 @@
+%\documentclass[a4paper,10pt]{article}
+\documentclass[a4paper,10pt]{scrartcl}
+
+\usepackage{../generalstyle}
+\usepackage{specificstyle}
+
+\setromanfont[Mapping=tex-text]{Linux Libertine O}
+% \setsansfont[Mapping=tex-text]{DejaVu Sans}
+% \setmonofont[Mapping=tex-text]{DejaVu Sans Mono}
+
+\title{Lösung zu \\ Übungszettel 9, Aufgabe 1}
+\author{Jendrik Stelzner}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+
+
+
+
+
+
+
+
+
+\section{}
+
+
+
+
+
+\subsection{}
+Wir zeigen die Aussage per Induktion über $\dim(V)$, wobei $\dim(V) \geq 1$.
+
+\begin{ib}
+ Es sei $\dim(V) = 1$ und $f \colon V \to V$ ein Endomorphismus von $V$. Es sei nun $v \in V$ ein beliebiger Vektor mit $v \neq 0$. Dann ist $\mc{B} = (v)$ eine Basis von $V$. Da $\dim(V) = 1$ ist $\Mat_{\mc{B},\mc{B}}(f) = (a)$ für einen Skalar $a \in K$. Insbesondere ist $\Mat_{\mc{B},\mc{B}}(f)$ in oberer Dreiecksform.
+\end{ib}
+\begin{iv}
+ Es sei $n \geq 2$ und für jeden Vektorraum $U$ mit $\dim(U) = n-1$ und jeden Endomorphismus $f \colon U \to U$ gebe es eine Basis $\mc{B}$ von $U$, so dass $\Mat_{\mc{B},\mc{B}}(f)$ eine obere Dreiecksmatrix ist, d.h.\ $\Mat_{\mc{B},\mc{B}}(f)$ ist von der Form
+ \[
+  \Mat_{\mc{B},\mc{B}}(f)
+  =
+  \begin{pmatrix}
+  a_{11} & a_{12} & \cdots & a_{1,n-1}   \\
+  0      & \ddots & \ddots & \vdots      \\
+  \vdots & \ddots & \ddots & a_{n-2,n-1} \\
+  0      & \cdots & 0      & a_{n-1,n-1}
+ \end{pmatrix}
+ \]
+\end{iv}
+\begin{is}
+ Es sei $V$ ein Vektorraum von Dimension $\dim(V) = n$ und $f \colon V \to V$ ein Endomorphismus von $V$. Da $K$ algebraisch abgeschlossen ist, existiert es einen Eigenvektor $b_1 \in V$ von $f$; es sei $\lambda \in K$ mit $f(b_1) = \lambda b_1$. Wir ergänzen $b_1$ zu einer Basis $\mc{B}' = (b_1, b_2', \dotsc, b_n')$ von $V$ (der Strich gibt an, dass dies noch nicht die endgültigen Basiselement sind, die wir gerne hätten). Da $f(b_1) = \lambda b_1$ ist $A \coloneqq \Mat_{\mc{B}',\mc{B}'}(f)$ von der Form
+ \begin{equation}\label{eqn: matrix representation of f}
+  A
+  = \Mat_{\mc{B}',\mc{B}'}(f)
+  =
+  \begin{pmatrix}
+   \lambda & a_{12} & a_{13} & \cdots & a_{1n} \\
+   0       & a_{22} & a_{23} & \cdots & a_{2n} \\
+   0       & a_{32} & a_{33} & \cdots & a_{3n} \\
+   \vdots  & \vdots & \vdots & \ddots & \vdots \\
+   0       & a_{n2} & a_{n3} & \cdots & a_{nn}
+  \end{pmatrix}
+ \end{equation}
+\end{is}
+Wir betrachten nun die abgeänderte Matrix $\tilde{A}$ mit
+\[
+ \tilde{A}
+ =
+ \begin{pmatrix}
+  \lambda & 0      & 0      & \cdots & 0      \\
+  0       & a_{22} & a_{23} & \cdots & a_{2n} \\
+  0       & a_{32} & a_{33} & \cdots & a_{3n} \\
+  \vdots  & \vdots & \vdots & \ddots & \vdots \\
+  0       & a_{n2} & a_{n3} & \cdots & a_{nn}
+ \end{pmatrix}.
+\]
+Es sei $\tilde{f} \colon V \to V$ der eindeutige Endomorphismus mit $\Mat_{\mc{B}',\mc{B}'}(\tilde{f}) = \tilde{A}$. Konkret ist
+\begin{equation}\label{eq: definition of f tilde}
+ \tilde{f}(b_1) = \lambda b_1
+ \quad\text{und}\quad
+ \tilde{f}(b'_j) = \sum_{i=2}^n a_{ij} b'_i
+ \quad\text{für alle $2 \leq j \leq n$}.
+\end{equation}
+Inbesondere ist deshalb
+\begin{equation}\label{eqn: connection between f and f tilde}
+ f(b'_j)
+ = a_{1j} b_1 + \sum_{i=2}^n a_{ij} b'_i
+ = a_{1j} b_1 + \tilde{f}(b'_j)
+ \quad\text{für alle $2 \leq j \leq n$}.
+\end{equation}
+Dabei ergibt sich die erste Gleichung aus \eqref{eqn: matrix representation of f}.
+
+Es sei nun $\mathcal{C}' = (b_2, \dotsc, b_n)$ und $U \coloneqq \Ell(\mathcal{C}') = \Ell(\{b'_2, \dotsc, b'_n\})$. Wie in \eqref{eq: definition of f tilde} gesehen ist $\tilde{f}(b'_j) \in U$ für alle $2 \leq j \leq n$, also $\tilde{f}(\{b'_2, \dotsc, b'_n\}) \subseteq U$. Deshalb ist
+\begin{align*}
+   \tilde{f}(U)
+ = \tilde{f}(\Ell(\{b'_2, \dotsc, b'_n\}))
+ &= \Ell(\tilde{f}(\{b'_2, \dotsc, b'_n\})) \\
+ &= \Ell(\{\tilde{f}(b'_2), \dotsc, \tilde{f}(b'_n)\})
+ \subseteq \Ell(U)
+ = U.
+\end{align*}
+Also ist $U$ \emph{invariant} unter $\tilde{f}$. Deshalb können wir die Einschränkung $\tilde{f}|_U \colon U \to U$ mit $\tilde{f}|_U(u)= \tilde{f}(u)$ für alle $u \in U$ betrachten. (Für $f$ hätten wir dies nicht tun können. Die abgeänderte Version $\tilde{f}$ von $f$ betrachten wir genau deshalb, um diese Einschränkung zu haben. Man bemerke außerdem, dass
+\begin{equation}\label{eqn: matrix representation of the restriction}
+ \Mat_{\mc{C}',\mc{C}'}(\tilde{f}|_U)
+ =
+ \begin{pmatrix}
+  a_{22} & a_{23} & \cdots & a_{2n} \\
+  a_{32} & a_{33} & \cdots & a_{3n} \\
+  \vdots & \vdots & \ddots & \vdots \\
+  a_{n2} & a_{n3} & \cdots & a_{nn}
+ \end{pmatrix}
+\end{equation}
+gilt.)
+
+Da $\mathcal{C'}$ linear unabhängig und ein Erzeugendensystem von $U$ ist, ist es bereits eine Basis von $U$. Also ist $\dim(U) = n-1$. Wir können nun die Induktionsvoraussetzung auf $U$ und $\tilde{f}|_U$ anwenden. Nach dieser gibt es eine Basis $\mc{C} = (b_2, \dotsc, b_n)$ von $U$, so dass $\Mat_{\mc{C},\mc{C}}(\tilde{f}|_U)$ eine obere Dreiecksform hat, also
+\[
+ \Mat_{\mc{C},\mc{C}}(\tilde{f}|_U)
+ =
+ \begin{pmatrix}
+  c_{22} & c_{23} & \cdots & c_{2n}    \\
+  0      & \ddots & \ddots & \vdots    \\
+  \vdots & \ddots & \ddots & c_{n-1,n} \\
+  0      & \cdots & 0      & c_{nn}
+ \end{pmatrix}.
+\]
+(Man beachte die geshifteten Indizes, wie bereits bei $\Mat_{\mc{C}',\mc{C}'}(\tilde{f}|_U)$ in \eqref{eqn: matrix representation of the restriction}.) Inbesondere ist also
+\[
+ \tilde{f}(b_j)
+ = \tilde{f}|_U(b_j)
+ = \sum_{i=2}^j c_{ij} b_i
+ \quad\text{für alle $2 \leq j \leq n$}.
+\]
+(Die Summe geht jeweils nur bis $j$, da alle weiteren Einträge in der $j$-ten Zeile $0$ sind.)
+
+Es sei nun $\mathcal{B} = (b_1, b_2, \dotsc, b_n)$. Dies ist eine Basis von $V$: Es ist $b_1 \in \Ell(\mathcal{B})$. Außerdem ist $\mathcal{C}$ eine Basis von $U$, weshalb auch $b'_2, \dotsc, b'_n \in U = \Ell(\mathcal{C}) \subseteq \Ell(\mathcal{B})$. Also sind alle Basisvektoren von $\mathcal{B}'$ in $\Ell(\mathcal{B})$ enthalten; da $\mathcal{B}'$ ein Erzeugendensystem von $V$ ist, ist deshalb auch $\mathcal{B}$ ein Erzeugendensystem von $V$. Da $\mathcal{B}$ genau $n$-Elemente enthält, wobei $n = \dim(V)$, ist $\mathcal{B}$ bereits ein minimales Erzeugendensystem von $V$, und somit eine Basis von $V$.
+
+Wir zeigen nun, dass $\Mat_{\mc{B},\mc{B}}(f)$ eine obere Dreiecksform hat: Wir haben unveränderterweise $f(b_1) = \lambda b_1$. Für alle $2 \leq j \leq n$ ist $b_j = \sum_{k=2}^n \mu^{(j)}_k b'_k$ für passende Koeffizienten $\mu^{(j)}_2, \dotsc, \mu^{(j)}_n \in K$, da $b_j \in U = \Ell(\mathcal{C'}) = \Ell(\{b'_2, \dotsc, b'_n\})$. Zusammen mit \eqref{eqn: connection between f and f tilde} ergibt sich für alle  $2 \leq j \leq n$, dass
+\begin{align*}
+ f(b_j)
+ &= f\left( \sum_{k=2}^n \mu^{(j)}_k b'_k \right)
+ = \sum_{k=2}^n \mu^{(j)}_k f(b'_k)
+ = \sum_{k=2}^n \mu^{(j)}_k (a_{1k} b_1 + \tilde{f}(b'_k)) \\
+ &= \left( \sum_{k=2}^n \mu^{(j)}_k a_{1k} b_1 \right) + \sum_{k=2}^n \mu^{(j)}_k \tilde{f}(b'_k)
+ = \left( \sum_{k=2}^n \mu^{(j)}_k a_{1k} b_1 \right) + \tilde{f}\left( \sum_{k=2}^n \mu^{(j)}_k b'_k \right) \\
+ &= \left( \sum_{k=2}^n \mu^{(j)}_k a_{1k} \right)b_1 + \tilde{f}\left( b_j \right).
+\end{align*}
+Für alle $2 \leq j \leq n$ setzen wir $c_{1j} \coloneqq \sum_{k=2}^n \mu^{(j)}_k a_{1k}$. Da $\tilde{f}(b_j) = \sum_{i=2}^j c_{ij} b_i$ (für alle $2 \leq j \leq n$) erhalten wir damit, dass
+\[
+ f(b_j)
+ = c_{1j} b_1 + \sum_{i=2}^j c_{ij} b_i
+ = \sum_{i=1}^j c_{ij} b_i
+ \quad\text{für alle $2 \leq j \leq n$}.
+\]
+Zusammen mit $f(b_1) = \lambda b_1$ erhalten wir damit, dass
+\[
+ \Mat_{\mc{B},\mc{B}}(f)
+ =
+ \begin{pmatrix}
+  \lambda & c_{12} & c_{13} & \cdots & c_{1n}    \\
+  0       & c_{22} & c_{23} & \cdots & c_{2n}    \\
+  0       & 0      & \ddots & \ddots & \vdots    \\
+  \vdots  & \vdots & \ddots & \ddots & c_{n-1,n} \\
+  0       & 0      & \cdots & 0      & c_{nn}
+ \end{pmatrix}.
+\]
+also ist $\Mat_{\mc{B},\mc{B}}(f)$ eine obere Dreiecksmatrix.
+
+
+
+
+
+\subsection{}
+Wir machen zunächst einige grundlegende Beobachtungen über Dreiecksmatrizen und Zeilenstufenform. Hierfür sei $A \in \Mat(n \times n, K)$.
+\begin{enumerate}
+ \item
+  Ist $A$ in Zeilenstufenform, so ist $A$ auch eine obere Dreiecksmatrix.
+ \item
+  Ist andererseits $A$ eine obere Dreiecksmatrix, so ist $A$ nicht notwendigerweise in Zeilenstufenform. Siehe etwa
+  \[
+   \begin{pmatrix}
+    0 & 1 & 1 \\
+    0 & 1 & 1 \\
+    0 & 0 & 1
+   \end{pmatrix}.
+  \]
+ \item
+  Ist $A = (a_{ij})_{1 \leq i,j \leq n}$ eine obere Dreiecksmatrix, also $a_{ij} = 0$ für alle $1 \leq j < i \leq n$, so ist genau dann $\rang(A) = n$, bzw.\ äquivalent $\ker(A) = \{0\}$, wenn die Diagonaleinträge von $A$ alle verschieden von Null sind, also $a_{ii} \neq 0$ für alle $1 \leq i \leq n$.
+  
+  Ist nämlich $a_{ii} \neq 0$ für alle $1 \leq i \leq n$, so ist $A$ tatsächlich in Zeilenstufenform. Da $a_{nn} \neq 0$ hat $A$ keine Nullzeilen, und somit $\rang(A) = n$.
+  
+  Gibt es andererseits ein $1 \leq k \leq n$ mit $a_{kk} = 0$, betrachten wir das homogene lineare Gleichungsystem
+  \begin{equation}\label{eqn: linear equation system}
+   A \cdot \vect{x_1 \\ \vdots \\ x_{k-1} \\ x_k \\ 0 \\ \vdots \\ 0} = 0
+  \end{equation}
+  Dieses ist ein linearen Gleichungssystem in den $k$ Variablen $x_1, \dotsc, x_k$. Betrachten wir die $(k+1)$-te bis $n$-te Zeilen von \eqref{eqn: linear equation system}, so sind diese $0$, da $A$ eine obere Dreiecksmatrix ist. Betrachten wir die $k$-te Zeile von \eqref{eqn: linear equation system}, so ist diese $a_{kk} x_k = 0$; da $a_{kk} = 0$ ist auch diese Zeile $0$. Also ist \eqref{eqn: linear equation system} ein homogenes LGS in $k$ Variablen und $k-1$ Gleichungen. Also hat \eqref{eqn: linear equation system} nicht-triviale Lösungen. Ist $(y_1, \dotsc, y_k)^T \in K^k$ eine nichttriviale Lösung des homogenen LGS \eqref{eqn: linear equation system}, so ist $(y_1, \dotsc, y_k, 0, \dotsc, 0)^T \in K^n$ eine Lösung des homogenen LGS $A \cdot x = 0$. Somit ist $\ker(A) \neq \{0\}$, also $\rang(A) < n$.
+\end{enumerate}
+
+Es sei nun $A = (a_{ij})_{1 \leq i,j \leq n}$ eine obere Dreiecksmatrix. Ein Skalar $\lambda \in K$ ist genau dann ein Eigenwert von $A$, falls $\ker(A - \lambda I) \neq \{0\}$, also $\rang(A - \lambda I) < n$. Da $A$ eine obere Dreiecksmatrix ist, ist auch $A - \lambda I$ eine obere Dreiecksmatrix, wobei die Diagonaleinträge von $A - \lambda I$ genau $a_{11} - \lambda, \dotsc, a_{nn} - \lambda$. Deshalb ist, wie oben gezeigt, $\rang(A - \lambda I) < n$ genau dann wenn $a_{ii} - \lambda = 0$ für ein $1 \leq i \leq n$, also genau dann, wenn $\lambda = a_{ii}$ für ein $1 \leq i \leq n$. Anders gesagt: $\lambda$ ist genau dann ein Eigenwert von $A$, falls $\lambda$ ein Diagonaleintrag von $A$ ist.
+
+\begin{bem}
+ Die Aussage lässt sich sehr kurz mit der Hilfe des charakteristischen Polynoms lösen: Die Determinante einer oberen Dreiecksmatrix ist das Produkt ihrer Diagonaleinträge. Die Diagonaleinträge von $TI - A$ sind $T - a_{11}, \dotsc, T - a_{nn}$, weshalb
+ \[
+  \chi_A(T)
+  = \det(TI - A)
+  = (T - a_{11})(T - a_{22}) \dotsm (T - a_{nn}).
+ \]
+ Da die Eigenwerte von $A$ genau die Nullstellen des charakteristischen Polynoms $\chi_A(T)$ sind, sind genau $a_{11}, \dotsc, a_{nn}$ die Eigenwerte von $A$.
+\end{bem}
+
+
+
+
+
+
+\subsection{}
+Angenommen, $0$ ist der einzige Eigenwert von $f$. Wie im ersten Aufgabenteil gezeigt gibt es eine Basis $\mc{B} = (b_1, \dotsc, b_n)$ von $V$, wobei $n = \dim(V)$, so dass $\Mat_{\mc{B},\mc{B}}(f)$ eine obere Dreiecksmatrix ist, also
+\[
+ \Mat_{\mc{B},\mc{B}}(f)
+ =
+ \begin{pmatrix}
+  a_{11} & a_{12} & \cdots & a_{1n}    \\
+  0      & \ddots & \ddots & \vdots    \\
+  \vdots & \ddots & \ddots & a_{n-1,n} \\
+  0      & \cdots & 0      & a_{nn}
+ \end{pmatrix}.
+\]
+Wie im zweiten Aufgabenteil gezeigt sind die Diagonaleinträge $a_{11}, \dotsc, a_{nn}$ genau die Eigenwerte von $\Mat_{\mc{B},\mc{B}}(f)$, also von $f$. Da $0$ der einzige Eigenwert von $f$ ist, erhalten wir, dass $a_{11} = \dotsb = a_{nn} = 0$. Also ist
+\[
+ \Mat_{\mc{B},\mc{B}}(f)
+ =
+ \begin{pmatrix}
+  0      & a_{12} & \cdots & a_{1,n}    \\
+  0      & \ddots & \ddots & \vdots    \\
+  \vdots & \ddots & \ddots & a_{n-1,n} \\
+  0      & \cdots & 0      & 0
+ \end{pmatrix}.
+\]
+bereits eine \emph{echte obere Dreickesmatrix}.
+
+Wir zeigen per Induktion über $k$, dass dass $f^k(b_\ell) = 0$ für alle $1 \leq \ell \leq k \leq n$. Für den Fall $k = n$ ergibt sich, dass $f^n(b_\ell) = 0$ für alle $1 \leq \ell \leq n$. Da $\mc{B}$ eine Basis von $f$ ist, ist dann bereits $f^n(v) = 0$ für alle $v \in \Ell(\mc{B}) = V$, also $f^n = 0$.
+
+\begin{is}
+ Für $k = 1$ ist $f^k(b_1) = 0$, da in der erste Spalte von $\Mat_{\mc{B},\mc{B}}(f)$ alle Einträge null sind.
+\end{is}
+\begin{iv}
+ Es sei $1 \leq k < n$ mit $f^k(b_\ell) = 0$ für alle $1 \leq l \leq k$.
+\end{iv}
+\begin{is}
+ Für alle $1 \leq \ell < k+1$ ist
+ \[
+  f^{k+1}(b_\ell)
+  = f(f^k(b_\ell))
+  = f(0)
+  = 0.
+ \]
+ Zudem ist $f(b_{k+1}) = \sum_{\ell=1}^k a_{\ell,k+1} b_\ell$ (die Summe geht nur bis $k$, da der $(k+1)$-te Diagonaleintrag von $\Mat_{\mc{B},\mc{B}}(f)$ genau $0$ ist) und somit
+ \[
+  f^{k+1}(b_{k+1})
+  = f^k(f(b_{k+1})
+  = f^k\left( \sum_{\ell=1}^k a_{\ell,k+1} b_\ell \right)
+  = \sum_{\ell=1}^k a_{\ell,k+1} \underbrace{f^k(b_\ell)}_{=0}
+  = 0.
+ \]
+ Also ist $f^{k+1}(b_\ell) = 0$ für alle $1 \leq \ell \leq k+1$.
+\end{is}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
