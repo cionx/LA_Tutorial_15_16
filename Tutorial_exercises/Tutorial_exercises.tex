@@ -1,0 +1,197 @@
+\documentclass[a4paper,9pt]{extarticle}
+%\documentclass[a4paper,10pt]{scrartcl}
+
+\usepackage{../generalstyle}
+\usepackage{specificstyle}
+
+\setromanfont[Mapping=tex-text]{Linux Libertine O}
+% \setsansfont[Mapping=tex-text]{DejaVu Sans}
+% \setmonofont[Mapping=tex-text]{DejaVu Sans Mono}
+
+\title{}
+\author{Jendrik Stelzner}
+\date{}
+
+\begin{document}
+%\maketitle
+
+
+
+
+
+\section{}
+Es seien $A_1, \dotsc, A_m \in \Mat(n \times n, K)$ für $m \geq 1$ und $A \coloneqq A_1 \dotsm A_m$. Zeigen Sie, dass $A$ genau dann invertierbar ist, wenn $A_i$ für alle $1 \leq i \leq m$ invertierbar ist.
+
+
+
+
+
+\section{}
+Es sei $A \in \Mat(3 \times 3, \Qbb)$ mit
+\[
+ A =
+ \begin{pmatrix*}[r]
+  -2 &  2 &  1 \\
+  -4 &  4 &  2 \\
+   6 & -6 & -3
+ \end{pmatrix*}.
+\]
+
+\subsection{}
+Geben Sie $B \in \Mat(3 \times 1, \Qbb)$ und $C \in \Mat(1 \times 3, \Qbb)$ mit $A = B C$.
+
+\subsection{}
+Berechnen Sie $A^{2016}$.
+
+
+
+
+
+\section{}
+Es seien $U$, $V$ und $W$ $K$-Vektorräume, $f \colon U \to V$ ein Monomorphismus und $g \colon V \to W$ ein Epimorphismus, und es gelte $\im f = \ker g$. Zeigen Sie, dass
+\[
+ \dim V = \dim U + \dim W.
+\]
+
+
+
+
+
+\section{}
+Es sei $V$ ein $K$-Vektorraum. Zeigen Sie, dass $\Ell(K,V) \cong V$, indem Sie einen entsprechenden Isomorphismus angeben.
+
+
+
+
+
+\section{}
+Berechnen Sie in $\Mat(2 \times 2, \Cbb)$ das Produkt
+\[
+ \begin{pmatrix}
+   1 & a \\
+   0 & 1
+ \end{pmatrix}
+ \cdot
+ \begin{pmatrix}
+  1 & b \\
+  0 & 1
+ \end{pmatrix}
+ \quad
+ \text{mit $a,b \in \Cbb$}.
+\]
+Bestimmen Sie anschließend alle $a \in \Cbb$ für die
+\[
+  \begin{pmatrix}
+   1 & 1+2i \\
+   0 & 1
+ \end{pmatrix}^2
+  \begin{pmatrix}
+   1 & -3i \\
+   0 &  1
+ \end{pmatrix}^5
+  \begin{pmatrix}
+   1 & a \\
+   0 & 1
+ \end{pmatrix}^2
+  \begin{pmatrix}
+   1 & 1-i \\
+   0 & 1
+ \end{pmatrix}^3
+  \begin{pmatrix}
+   1 & -3+i \\
+   0 &  1
+ \end{pmatrix}^4
+ =
+ \begin{pmatrix}
+  1 & 1 \\
+  0 & 1
+ \end{pmatrix}.
+\]
+
+
+
+
+
+\section{}
+Es sei
+\[
+ V = \{ (a_n)_{n \in \Zbb} \mid \text{$a_n \in \Rbb$ für alle $n \in \Zbb$}\} = \Rbb^\Zbb
+\]
+der reelle Vektorraum der beidseitigen Folgen; die Addition und Skalarmultiplikation of $V$ erfolgen punktweise, d.h.\ für alle $(a_n)_{n \in \Zbb}, (b_n)_{n \in \Zbb} \in V$ und $\lambda \in \Rbb$ ist
+\[
+ (a_n)_{n \in \Zbb} + (b_n)_{n \in \Zbb} = (a_n + b_n)_{n \in \Zbb}
+ \quad\text{und}\quad
+ \lambda \cdot (a_n)_{n \in \Zbb} = (\lambda a_n)_{n \in \Zbb}.
+\]
+Ferner sei
+\[
+ R \colon V \to V, \quad (a_n)_{n \in \Zbb} \mapsto (a_{n-1})_{n \in \Zbb}
+\]
+der \emph{Rechtsshift}.
+
+\subsection{}
+Zeigen Sie, dass $R$ ein Automorphismus von $V$ ist und geben Sie $R^{-1}$ an.
+
+\subsection{}
+Bestimmen Sie, ob $R$ einen Eigenwert hat, und geben Sie gegebenenfalls einen solchen Eigenwert sowie einen zugehörigen Eigenvektor an.
+
+\subsection*{d*)}
+Bestimmen Sie alle Eigenwerte von $R$, sowie die jeweils zugehörigen Eigenräume.
+
+
+
+
+
+\section{}
+Die \emph{Spur} einen quadratischen Matrix $A \in \Mat(n \times n, K)$ ist die Summe ihrer Diagonaleinträge, d.h.
+\[
+ \spur(A) = \sum_{i=1}^n A_{ii}.
+\]
+
+\subsection{}
+Zeigen Sie, dass die Abbildung $\spur \colon \Mat(n \times n, K) \to \Mat(n \times n, K)$ $K$-linear ist.
+
+\subsection{}
+Zeigen Sie für alle $A, B \in \Mat(n \times n, K)$ die Gleichheit
+\[
+ \spur(AB) = \spur(BA).
+\]
+
+\subsection{}
+Folgern Sie für alle $A \in \Mat(n \times n, K)$ und $S \in \GL_n(K)$ die Gleichheit
+\[
+ \spur(SAS^{-1}) = \spur(A).
+\]
+
+\subsection{}
+Folgern Sie: Ist $V$ ein $n$-dimensionaler $K$-Vektorraum, $n \geq 1$ und $f \colon V \to V$ ein Endomorphismus, so gilt für je zwei Basen $\mc{B}$ und $\mc{C}$ von $V$ die Gleichheit
+\[
+ \spur(\Mat_{\mc{B},\mc{B}}(f)) = \spur(\Mat_{\mc{C},\mc{C}}(f)).
+\]
+(Man bezeichnet den obigen Ausdruck als die Spur von $f$ und schreibt $\spur(f)$.)
+
+\subsection{}
+Es sei
+\[
+ \mathfrak{sl}_n(K) \coloneqq \{A \in \Mat(n \times n, K) \mid \spur A = 0\}.
+\]
+Zeigen Sie, das $\mathfrak{sl}_n(K) \subseteq \Mat(n \times n, K)$ ein $(n^2-1)$-dimensionaler Untervektorraum von $\Mat(n \times n, K)$ ist.
+
+\subsection{}
+Es sei $K$ ein algebraisch abgeschlossener Körper und $A \in \Mat(2 \times 2, K)$ habe die beiden Eigenwerte $\lambda_1, \lambda_2 \in K$. Zeigen Sie, dass $\det(A) = \lambda_1 \lambda_2$ und $\spur(A) = \lambda_1 + \lambda_2$. Folgern Sie, dass für das charakteristische Polynom von $A$ die Gleichheit
+\[
+ \chi_A(T) = T^2 - \spur(A) T + \det(A)
+\]
+gilt. (\emph{Hinweis}: Nutzen Sie, dass $A$ konjugiert zu einer oberen Dreiecksmatrix ist.)
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
