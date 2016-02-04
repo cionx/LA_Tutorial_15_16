@@ -20,7 +20,7 @@
 
 
 \section{}
-Es seien $A_1, \dotsc, A_m \in \Mat(n \times n, K)$ für $m \geq 1$ und $A \coloneqq A_1 \dotsm A_m$. Zeigen Sie, dass $A$ genau dann invertierbar ist, wenn $A_i$ für alle $1 \leq i \leq m$ invertierbar ist.
+Für $m \geq 1$ seien $A_1, \dotsc, A_m \in \Mat(n \times n, K)$ und es sei $A \coloneqq A_1 \dotsm A_m$. Zeigen Sie, dass $A$ genau dann invertierbar ist, wenn $A_i$ für alle $1 \leq i \leq m$ invertierbar ist.
 
 
 
@@ -38,7 +38,7 @@ Es sei $A \in \Mat(3 \times 3, \Qbb)$ mit
 \]
 
 \subsection{}
-Geben Sie $B \in \Mat(3 \times 1, \Qbb)$ und $C \in \Mat(1 \times 3, \Qbb)$ mit $A = B C$.
+Geben Sie $B \in \Mat(3 \times 1, \Qbb)$ und $C \in \Mat(1 \times 3, \Qbb)$ mit $A = B C$ an.
 
 \subsection{}
 Berechnen Sie $A^{2016}$.
@@ -52,13 +52,6 @@ Es seien $U$, $V$ und $W$ $K$-Vektorräume, $f \colon U \to V$ ein Monomorphismu
 \[
  \dim V = \dim U + \dim W.
 \]
-
-
-
-
-
-\section{}
-Es sei $V$ ein $K$-Vektorraum. Zeigen Sie, dass $\Ell(K,V) \cong V$, indem Sie einen entsprechenden Isomorphismus angeben.
 
 
 
@@ -113,11 +106,18 @@ Bestimmen Sie anschließend alle $a \in \Cbb$ für die
 
 
 \section{}
+Es sei $V$ ein $K$-Vektorraum. Zeigen Sie, dass $\Ell(K,V) \cong V$, indem Sie einen entsprechenden Isomorphismus angeben.
+
+
+
+
+
+\section{}
 Es sei
 \[
  V = \{ (a_n)_{n \in \Zbb} \mid \text{$a_n \in \Rbb$ für alle $n \in \Zbb$}\} = \Rbb^\Zbb
 \]
-der reelle Vektorraum der beidseitigen Folgen; die Addition und Skalarmultiplikation of $V$ erfolgen punktweise, d.h.\ für alle $(a_n)_{n \in \Zbb}, (b_n)_{n \in \Zbb} \in V$ und $\lambda \in \Rbb$ ist
+der reelle Vektorraum der beidseitigen Folgen; die Addition und Skalarmultiplikation von $V$ erfolgen punktweise, d.h.\ für alle $(a_n)_{n \in \Zbb}, (b_n)_{n \in \Zbb} \in V$ und $\lambda \in \Rbb$ ist
 \[
  (a_n)_{n \in \Zbb} + (b_n)_{n \in \Zbb} = (a_n + b_n)_{n \in \Zbb}
  \quad\text{und}\quad
@@ -130,10 +130,10 @@ Ferner sei
 der \emph{Rechtsshift}.
 
 \subsection{}
-Zeigen Sie, dass $R$ ein Automorphismus von $V$ ist und geben Sie $R^{-1}$ an.
+Zeigen Sie, dass $R$ ein Automorphismus von $V$ ist, und geben Sie $R^{-1}$ an.
 
 \subsection{}
-Bestimmen Sie, ob $R$ einen Eigenwert hat, und geben Sie gegebenenfalls einen solchen Eigenwert sowie einen zugehörigen Eigenvektor an.
+Bestimmen Sie, ob $R$ einen Eigenwert hat. Geben Sie gegebenenfalls einen solchen Eigenwert sowie einen zugehörigen Eigenvektor an.
 
 \subsection*{d*)}
 Bestimmen Sie alle Eigenwerte von $R$, sowie die jeweils zugehörigen Eigenräume.
@@ -149,7 +149,7 @@ Die \emph{Spur} einen quadratischen Matrix $A \in \Mat(n \times n, K)$ ist die S
 \]
 
 \subsection{}
-Zeigen Sie, dass die Abbildung $\spur \colon \Mat(n \times n, K) \to \Mat(n \times n, K)$ $K$-linear ist.
+Zeigen Sie, dass die Abbildung $\spur \colon \Mat(n \times n, K) \to K$ linear ist.
 
 \subsection{}
 Zeigen Sie für alle $A, B \in \Mat(n \times n, K)$ die Gleichheit
@@ -164,18 +164,18 @@ Folgern Sie für alle $A \in \Mat(n \times n, K)$ und $S \in \GL_n(K)$ die Gleic
 \]
 
 \subsection{}
-Folgern Sie: Ist $V$ ein $n$-dimensionaler $K$-Vektorraum, $n \geq 1$ und $f \colon V \to V$ ein Endomorphismus, so gilt für je zwei Basen $\mc{B}$ und $\mc{C}$ von $V$ die Gleichheit
+Folgern Sie: Ist $V$ ein $n$-dimensionaler $K$-Vektorraum mit $n \geq 1$ und $f \colon V \to V$ ein Endomorphismus, so gilt für je zwei Basen $\mc{B}$ und $\mc{C}$ von $V$ die Gleichheit
 \[
  \spur(\Mat_{\mc{B},\mc{B}}(f)) = \spur(\Mat_{\mc{C},\mc{C}}(f)).
 \]
-(Man bezeichnet den obigen Ausdruck als die Spur von $f$ und schreibt $\spur(f)$.)
+(Man bezeichnet den obigen Ausdruck als die Spur von $f$ und schreibt für diesen $\spur(f)$.)
 
 \subsection{}
 Es sei
 \[
- \mathfrak{sl}_n(K) \coloneqq \{A \in \Mat(n \times n, K) \mid \spur A = 0\}.
+ \mathfrak{sl}_n(K) \coloneqq \{A \in \Mat(n \times n, K) \mid \spur(A) = 0\}.
 \]
-Zeigen Sie, das $\mathfrak{sl}_n(K) \subseteq \Mat(n \times n, K)$ ein $(n^2-1)$-dimensionaler Untervektorraum von $\Mat(n \times n, K)$ ist.
+Zeigen Sie, dass $\mathfrak{sl}_n(K) \subseteq \Mat(n \times n, K)$ ein $(n^2-1)$-dimensionaler Untervektorraum von $\Mat(n \times n, K)$ ist.
 
 \subsection{}
 Es sei $K$ ein algebraisch abgeschlossener Körper und $A \in \Mat(2 \times 2, K)$ habe die beiden Eigenwerte $\lambda_1, \lambda_2 \in K$. Zeigen Sie, dass $\det(A) = \lambda_1 \lambda_2$ und $\spur(A) = \lambda_1 + \lambda_2$. Folgern Sie, dass für das charakteristische Polynom von $A$ die Gleichheit
