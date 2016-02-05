@@ -1,0 +1,207 @@
+\documentclass[a4paper,10pt]{exam}
+%\documentclass[a4paper,10pt]{scrartcl}
+
+\usepackage{../generalstyle}
+\usepackage{specificstyle}
+
+\setromanfont[Mapping=tex-text]{Linux Libertine O}
+% \setsansfont[Mapping=tex-text]{DejaVu Sans}
+% \setmonofont[Mapping=tex-text]{DejaVu Sans Mono}
+
+\title{Multiple Choice}
+\author{Jendrik Stelzner}
+\date{\today}
+
+\begin{document}
+\maketitle
+\begin{questions}
+
+
+
+
+
+%%% MATRICES %%%
+
+\question Es sei $K$ ein Körper. Entscheiden Sie, welche der folgenden Aussagen für beliebige $m,n \in \Nbb$ mit $n,m \geq 1$ und Matrizen $A \in \Mat(m \times n, K)$ und $B \in \Mat(n \times m, K)$ gelten.
+\begin{checkboxes}
+ \choice
+  Es ist $(AB)^T = A^T B^T$.
+ \choice
+  Falls $AB = \mathbbm{1}_m$, so ist $BA = \mathbbm{1}_n$.
+ \choice
+  Ist $AB$ invertierbar, so ist auch $BA$ invertierbar.
+ \choice
+  Ist $n = m$ und $AB = \mathbbm{1}_n$, so ist auch $BA = \mathbbm{1}_n$.
+\end{checkboxes}
+
+
+
+
+
+%%% LINEAR MAPS %%%
+
+
+
+
+
+%%% LINEAR INDEPENDENCE AND GENERATING SETS %%%
+
+\question Entscheiden Sie, welche der folgenden Aussagen für beliebige $K$-Vektorräume $V$ und $W$, beliebige Teilmengen $S \subseteq V$ und $T \subseteq W$ und eine beliebige lineare Abbildung $f \colon V \to W$ gelten.
+\begin{checkboxes}
+ \choice
+  Ist $S$ linear unabhängig in $V$, so ist $f(S)$ linear unabhängig in $W$.
+ \choice
+  Ist $T$ linear unabhängig in $W$, so ist $f^{-1}(T)$ linear unabhängig in $V$.
+ \choice
+  Ist $S$ ein Erzeugendensystem von $V$, so ist $f(S)$ ein Erzeugendensystem von $W$.
+ \choice
+  Ist $T$ ein Erzeugendensystem von $W$, so ist $f^{-1}(T)$ ein Erzeugendensystem von $V$.
+\end{checkboxes}
+
+\question Entscheiden Sie, welche der folgenden Aussagen für einen beliebigen $K$-Vektorraum $V$ und beliebige Teilmengen $S, T \subseteq V$ gelten:
+
+Sind $S$ und $T$ linear unabhängig,
+\begin{checkboxes}
+ \choice
+  so ist auch $S \cap T$ linear unabhängig.
+ \choice
+  so ist auch $S \cup T$ linear unabhängig.
+ \choice
+  so ist auch $S + T = \{s + t \mid s \in S, t \in T\}$ linear unabhängig.
+\end{checkboxes}
+
+Sind $S$ und $T$ Erzeugendensysteme von $V$,
+\begin{checkboxes}
+ \choice
+  so ist auch $S \cap T$ ein Erzeugendensystem von $V$.
+ \choice
+  so ist auch $S \cup T$ ein Erzeugendensystem von $V$.
+ \choice
+  so ist auch $S + T = \{s + t \mid s \in S, t \in T\}$ ein Erzeugendensystem von $V$.
+\end{checkboxes}
+
+
+
+
+
+%%% LINEAR SUBSPACES %%%
+
+\question Entscheiden Sie, welche der folgenden Aussagen für einen beliebigen $K$-Vektorraum $V$ und beliebige Untervektorräume $U,W \subseteq V$ gelten.
+\begin{checkboxes}
+ \choice
+  Der Schnitt $U \cap W$ ein Untervektorraum von $V$.
+ \choice
+  Die Vereinigung $U \cup W$ ein Untervektorraum von $V$.
+ \choice
+  Die mengentheoretische Differenz $U \setminus W$ ist ein Untervektorraum von $V$.
+ \choice
+  Die Summe $U + W = \{u + w \mid u \in U, w \in W\}$ ist ein Untervektorraum von $V$.
+ \choice
+  Die Differenz $U - W = \{u - w \mid u \in U, w \in W\}$ ist ein Untervektorraum von $V$.
+\end{checkboxes}
+
+
+\question Entscheiden Sie, ob die folgenden Mengen jeweils ein Untervektorraum des $\Rbb^2$, bzw.\ $\Rbb^3$ sind.
+\begin{checkboxes}
+ \choice
+  $\{(x,y) \in \Rbb^2 \mid y^2 = x^2\}$
+ \choice
+  $\{(x,y) \in \Rbb^2 \mid 3x+y = 1-2y\}$
+ \choice
+  $\{(x,y) \in \Rbb^3 \mid 2x+5y = 0, y = x^2, -x-3y = 0\}$
+ \choice
+  $\{(x,y,z) \in \Rbb^3 \mid 2x+3y = 3x+5z = 5y+7z = x-y+z\}$
+ \choice
+  $\{(x,y,z) \in \Rbb^3 \mid  x+y = z, x+z = y, y+z = x\}$
+ \choice
+  $\{(x,y,z) \in \Rbb^3 \mid xy = z\}$
+\end{checkboxes}
+
+
+\question Entscheiden Sie, in welchen Fällen die Menge
+\[
+  \{(x,y) \in \Rbb^2 \mid x^2 + y^2 = r\}
+\]
+ein Untervektorraum von $\Rbb^2$ ist.
+\begin{checkboxes}
+ \choice
+  Für alle $r \geq 0$.
+ \choice
+  Für alle $r > 0$.
+ \choice
+  Für alle $r \leq 0$.
+ \choice
+  Für alle $r < 0$.
+ \choice
+  Für $r = 0$.
+ \choice
+  Für $r \in \{1,0,-1\}$.
+\end{checkboxes}
+
+
+
+
+
+
+%%% DIMENSIONS %%%
+
+\question Entscheiden Sie, welche der folgenden Aussagen für beliebige endlichdimensionale $K$-Vektorräume $V$ und $W$, einen beliebigen Untervektorraum $U \subseteq V$ und eine beliebige lineare Abbildung $f \colon V \to W$ gelten.
+\begin{checkboxes}
+ \choice
+  Ist $S \subseteq V$ ein Erzeugendensystem von $V$, so dass $f(S)$ kein Erzeugendensystem von $W$ ist, so ist $\dim W \leq \dim U$.
+ \choice
+  Ist $U \cap \ker f = \{0\}$, so ist $\dim U \leq \dim W$.
+ \choice
+  Ist $\ker f \subseteq U$, so ist $\dim V \leq \dim U + \dim W$.
+ \choice
+  Ist $V = U + \ker f = \{u + v \mid u \in U, v \in \ker f\}$, so ist $\dim \im f \leq \dim U$.
+\end{checkboxes}
+
+
+%%% THE DUAL SPACE AND THE DUAL MAP %%%
+
+\question Entscheiden Sie, welche der folgenden Aussagen für beliebige $K$-Vektorräume $U$, $V$ und $W$ und beliebige lineare Abbildungen $f, f_1, f_2, \colon U \to V$ und $g \colon V \to W$ gelten.
+\begin{checkboxes}
+ \choice
+  Es ist $(g \circ f)^* = g^* \circ f^*$.
+ \choice
+  Es ist $(f_1 + f_2)^* = f_1^* + f_2^*$.
+ \choice
+  Ist $f_1^* \circ g^* = f_2^* \circ g^*$, so ist $f_1 = f_2$.
+ \choice
+  Ist $U = V$ und $f$ ein Isomorphismus, so ist auch $f^*$ ein Isomorphismus.
+ \choice
+  Ist $\ker f_1 = \ker f_2$, so ist $f_1^* = f_2^*$.
+\end{checkboxes}
+
+
+
+%%% EIGENVALUES, EIGENVECTORS AND DIAGONALIZABILITY %%%
+
+\question Entscheiden Sie, welche der folgenden Aussagen für einen beliebigen endlichdimensionalen $K$-Vektorraum $V$ und einen beliebigen Endomorphismus $f \colon V \to V$ gelten.
+\begin{checkboxes}
+ \choice
+  Sind $\lambda, \mu \in K$ Eigenwerte von $f$, so ist auch $\lambda + \mu$ ein Eigenwert von $K$.
+ \choice
+  Ist $\lambda$ ein Eigenwert von $f$, so ist $\lambda$ auch ein Eigenwert von $f^*$.
+ \choice
+  Ist $f$ ein Isomorphismus und $\lambda$ ein Eigenwert von $f$, so ist $\lambda$ auch ein Eigenwert von $f^{-1}$.
+ \choice
+  Ist $f$ ein Isomorphismus und $v \in V$ ein Eigenvektor von $f$, so ist $v$ auch ein Eigenvektor von $f^{-1}$.
+ \choice
+  Für jedes $\lambda \in K$ ist die Teilmenge
+  \[
+   V_\lambda = \{v \in V \mid \text{$v$ ist ein Eigenvektor von $f$ zum Eigenwert $\lambda$}\}
+  \]
+  ein Untervektorraum von $V$.
+ \item
+  Sind $v, w \in V$ Eigenvektoren von $f$, so ist auch $v + w$ ein Eigenvektor von $f$.
+\end{checkboxes}
+
+
+
+
+
+
+\end{questions}
+\end{document}
