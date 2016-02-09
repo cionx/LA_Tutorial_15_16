@@ -1,0 +1,417 @@
+\documentclass[a4paper,10pt]{article}
+%\documentclass[a4paper,10pt]{scrartcl}
+
+\usepackage{../generalstyle}
+\usepackage{specificstyle}
+
+\setromanfont[Mapping=tex-text]{Linux Libertine O}
+% \setsansfont[Mapping=tex-text]{DejaVu Sans}
+% \setmonofont[Mapping=tex-text]{DejaVu Sans Mono}
+
+\title{Lösungen zu den \\ An\-we\-sen\-heits\-auf\-ga\-ben \\ vom 3.\ Februar 2016}
+\author{Jendrik Stelzner}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+
+
+
+
+\section{}
+Es gilt
+\begin{align*}
+ \text{$A_1 \dotsm A_m$ ist invertierbar}
+ &\iff \det(A_1 \dotsm A_m) \neq 0 \\
+ &\iff \det(A_1) \dotsm \det(A_m) \neq 0 \\
+ &\iff \text{für alle $1 \leq i \leq m$ ist $\det(A_i) \neq 0$} \\
+ &\iff \text{für alle $1 \leq i \leq m$ ist $A_i$ invertierbar}.
+\end{align*}
+
+Die Aussage lässt sich auch per Induktion zeigen: Zunächst bemerken wir, dass wenn $A_i$ für alle $1 \leq i \leq m$ invertierbar ist, auch $A$ invertierbar ist, da dann
+\[
+ (A_m^{-1} \dotsm A_1^{-1}) A
+ = A_m^{-1} \dotsm A_1^{-1} A_1 \dotsm A_m
+ = \mathbbm{1}_n.
+\]
+Nun können wir Induktion nutzen: Für $m = 1$ ist die Aussage klar. Für $m = 2$ ist
+\[
+ \mathbbm{1}_n
+ = (A_1 A_2)^{-1} \cdot (A_1 A_2)
+ = ((A_1 A_2)^{-1} A_1) \cdot A_2,
+\]
+also ist $A_2$ invertierbar (mit $A_2^{-1} = (A_1 A_2)^{-1} A_1$). Da $A_1 A_2$ und $A_2^{-1}$ invertierbar sind ist auch $A_1 = (A_1 A_2) A_2^{-1}$ invertierbar.
+
+Der Induktionsschrit $m \to m+1$ verläuft ähnlich: Da
+\[
+ \mathbbm{1}_n
+ = (A_1 \dotsm A_{m+1})^{-1} \cdot (A_1 \dotsm A_{m+1})
+ = ((A_1 \dotsm A_{m+1})^{-1} A_1 \dotsm A_m) \cdot A_{m+1}
+\]
+ist $A_{m+1}$ invertierbar (mit $A_{m+1}^{-1} = (A_1 \dotsm A_{m+1})^{-1} A_1 \dotsm A_m$). Da $A_{m+1}$ und $A_1 \dotsm A_{m+1}$ invertierbar sind ist auch $A_1 \dotsm A_m = (A_1 \dotsm A_m A_{m+1}) A_{m+1}^{-1}$ invertierbar. Nach Induktionsvoraussetzung sind deshalb auch $A_1, \dotsc, A_m$ invertierbar.
+
+
+
+
+
+\section{}
+
+
+\subsection{}
+Für entsprechend große Matrizen
+\[
+ B = \begin{pmatrix} b_1 \\ b_2 \\ b_3 \end{pmatrix}
+ \quad\text{and}\quad
+ C = \begin{pmatrix} c_1 & c_2 & c_3 \end{pmatrix}
+\]
+ist die $i$-te Spalte von $BC$ das $b_j$-fache von $C$. Durch direktes Hinsehen ergibt sich, dass alle Zeilen von $A$ Vielfache von $\begin{pmatrix} -2 & 2 & 1 \end{pmatrix}$, namlich das $1$-fache, $2$-fache und $(-3)$-fache. Wir wählen deshalb
+\[
+ B = \begin{pmatrix*}[r] 1 \\ 2 \\ -3 \end{pmatrix*}
+ \quad\text{and}\quad
+ C = \begin{pmatrix} -2 & 2 & 1 \end{pmatrix}.
+\]
+Durch direktes Nachrechnen ergibt sich, dass tatsächlich $A = BC$.
+
+
+\subsection{}
+Durch die Assoziativität der Matrixmultiplikation erhalten wir
+\[
+ A^{2016}
+ = (BC)^{2016}
+ = B (CB)^{2015} C.
+\]
+Da $CB = (-1)$ (eine $(1 \times 1)$-Matrix) ist deshalb
+\[
+ A^{2016}
+ = B (-1)^{2015} C
+ = B (-1) C
+ = -BC
+ = -A.
+\]
+
+
+
+
+
+\section{}
+Wegen der Injektivität von $f$ ist die Einschränkung $f \colon U \to \im(f)$ ein Isomorphismus, womit wir $\dim \im(f) = \dim U$ erhalten. Da $g$ surjektiv ist erhalten wir außerdem $\im(g) = W$. Durch die Dimensionsformel erhalten wir nun
+\[
+ \dim V
+ = \dim \ker(g) + \dim \im(g)
+ = \dim \im(f) + \dim \im(g)
+ = \dim U + \dim W.
+\]
+
+
+
+
+
+\section{}
+Für alle $a,b \in \Cbb$ ist
+\[
+ \begin{pmatrix}
+  1 & a \\
+  0 & 1
+ \end{pmatrix}
+ \cdot
+ \begin{pmatrix}
+  1 & b \\
+  0 & 1
+ \end{pmatrix}
+ =
+ \begin{pmatrix}
+  1 & a+b \\
+  0 & 1
+ \end{pmatrix}.
+\]
+Die Multiplikation solcher Matrizen verläuft also durch Addition der oberen rechten Einträge. Für alle $a \in \Cbb$ und $n \in \Nbb$ ist daher insbesondere
+\[
+ \begin{pmatrix}
+  1 & a \\
+  0 & 1
+ \end{pmatrix}^n
+ =
+ \underbrace{
+ \begin{pmatrix}
+  1 & a \\
+  0 & 1
+ \end{pmatrix}
+ \dotsm
+ \begin{pmatrix}
+  1 & a \\
+  0 & 1
+ \end{pmatrix}
+ }_{n}
+ =
+ \begin{pmatrix}
+  1 & na \\
+  0 & 1
+ \end{pmatrix}.
+\]
+Somit ist
+\begin{align*}
+ &\,
+ \begin{pmatrix}
+   1 & 1+2i \\
+   0 & 1
+ \end{pmatrix}^2
+  \begin{pmatrix}
+   1 & -3i \\
+   0 &  1
+ \end{pmatrix}^5
+  \begin{pmatrix}
+   1 & a \\
+   0 & 1
+ \end{pmatrix}^2
+  \begin{pmatrix}
+   1 & 1-i \\
+   0 & 1
+ \end{pmatrix}^3
+  \begin{pmatrix}
+   1 & -3+i \\
+   0 &  1
+ \end{pmatrix}^4 \\
+ &\,=
+ \begin{pmatrix}
+  1 & 2(1+2i)+5(-3i)+2a+3(1-i)+4(-3+i) \\
+  0 & 1
+ \end{pmatrix}
+ =
+ \begin{pmatrix}
+  1 &  2a-7-10i \\
+  0 & 1
+ \end{pmatrix}.
+\end{align*}
+Wir müssen also die Gleichung
+\[
+ 2a-7-10i = 1
+\]
+lösen, wodurch sich $a = 4+5i$ ergibt.
+
+
+
+
+
+\section{}
+Wir betrachten die Abbildung
+\[
+ \Phi \colon \Ell(K,V) \to V, \quad f \mapsto f(1).
+\]
+$\Phi$ ist linear, denn für alle $f,g \in \Ell(K,V)$ und $\lambda \in K$ ist
+\begin{gather*}
+ \Phi(f+g) = (f+g)(1) = f(1) + g(1) = \Phi(f) + \Phi(g)
+\shortintertext{und}
+ \Phi(\lambda f) = (\lambda f)(1) = \lambda f(1) = \lambda \Phi(f).
+\end{gather*}
+$\Phi$ ist injektiv, denn für $f,g \in \Ell(K,V)$ mit $\Phi(f) = \Phi(g)$ ist $f(1) = g(1)$, und somit
+\[
+ f(\lambda)
+ = f(\lambda \cdot 1)
+ = \lambda f(1)
+ = \lambda g(1)
+ = g(\lambda \cdot 1)
+ = g(\lambda)
+ \quad\text{für alle $\lambda \in K$},
+\]
+also $f = g$. $\Phi$ ist auch surjektiv: Für $v \in V$ sei
+\[
+ f_v \colon K \to V, \quad \lambda \mapsto \lambda v.
+\]
+Die Abbildung $f_v$ ist linear, denn für alle $\lambda, \lambda_1, \lambda_2 \in K$ und $\mu \in K$ ist
+\begin{gather*}
+ f(\lambda_1 + \lambda_2)
+ = (\lambda_1 + \lambda_2) v
+ = \lambda_1 v + \lambda_2 v
+ = f_v(\lambda_1) + f_v(\lambda_2)
+\shortintertext{und}
+ f(\mu \lambda)
+ = (\mu \lambda) v
+ = \mu (\lambda v)
+ = \mu f_v(\lambda).
+\end{gather*}
+Da nun $\Phi(f_v) = f_v(1) = 1 \cdot v = v$ ist $v \in \im(\Phi)$.
+
+
+
+
+
+\section{}
+Statt $(a_n)_{n \in \Zbb}$ schreiben wir im Folgenden abkürzend $(a_n)_n$.
+
+\subsection{}
+$R$ ist linear, denn für alle $(a_n)_{n \in \Zbb}, (b_n)_{n \in \Zbb} \in V$ und $\lambda \in \Rbb$ ist
+\begin{gather*}
+ \begin{aligned}
+  R((a_n)_n + (b_n)_n)
+  = R((a_n+b_n)_n)
+  = (a_{n-1}+b_{n-1})_n
+  &= (a_{n-1})_n + (b_{n-1})_n \\
+  &= R((a_n)_{n \in \Zbb}) + R((b_n)_n)
+ \end{aligned}
+\shortintertext{und}
+ R(\lambda (a_n)_n)
+ = R((\lambda a_n)_n)
+ = (\lambda a_{n-1})_n
+ = \lambda (a_{n-1})_n
+ = \lambda R((a_n)_n)
+\end{gather*}
+
+Komplett analog ergibt sich, dass auch der \emph{Linksshift}
+\[
+ L \colon V \to V, \quad (a_n)_n \mapsto (a_{n+1})_n
+\]
+linear ist. Da
+\[
+ R(L((a_n)_n))
+ = R((a_{n+1})_n)
+ = (a_n)_n
+ \quad\text{and}\quad
+ L(R((a_n)_n))
+ = L((a_{n-1})_n)
+ = (a_n)_n
+\]
+ist $R$ bijektiv mit $R^{-1} = L$.
+
+
+\subsection{}
+Für die konstante Folge $(1)_n = (\dotsc,1,1,1,1,1,\dotsc)$ ist $R((1)_n) = (1)_n$. Da $(1)_n \neq 0$ ist $(1)_n$ ein Eigenvektor von $R$ zum Eigenwert $1$. (Man kann auch jede andere konstante Folge wählen, mit Ausnahme der konstanten Nullfolge, die das Nullelement in $V$ ist.)
+
+
+\subsection{}
+Der Eigenraum von $R$ zu $0 \in \Rbb$ ist genau $\ker R$. Da $R$ ein Automorphismus ist, und somit insbesondere injektiv, ist $\ker R = \{0\}$. Also ist $0$ kein Eigenwert von $R$.
+
+Für jedes $\lambda \in \Rbb$ mit $\lambda \neq 0$ zeigen wir, dass $\lambda$ ein Eigenwert von $R$ ist, und geben den entsprechenden eindimensionalen Eigenraum explizit an. Hierfür fixieren wir ein entsprechendes $\lambda$. Dass $(a_n)_n \in V$ ein Eigenvektor von $R$ zum Eigenwert $\lambda$ ist, ist äquivalent dazu, dass
+\[
+ (a_{n-1})_n
+ = R((a_n)_n)
+ = \lambda (a_n)_n
+ = (\lambda a_n)_n,
+\]
+dass also $a_{n-1} = \lambda a_n$ für alle $n \in \Zbb$. Die Folge $(\lambda^{-n})_n = (\dotsc, \lambda^2, \lambda, 1, \lambda^{-1}, \lambda^{-2}, \dotsc) \in V$ ist also ein Eigenvektor zum Eigenwert $\lambda$ (man sieht auch direkt, dass das Verschieben der Folge nach Rechts dem Multiplizieren der Einträge mit $\lambda$ entspricht). Somit ist $\lambda$ ein Eigenwert von $R$.
+
+Ist $(a_n)_n$ ein Eigenvektor zum Eigenwert $\lambda$, so ergibt sich aus $a_{n-1} = \lambda a_n$ für alle $n \in \Zbb$ induktiv, dass $a_n = \lambda^{-n} a_0$ für alle $n \in \Zbb$, also
+\[
+ (a_n)_n = (\lambda^{-n} a_0)_n = a_0 (\lambda^{-n})_n.
+\]
+Somit ist der Eigenraum von $R$ zum Eigenwert $\lambda$ gegeben durch
+\[
+ E_{R,\lambda} = \{a (\lambda^{-n})_n \mid a \in \Rbb\}.
+\]
+Insbesondere ist der Eigenraum eindimensional.
+
+
+
+
+
+\section{}
+
+
+\subsection{}
+Für alle $A, B \in \Mat(n \times n, K)$ und $\lambda \in K$ ist
+\begin{gather*}
+ \spur(A+B)
+ = \sum_{i=1}^n (A+B)_{ii}
+ = \sum_{i=1}^n (A_{ii}+B_{ii})
+ = \left( \sum_{i=1}^n A_{ii} \right) + \left( \sum_{i=1}^n B_{ii} \right)
+ = \spur(A) + \spur(B)
+\intertext{und}
+ \spur(\lambda A)
+ = \sum_{i=1}^n (\lambda A)_{ii}
+ = \sum_{i=1}^n (\lambda A_{ii})
+ = \lambda \sum_{i=1}^n A_{ii}
+ = \lambda \spur(A).
+\end{gather*}
+Also ist $\spur$ linear.
+
+
+\subsection{}
+Für alle $A, B \in \Mat(n \times n, K)$ ist
+\[
+ \spur(AB)
+ = \sum_{i=1}^n (AB)_{ii}
+ = \sum_{i=1}^n \sum_{j=1}^n A_{ij} B_{ji}
+ = \sum_{j=1}^n \sum_{i=1}^n B_{ji} A_{ij}
+ = \sum_{j=1}^n (BA)_{jj}
+ = \spur(BA).
+\]
+
+
+\subsection{}
+Für alle $A \in \Mat(n \times n, K)$ und $S \in \GL_n(K)$ ist nach dem vorherigen Aufgabeneil
+\[
+ \spur(SAS^{-1})
+ = \spur(S (AS^{-1}))
+ = \spur((AS^{-1}) S)
+ = \spur(A S^{-1} S)
+ = \spur(A).
+\]
+
+
+\subsection{}
+Nach dem vorherigen Aufgabenteil ist
+\begin{align*}
+ \spur(\Mat_{\mc{B},\mc{B}}(f))
+ &= \spur(\Mat_{\mc{C},\mc{B}}(\id_V) \Mat_{\mc{C},\mc{C}}(f) \Mat_{\mc{B},\mc{C}}(\id_V)) \\
+ &= \spur(\Mat_{\mc{C},\mc{B}}(\id_V) \Mat_{\mc{C},\mc{C}}(f) \Mat_{\mc{C},\mc{B}}(\id_V)^{-1})
+ = \spur(\Mat_{\mc{C},\mc{C}}(f))
+\end{align*}
+
+
+\subsection{}
+Per Definition ist $\mathfrak{sl}_n(K) = \ker(\spur)$. Also ist $\mathfrak{sl}_n(K)$ ein Untervektorraum von $\Mat(n \times n, K)$. Die lineare Abbildung $\spur \colon \Mat(n \times n, K) \to K$ ist surjektiv, denn für alle $\lambda \in K$ ist
+\[
+ \spur
+ \begin{pmatrix}
+  \lambda &   &        &   &   \\
+          & 0 &        &   &   \\
+          &   & \ddots &   &   \\
+          &   &        & 0 &   \\
+          &   &        &   & 0
+ \end{pmatrix}
+ = \lambda.
+\]
+Also ist $\im(\spur) = K$ und somit
+\begin{align*}
+ \dim \mathfrak{sl}_n(K)
+ &= \dim \ker(\spur)
+ = \dim \Mat(n \times n, K) - \dim \im(\spur) \\
+ &= \dim \Mat(n \times n, K) - \dim K
+ = n^2 - 1.
+\end{align*}
+
+
+\subsection{}
+Es sei $A \in \Mat(2 \times 2, K)$. Da $K$ algebraisch abgeschlossen ist gibt es $S \in \GL_2(K)$ mit
+\[
+ SAS^{-1} =
+ \begin{pmatrix}
+  \lambda_1 & a \\
+  0         & \lambda_2
+ \end{pmatrix}
+\]
+mit $\lambda_1, \lambda_2, a \in K$. Da das charakteristische Polynom, die Determinante und die Spur invariant unter Konjugation sind, ist $\chi_A(T) = \chi_{SAS^{-1}}(T) = (T-\lambda_1)(T-\lambda_2)$ sowie $\det(A) = \det(SAS^{-1}) = \lambda_1 \lambda_2$ und $\spur(A) = \spur(SAS^{-1}) = \lambda_1 + \lambda_2$. Dass $\chi_A(T) = (T-\lambda_1)(T-\lambda_2)$ zeigt, dass $\lambda_1$ und $\lambda_2$ die Eigenwerte von $A$ sind. Damit ist nun
+\[
+ \chi_A(T)
+ = (T-\lambda_1)(T-\lambda_2)
+ = T^2 - (\lambda_1 + \lambda_2)T + \lambda_1 \lambda_2
+ = T^2 - \spur(A)T + \det(A).
+\]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
