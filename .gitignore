@@ -3,7 +3,8 @@
 *.kilepr
 *.log
 *.out
-*.pdf
 *.synctex.gz
 *.tar.gz
 *.toc
+Abgaben_Alyoscha/*
+Weitere_Abgaben/*
