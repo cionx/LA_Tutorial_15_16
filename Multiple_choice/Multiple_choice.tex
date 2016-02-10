@@ -13,190 +13,87 @@
 \date{\today}
 
 \begin{document}
-\maketitle
 \begin{questions}
 
 
 
-
-
-%%% MATRICES %%%
-
-\question Es sei $K$ ein Körper. Entscheiden Sie, welche der folgenden Aussagen für beliebige $m,n \in \Nbb$ mit $n,m \geq 1$ und Matrizen $A \in \Mat(m \times n, K)$ und $B \in \Mat(n \times m, K)$ gelten.
+\question Im Folgenden sei $K$ ein Körper, es seien $n,m \in \Nbb$ mit $n,m \geq 1$, $V$ und $W$ seien $K$-Vektorräume und $f, g \colon V \to W$ seien $K$-linear.
 \begin{checkboxes}
  \choice
-  Es ist $(AB)^T = A^T B^T$.
+  Sind $T_1, T_2, T_3 \subseteq V$, so dass $T_i \cup T_j$ für alle $1 \leq i \neq j \leq 3$ linear unabhängig ist, so ist auch $T_1 \cup T_2 \cup T_3$ linear unabhängig.
  \choice
-  Falls $AB = \mathbbm{1}_m$, so ist $BA = \mathbbm{1}_n$.
+  Ist $f$ ein Isomorphismus, so ist auch die duale Abbildung $f^*$ ein Isomorphismus.
  \choice
-  Ist $AB$ invertierbar, so ist auch $BA$ invertierbar.
+  Ist $A \in \GL_n(K)$, so sind die Potenzen $(A, A^2, A^3, \dotsc, A^{n^2})$ eine Basis von $\Mat(n \times n, K)$.
  \choice
-  Ist $n = m$ und $AB = \mathbbm{1}_n$, so ist auch $BA = \mathbbm{1}_n$.
-\end{checkboxes}
-
-
-
-
-
-%%% LINEAR MAPS %%%
-
-
-
-
-
-%%% LINEAR INDEPENDENCE AND GENERATING SETS %%%
-
-\question Entscheiden Sie, welche der folgenden Aussagen für beliebige $K$-Vektorräume $V$ und $W$, beliebige Teilmengen $S \subseteq V$ und $T \subseteq W$ und eine beliebige lineare Abbildung $f \colon V \to W$ gelten.
-\begin{checkboxes}
+  Ist $\ker f^* = \ker g^*$, so ist $f = g$.
  \choice
-  Ist $S$ linear unabhängig in $V$, so ist $f(S)$ linear unabhängig in $W$.
- \choice
-  Ist $T$ linear unabhängig in $W$, so ist $f^{-1}(T)$ linear unabhängig in $V$.
- \choice
-  Ist $S$ ein Erzeugendensystem von $V$, so ist $f(S)$ ein Erzeugendensystem von $W$.
- \choice
-  Ist $T$ ein Erzeugendensystem von $W$, so ist $f^{-1}(T)$ ein Erzeugendensystem von $V$.
-\end{checkboxes}
-
-\question Entscheiden Sie, welche der folgenden Aussagen für einen beliebigen $K$-Vektorraum $V$ und beliebige Teilmengen $S, T \subseteq V$ gelten:
-
-Sind $S$ und $T$ linear unabhängig,
-\begin{checkboxes}
- \choice
-  so ist auch $S \cap T$ linear unabhängig.
- \choice
-  so ist auch $S \cup T$ linear unabhängig.
- \choice
-  so ist auch $S + T = \{s + t \mid s \in S, t \in T\}$ linear unabhängig.
-\end{checkboxes}
-
-Sind $S$ und $T$ Erzeugendensysteme von $V$,
-\begin{checkboxes}
- \choice
-  so ist auch $S \cap T$ ein Erzeugendensystem von $V$.
- \choice
-  so ist auch $S \cup T$ ein Erzeugendensystem von $V$.
- \choice
-  so ist auch $S + T = \{s + t \mid s \in S, t \in T\}$ ein Erzeugendensystem von $V$.
-\end{checkboxes}
-
-
-
-
-
-%%% LINEAR SUBSPACES %%%
-
-\question Entscheiden Sie, welche der folgenden Aussagen für einen beliebigen $K$-Vektorraum $V$ und beliebige Untervektorräume $U,W \subseteq V$ gelten.
-\begin{checkboxes}
- \choice
-  Der Schnitt $U \cap W$ ein Untervektorraum von $V$.
- \choice
-  Die Vereinigung $U \cup W$ ein Untervektorraum von $V$.
- \choice
-  Die mengentheoretische Differenz $U \setminus W$ ist ein Untervektorraum von $V$.
- \choice
-  Die Summe $U + W = \{u + w \mid u \in U, w \in W\}$ ist ein Untervektorraum von $V$.
- \choice
-  Die Differenz $U - W = \{u - w \mid u \in U, w \in W\}$ ist ein Untervektorraum von $V$.
-\end{checkboxes}
-
-
-\question Entscheiden Sie, ob die folgenden Mengen jeweils ein Untervektorraum des $\Rbb^2$, bzw.\ $\Rbb^3$ sind.
-\begin{checkboxes}
- \choice
-  $\{(x,y) \in \Rbb^2 \mid y^2 = x^2\}$
- \choice
-  $\{(x,y) \in \Rbb^2 \mid 3x+y = 1-2y\}$
- \choice
-  $\{(x,y) \in \Rbb^3 \mid 2x+5y = 0, y = x^2, -x-3y = 0\}$
- \choice
-  $\{(x,y,z) \in \Rbb^3 \mid 2x+3y = 3x+5z = 5y+7z = x-y+z\}$
- \choice
-  $\{(x,y,z) \in \Rbb^3 \mid  x+y = z, x+z = y, y+z = x\}$
- \choice
-  $\{(x,y,z) \in \Rbb^3 \mid xy = z\}$
-\end{checkboxes}
-
-
-\question Entscheiden Sie, in welchen Fällen die Menge
-\[
-  \{(x,y) \in \Rbb^2 \mid x^2 + y^2 = r\}
-\]
-ein Untervektorraum von $\Rbb^2$ ist.
-\begin{checkboxes}
- \choice
-  Für alle $r \geq 0$.
- \choice
-  Für alle $r > 0$.
- \choice
-  Für alle $r \leq 0$.
- \choice
-  Für alle $r < 0$.
- \choice
-  Für $r = 0$.
- \choice
-  Für $r \in \{1,0,-1\}$.
-\end{checkboxes}
-
-
-
-
-
-
-%%% DIMENSIONS %%%
-
-\question Entscheiden Sie, welche der folgenden Aussagen für beliebige endlichdimensionale $K$-Vektorräume $V$ und $W$, einen beliebigen Untervektorraum $U \subseteq V$ und eine beliebige lineare Abbildung $f \colon V \to W$ gelten.
-\begin{checkboxes}
- \choice
-  Ist $S \subseteq V$ ein Erzeugendensystem von $V$, so dass $f(S)$ kein Erzeugendensystem von $W$ ist, so ist $\dim W \leq \dim U$.
- \choice
-  Ist $U \cap \ker f = \{0\}$, so ist $\dim U \leq \dim W$.
- \choice
-  Ist $\ker f \subseteq U$, so ist $\dim V \leq \dim U + \dim W$.
- \choice
-  Ist $V = U + \ker f = \{u + v \mid u \in U, v \in \ker f\}$, so ist $\dim \im f \leq \dim U$.
-\end{checkboxes}
-
-
-%%% THE DUAL SPACE AND THE DUAL MAP %%%
-
-\question Entscheiden Sie, welche der folgenden Aussagen für beliebige $K$-Vektorräume $U$, $V$ und $W$ und beliebige lineare Abbildungen $f, f_1, f_2, \colon U \to V$ und $g \colon V \to W$ gelten.
-\begin{checkboxes}
- \choice
-  Es ist $(g \circ f)^* = g^* \circ f^*$.
- \choice
-  Es ist $(f_1 + f_2)^* = f_1^* + f_2^*$.
- \choice
-  Ist $f_1^* \circ g^* = f_2^* \circ g^*$, so ist $f_1 = f_2$.
- \choice
-  Ist $U = V$ und $f$ ein Isomorphismus, so ist auch $f^*$ ein Isomorphismus.
- \choice
-  Ist $\ker f_1 = \ker f_2$, so ist $f_1^* = f_2^*$.
-\end{checkboxes}
-
-
-
-%%% EIGENVALUES, EIGENVECTORS AND DIAGONALIZABILITY %%%
-
-\question Entscheiden Sie, welche der folgenden Aussagen für einen beliebigen endlichdimensionalen $K$-Vektorraum $V$ und einen beliebigen Endomorphismus $f \colon V \to V$ gelten.
-\begin{checkboxes}
- \choice
-  Sind $\lambda, \mu \in K$ Eigenwerte von $f$, so ist auch $\lambda + \mu$ ein Eigenwert von $K$.
- \choice
-  Ist $\lambda$ ein Eigenwert von $f$, so ist $\lambda$ auch ein Eigenwert von $f^*$.
- \choice
-  Ist $f$ ein Isomorphismus und $\lambda$ ein Eigenwert von $f$, so ist $\lambda$ auch ein Eigenwert von $f^{-1}$.
- \choice
-  Ist $f$ ein Isomorphismus und $v \in V$ ein Eigenvektor von $f$, so ist $v$ auch ein Eigenvektor von $f^{-1}$.
- \choice
-  Für jedes $\lambda \in K$ ist die Teilmenge
+  Sind $U_1, U_2 \subseteq V$ Untervektorräume, so ist auch
   \[
-   V_\lambda = \{v \in V \mid \text{$v$ ist ein Eigenvektor von $f$ zum Eigenwert $\lambda$}\}
+   U_1 + U_2 = \{u_1 + u_2 \mid u_1 \in U_1, u_2 \in U_2\}
   \]
   ein Untervektorraum von $V$.
- \item
-  Sind $v, w \in V$ Eigenvektoren von $f$, so ist auch $v + w$ ein Eigenvektor von $f$.
+ \choice
+  Es gilt $(f-g)^* = f^* - g^*$.
+ \choice
+  Ist $A \in \GL_n(K)$ symmetrisch (d.h.\ $A^T = A$), so ist auch $A^{-1}$ symmetrisch.
+ \choice
+  Sind $A \in \Mat(n \times m, K)$ und $B \in \Mat(m \times n, K)$ mit $AB = \mathbbm{1}_n$, so ist auch $BA = \mathbbm{1}_m$.
+ \choice
+  Ist $\lambda \in K$ ein Eigenwert von $A \in \Mat(n \times n, K)$, so ist $\lambda^2 + 2$ ein Eigenwert von $A^2 + 2\mathbbm{1}_n$.
+ \choice
+  Ist $U \subseteq V$ ein Untervektorraum, so ist $f(U)$ ein Untervektorraum von $W$ mit $f^*(f(U)^\perp) \subseteq U^\perp$.
 \end{checkboxes}
+
+
+
+\question Im Folgenden sei $K$ ein Körper, es sei $n \in \Nbb$ mit $n \geq 1$, $V$ sei ein $K$-Vektorraum und $f \colon V \to V$ sei linear.
+\begin{checkboxes}
+ \choice
+  Ist $A \in \Mat(n \times n, \Rbb)$ und $\lambda > 0$ für jeden Eigenwert $\lambda$ von $A$, so ist $A$ invertierbar.
+ \choice
+  Ist $T \subseteq V$, so dass jede endliche Teilmenge von $T$ linear unabhängig ist, so ist auch $T$ linear unabhängig.
+ \choice
+  Es ist $\ker(f)^\perp = \ker(f^*)$.
+ \choice
+  Sind $A, B \in \Mat(n \times n, K)$, so dass es ein $S \in \GL_n(K)$ mit $B = S A S^{-1}$ gibt, so ist $\ker A = \ker B$.
+ \choice
+  Ist $K = \Cbb$ und $\dim_\Cbb V < \infty$, so ist $\dim_\Rbb V > \dim_\Cbb V$.
+ \choice
+  Ist $A \in \Mat(n \times n, \Rbb)$ mit $\det(A) = 1$ und $A_{ij} \in \Zbb$ für alle $1 \leq i,j \leq n$, so ist $A$ invertierbar mit $(A^{-1})_{ij} \in \Zbb$ für alle $1 \leq i,j \leq n$.
+ \choice
+  Sind $U_1, U_2 \subseteq V$ zwei Untervektorräume mit $U_1 \subseteq U_2$, so ist $U_1^\perp \subseteq U_2^\perp$.
+ \choice
+  Es seien $A, B \in \Mat(n \times n, K)$. Ist $\lambda \in K$ ein Eigenwert von $A$ und $\mu \in K$ eine Eigenwert von $B$, so ist $\lambda + \mu$ ein Eigenwert von $A + B$.
+ \choice
+  Für jedes $v \in V \setminus \{0\}$ ist die Menge $\{f \in \Ell(V,V) \mid \text{$v$ ist ein Eigenvektor von $f$}\}$ ein Untervektorraum von $\Ell(V,V)$.
+\end{checkboxes}
+
+
+
+\question Es sei $K$ ein Körper, $n \in \Nbb$ mit $n \geq 1$, $V$ ein endlichdimensionaler $K$-Vektorraum und $f \colon V \to V$ linear.
+\begin{checkboxes}
+ \choice
+  Es ist $\rang(f) = \rang(f^*)$.
+ \choice
+  Ist $(U_n)_{n \in \Nbb}$ eine Kollektion von Untervektorräumen $U_n \subseteq V$, so dass $U_n \subseteq U_{n+1}$ für alle $n \in \Nbb$, so ist $\bigcup_{n \in \Nbb} U_n$ ein Untervektorraum von $V$.
+ \choice
+  Sind $v_1, v_2 \in V$, so dass $(v_1, v_2)$ linear unabhängig ist, so ist auch $(v_1 + v_2, v_1 - v_2)$ linear unabhängig.
+ \choice
+  Es ist $\chi_f(T) = \chi_{f^*}(T)$.
+ \choice
+  Die Menge $\{v \in V \mid \text{es gibt $\lambda \in K$ mit $f(v) = \lambda v$}\}$ ist ein Untervektorraum von $V$.
+ \choice
+  Ist $A \in \GL_n(K)$ mit $A^{-1} = A^T$, so ist $\det(A) = 1$.
+ \choice
+  Die Determinante $\det \colon \Mat(n \times n, K) \to K$ ist nicht linear.
+ \choice
+  Es seien $\mc{B} = (b_1, \dotsc, b_n)$ und $\mc{C} = (c_1, \dotsc, c_n)$ zwei Basen von $V$, und $\mc{B}^* = (b_1^*, \dotsc, b_n^*)$ und $\mc{C}^* = (c_1^*, \dotsc, c_n^*)$ die entsprechenden dualen Basen von $V^*$. Ist $\mc{B}^* = \mc{C}^*$, also $b_i^* = c_i^*$ für alle $1 \leq i \leq n$, so ist $\mc{B} = \mc{C}$.
+ \choice
+  Ist $A \in \GL_n(\Cbb)$ mit $A \in \Mat(n \times n, \Rbb)$, so ist auch $A^{-1} \in \Mat(n \times n, \Rbb)$.
+\end{checkboxes}
+
+
 
 
 
