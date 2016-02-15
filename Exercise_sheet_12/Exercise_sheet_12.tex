@@ -1,0 +1,412 @@
+\documentclass[a4paper,10pt]{article}
+%\documentclass[a4paper,10pt]{scrartcl}
+
+\usepackage{../generalstyle}
+\usepackage{specificstyle}
+
+\setromanfont[Mapping=tex-text]{Linux Libertine O}
+% \setsansfont[Mapping=tex-text]{DejaVu Sans}
+% \setmonofont[Mapping=tex-text]{DejaVu Sans Mono}
+
+\title{Lösung zu Übungszettel 12}
+\author{Jendrik Stelzner}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+
+
+
+
+\section{}
+
+
+
+\subsection{}
+Es seien $U$, $V$ und $W$ $K$-Vektorräume und $f \colon V \to W$ und $g \colon W \to U$ linear Abbildungen. Dann ist
+\[
+ (g \circ f)^{\times k} = g^{\times k} \circ f^{\times k},
+\]
+denn für alle $(v_1, \dotsc, v_k) \in V^k$ ist
+\begin{align*}
+ (g \circ f)^{\times k}(v_1, \dotsc, v_k)
+ &= ((g \circ f)(v_1), \dotsc, (g \circ f)(v_k))
+ = (g(f(v_1)), \dotsc, g(f(v_k))) \\
+ &= g^{\times k}(f(v_1), \dotsc, f(v_k))
+ = g^{\times k}( f^{\times k}(v_1, \dotsc, v_k) ) \\
+ &= (g^{\times k} \circ f^{\times k})(v_1, \dotsc, v_k).
+\end{align*}
+Für alle $\psi \in \Alt_k(U)$ ist daher
+\begin{align*}
+ \Alt_k(g \circ f)(\psi)
+ &= \psi \circ (g \circ f)^{\times k}
+ = \psi \circ g^{\times k} \circ f^{\times k}
+ = \Alt_k(g)(\psi) \circ f^{\times k} \\
+ &= \Alt_k(f)( \Alt_k(g)(\psi) )
+ = (\Alt_k(f) \circ \Alt_k(g))(\psi),
+\end{align*}
+und somit $\Alt_k(g \circ f) = \Alt_k(f) \circ \Alt_k(g)$.
+
+Zum anderen ist $\id_V^{\times k} = \id_{V^k}$, denn für alle $(v_1, \dotsc, v_k) \in V^k$ ist
+\[
+ \id_V^{\times k}(v_1, \dotsc, v_k)
+ = (\id_V(v_1), \dotsc, \id_V(v_k))
+ = (v_1, \dotsc, v_k).
+\]
+Somit ist für alle $\psi \in \Alt_k(V)$
+\[
+ \Alt_k(\id)(\psi)
+ = \psi \circ \id_V^{\times k}
+ = \psi \circ \id_{V^k}
+ = \psi,
+\]
+und somit $\Alt_k(\id) = \id_{\Alt_k(V)}$.
+
+
+
+\subsection{}
+Es sei nun $V$ endlichdimensional mit $n \coloneqq \dim V$ und $f \colon V \to V$ ein Endomorphismus. Wir zeigen, dass $\Alt_n(f)$ durch Multiplikation mit $\det(f)$ gegeben ist, indem wir zeigen, dass $\Alt_n(f)(\psi) = \det(f) \psi$ für alle $\psi \in \Alt_n(V)$. Hierfür fixieren wir $\psi \in \Alt_n(V)$.
+
+Es sei $\mc{B} \coloneqq (b_1, \dotsc, b_n)$ eine Basis von $V$ und $A \coloneqq \Mat_{\mc{B},\mc{B}}(f)$. Dann ist $\psi$ eindeutig durch den Wert $\psi(b_1, \dotsc, b_n)$ bestimmt; für alle $(v_1, \dotsc, v_n) \in V^n$ mit $v_i = \sum_{j=1}^n \lambda^{(i)}_j b_j$ ist nämlich
+\begin{align*}
+ \psi(v_1, \dotsc, v_n)
+ &= \psi\left( \sum_{{j_1}=1}^n \lambda^{(1)}_{j_1} b_{j_1}, \dotsc, \sum_{{j_n}=1}^n \lambda^{(1)}_{j_n} b_{j_n} \right) \\
+ &= \sum_{j_1, \dotsc, j_n = 1}^n \lambda^{(1)}_{j_1} \dotsm \lambda^{(n)}_{j_n} \psi(b_{j_1}, \dotsc, b_{j_n}) \\
+ &= \sum_{\sigma \in S_n} \lambda_{\sigma(1)} \dotsm \lambda_{\sigma(n)} \psi(b_{\sigma(1)}, \dotsc, b_{\sigma(n)}) \\
+ &= \sum_{\sigma \in S_n} \sgn(\sigma) \lambda_{\sigma(1)} \dotsm \lambda_{\sigma(n)} \psi(b_1, \dotsc, b_n).
+\end{align*}
+Dabei haben wir in der zweiten Gleichheit die Multilinearität von $\psi$ genutzt. In der dritten Gleichheit nutzen wir, dass $\psi$ alternierend ist (also $\psi(b_{j_1}, \dotsc, b_{j_n}) = 0$ falls $j_i = j_{i'}$ für $i \neq i'$), und daher die Summanden überleben, für die $j_1, \dotsc, j_n$ paarweise verschieden sind, also eine Permutation von $1, \dotsc, n$ sind. In der letzten Gleichheit haben wir genutzt, dass $\psi$ antisymmetrisch ist (da $\psi$ alternierend ist), und daher das Vertauschen der Argumente $b_{\sigma(1)}, \dotsc, b_{\sigma(n)}$ einer Vorzeichenänderung von $\sgn(\sigma^{-1}) = \sgn(\sigma)$ entspricht.
+
+Um zu zeigen, dass $\Alt_k(f)(\psi) = \det(f) \psi$, genügt es deshalb zu zeigen, dass $\Alt_k(f)(\psi)(b_1, \dotsc, b_n) = \det(f) \psi(b_1, \dotsc, b_n)$.
+
+Ähnlich wie zur obigen Rechnung erhalten wir, dass
+\begin{align*}
+ \Alt_k(f)(\psi)(b_1, \dotsc, b_n)
+ &= (\psi \circ f^{\times n})(b_1, \dotsc, b_n)
+ = \psi(f(b_1), \dotsc, f(b_n)) \\
+ &= \psi\left( \sum_{i_1 = 1}^n A_{i_1,1} b_{i_1}, \dotsc, \sum_{i_n = 1}^n A_{i_n,n} b_{i_n} \right) \\
+ &= \sum_{i_1, \dotsc, i_n = 1}^n A_{i_1,1} \dotsm A_{i_n,n} \psi(b_{i_1}, \dotsc, b_{i_n}) \\
+ &= \sum_{\sigma \in S_n} A_{\sigma(1),1} \dotsm A_{\sigma(n),n} \psi(b_{\sigma(1)}, \dotsc, b_{\sigma(n)}) \\
+ &= \sum_{\sigma \in S_n} \sgn(\sigma) A_{\sigma(1),1} \dotsm A_{\sigma(n),n} \psi(b_1, \dotsc, b_n).
+\end{align*}
+Dabei haben wir
+\begin{align*}
+ \sum_{\sigma \in S_n} \sgn(\sigma) A_{\sigma(1),1} \dotsm A_{\sigma(n),n}
+ &= \sum_{\sigma \in S_n} \sgn(\sigma) (A^T)_{1,\sigma(1)} \dotsm (A^T)_{n,\sigma(n)} \\
+ &= \det(A^T)
+ = \det(A).
+\end{align*}
+Eingesetzt erhalten wir somit
+\[
+ \Alt_n(f)(\psi)(b_1, \dotsc, b_n)
+ = \det(A) \psi(b_1, \dotsc, b_n),
+\]
+was zu zeigen war.
+
+
+
+
+
+\section{}
+
+
+
+\subsection*{Möglichkeit 1}
+Da $\det(A) \neq 0$ ist $A$ invertierbar. Deshalb ist $Ax = b \iff x = A^{-1} b$; insbesondere gibt es für jedes $b \in K^n$ genau ein $x \in K^n$ mit $Ax = b$, nämlich $x = A^{-1} b$. Nach der Cramerschen Regel ist $A^{-1} = \frac{1}{\det(A)} \Adj(A)$, also
+\begin{align*}
+ x_k
+ &= (A^{-1} b)_k
+ = \frac{1}{\det(A)} (\Adj(A) b)_k
+ = \frac{1}{\det(A)} \sum_{i=1}^n \Adj(A)_{ki} b_i \\
+ &= \frac{1}{\det(A)} \sum_{i=1}^n (-1)^{i+k} \det(A^{(i,k)}) b_i,
+\end{align*}
+wobei $A^{(i,k)}$ den $(i,k)$-ten Minor von $A$ bezeichnet. Dabei ist nun $A^{(i,k)} = A_{k,b}^{(i,k)}$ für alle $1 \leq i \leq n$, da $A_{k,b}$ aus $A$ entsteht, indem die $k$-te Spalte durch $b$ ersetzt wird. Deshalb ist auch $(A_{k,b})_{i,k} = b_i$. Damit ergibt sich aus der obigen Gleichung weiter
+\begin{align*}
+ x_k
+ &= \frac{1}{\det(A)} \sum_{i=1}^n (-1)^{i+k} \det(A^{(i,k)}) b_i \\
+ &= \frac{1}{\det(A)} \sum_{i=1}^n (-1)^{i+k} \det(A_{k,b}^{(i,k)}) (A_{k,b})_{i,k}
+ = \frac{1}{\det(A)} \det(A_{k,b}),
+\end{align*}
+wobei wir in der letzten Gleichung nutzen, dass $\sum_{i=1}^n (-1)^{i+k} \det(A_{k,b}^{(i,k)}) (A_{k,b})_{i,k)}$ die Entwicklung von $\det(A_{k,b})$ nach der $k$-ten Spalte ist (also die Spalte, in der $b$ steht).
+
+
+
+\subsection*{Möglichkeit 2}
+Wir fixieren $b \in K^n$.Wie in der ersten Möglichkeit ergibt sich, dass es genau ein $x \in K^n$ mit $Ax = b$ gibt.
+
+Für alle $1 \leq j \leq j$ sei $a_j$ der $j$-te Spaltenvektor von $A$, also $A = (a_1, \dotsc, a_n)$. Es ist nun
+\[
+ Ax = \sum_{j=1}^n x_j a_j,
+\]
+und außerdem $A_{k,b} = (a_1, \dotsc, a_{k-1}, b, a_{k+1}, \dotsc, a_n)$. Da $Ax = b$ ist
+\begin{align*}
+ A_{k,b}
+ = A_{k,Ax}
+ &= (a_1, \dotsc, a_{k-1}, Ax, a_{k+1}, \dotsc, a_n) \\
+ &= \left( a_1, \dotsc, a_{k-1}, \sum_{j=1}^n x_j a_j, a_{k+1}, \dotsc, a_n \right).
+\end{align*}
+Wegen der Multilinearität der Determinante in den Spalten ist
+\begin{align*}
+ \det A_{k,b}
+ &= \det \left( a_1, \dotsc, a_{k-1}, \sum_{j=1}^n x_j a_j, a_{k+1}, \dotsc, a_n \right) \\
+ &= \sum_{j=1}^n x_j \det \left( a_1, \dotsc, a_{k-1}, a_j, a_{k+1}, \dotsc, a_n \right).
+\end{align*}
+Da die Determinante auch alternierend in den Spalten ist, überlebt nur der Summand für $j = k$. Deshalb ist
+\begin{align*}
+ \det A_{k,b}
+ &= \sum_{j=1}^n x_j \det \left( a_1, \dotsc, a_{k-1}, a_j, a_{k+1}, \dotsc, a_n \right) \\
+ &= x_k \det \left( a_1, \dotsc, a_{k-1}, a_k, a_{k+1}, \dotsc, a_n \right)
+ = x_k \det(A).
+\end{align*}
+Teilen wir beide Seiten der obigen Gleichung durch $\det(A)$ so erhalten wir $x_k = \det(A_{k,b})/\det(A)$, was zu zeigen war.
+
+
+
+
+
+\section{}
+Die Definition, die in auf dem Aufgabenzettel gegeben wurde, hat das Problem, dass die entsprechende Abbildung $P \colon S_n \to \GL_n(K)$ kein Gruppenhomomorphismus ist; stattdessen ist $P(\sigma \tau) = P(\tau) P(\sigma)$ für alle $\pi, \sigma \in \GL_n(K)$ (man bezeichnet $P$ als einen \emph{Antihomomorphismus von Gruppen}). Wir geben daher zunächst die eigentliche Definition an:
+
+Für jedes $\sigma \in S_n$ sei $P(\sigma) \in \Mat(n \times n, K)$ die eindeutige Matrix mit
+\[
+ P(\sigma) e_j = e_{\sigma(j)}
+ \quad\text{für alle $1 \leq j \leq n$},
+\]
+wobei $(e_1, \dotsc, e_n)$ die Standardbasis des $K^n$ bezeichnet. Die $j$-te Spalte von $P(\sigma)$ ist also $e_{\sigma(j)}$. In Koordinaten ist somit ist für alle $1 \leq i,j \leq n$
+\[
+ P(\sigma)_{ij}
+ = (P(\sigma)e_j)_i
+ = (e_{\sigma(j)})_i
+ = \delta_{i,\sigma(j)}
+ =
+ \begin{cases}
+  1 & \text{falls $i = \sigma(j)$}, \\
+  0 & \text{sonst}.
+ \end{cases}
+\]
+
+
+\subsection{}
+Für alle $\sigma, \tau \in S_n$ ist
+\[
+ P(\sigma) P(\tau) e_j
+ = P(\sigma) e_{\tau(j)}
+ = e_{\sigma(\tau(j))}
+ = e_{(\sigma \circ \tau)(j)}
+ = P(\sigma \tau) e_j
+ \quad
+ \text{für alle $1 \leq j \leq n$},
+\]
+und somit ist $P(\sigma)P(\tau) = P(\sigma \tau)$. Dies lässt sich auch in Koordinaten nachrechnen, da für alle $1 \leq i,j \leq n$
+\begin{align*}
+ (P(\sigma)P(\tau))_{ij}
+ &= \sum_{k=1}^n P(\sigma)_{ik} P(\tau)_{kj}
+ = \sum_{k=1}^n \delta_{i,\sigma(k)} \delta_{k,\tau(j)} \\
+ &= \delta_{i,\sigma(\tau(j))}
+ = \delta_{i,(\sigma \tau)(j)}
+ = P(\sigma \tau)_{ij}.
+\end{align*}
+Außerdem ist $P(\id) = \mathbbm{1}_n$, denn
+\[
+ P(\id) e_j = e_{\id(j)} = e_j = \mathbbm{1}_n e_j
+ \quad
+ \text{für alle $1 \leq j \leq n$},
+\]
+bzw.\ in Koordinaten
+\[
+ (P(\id))_{ij} = \delta_{i,\id(j)} = \delta_{ij}
+ \quad
+ \text{für alle $1 \leq i,j \leq n$}.
+\]
+
+Damit erhalten wir nun, dass
+\[
+ P(\sigma) P(\sigma^{-1})
+ = P(\sigma \sigma^{-1})
+ = P(\id)
+ = \mathbbm{1}_n
+ \quad
+ \text{für alle $\sigma \in S_n$},
+\]
+dass also $P(\sigma)$ für alle $\sigma \in S_n$ invertierbar ist mit $P(\sigma)^{-1} = P(\sigma^{-1})$. Dass $P \colon S_n \to \GL_n(K)$ nun ein Gruppenhomomorphismus ist, also $P(\sigma \tau) = P(\sigma) P(\tau)$ für alle $\sigma, \tau \in S_n$, haben wir bereits gezeigt.
+
+
+
+\subsection{}
+Es sei $\mc{P} \subseteq \Mat(n \times n, K)$ die Menge aller Matrizen, die in jeder Zeile und jeder Spalte genau eine $1$ hat und sonst nur $0$. Es gilt zu zeigen, dass $\mc{P} = \im P$.
+
+Es sei $A \in \im P$. Dann gibt es $\sigma \in S_n$ mit $A = P(\sigma)$. Da $A_{ij} = P(\sigma)_{ij} = \delta_{i,\sigma(j)}$ hat $A$ in der $i$-ten Zeile genau eine $1$, nämlich in der $\sigma^{-1}(i)$-ten Spalte, und sonst nur $0$, und in der $j$-ten Spalte genau eine $1$, nämlich in der $\sigma(j)$-ten Zeile, und sonst nur $0$. Also ist $A \in \mc{P}$.
+
+Es sei nun andererseits $A \in \mc{P}$. Für jeden Spaltenindex $1 \leq j \leq n$ hat $A$ genau eine $1$ in der $j$-ten Spalte, und sonst nur $0$; es gibt daher eine Funktion $\sigma \colon \{1, \dotsc, n\} \to \{1, \dotsc, n\}, j \mapsto \sigma(j)$ mit $A_{i,j} = \delta_{i,\sigma(j)}$ für alle $1 \leq i,j \leq n$ (die eindeutige $1$ in der $j$-ten Spalte von $A$ liegt also in der $\sigma(j)$-ten Zeile).
+
+Die Funktion $\sigma$ ist injektiv, denn gebe es $1 \leq j \neq j' \leq n$ mit $\sigma(j) = \sigma(j')$, so hätte $A$ zwei Einsen in der $\sigma(j)$-ten Zeile (nämlich in der $j$-ten und $j'$-ten Spalte). Da $\{1, \dotsc, n\}$ endlich ist, ist $\sigma$ damit bereits bijektiv, also $\sigma \in S_n$.
+
+Da $A_{ij} = \delta_{i,\sigma(j)} = P(\sigma)_{ij}$ für alle $1 \leq i,j \leq n$ ist $A = P(\sigma) \in \im P$. Insgesammt zeigt dies, dass $\mc{P} = \im P$.
+
+
+\subsection{}
+Für $\sigma \in S_n$ ist
+\begin{align*}
+ \det P(\sigma)
+ = \det P(\sigma)^T
+ &= \sum_{\tau \in S_n} \sgn(\tau) (P(\sigma)^T)_{1, \tau(1)} \dotsm (P(\sigma)^T)_{n, \tau(n)} \\
+ &= \sum_{\tau \in S_n} \sgn(\tau) P(\sigma)_{\tau(1), 1} \dotsm P(\sigma)_{\tau(n),n} \\
+ &= \sum_{\tau \in S_n} \sgn(\tau) \delta_{\tau(1), \sigma(1)} \dotsm \delta_{\tau(n),\sigma(n)}
+\end{align*}
+Es überlebt also nur ein Summand, nämlich der für $\tau = \sigma$, so dass
+\[
+ \det P(\sigma)
+ = \sgn(\sigma) \delta_{\sigma(1), \sigma(1)} \dotsm \delta_{\sigma(n),\sigma(n)}
+ = \sgn(\sigma) \cdot 1 \dotsm 1
+ = \sgn(\sigma).
+\]
+
+
+
+
+
+\section{}
+Wir zeigen die Aussage per Induktion über $n$.
+
+\begin{ia}
+ Es sei $n = 1$. Für $x \in K^1$ ist $V(x) = (1)$ und somit
+ \[
+  \det V(x) = \det (1) = 1 = \prod_{1 \leq i < j \leq 1} (x_j - x_i),
+ \]
+ das es sich bei der rechten Sei um das leere Produkt handelt.
+ 
+ Auch für $n = 2$ ergibt sich durch direktes Nachrechnen, dass für $x \in K^2$
+ \[
+  V(x) =
+  \begin{pmatrix}
+   1 & x_1 \\
+   1 & x_2
+  \end{pmatrix}
+ \]
+ und somit
+ \[
+  \det V(x) = x_2 - x_1 =  \prod_{1 \leq i < j \leq 2} (x_j - x_i).
+ \]
+\end{ia}
+
+\begin{iv}
+ Die Aussage gelte für ein $n \in \mathbb{N}$ mit $n \geq 2$.
+\end{iv}
+
+\begin{is}
+ Es sei $x \in K^{n+1}$. Dann ist
+ \[
+  V(x) =
+  \begin{pmatrix}
+   1      & x_1     & x_1^2     & x_1^3     & \cdots & x_1^n     \\
+   1      & x_2     & x_2^2     & x_2^3     & \cdots & x_2^n     \\
+   1      & x_3     & x_3^2     & x_3^3     & \cdots & x_3^n     \\
+   \vdots & \vdots  & \vdots    & \vdots    & \ddots & \vdots    \\
+   1      & x_{n+1} & x_{n+1}^2 & x_{n+1}^3 & \cdots & x_{n+1}^n
+  \end{pmatrix}
+ \]
+ Wir ziehen nun von der letzten Spalte von $V(x)$ das $x_1$-fache der vorletzten Spalte ab, anschließend von der vorletzten Spalte das $x_1$-fache der vorvorletzten Spalte, \dots, von der dritten Spalte das $x_1$-fache der zweiten Spalte und von der zweiten Spalte das $x_1$-fache der ersten Spalte. Damit erhalten wir die Matrix $V'(x)$ mit
+ \begin{align*}
+  &\, V'(x) \\
+  &\,=
+  \begin{pmatrix}
+   1      & 0           & 0                     & 0                       & \cdots & 0                     \\
+   1      & x_2 - x_1   & x_2^2 - x_1 x_2       & x_2^3 - x_1 x_2^2       & \cdots & x_2^n - x_1 x_2^{n-1} \\
+   1      & x_3 - x_1   & x_3^2 - x_1 x_3       & x_3^3 - x_1 x_3^2       & \cdots & x_3^n - x_1 x_3^{n-1} \\
+   \vdots & \vdots      & \vdots                & \vdots                  & \ddots & \vdots                \\
+   1      & x_{n+1}-x_1 & x_{n+1}^2-x_1 x_{n+1} & x_{n+1}^3-x_1 x_{n+1}^2 & \cdots & x_{n+1}^n-x_1 x_{n+1}^{n-1}
+  \end{pmatrix} \\
+  &\,=
+  \begin{pmatrix}
+   1      & 0           & 0                    & 0                      & \cdots & 0                     \\
+   1      & x_2 - x_1   & (x_2 - x_1)x_2       & (x_2 - x_1)x_2^2       & \cdots & (x_2 - x_1)x_2^{n-1}  \\
+   1      & x_3 - x_1   & (x_3 - x_1)x_3       & (x_3 - x_1)x_3^2       & \cdots & (x_3 - x_1)x_3^{n-1}  \\
+   \vdots & \vdots      & \vdots               & \vdots                 & \ddots & \vdots                \\
+   1      & x_{n+1}-x_1 & (x_{n+1}-x_1)x_{n+1} & (x_{n+1}-x_1)x_{n+1}^2 & \cdots & (x_{n+1}-x_1)x_{n+1}^{n-1}
+  \end{pmatrix}.
+ \end{align*}
+\end{is}
+Da die durchgeführter elementaren Zeilenoperationen die Determinante invariant lassen, ist $\det V(x) = \det V'(x)$. Durch Entwickeln von $\det V'(x)$ und der Multilinearität der Determinante ergibt sich nun
+\begin{align*}
+  &\, \det V'(x) \\
+ =&\,
+ \begin{pmatrix}
+   x_2 - x_1   & (x_2 - x_1)x_2       & (x_2 - x_1)x_2^2       & \cdots & (x_2 - x_1)x_2^{n-1}  \\
+   x_3 - x_1   & (x_3 - x_1)x_3       & (x_3 - x_1)x_3^2       & \cdots & (x_3 - x_1)x_3^{n-1}  \\
+   \vdots      & \vdots               & \vdots                 & \ddots & \vdots                \\
+   x_{n+1}-x_1 & (x_{n+1}-x_1)x_{n+1} & (x_{n+1}-x_1)x_{n+1}^2 & \cdots & (x_{n+1}-x_1)x_{n+1}^{n-1}
+  \end{pmatrix} \\
+ =&\,
+ (x_{n+1}-x_1) \dotsm (x_2-x_1) \det
+ \begin{pmatrix}
+   1      & x_2     & x_2^2     & \cdots & x_2^{n-1}     \\
+   1      & x_3     & x_3^2     & \cdots & x_3^{n-1}     \\
+   \vdots & \vdots  & \vdots    & \ddots & \vdots        \\
+   1      & x_{n+1} & x_{n+1}^2 & \cdots & x_{n+1}^{n-1}
+  \end{pmatrix} \\
+ =&\,
+ \prod_{j=2}^{n+1} (x_j - x_1) \cdot \det V(x')
+\end{align*}
+mit $x' = (x_2, \dotsc, x_{n+1})$. Nach Induktionsvoraussetzung ist
+\[
+ \det V(x') = \prod_{2 \leq i < j \leq n+1} (x_j - x_i),
+\]
+und somit ist
+\begin{align*}
+ \det V(x)
+ &= \det V'(x)
+ = \prod_{j=2}^{n+1} (x_j - x_1) \cdot V(x') \\
+ &= \prod_{j=2}^{n+1} (x_j - x_1) \cdot \prod_{2 \leq i < j \leq n+1} (x_j - x_i)
+ = \prod_{1 \leq i < j \leq n+1} (x_j - x_i).
+\end{align*}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
