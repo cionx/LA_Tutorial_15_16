@@ -20,6 +20,10 @@
 
 
 \section{}
+
+
+
+\subsection*{Möglichkeit 1}
 Es gilt
 \begin{align*}
  \text{$A_1 \dotsm A_m$ ist invertierbar}
@@ -29,19 +33,23 @@ Es gilt
  &\iff \text{für alle $1 \leq i \leq m$ ist $A_i$ invertierbar}.
 \end{align*}
 
-Die Aussage lässt sich auch per Induktion zeigen: Zunächst bemerken wir, dass wenn $A_i$ für alle $1 \leq i \leq m$ invertierbar ist, auch $A$ invertierbar ist, da dann
+
+
+\subsection*{Möglichkeit 2}
+Zunächst bemerken wir, dass, wenn $A_i$ für alle $1 \leq i \leq m$ invertierbar ist, auch $A = A_1 \dotsm A_m$ invertierbar ist, da
 \[
  (A_m^{-1} \dotsm A_1^{-1}) A
  = A_m^{-1} \dotsm A_1^{-1} A_1 \dotsm A_m
  = \mathbbm{1}_n.
 \]
-Nun können wir Induktion nutzen: Für $m = 1$ ist die Aussage klar. Für $m = 2$ ist
+
+Nun können wir Induktion über $m$ nutzen: Für $m = 1$ ist die Aussage klar. Für $m = 2$ ist
 \[
  \mathbbm{1}_n
  = (A_1 A_2)^{-1} \cdot (A_1 A_2)
  = ((A_1 A_2)^{-1} A_1) \cdot A_2,
 \]
-also ist $A_2$ invertierbar (mit $A_2^{-1} = (A_1 A_2)^{-1} A_1$). Da $A_1 A_2$ und $A_2^{-1}$ invertierbar sind ist auch $A_1 = (A_1 A_2) A_2^{-1}$ invertierbar.
+also ist $A_2$ invertierbar (mit $A_2^{-1} = (A_1 A_2)^{-1} A_1$). Da $A_1 A_2$ und $A_2^{-1}$ invertierbar sind, ist auch das Produkt $A_1 = (A_1 A_2) A_2^{-1}$ invertierbar.
 
 Der Induktionsschrit $m \to m+1$ verläuft ähnlich: Da
 \[
@@ -59,13 +67,13 @@ ist $A_{m+1}$ invertierbar (mit $A_{m+1}^{-1} = (A_1 \dotsm A_{m+1})^{-1} A_1 \d
 
 
 \subsection{}
-Für entsprechend große Matrizen
+Für Matrizen entsprechender Größe
 \[
  B = \begin{pmatrix} b_1 \\ b_2 \\ b_3 \end{pmatrix}
  \quad\text{and}\quad
  C = \begin{pmatrix} c_1 & c_2 & c_3 \end{pmatrix}
 \]
-ist die $i$-te Spalte von $BC$ das $b_j$-fache von $C$. Durch direktes Hinsehen ergibt sich, dass alle Zeilen von $A$ Vielfache von $\begin{pmatrix} -2 & 2 & 1 \end{pmatrix}$, namlich das $1$-fache, $2$-fache und $(-3)$-fache. Wir wählen deshalb
+ist die $i$-te Zeile von $BC$ das $b_i$-fache von $C$. Durch direktes Hinsehen ergibt sich, dass alle Zeilen von $A$ Vielfache von $\begin{pmatrix} -2 & 2 & 1 \end{pmatrix}$ sind, nämlich das $1$-fache, $2$-fache und $(-3)$-fache. Wir wählen deshalb
 \[
  B = \begin{pmatrix*}[r] 1 \\ 2 \\ -3 \end{pmatrix*}
  \quad\text{and}\quad
@@ -81,7 +89,7 @@ Durch die Assoziativität der Matrixmultiplikation erhalten wir
  = (BC)^{2016}
  = B (CB)^{2015} C.
 \]
-Da $CB = (-1)$ (eine $(1 \times 1)$-Matrix) ist deshalb
+Mit der ($1 \times 1$)-Matrix $CB = (-1)$ erhalten wir
 \[
  A^{2016}
  = B (-1)^{2015} C
@@ -95,7 +103,7 @@ Da $CB = (-1)$ (eine $(1 \times 1)$-Matrix) ist deshalb
 
 
 \section{}
-Wegen der Injektivität von $f$ ist die Einschränkung $f \colon U \to \im(f)$ ein Isomorphismus, womit wir $\dim \im(f) = \dim U$ erhalten. Da $g$ surjektiv ist erhalten wir außerdem $\im(g) = W$. Durch die Dimensionsformel erhalten wir nun
+Wegen der Injektivität von $f$ ist die Einschränkung $f \colon U \to \im(f)$ ein Isomorphismus, womit wir $\dim \im(f) = \dim U$ erhalten. Da $g$ surjektiv ist, erhalten wir außerdem $\im(g) = W$. Durch die Dimensionsformel erhalten wir nun
 \[
  \dim V
  = \dim \ker(g) + \dim \im(g)
@@ -240,14 +248,14 @@ Da nun $\Phi(f_v) = f_v(1) = 1 \cdot v = v$ ist $v \in \im(\Phi)$.
 Statt $(a_n)_{n \in \Zbb}$ schreiben wir im Folgenden abkürzend $(a_n)_n$.
 
 \subsection{}
-$R$ ist linear, denn für alle $(a_n)_{n \in \Zbb}, (b_n)_{n \in \Zbb} \in V$ und $\lambda \in \Rbb$ ist
+$R$ ist linear, denn für alle $(a_n)_n, (b_n)_n \in V$ und $\lambda \in \Rbb$ ist
 \begin{gather*}
  \begin{aligned}
   R((a_n)_n + (b_n)_n)
   = R((a_n+b_n)_n)
-  = (a_{n-1}+b_{n-1})_n
-  &= (a_{n-1})_n + (b_{n-1})_n \\
-  &= R((a_n)_{n \in \Zbb}) + R((b_n)_n)
+  &= (a_{n-1}+b_{n-1})_n \\
+  &= (a_{n-1})_n + (b_{n-1})_n
+  = R((a_n)_n) + R((b_n)_n)
  \end{aligned}
 \shortintertext{und}
  R(\lambda (a_n)_n)
@@ -281,14 +289,14 @@ Für die konstante Folge $(1)_n = (\dotsc,1,1,1,1,1,\dotsc)$ ist $R((1)_n) = (1)
 \subsection{}
 Der Eigenraum von $R$ zu $0 \in \Rbb$ ist genau $\ker R$. Da $R$ ein Automorphismus ist, und somit insbesondere injektiv, ist $\ker R = \{0\}$. Also ist $0$ kein Eigenwert von $R$.
 
-Für jedes $\lambda \in \Rbb$ mit $\lambda \neq 0$ zeigen wir, dass $\lambda$ ein Eigenwert von $R$ ist, und geben den entsprechenden eindimensionalen Eigenraum explizit an. Hierfür fixieren wir ein entsprechendes $\lambda$. Dass $(a_n)_n \in V$ ein Eigenvektor von $R$ zum Eigenwert $\lambda$ ist, ist äquivalent dazu, dass
+Für jedes $\lambda \in \Rbb$ mit $\lambda \neq 0$ zeigen wir, dass $\lambda$ ein Eigenwert von $R$ ist, und geben den entsprechenden Eigenraum, der sich als eindimensional herausstellt, explizit an. Hierfür fixieren wir ein entsprechendes $\lambda$. Dass $(a_n)_n \in V$ ein Eigenvektor von $R$ zum Eigenwert $\lambda$ ist, ist äquivalent dazu, dass
 \[
  (a_{n-1})_n
  = R((a_n)_n)
  = \lambda (a_n)_n
  = (\lambda a_n)_n,
 \]
-dass also $a_{n-1} = \lambda a_n$ für alle $n \in \Zbb$. Die Folge $(\lambda^{-n})_n = (\dotsc, \lambda^2, \lambda, 1, \lambda^{-1}, \lambda^{-2}, \dotsc) \in V$ ist also ein Eigenvektor zum Eigenwert $\lambda$ (man sieht auch direkt, dass das Verschieben der Folge nach Rechts dem Multiplizieren der Einträge mit $\lambda$ entspricht). Somit ist $\lambda$ ein Eigenwert von $R$.
+dass also $a_{n-1} = \lambda a_n$ für alle $n \in \Zbb$. Die Folge $(\lambda^{-n})_n = (\dotsc, \lambda^2, \lambda, 1, \lambda^{-1}, \lambda^{-2}, \dotsc) \in V$ ist also ein Eigenvektor zum Eigenwert $\lambda$ (man sieht auch direkt, dass das Verschieben der Folge nach rechts dem Multiplizieren der Einträge mit $\lambda$ entspricht). Somit ist $\lambda$ ein Eigenwert von $R$.
 
 Ist $(a_n)_n$ ein Eigenvektor zum Eigenwert $\lambda$, so ergibt sich aus $a_{n-1} = \lambda a_n$ für alle $n \in \Zbb$ induktiv, dass $a_n = \lambda^{-n} a_0$ für alle $n \in \Zbb$, also
 \[
@@ -298,7 +306,7 @@ Somit ist der Eigenraum von $R$ zum Eigenwert $\lambda$ gegeben durch
 \[
  E_{R,\lambda} = \{a (\lambda^{-n})_n \mid a \in \Rbb\}.
 \]
-Insbesondere ist der Eigenraum eindimensional.
+Insbesondere ist der Eigenraum eindimensional mit Basis $\{(\lambda^{-n})_n\}$.
 
 
 
@@ -308,7 +316,7 @@ Insbesondere ist der Eigenraum eindimensional.
 
 
 \subsection{}
-Für alle $A, B \in \Mat(n \times n, K)$ und $\lambda \in K$ ist
+Für alle $A, B \in \Mat(m \times n, K)$ und $\lambda \in K$ ist
 \begin{gather*}
  \spur(A+B)
  = \sum_{i=1}^n (A+B)_{ii}
@@ -318,23 +326,24 @@ Für alle $A, B \in \Mat(n \times n, K)$ und $\lambda \in K$ ist
 \intertext{und}
  \spur(\lambda A)
  = \sum_{i=1}^n (\lambda A)_{ii}
- = \sum_{i=1}^n (\lambda A_{ii})
+ = \sum_{i=1}^n \lambda A_{ii}
  = \lambda \sum_{i=1}^n A_{ii}
- = \lambda \spur(A).
+ = \lambda \, \spur(A).
 \end{gather*}
 Also ist $\spur$ linear.
 
 
 \subsection{}
-Für alle $A, B \in \Mat(n \times n, K)$ ist
+Für alle $A \in \Mat(m \times n, K)$ und $B \in \Mat(n \times m, K)$ ist
 \[
  \spur(AB)
- = \sum_{i=1}^n (AB)_{ii}
- = \sum_{i=1}^n \sum_{j=1}^n A_{ij} B_{ji}
- = \sum_{j=1}^n \sum_{i=1}^n B_{ji} A_{ij}
+ = \sum_{i=1}^m (AB)_{ii}
+ = \sum_{i=1}^m \sum_{j=1}^n A_{ij} B_{ji}
+ = \sum_{j=1}^n \sum_{i=1}^m B_{ji} A_{ij}
  = \sum_{j=1}^n (BA)_{jj}
  = \spur(BA).
 \]
+(Auf dem Zettel war die Aussage nur für den Fall $n = m$ formuliert, der obige Beweis zeigt also tatsächlich eine leicht stärkere Aussage.)
 
 
 \subsection{}
@@ -382,7 +391,7 @@ Also ist $\im(\spur) = K$ und somit
 
 
 \subsection{}
-Es sei $A \in \Mat(2 \times 2, K)$. Da $K$ algebraisch abgeschlossen ist gibt es $S \in \GL_2(K)$ mit
+Es sei $A \in \Mat(2 \times 2, K)$. Da $K$ algebraisch abgeschlossen ist, gibt es $S \in \GL_2(K)$ mit
 \[
  SAS^{-1} =
  \begin{pmatrix}
@@ -390,13 +399,14 @@ Es sei $A \in \Mat(2 \times 2, K)$. Da $K$ algebraisch abgeschlossen ist gibt es
   0         & \lambda_2
  \end{pmatrix}
 \]
-mit $\lambda_1, \lambda_2, a \in K$. Da das charakteristische Polynom, die Determinante und die Spur invariant unter Konjugation sind, ist $\chi_A(T) = \chi_{SAS^{-1}}(T) = (T-\lambda_1)(T-\lambda_2)$ sowie $\det(A) = \det(SAS^{-1}) = \lambda_1 \lambda_2$ und $\spur(A) = \spur(SAS^{-1}) = \lambda_1 + \lambda_2$. Dass $\chi_A(T) = (T-\lambda_1)(T-\lambda_2)$ zeigt, dass $\lambda_1$ und $\lambda_2$ die Eigenwerte von $A$ sind. Damit ist nun
+mit $\lambda_1, \lambda_2, a \in K$. Da das charakteristische Polynom, die Determinante und die Spur invariant unter Konjugation sind, ist $\chi_A(T) = \chi_{SAS^{-1}}(T) = (T-\lambda_1)(T-\lambda_2)$ sowie $\det(A) = \det(SAS^{-1}) = \lambda_1 \lambda_2$ und $\spur(A) = \spur(SAS^{-1}) = \lambda_1 + \lambda_2$. Damit ist nun
 \[
  \chi_A(T)
  = (T-\lambda_1)(T-\lambda_2)
  = T^2 - (\lambda_1 + \lambda_2)T + \lambda_1 \lambda_2
  = T^2 - \spur(A)T + \det(A).
 \]
+Dass $\lambda_1$ und $\lambda_2$ tatsächlich die beiden Eigenwerte von $A$ sind, folgt aus $\chi_A(T) = (T-\lambda_1)(T-\lambda_2)$.
 
 
 
