@@ -1,0 +1,133 @@
+\documentclass[a4paper,10pt]{article}
+%\documentclass[a4paper,10pt]{scrartcl}
+
+\usepackage{../generalstyle}
+\usepackage{specificstyle}
+
+\setromanfont[Mapping=tex-text]{Linux Libertine O}
+% \setsansfont[Mapping=tex-text]{DejaVu Sans}
+% \setmonofont[Mapping=tex-text]{DejaVu Sans Mono}
+
+\title{Lösungen für den dritten Multiple Choice Test}
+\author{Jendrik Stelzner}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+
+
+
+
+\section{}
+Die Aussage ist \textbf{wahr}: Es sei $\mc{B}$ eine Basis von $V$ und $\mc{B}^*$ die zugehörige duale Basis von $V^*$. Der Rang $\rang(f)$ ist der Spaltenrang von $\Mat_{\mc{B},\mc{B}}(f)$ und der Rang $\rang(f^*)$ ist der Spaltenrang von $\Mat_{\mc{B}^*,\mc{B}^*}(f^*)$. Da $\Mat_{\mc{B}^*,\mc{B}^*}(f^*) = \Mat_{\mc{B},\mc{B}}(f)^T$ ist $\rang(f^*)$ also der Zeilenrang von $\Mat_{\mc{B},\mc{B}}(f)$. Die angegebene Gleichheit ist also genau die Gleichheit von Spalten- und Zeilenrang von $\Mat_{\mc{B},\mc{B}}(f)$.
+
+
+
+
+\section{}
+Die Aussage ist \textbf{wahr}: Es sei $U \coloneqq \bigcup_{n \in \Nbb} U_n$. Es ist $0 \in U_0 \subseteq U$. Für $\lambda \in K$ und $u \in U$ gibt es ein $n \in \Nbb$ mit $u \in U_n$; da $U_n$ ein Untervektorraum ist, ist deshalb auch $\lambda u \in U_n \subseteq U$. Sind schließlich $u,u' \in U$, so gibt es $n, n' \in \Nbb$ mit $u \in U_n$ und $U_{n'}$. Für $m = \max\{n,n'\}$ ist dann $u, u' \in U_m$ (da $U_n \subseteq U_m$ und $U_{n'} \subseteq U_m$), und somit auch $u + u' \in U_m \subseteq U$, da $U_m$ ein Untervektorraum ist.
+
+
+
+
+
+\section{}
+Die Aussage ist \textbf{falsch} falls $\kchar K = 2$, also etwa für $K = \Fbb_2$. Dann ist nämlich $v_1 + v_2 = v_1 - v_2$. Ist $\kchar K \neq 2$, so gilt die Aussage: Sind dann $\lambda, \mu \in K$ mit
+\[
+ 0 = \lambda (v_1 + v_2) + \mu (v_1 - v_2) = (\lambda + \mu) v_1 + (\lambda - \mu) v_2,
+\]
+so ist $\lambda + \mu = \lambda - \mu = 0$, da $(v_1, v_2)$ linear unabhängig ist, und Lösen dieses LGS ergibt $\lambda = \mu = 0$ (zum Lösen des LGS muss in einem Schritt durch $2$ geteilt werden, weshalb sich die Notwendigkeit von $\kchar K \neq 2$ ergibt).
+
+
+
+
+
+\section{}
+Die Aussage ist \textbf{wahr}: Ist $\mc{B}$ ein Basis von $V$ und $\mc{B}^*$ die entsprechende duale Basis von $V^*$, so ist $\Mat_{\mc{B}^*,\mc{B}^*}(f^*) = \Mat_{\mc{B},\mc{B}}(f)^T$, weshalb $\Mat_{\mc{B}^*,\mc{B}^*}(f^*)$ und $\Mat_{\mc{B},\mc{B}}(f)$ dasselbe charakteristische Polynom haben.
+
+
+
+
+
+\section{}
+Die Aussage ist \textbf{falsch}: Betrachtet man etwa
+\[
+ f \colon K^2 \to K^2, \quad x \mapsto \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix} x,
+\]
+so enthält die angegebene Menge die beiden Standardbasisvektoren $e_1$ und $e_2$, aber nicht $e_1 + e_2$. (Die angegebene Menge ist genau die Vereinigung der Eigenräume, und ist deshalb nur in Ausnahmefällen ein Untervektorraum. Nämlich genau dann, wenn $f$ höchstens einen Eigenwert hat.)
+
+
+
+
+
+\section{}
+Die Aussage ist \textbf{falsch} für $\kchar K \neq 2$, man betrachte $A = -\mathbbm{1}_n$ für ungerades $n$, etwa $n = 1$. Es gilt allerdings, dass $\det(A) = \pm 1$, da
+\[
+ 1
+ = \det(\mathbbm{1}_n)
+ = \det(A A^{-1})
+ = \det(A A^T)
+ = \det(A) \det(A^T)
+ = \det(A)^2.
+\]
+
+\begin{bem}
+ Eine invertierbare Matrix $A$ mit $A^{-1} = A^T$ heißt \emph{orthogonal}. Die orthogonoalen Matrizen bilden eine Untergruppe der $\GL_n(K)$, und für $K = \Rbb$ entsprechen diese Matrizen genau den Drehungspiegelungen des $\mathbb{R}^n$.
+\end{bem}
+
+
+
+
+
+
+\section{}
+Die Aussage ist \textbf{falsch}: Für $n = 1$ ist die Determinante gegeben durch
+\[
+ \det \colon \Mat(1 \times 1, K) \to K, \quad (a) \mapsto a,
+\]
+und somit linear. (Für den Fall $n = 1$ entspricht die Multilinearität genau der Linearität. Für $n \geq 2$ ist dies nicht der Fall.)
+
+
+
+
+
+\section{}
+Die Aussage ist \textbf{wahr}: Wir zeigen, dass $b_i = c_i$ für alle $1 \leq i \leq n$; hierfür fixieren wir ein solchen $i$. Dann ist $b_i = \sum_{j=1}^n \lambda_j c_j$ mit $\lambda_1, \dotsc, \lambda_n \in K$. Für alle $1 \leq k \leq n$ ist
+\[
+ \lambda_k
+ = c_k^*\left( \sum_{j=1}^n \lambda_j c_j \right)
+ = c_k^*(b_i)
+ = b_k^*(b_i)
+ = \delta_{ik},
+\]
+also $b_i = \sum_{j=1}^n \delta_{ij} c_j = c_i$.
+
+\begin{bem}
+Dies zeigt, dass die Abbildung
+\[
+ \{\text{geordnete Basen von $V$}\} \to \{\text{geordnete Basen von $V^*$}\}, \quad \mc{B} \mapsto \mc{B}^*
+\]
+injektiv ist. Sie ist auch surjektiv, also bijektiv. Mithilfe des natürlichen Isomorphismus $V \cong V^{**}$ lässt sich auch explizit eine Umkehrabbildung angeben.
+\end{bem}
+
+
+
+
+
+\section{}
+Die Aussage ist \textbf{wahr}: Da $A \in \GL_n(\Cbb)$ ist $\det(A) \neq 0$. Da $A \in \Mat(n \times n, \Rbb)$ ist auch $\det(A) \in \Rbb$. Es ist auch $\Adj(A) \in \Mat(n \times n, \Rbb)$. Somit ist schließlich $A^{-1} = \Adj(A)/\det(A) \in \Mat(n \times n, \Rbb)$.
+
+Alternativ lässt sich auf $A$ der Gauß-Algorithmus zum Invertieren einer Matrix anwenden; alle dabei vorkommenden Matrizen, inklusive dem Zwischenergebnissen und dem Endergebniss, sind dabei reell.
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
